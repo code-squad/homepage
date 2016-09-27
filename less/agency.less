@@ -167,7 +167,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 header {
-    background-image: url('../img/header-bg.jpg');
+    background-image: url('../img/background/header_coding.jpeg');
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center center;
@@ -183,13 +183,20 @@ header {
             font-size: 22px;
             line-height: 22px;
             margin-bottom: 25px;
+            //background-color: rgba(34,34,34,0.3);
+            width: 50%;
+            margin: 0px auto;
         }
         .intro-heading {
             .heading-font;
-            font-weight: 700;
+            font-weight: 300;
             font-size: 50px;
             line-height: 50px;
             margin-bottom: 25px;
+            //background-color: rgba(34,34,34,0.3);
+        }
+        a.btn-xl {
+            visibility:hidden;
         }
     }
 }
@@ -205,13 +212,20 @@ header {
                 font-size: 40px;
                 line-height: 40px;
                 margin-bottom: 25px;
+                .company-name {
+                    font-weight:900;
+                }
             }
             .intro-heading {
                 .heading-font;
-                font-weight: 700;
-                font-size: 75px;
-                line-height: 75px;
+                font-weight: 300;
+                font-size: 70px;
+                line-height: 70px;
                 margin-bottom: 50px;
+                //background-color: rgba(34,34,34,0.3);
+            }
+            a.btn-xl {
+                visibility:hidden;
             }
         }
     }
@@ -282,7 +296,13 @@ section {
                     margin-top: -12px;
                     color: white;
                     i {
-                        margin-top: -12px;
+                        //margin-top: -12px;
+                        margin-top: -40px;
+                        //font-size :3em;
+                        font-size :1.2em;
+                        &:before {
+                            content : "과정 설계중입니다 :-]";
+                        }
                     }
                     h3,
                     h4 {
@@ -300,12 +320,14 @@ section {
             h4 {
                 text-transform: none;
                 margin: 0;
+                margin-bottom: 3%;
             }
             p {
                 .serif-font;
                 font-style: italic;
                 font-size: 16px;
                 margin: 0;
+                line-height: 20px;
             }
         }
     }
@@ -524,11 +546,20 @@ section {
     }
 }
 
+@media(max-width:768px) {
+    .team-member {
+        img {
+            max-width : 240px;
+        }
+    }
+}
+
 // Clients Aside
 
 aside.clients {
     img {
         margin: 50px auto;
+        max-width: 120px;
     }
 }
 
