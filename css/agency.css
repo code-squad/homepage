@@ -226,7 +226,7 @@ fieldset[disabled] .btn-xl.active {
   }
 }
 header {
-  background-image: url('../img/header-bg.jpg');
+  background-image: url('../img/background/header_coding.jpeg');
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -247,14 +247,19 @@ header .intro-text .intro-lead-in {
   font-size: 22px;
   line-height: 22px;
   margin-bottom: 25px;
+  width: 50%;
+  margin: 0px auto;
 }
 header .intro-text .intro-heading {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 300;
   font-size: 50px;
   line-height: 50px;
   margin-bottom: 25px;
+}
+header .intro-text a.btn-xl {
+  visibility: hidden;
 }
 @media (min-width: 768px) {
   header .intro-text {
@@ -268,13 +273,19 @@ header .intro-text .intro-heading {
     line-height: 40px;
     margin-bottom: 25px;
   }
+  header .intro-text .intro-lead-in .company-name {
+    font-weight: 900;
+  }
   header .intro-text .intro-heading {
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
-    font-weight: 700;
-    font-size: 75px;
-    line-height: 75px;
+    font-weight: 300;
+    font-size: 70px;
+    line-height: 70px;
     margin-bottom: 50px;
+  }
+  header .intro-text a.btn-xl {
+    visibility: hidden;
   }
 }
 section {
@@ -336,7 +347,11 @@ section h3.section-subheading {
   color: white;
 }
 #portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content i {
-  margin-top: -12px;
+  margin-top: -40px;
+  font-size: 1.2em;
+}
+#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content i:before {
+  content: "과정 설계중입니다 :-]";
 }
 #portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h3,
 #portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h4 {
@@ -352,12 +367,14 @@ section h3.section-subheading {
 #portfolio .portfolio-item .portfolio-caption h4 {
   text-transform: none;
   margin: 0;
+  margin-bottom: 3%;
 }
 #portfolio .portfolio-item .portfolio-caption p {
   font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: italic;
   font-size: 16px;
   margin: 0;
+  line-height: 20px;
 }
 #portfolio * {
   z-index: 2;
@@ -550,8 +567,14 @@ section h3.section-subheading {
 .team-member p {
   margin-top: 0;
 }
+@media (max-width: 768px) {
+  .team-member img {
+    max-width: 240px;
+  }
+}
 aside.clients img {
   margin: 50px auto;
+  max-width: 120px;
 }
 section#contact {
   background-color: #222222;
