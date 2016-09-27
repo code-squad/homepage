@@ -567,6 +567,9 @@ section h3.section-subheading {
 .team-member p {
   margin-top: 0;
 }
+.team-member ul {
+  margin-top: 5%;
+}
 @media (max-width: 768px) {
   .team-member img {
     max-width: 240px;
