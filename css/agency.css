@@ -290,7 +290,7 @@ header .intro-text a.btn-xl {
   }
 }
 section {
-  padding: 100px 0;
+  padding: 50px 0 10px 0;
 }
 section h2.section-heading {
   font-size: 40px;
@@ -307,7 +307,7 @@ section h3.section-subheading {
 }
 @media (min-width: 768px) {
   section {
-    padding: 150px 0;
+    padding: 120px 0 50px 0;
   }
 }
 .service-heading {
@@ -576,6 +576,9 @@ section h3.section-subheading {
     max-width: 240px;
   }
 }
+aside.clients {
+  display: none;
+}
 aside.clients img {
   margin: 50px auto;
   max-width: 120px;
@@ -636,8 +639,11 @@ section#contact .text-danger {
   color: #e74c3c;
 }
 footer {
-  padding: 25px 0;
+  padding: 40px 0;
   text-align: center;
+}
+footer .email-area {
+  margin-bottom: 4px;
 }
 footer span.copyright {
   line-height: 40px;
