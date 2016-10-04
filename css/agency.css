@@ -153,12 +153,17 @@ fieldset[disabled] .btn-xl.active {
 .navbar-custom .navbar-brand {
   color: #fed136;
   font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive;
+  padding: 0px;
 }
 .navbar-custom .navbar-brand:hover,
 .navbar-custom .navbar-brand:focus,
 .navbar-custom .navbar-brand:active,
 .navbar-custom .navbar-brand.active {
   color: #fec503;
+}
+.navbar-custom .navbar-brand img {
+  padding: 10px;
+  max-width: 110px;
 }
 .navbar-custom .navbar-collapse {
   border-color: rgba(255, 255, 255, 0.02);
@@ -211,6 +216,11 @@ fieldset[disabled] .btn-xl.active {
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     transition: all 0.3s;
+    padding: 0px;
+  }
+  .navbar-custom .navbar-brand img {
+    padding: 0px;
+    max-width: 140px;
   }
   .navbar-custom .navbar-nav > .active > a {
     border-radius: 3px;
