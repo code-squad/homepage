@@ -7,6 +7,7 @@ var cleanCSS = require('gulp-clean-css');
 var rename = require("gulp-rename");
 var uglify = require('gulp-uglify');
 var pkg = require('./package.json');
+var htmlmin = require('gulp-htmlmin');
 
 // Set the banner content
 var banner = ['/*!\n',
@@ -82,13 +83,21 @@ gulp.task('browserSync', function() {
     })
 })
 
+// HTML minify
+gulp.task('minify-html', function() {
+  return gulp.src('html/index.html')
+    .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(gulp.dest('./'));
+});
+
 // Dev task with browserSync
-gulp.task('dev', ['browserSync', 'less', 'minify-css', 'minify-js'], function() {
+gulp.task('dev', ['browserSync', 'less', 'minify-css', 'minify-js', 'minify-html'], function() {
     gulp.watch('less/*.less', ['less']);
     gulp.watch('css/*.css', ['minify-css']);
     gulp.watch('js/*.js', ['minify-js']);
+    gulp.watch('html/*.html', ['minify-html']);
     // Reloads the browser whenever HTML or JS files change
-    gulp.watch('*.html', browserSync.reload);
+    gulp.watch('html/*.html', browserSync.reload);
     gulp.watch('js/**/*.js', browserSync.reload);
 });
 
