@@ -267,7 +267,6 @@ header .intro-text .intro-heading {
   font-size: 35px;
   line-height: 50px;
   margin-bottom: 25px;
-  background-color: rgba(34, 34, 34, 0.5);
 }
 header .intro-text a.btn-xl {
   visibility: hidden;
