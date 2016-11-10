@@ -2,8 +2,12 @@ language: node_js
 node_js:
     - "6"
 before_script:
-      - npm install -g gulp
+    - npm install -g gulp
 script: gulp 
+
+before_deploy:
+    - echo "RUN BEFORE SCRIPT"
+    - ./travis_before.sh 
 deploy:
   provider: s3
   access_key_id: AKIAJYOIUCLDBQCG2WAQ
