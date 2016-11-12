@@ -786,3 +786,197 @@ img::-moz-selection {
 body {
   webkit-tap-highlight-color: #fed136;
 }
+html {
+  scroll-behavior: smooth;
+}
+.scroll-auto {
+  scroll-behavior: auto;
+}
+.master-course .header {
+  float: none;
+  margin-top: 40px;
+}
+.master-course .header .event {
+  color: #000;
+  font-size: 1.5em;
+}
+.master-course .header .course-kind {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.master-course .header .course-kind button {
+  width: 200px;
+  height: 100px;
+  border: 0;
+}
+.master-course .header .course-kind .course-feature {
+  background-color: #708090;
+  color: #fff;
+}
+.master-course .header .course-kind .course-feature:hover {
+  background-color: #657686;
+}
+.master-course .header .course-kind .white-kind {
+  border: 1px solid gray;
+}
+.master-course .header .course-kind .blue-kind {
+  background-color: #0075d6;
+  color: #fff;
+}
+.master-course .header .course-kind .blue-kind:hover {
+  color: #fff;
+  background-color: #30618c;
+  border-color: #adadad;
+}
+.master-course .header .course-kind .black-kind {
+  background-color: #444;
+  color: #fff;
+}
+.master-course .header .course-kind .black-kind:hover {
+  background-color: #000;
+  color: #fff;
+}
+.master-course .all-level table td {
+  text-align: left;
+}
+.master-course .main-row > div {
+  margin-top: 60px;
+  padding-bottom: 60px;
+}
+.master-course .main-row > div .section-heading {
+  margin-bottom: 25px;
+}
+.master-course .main-row > div.course-duration .footer-desc {
+  margin-top: 15px;
+}
+.master-course .programing-kind .rect-shape {
+  color: #fff;
+  height: 80px;
+  line-height: 25px;
+}
+.master-course .programing-kind .rect-shape:first-child {
+  background-color: #ff7f50;
+  margin-bottom: 10px;
+}
+.master-course .programing-kind .rect-shape:last-child {
+  background-color: #6495ed;
+}
+.master-course .project-howto .img-wrap {
+  margin-bottom: 20px;
+}
+.master-course .week-schedule .vcenter {
+  line-height: 3.5em;
+}
+.master-course .week-schedule .course-answer {
+  padding: 0 20%;
+}
+.master-course ul {
+  float: none;
+  text-align: left;
+  line-height: 2em;
+}
+.master-course ul li {
+  font-size: 1.1em;
+}
+.master-course img {
+  width: 100%;
+  max-width: 650px;
+}
+#overview .section-heading {
+  color: #000;
+}
+#common-feature {
+  background-color: #708090;
+  color: #fff;
+}
+#white-level .header {
+  color: #000;
+  padding: 20px;
+}
+#blue-level {
+  background-color: #0075d6;
+  color: #fff;
+}
+#blue-level .header {
+  padding: 20px;
+}
+#black-level {
+  background-color: #333;
+  color: #fff;
+}
+#black-level .header {
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .master-course .header {
+    margin-bottom: 40px;
+    margin-top: 0px;
+  }
+  .master-course .course-answer {
+    font-size: 1.1em;
+    overflow: auto;
+  }
+  .master-course .course-answer .multiple-icon {
+    margin-left: 15px;
+    line-height: 160px;
+    font-size: 1.5em;
+  }
+  .master-course .course-answer {
+    padding: 0% 10%;
+  }
+  .master-course .programing-kind p,
+  .master-course .programing-kind div {
+    margin-bottom: 20px;
+  }
+  .master-course .programing-kind .rect-shape {
+    color: #fff;
+    height: 100px;
+    line-height: 2em;
+    margin-bottom: 0px;
+  }
+  .master-course .programing-kind .rect-shape:first-child {
+    left: -10px;
+  }
+  .master-course .programing-kind .rect-shape:last-child {
+    margin-left: 10px;
+  }
+}
+@media (max-width: 768px) {
+  .master-course .programing-kind .rect-shape {
+    left: 0px;
+    width: 80%;
+    margin: 0px auto;
+  }
+  .master-course .header .section-heading {
+    font-size: 30px;
+  }
+  .master-course h3 {
+    font-size: 20px;
+  }
+  .master-course ul li {
+    font-size: 1em;
+  }
+}
+.circle {
+  border: 3px solid orange;
+  border-radius: 50%;
+  color: black;
+  display: table;
+  height: 160px;
+  font-weight: bold;
+  font-size: 1.2em;
+  width: 160px;
+  margin: 0 auto;
+}
+.circle span {
+  display: table-cell;
+  vertical-align: middle;
+  height: auto;
+  width: auto;
+  text-align: center;
+  padding: 0 15px;
+}
+.rect-shape {
+  border-radius: 10px;
+  padding: 10px;
+}

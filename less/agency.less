@@ -788,3 +788,243 @@ img::-moz-selection {
 body {
     webkit-tap-highlight-color: @theme-primary;
 }
+
+//MASTERS Course Page
+html {
+    scroll-behavior: smooth;
+}
+
+.scroll-auto {
+  scroll-behavior: auto;
+}
+
+.master-course {
+    .header {
+        float: none;
+        margin-top: 40px;
+        .event {
+            color : #000;
+            font-size: 1.5em;
+        }
+        .course-kind {
+            max-width: 1200px;
+            margin: 0 auto;
+            button {
+                width: 200px;
+                height: 100px;
+                border:0;
+            }
+            .course-feature {
+                background-color : #708090;
+                color:#fff;
+            }
+            .course-feature:hover {
+                background-color : #657686;
+            }
+            .white-kind {
+                border: 1px solid gray;
+            }
+            .blue-kind {
+                background-color: #0075d6;
+                color: #fff;
+            }
+            .blue-kind:hover{
+                color: #fff;
+                background-color: #30618c;
+                border-color: #adadad;
+            }
+            .black-kind {
+                background-color: #444;
+                color: #fff;
+            }
+            .black-kind:hover {
+                background-color: #000;
+                color: #fff;
+            }
+        }
+    }
+    .container {
+        //background-color: rgba(245, 245, 245, 0.82);
+    }
+    .all-level {
+        table td {
+            text-align: left;
+        }
+    }
+    .main-row > div {
+        margin-top: 60px;
+        padding-bottom: 60px;
+        //border-bottom: 1px solid rgba(221, 221, 221, 0.35);
+        .section-heading {
+            margin-bottom: 25px;
+        }
+    }
+
+    .main-row > div.course-duration {
+        .footer-desc {
+            margin-top : 15px;
+        }
+    }
+    .programing-kind {
+        .rect-shape {
+            color : #fff;
+            height:80px;
+            line-height: 25px;
+        }
+        .rect-shape:first-child {
+            background-color: #ff7f50;
+            margin-bottom:10px;
+        }
+        .rect-shape:last-child {
+            background-color: #6495ed;
+        }
+    }
+    .project-howto {
+        .img-wrap {
+            margin-bottom: 20px;
+        }
+    }
+    .week-schedule {
+        .vcenter {
+            line-height: 3.5em;
+        }
+        .course-answer {
+            padding : 0 20%;
+        }
+    }
+    ul {
+        float: none;
+        text-align: left;
+        line-height: 2em;
+        li {
+            font-size: 1.1em;
+        }
+    }
+    img {
+        width: 100%;
+        max-width: 650px;
+    }
+}
+#overview {
+    .section-heading {
+         color : #000;
+    }
+}
+#common-feature {
+    background-color: #708090;
+    color:#fff;
+}
+#white-level {
+    .header {
+        color: #000;
+        //background: rgba(128, 128, 128, 0.43);
+        padding: 20px;
+    }
+}
+
+#blue-level {
+    background-color: #0075d6;
+    color: #fff;
+    .header {
+        padding: 20px;
+    }
+}
+
+#black-level {
+    background-color: #333;
+    color: #fff;
+    .header {
+        padding: 20px;
+    }
+}
+
+
+@media(min-width:768px) {
+    .master-course {
+        .header {
+            margin-bottom: 40px;
+            margin-top:0px;
+        }
+        .course-answer {
+            font-size: 1.1em;
+            overflow: auto;
+            .multiple-icon  {
+                 margin-left: 15px;
+                 line-height: 160px;
+                 font-size: 1.5em;
+            }
+        }
+        .course-answer {
+            padding:0% 10%;
+        }
+        .programing-kind {
+            p, div {
+              margin-bottom: 20px;
+            }
+            .rect-shape {
+                color : #fff;
+                height: 100px;
+                line-height: 2em;
+                margin-bottom:0px;
+            }
+            .rect-shape:first-child {
+                left:-10px;
+            }
+            .rect-shape:last-child {
+                margin-left:10px;
+            }
+        }
+    }
+}
+
+@media(max-width:768px) {
+  .master-course {
+      .programing-kind {
+        .rect-shape {
+            left:0px;
+            width:80%;
+            margin:0px auto;
+        }
+     }
+     .header {
+        .section-heading {
+            font-size : 30px;
+        }
+     }
+    h3 {
+        font-size: 20px;
+    }
+    ul li {
+        font-size: 1em;
+    }
+  }
+}
+
+
+.circle {
+    //background: red;
+    border : 3px solid orange;
+    border-radius:50%;
+    color: black;
+    display:table;
+    height: 160px;
+    font-weight: bold;
+    font-size: 1.2em;
+    //width: auto;
+    width: 160px;
+    margin:0 auto;
+}
+.circle span {
+    display:table-cell;
+    vertical-align:middle;
+    height:auto;
+    width:auto;
+    text-align:center;
+    padding: 0 15px;
+}
+
+.rect-shape {
+    //border: 1px solid gray;
+    border-radius: 10px;
+    padding: 10px;
+}
