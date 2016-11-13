@@ -1009,6 +1009,9 @@ html {
     width: 80%;
     margin: 0px auto;
   }
+  #white-level .programing-kind div.row {
+    margin-bottom: 10px;
+  }
 }
 @media (max-width: 1070px) {
   .course-kind div {
