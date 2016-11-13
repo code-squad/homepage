@@ -797,6 +797,10 @@ html {
 .scroll-auto {
   scroll-behavior: auto;
 }
+.navbar-custom .nav li a:focus,
+.navbar-custom .nav li a:hover {
+  color: #fff;
+}
 .master-course .header {
   float: none;
   margin-top: 40px;
