@@ -19,16 +19,22 @@
       window.requestAnimationFrame(_move);
     }
 
-    document.querySelector(".course-kind").addEventListener("click", function(evt) {
-      evt.preventDefault();
-      if(evt.target.nodeName ==="BUTTON") {
-        var parentDiv = evt.target.parentElement.parentElement;
+    function getMatchedTargetOffsetTop(el) {
+      if(el.nodeName ==="BUTTON") {
+        var parentDiv = el.parentElement.parentElement;
         var parent = parentDiv.parentElement;
         var index = Array.prototype.indexOf.call(parent.children, parentDiv);
         var target = document.querySelectorAll("section.master-course")[index+1];
         var targetTop = target.offsetTop;
-        runScrollAnimation(targetTop)
       }
+      return targetTop;
+    }
+
+    document.querySelector(".course-kind").addEventListener("click", function(evt) {
+      if(! window.requestAnimationFrame) return;
+      evt.preventDefault();
+      var targetTop = getMatchedTargetOffsetTop(evt.target);
+      runScrollAnimation(targetTop);
     });
 
 })(); 
