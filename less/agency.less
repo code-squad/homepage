@@ -286,6 +286,7 @@ section {
         margin: 0 0 15px;
         right: 0;
         .portfolio-link {
+            text-decoration: underline;
             display: block;
             position: relative;
             max-width: 500px;
@@ -791,7 +792,8 @@ img::-moz-selection {
 }
 
 body {
-    webkit-tap-highlight-color: @theme-primary;
+    //-webkit-tap-highlight-color: @theme-primary;
+    -webkit-tap-highlight-color:  rgba(51, 181, 229, 0.4);;
 }
 
 //MASTERS Course Page
@@ -807,7 +809,7 @@ html {
     color : #fff;
 }
 
-.master-course {
+.main-section {
     .header {
         float: none;
         margin-top: 40px;
@@ -991,7 +993,7 @@ html {
 
 
 @media(min-width:768px) {
-    .master-course {
+    .main-section {
         .header {
             margin-bottom: 40px;
             margin-top:0px;
@@ -1014,6 +1016,11 @@ html {
             }
         }
     }
+    
+    .sharedcto {
+       padding: 20px 0 50px;
+    }
+
     #white-level {
       .programing-kind {
         p, div {
@@ -1040,7 +1047,7 @@ html {
     #overview {
         margin-top: 30px;
     }
-    .master-course {
+    .main-section {
       .main-row>div { 
         margin-top: 35px;
         padding-bottom: 35px;
@@ -1127,7 +1134,11 @@ html {
     padding: 10px;
 }
 
-.white-footer {
+footer  a {
+    color:#fff;
+}
+
+footer.white-footer, footer.white-footer a{
     background-color: #fff;
     color : #000;
 }
