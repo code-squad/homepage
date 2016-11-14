@@ -813,6 +813,7 @@ html {
 .main-section .header .course-kind {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0% 10%;
 }
 .main-section .header .course-kind button {
   width: 200px;
@@ -869,7 +870,7 @@ html {
   line-height: 3.5em;
 }
 .main-section .week-schedule .course-answer {
-  padding: 0 20%;
+  padding: 0 15%;
 }
 .main-section ul {
   float: none;
@@ -884,7 +885,7 @@ html {
   max-width: 650px;
 }
 .ios {
-  background-color: #6495ed;
+  background-color: #40e0d0;
 }
 .webfe {
   background-color: #ff7f50;
@@ -910,12 +911,16 @@ html {
   color: #fff;
   height: 80px;
   line-height: 25px;
+  margin-right: 10px;
 }
-#white-level .programing-kind .rect-shape:first-child {
+#white-level .programing-kind .honux {
   background-color: #ff7f50;
   margin-bottom: 10px;
 }
-#white-level .programing-kind .rect-shape:last-child {
+#white-level .programing-kind .crong {
+  background-color: #6495ed;
+}
+#white-level .programing-kind .jk {
   background-color: #6495ed;
 }
 #blue-level {
@@ -937,14 +942,6 @@ html {
 #black-level .header {
   padding: 20px;
 }
-@media (max-width: 992px) {
-  #blue-level .rect-shape {
-    margin-right: auto;
-    margin-left: auto;
-    width: 80%;
-    margin-bottom: 10px;
-  }
-}
 @media (min-width: 768px) {
   .main-section .header {
     margin-bottom: 40px;
@@ -953,7 +950,7 @@ html {
   .main-section .course-answer {
     font-size: 1.1em;
     overflow: auto;
-    padding: 0% 10%;
+    padding: 0% 20%;
   }
   .main-section .course-answer .multiple-icon {
     margin-left: 15px;
@@ -971,13 +968,14 @@ html {
     color: #fff;
     height: 100px;
     line-height: 2em;
-    margin-bottom: 0px;
-    margin-right: 5px;
   }
 }
 @media (max-width: 768px) {
   #overview {
     margin-top: 30px;
+  }
+  .main-section .course-answer {
+    font-size: 16px;
   }
   .main-section .main-row > div {
     margin-top: 35px;
@@ -1008,13 +1006,21 @@ html {
     width: 100px;
     height: 100px;
   }
-  #white-level .programing-kind .rect-shape {
-    left: 0px;
-    width: 80%;
-    margin: 0px auto;
-  }
   #white-level .programing-kind div.row {
     margin-bottom: 10px;
+  }
+}
+@media (max-width: 992px) {
+  #blue-level .rect-shape {
+    margin-right: auto;
+    margin-left: auto;
+    width: 80%;
+    margin-bottom: 10px;
+  }
+  #white-level .programing-kind .rect-shape {
+    width: 80%;
+    margin: 20px auto;
+    margin-bottom: 20px;
   }
 }
 @media (max-width: 1070px) {
@@ -1056,4 +1062,7 @@ footer.white-footer a {
 .navbar-custom .nav li a.dimmed-text,
 .dimmed-text {
   color: #9d9d9d;
+}
+.color-cadetblue {
+  color: #5f9ea0;
 }

@@ -820,6 +820,7 @@ html {
         .course-kind {
             max-width: 1200px;
             margin: 0 auto;
+            padding : 0% 10%;
             button {
                 width: 200px;
                 height: 100px;
@@ -894,7 +895,7 @@ html {
             line-height: 3.5em;
         }
         .course-answer {
-            padding : 0 20%;
+            padding : 0 15%;
         }
     }
     ul {
@@ -912,7 +913,7 @@ html {
 }
 
 .ios {
-    background-color:#6495ed;
+    background-color:#40e0d0;
 }
 
 .webfe{
@@ -947,12 +948,16 @@ html {
             color : #fff;
             height:80px;
             line-height: 25px;
+            margin-right: 10px;
         }
-        .rect-shape:first-child {
+        .honux{
             background-color: #ff7f50;
             margin-bottom:10px;
         }
-        .rect-shape:last-child {
+        .crong {
+            background-color: #6495ed;
+        }
+        .jk {
             background-color: #6495ed;
         }
     }
@@ -980,17 +985,6 @@ html {
 }
 
 
-@media(max-width:992px) {
-    #blue-level {
-        .rect-shape {
-            margin-right: auto;
-            margin-left: auto;
-            width : 80%;
-            margin-bottom: 10px;
-        }
-    }
-}
-
 
 @media(min-width:768px) {
     .main-section {
@@ -1001,7 +995,7 @@ html {
         .course-answer {
             font-size: 1.1em;
             overflow: auto;
-            padding:0% 10%;
+            padding:0% 20%;
             .multiple-icon  {
                  margin-left: 15px;
                  line-height: 160px;
@@ -1030,14 +1024,8 @@ html {
             color : #fff;
             height: 100px;
             line-height: 2em;
-            margin-bottom:0px;
-            margin-right: 5px;
-        }
-        .rect-shape:first-child {
-            //left:-10px;
-        }
-        .rect-shape:last-child {
-            //margin-left:10px;
+            //margin-bottom:0px;
+            //margin-right: 5px;
         }
       }
     }
@@ -1048,6 +1036,9 @@ html {
         margin-top: 30px;
     }
     .main-section {
+      .course-answer {
+        font-size : 16px;
+      }
       .main-row>div { 
         margin-top: 35px;
         padding-bottom: 35px;
@@ -1086,15 +1077,30 @@ html {
   #white-level {
       .programing-kind {
         .rect-shape {
-            left:0px;
-            width:80%;
-            margin:0px auto;
+            //margin:0px auto;
         }
         div.row {
             margin-bottom: 10px;
         }
       }
   }
+}
+
+@media(max-width:992px) {
+    #blue-level {
+        .rect-shape {
+            margin-right: auto;
+            margin-left: auto;
+            width : 80%;
+            margin-bottom: 10px;
+        }
+    }
+
+    #white-level .programing-kind .rect-shape {
+        width:80%;
+        margin : 20px auto;
+        margin-bottom: 20px;
+     }
 }
 
 @media(max-width:1070px) {
@@ -1104,7 +1110,6 @@ html {
         }
     }
  }
-
 
 .circle {
     //background: red;
@@ -1144,4 +1149,8 @@ footer.white-footer, footer.white-footer a{
 }
 .navbar-custom .nav li a.dimmed-text, .dimmed-text {
     color : #9d9d9d;
+}
+
+.color-cadetblue {
+    color : #5f9ea0;
 }
