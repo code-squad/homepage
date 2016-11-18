@@ -70,4 +70,14 @@
     if(typeof window.matchMedia !=="undefined") monitorArrowRightChange();
   }
 
+  //test cors
+  function reqListener (evt) {
+    console.log(JSON.parse(this.responseText).Items[2].title);
+  }
+
+  var oReq = new XMLHttpRequest();
+  oReq.addEventListener("load", reqListener);
+  oReq.open("GET", "https://tlhm20eugk.execute-api.ap-northeast-2.amazonaws.com/prod/lambda_get_blog_info");
+  oReq.send();
+
 })(); 
