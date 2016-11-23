@@ -1111,6 +1111,9 @@ footer.white-footer a {
 .color-cadetblue {
   color: #5f9ea0;
 }
+.marketing a {
+  text-decoration: underline;
+}
 .col-xs-15,
 .col-sm-15,
 .col-md-15,
