@@ -210,7 +210,7 @@ header {
             //background-color: rgba(34,34,34,0.5);
         }
         a.btn-xl {
-            visibility:hidden;
+            //visibility:hidden;
         }
     }
 }
@@ -239,7 +239,7 @@ header {
                 //background-color: rgba(34,34,34,0.3);
             }
             a.btn-xl {
-                visibility:hidden;
+                //visibility:hidden;
             }
         }
     }
@@ -636,30 +636,6 @@ section#contact {
     }
 }
 
-// Footer
-
-footer {
-    border-top: 1px solid rgba(211, 211, 211, 0.31);
-    padding: 140px 0;
-    text-align: center;
-    background-color: #222;
-    color: #fff;
-    .email-area {
-        margin-bottom:10px;
-    }
-    span.copyright {
-        line-height: 40px;
-        .heading-font;
-        text-transform: none;
-    }
-    ul.quicklinks {
-        margin-bottom: 0;
-        line-height: 40px;
-        .heading-font;
-        text-transform: none;
-    }
-}
-
 // Social Buttons
 
 ul.social-buttons {
@@ -817,13 +793,22 @@ html {
             color : #000;
             font-size: 1.5em;
         }
-        .course-kind.course-level {
+        .course-kind.course-level , .course-kind .course-common{
             span.level-desc {
                 font-size : 0.7em;
                 text-align: center;
             }
             button {
                 width : 100%;
+            }
+            .application {
+                background-color: #bd4d33;
+                color: #fff;
+                border:1px solid gray;
+                height: 50px;
+            }
+            .application:hover{
+                background-color: #963f3f;
             }
         }
         .course-kind {
@@ -835,6 +820,9 @@ html {
                 height: 100px;
                 border:0;
             }
+            .application-notice-wrap {
+                padding: 0;
+             }
             .course-answer:last-child {
                 padding-top: 20px;
             }
@@ -869,6 +857,19 @@ html {
     }
     .container {
         //background-color: rgba(245, 245, 245, 0.82);
+          .course-kind.course-level , .course-kind .course-common{
+            button {
+                width : 100%;
+            }
+            .application {
+                background-color: #bd4d33;
+                color: #fff;
+                border:1px solid gray;
+            }
+            .application:hover{
+                background-color: #963f3f;
+            }
+        }
     }
     .all-level {
         table td {
@@ -955,6 +956,30 @@ html {
     padding: 10px;
 }
 
+// Footer
+
+// footer {
+//     border-top: 1px solid rgba(211, 211, 211, 0.31);
+//     padding: 140px 0;
+//     text-align: center;
+//     background-color: #222;
+//     color: #fff;
+//     .row-content {
+//         margin-bottom:10px;
+//     }
+//     span.copyright {
+//         line-height: 40px;
+//         .heading-font;
+//         text-transform: none;
+//     }
+//     ul.quicklinks {
+//         margin-bottom: 0;
+//         line-height: 40px;
+//         .heading-font;
+//         text-transform: none;
+//     }
+// }
+
 footer  a {
     color:#fff;
 }
@@ -963,6 +988,44 @@ footer.white-footer, footer.white-footer a{
     background-color: #fff;
     color : #000;
 }
+
+.bd-footer {
+    padding: 4rem 0;
+    margin-top: 4rem;
+    1font-size: 85%;
+    text-align: center;
+    background-color: #f7f7f7;
+}
+
+.bd-footer-links {
+    padding-left: 0;
+    margin-bottom: 1rem;
+}
+
+.bd-footer-links li {
+    display: inline-block;
+}
+
+.bd-footer-links li + li {
+    margin-left: 1rem;
+}
+
+.bd-footer a {
+    font-weight: 500;
+    color: #55595c;
+}
+
+.bd-footer p {
+    margin-bottom: 0;
+}
+
+@media (min-width: 576px) {
+    .bd-footer {
+        text-align: center;
+    }
+}
+
+
 .navbar-custom .nav li a.dimmed-text, .dimmed-text {
     color : #9d9d9d;
 }

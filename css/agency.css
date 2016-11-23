@@ -270,9 +270,6 @@ header .intro-text .intro-heading {
   line-height: 50px;
   margin-bottom: 25px;
 }
-header .intro-text a.btn-xl {
-  visibility: hidden;
-}
 @media (min-width: 768px) {
   header .intro-text {
     padding-top: 300px;
@@ -295,9 +292,6 @@ header .intro-text a.btn-xl {
     font-size: 70px;
     line-height: 70px;
     margin-bottom: 50px;
-  }
-  header .intro-text a.btn-xl {
-    visibility: hidden;
   }
 }
 section {
@@ -650,29 +644,6 @@ section#contact :-ms-input-placeholder {
 section#contact .text-danger {
   color: #e74c3c;
 }
-footer {
-  border-top: 1px solid rgba(211, 211, 211, 0.31);
-  padding: 140px 0;
-  text-align: center;
-  background-color: #222;
-  color: #fff;
-}
-footer .email-area {
-  margin-bottom: 10px;
-}
-footer span.copyright {
-  line-height: 40px;
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-  text-transform: none;
-}
-footer ul.quicklinks {
-  margin-bottom: 0;
-  line-height: 40px;
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-  text-transform: none;
-}
 ul.social-buttons {
   margin-bottom: 0;
 }
@@ -810,12 +781,25 @@ html {
   color: #000;
   font-size: 1.5em;
 }
-.main-section .header .course-kind.course-level span.level-desc {
+.main-section .header .course-kind.course-level span.level-desc,
+.main-section .header .course-kind .course-common span.level-desc {
   font-size: 0.7em;
   text-align: center;
 }
-.main-section .header .course-kind.course-level button {
+.main-section .header .course-kind.course-level button,
+.main-section .header .course-kind .course-common button {
   width: 100%;
+}
+.main-section .header .course-kind.course-level .application,
+.main-section .header .course-kind .course-common .application {
+  background-color: #bd4d33;
+  color: #fff;
+  border: 1px solid gray;
+  height: 50px;
+}
+.main-section .header .course-kind.course-level .application:hover,
+.main-section .header .course-kind .course-common .application:hover {
+  background-color: #963f3f;
 }
 .main-section .header .course-kind {
   max-width: 1200px;
@@ -826,6 +810,9 @@ html {
   width: 200px;
   height: 100px;
   border: 0;
+}
+.main-section .header .course-kind .application-notice-wrap {
+  padding: 0;
 }
 .main-section .header .course-kind .course-answer:last-child {
   padding-top: 20px;
@@ -856,6 +843,20 @@ html {
 .main-section .header .course-kind .black-kind:hover {
   background-color: #000;
   color: #fff;
+}
+.main-section .container .course-kind.course-level button,
+.main-section .container .course-kind .course-common button {
+  width: 100%;
+}
+.main-section .container .course-kind.course-level .application,
+.main-section .container .course-kind .course-common .application {
+  background-color: #bd4d33;
+  color: #fff;
+  border: 1px solid gray;
+}
+.main-section .container .course-kind.course-level .application:hover,
+.main-section .container .course-kind .course-common .application:hover {
+  background-color: #963f3f;
 }
 .main-section .all-level table td {
   text-align: left;
@@ -924,6 +925,35 @@ footer.white-footer,
 footer.white-footer a {
   background-color: #fff;
   color: #000;
+}
+.bd-footer {
+  padding: 4rem 0;
+  margin-top: 4rem;
+  1font-size: 85%;
+  text-align: center;
+  background-color: #f7f7f7;
+}
+.bd-footer-links {
+  padding-left: 0;
+  margin-bottom: 1rem;
+}
+.bd-footer-links li {
+  display: inline-block;
+}
+.bd-footer-links li + li {
+  margin-left: 1rem;
+}
+.bd-footer a {
+  font-weight: 500;
+  color: #55595c;
+}
+.bd-footer p {
+  margin-bottom: 0;
+}
+@media (min-width: 576px) {
+  .bd-footer {
+    text-align: center;
+  }
 }
 .navbar-custom .nav li a.dimmed-text,
 .dimmed-text {

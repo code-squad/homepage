@@ -60,11 +60,11 @@
 
   //Main
   var elCourseKind =  document.querySelector(".course-level");
-  var elCousreCommon = document.querySelector(".course-common");
+  //var elCousreCommon = document.querySelector(".course-common");
 
   if(elCourseKind) { 
     //scroll animation by button event
-    attachCourseKindEvents(elCousreCommon);
+    //attachCourseKindEvents(elCousreCommon);
     attachCourseKindEvents(elCourseKind);
     //responsive glyphicon ui
     if(typeof window.matchMedia !=="undefined") monitorArrowRightChange();
