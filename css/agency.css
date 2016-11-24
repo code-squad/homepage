@@ -773,6 +773,9 @@ html {
 .navbar-custom .nav li a:hover {
   color: #fff;
 }
+.header.clearfix {
+  border-bottom: 0;
+}
 .main-section .header {
   float: none;
   margin-top: 40px;
