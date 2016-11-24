@@ -92,13 +92,13 @@
   //TODO. Refactoring.
   elPrivacy.addEventListener("click", function(){
     if(state === "privacy") return;
-    runXHR("./data/privacy.htm");
+    runXHR("http://codesquad.kr/data/privacy.htm");
     state = "privacy";
   });
 
   elTerm.addEventListener("click", function(){
     if(state === "term") return;
-    runXHR("./data/term.htm");
+    runXHR("http://codesquad.kr/data/term.htm");
     state = "term";
   });
 })()
