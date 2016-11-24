@@ -70,4 +70,35 @@
     if(typeof window.matchMedia !=="undefined") monitorArrowRightChange();
   }
 
-})(); 
+})();
+
+(function(){
+  var state = "";
+  var elModalBody = document.querySelector("#myModal .modal-body");
+  var elPrivacy = document.querySelector("#codesquad-privacy");
+  var elTerm = document.querySelector("#codesquad-term");
+
+  function reqListener () {
+    elModalBody.innerHTML = this.responseText;
+  }
+
+  function runXHR(url) {
+    var oReq = new XMLHttpRequest();
+    oReq.addEventListener("load", reqListener);
+    oReq.open("GET", url);
+    oReq.send();
+  }
+
+  //TODO. Refactoring.
+  elPrivacy.addEventListener("click", function(){
+    if(state === "privacy") return;
+    runXHR("./data/privacy.htm");
+    state = "privacy";
+  });
+
+  elTerm.addEventListener("click", function(){
+    if(state === "term") return;
+    runXHR("./data/term.htm");
+    state = "term";
+  });
+})()
