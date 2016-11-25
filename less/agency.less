@@ -896,7 +896,14 @@ html {
         padding-bottom: 60px;
         //border-bottom: 1px solid rgba(221, 221, 221, 0.35);
         .section-heading {
-            margin-bottom: 25px;
+            margin-bottom: 30px;
+            padding-top : 30px;
+
+        }
+    }
+    .main-row > div.faq {
+        .section-heading {
+            margin-bottom: 35px;
         }
     }
 
@@ -1070,14 +1077,25 @@ footer.white-footer, footer.white-footer a{
     }
 }
 #common-feature {
-    background-color: #708090;
+    background-color: #415365;
     color:#fff;
+    .main-row > div {
+        background-color: #708090;
+    }
 }
+
 #white-level {
+    background-color: #f5f5f5;
     .header {
         color: #000;
         //background: rgba(128, 128, 128, 0.43);
         padding: 20px;
+    }
+    .main-row > div {
+        background-color: #fff;
+    }
+    .main-row > div:last-child {
+        background-color: #f5f5f5;
     }
      .programing-kind {
         .rect-shape {
@@ -1100,10 +1118,13 @@ footer.white-footer, footer.white-footer a{
 }
 
 #blue-level {
-    background-color: #0075d6;
+    background-color: #0260af;
     color: #fff;
     .header {
         padding: 20px;
+    }
+    .main-row > div {
+        background-color: #0075d6;
     }
     .rect-shape {
         margin-right: 5px;
@@ -1113,14 +1134,31 @@ footer.white-footer, footer.white-footer a{
 }
 
 #black-level {
-    background-color: #333;
+    background-color: #292828;
     color: #fff;
     .header {
         padding: 20px;
     }
+    .main-row > div {
+        background-color: #333;
+    }
 }
 
+.multiple-icon {
+    text-align: center;
+}
 
+.faq {
+    h3.section-heading {
+        font-size: 34px;
+    }
+    h4.course-answer {
+        font-size: 18px;
+    }
+    .faq-card {
+        margin-bottom: 40px;
+    }
+}
 
 @media(min-width:768px) {
     .main-section {
@@ -1129,6 +1167,7 @@ footer.white-footer, footer.white-footer a{
             margin-top:0px;
         }
         .course-answer {
+            text-align: left;
             font-size: 1.1em;
             overflow: auto;
             padding:0% 15%;
@@ -1175,6 +1214,7 @@ footer.white-footer, footer.white-footer a{
     }
     .main-section {
       .course-answer {
+        text-align: left;
         font-size : 16px;
       }
       .main-row>div { 

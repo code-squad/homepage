@@ -875,7 +875,11 @@ html {
   padding-bottom: 60px;
 }
 .main-section .main-row > div .section-heading {
-  margin-bottom: 25px;
+  margin-bottom: 30px;
+  padding-top: 30px;
+}
+.main-section .main-row > div.faq .section-heading {
+  margin-bottom: 35px;
 }
 .main-section .course-duration .footer-desc {
   margin-top: 15px;
@@ -988,12 +992,24 @@ footer.white-footer a {
   color: #000;
 }
 #common-feature {
-  background-color: #708090;
+  background-color: #415365;
   color: #fff;
+}
+#common-feature .main-row > div {
+  background-color: #708090;
+}
+#white-level {
+  background-color: #f5f5f5;
 }
 #white-level .header {
   color: #000;
   padding: 20px;
+}
+#white-level .main-row > div {
+  background-color: #fff;
+}
+#white-level .main-row > div:last-child {
+  background-color: #f5f5f5;
 }
 #white-level .programing-kind .rect-shape {
   color: #fff;
@@ -1012,11 +1028,14 @@ footer.white-footer a {
   background-color: #6495ed;
 }
 #blue-level {
-  background-color: #0075d6;
+  background-color: #0260af;
   color: #fff;
 }
 #blue-level .header {
   padding: 20px;
+}
+#blue-level .main-row > div {
+  background-color: #0075d6;
 }
 #blue-level .rect-shape {
   margin-right: 5px;
@@ -1024,11 +1043,26 @@ footer.white-footer a {
   line-height: 60px;
 }
 #black-level {
-  background-color: #333;
+  background-color: #292828;
   color: #fff;
 }
 #black-level .header {
   padding: 20px;
+}
+#black-level .main-row > div {
+  background-color: #333;
+}
+.multiple-icon {
+  text-align: center;
+}
+.faq h3.section-heading {
+  font-size: 34px;
+}
+.faq h4.course-answer {
+  font-size: 18px;
+}
+.faq .faq-card {
+  margin-bottom: 40px;
 }
 @media (min-width: 768px) {
   .main-section .header {
@@ -1036,6 +1070,7 @@ footer.white-footer a {
     margin-top: 0px;
   }
   .main-section .course-answer {
+    text-align: left;
     font-size: 1.1em;
     overflow: auto;
     padding: 0% 15%;
@@ -1066,6 +1101,7 @@ footer.white-footer a {
     margin-top: 30px;
   }
   .main-section .course-answer {
+    text-align: left;
     font-size: 16px;
   }
   .main-section .main-row > div {
