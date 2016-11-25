@@ -582,6 +582,12 @@ section h3.section-subheading {
     max-width: 240px;
   }
 }
+.course-master-profile .team-member img {
+  max-width: 240px;
+}
+.course-master-profile .team-member h4 {
+  margin-bottom: 20px;
+}
 aside.clients {
   display: none;
 }
@@ -874,11 +880,17 @@ html {
 .main-section .course-duration .footer-desc {
   margin-top: 15px;
 }
+.main-section .course-duration div.course-answer {
+  margin-bottom: 20px;
+}
 .main-section .other-topics ul {
   text-align: center;
 }
 .main-section .project-howto .img-wrap {
   margin-bottom: 20px;
+}
+.main-section .project-howto .img-wrap img {
+  border: 1px solid rgba(255, 255, 255, 0.24);
 }
 .main-section .week-schedule .vcenter {
   line-height: 3.5em;
@@ -896,12 +908,12 @@ html {
 }
 .main-section img {
   width: 100%;
-  max-width: 650px;
+  max-width: 800px;
 }
 .circle {
   border: 3px solid #1664b1;
   border-radius: 50%;
-  color: black;
+  color: #fff;
   display: table;
   height: 140px;
   font-weight: bold;
