@@ -75,6 +75,7 @@
 (function(){
   var state = "";
   var elModalBody = document.querySelector("#myModal .modal-body");
+  var elModalLabel = document.querySelector("#myModalLabel");
   var elPrivacy = document.querySelector("#codesquad-privacy");
   var elTerm = document.querySelector("#codesquad-term");
 
@@ -92,12 +93,14 @@
   //TODO. Refactoring.
   elPrivacy.addEventListener("click", function(){
     if(state === "privacy") return;
+    elModalLabel.innerText = this.textContent;
     runXHR("http://codesquad.kr/data/privacy.htm");
     state = "privacy";
   });
 
   elTerm.addEventListener("click", function(){
     if(state === "term") return;
+    elModalLabel.innerText = this.textContent;
     runXHR("http://codesquad.kr/data/term.htm");
     state = "term";
   });
