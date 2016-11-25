@@ -12,9 +12,11 @@ deploy:
   access_key_id: AKIAJYOIUCLDBQCG2WAQ
   secret_access_key:
     secure: tW6SDSKYHl+oLEKIkBL3jeltfIFOFKr08M6ZIQPNUg0UqXNzwh2OJJD/uBHrcyEg6U1WSkYQZoadYxBUOK1P16WxZ6EWOLJoyOHHcR+ZrQvzGeof7I2A7FtVyqD1/qt1J0c8JuIy7hNB9iquPN8+W6i2OD6UazM+4lZXSQg58EdEY7rVP57VhfYInBACi+MBCdKv0MDRKQV4J8jDM7E8J+JHC/R44Y6Z8tkaI1R5ClB+vzXZybYCy5aVvI7A21+F8368A3gT9iiGUAW7F1hy+kCV3owCL4dCxq6+Npm+/+MuZJVeNyRbDjf6RZEBurB6GFNZcelyPkmXl+Rbs+l48j7G/QHxAWrp8asA+Fy9vgc91W1tXOskcOv9AMMTlibDrXn73uQy+kXRTkJUFUu2R3gaJu6VOQVNemPTzpT5JrF56zv5kMaGPGjwhowwXCwTV3ccbPgYYEXYYSYH5E60jrk0o79VRxj1XDlQsyPcRleZ+c4RQY24xee0It6UDGNLBz9bxrfOJN1x6hG3hOq5uKha9bvLvfQS5+5Vzh6jO//hmOxgkhWFyek1o+iq6kvILmMu2O6rTajgziwzoHizaIS3hlvsBboa0Z72zua/wTQm65t7l62AvKCa4X43GmvTn+dBoX3C8sfQQK9k0NQvCZPr2DERFmPGLI+TTdT6oi0=
-  bucket: codesquad.kr
+  bucket: beta.codesquad.kr
   skip_cleanup: true
   region: ap-northeast-2
+  on:
+    branch: beta
 
 notifications:
   slack:
