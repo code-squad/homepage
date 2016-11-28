@@ -1171,6 +1171,11 @@ footer.white-footer a {
 .color-cadetblue {
   color: #5f9ea0;
 }
+.marketing .masters-desc {
+  font-weight: bold;
+  color: #1576d1;
+  font-size: 1.2em;
+}
 .marketing a {
   text-decoration: underline;
 }
@@ -1244,5 +1249,106 @@ footer.white-footer a {
   .col-sm-5 {
     width: 5%;
     float: left;
+  }
+}
+.jumbotron .wrap-text {
+  margin-left: 12px;
+  margin-top: 46px;
+  float: left;
+  max-width: 480px;
+}
+.jumbotron .wrap-text p {
+  line-height: 1.2em;
+}
+.jumbotron {
+  position: relative;
+  background-image: url('../../img/application/img_bg-min.png');
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  text-align: left;
+  color: white;
+  height: 480px;
+  padding-top: 120px;
+}
+.jumbotron .presentaion-left {
+  max-width: 700px;
+  margin-left: 10%;
+}
+.jumbotron .presentaion-left img.level-logo {
+  max-width: 110px;
+  float: left;
+}
+.jumbotron .wrap-text {
+  margin-left: 12px;
+  margin-top: 46px;
+  float: left;
+  max-width: 480px;
+}
+.jumbotron .wrap-text p {
+  line-height: 1.2em;
+}
+.jumbotron .apply-btn {
+  position: absolute;
+  top: 433px;
+  right: 98px;
+}
+.jumbotron .apply-btn img {
+  width: 100px;
+}
+.jumbotron .apply-btn span {
+  position: relative;
+  left: -81px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+@media (max-width: 768px) {
+  .jumbotron {
+    height: 300px;
+    padding-top: 30px;
+    margin-bottom: 0;
+  }
+  .jumbotron .presentaion-left {
+    max-width: 400px;
+    margin-left: 10%;
+  }
+  .jumbotron .presentaion-left img.level-logo {
+    max-width: 90px;
+    float: left;
+  }
+  .jumbotron .wrap-text {
+    margin-left: 12px;
+    margin-top: 32px;
+    float: left;
+    max-width: 200px;
+  }
+  .jumbotron .wrap-text h3 {
+    font-size: 20px;
+  }
+  .jumbotron .wrap-text p {
+    line-height: 1.2em;
+    font-size: 18px;
+  }
+  .jumbotron .apply-btn {
+    top: 260px;
+    right: -24px;
+  }
+  .jumbotron .apply-btn img {
+    width: 80px;
+  }
+  .jumbotron .apply-btn span {
+    position: relative;
+    left: -70px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+  .jumbotron + .container {
+    margin-top: 0px;
   }
 }
