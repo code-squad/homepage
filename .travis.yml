@@ -16,3 +16,8 @@ deploy:
   bucket: "codesquad.kr"
   skip_cleanup: true
   region: ap-northeast-2
+
+notifications:
+  slack:
+    rooms:
+      secure: AHPYOR8PIZfhIsYlGaDKb7R4g5P03PQYkkdUVjYaXUe3vu57JdOJg5K661Pocy317SI1lfr1uTvF7J7Qv93bV4+L8Oimcc8meA0nOc6AsDhTPc6scD6B8sqbh7tloCXaroDGPdnvPesSP2mLVWQojNgR1wAichSM2YYcHaS0ilaZv3p9ghUsvgPFYl9+RnRx/w+lJ0Gziyh7/AAU4jWil4Y3N65diP7iXGuzq4N6qiQ3eDoeTf0OZz46HH6L1+eRFGsX60Q+v20Uh0RlmvZiYjPiXmcjyESE7wWwkUb7VUglzHPXRZjj/4ZOtDkRGNc69/miBzW681zxiojrkC1SGmyF3Fa3Fg/+1dUfz/yxMCetdPtIoFUTrJWlBsQbR3b5/LnxVlz3PKSYSq9A3PuC49Aubvm++1pkHuPOGiR5vhdfi7uKS/RJY6YekCJbCO0JO1TOU/O8rDJ7kkuABWJHt2cHbkImtAhEchzt1JIcoRfWR0pxrTFfLxMr90klUjoaKfn+oZ0QSIfeLzxootV4rZh//zprSsYgMFpkk8SW9fJl3tjEcf2fOBR7ZefJn0r52Abh/X5gLaIXrEn42qDXjU0Saq9ICU4hBi2DTfkbjc0LEO6oNhLsSAUcR/NIUq14prmc8lk5v4dknp6GZVB754VspQTh//1VPrFRoBlepos=
