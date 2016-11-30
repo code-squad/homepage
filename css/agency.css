@@ -799,6 +799,11 @@ html {
 .main-section .header .course-kind .course-common button {
   width: 100%;
 }
+.main-section .header .course-kind.course-level img,
+.main-section .header .course-kind .course-common img {
+  width: 60%;
+  max-width: 180px;
+}
 .main-section .header .course-kind.course-level .application,
 .main-section .header .course-kind .course-common .application {
   color: #fff;
@@ -1061,6 +1066,8 @@ footer.white-footer a {
 }
 .multiple-icon {
   text-align: center;
+  font-size: 3em;
+  color: #adadb1;
 }
 .faq h3.section-heading {
   font-size: 34px;
@@ -1083,8 +1090,9 @@ footer.white-footer a {
     padding: 0% 15%;
   }
   .main-section .course-answer .multiple-icon {
-    line-height: 110px;
-    font-size: 1.5em;
+    line-height: 200px;
+    font-size: 3em;
+    color: #adadb1;
   }
   .main-section .course-answer .glyphicon-arrow-right {
     position: relative;
@@ -1214,6 +1222,7 @@ footer.white-footer a {
 .col-lg-30 {
   position: relative;
   min-height: 1px;
+  text-align: center;
 }
 .col-xs-30 {
   width: 30%;

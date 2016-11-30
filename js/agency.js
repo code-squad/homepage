@@ -21,8 +21,7 @@
 
   function getMatchedTargetOffsetTop(el) {
     var sID = null;
-    if(el.nodeName ==="BUTTON") sID = el.parentElement.getAttribute("href");
-    else if(el.nodeName === "SPAN")  sID = el.parentElement.parentElement.getAttribute("href");
+    if(el.nodeName ==="IMG") sID = el.parentElement.getAttribute("href");
     else {}
     return document.querySelector(sID).offsetTop;
   }
