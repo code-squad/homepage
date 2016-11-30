@@ -801,7 +801,8 @@ html {
 }
 .main-section .header .course-kind.course-level img,
 .main-section .header .course-kind .course-common img {
-  width: 60%;
+  width: 180px;
+  height: 265px;
   max-width: 180px;
 }
 .main-section .header .course-kind.course-level .application,
@@ -816,8 +817,12 @@ html {
 .main-section .header .course-kind .course-common .application:hover {
   background-color: #963f3f;
 }
+.main-section .header .course-kind.course-level .course-name-summary,
+.main-section .header .course-kind .course-common .course-name-summary {
+  text-align: center;
+}
 .main-section .header .course-kind {
-  max-width: 1200px;
+  max-width: 2400px;
   margin: 40px auto 60px;
   padding: 0% 15%;
 }

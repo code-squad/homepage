@@ -20,15 +20,14 @@
   }
 
   function getMatchedTargetOffsetTop(el) {
-    var sID = null;
-    if(el.nodeName ==="IMG") sID = el.parentElement.getAttribute("href");
-    else {}
+    var sID =  el.parentElement.getAttribute("href");
     return document.querySelector(sID).offsetTop;
   }
 
   function attachCourseKindEvents(elCourseKind) {
     elCourseKind.addEventListener("click", function(evt) {
       if(! window.requestAnimationFrame) return;
+      if(evt.target.nodeName !== "IMG") return;
       evt.preventDefault();
       var targetTop = getMatchedTargetOffsetTop(evt.target);
       runScrollAnimation(targetTop);
