@@ -50,7 +50,7 @@
   }
 
   function monitorArrowRightChange() {
-    var mediaQuery = window.matchMedia('(max-width: 768px)');
+    var mediaQuery = window.matchMedia('(max-width: 767px)');
     replaceCSSClass(mediaQuery.matches, "glyphicon-arrow-right", "glyphicon-arrow-down");
     mediaQuery.addListener(function(evt) {
       replaceCSSClass(mediaQuery.matches, "glyphicon-arrow-right", "glyphicon-arrow-down");
