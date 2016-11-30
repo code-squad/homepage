@@ -20,16 +20,14 @@
   }
 
   function getMatchedTargetOffsetTop(el) {
-    var sID = null;
-    if(el.nodeName ==="BUTTON") sID = el.parentElement.getAttribute("href");
-    else if(el.nodeName === "SPAN")  sID = el.parentElement.parentElement.getAttribute("href");
-    else {}
+    var sID =  el.parentElement.getAttribute("href");
     return document.querySelector(sID).offsetTop;
   }
 
   function attachCourseKindEvents(elCourseKind) {
     elCourseKind.addEventListener("click", function(evt) {
       if(! window.requestAnimationFrame) return;
+      if(evt.target.nodeName !== "IMG") return;
       evt.preventDefault();
       var targetTop = getMatchedTargetOffsetTop(evt.target);
       runScrollAnimation(targetTop);
@@ -51,7 +49,7 @@
   }
 
   function monitorArrowRightChange() {
-    var mediaQuery = window.matchMedia('(max-width: 768px)');
+    var mediaQuery = window.matchMedia('(max-width: 767px)');
     replaceCSSClass(mediaQuery.matches, "glyphicon-arrow-right", "glyphicon-arrow-down");
     mediaQuery.addListener(function(evt) {
       replaceCSSClass(mediaQuery.matches, "glyphicon-arrow-right", "glyphicon-arrow-down");
