@@ -546,7 +546,7 @@ section {
 
 // Team Section
 
-.team-member {
+.team-member, .recomm-people  {
     text-align: center;
     margin-bottom: 50px;
     img {
@@ -582,9 +582,11 @@ section {
         h4 {
             margin-bottom: 20px;
         }
-
     }
 }
+
+
+
 
 // Clients Aside
 
@@ -817,20 +819,9 @@ html {
                 width : 100%;
             }
             img {
-                //width : 60%;
                 width: 180px;
                 height: 265px;
                 max-width: 180px;
-            }
-            .application {
-                color: #fff;
-                text-shadow: 0px 2px 3px #555;
-                background-color: #bd4d33;
-                border:1px solid gray;
-                height: 50px;
-            }
-            .application:hover{
-                background-color: #963f3f;
             }
             .course-name-summary {
                 text-align: center;
@@ -880,7 +871,20 @@ html {
             }
         }
     }
-    .container {
+    .application-wrap {
+      .application {
+        color: #fff;
+        text-shadow: 0px 2px 3px #555;
+        background-color: #bd4d33;
+        height: 80px;
+        width: 100%;
+    }
+    .application:hover{
+        background-color: #963f3f;
+    }
+}
+
+.container {
         //background-color: rgba(245, 245, 245, 0.82);
           .course-kind.course-level , .course-kind .course-common{
             button {
@@ -969,6 +973,71 @@ html {
         width: 100%;
         max-width: 800px;
     }
+}
+
+.recommendation-wrap {
+    position: relative;
+    left: -3%;
+    .recommendation {
+        height : 165px;
+        overflow: hidden;
+        margin-bottom: 50px;
+        .recommendation-text {
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            .vertical-center {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+        div.block i{
+        }
+        .recomm-people {
+            margin-bottom: 0px;
+            img {
+                max-width: 100px;
+            }
+        }
+    }
+}
+
+@media(max-width:768px) {
+    .recommendation-wrap {
+        left: 0%;
+        .recommendation {
+            height: auto;
+            .recomm-people {
+                img {
+                    float: left;
+                    //margin-left: 28%;
+                }
+                .profile {
+                 float: left;
+                 padding-top: 15px;
+                 margin-left: 3%;
+                 text-align: left; 
+             }
+         }
+         .recommendation-text {
+            clear: both;
+            height: auto;
+            .vertical-center {
+             position: static;
+             top: 0;
+             transform: translateY(0%);
+         }
+     }
+ }
+ .recommendation:first-child {
+    .recomm-people {
+        .profile {
+            padding-top : 25px;
+        }
+    }
+}
+}
 }
 
 .circle {
