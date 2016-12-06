@@ -558,23 +558,28 @@ section h3.section-subheading {
     padding: 0 100px 20px 20px;
   }
 }
-.team-member {
+.team-member,
+.recomm-people {
   text-align: center;
   margin-bottom: 50px;
 }
-.team-member img {
+.team-member img,
+.recomm-people img {
   margin: 0 auto;
   border: 7px solid white;
 }
-.team-member h4 {
+.team-member h4,
+.recomm-people h4 {
   margin-top: 25px;
   margin-bottom: 0;
   text-transform: none;
 }
-.team-member p {
+.team-member p,
+.recomm-people p {
   margin-top: 0;
 }
-.team-member ul {
+.team-member ul,
+.recomm-people ul {
   margin-top: 5%;
 }
 @media (max-width: 768px) {
@@ -805,18 +810,6 @@ html {
   height: 265px;
   max-width: 180px;
 }
-.main-section .header .course-kind.course-level .application,
-.main-section .header .course-kind .course-common .application {
-  color: #fff;
-  text-shadow: 0px 2px 3px #555;
-  background-color: #bd4d33;
-  border: 1px solid gray;
-  height: 50px;
-}
-.main-section .header .course-kind.course-level .application:hover,
-.main-section .header .course-kind .course-common .application:hover {
-  background-color: #963f3f;
-}
 .main-section .header .course-kind.course-level .course-name-summary,
 .main-section .header .course-kind .course-common .course-name-summary {
   text-align: center;
@@ -863,6 +856,16 @@ html {
 .main-section .header .course-kind .black-kind:hover {
   background-color: #000;
   color: #fff;
+}
+.main-section .application-wrap .application {
+  color: #fff;
+  text-shadow: 0px 2px 3px #555;
+  background-color: #bd4d33;
+  height: 80px;
+  width: 100%;
+}
+.main-section .application-wrap .application:hover {
+  background-color: #963f3f;
 }
 .main-section .container .course-kind.course-level button,
 .main-section .container .course-kind .course-common button {
@@ -930,6 +933,60 @@ html {
 .main-section img {
   width: 100%;
   max-width: 800px;
+}
+.recommendation-wrap {
+  position: relative;
+  left: -3%;
+}
+.recommendation-wrap .recommendation {
+  height: 165px;
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+.recommendation-wrap .recommendation .recommendation-text {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+.recommendation-wrap .recommendation .recommendation-text .vertical-center {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.recommendation-wrap .recommendation .recomm-people {
+  margin-bottom: 0px;
+}
+.recommendation-wrap .recommendation .recomm-people img {
+  max-width: 100px;
+}
+@media (max-width: 768px) {
+  .recommendation-wrap {
+    left: 0%;
+  }
+  .recommendation-wrap .recommendation {
+    height: auto;
+  }
+  .recommendation-wrap .recommendation .recomm-people img {
+    float: left;
+  }
+  .recommendation-wrap .recommendation .recomm-people .profile {
+    float: left;
+    padding-top: 15px;
+    margin-left: 3%;
+    text-align: left;
+  }
+  .recommendation-wrap .recommendation .recommendation-text {
+    clear: both;
+    height: auto;
+  }
+  .recommendation-wrap .recommendation .recommendation-text .vertical-center {
+    position: static;
+    top: 0;
+    transform: translateY(0%);
+  }
+  .recommendation-wrap .recommendation:first-child .recomm-people .profile {
+    padding-top: 25px;
+  }
 }
 .circle {
   border: 3px solid #1664b1;
