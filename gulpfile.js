@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var less = require('gulp-less');
-var sass = require('gulp-sass');
+//var sass = require('gulp-sass');
 var browserSync = require('browser-sync').create();
 var header = require('gulp-header');
 var cleanCSS = require('gulp-clean-css');
@@ -103,12 +103,12 @@ gulp.task('dev', ['browserSync', 'less', 'minify-css', 'minify-js', 'minify-html
 
 // Compiles SCSS files from /scss into /css
 // NOTE: This theme uses LESS by default. To swtich to SCSS you will need to update this gulpfile by changing the 'less' tasks to run 'sass'!
-gulp.task('sass', function() {
-    return gulp.src('scss/agency.scss')
-        .pipe(sass())
-        .pipe(header(banner, { pkg: pkg }))
-        .pipe(gulp.dest('css'))
-        .pipe(browserSync.reload({
-            stream: true
-        }))
-});
+// gulp.task('sass', function() {
+//     return gulp.src('scss/agency.scss')
+//         .pipe(sass())
+//         .pipe(header(banner, { pkg: pkg }))
+//         .pipe(gulp.dest('css'))
+//         .pipe(browserSync.reload({
+//             stream: true
+//         }))
+// });
