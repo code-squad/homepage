@@ -1241,6 +1241,9 @@ footer.white-footer a {
 .color-cadetblue {
   color: #5f9ea0;
 }
+.marketing div {
+  opacity: 0.6;
+}
 .marketing .masters-desc {
   font-weight: bold;
   color: #1576d1;
@@ -1252,6 +1255,7 @@ footer.white-footer a {
 .marketing p.end-message {
   font-size: 20px;
   font-weight: bold;
+  margin-bottom: 50px;
 }
 .col-xs-15,
 .col-sm-15,
