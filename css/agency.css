@@ -1249,6 +1249,10 @@ footer.white-footer a {
 .marketing a {
   text-decoration: underline;
 }
+.marketing p.end-message {
+  font-size: 20px;
+  font-weight: bold;
+}
 .col-xs-15,
 .col-sm-15,
 .col-md-15,
