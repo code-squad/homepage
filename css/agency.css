@@ -1,6 +1,6 @@
 /*!
  * Start Bootstrap - Agency v3.3.7+1 (http://startbootstrap.com/template-overviews/agency)
- * Copyright 2013-2016 Start Bootstrap
+ * Copyright 2013-2017 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 body {
@@ -1242,7 +1242,7 @@ footer.white-footer a {
   color: #5f9ea0;
 }
 .marketing div {
-  opacity: 0.6;
+  opacity: 1;
 }
 .marketing .masters-desc {
   font-weight: bold;
@@ -1330,25 +1330,9 @@ footer.white-footer a {
     float: left;
   }
 }
-.jumbotron .wrap-text {
-  margin-left: 12px;
-  margin-top: 46px;
-  float: left;
-  max-width: 480px;
-}
-.jumbotron .wrap-text p {
-  line-height: 1.2em;
-}
 .jumbotron {
   position: relative;
-  background-image: url('../../img/application/img_bg-min.png');
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-position: center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
+  background-color: lightslategrey;
   text-align: left;
   color: white;
   height: 480px;
@@ -1359,8 +1343,9 @@ footer.white-footer a {
   margin-left: 10%;
 }
 .jumbotron .presentaion-left img.level-logo {
-  max-width: 110px;
+  max-width: 180px;
   float: left;
+  margin-top: 25px;
 }
 .jumbotron .wrap-text {
   margin-left: 12px;
@@ -1397,7 +1382,7 @@ footer.white-footer a {
     margin-left: 10%;
   }
   .jumbotron .presentaion-left img.level-logo {
-    max-width: 90px;
+    max-width: 140px;
     float: left;
   }
   .jumbotron .wrap-text {

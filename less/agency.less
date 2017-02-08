@@ -1395,7 +1395,8 @@ footer.white-footer, footer.white-footer a{
 
 .marketing {
     div {
-        opacity: 0.6;
+        //opacity: 0.6;
+        opacity: 1;
     }
    .masters-desc {
         font-weight: bold;
@@ -1496,26 +1497,13 @@ footer.white-footer, footer.white-footer a{
     }
 }
 
-
-.jumbotron {
-    .wrap-text {
-        margin-left: 12px;
-        margin-top: 46px;
-        float:left;
-        max-width: 480px;
-        p {
-            line-height: 1.2em;
-        }
-    } 
-}
-
 .jumbotron {
     position: relative;
-    background-image: url('../../img/application/img_bg-min.png');
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-position: center center;
-    .background-cover;
+    // background-image: url('../../img/application/img_bg-min.png');
+    // background-repeat: no-repeat;
+    // background-attachment: scroll;
+    // background-position: center center;
+    background-color: lightslategrey;
     text-align: left;
     color: white;
     height: 480px;
@@ -1524,8 +1512,10 @@ footer.white-footer, footer.white-footer a{
         max-width: 700px;
         margin-left: 10%;
         img.level-logo {
-            max-width: 110px;
+            max-width: 180px;
             float: left;
+            margin-top: 25px;
+
         }
     }
     .wrap-text {
@@ -1554,6 +1544,7 @@ footer.white-footer, footer.white-footer a{
     }
 }
 
+
 @media(max-width:768px) {
     .jumbotron {
         height: 300px;
@@ -1563,7 +1554,7 @@ footer.white-footer, footer.white-footer a{
             max-width: 400px;
             margin-left: 10%;
             img.level-logo {
-                max-width: 90px;
+                max-width: 140px;
                 float: left;
             }
         }
