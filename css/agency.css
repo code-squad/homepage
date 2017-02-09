@@ -860,12 +860,12 @@ html {
 .main-section .application-wrap .application {
   color: #fff;
   text-shadow: 0px 2px 3px #555;
-  background-color: #bd4d33;
+  background-color: #004B8D;
   height: 80px;
   width: 100%;
 }
 .main-section .application-wrap .application:hover {
-  background-color: #963f3f;
+  background-color: #0075d6;
 }
 .main-section .container .course-kind.course-level button,
 .main-section .container .course-kind .course-common button {
@@ -873,13 +873,13 @@ html {
 }
 .main-section .container .course-kind.course-level .application,
 .main-section .container .course-kind .course-common .application {
-  background-color: #bd4d33;
+  background-color: #004B8D;
   color: #fff;
   border: 1px solid gray;
 }
 .main-section .container .course-kind.course-level .application:hover,
 .main-section .container .course-kind .course-common .application:hover {
-  background-color: #963f3f;
+  background-color: #0075d6;
 }
 .main-section .all-level table td {
   text-align: left;
@@ -1102,7 +1102,7 @@ footer.white-footer a {
   background-color: #6495ed;
 }
 #blue-level {
-  background-color: #0260af;
+  background-color: #004B8D;
   color: #fff;
 }
 #blue-level .header {
