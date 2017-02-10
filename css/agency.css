@@ -1376,14 +1376,15 @@ footer.white-footer a {
 .jumbotron .apply-btn {
   position: absolute;
   top: 433px;
-  right: 98px;
+  left: 70%;
 }
 .jumbotron .apply-btn img {
   width: 100px;
 }
 .jumbotron .apply-btn span {
-  position: relative;
-  left: -81px;
+  position: absolute;
+  top: 36px;
+  left: 18px;
   color: #fff;
   font-weight: bold;
   font-size: 1.2em;
@@ -1417,19 +1418,52 @@ footer.white-footer a {
   }
   .jumbotron .apply-btn {
     top: 260px;
-    right: -24px;
   }
   .jumbotron .apply-btn img {
     width: 80px;
   }
   .jumbotron .apply-btn span {
-    position: relative;
-    left: -70px;
+    position: absolute;
+    top: 28px;
+    left: 9px;
     color: #fff;
     font-weight: bold;
     font-size: 1.2em;
   }
   .jumbotron + .container {
     margin-top: 0px;
+  }
+}
+@media (max-width: 480px) {
+  .jumbotron {
+    height: 250px;
+    padding-top: 15px;
+  }
+  .jumbotron .presentaion-left {
+    max-width: 400px;
+    margin-left: 2%;
+  }
+  .jumbotron .wrap-text {
+    margin-left: 11px;
+    margin-top: 32px;
+    float: left;
+    max-width: 70%;
+  }
+  .jumbotron .wrap-text h3 {
+    font-size: 16px;
+  }
+  .jumbotron .wrap-text p {
+    line-height: 1.2em;
+    font-size: 18px;
+  }
+  .jumbotron .presentaion-left img.level-logo {
+    max-width: 80px;
+    width: 25%;
+    margin-top: 43px;
+    float: left;
+  }
+  .jumbotron .apply-btn {
+    top: 211px;
+    left: 60%;
   }
 }
