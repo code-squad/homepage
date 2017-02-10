@@ -1151,7 +1151,7 @@ footer.white-footer a {
   .main-section .course-answer {
     text-align: left;
     font-size: 1.1em;
-    overflow: auto;
+    overflow: hidden;
     padding: 0% 15%;
   }
   .main-section .course-answer .multiple-icon {
@@ -1245,11 +1245,11 @@ footer.white-footer a {
   color: #5f9ea0;
 }
 .center-emphasis {
-  font-size: 1.6em;
+  font-size: 1.4em;
   color: #fff;
   text-decoration: underline;
 }
-.main-section .course-answer + .center-text {
+.main-section .course-answer.center-text {
   text-align: center;
 }
 .marketing div {
