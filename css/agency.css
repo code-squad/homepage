@@ -1053,6 +1053,9 @@ footer.white-footer a {
 .ios {
   background-color: #40e0d0;
 }
+.cs {
+  background-color: #8bc34a;
+}
 .webfe {
   background-color: #ff7f50;
 }
@@ -1242,7 +1245,7 @@ footer.white-footer a {
   color: #5f9ea0;
 }
 .center-emphasis {
-  font-size: 1.8em;
+  font-size: 1.6em;
   color: #fff;
   text-decoration: underline;
 }
