@@ -857,6 +857,9 @@ html {
   background-color: #000;
   color: #fff;
 }
+.main-section .application-wrap {
+  margin-bottom: 50px;
+}
 .main-section .application-wrap .application {
   color: #fff;
   text-shadow: 0px 2px 3px #555;
