@@ -1265,6 +1265,9 @@ footer.white-footer a {
   font-weight: bold;
   margin-bottom: 50px;
 }
+.text-strike {
+  text-decoration: line-through;
+}
 .col-xs-15,
 .col-sm-15,
 .col-md-15,
