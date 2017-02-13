@@ -1089,7 +1089,7 @@ footer.white-footer a {
   background-color: #fff;
 }
 #white-level .main-row > div:last-child {
-  background-color: #f5f5f5;
+  1background-color: #f5f5f5;
 }
 #white-level .programing-kind .rect-shape {
   color: #fff;
@@ -1464,6 +1464,6 @@ footer.white-footer a {
   }
   .jumbotron .apply-btn {
     top: 211px;
-    left: 60%;
+    left: 70%;
   }
 }
