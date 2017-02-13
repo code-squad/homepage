@@ -8,6 +8,7 @@ var rename = require("gulp-rename");
 var uglify = require('gulp-uglify');
 var pkg = require('./package.json');
 var htmlmin = require('gulp-htmlmin');
+var cachebust = require('gulp-cache-bust');
 
 // Set the banner content
 var banner = ['/*!\n',
@@ -72,7 +73,7 @@ gulp.task('copy', function() {
 })
 
 // Run everything
-gulp.task('default', ['less', 'minify-css', 'minify-js', 'copy']);
+gulp.task('default', ['less', 'minify-css', 'minify-js', 'minify-html', 'minify-other-html', 'minify-other2-html']);
 
 // Configure the browserSync task
 gulp.task('browserSync', function() {
@@ -86,12 +87,33 @@ gulp.task('browserSync', function() {
 // HTML minify
 gulp.task('minify-html', function() {
   return gulp.src('html/index.html')
-    .pipe(htmlmin({collapseWhitespace: true}))
+  .pipe(cachebust({
+    type: 'timestamp'
+  }))
+  .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest('./'));
 });
 
+gulp.task('minify-other-html', function() {
+  return gulp.src('html/event/application.html')
+  .pipe(cachebust({
+    type: 'timestamp'
+  }))
+  .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(gulp.dest('html/event/dist'));
+});
+
+gulp.task('minify-other2-html', function() {
+  return gulp.src('html/program/*.html')
+  .pipe(cachebust({
+    type: 'timestamp'
+  }))
+  .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(gulp.dest('html/program/dist'));
+});
+
 // Dev task with browserSync
-gulp.task('dev', ['browserSync', 'less', 'minify-css', 'minify-js', 'minify-html'], function() {
+gulp.task('dev', ['browserSync', 'less', 'minify-css', 'minify-js', 'minify-html', 'minify-other-html', 'minify-other2-html'], function() {
     gulp.watch('less/*.less', ['less']);
     gulp.watch('css/*.css', ['minify-css']);
     gulp.watch('js/*.js', ['minify-js']);
