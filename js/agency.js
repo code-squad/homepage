@@ -92,14 +92,14 @@
   elPrivacy.addEventListener("click", function(){
     if(state === "privacy") return;
     elModalLabel.innerText = this.textContent;
-    runXHR("http://codesquad.kr/data/privacy.htm");
+    runXHR("../../data/privacy.htm");
     state = "privacy";
   });
 
   elTerm.addEventListener("click", function(){
     if(state === "term") return;
     elModalLabel.innerText = this.textContent;
-    runXHR("http://codesquad.kr/data/term.htm");
+    runXHR("../../data/term.htm");
     state = "term";
   });
 })()
