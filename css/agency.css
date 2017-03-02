@@ -1256,7 +1256,7 @@ footer.white-footer a {
   text-align: center;
 }
 .marketing div {
-  opacity: 1;
+  opacity: 0.6;
 }
 .marketing .masters-desc {
   font-weight: bold;
