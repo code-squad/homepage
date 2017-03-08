@@ -115,12 +115,12 @@ var elBlog = document.querySelector(".blog-post-links");
 
   function runXHR(url) {
     var oReq = new XMLHttpRequest();
-    oReq.addEventListener("load", parseData);
+    oReq.addEventListener("load", blogPostSlider);
     oReq.open("GET", url);
     oReq.send();
   }
 
-  function parseData() {
+  function blogPostSlider() {
     var data = JSON.parse(this.responseText);
     var list = JSON.parse(data.body);
     var slides = list.Items.length;
@@ -141,10 +141,56 @@ var elBlog = document.querySelector(".blog-post-links");
     // init value
     var elBlogBanner = document.querySelector(".blog-banner");
     var slidesNum = elBlog.childElementCount;
-    var container = elBlogBanner.getElementsByClassName("container")[0];
-    var width = getComputedStyle(container, null).getPropertyValue("width").replace(/\D/g, '');
-    var width = width * 0.9;
     
+
+    
+    window.addEventListener('resize',changeSlideWidth);
+   
+    function changeSlideWidth(){
+      var width;
+        var container = document.getElementsByClassName("blog-content")[0];
+        var containerwidth = getComputedStyle(container, null).getPropertyValue("width").replace(/\D/g, '').toString();
+      
+        if (containerwidth > 200000){
+          width = Number(/[0-9]{3}/.exec(containerwidth));
+        }
+        else if (containerwidth === '105299'){
+          width = Number(/[0-9]{4}/.exec(containerwidth));
+        }
+        else if (containerwidth < 1000) { width = containerwidth;}
+       console.log(containerwidth, width);
+      
+      elBlog.style.width = (slidesNum * width) + 'px';
+      elBlog.style.transform = "translate(-" + width * 1 + "px, 0px)";
+      elBlog.style.transition = "none";
+    }
+
+    function getwidthVal(){
+        
+      
+    }
+
+    var container = document.getElementsByClassName("blog-content")[0];
+    var containerwidth = getComputedStyle(container, null).getPropertyValue("width").replace(/\D/g, '').toString();
+    
+    if (containerwidth > 200000){
+        width = Number(/[0-9]{3}/.exec(containerwidth));
+    }
+        else if (containerwidth === '105299'){
+          width = Number(/[0-9]{4}/.exec(containerwidth));
+        }
+        else if (containerwidth < 1000) { width = containerwidth;}
+    elBlog.style.width = (slidesNum * width) + 'px';
+    elBlog.style.transform = "translate(-" + width * 1 + "px, 0px)";
+    elBlog.style.transition = "none";
+    
+    setTimeout(function() {
+        elBlog.style.transition = "";
+    }, (600));
+
+    
+
+    // active button
     var i = 1;
     elBlog.style.width = (slidesNum * width) + 'px';
     elBlog.style.transform = "translate(-" + width * 1 + "px, 0px)";
@@ -194,6 +240,7 @@ var elBlog = document.querySelector(".blog-post-links");
 
     function movePrevious(i) {
       if (i === 1) {
+        console.log('last');
         elBlog.style.transform = "translate(" + (width - (width * i)) + "px, 0px)";
         setTimeout(function() {
           elBlog.style.transition = "none";
