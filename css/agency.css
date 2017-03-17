@@ -1018,12 +1018,14 @@ html {
   padding: 4rem 0;
   background-color: #eeeeee;
 }
-.blog-banner .container {
-  padding: 0;
+.blog-banner .container.wrapper {
+  padding-left: 0px;
+  padding-right: 0px;
 }
 .blog-banner .wrapper {
   overflow: hidden;
   display: flex;
+  margin: auto;
 }
 .blog-banner .blog-content {
   width: 90%;
@@ -1039,21 +1041,21 @@ html {
   position: relative;
 }
 .blog-banner li {
-  width: 100%;
+  width: 90%;
   height: 100%;
   list-style: none;
   text-align: center;
 }
 .blog-banner button {
   outline: none;
-  padding: 0 2rem;
   background: none;
   border: none;
   font-size: 3rem;
   width: 5%;
   overflow: hidden;
   background: #eeeeee;
-  z-index: 3;
+  z-index: 9;
+  padding: 0;
 }
 .blog-banner button:hover {
   cursor: pointer;
@@ -1064,6 +1066,8 @@ html {
 .blog-banner button.next {
   order: 3;
   float: right;
+}
+@media (max-width: 576px) {
 }
 footer a {
   color: #fff;
@@ -1140,7 +1144,7 @@ footer.white-footer a {
   background-color: #fff;
 }
 #white-level .main-row > div:last-child {
-  1background-color: #f5f5f5;
+  background-color: #f5f5f5;
 }
 #white-level .programing-kind .rect-shape {
   color: #fff;
