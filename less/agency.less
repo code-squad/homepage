@@ -5,7 +5,9 @@
 
 body {
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
     .body-font;
+    
 }
 
 .text-muted {
@@ -63,7 +65,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 // Restyled Primary Buttons
-
 .btn-primary {
     .button-variant(white; @theme-primary; @theme-primary);
     .heading-font;
@@ -78,6 +79,10 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 18px;
     padding: 20px 40px;
 }
+
+.btn-customer {
+    height: 100% !important;        
+ }
 
 // Custom Navigation Bar
 
@@ -835,6 +840,7 @@ html {
                 width: 200px;
                 height: 100px;
                 border:0;
+                
             }
             .application-notice-wrap {
                 padding: 0;
@@ -848,6 +854,9 @@ html {
             }
             .course-feature:hover {
                 background-color : #657686;
+            }
+            .transparent-kind {
+                border: 1px solid transparent;
             }
             .white-kind {
                 border: 1px solid gray;
@@ -1509,6 +1518,11 @@ footer.white-footer, footer.white-footer a{
 }
 
 // NEW LAYOUT 
+@media (min-width: 768px){
+    .col-sm-4 {
+        width: 20% !important;
+    }
+}
 
 .col-xs-15,
 .col-sm-15,
