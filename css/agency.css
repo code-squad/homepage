@@ -315,6 +315,9 @@ section h3.section-subheading {
   margin-bottom: 75px;
 }
 @media (min-width: 768px) {
+  .inner-section {
+    padding: 0 0 50px 0 !important;
+  }
   section {
     padding: 120px 0 50px 0;
   }
@@ -833,6 +836,7 @@ html {
 }
 .main-section .header .course-kind .course-answer:last-child {
   padding-top: 20px;
+  text-align: center;
 }
 .main-section .header .course-kind .course-feature {
   background-color: #708090;
