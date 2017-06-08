@@ -5,7 +5,8 @@
  */
 body {
   overflow-x: hidden;
-  font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Nanum Barun Gothic', "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .text-muted {
   color: #777777;
@@ -42,7 +43,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Nanum Barun Gothic", sans-serif;
   text-transform: uppercase;
   font-weight: 700;
 }
@@ -59,7 +60,7 @@ h6 {
   color: white;
   background-color: #0075d6;
   border-color: #0075d6;
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Nanum Barun Gothic", sans-serif;
   text-transform: uppercase;
   font-weight: 700;
 }
@@ -103,7 +104,7 @@ fieldset[disabled] .btn-primary.active {
   color: white;
   background-color: #0075d6;
   border-color: #0075d6;
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Nanum Barun Gothic", sans-serif;
   text-transform: uppercase;
   font-weight: 700;
   border-radius: 3px;
@@ -146,6 +147,9 @@ fieldset[disabled] .btn-xl.active {
   color: #0075d6;
   background-color: white;
 }
+.btn-customer {
+  height: 100% !important;
+}
 .navbar-custom {
   background-color: #222222;
   border-color: transparent;
@@ -171,7 +175,7 @@ fieldset[disabled] .btn-xl.active {
 .navbar-custom .navbar-toggle {
   background-color: #0075d6;
   border-color: #0075d6;
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Nanum Barun Gothic", sans-serif;
   text-transform: uppercase;
   color: white;
   font-size: 12px;
@@ -181,7 +185,7 @@ fieldset[disabled] .btn-xl.active {
   background-color: #0075d6;
 }
 .navbar-custom .nav li a {
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Nanum Barun Gothic", sans-serif;
   text-transform: uppercase;
   font-weight: 400;
   letter-spacing: 1px;
@@ -254,7 +258,7 @@ header .intro-text {
   padding-bottom: 50px;
 }
 header .intro-text .intro-lead-in {
-  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Nanum Barun Gothic", sans-serif;
   font-style: italic;
   font-size: 22px;
   line-height: 22px;
@@ -263,7 +267,7 @@ header .intro-text .intro-lead-in {
   margin: 0px auto;
 }
 header .intro-text .intro-heading {
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Nanum Barun Gothic", sans-serif;
   text-transform: uppercase;
   font-weight: 300;
   font-size: 35px;
@@ -276,7 +280,7 @@ header .intro-text .intro-heading {
     padding-bottom: 200px;
   }
   header .intro-text .intro-lead-in {
-    font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Nanum Barun Gothic", sans-serif;
     font-style: italic;
     font-size: 40px;
     line-height: 40px;
@@ -286,7 +290,7 @@ header .intro-text .intro-heading {
     font-weight: 900;
   }
   header .intro-text .intro-heading {
-    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Nanum Barun Gothic", sans-serif;
     text-transform: uppercase;
     font-weight: 300;
     font-size: 70px;
@@ -304,13 +308,16 @@ section h2.section-heading {
 }
 section h3.section-subheading {
   font-size: 16px;
-  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Nanum Barun Gothic", sans-serif;
   text-transform: none;
   font-style: italic;
   font-weight: 400;
   margin-bottom: 75px;
 }
 @media (min-width: 768px) {
+  .inner-section {
+    padding: 0 0 50px 0 !important;
+  }
   section {
     padding: 120px 0 50px 0;
   }
@@ -377,7 +384,7 @@ section h3.section-subheading {
   margin-bottom: 3%;
 }
 #portfolio .portfolio-item .portfolio-caption p {
-  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Nanum Barun Gothic", sans-serif;
   font-style: italic;
   font-size: 16px;
   margin: 0;
@@ -627,27 +634,27 @@ section#contact .form-control:focus {
   box-shadow: none;
 }
 section#contact ::-webkit-input-placeholder {
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Nanum Barun Gothic", sans-serif;
   text-transform: uppercase;
   font-weight: 700;
   color: #eeeeee;
 }
 section#contact :-moz-placeholder {
   /* Firefox 18- */
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Nanum Barun Gothic", sans-serif;
   text-transform: uppercase;
   font-weight: 700;
   color: #eeeeee;
 }
 section#contact ::-moz-placeholder {
   /* Firefox 19+ */
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Nanum Barun Gothic", sans-serif;
   text-transform: uppercase;
   font-weight: 700;
   color: #eeeeee;
 }
 section#contact :-ms-input-placeholder {
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Nanum Barun Gothic", sans-serif;
   text-transform: uppercase;
   font-weight: 700;
   color: #eeeeee;
@@ -707,7 +714,7 @@ ul.social-buttons li a:active {
 }
 .portfolio-modal .modal-content p.item-intro {
   margin: 20px 0 30px;
-  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Nanum Barun Gothic", sans-serif;
   font-style: italic;
   font-size: 16px;
 }
@@ -829,6 +836,7 @@ html {
 }
 .main-section .header .course-kind .course-answer:last-child {
   padding-top: 20px;
+  text-align: center;
 }
 .main-section .header .course-kind .course-feature {
   background-color: #708090;
@@ -836,6 +844,9 @@ html {
 }
 .main-section .header .course-kind .course-feature:hover {
   background-color: #657686;
+}
+.main-section .header .course-kind .transparent-kind {
+  border: 1px solid transparent;
 }
 .main-section .header .course-kind .white-kind {
   border: 1px solid gray;
@@ -1328,6 +1339,11 @@ footer.white-footer a {
 }
 .text-strike {
   text-decoration: line-through;
+}
+@media (min-width: 768px) {
+  .col-sm-4 {
+    width: 20% !important;
+  }
 }
 .col-xs-15,
 .col-sm-15,
