@@ -824,7 +824,8 @@ html {
 .main-section .header .course-kind {
   max-width: 2400px;
   margin: 40px auto 60px;
-  padding: 0% 15%;
+  padding: 0% 4%;
+  margin-left: 50px;
 }
 .main-section .header .course-kind button {
   width: 200px;
@@ -880,6 +881,10 @@ html {
 }
 .main-section .application-wrap .application:hover {
   background-color: #0075d6;
+}
+.main-section .row .rect-row {
+  display: flex;
+  justify-content: center;
 }
 .main-section .container .course-kind.course-level button,
 .main-section .container .course-kind .course-common button {
@@ -1144,6 +1149,32 @@ footer.white-footer a {
 #common-feature .main-row > div {
   background-color: #708090;
 }
+#playground-level {
+  background-color: #FFFEF2;
+}
+#playground-level .header {
+  color: #000;
+  padding: 20px;
+}
+#playground-level .main-row > div {
+  background-color: #fff;
+}
+#playground-level .programing-kind .rect-shape {
+  color: #fff;
+  height: 80px;
+  line-height: 25px;
+  margin-right: 10px;
+}
+#playground-level .programing-kind .honux {
+  background-color: #ff7f50;
+  margin-bottom: 10px;
+}
+#playground-level .programing-kind .crong {
+  background-color: #6495ed;
+}
+#playground-level .programing-kind .jk {
+  background-color: #6495ed;
+}
 #white-level {
   background-color: #f5f5f5;
 }
@@ -1184,9 +1215,10 @@ footer.white-footer a {
   background-color: #0075d6;
 }
 #blue-level .rect-shape {
-  margin-right: 5px;
+  margin-right: 10px;
   height: 80px;
   line-height: 60px;
+  width: 27%;
 }
 #black-level {
   background-color: #292828;
@@ -1240,6 +1272,15 @@ footer.white-footer a {
     margin-bottom: 20px;
   }
   #white-level .programing-kind .rect-shape {
+    color: #fff;
+    height: 100px;
+    line-height: 2em;
+  }
+  #playground-level .programing-kind p,
+  #playground-level .programing-kind div {
+    margin-bottom: 20px;
+  }
+  #playground-level .programing-kind .rect-shape {
     color: #fff;
     height: 100px;
     line-height: 2em;
@@ -1388,7 +1429,7 @@ footer.white-footer a {
 }
 @media (min-width: 768px) {
   .col-sm-30 {
-    width: 30%;
+    width: 20%;
     float: left;
   }
 }
