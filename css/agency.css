@@ -813,8 +813,7 @@ html {
 }
 .main-section .header .course-kind.course-level img,
 .main-section .header .course-kind .course-common img {
-  width: 180px;
-  height: 265px;
+  width: 170px;
   max-width: 180px;
 }
 .main-section .header .course-kind.course-level .course-name-summary,
