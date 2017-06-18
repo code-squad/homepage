@@ -1149,7 +1149,7 @@ footer.white-footer a {
   background-color: #708090;
 }
 #playground-level {
-  background-color: #FFFEF2;
+  background-color: #f5f4e8;
 }
 #playground-level .header {
   color: #000;
@@ -1214,10 +1214,10 @@ footer.white-footer a {
   background-color: #0075d6;
 }
 #blue-level .rect-shape {
-  margin-right: 10px;
+  margin-right: 1%;
   height: 80px;
   line-height: 60px;
-  width: 27%;
+  width: 21.7%;
 }
 #black-level {
   background-color: #292828;
@@ -1355,7 +1355,6 @@ footer.white-footer a {
 }
 .center-emphasis {
   font-size: 1.4em;
-  color: #fff;
   text-decoration: underline;
 }
 .main-section .course-answer.center-text {
