@@ -103,15 +103,15 @@
 		runXHR("../../../data/term.htm");
 		state = "term";
 	});
-})()
+})();
 
 
 /* Blog Post Slider */
-var elBlog = document.querySelector(".blog-post-links");
 
 (function() {
+	var elBlog = document.querySelector(".blog-post-links");
 	var url = 'https://tlhm20eugk.execute-api.ap-northeast-2.amazonaws.com/prod/lambda_get_blog_info';
-	runXHR(url);
+	if(elBlog) runXHR(url);
 
 	function runXHR(url) {
 		var oReq = new XMLHttpRequest();
