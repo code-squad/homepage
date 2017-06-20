@@ -1195,14 +1195,17 @@ footer.white-footer a {
   background-color: #fff;
 }
 #white-level .main-row > div:last-child {
-  background-color: #f5f5f5;
+  1background-color: #f5f5f5;
 }
 #white-level .programing-kind .rect-shape {
   color: #fff;
   width: 20%;
   height: 80px;
   line-height: 25px;
-  margin-right: 10px;
+  margin-right: 2%;
+}
+#white-level .programing-kind .col-md-offset-4 {
+  margin-left: 29.55%;
 }
 #white-level .programing-kind .honux {
   background-color: #ff7f50;
