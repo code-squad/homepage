@@ -1343,6 +1343,9 @@ footer.white-footer a {
   .main-section .header h3.section-subheading {
     margin-bottom: 35px;
   }
+  .main-section .header .course-kind {
+    margin-left: 0px;
+  }
   .main-section .header .course-kind button {
     height: 60px;
   }
