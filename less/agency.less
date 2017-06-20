@@ -831,12 +831,19 @@ html {
                 width : 100%;
             }
             img {
-                width: 170px;
-                max-width: 180px;
+                width: 160px;
+                height: 250px;
+                max-height: 235px;
+                max-width: 160px;
             }
             .course-name-summary {
                 text-align: center;
             }
+        }
+        .course-kind.course-level div:first-child img {
+            width: 225px;
+            max-height: 235px;
+            max-width: 250px;
         }
         .course-kind {
             max-width: 2400px;
@@ -1442,6 +1449,30 @@ footer.white-footer, footer.white-footer a{
         }
       }
     }
+}
+
+@media(max-width:1120px) {
+.main-section {
+    .header {
+        .course-kind.course-level {
+            img {
+                width: 130px;
+                height: 191px;
+                // max-height: 235px;
+                max-width: 130px;
+            }
+            .glyphicon-arrow-right {
+                position: relative;
+                left : -12px;
+                font-size:35px;
+            }
+        }
+        .course-kind.course-level div:first-child img {
+            width: 166px;
+            max-width: 166px;
+        }
+    }
+}
 }
 
 @media(max-width:768px) {
