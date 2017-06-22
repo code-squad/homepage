@@ -1394,20 +1394,29 @@ footer.white-footer a {
   text-align: center;
 }
 .marketing div {
-  opacity: 0.6;
+  opacity: 1;
 }
-.marketing .masters-desc {
+.marketing .emphasis_link {
   font-weight: bold;
   color: #1576d1;
-  font-size: 1.2em;
+  font-size: 1.1em;
 }
 .marketing a {
   text-decoration: underline;
 }
-.marketing p.end-message {
-  font-size: 20px;
+.marketing p.title-message {
+  font-size: 2em;
   font-weight: bold;
   margin-bottom: 50px;
+}
+.marketing .item {
+  margin-bottom: 30px;
+}
+.marketing:nth-child(2) {
+  margin-top: 60px;
+  border-top: 1px solid gray;
+  padding-top: 60px;
+  opacity: 0.4;
 }
 .text-strike {
   text-decoration: line-through;
@@ -1492,24 +1501,33 @@ footer.white-footer a {
 }
 .jumbotron {
   position: relative;
-  background-color: lightslategrey;
+  background-color: #234f8d;
   text-align: left;
   color: white;
   height: 480px;
-  padding-top: 120px;
+  padding-top: 40px;
+}
+.jumbotron p {
+  font-weight: 800;
 }
 .jumbotron .presentaion-left {
   max-width: 700px;
   margin-left: 10%;
+  margin-top: 30px;
+  opacity: 0.4;
 }
 .jumbotron .presentaion-left img.level-logo {
-  max-width: 180px;
+  max-width: 120px;
   float: left;
   margin-top: 25px;
 }
+.jumbotron .presentaion-left:first-child {
+  margin-top: 0;
+  opacity: 1;
+}
 .jumbotron .wrap-text {
   margin-left: 12px;
-  margin-top: 46px;
+  margin-top: 60px;
   float: left;
   max-width: 480px;
 }
@@ -1532,9 +1550,12 @@ footer.white-footer a {
   font-weight: bold;
   font-size: 1.2em;
 }
+.jumbotron + .container {
+  margin-top: 70px;
+}
 @media (max-width: 768px) {
   .jumbotron {
-    height: 300px;
+    1height: 300px;
     padding-top: 30px;
     margin-bottom: 0;
   }
@@ -1574,12 +1595,12 @@ footer.white-footer a {
     font-size: 1.2em;
   }
   .jumbotron + .container {
-    margin-top: 0px;
+    margin-top: 30px;
   }
 }
 @media (max-width: 480px) {
   .jumbotron {
-    height: 250px;
+    height: 380px;
     padding-top: 15px;
   }
   .jumbotron .presentaion-left {
@@ -1608,5 +1629,13 @@ footer.white-footer a {
   .jumbotron .apply-btn {
     top: 211px;
     left: 70%;
+  }
+  .marketing p.title-message {
+    font-size: 1.5em;
+  }
+  .marketing:nth-child(2) {
+    margin-top: 10px;
+    border-top: 1px solid gray;
+    padding-top: 30px;
   }
 }
