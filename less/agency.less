@@ -64,6 +64,10 @@ h1, h2, h3, h4, h5, h6 {
     background-color: @gray-darker;
 }
 
+.skyblue-color {
+    background-color : #6495ed;
+}
+
 // Restyled Primary Buttons
 .btn-primary {
     .button-variant(white; @theme-primary; @theme-primary);
@@ -827,18 +831,25 @@ html {
                 width : 100%;
             }
             img {
-                width: 180px;
-                height: 265px;
-                max-width: 180px;
+                width: 160px;
+                height: 250px;
+                max-height: 235px;
+                max-width: 160px;
             }
             .course-name-summary {
                 text-align: center;
             }
         }
+        .course-kind.course-level div:first-child img {
+            width: 225px;
+            max-height: 235px;
+            max-width: 250px;
+        }
         .course-kind {
             max-width: 2400px;
             margin: 40px auto 60px;
-            padding : 0% 15%;
+            padding : 0% 4%;
+            margin-left: 50px;
             button {
                 width: 200px;
                 height: 100px;
@@ -898,6 +909,10 @@ html {
     }
 }
 
+.row .rect-row {
+    display: flex;
+    justify-content: center;
+}
 .container {
         //background-color: rgba(245, 245, 245, 0.82);
           .course-kind.course-level , .course-kind .course-common{
@@ -1264,6 +1279,35 @@ footer.white-footer, footer.white-footer a{
     }
 }
 
+#playground-level {
+    background-color: #e6e2b3;
+        .header {
+        color: #000;
+        //background: rgba(128, 128, 128, 0.43);
+        padding: 20px;
+    }
+    .main-row > div {
+        background-color: #f7f5e6;
+    }
+    .programing-kind {
+        .rect-shape {
+            color : #fff;
+            height:80px;
+            line-height: 25px;
+            margin-right: 10px;
+        }
+        .honux{
+            background-color: #ff7f50;
+            margin-bottom:10px;
+        }
+        .crong {
+            background-color: #6495ed;
+        }
+        .jk {
+            background-color: #6495ed;
+        }
+    }
+}
 #white-level {
     background-color: #f5f5f5;
     .header {
@@ -1275,14 +1319,18 @@ footer.white-footer, footer.white-footer a{
         background-color: #fff;
     }
     .main-row > div:last-child {
-        background-color: #f5f5f5;
+        1background-color: #f5f5f5;
     }
      .programing-kind {
         .rect-shape {
             color : #fff;
+            width : 20%;
             height:80px;
             line-height: 25px;
-            margin-right: 10px;
+            margin-right: 2%;
+        }
+        .col-md-offset-4 {
+            margin-left:29.55%;
         }
         .honux{
             background-color: #ff7f50;
@@ -1307,11 +1355,11 @@ footer.white-footer, footer.white-footer a{
         background-color: #0075d6;
     }
     .rect-shape {
-        margin-right: 5px;
+        margin-right: 1%;
         height: 80px;
         line-height: 60px;
+        width: 21.7%;    }
     }
-}
 
 #black-level {
     background-color: #292828;
@@ -1389,6 +1437,45 @@ footer.white-footer, footer.white-footer a{
         }
       }
     }
+
+    #playground-level {
+      .programing-kind {
+        p, div {
+          margin-bottom: 20px;
+        }
+        .rect-shape {
+            color : #fff;
+            height: 100px;
+            line-height: 2em;
+            //margin-bottom:0px;
+            //margin-right: 5px;
+        }
+      }
+    }
+}
+
+@media(max-width:1120px) {
+.main-section {
+    .header {
+        .course-kind.course-level {
+            img {
+                width: 130px;
+                height: 191px;
+                // max-height: 235px;
+                max-width: 130px;
+            }
+            .glyphicon-arrow-right {
+                position: relative;
+                left : -12px;
+                font-size:35px;
+            }
+        }
+        .course-kind.course-level div:first-child img {
+            width: 166px;
+            max-width: 166px;
+        }
+    }
+}
 }
 
 @media(max-width:768px) {
@@ -1422,6 +1509,7 @@ footer.white-footer, footer.white-footer a{
             margin-bottom: 35px;
         }
         .course-kind { 
+            margin-left: 0px;
             button {
                 height: 60px;
             }
@@ -1487,7 +1575,6 @@ footer.white-footer, footer.white-footer a{
 
 .center-emphasis{
    font-size:1.4em;
-   color:#fff;
    text-decoration: underline; 
 }
 
@@ -1499,22 +1586,32 @@ footer.white-footer, footer.white-footer a{
 
 .marketing {
     div {
-        opacity: 0.6;
-        //opacity: 1;
+        //opacity: 0.6;
+        opacity: 1;
     }
-   .masters-desc {
+   .emphasis_link {
         font-weight: bold;
         color: #1576d1;
-        font-size: 1.2em;
+        font-size: 1.1em;
     }
     a {
         text-decoration: underline;
     }
-    p.end-message{
-        font-size :20px;
+    p.title-message{
+        font-size :2em;
         font-weight: bold;
         margin-bottom: 50px;
     }
+    .item {
+        margin-bottom: 30px;
+    }
+}
+
+.marketing:nth-child(2) {
+    margin-top: 60px;
+    border-top: 1px solid gray;
+    padding-top: 60px;
+    opacity: 0.4;
 }
 
 .text-strike {
@@ -1578,7 +1675,7 @@ footer.white-footer, footer.white-footer a{
 }
 @media (min-width: 768px) {
 .col-sm-30 {
-        width: 30%;
+        width: 20%;
         float: left;
     }
 }
@@ -1612,29 +1709,38 @@ footer.white-footer, footer.white-footer a{
 }
 
 .jumbotron {
+    p {
+      font-weight: 800;
+    }
     position: relative;
     // background-image: url('../../img/application/img_bg-min.png');
     // background-repeat: no-repeat;
     // background-attachment: scroll;
     // background-position: center center;
-    background-color: lightslategrey;
+    background-color: #234f8d;
     text-align: left;
     color: white;
     height: 480px;
-    padding-top : 120px;
+    padding-top : 40px;
     .presentaion-left {
         max-width: 700px;
         margin-left: 10%;
+        margin-top:30px;
+        opacity: 0.4;
         img.level-logo {
-            max-width: 180px;
+            max-width: 120px;
             float: left;
             margin-top: 25px;
 
         }
     }
+    .presentaion-left:first-child {
+        margin-top : 0;
+        opacity: 1;
+    }
     .wrap-text {
         margin-left: 12px;
-        margin-top: 46px;
+        margin-top: 60px;
         float:left;
         max-width: 480px;
         p {
@@ -1659,10 +1765,14 @@ footer.white-footer, footer.white-footer a{
     }
 }
 
+.jumbotron+.container {
+    margin-top: 70px;
+}
+
 
 @media(max-width:768px) {
     .jumbotron {
-        height: 300px;
+        1height: 300px;
         padding-top : 30px;
         margin-bottom: 0;
         .presentaion-left {
@@ -1702,7 +1812,7 @@ footer.white-footer, footer.white-footer a{
         }
     }
     .jumbotron+.container {
-        margin-top: 0px;
+        margin-top: 30px;
     }
 }
 
@@ -1737,7 +1847,18 @@ footer.white-footer, footer.white-footer a{
             top: 211px;
             left:70%;
         }
-        height: 250px;
+        //height: 250px;
+        height: 380px;
         padding-top: 15px;
+    }
+    .marketing {
+        p.title-message {
+            font-size: 1.5em;
+        }
+    }
+    .marketing:nth-child(2) {
+        margin-top: 10px;
+        border-top: 1px solid gray;
+        padding-top: 30px;
     }
 }
