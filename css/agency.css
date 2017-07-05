@@ -1416,7 +1416,7 @@ footer.white-footer a {
   margin-top: 60px;
   border-top: 1px solid gray;
   padding-top: 60px;
-  opacity: 0.4;
+  opacity: 1.0;
 }
 .text-strike {
   text-decoration: line-through;
@@ -1514,7 +1514,7 @@ footer.white-footer a {
   max-width: 700px;
   margin-left: 10%;
   margin-top: 30px;
-  opacity: 0.4;
+  opacity: 1.0;
 }
 .jumbotron .presentaion-left img.level-logo {
   max-width: 120px;
