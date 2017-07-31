@@ -783,6 +783,7 @@ img::-moz-selection {
 }
 body {
   -webkit-tap-highlight-color: rgba(51, 181, 229, 0.4);
+  min-width: 300px;
 }
 html {
   scroll-behavior: smooth;
@@ -1365,6 +1366,7 @@ footer.white-footer a {
     margin-left: auto;
     width: 80%;
     margin-bottom: 10px;
+    float: none;
   }
   #white-level .programing-kind .rect-shape {
     width: 80%;
@@ -1510,6 +1512,9 @@ footer.white-footer a {
 .jumbotron p {
   font-weight: 800;
 }
+.jumbotron p.font16 {
+  font-size: 16px;
+}
 .jumbotron .presentaion-left {
   max-width: 700px;
   margin-left: 10%;
@@ -1560,7 +1565,7 @@ footer.white-footer a {
     margin-bottom: 0;
   }
   .jumbotron .presentaion-left {
-    max-width: 400px;
+    max-width: 90%;
     margin-left: 10%;
   }
   .jumbotron .presentaion-left img.level-logo {
@@ -1570,7 +1575,7 @@ footer.white-footer a {
   .jumbotron .wrap-text {
     margin-left: 12px;
     float: left;
-    max-width: 200px;
+    max-width: 60%;
   }
   .jumbotron .wrap-text p {
     line-height: 1.2em;
@@ -1609,11 +1614,14 @@ footer.white-footer a {
     max-width: 70%;
   }
   .jumbotron .wrap-text h3 {
-    1font-size: 16px;
+    font-size: 16px;
   }
   .jumbotron .wrap-text p {
     line-height: 1.2em;
-    font-size: 18px;
+    font-size: 16px;
+  }
+  .jumbotron .wrap-text p.font16 {
+    font-size: 14px;
   }
   .jumbotron .presentaion-left img.level-logo {
     max-width: 80px;

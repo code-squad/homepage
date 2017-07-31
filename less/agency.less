@@ -796,6 +796,7 @@ img::-moz-selection {
 body {
     //-webkit-tap-highlight-color: @theme-primary;
     -webkit-tap-highlight-color:  rgba(51, 181, 229, 0.4);;
+    min-width:300px;
 }
 
 //MASTERS Course Page
@@ -1541,6 +1542,7 @@ footer.white-footer, footer.white-footer a{
             margin-left: auto;
             width : 80%;
             margin-bottom: 10px;
+            float:none;
         }
     }
 
@@ -1712,6 +1714,9 @@ footer.white-footer, footer.white-footer a{
     p {
       font-weight: 800;
     }
+    p.font16 {
+      font-size : 16px;
+    }
     position: relative;
     // background-image: url('../../img/application/img_bg-min.png');
     // background-repeat: no-repeat;
@@ -1776,7 +1781,7 @@ footer.white-footer, footer.white-footer a{
         padding-top : 30px;
         margin-bottom: 0;
         .presentaion-left {
-            max-width: 400px;
+            max-width: 90%;
             margin-left: 10%;
             img.level-logo {
                 max-width: 140px;
@@ -1786,7 +1791,7 @@ footer.white-footer, footer.white-footer a{
         .wrap-text {
             margin-left: 12px;
             float:left;
-            max-width: 200px;
+            max-width: 60%;
             h3 {
             }
             p {
@@ -1821,17 +1826,20 @@ footer.white-footer, footer.white-footer a{
             max-width: 400px;
             margin-left: 2%;
         }
-        .wrap-text {
+      .wrap-text {
             margin-left: 11px;
             margin-top: 50px;
             float: left;
             max-width: 70%;
             h3 {
-                1font-size: 16px;
+                font-size: 16px;
             }
             p {
                 line-height: 1.2em;
-                font-size: 18px;
+                font-size: 16px;
+            }
+            p.font16 {
+              font-size : 14px;
             }
         }
         .presentaion-left img.level-logo {
