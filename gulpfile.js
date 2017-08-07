@@ -9,20 +9,14 @@ var uglify = require('gulp-uglify');
 var pkg = require('./package.json');
 var htmlmin = require('gulp-htmlmin');
 var cachebust = require('gulp-cache-bust');
-
-// Set the banner content
-var banner = ['/*!\n',
-    ' * Start Bootstrap - <%= pkg.title %> v<%= pkg.version %> (<%= pkg.homepage %>)\n',
-    ' * Copyright 2013-' + (new Date()).getFullYear(), ' <%= pkg.author %>\n',
-    ' * Licensed under <%= pkg.license.type %> (<%= pkg.license.url %>)\n',
-    ' */\n',
-    ''
-].join('');
+var concat = require('gulp-concat');
+var fileinclude = require('gulp-file-include');
 
 // Compile LESS files from /less into /css
 gulp.task('less', function() {
-    return gulp.src('less/agency.less')
+    return gulp.src(['less/common.less', 'less/agency.less'])
         .pipe(less())
+        .pipe(concat('merged.css'))
         .pipe(header(banner, { pkg: pkg }))
         .pipe(gulp.dest('css'))
         .pipe(browserSync.reload({
@@ -43,7 +37,7 @@ gulp.task('minify-css', ['less'], function() {
 
 // Minify JS
 gulp.task('minify-js', function() {
-    return gulp.src('js/agency.js')
+    return gulp.src(['js_src/*.js'])
         .pipe(uglify())
         .pipe(header(banner, { pkg: pkg }))
         .pipe(rename({ suffix: '.min' }))
@@ -52,6 +46,66 @@ gulp.task('minify-js', function() {
             stream: true
         }))
 });
+
+// HTML Process
+gulp.task('htmlinclude', function() {
+  gulp.src(['html_src/*.html'])
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
+    .pipe(gulp.dest('page'));
+});
+
+gulp.task('minify-html',['htmlinclude'], function() {
+  return gulp.src('page/*.html')
+  .pipe(cachebust({
+    type: 'timestamp'
+  }))
+  .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(gulp.dest('./'));
+});
+
+
+gulp.task('move-index', ['minify-html'], function() {
+  return gulp.src('page/index.html')
+    .pipe(gulp.dest('./'));
+});
+
+// Configure the browserSync task
+gulp.task('browserSync', function() {
+    browserSync.init({
+        server: {
+            baseDir: ''
+        },
+    })
+})
+
+// Dev task with browserSync
+gulp.task('dev', ['browserSync', 'minify-css', 'minify-js', 'move-index'], function() {
+    gulp.watch('less/*.less', ['less']);
+    gulp.watch('css/*.css', ['minify-css']);
+    gulp.watch('js_src/*.js', ['minify-js']);
+    gulp.watch('html_src/*.html', ['move-index']);
+    // Reloads the browser whenever HTML or JS files change
+    gulp.watch('page/*.html', browserSync.reload);
+    gulp.watch('css/*.css', browserSync.reload);
+    gulp.watch('js/*.js', browserSync.reload);
+});
+
+// Run everything
+//gulp.task('default', ['less', 'minify-css', 'minify-js', 'htmlinclude', 'minify-html');
+
+
+
+// Set the banner content
+var banner = ['/*!\n',
+    ' * Start Bootstrap - <%= pkg.title %> v<%= pkg.version %> (<%= pkg.homepage %>)\n',
+    ' * Copyright 2013-' + (new Date()).getFullYear(), ' <%= pkg.author %>\n',
+    ' * Licensed under <%= pkg.license.type %> (<%= pkg.license.url %>)\n',
+    ' */\n',
+    ''
+].join('');
 
 // Copy libs libraries from /node_modules into /libs
 gulp.task('copy', function() {
@@ -71,66 +125,3 @@ gulp.task('copy', function() {
         ])
         .pipe(gulp.dest('libs/font-awesome'))
 })
-
-// Run everything
-gulp.task('default', ['less', 'minify-css', 'minify-js', 'minify-html', 'minify-other-html', 'minify-other2-html']);
-
-// Configure the browserSync task
-gulp.task('browserSync', function() {
-    browserSync.init({
-        server: {
-            baseDir: ''
-        },
-    })
-})
-
-// HTML minify
-gulp.task('minify-html', function() {
-  return gulp.src('html/index.html')
-  .pipe(cachebust({
-    type: 'timestamp'
-  }))
-  .pipe(htmlmin({collapseWhitespace: true}))
-    .pipe(gulp.dest('./'));
-});
-
-gulp.task('minify-other-html', function() {
-  return gulp.src('html/event/application.html')
-  .pipe(cachebust({
-    type: 'timestamp'
-  }))
-  .pipe(htmlmin({collapseWhitespace: true}))
-    .pipe(gulp.dest('html/event/dist'));
-});
-
-gulp.task('minify-other2-html', function() {
-  return gulp.src('html/program/*.html')
-  .pipe(cachebust({
-    type: 'timestamp'
-  }))
-  .pipe(htmlmin({collapseWhitespace: true}))
-    .pipe(gulp.dest('html/program/dist'));
-});
-
-// Dev task with browserSync
-gulp.task('dev', ['browserSync', 'less', 'minify-css', 'minify-js', 'minify-html', 'minify-other-html', 'minify-other2-html'], function() {
-    gulp.watch('less/*.less', ['less']);
-    gulp.watch('css/*.css', ['minify-css']);
-    gulp.watch('js/*.js', ['minify-js']);
-    gulp.watch('html/**/*.html', ['minify-html', 'minify-other-html', 'minify-other2-html']);
-    // Reloads the browser whenever HTML or JS files change
-    gulp.watch('html/**/*.html', browserSync.reload);
-    gulp.watch('js/**/*.js', browserSync.reload);
-});
-
-// Compiles SCSS files from /scss into /css
-// NOTE: This theme uses LESS by default. To swtich to SCSS you will need to update this gulpfile by changing the 'less' tasks to run 'sass'!
-// gulp.task('sass', function() {
-//     return gulp.src('scss/agency.scss')
-//         .pipe(sass())
-//         .pipe(header(banner, { pkg: pkg }))
-//         .pipe(gulp.dest('css'))
-//         .pipe(browserSync.reload({
-//             stream: true
-//         }))
-// });

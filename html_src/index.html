@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>코드스쿼드 | 소프트웨어 개발 교육 및 기술 컨설팅 | CodeSquad</title>
+  <title>코드스쿼드 | 소프트웨어 개발 교육 및 기술 컨설팅 | CODESQUAD </title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="마스터즈 코스와 SharedCTO를 운영합니다">
@@ -12,64 +12,21 @@
     <!-- Bootstrap Core CSS -->
   <link href="/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Theme CSS -->
-  <link href="/css/agency.min.css" rel="stylesheet">
-   <!-- Korean Fonts -->
-<!--   <link href='https://cdn.rawgit.com/openhiun/hangul/14c0f6faa2941116bb53001d6a7dcd5e82300c3f/nanumbarungothic.css' rel='stylesheet' type='text/css'>
- -->  <!-- Custom Fonts -->
-  <link href="/libs/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/merged.css" rel="stylesheet">
 </head>
 <body id="page-top" class="index">
-  <!-- Navigation -->
-  <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top affix">
-    <div class="container">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header page-scroll">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-        </button>
-        <a class="navbar-brand page-scroll" href="#">
-          <img src="/img/company/codesquad2.png" class="img-responsive" alt="코드스쿼드 로고">
-        </a>
-      </div>
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-          <li class="hidden">
-            <a href="#page-top"></a>
-          </li>
-          <li>
-            <a class="page-scroll" href="/index.html"  style="color:#0075d6;">홈</a>
-          </li>
-          <li>
-            <a class="page-scroll" href="/html/program/dist/masters.html">마스터즈코스</a>
-          </li>
-          <li>
-            <a class="page-scroll" href="/html/program/dist/sharedcto.html">Shared-CTO</a>
-          </li>
-          <li>
-          <a class="page-scroll" href="/html/event/dist/application.html">모집공지</a>
-          </li>
-          <li>
-            <a class="page-scroll" href="https://medium.com/@codesquad_yoda" target="_blank">블로그</a>
-          </li>
-          <li>
-            <a class="page-scroll" href="https://www.facebook.com/codesquad.kr/" target="_blank">페이스북</a>
-          </li>
 
-        </ul>
-      </div>
-      <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container-fluid -->
-  </nav>
+  <!-- Navigation -->
+   @@include('./common/nav.html')
+
   <!-- Header -->
   <header>
     <div class="container">
       <div class="intro-text">
         <div class="intro-lead-in">Welcome To <span class="company-name">CodeSquad!</span></div>
         <div class="intro-heading">고품질 소프트웨어 교육 전담팀</div>
-<!--         <a href="/html/event/dist/application.html" class="page-scroll btn btn-xl "> 지금 8월 화이트과정 모집중입니다</a>
- -->        <a href="/html/event/dist/application.html" class="page-scroll btn btn-xl hidden"> 현재 모집중인 과정이 없습니다 </a>
+<!--         <a href="/page/application.html" class="page-scroll btn btn-xl "> 지금 8월 화이트과정 모집중입니다</a>
+ -->        <a href="/page/application.html" class="page-scroll btn btn-xl hidden"> 현재 모집중인 과정이 없습니다 </a>
       </div>
     </div>
   </header>
@@ -84,7 +41,7 @@
       </div>
       <div class="row">
         <div class="col-md-6 col-sm-12 portfolio-item">
-          <a href="/html/program/dist/masters.html" class="portfolio-link" data-toggle="modal">
+          <a href="/page/masters.html" class="portfolio-link" data-toggle="modal">
             <img src="/img/portfolio/practice.jpg" class="img-responsive" alt="마스터즈코스">
             <div class="portfolio-caption">
               <h2>Masters Course</h2>
@@ -93,7 +50,7 @@
           </a>
         </div>
         <div class="col-md-6 col-sm-12 portfolio-item">
-          <a href="/html/program/dist/sharedcto.html" class="portfolio-link" data-toggle="modal">
+          <a href="page/sharedcto.html" class="portfolio-link" data-toggle="modal">
             <img src="/img/portfolio/cloudcto.jpg" class="img-responsive" alt="Shared CTO">
             <div class="portfolio-caption">
               <h2>Shared CTO</h2>
@@ -321,8 +278,8 @@
   -->
   <div class="blog-banner">
     <div class="container wrapper">
-      <button class="previous"><span class="fa fa-angle-left"></span></button>
-      <button class="next"><span class="fa fa-angle-right"></span></button>
+      <button class="previous"><span class="fa fa-angle-left">&lt;</span></button>
+      <button class="next"><span class="fa fa-angle-right"> &gt;</span></button>
       <div class="blog-content">
         <h3>OUR BLOG</h3>
         <ul class="blog-post-links">
@@ -373,11 +330,8 @@
   ga('create', 'UA-86912367-1', 'auto');
   ga('send', 'pageview');
 </script>
-<!-- jQuery -->
-<script src="/libs/jquery/jquery.min.js"></script>
-<!-- Bootstrap Core JavaScript -->
-<script src="/libs/bootstrap/js/bootstrap.min.js"></script>
+
 <!-- Plugin JavaScript -->
-<script src="/js/agency.min.js"></script>
+<script src="/js/index.min.js"></script>
 </body>
 </html>

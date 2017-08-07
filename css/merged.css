@@ -8,12 +8,6 @@ body {
   -webkit-font-smoothing: antialiased;
   font-family: 'Nanum Barun Gothic', "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-.text-muted {
-  color: #777777;
-}
-.text-primary {
-  color: #0075d6;
-}
 p {
   font-size: 14px;
   line-height: 1.75;
@@ -29,7 +23,7 @@ a.active {
   outline: none;
 }
 a {
-  color: #333;
+  color: #334;
 }
 a:hover,
 a:focus,
@@ -46,6 +40,12 @@ h6 {
   font-family: "Nanum Barun Gothic", sans-serif;
   text-transform: uppercase;
   font-weight: 700;
+}
+.text-muted {
+  color: #777777;
+}
+.text-primary {
+  color: #0075d6;
 }
 .img-centered {
   margin: 0 auto;
@@ -153,6 +153,7 @@ fieldset[disabled] .btn-xl.active {
 .btn-customer {
   height: 100% !important;
 }
+
 .navbar-custom {
   background-color: #222222;
   border-color: transparent;
