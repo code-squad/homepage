@@ -2,29 +2,38 @@
 @import "mixins.less";
 
 header {
-    background-image: url('../img/background/header_coding.jpeg');
+    //background-image: url('../img/background/header_coding.jpeg');
+    background-image: url('../img/background/2.jpg');
     background-repeat: no-repeat;
     background-attachment: scroll;
-    background-position: center center;
+    background-position: center 5%;
     .background-cover;
     text-align: center;
     color: white;
+    position:relative;
+    top:70px;
+    height: 700px;
     .intro-text {
-        padding-top: 100px;
-        padding-bottom: 50px;
+         position: absolute;
+         left: 11px;
+         text-align: right;
+         width: 35%;
+         color: rgba(18, 18, 19, 0.78);
+         top: 23%;
+         left: 10%;
         .intro-lead-in {
             .serif-font;
-            font-style: italic;
+            1font-style: italic;
             font-size: 22px;
             line-height: 22px;
             margin-bottom: 25px;
             //background-color: rgba(34,34,34,0.3);
-            width: 50%;
+            1width: 50%;
             margin: 0px auto;
         }
         .intro-heading {
             .heading-font;
-            font-weight: 300;
+            font-weight: 800;
             //font-size: 50px;
             font-size: 35px;
             line-height: 50px;
@@ -40,11 +49,11 @@ header {
 @media(min-width:768px) {
     header {
         .intro-text {
-            padding-top: 300px;
-            padding-bottom: 200px;
+            1padding-top: 300px;
+            1padding-bottom: 200px;
             .intro-lead-in {
                 .serif-font;
-                font-style: italic;
+                1font-style: italic;
                 font-size: 40px;
                 line-height: 40px;
                 margin-bottom: 25px;
@@ -54,7 +63,7 @@ header {
             }
             .intro-heading {
                 .heading-font;
-                font-weight: 300;
+                font-weight: 800;
                 font-size: 70px;
                 line-height: 70px;
                 margin-bottom: 50px;
