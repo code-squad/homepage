@@ -87,6 +87,7 @@ gulp.task('dev', ['browserSync', 'minify-css', 'minify-js', 'move-index'], funct
     gulp.watch('css/*.css', ['minify-css']);
     gulp.watch('js_src/*.js', ['minify-js']);
     gulp.watch('html_src/*.html', ['move-index']);
+    gulp.watch('html_src/common/*.html', ['move-index']);
     // Reloads the browser whenever HTML or JS files change
     gulp.watch('page/*.html', browserSync.reload);
     gulp.watch('css/*.css', browserSync.reload);

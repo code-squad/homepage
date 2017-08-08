@@ -212,21 +212,14 @@ fieldset[disabled] .btn-xl.active {
 .navbar-custom .nav li a:hover,
 .navbar-custom .nav li a:focus {
   color: #0075d6;
-  outline: none;
+}
+.navbar-custom .nav li a.selected-nav-menu {
+  color: #0075d6;
 }
 .navbar-custom .navbar-nav > .active > a {
   border-radius: 0;
   color: white;
   background-color: #0075d6;
-}
-.navbar-custom .navbar-nav > .active > a:hover,
-.navbar-custom .navbar-nav > .active > a:focus {
-  color: white;
-  background-color: #0059a3;
-}
-.navbar-custom .nav li a:focus,
-.navbar-custom .nav li a:hover {
-  color: #fff;
 }
 .navbar-custom .nav li a.dimmed-text,
 .dimmed-text {
