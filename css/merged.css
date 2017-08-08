@@ -158,6 +158,15 @@ fieldset[disabled] .btn-xl.active {
 .btn-customer {
   height: 100% !important;
 }
+.text-strike {
+  text-decoration: line-through;
+}
+.color-cadetblue {
+  color: #5f9ea0;
+}
+.selected-nav-menu {
+  color: #0075d6;
+}
 /****************************  Navigation Bar **************************/
 .navbar-custom {
   background-color: #222222;
@@ -804,15 +813,31 @@ aside.clients img {
 }
 /************************************************************/
 
-.color-cadetblue {
-  color: #5f9ea0;
-}
 .center-emphasis {
   font-size: 1.4em;
   text-decoration: underline;
 }
+.row .rect-row {
+  display: flex;
+  justify-content: center;
+}
 .main-section .course-answer.center-text {
   text-align: center;
+}
+.ios {
+  background-color: #40e0d0;
+}
+.cs {
+  background-color: #8bc34a;
+}
+.webfe {
+  background-color: #ff7f50;
+}
+.android {
+  background-color: #77c159;
+}
+.backend {
+  background-color: #555;
 }
 .main-section .header {
   float: none;
@@ -907,10 +932,6 @@ aside.clients img {
 }
 .main-section .application-wrap .application:hover {
   background-color: #0075d6;
-}
-.main-section .row .rect-row {
-  display: flex;
-  justify-content: center;
 }
 .main-section .container .course-kind.course-level button,
 .main-section .container .course-kind .course-common button {
@@ -1055,21 +1076,6 @@ aside.clients img {
 .rect-shape {
   border-radius: 10px;
   padding: 10px;
-}
-.ios {
-  background-color: #40e0d0;
-}
-.cs {
-  background-color: #8bc34a;
-}
-.webfe {
-  background-color: #ff7f50;
-}
-.android {
-  background-color: #77c159;
-}
-.backend {
-  background-color: #555;
 }
 #overview .section-heading {
   color: #000;
@@ -1306,9 +1312,6 @@ aside.clients img {
   .course-kind div {
     margin-bottom: 3%;
   }
-}
-.text-strike {
-  text-decoration: line-through;
 }
 
 .jumbotron {
