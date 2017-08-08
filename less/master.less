@@ -1,21 +1,25 @@
 @import "variables.less";
 @import "mixins.less";
 
-
-
-.color-cadetblue {
-    color : #5f9ea0;
-}
-
 .center-emphasis{
    font-size:1.4em;
    text-decoration: underline; 
 }
 
-.main-section .course-answer.center-text {
+.row .rect-row {
+    display: flex;
+    justify-content: center;
+}
 
+.main-section .course-answer.center-text {
     text-align:center;
 }
+
+.ios { background-color:#40e0d0; }
+.cs { background-color: #8bc34a; }
+.webfe{ background-color: #ff7f50; }
+.android{ background-color:#77c159; }
+.backend{ background-color: #555; }
 
 .main-section {
     .header {
@@ -110,11 +114,6 @@
     .application:hover{
         background-color: #0075d6;
     }
-}
-
-.row .rect-row {
-    display: flex;
-    justify-content: center;
 }
 
 .container {
@@ -300,18 +299,6 @@
     border-radius: 10px;
     padding: 10px;
 }
-
-
-
-.ios { background-color:#40e0d0; }
-
-.cs { background-color: #8bc34a; }
-
-.webfe{ background-color: #ff7f50; }
-
-.android{ background-color:#77c159; }
-
-.backend{ background-color: #555; }
 
 #overview {
     .section-heading {
@@ -617,8 +604,4 @@
     }
  }
 
-
-.text-strike {
-    text-decoration: line-through;
-}
 
