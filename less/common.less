@@ -3,11 +3,17 @@
 
 // Global Components
 
+//MASTERS Course Page
+html {
+    scroll-behavior: smooth;
+}
+
 body {
+    -webkit-tap-highlight-color:  rgba(51, 181, 229, 0.4);;
+    min-width:300px;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     .body-font;
-    
 }
 
 p {
@@ -46,23 +52,16 @@ h1, h2, h3, h4, h5, h6 {
 
 
 .text-muted { color: @gray-light; }
-
 .text-primary { color: @theme-primary; }
-
 .img-centered { margin: 0 auto; }
-
 .bg-light-gray { background-color: @gray-lighter; }
-
 .bg-darkest-gray { background-color: @gray-darker; }
-
 .skyblue-color { background-color : #6495ed; }
-
 .btn-primary {
     .button-variant(white; @theme-primary; @theme-primary);
     .heading-font;
     font-weight: 700;
 }
-
 .btn-xl {
     .button-variant(white; @theme-primary; @theme-primary);
     .heading-font;
@@ -71,5 +70,260 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 18px;
     padding: 20px 40px;
 }
-
 .btn-customer { height: 100% !important;        }
+
+
+/****************************  Navigation Bar **************************/
+.navbar-custom {
+    background-color: @gray-darker;
+    border-color: transparent;
+    .navbar-brand {
+        color: @theme-primary;
+        .script-font;
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            color: darken(@theme-primary, 10%);
+        }
+        padding:0px;
+        img {
+            padding:10px;
+            max-width : 70px;
+        }
+    }
+    .navbar-collapse {
+        border-color: fade(white, 2%);
+    }
+    .navbar-toggle {
+        background-color: @theme-primary;
+        border-color: @theme-primary;
+        .heading-font;
+        color: white;
+        font-size: 12px;
+        &:hover,
+        &:focus {
+            background-color: @theme-primary;
+        }
+    }
+    .nav {
+        li {
+            a {
+                .heading-font;
+                font-weight: 400;
+                letter-spacing: 1px;
+                color: white;
+                &:hover,
+                &:focus {
+                    color: @theme-primary;
+                    outline: none;
+                }
+            }
+        }
+    }
+    .navbar-nav>.active>a {
+        border-radius: 0;
+        color: white;
+        background-color: @theme-primary;
+    }
+    .navbar-nav>.active>a:hover,
+    .navbar-nav>.active>a:focus {
+        color: white;
+        background-color: darken(@theme-primary, 10%);
+    }
+}
+
+
+.navbar-custom .nav li a:focus, .navbar-custom .nav li a:hover {
+    color : #fff;
+}
+
+.navbar-custom .nav li a.dimmed-text, .dimmed-text {
+    color : #9d9d9d;
+}
+
+
+@media(min-width:768px) {
+    .navbar-custom {
+        background-color: transparent;
+        padding: 25px 0;
+        -webkit-transition: padding 0.3s;
+        -moz-transition: padding 0.3s;
+        transition: padding 0.3s;
+        border: none;
+        .navbar-brand {
+            font-size: 2em;
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            transition: all 0.3s;
+            padding:0px;
+            img {
+                padding:0px;
+                max-width: 80px;
+                position: relative;
+                top: -7px;
+            }
+        }
+        .navbar-nav>.active>a {
+            border-radius: 3px;
+        }
+    }
+}
+
+// Navbar Change on Scroll
+
+@media(min-width:768px) {
+    .navbar-custom.affix {
+        background-color: @gray-darker;
+        padding: 10px 0;
+        .navbar-brand {
+            font-size: 1.5em;
+        }
+    }
+}
+/******************************************************/
+
+
+
+/********************** footer ************************/
+
+footer  a {
+    color:#fff;
+}
+
+footer.white-footer, footer.white-footer a{
+    background-color: #fff;
+    color : #000;
+}
+
+.bd-footer {
+    padding: 4rem 0;
+    //margin-top: 4rem;
+    //font-size: 85%;
+    text-align: center;
+    background-color: #f7f7f7;
+}
+
+.bd-footer-links {
+    padding-left: 0;
+    margin-bottom: 1rem;
+}
+
+.bd-footer-links li {
+    display: inline-block;
+}
+
+.bd-footer-links li + li {
+    margin-left: 1rem;
+}
+
+.bd-footer a {
+    font-weight: 500;
+    color: #55595c;
+}
+
+.bd-footer p {
+    margin-bottom: 0;
+}
+
+@media (min-width: 576px) {
+    .bd-footer {
+        text-align: center;
+    }
+}
+
+/******************************************************/
+
+
+
+/********* CUSTOME LAYOUT (for masters page) **********/
+@media (min-width: 768px){
+    .col-sm-4 {
+        width: 20% !important;
+    }
+}
+
+.col-xs-15,
+.col-sm-15,
+.col-md-15,
+.col-lg-15 {
+    position: relative;
+    min-height: 1px;
+    //padding-right: 10px;
+    //padding-left: 10px;
+}
+.col-xs-15 {
+    width: 20%;
+    float: left;
+}
+@media (min-width: 768px) {
+.col-sm-15 {
+        width: 20%;
+        float: left;
+    }
+}
+
+@media (min-width: 992px) {
+    .col-md-15 {
+        width: 20%;
+        float: left;
+    }
+}
+@media (min-width: 1200px) {
+    .col-lg-15 {
+        width: 20%;
+        float: left;
+    }
+}
+
+.col-xs-30,
+.col-sm-30,
+.col-md-30,
+.col-lg-30 {
+    position: relative;
+    min-height: 1px;
+    //padding-right: 10px;
+    //padding-left: 10px;
+    text-align: center;
+}
+.col-xs-30 {
+    width: 30%;
+    float: left;
+}
+@media (min-width: 768px) {
+.col-sm-30 {
+        width: 20%;
+        float: left;
+    }
+}
+@media (min-width: 992px) {
+    .col-md-30 {
+        width: 30%;
+        float: left;
+    }
+}
+@media (min-width: 1200px) {
+    .col-lg-30 {
+        width: 30%;
+        float: left;
+    }
+}
+
+.col-sm-5,
+{
+    position: relative;
+    min-height: 1px;
+}
+.col-xs-5 {
+    width: 5%;
+    float: left;
+}
+@media (min-width: 768px) {
+.col-sm-5 {
+        width: 5%;
+        float: left;
+    }
+}
+/******************************************************/
+
+

@@ -14,7 +14,7 @@ var fileinclude = require('gulp-file-include');
 
 // Compile LESS files from /less into /css
 gulp.task('less', function() {
-    return gulp.src(['less/common.less', 'less/agency.less'])
+    return gulp.src(['less/common.less', 'less/index.less', 'less/master.less', 'less/application.less'])
         .pipe(less())
         .pipe(concat('merged.css'))
         .pipe(header(banner, { pkg: pkg }))
