@@ -391,43 +391,41 @@ header {
   text-align: center;
   color: white;
   position: relative;
-  top: 70px;
+  top: 50px;
   height: 700px;
 }
 header .intro-text {
   position: absolute;
-  left: 11px;
   text-align: right;
-  width: 35%;
-  color: rgba(18, 18, 19, 0.78);
+  width: 40%;
   top: 23%;
   left: 10%;
+  padding: 2.5% 0.5%;
+  background: rgba(30, 47, 58, 0.5);
+  color: #eee;
+  border-radius: 0.8%;
+  min-width: 250px;
 }
 header .intro-text .intro-lead-in {
   font-family: "Nanum Barun Gothic", sans-serif;
-  1font-style: italic;
   font-size: 22px;
   line-height: 22px;
   margin-bottom: 25px;
-  1width: 50%;
   margin: 0px auto;
 }
 header .intro-text .intro-heading {
   font-family: "Nanum Barun Gothic", sans-serif;
   text-transform: uppercase;
-  font-weight: 800;
-  font-size: 35px;
-  line-height: 50px;
-  margin-bottom: 25px;
+  font-weight: 500;
+  font-size: 5.0vw;
+  line-height: 30px;
 }
 @media (min-width: 768px) {
-  header .intro-text {
-    1padding-top: 300px;
-    1padding-bottom: 200px;
+  header {
+    top: 70px;
   }
   header .intro-text .intro-lead-in {
     font-family: "Nanum Barun Gothic", sans-serif;
-    1font-style: italic;
     font-size: 40px;
     line-height: 40px;
     margin-bottom: 25px;
@@ -438,10 +436,8 @@ header .intro-text .intro-heading {
   header .intro-text .intro-heading {
     font-family: "Nanum Barun Gothic", sans-serif;
     text-transform: uppercase;
-    font-weight: 800;
-    font-size: 70px;
-    line-height: 70px;
-    margin-bottom: 50px;
+    font-size: 4.4vw;
+    line-height: 9vh;
   }
 }
 section {
