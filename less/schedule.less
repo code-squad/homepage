@@ -1,0 +1,77 @@
+#schedule-wrap {
+	margin-top: 100px;
+	.new-container {
+		width:1000px;
+		position: relative;
+	}
+	.vertical-line {
+		width: 2px;
+		height: 1000px;
+		background-color: gray;
+		margin: 100px auto 0;
+		position:relative;
+		.date-point{
+			border-radius: 50%;
+			position: absolute;
+			left: -7px;
+			width: 16px;
+			height: 16px;
+			background: #fff;
+			border: 1px solid gray;
+		}
+		.date-point:nth-child(1) { top: 0px;}
+		.date-point:nth-child(2) { top: 250px;}
+		.date-point:nth-child(3) { top: 500px;}
+		.date-point:nth-child(4) { top: 750px;}
+	}
+	ul {
+		position: absolute;
+		top:150px;
+		left:0;
+		li {
+			position: relative;
+			section {
+				position:absolute;
+				top:0;
+				left:0;
+				width:200px;
+				.plan-date, .plan-name {
+					font-size: 18px;
+					font-weight: 700;
+				}
+				.plan-logo {
+					position: relative;
+					left:130px;
+					img {
+						width: 100px;
+					}
+				}
+			}
+			section:nth-child(1) {
+				left: 250px;
+    		text-align: left;
+			}
+			section:nth-child(2) {
+				left: 520px;
+				text-align: left;
+			}
+		}
+		li.reverse-date {
+			section:nth-child(2) {
+				left:600px;
+			}
+			.plan-date {
+				position:relative;
+				left:110px;
+			}
+			.plan-logo {
+				left:0px;
+			}
+		}
+		li:nth-child(1) {top:0px;}
+		li:nth-child(2) {top:250px;}
+		li:nth-child(3) {top:500px;}
+		li:nth-child(4) {top:750px;}
+	}
+}
+

@@ -16,6 +16,8 @@ body {
 p {
   font-size: 14px;
   line-height: 1.75;
+  margin: 0;
+  padding: 0;
 }
 p.large {
   font-size: 16px;
@@ -44,7 +46,22 @@ h5,
 h6 {
   font-family: "Nanum Barun Gothic", sans-serif;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 900;
+}
+ul,
+li {
+  padding: 0;
+  margin: 0;
+}
+li {
+  list-style: none;
+}
+.new-container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  overflow: auto;
 }
 .text-muted {
   color: #777777;
@@ -166,6 +183,22 @@ fieldset[disabled] .btn-xl.active {
 }
 .selected-nav-menu {
   color: #0075d6;
+}
+.line-short {
+  width: 200px;
+  height: 1px;
+  background-color: #e1e1e1;
+}
+.text-left {
+  padding-left: 0;
+  padding-right: 0;
+  text-align: left;
+}
+.blue-level-color {
+  color: #274194;
+}
+.white-level-color {
+  color: #aaabb2;
 }
 /****************************  Navigation Bar **************************/
 .navbar-custom {
@@ -391,7 +424,6 @@ header {
   text-align: center;
   color: white;
   position: relative;
-  top: 50px;
   height: 350px;
 }
 header:after {
@@ -413,7 +445,7 @@ header .intro-text {
   text-align: right;
   width: 50%;
   top: 23%;
-  left: -12%;
+  left: -4%;
   padding: 2.5% 0.5%;
   color: #eee;
   border-radius: 0.8%;
@@ -432,8 +464,8 @@ header .intro-text .intro-heading {
   font-family: "Nanum Barun Gothic", sans-serif;
   text-transform: uppercase;
   font-weight: 500;
-  font-size: 6.0vw;
-  line-height: 6.0vw;
+  font-size: 5.0vw;
+  line-height: 5.0vw;
 }
 @media (min-width: 480px) {
   header .intro-text {
@@ -442,7 +474,6 @@ header .intro-text .intro-heading {
 }
 @media (min-width: 768px) {
   header {
-    top: 70px;
     height: 700px;
   }
   header .intro-text {
@@ -461,12 +492,18 @@ header .intro-text .intro-heading {
   header .intro-text .intro-heading {
     font-family: "Nanum Barun Gothic", sans-serif;
     text-transform: uppercase;
-    font-size: 4.4vw;
-    line-height: 4.4vw;
+    font-size: 3.5vw;
+    line-height: 4.5vw;
   }
 }
-section {
-  padding: 50px 0 10px 0;
+.dummyfornav {
+  height: 53px;
+}
+@media (min-width: 768px) {
+  .dummyfornav {
+    height: 70px;
+    display: block;
+  }
 }
 section h2.section-heading {
   font-size: 40px;
@@ -485,9 +522,23 @@ section h3.section-subheading {
   .inner-section {
     padding: 0 0 50px 0 !important;
   }
-  section {
-    padding: 120px 0 50px 0;
-  }
+}
+#our-program .course-desc-wrap {
+  margin-top: 100px;
+  display: flex;
+  align-items: center;
+}
+#our-program .course-desc-wrap .program-item {
+  height: 150px;
+  line-height: 150px;
+  padding-left: 40px;
+  border-left: 12px solid #e1e1e1;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  font-size: 3em;
+}
+#our-program .course-desc-wrap .program-desc {
+  line-height: 2em;
 }
 .service-heading {
   margin: 15px 0;
@@ -1501,4 +1552,96 @@ aside.clients img {
   border-top: 1px solid gray;
   padding-top: 60px;
   opacity: 1.0;
+}
+
+#schedule-wrap {
+  margin-top: 100px;
+}
+#schedule-wrap .new-container {
+  width: 1000px;
+  position: relative;
+}
+#schedule-wrap .vertical-line {
+  width: 2px;
+  height: 1000px;
+  background-color: gray;
+  margin: 100px auto 0;
+  position: relative;
+}
+#schedule-wrap .vertical-line .date-point {
+  border-radius: 50%;
+  position: absolute;
+  left: -7px;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border: 1px solid gray;
+}
+#schedule-wrap .vertical-line .date-point:nth-child(1) {
+  top: 0px;
+}
+#schedule-wrap .vertical-line .date-point:nth-child(2) {
+  top: 250px;
+}
+#schedule-wrap .vertical-line .date-point:nth-child(3) {
+  top: 500px;
+}
+#schedule-wrap .vertical-line .date-point:nth-child(4) {
+  top: 750px;
+}
+#schedule-wrap ul {
+  position: absolute;
+  top: 150px;
+  left: 0;
+}
+#schedule-wrap ul li {
+  position: relative;
+}
+#schedule-wrap ul li section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+}
+#schedule-wrap ul li section .plan-date,
+#schedule-wrap ul li section .plan-name {
+  font-size: 18px;
+  font-weight: 700;
+}
+#schedule-wrap ul li section .plan-logo {
+  position: relative;
+  left: 130px;
+}
+#schedule-wrap ul li section .plan-logo img {
+  width: 100px;
+}
+#schedule-wrap ul li section:nth-child(1) {
+  left: 250px;
+  text-align: left;
+}
+#schedule-wrap ul li section:nth-child(2) {
+  left: 520px;
+  text-align: left;
+}
+#schedule-wrap ul li.reverse-date section:nth-child(2) {
+  left: 600px;
+}
+#schedule-wrap ul li.reverse-date .plan-date {
+  position: relative;
+  left: 110px;
+}
+#schedule-wrap ul li.reverse-date .plan-logo {
+  left: 0px;
+}
+#schedule-wrap ul li:nth-child(1) {
+  top: 0px;
+}
+#schedule-wrap ul li:nth-child(2) {
+  top: 250px;
+}
+#schedule-wrap ul li:nth-child(3) {
+  top: 500px;
+}
+#schedule-wrap ul li:nth-child(4) {
+  top: 750px;
 }

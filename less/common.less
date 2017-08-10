@@ -19,6 +19,8 @@ body {
 p {
     font-size: 14px;
     line-height: 1.75;
+    margin:0;
+    padding:0;
 }
 
 p.large {
@@ -47,7 +49,20 @@ a.active {
 
 h1, h2, h3, h4, h5, h6 {
     .heading-font;
-    font-weight: 700;
+    font-weight: 900;
+}
+
+ul,li {
+    padding:0;margin:0;
+}
+li {list-style: none;}
+
+.new-container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    overflow: auto;
 }
 
 
@@ -83,6 +98,21 @@ h1, h2, h3, h4, h5, h6 {
 .selected-nav-menu {
     color:#0075d6;
 }
+
+.line-short {
+    width: 200px;
+    height: 1px;
+    background-color: @base-liner;
+}
+
+.text-left {
+    padding-left:0;
+    padding-right:0;
+    text-align: left;
+}
+
+.blue-level-color { color:#274194; }
+.white-level-color { color: #aaabb2;}
 
 
 
@@ -198,7 +228,6 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 /******************************************************/
-
 
 
 /********************** footer ************************/

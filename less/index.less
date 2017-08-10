@@ -10,7 +10,6 @@ header {
     text-align: center;
     color: white;
     position:relative;
-    top:50px;
     height: 350px;
     &:after {
         content: "";
@@ -29,7 +28,7 @@ header {
          text-align: right;
          width: 50%;
          top: 23%;
-         left: -12%;
+         left: -4%;
          padding: 2.5% 0.5%;
          color: #eee;
          border-radius: 0.8%;
@@ -48,8 +47,8 @@ header {
             font-family: "Nanum Barun Gothic", sans-serif;
             text-transform: uppercase;
             font-weight: 500;
-            font-size: 6.0vw;
-            line-height: 6.0vw;
+            font-size: 5.0vw;
+            line-height: 5.0vw;
         }
     }
 }
@@ -64,7 +63,6 @@ header {
 
 @media(min-width:768px) {
     header {
-        top:70px;
         height: 700px;
         .intro-text {
             width:40%;
@@ -80,8 +78,8 @@ header {
             }
             .intro-heading {
                 .heading-font;
-                font-size: 4.4vw;
-                line-height: 4.4vw;
+                font-size: 3.5vw;
+                line-height: 4.5vw;
             }
             a.btn-xl {
                 //visibility:hidden;
@@ -90,12 +88,21 @@ header {
     }
 }
 
+.dummyfornav {
+   height: 53px; 
+}
+
+@media (min-width: 768px) {
+    .dummyfornav {
+        height: 70px; 
+        display: block;
+    }
+}
+
 
 // Global Section Styles
 
 section {
-    //padding: 100px 0;
-    padding: 50px 0 10px 0;
     h2.section-heading {
         font-size: 40px;
         margin-top: 0;
@@ -115,10 +122,28 @@ section {
     .inner-section {
         padding: 0 0 50px 0 !important;
     }
-    section {
-        //padding: 150px 0;
-        padding: 120px 0 50px 0;
+}
+
+
+#our-program {
+    .course-desc-wrap {
+        margin-top:100px;
+        display: flex;               
+        align-items: center;  
+        .program-item {
+            height:150px;
+            line-height: 150px;
+            padding-left: 40px;
+            border-left: 12px solid @base-liner;
+            font-weight: 900;
+            letter-spacing: 0.02em;
+            font-size: 3em;
+        }
+        .program-desc {
+            line-height: 2em;
+        }
     }
+
 }
 
 // Services Section

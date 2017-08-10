@@ -19,46 +19,55 @@
   <!-- Navigation -->
    @@include('./common/nav.html')
 
+  <dummy class="dummyfornav"></dummy>
+  
   <!-- Header -->
   <header>
       <div class="intro-text">
-        <div class="intro-lead-in">Welcome to <span class="company-name">CODESQUAD</span></div>
-        <div class="intro-heading">고품질 소프트웨어<br> 교육 전담팀</div>
+        <div class="intro-lead-in" style="display:none;">Welcome to <span class="company-name">CODESQUAD</span></div>
+        <div class="intro-heading">개발자를 만들지 않습니다<br> 함께하세요</div>
 <!--         <a href="/page/application.html" class="page-scroll btn btn-xl "> 지금 8월 화이트과정 모집중입니다</a>
  -->        <a href="/page/application.html" class="page-scroll btn btn-xl hidden"> 현재 모집중인 과정이 없습니다 </a>
       </div>
   </header>
-  <!-- Portfolio Grid Section -->
-  <section id="portfolio" >
+
+
+  <section id="about-us">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading">Our Program</h2>
-          <h3 class="section-subheading text-muted"></h3>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6 col-sm-12 portfolio-item">
-          <a href="/page/masters.html" class="portfolio-link" data-toggle="modal">
-            <img src="/img/portfolio/practice.jpg" class="img-responsive" alt="마스터즈코스">
-            <div class="portfolio-caption">
-              <h2>Masters Course</h2>
-              <p >프로그래머가 되기 위한 코드스쿼드의 정규코스</p>
-            </div>
-          </a>
-        </div>
-        <div class="col-md-6 col-sm-12 portfolio-item">
-          <a href="page/sharedcto.html" class="portfolio-link" data-toggle="modal">
-            <img src="/img/portfolio/cloudcto.jpg" class="img-responsive" alt="Shared CTO">
-            <div class="portfolio-caption">
-              <h2>Shared CTO</h2>
-              <p >스타트업과 SW기업을 위한 CTO수준의 기술 파트너</p>
-            </div>
-          </a>
-        </div>
-      </div>
+      <h2>우리는 고품질 소프트웨어 교육을 합니다</h2>
+      <p>우리는 소프트웨어 개발경험과 소프트웨어 교육경험을 기반으로 고품질의 소프트웨어 교육을 합니다. 개발문화, 소프트웨어 기초지식, 응용지식을 강의와 실무 수준의 프로젝트 과정을 통해 배울 수 있습니다. 코드스쿼드는 좋은 개발자를 양성하는 것이 목표입니다.</p>
     </div>
   </section>
+
+  <div class="container">
+    <div class="line-short"></div>
+  </div>
+
+  <section id="our-program">
+    <div class="container">
+
+      <div class="">
+        <h2>운영중인 프로그램</h2>
+      </div>
+
+      <div class="course-desc-wrap">
+        <div class="col-lg-6 text-left font3em program-item">MASTERS COURSE</div>
+        <div class="col-lg-6 text-left program-desc">
+            코드스쿼드의 메인 프로그램 입니다. 화이트, 블루, 블랙으로 수준과 목적에 따라 나뉘며 각 레벨별로 6주-12주 정도 코드스쿼드 마스터와 함께 최고의 교육과 코칭을 받으며 소프트웨어를 배울 수 있습니다. 마스터즈코스에서는 프로젝트 방식을 통해서 실제 개발팀에서와 같은 환경에서 기술을 학습하며 경험을 쌓을 수 있습니다. 
+        </div>
+      </div>
+
+      <div class="course-desc-wrap">
+        <div class="col-lg-6 text-left font3em program-item">SHARED CTO</div>
+        <div class="col-lg-6 text-left program-desc">
+            소프트웨어 기업을 위한 프로그램입니다. 소프트웨어 개발회사 겪는 다양한 기술적인 어려움을 컨설팅 과정을 거쳐 다양한 방법으로 이를 해결합니다. 모바일, 웹, 클라우드 등의 전문가로 구성된 마스터들의 분석을 통해 기술적인 해결책, 기술교육, 채용, 올바른 소프트웨어 개발 문화형성등을 제시합니다. 
+            현실적으로 CTO를 채용해서 진행하기 어려운 경우에 SHARED CTO프로그램을 통해 기업의 기술문제를 함께 고민할 수 있습니다.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- Team Section -->
   <section id="team" class="bg-light-gray">
     <div class="container">
