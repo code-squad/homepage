@@ -1,3 +1,14 @@
+(function() {
+	/* banner cover image transition  */
+
+})
+
+window.addEventListener("load", function() {
+	var cover = document.querySelector("header");
+	cover.style.opacity = 1.0;
+});
+
+
 /* Blog Post Slider */
 (function() {
 	var elBlog = document.querySelector(".blog-post-links");

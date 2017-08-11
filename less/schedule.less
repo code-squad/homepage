@@ -1,7 +1,7 @@
 #schedule-wrap {
 	margin-top: 100px;
 	.new-container {
-		width:1000px;
+		width:768px;
 		position: relative;
 	}
 	.vertical-line {
@@ -35,24 +35,25 @@
 				top:0;
 				left:0;
 				width:200px;
+				font-size: 1.8em;
 				.plan-date, .plan-name {
-					font-size: 18px;
+					//font-size: 18px;
 					font-weight: 700;
 				}
 				.plan-logo {
 					position: relative;
-					left:130px;
+					left:180px;
 					img {
-						width: 100px;
+						width: 110px;
 					}
 				}
 			}
 			section:nth-child(1) {
-				left: 250px;
+				left: 50px;
     		text-align: left;
 			}
 			section:nth-child(2) {
-				left: 520px;
+				left: 450px;
 				text-align: left;
 			}
 		}
@@ -74,4 +75,55 @@
 		li:nth-child(4) {top:750px;}
 	}
 }
+
+@media(max-width:768px) {
+	#schedule-wrap {
+		.new-container {
+			width:460px;
+			padding:0;
+			margin:0 auto;
+			ul {
+				li {
+					section {
+						width:120px;
+						font-size: 1.2em;
+					}
+					section:nth-child(1) { left:20px; }
+					section:nth-child(2) { left:250px; }
+					.plan-logo {
+						left: 55px;
+					}
+
+				}
+			}
+		}
+	}
+}
+
+@media(max-width:480px) {
+	#schedule-wrap {
+		.new-container {
+			width:300px;
+			padding:0;
+			margin:0 auto;
+			ul {
+				li {
+					section {
+						width:120px;
+					}
+					section:nth-child(1) { left:12px; }
+					section:nth-child(2) { left:176px; }
+					.plan-logo {
+						left: 5px;
+						img {
+							width:80px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
 

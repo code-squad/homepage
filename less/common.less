@@ -63,8 +63,18 @@ li {list-style: none;}
     margin-right: auto;
     margin-left: auto;
     overflow: auto;
+    width: 95%;
 }
 
+@media(min-width:768px) {
+    .new-container {
+        width:80%;
+    }
+}
+
+.base-section-height {
+    margin: 100px 0px;
+}
 
 .text-muted { color: @gray-light; }
 .text-primary { color: @theme-primary; }
@@ -113,6 +123,21 @@ li {list-style: none;}
 
 .blue-level-color { color:#274194; }
 .white-level-color { color: #aaabb2;}
+
+.base-button {
+  border-radius: 28px;
+  font-family: Arial;
+  color: #000000;
+  font-size: 20px;
+  background: #fff;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.base-button:hover {
+  background: #d4e0ef;
+  text-decoration: none;
+}
 
 
 

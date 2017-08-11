@@ -11,9 +11,11 @@ header {
     color: white;
     position:relative;
     height: 350px;
+    opacity: 0.2;
+    transition: all 2.0s;
     &:after {
         content: "";
-        background-color : #000;
+        background-color :#24272a;
         .background-cover;
         opacity: 0.35;
         top: 0;
@@ -28,7 +30,7 @@ header {
          text-align: right;
          width: 50%;
          top: 23%;
-         left: -4%;
+         //left: -4%;
          padding: 2.5% 0.5%;
          color: #eee;
          border-radius: 0.8%;
@@ -46,9 +48,10 @@ header {
             .heading-font;
             font-family: "Nanum Barun Gothic", sans-serif;
             text-transform: uppercase;
-            font-weight: 500;
-            font-size: 5.0vw;
+            font-weight: 700;
+            font-size: 4.0vw;
             line-height: 5.0vw;
+            width:80%;
         }
     }
 }
@@ -78,7 +81,7 @@ header {
             }
             .intro-heading {
                 .heading-font;
-                font-size: 3.5vw;
+                font-size: 3.0vw;
                 line-height: 4.5vw;
             }
             a.btn-xl {
@@ -90,6 +93,7 @@ header {
 
 .dummyfornav {
    height: 53px; 
+   display: block;
 }
 
 @media (min-width: 768px) {
@@ -125,25 +129,76 @@ section {
 }
 
 
+
 #our-program {
     .course-desc-wrap {
-        margin-top:100px;
-        display: flex;               
-        align-items: center;  
+        width:90%;
+        margin-top: 100px;
+        display: flex;
+        align-items: center;
+        flex-flow : row wrap;
+        justify-content: flex-start;
+        div {
+            width: 40%;
+            min-width: 250px;
+            flex-grow: 1;
+        }
         .program-item {
             height:150px;
-            line-height: 150px;
+            //line-height: 150px;
             padding-left: 40px;
             border-left: 12px solid @base-liner;
             font-weight: 900;
             letter-spacing: 0.02em;
             font-size: 3em;
+            margin-right: 2%;
+            display: flex;
+            align-items: center;
         }
         .program-desc {
             line-height: 2em;
         }
     }
+}
 
+#join-program {
+    background: #2f73cf;
+    box-sizing: content-box;
+    height: 500px;
+    margin: 0;
+    margin-top:100px;
+    display: flex;
+    align-items: center;
+    color:#fff; 
+    .new-container {
+        h2,div,p,a {
+            margin-bottom:40px;
+            text-align: center;
+        }
+        h2 {
+            line-height: 40px;
+        }
+        a {
+            cursor: pointer;
+            color:#2f73cf;
+        }
+    }
+}
+
+@media(max-width:768px) {
+    h2,h3 {
+        font-size: 25px;
+    }
+    #our-program {
+        .course-desc-wrap {
+            .program-item {
+                font-size: 20px;
+                height: 50px;
+                padding-left: 15px;
+            }
+        }
+
+    }
 }
 
 // Services Section
@@ -482,7 +537,7 @@ aside.clients {
     padding: 4rem 0;
     background-color: @gray-lighter;
     
-    .container.wrapper {
+    .new-container.wrapper {
         padding-left: 0px;
         padding-right: 0px;
     }

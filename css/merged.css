@@ -62,6 +62,15 @@ li {
   margin-right: auto;
   margin-left: auto;
   overflow: auto;
+  width: 95%;
+}
+@media (min-width: 768px) {
+  .new-container {
+    width: 80%;
+  }
+}
+.base-section-height {
+  margin: 100px 0px;
 }
 .text-muted {
   color: #777777;
@@ -199,6 +208,19 @@ fieldset[disabled] .btn-xl.active {
 }
 .white-level-color {
   color: #aaabb2;
+}
+.base-button {
+  border-radius: 28px;
+  font-family: Arial;
+  color: #000000;
+  font-size: 20px;
+  background: #fff;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+.base-button:hover {
+  background: #d4e0ef;
+  text-decoration: none;
 }
 /****************************  Navigation Bar **************************/
 .navbar-custom {
@@ -425,10 +447,12 @@ header {
   color: white;
   position: relative;
   height: 350px;
+  opacity: 0.2;
+  transition: all 2.0s;
 }
 header:after {
   content: "";
-  background-color: #000;
+  background-color: #24272a;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -445,7 +469,6 @@ header .intro-text {
   text-align: right;
   width: 50%;
   top: 23%;
-  left: -4%;
   padding: 2.5% 0.5%;
   color: #eee;
   border-radius: 0.8%;
@@ -463,9 +486,10 @@ header .intro-text .intro-lead-in {
 header .intro-text .intro-heading {
   font-family: "Nanum Barun Gothic", sans-serif;
   text-transform: uppercase;
-  font-weight: 500;
-  font-size: 5.0vw;
+  font-weight: 700;
+  font-size: 4.0vw;
   line-height: 5.0vw;
+  width: 80%;
 }
 @media (min-width: 480px) {
   header .intro-text {
@@ -492,12 +516,13 @@ header .intro-text .intro-heading {
   header .intro-text .intro-heading {
     font-family: "Nanum Barun Gothic", sans-serif;
     text-transform: uppercase;
-    font-size: 3.5vw;
+    font-size: 3.0vw;
     line-height: 4.5vw;
   }
 }
 .dummyfornav {
   height: 53px;
+  display: block;
 }
 @media (min-width: 768px) {
   .dummyfornav {
@@ -524,21 +549,66 @@ section h3.section-subheading {
   }
 }
 #our-program .course-desc-wrap {
+  width: 90%;
   margin-top: 100px;
   display: flex;
   align-items: center;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+#our-program .course-desc-wrap div {
+  width: 40%;
+  min-width: 250px;
+  flex-grow: 1;
 }
 #our-program .course-desc-wrap .program-item {
   height: 150px;
-  line-height: 150px;
   padding-left: 40px;
   border-left: 12px solid #e1e1e1;
   font-weight: 900;
   letter-spacing: 0.02em;
   font-size: 3em;
+  margin-right: 2%;
+  display: flex;
+  align-items: center;
 }
 #our-program .course-desc-wrap .program-desc {
   line-height: 2em;
+}
+#join-program {
+  background: #2f73cf;
+  box-sizing: content-box;
+  height: 500px;
+  margin: 0;
+  margin-top: 100px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+#join-program .new-container h2,
+#join-program .new-container div,
+#join-program .new-container p,
+#join-program .new-container a {
+  margin-bottom: 40px;
+  text-align: center;
+}
+#join-program .new-container h2 {
+  line-height: 40px;
+}
+#join-program .new-container a {
+  cursor: pointer;
+  color: #2f73cf;
+}
+@media (max-width: 768px) {
+  h2,
+  h3 {
+    font-size: 25px;
+  }
+  #our-program .course-desc-wrap .program-item {
+    font-size: 20px;
+    height: 50px;
+    padding-left: 15px;
+  }
 }
 .service-heading {
   margin: 15px 0;
@@ -833,7 +903,7 @@ aside.clients img {
   padding: 4rem 0;
   background-color: #eeeeee;
 }
-.blog-banner .container.wrapper {
+.blog-banner .new-container.wrapper {
   padding-left: 0px;
   padding-right: 0px;
 }
@@ -1558,7 +1628,7 @@ aside.clients img {
   margin-top: 100px;
 }
 #schedule-wrap .new-container {
-  width: 1000px;
+  width: 768px;
   position: relative;
 }
 #schedule-wrap .vertical-line {
@@ -1602,25 +1672,25 @@ aside.clients img {
   top: 0;
   left: 0;
   width: 200px;
+  font-size: 1.8em;
 }
 #schedule-wrap ul li section .plan-date,
 #schedule-wrap ul li section .plan-name {
-  font-size: 18px;
   font-weight: 700;
 }
 #schedule-wrap ul li section .plan-logo {
   position: relative;
-  left: 130px;
+  left: 180px;
 }
 #schedule-wrap ul li section .plan-logo img {
-  width: 100px;
+  width: 110px;
 }
 #schedule-wrap ul li section:nth-child(1) {
-  left: 250px;
+  left: 50px;
   text-align: left;
 }
 #schedule-wrap ul li section:nth-child(2) {
-  left: 520px;
+  left: 450px;
   text-align: left;
 }
 #schedule-wrap ul li.reverse-date section:nth-child(2) {
@@ -1644,4 +1714,46 @@ aside.clients img {
 }
 #schedule-wrap ul li:nth-child(4) {
   top: 750px;
+}
+@media (max-width: 768px) {
+  #schedule-wrap .new-container {
+    width: 460px;
+    padding: 0;
+    margin: 0 auto;
+  }
+  #schedule-wrap .new-container ul li section {
+    width: 120px;
+    font-size: 1.2em;
+  }
+  #schedule-wrap .new-container ul li section:nth-child(1) {
+    left: 20px;
+  }
+  #schedule-wrap .new-container ul li section:nth-child(2) {
+    left: 250px;
+  }
+  #schedule-wrap .new-container ul li .plan-logo {
+    left: 55px;
+  }
+}
+@media (max-width: 480px) {
+  #schedule-wrap .new-container {
+    width: 300px;
+    padding: 0;
+    margin: 0 auto;
+  }
+  #schedule-wrap .new-container ul li section {
+    width: 120px;
+  }
+  #schedule-wrap .new-container ul li section:nth-child(1) {
+    left: 12px;
+  }
+  #schedule-wrap .new-container ul li section:nth-child(2) {
+    left: 176px;
+  }
+  #schedule-wrap .new-container ul li .plan-logo {
+    left: 5px;
+  }
+  #schedule-wrap .new-container ul li .plan-logo img {
+    width: 80px;
+  }
 }
