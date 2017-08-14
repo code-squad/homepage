@@ -194,8 +194,8 @@ fieldset[disabled] .btn-xl.active {
   color: #0075d6;
 }
 .line-short {
-  width: 200px;
-  height: 1px;
+  width: 400px;
+  height: 2px;
   background-color: #e1e1e1;
 }
 .text-left {
@@ -209,7 +209,8 @@ fieldset[disabled] .btn-xl.active {
 .white-level-color {
   color: #aaabb2;
 }
-.base-button {
+.base-button,
+.base-button-blue {
   border-radius: 28px;
   font-family: Arial;
   color: #000000;
@@ -221,6 +222,16 @@ fieldset[disabled] .btn-xl.active {
 .base-button:hover {
   background: #d4e0ef;
   text-decoration: none;
+}
+.base-button-blue {
+  background: #2f73cf;
+  color: #fff;
+  font-size: 16px;
+}
+.base-button-blue:hover {
+  background: #4f88df;
+  text-decoration: none;
+  color: #fff;
 }
 /****************************  Navigation Bar **************************/
 .navbar-custom {
@@ -562,6 +573,7 @@ section h3.section-subheading {
   flex-grow: 1;
 }
 #our-program .course-desc-wrap .program-item {
+  color: #768191;
   height: 150px;
   padding-left: 40px;
   border-left: 12px solid #e1e1e1;
@@ -575,12 +587,40 @@ section h3.section-subheading {
 #our-program .course-desc-wrap .program-desc {
   line-height: 2em;
 }
+#masters-course .new-container {
+  height: 500px;
+}
+#masters-course ul.level-wrap {
+  margin-top: 50px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+#masters-course ul.level-wrap li {
+  width: 30%;
+  min-width: 200px;
+  flex-grow: 1;
+  position: relative;
+}
+#masters-course ul.level-wrap li .level-background {
+  font-size: 8em;
+  color: #e9edf2;
+}
+#masters-course ul.level-wrap li .level-desc-wrap {
+  position: relative;
+  top: -67px;
+  margin-right: 40px;
+  margin-bottom: 20px;
+}
+#masters-course ul.level-wrap li .button-wrap {
+  position: absolute;
+  bottom: 0;
+}
 #join-program {
   background: #2f73cf;
   box-sizing: content-box;
   height: 500px;
   margin: 0;
-  margin-top: 100px;
   display: flex;
   align-items: center;
   color: #fff;

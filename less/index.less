@@ -144,8 +144,8 @@ section {
             flex-grow: 1;
         }
         .program-item {
+            color: #768191;
             height:150px;
-            //line-height: 150px;
             padding-left: 40px;
             border-left: 12px solid @base-liner;
             font-weight: 900;
@@ -161,12 +161,43 @@ section {
     }
 }
 
+#masters-course {
+    .new-container {
+        height: 500px;
+    }
+    ul.level-wrap {
+        margin-top: 50px;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        li {
+            width: 30%;
+            min-width: 200px;
+            flex-grow: 1;
+            position: relative;
+            .level-background  {
+                font-size: 8em;
+                color: #e9edf2;
+            }
+            .level-desc-wrap {
+                position: relative;
+                top: -67px;
+                margin-right: 40px;
+                margin-bottom: 20px;
+            }
+            .button-wrap {
+                position: absolute;
+                bottom: 0;
+            }
+        }
+    }
+}
+
 #join-program {
     background: #2f73cf;
     box-sizing: content-box;
     height: 500px;
     margin: 0;
-    margin-top:100px;
     display: flex;
     align-items: center;
     color:#fff; 

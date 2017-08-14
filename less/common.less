@@ -110,8 +110,8 @@ li {list-style: none;}
 }
 
 .line-short {
-    width: 200px;
-    height: 1px;
+    width: 400px;
+    height: 2px;
     background-color: @base-liner;
 }
 
@@ -137,6 +137,19 @@ li {list-style: none;}
 .base-button:hover {
   background: #d4e0ef;
   text-decoration: none;
+}
+
+.base-button-blue {
+  &:extend(.base-button);
+  background: #2f73cf;
+  color: #fff;
+  font-size: 16px;
+}
+
+.base-button-blue:hover {
+  background: #4f88df;
+  text-decoration: none;
+  color:#fff;
 }
 
 
