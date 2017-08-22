@@ -42,10 +42,13 @@ window.addEventListener("load", function() {
    },16);
 	}
 
+	if(window.innerWidth > 768) return;
 	_toggleViewByScroll();
+
 })();
 
 
+//Set random based recommendation word list.
 (function() {
 	const recommData = [
 		 {
