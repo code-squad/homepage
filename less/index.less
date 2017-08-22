@@ -199,9 +199,6 @@ section {
 #shared-cto  {
     margin-top: 70px;
     padding-top:70px;
-    .new-container {
-        height: 500px;
-    }
     ul.level-wrap {
         margin-top: 100px;
         li {
@@ -215,6 +212,16 @@ section {
             .level-desc-wrap {
                 position:static;
                 margin-top: 30px;
+            }
+        }
+    }
+}
+
+@media(max-width:452px) {
+    #shared-cto, #masters-course  {
+        ul.level-wrap {
+            li {
+                margin-bottom: 20%;
             }
         }
     }

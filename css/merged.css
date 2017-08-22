@@ -193,16 +193,16 @@ fieldset[disabled] .btn-xl.active {
 .selected-nav-menu {
   color: #0075d6;
 }
+.line-short {
+  width: 200px;
+  height: 2px;
+  background-color: #e1e1e1;
+  margin: 0 auto;
+}
 @media (min-width: 768px) {
   .line-short {
     width: 400px;
-    height: 2px;
-    background-color: #e1e1e1;
-    margin: 0 auto;
   }
-}
-.line-short {
-  width: 320px;
 }
 .text-left {
   padding-left: 0;
@@ -676,9 +676,6 @@ section h3.section-subheading {
   margin-top: 70px;
   padding-top: 70px;
 }
-#shared-cto .new-container {
-  height: 500px;
-}
 #shared-cto ul.level-wrap {
   margin-top: 100px;
 }
@@ -692,6 +689,12 @@ section h3.section-subheading {
 #shared-cto ul.level-wrap li .level-desc-wrap {
   position: static;
   margin-top: 30px;
+}
+@media (max-width: 452px) {
+  #shared-cto ul.level-wrap li,
+  #masters-course ul.level-wrap li {
+    margin-bottom: 20%;
+  }
 }
 #join-program {
   background: #798ca0;
