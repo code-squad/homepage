@@ -608,6 +608,7 @@ section h3.section-subheading {
 }
 #about-us p {
   margin-top: 40px;
+  font-size: 1.2em;
 }
 #our-program .course-desc-wrap {
   width: 90%;
@@ -636,6 +637,7 @@ section h3.section-subheading {
 }
 #our-program .course-desc-wrap .program-desc {
   line-height: 2em;
+  font-size: 1.2em;
 }
 #masters-course,
 #shared-cto {
@@ -667,6 +669,10 @@ section h3.section-subheading {
   margin-right: 40px;
   margin-bottom: 20px;
 }
+#masters-course ul.level-wrap li .level-desc-wrap p,
+#shared-cto ul.level-wrap li .level-desc-wrap p {
+  font-size: 1.2em;
+}
 #masters-course ul.level-wrap li .button-wrap,
 #shared-cto ul.level-wrap li .button-wrap {
   position: absolute;
@@ -691,9 +697,17 @@ section h3.section-subheading {
   margin-top: 30px;
 }
 @media (max-width: 452px) {
-  #shared-cto ul.level-wrap li,
-  #masters-course ul.level-wrap li {
+  #masters-course ul.level-wrap li,
+  #shared-cto ul.level-wrap li {
     margin-bottom: 20%;
+  }
+  #masters-course ul.level-wrap li .level-desc-wrap,
+  #shared-cto ul.level-wrap li .level-desc-wrap {
+    margin-right: 0;
+  }
+  #masters-course ul.level-wrap li img.item-img,
+  #shared-cto ul.level-wrap li img.item-img {
+    width: 100%;
   }
 }
 #join-program {
@@ -746,7 +760,7 @@ section h3.section-subheading {
   height: auto;
   border-radius: 50%;
   width: 18%;
-  height: 14.3vw;
+  height: 18.3vw;
   margin-right: 2%;
   font-size: 0.9em;
 }
@@ -764,6 +778,14 @@ section h3.section-subheading {
 #team .member-wrap .team-member .member-content:hover {
   opacity: 1;
   background: rgba(61, 68, 78, 0.8);
+}
+#team .member-wrap .team-member .onMemberDesc {
+  opacity: 1;
+  background-color: rgba(61, 68, 78, 0.8);
+}
+#team .member-wrap .team-member .offMemberDesc {
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0);
 }
 #team .member-wrap .team-member:nth-child(1) {
   background-image: url(/img/team/jk2.jpg);
@@ -828,6 +850,9 @@ section h3.section-subheading {
   }
 }
 @media (max-width: 768px) {
+  #recommendations .recomm-word-wrap {
+    font-size: 1.1em;
+  }
   #recommendations .recomm-word-wrap > div {
     margin: 0;
     height: auto;

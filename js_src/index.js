@@ -8,8 +8,87 @@ window.addEventListener("load", function() {
 	cover.style.opacity = 1.0;
 });
 
+// Scroll Member viewer
+(function(){
+	const memberWrap = document.querySelector("#team .member-wrap");
+	const memberWrapOffsetTop = memberWrap.offsetTop;
+	const members = memberWrap.querySelectorAll(".member-content");
+	const memberHeight = members[0].offsetHeight;
+	const memberCount = members.length;;
+	const step = memberHeight * 1.2;
+	const initDiffValue = -250;
+	const lastDiffValue = (memberCount * step) + memberHeight;
+	const activeClassName = "onMemberDesc";
 
-/* Blog Post Slider */
+	function _toggleViewByScroll() {
+		setTimeout(() => {
+			const currentScrolly = window.scrollY;
+			const diff = (currentScrolly - memberWrapOffsetTop); 
+
+			const activeElement = document.querySelector("#team .onMemberDesc");
+			if(activeElement) activeElement.classList.remove(activeClassName);
+
+			const baseValue = (diff - initDiffValue);
+
+			if(baseValue > 0 && baseValue < lastDiffValue) { 
+				const nth = Math.ceil( baseValue / step);
+				if(nth <= memberCount) {
+					const target =  document.querySelector("#team .team-member:nth-child("+ nth +") > .member-content");
+					target.classList.add(activeClassName);
+				}
+			}
+     //recursive
+     _toggleViewByScroll();
+   },16);
+	}
+
+	_toggleViewByScroll();
+})();
+
+
+(function() {
+	const recommData = [
+		 {
+		  content : "최고의 마스터들의 수준 높은 교육과 케어를 통해 실무 지식을 익힐 수 있었고,웹 개발자로서 단단하게 성장할수 있는 발판을 마련 했습니다. 개발자로서 확신이 없으신 분, 막연히 개발을 하고 싶은 모든 분들 모두 코드 스쿼드와 함께 실력있는 개발자로 성장 할 수 있습니다. 코드 스쿼드 강력 추천 합니다.",
+		  nickName : "호갱노노 개발자 Alex"
+		 },
+		 {
+		  content : "단지 학생을 위한 교육이 아닌, 개발자가 되기 위한 교육입니다 코드 스쿼드 강력 추천 합니다.",
+		  nickName : "수강생 김휘겸"
+		 },
+		 {
+		  content : "코드스쿼드는 주니어 개발자가 되기까지 최고의 동반자다",
+		  nickName : "수강생 개구리"
+		 },
+		 {
+		  content : "내가생각했던 것들을 직접 코딩할 수 있도록 만들어 줍니다. 코드스쿼드의 교육방식은 기존의 교육방식과는 다릅니다. 필요한 만큼의 이론을 빠르게 배우고 실무에서 사용할 만한 내용들을 주제로 간단한 과제에서 부터 복잡한 프로제트까지 물흐르듯 자연스럽게 이어집니다. 이러한 수업방식은 개발을 지속해 나갈 수 있는 힘을 키워줍니다.",
+		  nickName : "NHN엔터테인먼트 개발자 브라운"
+		 }
+	]
+
+	const selectedList = [];
+	while(true) {
+		const num = Math.floor(Math.random()*4);
+		if(selectedList.indexOf(num) < 0 ) selectedList.push(num);
+		if(selectedList.length === 3) break;
+	}
+
+
+	const recommHTML = selectedList.reduce((sumHTML,curr) => {
+		const word = recommData[curr];
+		const sHTML = `<div>
+			<div> ${word.content} </div>
+			<div> ${word.nickName} </div>
+		</div>`;
+		return sumHTML + sHTML;
+	}, "");
+
+	document.querySelector("#recommendations .recomm-word-row:nth-child(3)").innerHTML = recommHTML;
+
+})();
+
+/*
+// Blog Post Slider
 (function() {
 	var elBlog = document.querySelector(".blog-post-links");
 	var url = 'https://tlhm20eugk.execute-api.ap-northeast-2.amazonaws.com/prod/lambda_get_blog_info';
@@ -40,7 +119,7 @@ window.addEventListener("load", function() {
 		elBlog.insertBefore(cln, elBlog.childNodes[0]);
 
   
-		/* slider */
+		// Slider
 		// init value
 		var elBlogBanner = document.querySelector(".blog-banner");
 		var slidesNum = elBlog.childElementCount;
@@ -137,3 +216,4 @@ window.addEventListener("load", function() {
 		}
 	}
 })()
+*/

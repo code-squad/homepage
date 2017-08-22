@@ -131,6 +131,7 @@ section {
 #about-us {
     p {
          margin-top: 40px;
+         font-size: 1.2em;
     }
 }
 
@@ -162,6 +163,7 @@ section {
         }
         .program-desc {
             line-height: 2em;
+            font-size: 1.2em;
         }
     }
 }
@@ -187,6 +189,9 @@ section {
                 top: -67px;
                 margin-right: 40px;
                 margin-bottom: 20px;
+                p {
+                    font-size:1.2em;
+                }
             }
             .button-wrap {
                 position: absolute;
@@ -218,10 +223,16 @@ section {
 }
 
 @media(max-width:452px) {
-    #shared-cto, #masters-course  {
+    #masters-course, #shared-cto {
         ul.level-wrap {
             li {
                 margin-bottom: 20%;
+                .level-desc-wrap {
+                    margin-right: 0;
+                }
+                img.item-img {
+                    width:100%;
+                }
             }
         }
     }
@@ -285,7 +296,7 @@ section {
             height: auto;
             border-radius: 50%;
             width: 18%;
-            height: 14.3vw;
+            height: 18.3vw;
             margin-right: 2%;
             font-size: 0.9em;
             .member-content {
@@ -302,6 +313,14 @@ section {
                     opacity: 1;
                     background: rgba(61, 68, 78, 0.80);
                 }
+            }
+            .onMemberDesc {
+                opacity : 1;
+                background-color : rgba(61, 68, 78, 0.80);
+            }
+            .offMemberDesc {
+                opacity : 0;
+                background-color : rgba(0,0,0,0);
             }
         }
         .team-member:nth-child(1) {
@@ -397,6 +416,7 @@ section {
 @media(max-width:768px) {
     #recommendations {
         .recomm-word-wrap  {
+            font-size: 1.1em;
             >div {
                 margin:0;
                 height: auto;
