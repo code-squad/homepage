@@ -639,10 +639,49 @@ section h3.section-subheading {
   margin-right: 2%;
   display: flex;
   align-items: center;
+  position: relative;
+}
+#our-program .course-desc-wrap .program-item::before {
+  content: "사용자를 위한";
+  top: 10px;
+  font-size: 24px;
+  position: absolute;
+  left: 42px;
 }
 #our-program .course-desc-wrap .program-desc {
   line-height: 2em;
   font-size: 1.2em;
+}
+#our-program .course-desc-wrap:nth-child(2) .program-item::before {
+  content: "사용자를 위한";
+}
+#our-program .course-desc-wrap:nth-child(3) .program-item::before {
+  content: "기업 고객을 위한";
+}
+@media (max-width: 1340px) {
+  #our-program .course-desc-wrap .program-item::before {
+    top: -9px;
+  }
+  #our-program .course-desc-wrap:nth-child(3) .program-item::before {
+    top: 20px;
+  }
+}
+@media (max-width: 768px) {
+  h2,
+  h3 {
+    font-size: 25px;
+  }
+  #our-program .course-desc-wrap {
+    width: 98%;
+  }
+  #our-program .course-desc-wrap .program-item {
+    font-size: 1.8em;
+    height: 50px;
+    padding-left: 15px;
+  }
+  #our-program .course-desc-wrap .program-item::before {
+    display: none;
+  }
 }
 #masters-course,
 #shared-cto {
@@ -696,7 +735,6 @@ section h3.section-subheading {
 }
 #shared-cto ul.level-wrap li .img-wrap img {
   width: 94%;
-  box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.75);
 }
 #shared-cto ul.level-wrap li .level-desc-wrap {
   position: static;
@@ -739,17 +777,6 @@ section h3.section-subheading {
   cursor: pointer;
   color: #798ca0;
 }
-@media (max-width: 768px) {
-  h2,
-  h3 {
-    font-size: 25px;
-  }
-  #our-program .course-desc-wrap .program-item {
-    font-size: 20px;
-    height: 50px;
-    padding-left: 15px;
-  }
-}
 #team .member-wrap {
   display: flex;
   align-items: center;
@@ -781,7 +808,7 @@ section h3.section-subheading {
   font-weight: bold;
   transition: 0.1s all;
 }
-#team .member-wrap .team-member .member-content:hover {
+#team .member-wrap .team-member .member-hover-viewer:hover {
   opacity: 1;
   background: rgba(61, 68, 78, 0.8);
 }
@@ -850,8 +877,7 @@ section h3.section-subheading {
   margin-top: 10px;
 }
 #recommendations .recomm-word-wrap > div > div:hover {
-  transform: scale(1.01);
-  box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.29);
+  background-color: rgba(194, 209, 228, 0.42);
 }
 @media (max-width: 1200px) {
   #recommendations .recomm-word-wrap {
