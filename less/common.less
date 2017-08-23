@@ -57,6 +57,41 @@ ul,li {
 }
 li {list-style: none;}
 
+
+// Global Section Styles
+
+section {
+    h2.section-heading {
+        font-size: 30px;
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+    h3.section-subheading {
+        font-size: 16px;
+        .serif-font;
+        text-transform: none;
+        font-style: italic;
+        font-weight: 400;
+        margin-bottom: 75px;
+    }
+}
+
+
+.base-desc {
+    p {
+         margin-top: 40px;
+         font-size: 1.2em;
+    }
+}
+
+
+@media(min-width:768px) {
+    .inner-section {
+        padding: 0 0 50px 0 !important;
+    }
+}
+
+
 .new-container {
     padding-right: 15px;
     padding-left: 15px;
@@ -286,6 +321,7 @@ li {list-style: none;}
     text-align: left;
     height: 480px;
     color:#fff;
+    clear:both;
     a {
         color:#fff;
     }

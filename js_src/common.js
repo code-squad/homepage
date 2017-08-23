@@ -53,6 +53,9 @@
 
 	modalCloseBtn.addEventListener("click", closeModalHandler);
 	modalHeaderBtn.addEventListener("click", closeModalHandler);
-
-
 })();
+
+window.addEventListener("load", function() {
+	var cover = document.querySelector("header");
+	cover.style.opacity = 1.0;
+});
