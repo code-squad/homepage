@@ -1391,3 +1391,56 @@ aside.clients img {
     width: 80px;
   }
 }
+
+#masters-level {
+  margin-top: 100px;
+  margin-bottom: 200px;
+}
+#masters-level h2 {
+  margin-bottom: 100px;
+}
+#masters-level nav ul {
+  display: flex;
+  align-items: center;
+  flex-flow: row;
+  justify-content: flex-start;
+  padding-left: 10px;
+}
+#masters-level nav ul li {
+  margin-right: 20px;
+  padding-bottom: 2px;
+  font-size: 1.3em;
+}
+#masters-level nav ul li.select-highlight {
+  border-bottom: 1px solid blue;
+}
+#masters-level .level-section-wrap {
+  overflow: auto;
+  margin-top: 20px;
+}
+#masters-level .level-section-wrap > section {
+  background-color: #dee0de;
+}
+#masters-level .level-section-wrap > section ul li {
+  float: left;
+  width: 50%;
+  height: 400px;
+  border: 8px solid #ffffff;
+  min-width: 273px;
+  text-align: left;
+  background-color: #997790;
+  color: #fff;
+}
+#masters-level .level-section-wrap > section ul li h3 {
+  padding-left: 10px;
+  font-weight: 500;
+}
+#masters-level .level-section-wrap > section ul li p {
+  padding: 10px;
+  font-size: 1.2em;
+}
+@media (max-width: 606px) {
+  #masters-level .level-section-wrap > section ul li {
+    width: 100%;
+  }
+}
