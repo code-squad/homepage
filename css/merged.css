@@ -56,6 +56,9 @@ li {
 li {
   list-style: none;
 }
+.view-none {
+  display: none;
+}
 section h2.section-heading {
   font-size: 30px;
   margin-top: 0;
@@ -1418,8 +1421,8 @@ aside.clients img {
   overflow: auto;
   margin-top: 20px;
 }
-#masters-level .level-section-wrap > section {
-  background-color: #dee0de;
+#masters-level .level-section-wrap > section > ul {
+  overflow: auto;
 }
 #masters-level .level-section-wrap > section > ul > li {
   float: left;
