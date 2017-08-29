@@ -313,6 +313,15 @@ fieldset[disabled] .btn-xl.active {
 .navbar-custom .nav li a.selected-nav-menu {
   color: #0075d6;
 }
+.navbar-custom .nav li ul.nav-dropdown {
+  position: absolute;
+  background-color: #222222;
+  margin-left: 15px;
+  padding: 10px;
+  color: #fff;
+  width: 80px;
+  display: none;
+}
 .navbar-custom .navbar-nav > .active > a {
   border-radius: 0;
   color: white;
