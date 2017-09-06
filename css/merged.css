@@ -709,7 +709,7 @@ header .intro-text .intro-heading {
 }
 #masters-course ul.level-wrap li,
 .base-desc-three ul.level-wrap li {
-  width: 30%;
+  width: 20%;
   min-width: 200px;
   flex-grow: 1;
   position: relative;
@@ -754,15 +754,15 @@ header .intro-text .intro-heading {
   margin-top: 30px;
 }
 @media (max-width: 452px) {
-  #masters-course ul.level-wrap li,
+  #masters-course-summary ul.level-wrap li,
   #shared-cto ul.level-wrap li {
     margin-bottom: 20%;
   }
-  #masters-course ul.level-wrap li .level-desc-wrap,
+  #masters-course-summary ul.level-wrap li .level-desc-wrap,
   #shared-cto ul.level-wrap li .level-desc-wrap {
     margin-right: 0;
   }
-  #masters-course ul.level-wrap li img.item-img,
+  #masters-course-summary ul.level-wrap li img.item-img,
   #shared-cto ul.level-wrap li img.item-img {
     width: 100%;
   }
