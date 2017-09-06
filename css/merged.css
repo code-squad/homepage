@@ -452,6 +452,42 @@ fieldset[disabled] .btn-xl.active {
 }
 /******************************************************/
 /********* CUSTOME LAYOUT (for masters page) **********/
+.base-desc-three {
+  margin-bottom: 150px;
+  margin-top: 70px;
+  padding-top: 70px;
+}
+.base-desc-three ul.level-wrap {
+  margin-top: 50px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+.base-desc-three ul.level-wrap li {
+  width: 20%;
+  min-width: 200px;
+  flex-grow: 1;
+  position: relative;
+}
+.base-desc-three ul.level-wrap li .level-background {
+  font-size: 8em;
+  color: #e9edf2;
+}
+.base-desc-three ul.level-wrap li .img-wrap {
+  height: auto;
+  width: 100%;
+}
+.base-desc-three ul.level-wrap li .img-wrap img {
+  width: 94%;
+}
+.base-desc-three ul.level-wrap li .level-desc-wrap {
+  position: static;
+  margin-top: 30px;
+  margin-right: 40px;
+}
+.base-desc-three ul.level-wrap li .level-desc-wrap p {
+  font-size: 1.2em;
+}
 @media (min-width: 768px) {
   .col-sm-4 {
     width: 20% !important;
@@ -696,63 +732,6 @@ header .intro-text .intro-heading {
     display: none;
   }
 }
-#masters-course,
-.base-desc-three {
-  margin-bottom: 150px;
-}
-#masters-course ul.level-wrap,
-.base-desc-three ul.level-wrap {
-  margin-top: 50px;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-start;
-}
-#masters-course ul.level-wrap li,
-.base-desc-three ul.level-wrap li {
-  width: 20%;
-  min-width: 200px;
-  flex-grow: 1;
-  position: relative;
-}
-#masters-course ul.level-wrap li .level-background,
-.base-desc-three ul.level-wrap li .level-background {
-  font-size: 8em;
-  color: #e9edf2;
-}
-#masters-course ul.level-wrap li .level-desc-wrap,
-.base-desc-three ul.level-wrap li .level-desc-wrap {
-  position: relative;
-  top: -67px;
-  margin-right: 40px;
-  margin-bottom: 20px;
-}
-#masters-course ul.level-wrap li .level-desc-wrap p,
-.base-desc-three ul.level-wrap li .level-desc-wrap p {
-  font-size: 1.2em;
-}
-#masters-course ul.level-wrap li .button-wrap,
-.base-desc-three ul.level-wrap li .button-wrap {
-  position: absolute;
-  bottom: 0;
-}
-.base-desc-three {
-  margin-top: 70px;
-  padding-top: 70px;
-}
-.base-desc-three ul.level-wrap {
-  margin-top: 100px;
-}
-.base-desc-three ul.level-wrap li .img-wrap {
-  height: auto;
-  width: 100%;
-}
-.base-desc-three ul.level-wrap li .img-wrap img {
-  width: 94%;
-}
-.base-desc-three ul.level-wrap li .level-desc-wrap {
-  position: static;
-  margin-top: 30px;
-}
 @media (max-width: 452px) {
   #masters-course-summary ul.level-wrap li,
   #shared-cto ul.level-wrap li {
@@ -992,6 +971,15 @@ aside.clients img {
 }
 #masters_page header {
   background-image: url('../img/masters/masters_main-min.jpg');
+}
+#masters_page #masters-course li .level-desc-wrap {
+  position: relative;
+  top: -67px;
+  margin-bottom: 20px;
+}
+#masters_page #masters-course .button-wrap {
+  position: absolute;
+  bottom: 0;
 }
 #masters_page #overview {
   float: none;
