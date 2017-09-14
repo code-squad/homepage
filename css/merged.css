@@ -572,7 +572,7 @@ fieldset[disabled] .btn-xl.active {
 /******************************************************/
 
 header {
-  background-image: url('../img/background/2.jpg');
+  background-image: url('../img/background/2-min.jpg');
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center 5%;
@@ -824,7 +824,7 @@ header .intro-text .intro-heading {
   }
 }
 /************************ recommendation ***********************/
-#recommendations .recomm-word-wrap > div {
+.multiple-cardui-wrap .recomm-word-wrap > div {
   font-weight: 600;
   width: 100%;
   height: 300px;
@@ -833,7 +833,7 @@ header .intro-text .intro-heading {
   justify-content: center;
   1margin-top: 100px;
 }
-#recommendations .recomm-word-wrap > div > div {
+.multiple-cardui-wrap .recomm-word-wrap > div > div {
   flex-grow: 1;
   width: 33%;
   height: inherit;
@@ -845,34 +845,34 @@ header .intro-text .intro-heading {
   line-height: 1.7em;
   transition: all 0.1s;
 }
-#recommendations .recomm-word-wrap > div > div div:nth-child(2) {
+.multiple-cardui-wrap .recomm-word-wrap > div > div div:nth-child(2) {
   margin-top: 10px;
 }
-#recommendations .recomm-word-wrap > div > div:hover {
+.multiple-cardui-wrap .recomm-word-wrap > div > div:hover {
   background-color: rgba(194, 209, 228, 0.42);
 }
 @media (max-width: 1200px) {
-  #recommendations .recomm-word-wrap {
+  .multiple-cardui-wrap .recomm-word-wrap {
     margin-top: 100px;
   }
-  #recommendations .recomm-word-wrap > div {
+  .multiple-cardui-wrap .recomm-word-wrap > div {
     font-weight: 600;
     width: 100%;
   }
-  #recommendations .recomm-word-wrap > div > div {
+  .multiple-cardui-wrap .recomm-word-wrap > div > div {
     padding: 1em;
   }
 }
 @media (max-width: 768px) {
-  #recommendations .recomm-word-wrap {
+  .multiple-cardui-wrap .recomm-word-wrap {
     font-size: 1.1em;
   }
-  #recommendations .recomm-word-wrap > div {
+  .multiple-cardui-wrap .recomm-word-wrap > div {
     margin: 0;
     height: auto;
     display: block;
   }
-  #recommendations .recomm-word-wrap > div > div {
+  .multiple-cardui-wrap .recomm-word-wrap > div > div {
     width: 100%;
     margin: 0px auto;
     margin-bottom: 40px;
@@ -1178,6 +1178,9 @@ aside.clients img {
 .jumbotron .wrap-text p {
   line-height: 1.2em;
 }
+.jumbotron .wrap-text p.sub-desc {
+  font-size: 1.1em;
+}
 .jumbotron .apply-btn {
   position: absolute;
   top: 270px;
@@ -1196,6 +1199,7 @@ aside.clients img {
 }
 .jumbotron + .container {
   margin-top: 70px;
+  margin-bottom: 100px;
 }
 @media (max-width: 768px) {
   .jumbotron {
@@ -1283,6 +1287,9 @@ aside.clients img {
 }
 .marketing div {
   opacity: 1;
+}
+.marketing div.col-lg-6 {
+  padding-left: 10%;
 }
 .marketing .emphasis_link {
   font-weight: bold;
@@ -1515,4 +1522,15 @@ aside.clients img {
   #masters-level .level-section-wrap > section ul li {
     width: 100%;
   }
+}
+
+#sharedcto-page header {
+  background-image: url('../img/shared-cto/sharedcto-title.jpg');
+}
+#sharedcto-page #sharedcto-example.base-desc-three ul.level-wrap li {
+  width: 25%;
+  min-width: 300px;
+}
+#sharedcto-page #sharedcto-customer .multiple-cardui-wrap .recomm-word-wrap > div > div:hover {
+  background-color: #fff;
 }
