@@ -22,6 +22,9 @@ p {
 p.large {
   font-size: 16px;
 }
+.font12 {
+  font-size: 1.2em;
+}
 a,
 a:hover,
 a:focus,
@@ -972,17 +975,26 @@ aside.clients img {
 #masters_page header {
   background-image: url('../img/masters/masters_main-min.jpg');
 }
-#masters_page #masters-course li .level-background {
+#masters_page #masters-class p {
+  font-size: 1.2em;
+}
+#masters_page #masters-class h4 {
+  text-transform: none;
+}
+#masters_page #masters-level p {
+  font-size: 1.2em;
+}
+#masters_page #masters-level li .level-background {
   font-size: 8em;
   color: rgba(130, 148, 172, 0.47);
 }
-#masters_page #masters-course li .level-desc-wrap {
+#masters_page #masters-level li .level-desc-wrap {
   margin-bottom: 20px;
 }
-#masters_page #masters-course .button-wrap {
+#masters_page #masters-level .button-wrap {
   margin-top: 4em;
 }
-#masters_page #masters-course .button-wrap .base-button-blue {
+#masters_page #masters-level .button-wrap .base-button-blue {
   font-size: 20px;
 }
 #masters_page #overview {
@@ -1033,7 +1045,6 @@ aside.clients img {
   background: #798ca0;
   box-sizing: content-box;
   height: 500px;
-  margin: 0;
   display: flex;
   align-items: center;
   color: #fff;
@@ -1051,6 +1062,29 @@ aside.clients img {
 #masters_page #join-program .new-container a {
   cursor: pointer;
   color: #798ca0;
+}
+#masters_page #join-program .new-container p {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+#masters_page #join-program .new-container p.masters_date {
+  color: #e2d235;
+}
+#masters_page #masters-oneday div.table-responsive {
+  margin-top: 60px;
+}
+#masters_page #masters-oneday table {
+  margin: 0px auto;
+  max-width: 1400px;
+  font-size: 1.2em;
+}
+#masters_page #masters-oneday table th {
+  min-width: 200px;
+  padding: 40px;
+}
+#masters_page #masters-oneday table td {
+  min-width: 300px;
+  padding: 40px;
 }
 #masters_page #master-introduce {
   overflow: auto;
@@ -1090,8 +1124,19 @@ aside.clients img {
   }
 }
 @media (max-width: 1070px) {
-  .course-kind div {
+  #masters_page .course-kind div {
     margin-bottom: 3%;
+  }
+  #masters_page #masters-oneday table th {
+    min-width: 100px;
+  }
+  #masters_page #masters-oneday table td {
+    min-width: 100px;
+  }
+}
+@media (max-width: 460px) {
+  #masters_page #masters-feature li {
+    margin-top: 80px;
   }
 }
 
@@ -1396,27 +1441,70 @@ aside.clients img {
   }
 }
 
-#masters-level {
+#masters-desc-card {
   margin-top: 100px;
   margin-bottom: 200px;
 }
-#masters-level h2 {
+#masters-desc-card h2 {
   margin-bottom: 100px;
 }
-#masters-level nav ul {
+#masters-desc-card nav ul {
   display: flex;
   align-items: center;
   flex-flow: row;
   justify-content: flex-start;
   padding-left: 10px;
 }
-#masters-level nav ul li {
+#masters-desc-card nav ul li {
   margin-right: 20px;
   padding-bottom: 2px;
   font-size: 1.3em;
 }
-#masters-level nav ul li.select-highlight {
+#masters-desc-card nav ul li.select-highlight {
   border-bottom: 1px solid blue;
+}
+#masters-desc-card .level-section-wrap {
+  overflow: auto;
+  margin-top: 20px;
+}
+#masters-desc-card .level-section-wrap > section > ul {
+  overflow: auto;
+}
+#masters-desc-card .level-section-wrap > section > ul > li {
+  float: left;
+  width: 50%;
+  height: 400px;
+  border: 8px solid #ffffff;
+  text-align: left;
+  color: #fff;
+  background-color: #778899;
+  min-width: 273px;
+  max-width: 600px;
+}
+#masters-desc-card .level-section-wrap > section > ul > li h3 {
+  padding-left: 20px;
+  font-weight: 500;
+}
+#masters-desc-card .level-section-wrap > section > ul > li .detail-desc > * {
+  padding: 20px;
+  font-size: 1.1em;
+}
+#masters-desc-card .level-section-wrap > section > ul > li .detail-desc ul {
+  border-left: 20px solid lightslategrey;
+}
+#masters-desc-card .level-section-wrap > section > ul > li .detail-desc ul li {
+  list-style: circle;
+  line-height: 1.7em;
+}
+#masters-desc-card .level-section-wrap > section > ul > li:nth-child(1),
+#masters-desc-card .level-section-wrap > section > ul > li:nth-child(4),
+#masters-desc-card .level-section-wrap > section > ul > li:nth-child(5) {
+  background-color: #997790;
+}
+#masters-desc-card .level-section-wrap > section > ul > li:nth-child(1) .detail-desc ul,
+#masters-desc-card .level-section-wrap > section > ul > li:nth-child(4) .detail-desc ul,
+#masters-desc-card .level-section-wrap > section > ul > li:nth-child(5) .detail-desc ul {
+  border-left: 20px solid #997790;
 }
 @media (max-width: 2288px) {
   #masters-level .level-section-wrap > section ul li {

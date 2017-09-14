@@ -30,6 +30,7 @@
 
 
 	//2. NAVIGATION DROPDOWN
+	/*
 	document.querySelector(".nav-masters > a").addEventListener("mouseenter", function(evt) {
 		const el = evt.target;
 		if(el.tagName !== "A") return;
@@ -62,6 +63,7 @@
 		else return;
 
 	});
+	*/
 
 
 	//3. PRIVACE AND TERM Handler on Footer.
@@ -93,5 +95,5 @@
 
 window.addEventListener("load", function() {
 	var cover = document.querySelector("header");
-	cover.style.opacity = 1.0;
+	if(cover)cover.style.opacity = 1.0;
 });

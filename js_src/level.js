@@ -27,7 +27,7 @@
 
 
 	function changeBackgroundColor(ruleNumber) {
-		const ulSelector = "#masters-level .level-section-wrap > section > ul > li:nth-child"
+		const ulSelector = "#masters-desc-card .level-section-wrap > section > ul > li:nth-child"
 		Object.keys(rule).forEach((color) => {
 			rule[color].colorSet[ruleNumber].forEach((v) => {
 				doc.querySelector(ulSelector + '(' + v +')').style.backgroundColor = rule[color].rgb;
@@ -77,7 +77,7 @@
 (function(doc) {
 //Select level by TabUI
 
-const ul = doc.querySelector("#masters-level nav ul");
+const ul = doc.querySelector("#masters-desc-card  nav ul");
 	ul.addEventListener("click", (evt) => {
 		const el = evt.target;
 		if(el.tagName !== "LI") return;

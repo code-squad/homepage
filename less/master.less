@@ -26,7 +26,18 @@
     header {
         background-image: url('../img/masters/masters_main-min.jpg');
     }
-    #masters-course {
+    #masters-class {
+        p {
+            font-size: 1.2em;
+        }
+        h4 {
+            text-transform: none;
+        }
+    }
+    #masters-level{
+        p {
+            font-size: 1.2em;
+        }
         li {
             .level-background  {
                 font-size: 8em;
@@ -99,7 +110,7 @@
         background: #798ca0;
         box-sizing: content-box;
         height: 500px;
-        margin: 0;
+        //margin: 0;
         display: flex;
         align-items: center;
         color:#fff; 
@@ -114,6 +125,32 @@
             a {
                 cursor: pointer;
                 color:#798ca0;
+            }
+            p {
+                font-size: 1.5em;
+                font-weight: bold;
+            }
+            p.masters_date { 
+                color:#e2d235;
+            }
+        }
+    }
+
+    #masters-oneday {
+        div.table-responsive {
+            margin-top: 60px;
+        }
+        table {
+            margin:0px auto;
+            max-width: 1400px;
+            font-size: 1.2em;
+            th {
+                min-width: 200px;
+                padding: 40px;
+            }
+            td {
+                min-width: 300px;
+                padding: 40px;
             }
         }
     }
@@ -140,7 +177,6 @@
     }
 }
 
-
 @media(max-width:1120px) {
 #masters_page {
     #overview {
@@ -166,11 +202,30 @@
 }
 
 @media(max-width:1070px) {
-    .course-kind {
-        div {
-            margin-bottom: 3%;
+    #masters_page {
+        .course-kind {
+            div {
+                margin-bottom: 3%;
+            }
+        }
+        #masters-oneday {
+            table {
+                th {min-width: 100px;}
+                td {
+                    min-width: 100px;
+                }
+            }
         }
     }
  }
 
 
+@media(max-width:460px) {
+    #masters_page {
+        #masters-feature {
+            li {
+                margin-top:80px;
+            }
+        }
+    }
+}
