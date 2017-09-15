@@ -684,9 +684,9 @@ header .intro-text .intro-heading {
   font-family: "Nanum Barun Gothic", sans-serif;
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 3.2vw;
-  line-height: 5.0vw;
-  width: 80%;
+  font-size: 4vw;
+  line-height: 6.0vw;
+  width: 90%;
 }
 header .intro-text .intro-heading a {
   width: 80%;
@@ -697,18 +697,9 @@ header .intro-text .intro-heading a {
     left: 0%;
   }
 }
-@media (max-width: 1000px) {
-  header .intro-text .intro-heading a.btn-xl {
-    width: 70%;
-    font-size: 14px;
-    padding: 10px;
-  }
-}
-@media (max-width: 768px) {
-  header .intro-text .intro-heading a.btn-xl {
-    width: 71%;
-    font-size: 12px;
-    padding: 5px;
+@media (min-width: 456px) {
+  header .intro-text .intro-heading {
+    font-size: 3.6vw;
   }
 }
 @media (min-width: 768px) {
@@ -735,6 +726,20 @@ header .intro-text .intro-heading a {
     line-height: 4.0vw;
   }
 }
+@media (max-width: 1000px) {
+  header .intro-text .intro-heading a.btn-xl {
+    width: 70%;
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+@media (max-width: 768px) {
+  header .intro-text .intro-heading a.btn-xl {
+    width: 71%;
+    font-size: 12px;
+    padding: 5px;
+  }
+}
 .dummyfornav {
   height: 53px;
   display: block;
@@ -747,6 +752,11 @@ header .intro-text .intro-heading a {
 }
 #about-us p {
   font-size: 2em;
+}
+@media (max-width: 768px) {
+  #about-us p {
+    font-size: 1.3em;
+  }
 }
 #our-program .course-desc-wrap {
   width: 90%;
@@ -786,7 +796,7 @@ header .intro-text .intro-heading a {
   font-size: 1.2em;
 }
 #our-program .course-desc-wrap:nth-child(2) .program-item::before {
-  content: "사용자를 위한";
+  content: "누구나를 위한";
 }
 #our-program .course-desc-wrap:nth-child(3) .program-item::before {
   content: "기업 고객을 위한";
@@ -1566,4 +1576,20 @@ aside.clients img {
 }
 #sharedcto-page #sharedcto-customer.multiple-cardui-wrap .recomm-word-wrap div.recomm-word-row div:hover {
   background-color: #fff;
+}
+@media (max-width: 768px) {
+  #sharedcto-page .intro-heading {
+    font-weight: 700;
+    font-size: 4.2vw;
+    line-height: 5.0vw;
+    width: 80%;
+    margin-left: 25%;
+  }
+}
+@media (max-width: 480px) {
+  #sharedcto-page .intro-heading {
+    font-size: 6.0vw;
+    line-height: 7.0vw;
+    width: 90%;
+  }
 }
