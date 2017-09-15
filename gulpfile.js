@@ -11,6 +11,7 @@ var htmlmin = require('gulp-htmlmin');
 var cachebust = require('gulp-cache-bust');
 var concat = require('gulp-concat');
 var fileinclude = require('gulp-file-include');
+var clean = require('gulp-clean');
 
 // Compile LESS files from /less into /css
 gulp.task('less', function() {
@@ -48,24 +49,29 @@ gulp.task('minify-js', function() {
 });
 
 // HTML Process
-gulp.task('htmlinclude', function() {
-  gulp.src(['html_src/*.html'])
+
+gulp.task('clean-html', function(){
+    return gulp.src(['page/*.html', 'html_src/html_merged/*.html', './index.html'])
+    .pipe(clean());
+});
+
+gulp.task('htmlinclude', ['clean-html'], function() {
+  return gulp.src(['html_src/*.html'])
     .pipe(fileinclude({
       prefix: '@@',
       basepath: '@file'
     }))
-    .pipe(gulp.dest('page'));
+    .pipe(gulp.dest('html_src/html_merged/'));
 });
 
 gulp.task('minify-html',['htmlinclude'], function() {
-  return gulp.src('page/*.html')
+  return gulp.src(['html_src/html_merged/*.html'])
   .pipe(cachebust({
     type: 'timestamp'
   }))
   .pipe(htmlmin({collapseWhitespace: true}))
-    .pipe(gulp.dest('page'));
+  .pipe(gulp.dest('page'));
 });
-
 
 gulp.task('move-index', ['minify-html'], function() {
   return gulp.src('page/index.html')
