@@ -96,6 +96,7 @@ gulp.task('dev', ['browserSync', 'minify-css', 'minify-js', 'move-index'], funct
 
 // Run everything
 //gulp.task('default', ['less', 'minify-css', 'minify-js', 'htmlinclude', 'minify-html');
+gulp.task('default', ['minify-css', 'minify-js', 'move-index']);
 
 
 
