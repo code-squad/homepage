@@ -25,8 +25,10 @@
 
 	//1. NAVIGATION
 	var path = location.pathname;
+	if(path === "/page/index.html") path = "/";
 	var q = "a[href^='"+ path + "']";
-	document.querySelector(q).className = "selected-nav-menu";
+	var matchedNode = document.querySelector(q);
+	if(matchedNode) matchedNode.className = "selected-nav-menu";
 
 
 	//2. NAVIGATION DROPDOWN
@@ -91,6 +93,21 @@
 
 	modalCloseBtn.addEventListener("click", closeModalHandler);
 	modalHeaderBtn.addEventListener("click", closeModalHandler);
+})();
+
+
+(function(){
+	var menu = document.querySelector("button.navbar-toggle");
+	var target = document.querySelector(".collapse");
+	menu.addEventListener("click", function() {
+		if( target.classList.contains("in") )  {
+			target.classList.remove("in");
+			target.style.height = "1px";
+		} else {
+			target.classList.add("in");
+		target.style.height = "256px";
+		}
+	})
 })();
 
 window.addEventListener("load", function() {

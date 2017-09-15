@@ -52,6 +52,10 @@ header {
             font-size: 4.0vw;
             line-height: 5.0vw;
             width:80%;
+            a {
+                width: 80%;
+                max-width: 280px;
+            }
         }
     }
 }
@@ -60,6 +64,26 @@ header {
     header {
         .intro-text {
             left : 0%;
+        }
+    }
+}
+
+@media(max-width:1000px) {
+    header .intro-text {
+        .intro-heading a.btn-xl {
+            width:70%;
+            font-size: 14px;
+            padding: 10px;
+        }
+    }
+}
+
+@media(max-width:768px) {
+    header .intro-text {
+        .intro-heading a.btn-xl {
+            width: 71%;
+            font-size: 12px;
+            padding: 5px;
         }
     }
 }
@@ -84,12 +108,10 @@ header {
                 font-size: 3.0vw;
                 line-height: 4.5vw;
             }
-            a.btn-xl {
-                //visibility:hidden;
-            }
         }
     }
 }
+
 
 .dummyfornav {
    height: 53px; 
@@ -200,19 +222,19 @@ header {
 
 
 @media(max-width:452px) {
-    #masters-course-summary, #shared-cto {
-        ul.level-wrap {
-            li {
-                margin-bottom: 20%;
-                .level-desc-wrap {
-                    margin-right: 0;
-                }
-                img.item-img {
-                    width:100%;
-                }
+    .base-desc-three {
+    ul.level-wrap {
+        li {
+            margin-bottom: 20%;
+            .level-desc-wrap {
+                margin-right: 0;
+            }
+            img.item-img {
+                width:100%;
             }
         }
     }
+}
 }
 
 
@@ -308,76 +330,6 @@ header {
 @media(max-width:768px) {
   
 }
-
-/************************ recommendation ***********************/
-
-.multiple-cardui-wrap {
-    .recomm-word-wrap  {
-        >div {
-            font-weight: 600;
-            width: 100%;
-            height: 300px;
-            display: flex;
-            flex-flow: row wrap;
-            justify-content: center;
-            1margin-top: 100px;
-             >div {
-                flex-grow: 1;
-                width: 33%;
-                height: inherit;
-                display: flex;
-                flex-flow: column;
-                justify-content: flex-start;
-                align-items: center;
-                padding: 4em;
-                line-height: 1.7em;
-                div:nth-child(2) {
-                    margin-top:10px;
-                }
-                &:hover {
-                    //transform:scale(1.01);
-                    //box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.29);
-                    background-color: rgba(194, 209, 228, 0.42);
-                }
-                transition : all 0.1s;
-            }
-        }
-    }
-}
-
-@media(max-width:1200px) {
-    .multiple-cardui-wrap {
-        .recomm-word-wrap  {
-            margin-top: 100px;
-            >div {
-                font-weight: 600;
-                width: 100%;
-                >div {
-                    padding: 1em;
-                }
-            }
-        }
-    }
-}
-
-@media(max-width:768px) {
-    .multiple-cardui-wrap {
-        .recomm-word-wrap  {
-            font-size: 1.1em;
-            >div {
-                margin:0;
-                height: auto;
-                display: block;
-                >div {
-                    width : 100%;
-                    margin: 0px auto;
-                    margin-bottom: 40px;
-                }
-            }
-        }
-    }
-}
-
 
 .header.clearfix {
     border-bottom: 0;

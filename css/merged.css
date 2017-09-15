@@ -491,6 +491,66 @@ fieldset[disabled] .btn-xl.active {
 .base-desc-three ul.level-wrap li .level-desc-wrap p {
   font-size: 1.2em;
 }
+@media (max-width: 768px) {
+  .base-desc-three {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+/************************ recommendation ***********************/
+.multiple-cardui-wrap .recomm-word-wrap > div {
+  font-weight: 600;
+  width: 100%;
+  height: 300px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  1margin-top: 100px;
+}
+.multiple-cardui-wrap .recomm-word-wrap > div > div {
+  flex-grow: 1;
+  width: 33%;
+  height: inherit;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 4em;
+  transition: all 0.1s;
+}
+.multiple-cardui-wrap .recomm-word-wrap > div > div div:nth-child(2) {
+  margin-top: 10px;
+}
+.multiple-cardui-wrap .recomm-word-wrap > div > div:hover {
+  background-color: rgba(194, 209, 228, 0.42);
+}
+@media (max-width: 1200px) {
+  .multiple-cardui-wrap .recomm-word-wrap {
+    margin-top: 100px;
+  }
+  .multiple-cardui-wrap .recomm-word-wrap > div {
+    font-weight: 600;
+    width: 100%;
+  }
+  .multiple-cardui-wrap .recomm-word-wrap > div > div {
+    padding: 1em;
+  }
+}
+@media (max-width: 768px) {
+  .multiple-cardui-wrap .recomm-word-wrap {
+    font-size: 1.1em;
+  }
+  .multiple-cardui-wrap .recomm-word-wrap > div {
+    margin: 0;
+    height: auto;
+    display: block;
+  }
+  .multiple-cardui-wrap .recomm-word-wrap > div > div {
+    width: 100%;
+    margin: 0px auto;
+    margin-bottom: 40px;
+  }
+}
 @media (min-width: 768px) {
   .col-sm-4 {
     width: 20% !important;
@@ -628,9 +688,27 @@ header .intro-text .intro-heading {
   line-height: 5.0vw;
   width: 80%;
 }
+header .intro-text .intro-heading a {
+  width: 80%;
+  max-width: 280px;
+}
 @media (min-width: 480px) {
   header .intro-text {
     left: 0%;
+  }
+}
+@media (max-width: 1000px) {
+  header .intro-text .intro-heading a.btn-xl {
+    width: 70%;
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+@media (max-width: 768px) {
+  header .intro-text .intro-heading a.btn-xl {
+    width: 71%;
+    font-size: 12px;
+    padding: 5px;
   }
 }
 @media (min-width: 768px) {
@@ -736,16 +814,13 @@ header .intro-text .intro-heading {
   }
 }
 @media (max-width: 452px) {
-  #masters-course-summary ul.level-wrap li,
-  #shared-cto ul.level-wrap li {
+  .base-desc-three ul.level-wrap li {
     margin-bottom: 20%;
   }
-  #masters-course-summary ul.level-wrap li .level-desc-wrap,
-  #shared-cto ul.level-wrap li .level-desc-wrap {
+  .base-desc-three ul.level-wrap li .level-desc-wrap {
     margin-right: 0;
   }
-  #masters-course-summary ul.level-wrap li img.item-img,
-  #shared-cto ul.level-wrap li img.item-img {
+  .base-desc-three ul.level-wrap li img.item-img {
     width: 100%;
   }
 }
@@ -821,61 +896,6 @@ header .intro-text .intro-heading {
   }
   #team .new-container .member-wrap .team-member img {
     max-width: 240px;
-  }
-}
-/************************ recommendation ***********************/
-.multiple-cardui-wrap .recomm-word-wrap > div {
-  font-weight: 600;
-  width: 100%;
-  height: 300px;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  1margin-top: 100px;
-}
-.multiple-cardui-wrap .recomm-word-wrap > div > div {
-  flex-grow: 1;
-  width: 33%;
-  height: inherit;
-  display: flex;
-  flex-flow: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 4em;
-  line-height: 1.7em;
-  transition: all 0.1s;
-}
-.multiple-cardui-wrap .recomm-word-wrap > div > div div:nth-child(2) {
-  margin-top: 10px;
-}
-.multiple-cardui-wrap .recomm-word-wrap > div > div:hover {
-  background-color: rgba(194, 209, 228, 0.42);
-}
-@media (max-width: 1200px) {
-  .multiple-cardui-wrap .recomm-word-wrap {
-    margin-top: 100px;
-  }
-  .multiple-cardui-wrap .recomm-word-wrap > div {
-    font-weight: 600;
-    width: 100%;
-  }
-  .multiple-cardui-wrap .recomm-word-wrap > div > div {
-    padding: 1em;
-  }
-}
-@media (max-width: 768px) {
-  .multiple-cardui-wrap .recomm-word-wrap {
-    font-size: 1.1em;
-  }
-  .multiple-cardui-wrap .recomm-word-wrap > div {
-    margin: 0;
-    height: auto;
-    display: block;
-  }
-  .multiple-cardui-wrap .recomm-word-wrap > div > div {
-    width: 100%;
-    margin: 0px auto;
-    margin-bottom: 40px;
   }
 }
 .header.clearfix {
@@ -1137,6 +1157,10 @@ aside.clients img {
 @media (max-width: 460px) {
   #masters_page #masters-feature li {
     margin-top: 80px;
+  }
+  #join-program h2,
+  #join-program p {
+    font-size: 20px;
   }
 }
 
@@ -1531,6 +1555,12 @@ aside.clients img {
   width: 25%;
   min-width: 300px;
 }
-#sharedcto-page #sharedcto-customer .multiple-cardui-wrap .recomm-word-wrap > div > div:hover {
+#sharedcto-page #sharedcto-customer.multiple-cardui-wrap .new-container {
+  margin-bottom: 200px;
+}
+#sharedcto-page #sharedcto-customer.multiple-cardui-wrap .recomm-word-wrap div.recomm-word-row {
+  margin-bottom: 100px;
+}
+#sharedcto-page #sharedcto-customer.multiple-cardui-wrap .recomm-word-wrap div.recomm-word-row div:hover {
   background-color: #fff;
 }
