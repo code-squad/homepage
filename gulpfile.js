@@ -63,7 +63,7 @@ gulp.task('minify-html',['htmlinclude'], function() {
     type: 'timestamp'
   }))
   .pipe(htmlmin({collapseWhitespace: true}))
-    .pipe(gulp.dest('./'));
+    .pipe(gulp.dest('page'));
 });
 
 
