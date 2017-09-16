@@ -26,7 +26,7 @@
 	//1. NAVIGATION
 	var path = location.pathname;
 	if(path === "/page/index.html") path = "/";
-	var q = "a[href^='"+ path + "']";
+	var q = ".navbar-nav a[href^='"+ path + "']";
 	var matchedNode = document.querySelector(q);
 	if(matchedNode) matchedNode.className = "selected-nav-menu";
 
