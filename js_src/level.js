@@ -1,3 +1,5 @@
+/* 
+
 (function(doc) {
 	//change background of card, when resize viewport.
 
@@ -93,4 +95,5 @@ const ul = doc.querySelector("#masters-desc-card  nav ul");
 
 	});
 })(document)
+*/
 
