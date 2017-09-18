@@ -758,20 +758,21 @@ header .intro-text .intro-heading a {
     font-size: 1.3em;
   }
 }
-#our-program .course-desc-wrap {
+.base-two-column .course-desc-wrap {
   width: 90%;
+  margin: 0px auto;
   margin-top: 100px;
   display: flex;
   align-items: center;
   flex-flow: row wrap;
   justify-content: flex-start;
 }
-#our-program .course-desc-wrap div {
+.base-two-column .course-desc-wrap div {
   width: 40%;
   min-width: 250px;
   flex-grow: 1;
 }
-#our-program .course-desc-wrap .program-item {
+.base-two-column .course-desc-wrap .program-item {
   color: #768191;
   height: 150px;
   padding-left: 40px;
@@ -784,14 +785,13 @@ header .intro-text .intro-heading a {
   align-items: center;
   position: relative;
 }
-#our-program .course-desc-wrap .program-item::before {
-  content: "사용자를 위한";
+.base-two-column .course-desc-wrap .program-item::before {
   top: 10px;
   font-size: 24px;
   position: absolute;
   left: 42px;
 }
-#our-program .course-desc-wrap .program-desc {
+.base-two-column .course-desc-wrap .program-desc {
   line-height: 2em;
   font-size: 1.2em;
 }
@@ -802,11 +802,8 @@ header .intro-text .intro-heading a {
   content: "기업 고객을 위한";
 }
 @media (max-width: 1340px) {
-  #our-program .course-desc-wrap .program-item::before {
+  #our-program.base-two-column .course-desc-wrap .program-item::before {
     top: -9px;
-  }
-  #our-program .course-desc-wrap:nth-child(3) .program-item::before {
-    top: 20px;
   }
 }
 @media (max-width: 768px) {
@@ -814,15 +811,15 @@ header .intro-text .intro-heading a {
   h3 {
     font-size: 25px;
   }
-  #our-program .course-desc-wrap {
+  .base-two-column .course-desc-wrap {
     width: 98%;
   }
-  #our-program .course-desc-wrap .program-item {
+  .base-two-column .course-desc-wrap .program-item {
     font-size: 1.8em;
     height: 50px;
     padding-left: 15px;
   }
-  #our-program .course-desc-wrap .program-item::before {
+  .base-two-column .course-desc-wrap .program-item::before {
     display: none;
   }
 }
@@ -1175,6 +1172,23 @@ aside.clients img {
   #join-program p {
     font-size: 20px;
   }
+}
+#masters-faq.base-two-column .section-heading {
+  margin-bottom: 50px;
+}
+#masters-faq.base-two-column .line-short {
+  margin: 50px auto;
+}
+#masters-faq.base-two-column .course-desc-wrap {
+  margin-top: 0px;
+}
+#masters-faq.base-two-column .course-desc-wrap .program-desc {
+  padding: 10px;
+}
+#masters-faq.base-two-column .course-desc-wrap .program-desc .faq-idx {
+  color: darkgray;
+  font-size: 1.5em;
+  font-weight: 500;
 }
 
 .jumbotron {
