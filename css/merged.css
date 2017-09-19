@@ -1173,22 +1173,30 @@ aside.clients img {
     font-size: 20px;
   }
 }
-#masters-faq.base-two-column .section-heading {
-  margin-bottom: 50px;
+#masters-faq .section-heading {
+  margin-bottom: 100px;
 }
-#masters-faq.base-two-column .line-short {
-  margin: 50px auto;
+#masters-faq .faq-desc-wrap {
+  font-size: 1.2em;
+  border-bottom: 1px solid #f1f1f1;
+  padding: 10px 10px;
+  transition: all 0.3s;
 }
-#masters-faq.base-two-column .course-desc-wrap {
-  margin-top: 0px;
+#masters-faq .faq-desc-wrap > div {
+  line-height: 1.45;
 }
-#masters-faq.base-two-column .course-desc-wrap .program-desc {
-  padding: 10px;
+#masters-faq .faq-desc-wrap .question {
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 14px;
 }
-#masters-faq.base-two-column .course-desc-wrap .program-desc .faq-idx {
-  color: darkgray;
-  font-size: 1.5em;
-  font-weight: 500;
+#masters-faq .faq-desc-wrap .question .text-bold {
+  font-size: 1.4em;
+}
+#masters-faq .faq-desc-wrap .answer {
+  max-height: 0px;
+  transition: max-height 0.5s;
+  overflow: hidden;
 }
 
 .jumbotron {
