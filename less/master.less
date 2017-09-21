@@ -219,6 +219,26 @@
     }
  }
 
+ @media(max-width:768px) {
+    #masters_page {
+        #masters-oneday {
+            table {
+                th { 
+                    padding: 8px 2px;
+                    font-size: 0.8em;
+                }
+                td {
+                    padding: 8px 2px;
+                    display: block;
+                    font-size:0.8em;
+                }
+            }
+        }
+    }
+ }
+
+
+
 
 @media(max-width:460px) {
     #masters_page {
@@ -265,21 +285,25 @@
         font-size: 1.2em;
         border-bottom: 1px solid #f1f1f1;
         padding: 10px 10px;
-        transition:all 0.3s;
+        &:hover {
+           background-color: #f5f5f5;
+        }
         >div {
             line-height: 1.45;
-        }
-        .question {
-            cursor: pointer;
-            font-weight: 600;
-            margin-bottom: 14px;
             .text-bold {
                 font-size: 1.4em;
             }
         }
+        .question {
+            cursor: pointer;
+            padding: 0.3em;
+            
+        }
         .answer {
+            font-weight: 600;
             max-height:0px;
-            transition: max-height 0.5s;
+            padding-left :20px;
+            transition: max-height 0.7s;
             overflow: hidden;
         }
     }

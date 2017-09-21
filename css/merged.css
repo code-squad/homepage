@@ -1164,6 +1164,17 @@ aside.clients img {
     min-width: 100px;
   }
 }
+@media (max-width: 768px) {
+  #masters_page #masters-oneday table th {
+    padding: 8px 2px;
+    font-size: 0.8em;
+  }
+  #masters_page #masters-oneday table td {
+    padding: 8px 2px;
+    display: block;
+    font-size: 0.8em;
+  }
+}
 @media (max-width: 460px) {
   #masters_page #masters-feature li {
     margin-top: 80px;
@@ -1180,22 +1191,25 @@ aside.clients img {
   font-size: 1.2em;
   border-bottom: 1px solid #f1f1f1;
   padding: 10px 10px;
-  transition: all 0.3s;
+}
+#masters-faq .faq-desc-wrap:hover {
+  background-color: #f5f5f5;
 }
 #masters-faq .faq-desc-wrap > div {
   line-height: 1.45;
 }
-#masters-faq .faq-desc-wrap .question {
-  cursor: pointer;
-  font-weight: 600;
-  margin-bottom: 14px;
-}
-#masters-faq .faq-desc-wrap .question .text-bold {
+#masters-faq .faq-desc-wrap > div .text-bold {
   font-size: 1.4em;
 }
+#masters-faq .faq-desc-wrap .question {
+  cursor: pointer;
+  padding: 0.3em;
+}
 #masters-faq .faq-desc-wrap .answer {
+  font-weight: 600;
   max-height: 0px;
-  transition: max-height 0.5s;
+  padding-left: 20px;
+  transition: max-height 0.7s;
   overflow: hidden;
 }
 
