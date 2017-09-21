@@ -1159,9 +1159,11 @@ aside.clients img {
   }
   #masters_page #masters-oneday table th {
     min-width: 100px;
+    padding: 15px 10px;
   }
   #masters_page #masters-oneday table td {
     min-width: 100px;
+    padding: 15px 10px;
   }
 }
 @media (max-width: 768px) {
