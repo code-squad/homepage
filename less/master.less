@@ -210,14 +210,38 @@
         }
         #masters-oneday {
             table {
-                th {min-width: 100px;}
+                th {
+                    min-width: 100px;
+                    padding: 15px 10px
+                }
                 td {
                     min-width: 100px;
+                    padding: 15px 10px
                 }
             }
         }
     }
  }
+
+ @media(max-width:768px) {
+    #masters_page {
+        #masters-oneday {
+            table {
+                th { 
+                    padding: 8px 2px;
+                    font-size: 0.8em;
+                }
+                td {
+                    padding: 8px 2px;
+                    display: block;
+                    font-size:0.8em;
+                }
+            }
+        }
+    }
+ }
+
+
 
 
 @media(max-width:460px) {
@@ -234,3 +258,63 @@
         }
      }
 }
+
+//FAQ - inherit base-two-column used index.html
+// #masters-faq.base-two-column {
+//     .section-heading {
+//         margin-bottom: 50px;
+//     }
+//     .line-short {
+//         margin:50px auto;
+//         width:200px;
+//     }
+//     .course-desc-wrap {
+//         margin-top: 0px;
+//         .program-desc {
+//             padding:10px;
+//             .faq-idx {
+//                 color:darkgray;
+//                 font-size: 1.5em;
+//                 font-weight: 500;
+//             }
+//         }
+//     }
+// }
+
+#masters-faq{
+    .section-heading {
+        margin-bottom:100px;
+    }
+    .faq-desc-wrap {
+        font-size: 1.2em;
+        border-bottom: 1px solid #f1f1f1;
+        padding: 10px 10px;
+        &:hover {
+           background-color: #f5f5f5;
+        }
+        >div {
+            line-height: 1.45;
+            .text-bold {
+                font-size: 1.4em;
+            }
+        }
+        .question {
+            cursor: pointer;
+            padding: 0.3em;
+            
+        }
+        .answer {
+            font-weight: 600;
+            max-height:0px;
+            padding-left :20px;
+            transition: max-height 0.7s;
+            overflow: hidden;
+        }
+    }
+}
+
+
+
+
+
+
