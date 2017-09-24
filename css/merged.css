@@ -1246,7 +1246,7 @@ aside.clients img {
 }
 .jumbotron .wrap-text {
   margin-left: 12px;
-  margin-top: 60px;
+  margin-top: 40px;
   float: left;
   max-width: 480px;
 }
@@ -1327,7 +1327,6 @@ aside.clients img {
   }
   .jumbotron .wrap-text {
     margin-left: 11px;
-    margin-top: 50px;
     float: left;
     max-width: 70%;
   }
