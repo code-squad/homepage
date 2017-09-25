@@ -1217,7 +1217,7 @@ aside.clients img {
 
 .jumbotron {
   position: relative;
-  background-color: #234f8d;
+  background-color: #6f7179;
   text-align: left;
   color: white;
   height: 320px;
@@ -1236,9 +1236,9 @@ aside.clients img {
   opacity: 1.0;
 }
 .jumbotron .presentaion-left img.level-logo {
-  max-width: 140px;
+  max-width: 110px;
   float: left;
-  margin-top: 25px;
+  margin-top: -10px;
 }
 .jumbotron .presentaion-left:first-child {
   margin-top: 0;
@@ -1287,7 +1287,8 @@ aside.clients img {
     margin-left: 10%;
   }
   .jumbotron .presentaion-left img.level-logo {
-    max-width: 140px;
+    max-width: 110px;
+    margin-top: 38px;
     float: left;
   }
   .jumbotron .wrap-text {
@@ -1326,6 +1327,7 @@ aside.clients img {
     margin-left: 2%;
   }
   .jumbotron .wrap-text {
+    margin-top: 20px;
     margin-left: 11px;
     float: left;
     max-width: 70%;
@@ -1340,13 +1342,17 @@ aside.clients img {
   .jumbotron .wrap-text p.font16 {
     font-size: 14px;
   }
+  .jumbotron .wrap-text p.sub-desc {
+    font-size: 1em;
+  }
   .jumbotron .presentaion-left img.level-logo {
     max-width: 80px;
     width: 25%;
-    margin-top: 43px;
+    margin-top: 20px;
     float: left;
   }
   .jumbotron .apply-btn {
+    display: none;
     top: 211px;
     left: 70%;
   }
