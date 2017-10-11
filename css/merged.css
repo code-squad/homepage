@@ -267,6 +267,9 @@ fieldset[disabled] .btn-xl.active {
   text-decoration: none;
   color: #fff;
 }
+.dimmed {
+  opacity: 0.2;
+}
 /****************************  Navigation Bar **************************/
 .navbar-custom {
   background-color: #222222;
@@ -1005,6 +1008,9 @@ aside.clients img {
 #masters_page header {
   background-image: url('../img/masters/masters_main-min.jpg');
 }
+#masters_page #about-masters img {
+  width: 25%;
+}
 #masters_page #masters-class p {
   font-size: 1.2em;
 }
@@ -1167,6 +1173,9 @@ aside.clients img {
   }
 }
 @media (max-width: 768px) {
+  #masters_page #about-masters img {
+    width: 40%;
+  }
   #masters_page #masters-oneday table th {
     padding: 8px 2px;
     font-size: 0.8em;
@@ -1288,7 +1297,6 @@ aside.clients img {
   }
   .jumbotron .presentaion-left img.level-logo {
     max-width: 110px;
-    margin-top: 38px;
     float: left;
   }
   .jumbotron .wrap-text {
@@ -1327,7 +1335,7 @@ aside.clients img {
     margin-left: 2%;
   }
   .jumbotron .wrap-text {
-    margin-top: 20px;
+    margin-top: 48px;
     margin-left: 11px;
     float: left;
     max-width: 70%;
@@ -1366,7 +1374,7 @@ aside.clients img {
   }
 }
 .marketing div {
-  opacity: 1;
+  opacity: 0.5;
 }
 .marketing div.col-lg-6 {
   padding-left: 10%;
