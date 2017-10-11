@@ -1008,6 +1008,9 @@ aside.clients img {
 #masters_page header {
   background-image: url('../img/masters/masters_main-min.jpg');
 }
+#masters_page #about-masters img {
+  width: 25%;
+}
 #masters_page #masters-class p {
   font-size: 1.2em;
 }
@@ -1170,6 +1173,9 @@ aside.clients img {
   }
 }
 @media (max-width: 768px) {
+  #masters_page #about-masters img {
+    width: 40%;
+  }
   #masters_page #masters-oneday table th {
     padding: 8px 2px;
     font-size: 0.8em;
