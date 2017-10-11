@@ -267,6 +267,9 @@ fieldset[disabled] .btn-xl.active {
   text-decoration: none;
   color: #fff;
 }
+.dimmed {
+  opacity: 0.2;
+}
 /****************************  Navigation Bar **************************/
 .navbar-custom {
   background-color: #222222;
@@ -1288,7 +1291,6 @@ aside.clients img {
   }
   .jumbotron .presentaion-left img.level-logo {
     max-width: 110px;
-    margin-top: 38px;
     float: left;
   }
   .jumbotron .wrap-text {
@@ -1327,7 +1329,7 @@ aside.clients img {
     margin-left: 2%;
   }
   .jumbotron .wrap-text {
-    margin-top: 20px;
+    margin-top: 48px;
     margin-left: 11px;
     float: left;
     max-width: 70%;
@@ -1366,7 +1368,7 @@ aside.clients img {
   }
 }
 .marketing div {
-  opacity: 1;
+  opacity: 0.5;
 }
 .marketing div.col-lg-6 {
   padding-left: 10%;
