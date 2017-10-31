@@ -635,7 +635,7 @@ fieldset[disabled] .btn-xl.active {
 /******************************************************/
 
 header {
-  background-image: url('../img/background/2-min.jpg');
+  background-image: url('../img/background/2-min.v2.jpg');
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center 5%;
@@ -884,7 +884,7 @@ header .intro-text .intro-heading a {
   background-image: url(/img/team/jk2.jpg);
 }
 #team .member-wrap .team-member:nth-child(2) {
-  background-image: url(/img/team/yo.jpeg);
+  background-image: url(/img/team/yo.jpg);
 }
 #team .member-wrap .team-member:nth-child(3) {
   background-image: url(/img/team/honux.jpg);
@@ -1006,7 +1006,7 @@ aside.clients img {
   background-color: #555;
 }
 #masters_page header {
-  background-image: url('../img/masters/masters_main-min.jpg');
+  background-image: url('../img/masters/masters_main-min.v2.jpg');
 }
 #masters_page #about-masters img {
   width: 25%;
@@ -1613,7 +1613,7 @@ aside.clients img {
 }
 
 #sharedcto-page header {
-  background-image: url('../img/shared-cto/sharedcto-title.jpg');
+  background-image: url('../img/shared-cto/sharedcto-title.v2.jpg');
 }
 #sharedcto-page #sharedcto-example.base-desc-three ul.level-wrap li {
   width: 25%;
