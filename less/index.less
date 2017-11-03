@@ -336,26 +336,95 @@ header {
 
 @media(max-width:1200px) {
   #team { 
-        .new-container {
-            width:80%;
-            .member-wrap {
-                display:block;
-                .team-member {
-                    width: 250px;
-                    height: 250px;
-                    margin : 0px auto 25px;
-                    img {
-                        max-width : 240px;
-                    }
+    .new-container {
+        width:80%;
+        .member-wrap {
+            display:block;
+            .team-member {
+                width: 250px;
+                height: 250px;
+                margin : 0px auto 25px;
+                img {
+                    max-width : 240px;
                 }
             }
         }
     }
+ }
 }
 
-@media(max-width:768px) {
-  
+
+#wrapper {
+    max-width: 1200px;
+    margin: 0px auto;
 }
+
+#wrapper * {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.247059);
+}
+
+.viewArea {
+    overflow: hidden;
+}
+
+#swipeWrap {
+  position : relative;
+  width :100%;
+  -webkit-transform: translate3d(0px, 0px, 0px);
+  transform: translate3d(0px, 0px, 0px);
+  font-size: 0.9em;
+}
+
+#swipeWrap > div {
+  width :100%;
+  position: absolute;
+  top: 0;
+  height: auto;
+}
+
+#swipeWrap > div > img {
+    width : 100%;
+    height:auto;
+}
+
+#swipeWrap > div:nth-child(1) {
+   -ms-transform: translate3d(-100%, 0px, 0px);
+   -webkit-transform: translate3d(-100%, 0px, 0px);
+}
+#swipeWrap > div:nth-child(2){
+    -ms-transform: translate3d(0%, 0px, 0px);
+    -webkit-transform: translate3d(0%, 0px, 0px);
+}
+#swipeWrap > div:nth-child(3){
+    -ms-transform: translate3d(100%, 0px, 0px);
+    -webkit-transform: translate3d(100%, 0px, 0px);
+}
+
+#swipeWrap > div:nth-child(4){
+  -ms-transform: translate3d(200%, 0px, 0px);
+  -webkit-transform: translate3d(200%, 0px, 0px);
+}
+
+#swipeWrap > div:nth-child(5){
+  -ms-transform: translate3d(300%, 0px, 0px);
+  -webkit-transform: translate3d(300%, 0px, 0px);
+}
+
+#swipeWrap > div:nth-child(6){
+  -ms-transform: translate3d(400%, 0px, 0px);
+  -webkit-transform: translate3d(400%, 0px, 0px);
+}
+
+#swipeWrap > div:nth-child(7){
+  -ms-transform: translate3d(500%, 0px, 0px);
+  -webkit-transform: translate3d(500%, 0px, 0px);
+}
+
+#swipeWrap > div:nth-child(8){
+  -ms-transform: translate3d(600%, 0px, 0px);
+  -webkit-transform: translate3d(600%, 0px, 0px);  
+}
+
 
 .header.clearfix {
     border-bottom: 0;

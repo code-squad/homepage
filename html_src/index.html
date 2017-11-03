@@ -296,13 +296,72 @@
               <div> - 블루웨일 개발자 개구리</div>
             </div>
           </div>
-
         </div>
+    </div>
+</section>
 
+<div class="new-container">
+  <div class="line-short"></div>
+</div>
 
+  <!-- Team Section -->
+<section id="place" class="base-section-height">
+  <div class="new-container">
+
+    <div class="row">
+      <div class="col-lg-12">
+        <h2 class="section-heading text-center">CodeSquad Place</h2>
+        <h3 class="section-subheading text-muted text-center">우리의 교육장은 우리의 철학을 담고 있습니다</h3>
+      </div>
+    </div>
+
+    <div id="wrapper" class="row">
+      <div class="viewArea">
+        <div id="swipeWrap">
+          <div class="cloned">
+            <img src="../img/place/img_5225.jpg" alt="">
+          </div>
+
+          <div >
+            <img src="../img/place/img_5187.jpg" alt="">
+          </div>
+
+          <div>
+            <img src="../img/place/img_5199.jpg" alt="">
+          </div>
+
+          <div>
+            <img src="../img/place/img_5208.jpg" alt="">
+          </div>
+
+          <div>
+            <img src="../img/place/img_5229.jpg" alt="">
+          </div>
+
+          <div>
+            <img src="../img/place/img_5216.jpg" alt="">
+          </div>
+
+          <div>
+            <img src="../img/place/img_5225.jpg" alt="">
+          </div>
+
+          <div class="cloned" >
+            <img src="../img/place/img_5187.jpg" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="buttonNavi">
+        <button class="swipe-prev">&lt;</button>
+        <button class="swipe-next">&gt;</button>
+      </div>
 
   </div>
+  </div>
 </section>
+
+
 
 @@include('./common/footer.html')
 
@@ -310,7 +369,45 @@
 
 @@include('./common/ga.html')
 
- <script src="/js/common.min.js"></script>
+<script src="/js/common.min.js"></script>
 <script src="/js/index.min.js"></script>
+<script src="/js/swipe_merge_es5.min.js"></script>
+
+<script>
+  var elSwapWrap = document.getElementById("swipeWrap");
+  var oMyswipe = new SweetSwipe( elSwapWrap, {
+    'bCircular' : true,
+          'nDuration' : 300,  //default 100
+          'nBackWidth' : 60,  //default 60
+          'nSideWidth' : 20,  //default 0
+          'nDecisionSlope' : 0.8, //default 0.8
+          'nForcedSwipeTime' : 100, //default 0
+          'bSettingScreenHeight': true,
+          'bMouseEventSupport' : true
+        });
+
+  oMyswipe.registerUserMethod({
+    'FN_BEFORE_SWIPE': function(n){},
+    'FN_AFTER_SWIPE': function(n){},
+    'FN_COMPONENT_DID_LOAD' : function(){
+    }
+  });
+
+  oMyswipe.onPlugins([
+  {
+    'name'      : 'SwipeStepMoverPlugin',
+    'option'    : {
+      'prevButton' : document.querySelector(".swipe-prev"),
+      'nextButton' : document.querySelector(".swipe-next"),
+      'nDuration': 200
+    },
+    'userMethod' : {}
+  } 
+  ]);
+
+  var elViewImage = document.querySelector("#swipeWrap > div:nth-child(2) img");
+  elViewImage.onload = function() { _cu.setDynamicHeight(0, elSwapWrap, true); }    
+
+</script>
 </body>
 </html>
