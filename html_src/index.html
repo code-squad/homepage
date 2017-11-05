@@ -377,13 +377,13 @@
   var elSwapWrap = document.getElementById("swipeWrap");
   var oMyswipe = new SweetSwipe( elSwapWrap, {
     'bCircular' : true,
-          'nDuration' : 300,  //default 100
+          'nDuration' : 600,  //default 100
           'nBackWidth' : 60,  //default 60
           'nSideWidth' : 20,  //default 0
           'nDecisionSlope' : 0.8, //default 0.8
           'nForcedSwipeTime' : 100, //default 0
           'bSettingScreenHeight': true,
-          'bMouseEventSupport' : true
+          'bMouseEventSupport' : false
         });
 
   oMyswipe.registerUserMethod({
@@ -405,8 +405,15 @@
   } 
   ]);
 
-  var elViewImage = document.querySelector("#swipeWrap > div:nth-child(2) img");
-  elViewImage.onload = function() { _cu.setDynamicHeight(0, elSwapWrap, true); }    
+  (function movePanel() {
+    setTimeout(function(){
+      oMyswipe.runAutoAnimation("toRight");
+      movePanel();
+    }, 5000);
+  }());
+
+  // var elViewImage = document.querySelector("#swipeWrap > div:nth-child(2) img");
+  // elViewImage.onload = function() { _cu.setDynamicHeight(0, elSwapWrap, true); }
 
 </script>
 </body>

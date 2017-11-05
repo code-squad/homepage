@@ -619,6 +619,8 @@ var SweetSwipe = function (_CommonComponent3) {
 
     this.bAnimationing = false;
     this.nNextNumber = 0;
+
+    this.recalculateWidth();
   };
 
   SweetSwipe.prototype.registerEvents = function registerEvents() {
@@ -889,6 +891,25 @@ var SweetSwipe = function (_CommonComponent3) {
     nCur = this.reAdjustNextNumberForCircular(nCur);
 
     this.runSwipeAction(this.option.nDuration, nCur, nWidth);
+  };
+
+  //TODO. REFACTORING throttle.
+
+
+  SweetSwipe.prototype.recalculateWidth = function recalculateWidth() {
+    var resizerunner = false;
+
+    window.addEventListener("resize", function () {
+      var _this6 = this;
+
+      if (resizerunner) return;
+      resizerunner = true;
+
+      setTimeout(function () {
+        _this6.nSwipeWidth = _cu.getWidth(_this6.elTarget.firstElementChild);
+        resizerunner = false;
+      }, 100);
+    }.bind(this), false);
   };
 
   return SweetSwipe;
