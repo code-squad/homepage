@@ -87,3 +87,76 @@ window.addEventListener("load", function() {
 	document.querySelector("#recommendations .recomm-word-row:nth-child(3)").innerHTML = recommHTML;
 
 })();
+
+
+//SWIPE
+(function(){
+var isMobile = (/iphone|ipod|android|blackberry|opera|mini|windows\sce|palm|smartphone|iemobile/i).test(navigator.userAgent.toLowerCase());
+  //모바일 제약사항
+  //1. 자동애니메이션 없다.
+  //2. touch 이벤트 안한다.
+
+  var elSwapWrap = document.getElementById("swipeWrap");
+
+  var oMyswipe = new SweetSwipe( elSwapWrap, {
+          'bCircular' : true,
+          'nDuration' : 1500,  //default 100
+          'nBackWidth' : 60,  //default 60
+          'nSideWidth' : 20,  //default 0
+          'nDecisionSlope' : 0.8, //default 0.8
+          'nForcedSwipeTime' : 100, //default 0
+          'bSettingScreenHeight': false,
+          'bMouseEventSupport' : false,
+          'bTouchEventSupport' : false,
+        });
+
+  oMyswipe.onPlugins([
+  {
+    'name'      : 'SwipeStepMoverPlugin',
+    'option'    : {
+      'prevButton' : document.querySelector(".swipe-prev"),
+      'nextButton' : document.querySelector(".swipe-next"),
+      'nDuration': 200
+    },
+    'userMethod' : {}
+  } 
+  ]);
+
+  function movePanel() {
+    setTimeout(function(){
+      oMyswipe.runAutoAnimation("toRight");
+      movePanel();
+    }, 8000);
+  }
+
+  if(!isMobile) movePanel();
+
+  document.querySelector("#swipeWrap > div:nth-child(2) img").onload = function () {
+    _cu.setDynamicHeight(0, elSwapWrap, true);
+  }
+
+  //on resize, recalculate height of button.
+  window.addEventListener("resize", function(){
+  	var elCurrent = elSwapWrap.children[0];
+  	var nHeight =  parseInt(getComputedStyle(elCurrent).height);
+  	elSwapWrap.style.height = nHeight + "px"; 
+  });
+
+  (function () {
+  	var resizerunner = false;
+  	window.addEventListener("resize", function(){
+  		if(resizerunner)return;
+      resizerunner = true;
+
+      setTimeout( function() {
+      	var elCurrent = elSwapWrap.children[0];
+      	var nHeight =  parseInt(getComputedStyle(elCurrent).height);
+      	elSwapWrap.style.height = nHeight + "px"; 
+      	resizerunner = false;
+    	},100);	
+  	});
+  })();
+
+})();
+
+

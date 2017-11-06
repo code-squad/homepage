@@ -586,7 +586,8 @@ var SweetSwipe = function (_CommonComponent3) {
         'nDecisionSlope': 0.8,
         'nForcedSwipeTime': 0,
         'bSettingScreenHeight': false,
-        'bMouseEventSupport': false
+        'bMouseEventSupport': false,
+        'bTouchEventSupport': true
       }
     };
   };
@@ -626,15 +627,17 @@ var SweetSwipe = function (_CommonComponent3) {
   SweetSwipe.prototype.registerEvents = function registerEvents() {
     var _this4 = this;
 
-    this.elTarget.addEventListener("touchstart", function (evt) {
-      _this4.handlerTouchStart(evt);
-    });
-    this.elTarget.addEventListener("touchmove", function (evt) {
-      _this4.handlerTouchMove(evt);
-    });
-    this.elTarget.addEventListener("touchend", function (evt) {
-      _this4.handlerTouchEnd(evt);
-    });
+    if (this.option.bTouchEventSupport) {
+      this.elTarget.addEventListener("touchstart", function (evt) {
+        _this4.handlerTouchStart(evt);
+      });
+      this.elTarget.addEventListener("touchmove", function (evt) {
+        _this4.handlerTouchMove(evt);
+      });
+      this.elTarget.addEventListener("touchend", function (evt) {
+        _this4.handlerTouchEnd(evt);
+      });
+    }
 
     if (this.option.bMouseEventSupport) {
       this.elTarget.addEventListener("mousedown", function (evt) {

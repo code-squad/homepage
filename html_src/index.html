@@ -353,8 +353,8 @@
       </div>
 
       <div class="buttonNavi">
-        <button class="swipe-prev">&lt;</button>
-        <button class="swipe-next">&gt;</button>
+        <button class="swipe-prev"> &#10094;</button>
+        <button class="swipe-next">&#10095;</button>
       </div>
 
   </div>
@@ -370,51 +370,8 @@
 @@include('./common/ga.html')
 
 <script src="/js/common.min.js"></script>
-<script src="/js/index.min.js"></script>
 <script src="/js/swipe_merge_es5.min.js"></script>
+<script src="/js/index.min.js"></script>
 
-<script>
-  var elSwapWrap = document.getElementById("swipeWrap");
-  var oMyswipe = new SweetSwipe( elSwapWrap, {
-    'bCircular' : true,
-          'nDuration' : 600,  //default 100
-          'nBackWidth' : 60,  //default 60
-          'nSideWidth' : 20,  //default 0
-          'nDecisionSlope' : 0.8, //default 0.8
-          'nForcedSwipeTime' : 100, //default 0
-          'bSettingScreenHeight': true,
-          'bMouseEventSupport' : false
-        });
-
-  oMyswipe.registerUserMethod({
-    'FN_BEFORE_SWIPE': function(n){},
-    'FN_AFTER_SWIPE': function(n){},
-    'FN_COMPONENT_DID_LOAD' : function(){
-    }
-  });
-
-  oMyswipe.onPlugins([
-  {
-    'name'      : 'SwipeStepMoverPlugin',
-    'option'    : {
-      'prevButton' : document.querySelector(".swipe-prev"),
-      'nextButton' : document.querySelector(".swipe-next"),
-      'nDuration': 200
-    },
-    'userMethod' : {}
-  } 
-  ]);
-
-  (function movePanel() {
-    setTimeout(function(){
-      oMyswipe.runAutoAnimation("toRight");
-      movePanel();
-    }, 5000);
-  }());
-
-  // var elViewImage = document.querySelector("#swipeWrap > div:nth-child(2) img");
-  // elViewImage.onload = function() { _cu.setDynamicHeight(0, elSwapWrap, true); }
-
-</script>
 </body>
 </html>

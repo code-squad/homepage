@@ -914,6 +914,7 @@ header .intro-text .intro-heading a {
 #wrapper {
   max-width: 1200px;
   margin: 0px auto;
+  position: relative;
 }
 #wrapper * {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0.247059);
@@ -969,6 +970,50 @@ header .intro-text .intro-heading a {
 #swipeWrap > div:nth-child(8) {
   -ms-transform: translate3d(600%, 0px, 0px);
   -webkit-transform: translate3d(600%, 0px, 0px);
+}
+.buttonNavi {
+  position: absolute;
+  top: 300px;
+  width: 100%;
+}
+.buttonNavi button {
+  color: #fff;
+  font-size: 6em;
+  border: 0;
+  margin: 0% 1.0%;
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+}
+.buttonNavi button.swipe-prev {
+  float: left;
+}
+.buttonNavi button.swipe-next {
+  float: right;
+}
+@media (max-width: 1200px) {
+  .buttonNavi {
+    top: 200px;
+  }
+}
+@media (max-width: 768px) {
+  .buttonNavi {
+    top: 150px;
+  }
+  .buttonNavi button {
+    font-size: 4em;
+  }
+}
+@media (max-width: 480px) {
+  .buttonNavi {
+    top: 60px;
+  }
+  .buttonNavi button {
+    font-size: 3em;
+  }
 }
 .header.clearfix {
   border-bottom: 0;
