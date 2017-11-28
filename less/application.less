@@ -1,6 +1,47 @@
 @import "variables.less";
 @import "mixins.less";
 
+@keyframes restmove{
+    0% {
+        transform: translate(0,0)
+    }
+
+    7.69% {
+        transform: translate(0, 10px)
+    }
+
+    20% {
+        transform: translate(0,0)
+    }
+
+    30% {
+        transform: translate(0, 10px)
+    }
+
+    42.3% {
+        transform: translate(0,0)
+    }
+
+    53.84% {
+        transform: translate(0, 10px)
+    }
+
+    65.38% {
+        transform: translate(0,0)
+    }
+
+    76.92% {
+        transform: translate(0, 10px)
+    }
+
+    88.46% {
+        transform: translate(0,0)
+    }
+
+    100% {
+        transform: translate(0,0)
+    }
+}
 
 .jumbotron {
     p {
@@ -176,6 +217,7 @@
     }
     div.col-lg-6 {
         padding-left: 10%;
+        display: none;
     }
    .emphasis_link {
         font-weight: bold;
@@ -188,7 +230,14 @@
     p.title-message{
         font-size :2em;
         font-weight: bold;
-        margin-bottom: 50px;
+        margin-bottom: 20px;
+        position: relative;
+        padding: 0px 10px;
+    }
+    .restman {
+        text-align: center;
+        animation: restmove 12s ease-in-out;
+        font-size: 4.5em;
     }
     .item {
         margin-bottom: 30px;
@@ -201,3 +250,5 @@
     padding-top: 60px;
     opacity: 1.0;
 }
+
+

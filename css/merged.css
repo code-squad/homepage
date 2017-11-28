@@ -692,7 +692,7 @@ header .intro-text .intro-heading {
   width: 90%;
 }
 header .intro-text .intro-heading a {
-  width: 80%;
+  width: 95%;
   max-width: 380px;
 }
 @media (min-width: 480px) {
@@ -738,8 +738,8 @@ header .intro-text .intro-heading a {
 }
 @media (max-width: 768px) {
   header .intro-text .intro-heading a.btn-xl {
-    width: 88%;
-    font-size: 12px;
+    width: 94%;
+    font-size: 11px;
     padding: 5px;
   }
 }
@@ -1328,6 +1328,38 @@ aside.clients img {
   overflow: hidden;
 }
 
+@keyframes restmove {
+  0% {
+    transform: translate(0, 0);
+  }
+  7.69% {
+    transform: translate(0, 10px);
+  }
+  20% {
+    transform: translate(0, 0);
+  }
+  30% {
+    transform: translate(0, 10px);
+  }
+  42.3% {
+    transform: translate(0, 0);
+  }
+  53.84% {
+    transform: translate(0, 10px);
+  }
+  65.38% {
+    transform: translate(0, 0);
+  }
+  76.92% {
+    transform: translate(0, 10px);
+  }
+  88.46% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
 .jumbotron {
   position: relative;
   background-color: #6f7179;
@@ -1482,6 +1514,7 @@ aside.clients img {
 }
 .marketing div.col-lg-6 {
   padding-left: 10%;
+  display: none;
 }
 .marketing .emphasis_link {
   font-weight: bold;
@@ -1494,7 +1527,14 @@ aside.clients img {
 .marketing p.title-message {
   font-size: 2em;
   font-weight: bold;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
+  position: relative;
+  padding: 0px 10px;
+}
+.marketing .restman {
+  text-align: center;
+  animation: restmove 12s ease-in-out;
+  font-size: 4.5em;
 }
 .marketing .item {
   margin-bottom: 30px;
