@@ -206,6 +206,168 @@ section {
 }
 
 
+/**************************** intro-tex *******************************/
+
+header {
+    background-image: url('../img/background/main.jpg');
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center 12%;
+    .background-cover;
+    text-align: center;
+    color: white;
+    position:relative;
+    height: 800px;
+    opacity: 0.2;
+    transition: all 1.2s;
+    &:after {
+        content: "";
+        background-color :#24272a;
+        .background-cover;
+        opacity: 0.35;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        //z-index: -1;  
+    }
+    .intro-text {
+         position: absolute;
+         text-align: right;
+         width: 40%;
+         left:10%;
+         top: 23%;
+         padding: 2.5% 0.5%;
+         color: #eee;
+         border-radius: 0.8%;
+         min-width: 250px;
+         z-index: 1;
+         .intro-lead-in {
+            .serif-font;
+            font-weight: 500;
+            font-size: 40px;
+            line-height: 40px;
+            margin-bottom: 25px;
+            margin: 0px auto;
+            .company-name {
+                font-weight:900;
+            }
+        }
+        .intro-heading {
+            .heading-font;
+            font-family: "Nanum Barun Gothic", sans-serif;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 2.5vw;
+            line-height: 4.0vw;
+            width: 90%;
+            a {
+                width: 95%;
+                max-width: 380px;
+            }
+        }
+    }
+}
+
+@media(max-width:1000px) {
+    header .intro-text {
+        width:100%;
+        text-align: center;
+        left:0;
+        .intro-heading { 
+            width:100%;
+            line-height: 7.0vw;
+            font-size: 5.0vw;
+            a.btn-xl {
+                font-size: 2.2vw;
+                width: 80%;
+                max-width: 600px;
+            }
+        }
+    }
+}
+
+@media(max-width:480px) {
+    header { 
+        height: 300px;
+        .intro-text {
+            .intro-heading { 
+                line-height: 9.0vw;
+                font-size: 6.0vw;
+                a.btn-xl {
+                    font-size: 3.0vw;
+                    width: 75%;
+                    padding:12px;
+                }
+            }
+        }
+    }
+}
+
+// @media(min-width:480px) {
+//     header {
+//         .intro-text {
+//             left : 0%;
+//         }
+//     }
+// }
+
+
+// @media(min-width:456px) {
+//     header {
+//         .intro-text {
+//             .intro-heading {
+//                 font-size: 3.6vw;
+//             }
+//         }
+//     }
+// }
+
+
+// @media(min-width:768px) {
+//     header {
+//         height: 700px;
+//         .intro-text {
+//             width:40%;
+//             left:10%;
+//             .intro-lead-in {
+//                 .serif-font;
+//                 font-size: 40px;
+//                 line-height: 40px;
+//                 margin-bottom: 25px;
+//                 .company-name {
+//                     font-weight:900;
+//                 }
+//             }
+//             .intro-heading {
+//                 .heading-font;
+//                 font-size: 2.5vw;
+//                 line-height: 4.0vw;
+//             }
+//         }
+//     }
+// }
+
+// @media(max-width:1000px) {
+//     header .intro-text {
+//         .intro-heading a.btn-xl {
+//             width:91%;
+//             font-size: 14px;
+//             padding: 10px;
+//         }
+//     }
+// }
+
+// @media(max-width:768px) {
+//     header .intro-text {
+//         .intro-heading a.btn-xl {
+//             width: 94%;
+//             font-size: 11px;
+//             padding: 5px;
+//         }
+//     }
+// }
 
 /****************************  Navigation Bar **************************/
 .navbar-custom {

@@ -270,6 +270,103 @@ fieldset[disabled] .btn-xl.active {
 .dimmed {
   opacity: 0.2;
 }
+/**************************** intro-tex *******************************/
+header {
+  background-image: url('../img/background/main.jpg');
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center 12%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  text-align: center;
+  color: white;
+  position: relative;
+  height: 800px;
+  opacity: 0.2;
+  transition: all 1.2s;
+}
+header:after {
+  content: "";
+  background-color: #24272a;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  opacity: 0.35;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+}
+header .intro-text {
+  position: absolute;
+  text-align: right;
+  width: 40%;
+  left: 10%;
+  top: 23%;
+  padding: 2.5% 0.5%;
+  color: #eee;
+  border-radius: 0.8%;
+  min-width: 250px;
+  z-index: 1;
+}
+header .intro-text .intro-lead-in {
+  font-family: "Nanum Barun Gothic", sans-serif;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 40px;
+  margin-bottom: 25px;
+  margin: 0px auto;
+}
+header .intro-text .intro-lead-in .company-name {
+  font-weight: 900;
+}
+header .intro-text .intro-heading {
+  font-family: "Nanum Barun Gothic", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 2.5vw;
+  line-height: 4.0vw;
+  width: 90%;
+}
+header .intro-text .intro-heading a {
+  width: 95%;
+  max-width: 380px;
+}
+@media (max-width: 1000px) {
+  header .intro-text {
+    width: 100%;
+    text-align: center;
+    left: 0;
+  }
+  header .intro-text .intro-heading {
+    width: 100%;
+    line-height: 7.0vw;
+    font-size: 5.0vw;
+  }
+  header .intro-text .intro-heading a.btn-xl {
+    font-size: 2.2vw;
+    width: 80%;
+    max-width: 600px;
+  }
+}
+@media (max-width: 480px) {
+  header {
+    height: 300px;
+  }
+  header .intro-text .intro-heading {
+    line-height: 9.0vw;
+    font-size: 6.0vw;
+  }
+  header .intro-text .intro-heading a.btn-xl {
+    font-size: 3.0vw;
+    width: 75%;
+    padding: 12px;
+  }
+}
 /****************************  Navigation Bar **************************/
 .navbar-custom {
   background-color: #222222;
@@ -634,115 +731,6 @@ fieldset[disabled] .btn-xl.active {
 }
 /******************************************************/
 
-header {
-  background-image: url('../img/background/main.jpg');
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-position: center 12%;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
-  text-align: center;
-  color: white;
-  position: relative;
-  height: 350px;
-  opacity: 0.2;
-  transition: all 1.2s;
-}
-header:after {
-  content: "";
-  background-color: #24272a;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
-  opacity: 0.35;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-}
-header .intro-text {
-  position: absolute;
-  text-align: right;
-  width: 50%;
-  top: 23%;
-  padding: 2.5% 0.5%;
-  color: #eee;
-  border-radius: 0.8%;
-  min-width: 250px;
-  z-index: 1;
-}
-header .intro-text .intro-lead-in {
-  font-family: "Nanum Barun Gothic", sans-serif;
-  font-weight: 500;
-  font-size: 22px;
-  line-height: 22px;
-  margin-bottom: 25px;
-  margin: 0px auto;
-}
-header .intro-text .intro-heading {
-  font-family: "Nanum Barun Gothic", sans-serif;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 4vw;
-  line-height: 6.0vw;
-  width: 90%;
-}
-header .intro-text .intro-heading a {
-  width: 95%;
-  max-width: 380px;
-}
-@media (min-width: 480px) {
-  header .intro-text {
-    left: 0%;
-  }
-}
-@media (min-width: 456px) {
-  header .intro-text .intro-heading {
-    font-size: 3.6vw;
-  }
-}
-@media (min-width: 768px) {
-  header {
-    height: 700px;
-  }
-  header .intro-text {
-    width: 40%;
-    left: 10%;
-  }
-  header .intro-text .intro-lead-in {
-    font-family: "Nanum Barun Gothic", sans-serif;
-    font-size: 40px;
-    line-height: 40px;
-    margin-bottom: 25px;
-  }
-  header .intro-text .intro-lead-in .company-name {
-    font-weight: 900;
-  }
-  header .intro-text .intro-heading {
-    font-family: "Nanum Barun Gothic", sans-serif;
-    text-transform: uppercase;
-    font-size: 2.5vw;
-    line-height: 4.0vw;
-  }
-}
-@media (max-width: 1000px) {
-  header .intro-text .intro-heading a.btn-xl {
-    width: 91%;
-    font-size: 14px;
-    padding: 10px;
-  }
-}
-@media (max-width: 768px) {
-  header .intro-text .intro-heading a.btn-xl {
-    width: 94%;
-    font-size: 11px;
-    padding: 5px;
-  }
-}
 .dummyfornav {
   height: 53px;
   display: block;
@@ -1772,19 +1760,121 @@ aside.clients img {
 #sharedcto-page #sharedcto-customer.multiple-cardui-wrap .recomm-word-wrap div.recomm-word-row div:hover {
   background-color: #fff;
 }
-@media (max-width: 768px) {
-  #sharedcto-page .intro-heading {
-    font-weight: 700;
-    font-size: 4.2vw;
-    line-height: 5.0vw;
-    width: 80%;
-    margin-left: 25%;
+
+#special-page a:hover,
+#special-page a:focus {
+  color: #005580;
+  text-decoration: none;
+}
+#special-page h1,
+#special-page h2 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 3em;
+  color: #765647;
+}
+#special-page header {
+  background-image: url('../img/special/special_bg.jpg');
+}
+#special-page #about-special {
+  letter-spacing: 0.15em;
+}
+#special-page #about-special h2 i.fa.fa-linode {
+  margin-right: 10px;
+}
+#special-page #special-item.base-desc-three {
+  background-color: #f0f0f0;
+}
+#special-page #special-item.base-desc-three ul.level-wrap > li {
+  width: 33.33%;
+  min-width: 450px;
+  margin: 1em;
+  box-sizing: border-box;
+  max-width: 500px;
+}
+#special-page #special-item.base-desc-three ul.level-wrap > li .level-desc-wrap {
+  cursor: pointer;
+  margin: 0px;
+  box-shadow: 4px 4px 15px -3px rgba(0, 0, 0, 0.4);
+}
+#special-page #special-item.base-desc-three ul.level-wrap > li .level-desc-wrap:hover {
+  box-shadow: 4px 4px 15px 0 rgba(0, 0, 0, 0.4);
+}
+#special-page #special-item.base-desc-three ul.level-wrap > li .img-wrap img {
+  width: 100%;
+}
+#special-page #special-item.base-desc-three ul.level-wrap > li .item-desc {
+  display: block;
+  padding: 2em;
+  background: #3783ae;
+  color: #fff;
+  font-weight: bold;
+  height: 520px;
+  margin-top: 1em;
+}
+#special-page #special-item.base-desc-three ul.level-wrap > li .item-desc h4 {
+  font-size: 2em;
+  margin-bottom: 1.3em;
+  margin-top: 1.3em;
+}
+#special-page #special-item.base-desc-three ul.level-wrap > li .item-desc .program-card {
+  font-weight: normal;
+}
+#special-page #special-item.base-desc-three ul.level-wrap > li .item-desc ul.program-card {
+  margin-top: 50px;
+  background: #356b8a;
+  padding: 30px;
+  box-sizing: border-box;
+  box-shadow: 4px 4px 15px -3px rgba(0, 0, 0, 0.4);
+}
+#special-page #special-item.base-desc-three ul.level-wrap > li .item-desc ul.program-card li {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  width: 90%;
+  overflow: auto;
+}
+#special-page #special-item.base-desc-three ul.level-wrap > li .item-desc ul.program-card li i {
+  width: 40px;
+  margin-right: 10px;
+  float: left;
+  font-size: 1.3em;
+}
+#special-page #special-item.base-desc-three ul.level-wrap > li .item-desc ul.program-card li span:nth-child(2) {
+  float: left;
+}
+#special-page #special-item.base-desc-three ul.level-wrap > li .item-desc ul.program-card li span:nth-child(3) {
+  float: right;
+}
+@media (max-width: 1100px) {
+  #special-page #special-item.base-desc-three {
+    color: red;
+  }
+  #special-page #special-item.base-desc-three ul.level-wrap li {
+    margin: 0px auto;
   }
 }
 @media (max-width: 480px) {
-  #sharedcto-page .intro-heading {
-    font-size: 6.0vw;
-    line-height: 7.0vw;
-    width: 90%;
+  #special-page h1,
+  #special-page h2 {
+    font-size: 2em;
+  }
+  #special-page #special-item.base-desc-three ul.level-wrap li {
+    margin-bottom: 80px;
+    min-width: 250px;
+  }
+  #special-page #special-item.base-desc-three ul.level-wrap li .item-desc {
+    height: 570px;
+  }
+  #special-page #special-item.base-desc-three ul.level-wrap li .item-desc ul.program-card {
+    padding: 10px;
+  }
+  #special-page #special-item.base-desc-three ul.level-wrap li .item-desc ul.program-card li i {
+    font-size: 0.8em;
+    width: 13px;
+  }
+  #special-page #special-item.base-desc-three ul.level-wrap li .item-desc ul.program-card li span {
+    font-size: 0.8em;
+  }
+  #special-page #special-item.base-desc-three ul.level-wrap li .item-desc ul.program-card li span:nth-child(3) {
+    margin-right: 17px;
   }
 }
