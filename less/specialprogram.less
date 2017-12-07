@@ -1,0 +1,476 @@
+@import "variables.less";
+@import "mixins.less";
+
+
+#program_page {
+    font-size: 16px;
+    .base-section-height {
+        margin: 180px 0px;
+    }
+    .program-title-content {
+        font-size: 40px!important;
+        font-weight: bold!important;
+    }
+    header {
+        background-image: url('../img/special/tdd_pobi.jpg');
+        background-position: center 25%;
+        height: 500px;
+        &:after{
+            background-color: #3e5f6e;
+            opacity: 0.65;
+        }
+        span.small-text {
+            font-weight: 100;
+        }
+    }
+
+
+    //margin-top: 70px;
+    .basic-info-wrap {
+        padding: 110px 0px;
+        background: #d5d7d2;
+    }
+    section:first-child {
+        margin-top:0px;
+    }
+    .hooking-msg {
+        p {
+            font-size: 1.4em;
+        }
+    }
+    .hooking-msg-highlight {
+        background: #3E606F;
+        padding: 50px 0;
+        color: #fff;
+        font-weight: bold;
+        //margin: -30px 0;
+        p {
+            font-size: 20px!important;
+        }
+    }
+    .basic-info {
+        margin-top: -100px;
+        .base-two {
+            >div {
+                height: 250px;
+                padding: 30px;
+                box-shadow: 4px 4px 15px -3px rgba(0, 0, 0, 0.4);
+                ul {
+                    line-height: 36px;
+                    li{
+                        .basic-summary-title {
+                            font-weight: bold;
+                        }
+                        .basic-summary-desc {
+                            margin-left: 3%;
+                        }
+                    }
+                }
+            }
+            >div:nth-child(1) {
+                background: #dee1d5;
+                border-right: 2px solid #fff;
+                text-align: left;
+                .program-name {
+                    font-size:3.0em;
+                    font-weight: bold;
+                }
+            }
+            >div:nth-child(2) {
+                background: #CBDBD7;
+                font-size: 1.4em;
+            }
+        }
+    }
+
+    .plan-background {
+        h3 {
+            margin-bottom: 80px;
+        }
+        .base-three {
+            color:#fff;
+            font-size: 18px;
+            >div {
+                background-color: #91AAB4;
+                height: 250px;
+                .why-desc {
+                    text-align: left;
+                    margin-top: 30px;
+                }
+            }
+        }
+    }
+
+    .program-curriculum {
+        .program-title-content {
+            margin-bottom: 60px;
+        }
+        .two-one {
+           display: flex;
+           flex-flow : row wrap;
+           justify-content: flex-start;
+            >div {
+                >h4 {
+                    background-color: #91AAB4;
+                    padding: 20px;
+                    font-size: 20px;
+                }
+                >ul {
+                    >li {
+                        background-color: #CBDBD7;
+                        margin-bottom: 10px;
+                        padding:40px;
+                        h4 {
+                            font-size: 20px;
+                            margin-bottom: 30px;
+                        }
+                        ul {
+                            margin-left: 10%;
+                            li {
+                                list-style: unset;
+                                text-align: left;
+                                font-size: 18px;
+                            }
+                        }
+                    }
+                }
+            }
+            .curriculum-offline {
+                flex-grow:1;
+                max-width: 66%;
+            }
+            .curriculum-online {
+                margin-left: 10px;
+                flex-grow:2;
+                max-width: 33%;
+                >ul {
+                   li  {
+                    text-align: left;
+                        p{
+                            font-size: 16px;
+                            margin-bottom: 10px;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+    .lecture-method {
+        background-color: #d5d7d3;
+        padding: 110px 0px;
+        >h3 {
+            margin-bottom: 60px;
+        }
+        .new-container {
+            width: 60%;
+        }
+        .msg-box {
+            margin-bottom: 80px;
+            h2 {
+
+            }
+            p {
+
+            }
+        }
+    }
+
+    #masters-class {
+        p {
+            font-size: 1.2em;
+        }
+        h4 {
+            text-transform: none;
+        }
+    }
+    #masters-level{
+        p {
+            font-size: 1.2em;
+        }
+        li {
+            .level-background  {
+                font-size: 7em;
+                color: rgba(130, 148, 172, 0.47);
+            }
+            .level-desc-wrap {
+                // position: relative;
+                // top: -67px;
+                margin-bottom: 20px;
+            }
+        }
+        .button-wrap {
+            margin-top: 4em;
+            .base-button-blue {
+                font-size: 20px;
+            }
+        }
+    }
+
+    #overview {
+        float: none;
+        .section-heading {
+             margin-bottom: 140px;
+         }
+        .course-kind {
+            span.level-desc {
+                font-size : 0.7em;
+                text-align: center;
+            }
+            button {
+                width : 100%;
+            }
+            img {
+                width: 160px;
+                height: 250px;
+                max-height: 235px;
+                max-width: 160px;
+            }
+            .course-name-summary {
+                text-align: center;
+            }
+        }
+        .course-kind.course-level div:first-child img {
+            width: 225px;
+            max-height: 235px;
+            max-width: 250px;
+        }
+        .course-kind {
+            overflow: auto;
+            max-width: 2400px;
+            margin: 40px auto 60px;
+            padding : 0% 4%;
+            //margin-left: 50px;
+            button {
+                width: 200px;
+                height: 100px;
+                border:0;
+                
+            }
+            .multiple-icon {
+                text-align: center;
+                font-size: 3em;
+                color: #adadb1;
+                line-height: 160px;
+            }
+        }
+    }
+
+    #join-program {
+        background: #798ca0;
+        box-sizing: content-box;
+        height: 500px;
+        //margin: 0;
+        display: flex;
+        align-items: center;
+        color:#fff; 
+        .new-container {
+            h2,div,p,a {
+                margin-bottom:40px;
+                text-align: center;
+            }
+            h2 {
+                line-height: 40px;
+            }
+            a {
+                cursor: pointer;
+                color:#798ca0;
+            }
+            p {
+                font-size: 1.5em;
+                font-weight: bold;
+            }
+            p.masters_date { 
+                color:#e2d235;
+            }
+        }
+    }
+
+    #masters-oneday {
+        div.table-responsive {
+            margin-top: 60px;
+        }
+        table {
+            margin:0px auto;
+            max-width: 1400px;
+            font-size: 1.2em;
+            th {
+                min-width: 200px;
+                padding: 40px;
+            }
+            td {
+                min-width: 300px;
+                padding: 40px;
+            }
+        }
+    }
+
+    #master-introduce {
+        overflow: auto;
+        .course-master-profile {
+            margin-top: 100px;
+            .row {
+                margin-bottom: 6em;
+            }
+           .team-member img {
+                max-width: 240px;
+                border: 5px solid #afafaf;
+            }
+        }
+        .recomm-people img, .team-member img {
+            margin: 0 auto;
+            border: 7px solid #fff;
+        }
+        .img-circle {
+            border-radius: 50%;
+        }
+    }
+}
+
+@media(max-width:1120px) {
+#masters_page {
+    #overview {
+        .course-kind.course-level {
+            img {
+                width: 130px;
+                height: 191px;
+                // max-height: 235px;
+                max-width: 130px;
+            }
+            .glyphicon-arrow-right {
+                position: relative;
+                left : -12px;
+                font-size:35px;
+            }
+        }
+        .course-kind.course-level div:first-child img {
+            width: 166px;
+            max-width: 166px;
+        }
+    }
+}
+}
+
+@media(max-width:1070px) {
+    #masters_page {
+        .course-kind {
+            div {
+                margin-bottom: 3%;
+            }
+        }
+        #masters-oneday {
+            table {
+                th {
+                    min-width: 100px;
+                    padding: 15px 10px
+                }
+                td {
+                    min-width: 100px;
+                    padding: 15px 10px
+                }
+            }
+        }
+    }
+ }
+
+ @media(max-width:768px) {
+    #masters_page {
+       #about-masters {
+            img {
+                width:40%;
+            }
+        }
+    #masters-oneday {
+            table {
+                th { 
+                    padding: 8px 2px;
+                    font-size: 0.8em;
+                }
+                td {
+                    padding: 8px 2px;
+                    display: block;
+                    font-size:0.8em;
+                }
+            }
+        }
+    }
+ }
+
+
+
+
+@media(max-width:460px) {
+    #masters_page {
+        #masters-feature {
+            li {
+                margin-top:80px;
+            }
+        }
+    }
+     #join-program {
+        h2,p {
+            font-size: 20px;
+        }
+     }
+}
+
+//FAQ - inherit base-two-column used index.html
+// #masters-faq.base-two-column {
+//     .section-heading {
+//         margin-bottom: 50px;
+//     }
+//     .line-short {
+//         margin:50px auto;
+//         width:200px;
+//     }
+//     .course-desc-wrap {
+//         margin-top: 0px;
+//         .program-desc {
+//             padding:10px;
+//             .faq-idx {
+//                 color:darkgray;
+//                 font-size: 1.5em;
+//                 font-weight: 500;
+//             }
+//         }
+//     }
+// }
+
+#masters-faq{
+    .section-heading {
+        margin-bottom:100px;
+    }
+    .faq-desc-wrap {
+        font-size: 1.2em;
+        border-bottom: 1px solid #f1f1f1;
+        padding: 10px 10px;
+        &:hover {
+           background-color: #f5f5f5;
+        }
+        >div {
+            line-height: 1.45;
+            .text-bold {
+                font-size: 1.4em;
+            }
+        }
+        .question {
+            cursor: pointer;
+            padding: 0.3em;
+            
+        }
+        .answer {
+            font-weight: 600;
+            max-height:0px;
+            padding-left :20px;
+            transition: max-height 0.7s;
+            overflow: hidden;
+        }
+    }
+}
+
+
+
+
+
+

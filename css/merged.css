@@ -233,8 +233,6 @@ fieldset[disabled] .btn-xl.active {
   }
 }
 .text-left {
-  padding-left: 0;
-  padding-right: 0;
   text-align: left;
 }
 .blue-level-color {
@@ -596,6 +594,35 @@ header .intro-text .intro-heading a {
     margin-top: 30px;
     margin-bottom: 30px;
   }
+}
+.base-two {
+  display: flex;
+  align-items: center;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+.base-two > div {
+  width: 40%;
+  min-width: 250px;
+  flex-grow: 1;
+}
+.base-three {
+  display: flex;
+  align-items: center;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+.base-three > div {
+  width: 32.3%;
+  min-width: 200px;
+  flex-grow: 1;
+  margin-right: 1%;
+  padding: 30px;
+  height: 200px;
+  border-radius: 0.5%;
+}
+.base-three > div:last-child {
+  margin-right: 0%;
 }
 /************************ recommendation ***********************/
 .multiple-cardui-wrap .recomm-word-wrap > div {
@@ -1877,4 +1904,362 @@ aside.clients img {
   #special-page #special-item.base-desc-three ul.level-wrap li .item-desc ul.program-card li span:nth-child(3) {
     margin-right: 17px;
   }
+}
+
+#program_page {
+  font-size: 16px;
+}
+#program_page .base-section-height {
+  margin: 180px 0px;
+}
+#program_page .program-title-content {
+  font-size: 40px!important;
+  font-weight: bold!important;
+}
+#program_page header {
+  background-image: url('../img/special/tdd_pobi.jpg');
+  background-position: center 25%;
+  height: 500px;
+}
+#program_page header:after {
+  background-color: #3e5f6e;
+  opacity: 0.65;
+}
+#program_page header span.small-text {
+  font-weight: 100;
+}
+#program_page .basic-info-wrap {
+  padding: 110px 0px;
+  background: #d5d7d2;
+}
+#program_page section:first-child {
+  margin-top: 0px;
+}
+#program_page .hooking-msg p {
+  font-size: 1.4em;
+}
+#program_page .hooking-msg-highlight {
+  background: #3E606F;
+  padding: 50px 0;
+  color: #fff;
+  font-weight: bold;
+}
+#program_page .hooking-msg-highlight p {
+  font-size: 20px!important;
+}
+#program_page .basic-info {
+  margin-top: -100px;
+}
+#program_page .basic-info .base-two > div {
+  height: 250px;
+  padding: 30px;
+  box-shadow: 4px 4px 15px -3px rgba(0, 0, 0, 0.4);
+}
+#program_page .basic-info .base-two > div ul {
+  line-height: 36px;
+}
+#program_page .basic-info .base-two > div ul li .basic-summary-title {
+  font-weight: bold;
+}
+#program_page .basic-info .base-two > div ul li .basic-summary-desc {
+  margin-left: 3%;
+}
+#program_page .basic-info .base-two > div:nth-child(1) {
+  background: #dee1d5;
+  border-right: 2px solid #fff;
+  text-align: left;
+}
+#program_page .basic-info .base-two > div:nth-child(1) .program-name {
+  font-size: 3.0em;
+  font-weight: bold;
+}
+#program_page .basic-info .base-two > div:nth-child(2) {
+  background: #CBDBD7;
+  font-size: 1.4em;
+}
+#program_page .plan-background h3 {
+  margin-bottom: 80px;
+}
+#program_page .plan-background .base-three {
+  color: #fff;
+  font-size: 18px;
+}
+#program_page .plan-background .base-three > div {
+  background-color: #91AAB4;
+  height: 250px;
+}
+#program_page .plan-background .base-three > div .why-desc {
+  text-align: left;
+  margin-top: 30px;
+}
+#program_page .program-curriculum .program-title-content {
+  margin-bottom: 60px;
+}
+#program_page .program-curriculum .two-one {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+#program_page .program-curriculum .two-one > div > h4 {
+  background-color: #91AAB4;
+  padding: 20px;
+  font-size: 20px;
+}
+#program_page .program-curriculum .two-one > div > ul > li {
+  background-color: #CBDBD7;
+  margin-bottom: 10px;
+  padding: 40px;
+}
+#program_page .program-curriculum .two-one > div > ul > li h4 {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+#program_page .program-curriculum .two-one > div > ul > li ul {
+  margin-left: 10%;
+}
+#program_page .program-curriculum .two-one > div > ul > li ul li {
+  list-style: unset;
+  text-align: left;
+  font-size: 18px;
+}
+#program_page .program-curriculum .two-one .curriculum-offline {
+  flex-grow: 1;
+  max-width: 66%;
+}
+#program_page .program-curriculum .two-one .curriculum-online {
+  margin-left: 10px;
+  flex-grow: 2;
+  max-width: 33%;
+}
+#program_page .program-curriculum .two-one .curriculum-online > ul li {
+  text-align: left;
+}
+#program_page .program-curriculum .two-one .curriculum-online > ul li p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+#program_page .lecture-method {
+  background-color: #d5d7d3;
+  padding: 110px 0px;
+}
+#program_page .lecture-method > h3 {
+  margin-bottom: 60px;
+}
+#program_page .lecture-method .new-container {
+  width: 60%;
+}
+#program_page .lecture-method .msg-box {
+  margin-bottom: 80px;
+}
+#program_page #masters-class p {
+  font-size: 1.2em;
+}
+#program_page #masters-class h4 {
+  text-transform: none;
+}
+#program_page #masters-level p {
+  font-size: 1.2em;
+}
+#program_page #masters-level li .level-background {
+  font-size: 7em;
+  color: rgba(130, 148, 172, 0.47);
+}
+#program_page #masters-level li .level-desc-wrap {
+  margin-bottom: 20px;
+}
+#program_page #masters-level .button-wrap {
+  margin-top: 4em;
+}
+#program_page #masters-level .button-wrap .base-button-blue {
+  font-size: 20px;
+}
+#program_page #overview {
+  float: none;
+}
+#program_page #overview .section-heading {
+  margin-bottom: 140px;
+}
+#program_page #overview .course-kind span.level-desc {
+  font-size: 0.7em;
+  text-align: center;
+}
+#program_page #overview .course-kind button {
+  width: 100%;
+}
+#program_page #overview .course-kind img {
+  width: 160px;
+  height: 250px;
+  max-height: 235px;
+  max-width: 160px;
+}
+#program_page #overview .course-kind .course-name-summary {
+  text-align: center;
+}
+#program_page #overview .course-kind.course-level div:first-child img {
+  width: 225px;
+  max-height: 235px;
+  max-width: 250px;
+}
+#program_page #overview .course-kind {
+  overflow: auto;
+  max-width: 2400px;
+  margin: 40px auto 60px;
+  padding: 0% 4%;
+}
+#program_page #overview .course-kind button {
+  width: 200px;
+  height: 100px;
+  border: 0;
+}
+#program_page #overview .course-kind .multiple-icon {
+  text-align: center;
+  font-size: 3em;
+  color: #adadb1;
+  line-height: 160px;
+}
+#program_page #join-program {
+  background: #798ca0;
+  box-sizing: content-box;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+#program_page #join-program .new-container h2,
+#program_page #join-program .new-container div,
+#program_page #join-program .new-container p,
+#program_page #join-program .new-container a {
+  margin-bottom: 40px;
+  text-align: center;
+}
+#program_page #join-program .new-container h2 {
+  line-height: 40px;
+}
+#program_page #join-program .new-container a {
+  cursor: pointer;
+  color: #798ca0;
+}
+#program_page #join-program .new-container p {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+#program_page #join-program .new-container p.masters_date {
+  color: #e2d235;
+}
+#program_page #masters-oneday div.table-responsive {
+  margin-top: 60px;
+}
+#program_page #masters-oneday table {
+  margin: 0px auto;
+  max-width: 1400px;
+  font-size: 1.2em;
+}
+#program_page #masters-oneday table th {
+  min-width: 200px;
+  padding: 40px;
+}
+#program_page #masters-oneday table td {
+  min-width: 300px;
+  padding: 40px;
+}
+#program_page #master-introduce {
+  overflow: auto;
+}
+#program_page #master-introduce .course-master-profile {
+  margin-top: 100px;
+}
+#program_page #master-introduce .course-master-profile .row {
+  margin-bottom: 6em;
+}
+#program_page #master-introduce .course-master-profile .team-member img {
+  max-width: 240px;
+  border: 5px solid #afafaf;
+}
+#program_page #master-introduce .recomm-people img,
+#program_page #master-introduce .team-member img {
+  margin: 0 auto;
+  border: 7px solid #fff;
+}
+#program_page #master-introduce .img-circle {
+  border-radius: 50%;
+}
+@media (max-width: 1120px) {
+  #masters_page #overview .course-kind.course-level img {
+    width: 130px;
+    height: 191px;
+    max-width: 130px;
+  }
+  #masters_page #overview .course-kind.course-level .glyphicon-arrow-right {
+    position: relative;
+    left: -12px;
+    font-size: 35px;
+  }
+  #masters_page #overview .course-kind.course-level div:first-child img {
+    width: 166px;
+    max-width: 166px;
+  }
+}
+@media (max-width: 1070px) {
+  #masters_page .course-kind div {
+    margin-bottom: 3%;
+  }
+  #masters_page #masters-oneday table th {
+    min-width: 100px;
+    padding: 15px 10px;
+  }
+  #masters_page #masters-oneday table td {
+    min-width: 100px;
+    padding: 15px 10px;
+  }
+}
+@media (max-width: 768px) {
+  #masters_page #about-masters img {
+    width: 40%;
+  }
+  #masters_page #masters-oneday table th {
+    padding: 8px 2px;
+    font-size: 0.8em;
+  }
+  #masters_page #masters-oneday table td {
+    padding: 8px 2px;
+    display: block;
+    font-size: 0.8em;
+  }
+}
+@media (max-width: 460px) {
+  #masters_page #masters-feature li {
+    margin-top: 80px;
+  }
+  #join-program h2,
+  #join-program p {
+    font-size: 20px;
+  }
+}
+#masters-faq .section-heading {
+  margin-bottom: 100px;
+}
+#masters-faq .faq-desc-wrap {
+  font-size: 1.2em;
+  border-bottom: 1px solid #f1f1f1;
+  padding: 10px 10px;
+}
+#masters-faq .faq-desc-wrap:hover {
+  background-color: #f5f5f5;
+}
+#masters-faq .faq-desc-wrap > div {
+  line-height: 1.45;
+}
+#masters-faq .faq-desc-wrap > div .text-bold {
+  font-size: 1.4em;
+}
+#masters-faq .faq-desc-wrap .question {
+  cursor: pointer;
+  padding: 0.3em;
+}
+#masters-faq .faq-desc-wrap .answer {
+  font-weight: 600;
+  max-height: 0px;
+  padding-left: 20px;
+  transition: max-height 0.7s;
+  overflow: hidden;
 }
