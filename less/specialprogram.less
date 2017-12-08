@@ -3,26 +3,17 @@
 
 
 #program_page {
+
+    /*** COMMON ***/
     font-size: 16px;
     .base-section-height {
         margin: 140px 0px;
     }
+
     .program-title-content {
         font-size: 40px!important;
         font-weight: bold!important;
         margin-bottom: 60px;
-    }
-    header {
-        background-image: url('../img/special/tdd_pobi.jpg');
-        background-position: center 25%;
-        height: 500px;
-        &:after{
-            background-color: #3e5f6e;
-            opacity: 0.65;
-        }
-        span.small-text {
-            font-weight: 100;
-        }
     }
 
     .basic-info-wrap {
@@ -41,11 +32,61 @@
         padding: 50px 0;
         color: #fff;
         font-weight: bold;
-        //margin: -30px 0;
         p {
             font-size: 20px!important;
         }
     }
+
+    @media(max-width:480px) {
+        .base-section-height {
+            margin: 70px 0px;
+        }
+        .program-title-content {
+            font-size: 32px!important;
+        }
+        .base-three > div:last-child {
+          margin-right: 0%;
+        }
+        .hooking-msg {
+            p {
+            font-size: 1.2em;
+            }
+        }
+    }
+
+
+    /*** HEADER ***/
+    header {
+        background-image: url('../img/special/tdd_pobi.jpg');
+        background-position: center 25%;
+        height: 500px;
+        &:after{
+            background-color: #3e5f6e;
+            opacity: 0.65;
+        }
+        .intro-text > .intro-heading {
+            line-height: 3.0vw;
+            text-transform: initial;
+            span.small-text {
+                font-size: 2.0vw;
+                font-weight: 200;
+            }
+        }
+    }
+    @media(max-width:480px) {
+        header { 
+            height: 300px;
+            .intro-text > .intro-heading { 
+                line-height: 7.5vw;
+                span.small-text {
+                    font-size: 6.0vw;
+                }
+            }
+        }
+    }
+
+
+
     .basic-info {
         margin-top: -100px;
         .base-two {
@@ -81,6 +122,32 @@
         }
     }
 
+    @media(max-width:480px) {
+        .basic-info { 
+            margin-top: 0;
+            .base-two > div {
+                height: 220px;
+            }
+            .base-two > div:nth-child(1) {
+                height: 180px;
+                border-right: 1px;
+                .program-name {
+                    font-size: 2.0em;
+                    font-weight: bold;
+                    line-height: 1.4;
+                }
+            }
+            .base-two > div:nth-child(2) {
+                font-size: 0.9em;
+                padding: 20px;
+                span.basic-summary-desc {
+                    float:right;
+                }
+            }
+        }
+    }
+
+
     .plan-background {
         margin-top: 110px;
         h3 {
@@ -100,6 +167,17 @@
             }
         }
     }
+
+    @media(max-width:480px) {
+        .plan-background {
+            .base-three {
+                >div {
+                    margin-bottom: 2%;
+                }
+            }
+        }
+    }
+
 
     .program-curriculum {
         .program-title-content {
@@ -154,7 +232,17 @@
                 }
             }
         }
+    }
 
+    @media(max-width:480px) {
+        .program-curriculum .two-one  {
+            .curriculum-offline , .curriculum-online {
+                max-width: 100%;
+            }
+            .curriculum-online {
+                margin-top: 10%;
+            }
+        }
     }
 
     .lecture-method {
@@ -174,6 +262,12 @@
             p {
 
             }
+        }
+    }
+
+    @media(max-width:480px) {
+        .lecture-method .new-container {
+            width: 95%;
         }
     }
 
@@ -219,8 +313,45 @@
                 }
             }
         }
-
     }
+
+    @media(max-width:980px) {
+        .target-student {
+            .level-wrap {
+                li {
+                    margin-right: 1%;
+                    margin-bottom: 1%;
+                }
+                li.last-child {
+                    margin-right: 0;
+                }
+                li.plus-symbol {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    @media(max-width:980px) {
+        .target-student {
+            .new-container > p {
+                font-size: 24px;
+                line-height: 1.2;
+            }
+            ul.level-wrap {
+                li  { 
+                    h4 {
+                        font-size:24px;
+                    }
+                    p {
+                        font-size: 16px;
+                    }
+                }
+
+            }
+        }
+    }
+
 
     .program-recommendation {
         background-image: url('../img/special/tdd/pobi_review.jpg');
@@ -266,6 +397,24 @@
             }
         }
     }
+
+    @media (max-width: 480px) {
+        .program-recommendation { 
+            height: 1500px;
+            > div.new-container .recomm-word-wrap {
+                margin-top: 0px;
+                >div {
+                    >div {
+                        padding: 0;
+                        >div {
+                            padding: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
 
     .program-payinfo {
         .program-title-content {
