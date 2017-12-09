@@ -1,6 +1,11 @@
 @import "variables.less";
 @import "mixins.less";
 
+@media(max-width:480px) {
+    h4 {
+        font-size: 26px!important;
+    }
+}    
 
 #program_page {
 
@@ -246,8 +251,6 @@
     }
 
     .lecture-method {
-        //background-color: #d5d7d3;
-        //padding: 110px 0px;
         >h3 {
             margin-bottom: 60px;
         }
@@ -256,12 +259,6 @@
         }
         .msg-box {
             margin-bottom: 80px;
-            h2 {
-
-            }
-            p {
-
-            }
         }
     }
 
@@ -462,6 +459,32 @@
                     width: 20%;
                     max-width: 250px;
                     min-width: 135px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 480px) {
+        .program-payinfo {
+            .program-title-content {
+            }
+            .one-two {
+                .pay-info{
+                    max-width: 100%;
+                    height: 150px;
+                }
+                .pay-desc{
+                    max-width: 100%;
+                    margin-left: 0;
+                    margin-top: 2%;
+                    height: 300px;
+                    ul {
+                        li {
+                        }
+                    }
+                    button {
+                        margin-right: 7%;
+                    }
                 }
             }
         }

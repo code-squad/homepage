@@ -301,6 +301,11 @@ fieldset[disabled] .btn-xl.active {
   background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
   text-decoration: none;
 }
+.program-title-content {
+  font-size: 40px!important;
+  font-weight: bold!important;
+  margin-bottom: 60px;
+}
 /**************************** intro-tex *******************************/
 header {
   background-image: url('../img/background/main.jpg');
@@ -1939,6 +1944,11 @@ aside.clients img {
   }
 }
 
+@media (max-width: 480px) {
+  h4 {
+    font-size: 26px!important;
+  }
+}
 #program_page {
   /*** COMMON ***/
   font-size: 16px;
@@ -2332,6 +2342,21 @@ aside.clients img {
   max-width: 250px;
   min-width: 135px;
 }
+@media (max-width: 480px) {
+  #program_page .program-payinfo .one-two .pay-info {
+    max-width: 100%;
+    height: 150px;
+  }
+  #program_page .program-payinfo .one-two .pay-desc {
+    max-width: 100%;
+    margin-left: 0;
+    margin-top: 2%;
+    height: 300px;
+  }
+  #program_page .program-payinfo .one-two .pay-desc button {
+    margin-right: 7%;
+  }
+}
 #program_page #masters-class p {
   font-size: 1.2em;
 }
@@ -2543,4 +2568,38 @@ aside.clients img {
   padding-left: 20px;
   transition: max-height 0.7s;
   overflow: hidden;
+}
+
+#program-registration .registration-guide {
+  margin-top: 100px;
+}
+#program-registration .registration-guide .new-container {
+  width: 80%;
+}
+#program-registration .registration-guide .msg-box {
+  text-align: center;
+}
+#program-registration .registration-guide .msg-box h2 {
+  margin-bottom: 70px;
+}
+#program-registration .registration-guide .msg-box .iframe-wrap {
+  position: relative;
+  height: 1800px;
+}
+#program-registration .registration-guide .msg-box .iframe-wrap .pre-msg {
+  width: 50%;
+  left: 25%;
+  height: 300px;
+  position: absolute;
+  top: 0;
+  z-index: -2;
+  line-height: 400px;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #af8f8f;
+}
+@media (max-width: 480px) {
+  #program-registration .registration-guide .new-container {
+    width: 95%;
+  }
 }

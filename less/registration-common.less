@@ -1,0 +1,37 @@
+#program-registration {
+
+   .registration-guide {
+        margin-top: 100px;
+        .new-container {
+            width: 80%;
+        }
+        .msg-box {
+            text-align: center;
+            h2 {
+                margin-bottom: 70px;
+            }
+            .iframe-wrap {
+                position: relative;
+                height: 1800px;
+                .pre-msg {
+                    width: 50%;
+                    left: 25%;
+                    height: 300px;
+                    position: absolute;
+                    top: 0;
+                    z-index: -2;
+                    line-height: 400px;
+                    font-size: 1.5em;
+                    font-weight: bold;
+                    color: #af8f8f;
+                }
+            }
+        }
+    }
+
+    @media(max-width:480px) {
+        .registration-guide .new-container {
+            width: 95%;
+        }
+    }
+}
