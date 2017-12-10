@@ -18,15 +18,4 @@ var sTime = new Date();
   },200);
 })();
 
-
-// function step(ts) {
-//   if (!sTime) sTime = ts;
-//   var progress = ts - sTime;
-//   el.style.color = rc();
-//   if (progress < 3000) {
-//     window.requestAnimationFrame(step);
-//   }
-// }
-
-// window.requestAnimationFrame(step);
 })();
