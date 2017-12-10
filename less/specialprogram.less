@@ -159,7 +159,7 @@
         .basic-info { 
             margin-top: 0;
             .base-two > div {
-                height: 220px;
+                height: auto;
             }
             .base-two > div:nth-child(1) {
                 height: 180px;
@@ -176,6 +176,19 @@
                 span.basic-summary-desc {
                     float:right;
                 }
+            }
+        }
+    }
+
+    @media(min-width:1500px) {
+        .basic-info { 
+            .base-two > div:nth-child(1) {
+                .program-name {
+                    font-size:2.3vw;
+                }
+            }
+            .base-two > div:nth-child(2) {
+                    font-size: 1.1vw;
             }
         }
     }
@@ -492,7 +505,7 @@
            flex-flow : row wrap;
            justify-content: flex-start;
             >div {
-              height: 230px; 
+              //height: 230px; 
           }
             .pay-info{
                 font-size: 3em;
@@ -520,7 +533,7 @@
                         margin-bottom: 5px;
                     }
                 }
-                button {
+                a {
                     position: relative;
                     top: -5%;
                     font-size:24px;

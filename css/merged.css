@@ -806,6 +806,15 @@ header .intro-text .intro-heading a {
     display: block;
   }
 }
+#index-header .intro-heading a:nth-of-type(1) {
+  margin-bottom: 10px;
+  background-color: #246334;
+  border: 1px solid #246334;
+}
+#index-header .intro-heading a:nth-of-type(1):hover {
+  background-color: #4d925f;
+  border-color: #4d925f;
+}
 #about-us p {
   font-size: 2em;
 }
@@ -855,6 +864,9 @@ header .intro-text .intro-heading a {
   content: "누구나를 위한";
 }
 #our-program .course-desc-wrap:nth-child(3) .program-item::before {
+  content: "바쁜 학생/직장인을 위한";
+}
+#our-program .course-desc-wrap:nth-child(4) .program-item::before {
   content: "기업 고객을 위한";
 }
 @media (max-width: 1340px) {
@@ -2075,7 +2087,7 @@ aside.clients img {
     margin-top: 0;
   }
   #program_page .basic-info .base-two > div {
-    height: 220px;
+    height: auto;
   }
   #program_page .basic-info .base-two > div:nth-child(1) {
     height: 180px;
@@ -2092,6 +2104,14 @@ aside.clients img {
   }
   #program_page .basic-info .base-two > div:nth-child(2) span.basic-summary-desc {
     float: right;
+  }
+}
+@media (min-width: 1500px) {
+  #program_page .basic-info .base-two > div:nth-child(1) .program-name {
+    font-size: 2.3vw;
+  }
+  #program_page .basic-info .base-two > div:nth-child(2) {
+    font-size: 1.1vw;
   }
 }
 #program_page .plan-background {
@@ -2361,9 +2381,6 @@ aside.clients img {
   flex-flow: row wrap;
   justify-content: flex-start;
 }
-#program_page .program-payinfo .one-two > div {
-  height: 230px;
-}
 #program_page .program-payinfo .one-two .pay-info {
   font-size: 3em;
   font-weight: 200;
@@ -2389,7 +2406,7 @@ aside.clients img {
   list-style: unset;
   margin-bottom: 5px;
 }
-#program_page .program-payinfo .one-two .pay-desc button {
+#program_page .program-payinfo .one-two .pay-desc a {
   position: relative;
   top: -5%;
   font-size: 24px;
@@ -2667,6 +2684,9 @@ aside.clients img {
   font-size: 1.5em;
   font-weight: bold;
   color: #af8f8f;
+}
+#program-registration .registration-guide .msg-box .iframe-wrap iframe {
+  width: 100%;
 }
 @media (max-width: 480px) {
   #program-registration .registration-guide .new-container {

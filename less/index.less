@@ -14,6 +14,19 @@
     }
 }
 
+#index-header{
+  .intro-heading {
+    a:nth-of-type(1) {
+      margin-bottom: 10px;
+      background-color: #246334;
+      border : 1px solid #246334;
+      &:hover {
+        background-color: #4d925f;
+        border-color: #4d925f;
+      }
+    }
+  }
+}
 
 #about-us {
     p {
@@ -75,6 +88,13 @@
         }
     }
     .course-desc-wrap:nth-child(3) {
+        .program-item {
+          &::before{ 
+            content:"바쁜 학생/직장인을 위한";
+          }
+        }
+    }
+    .course-desc-wrap:nth-child(4) {
         .program-item {
           &::before{ 
             content:"기업 고객을 위한";
