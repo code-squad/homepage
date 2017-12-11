@@ -304,7 +304,7 @@ fieldset[disabled] .btn-xl.active {
   text-decoration: none;
 }
 .program-title-content {
-  font-size: 40px!important;
+  font-size: 32px;
   font-weight: bold!important;
   margin-bottom: 60px;
 }
@@ -1964,29 +1964,48 @@ aside.clients img {
   }
 }
 
-@media (max-width: 480px) {
-  h4 {
-    font-size: 26px!important;
-  }
-}
 #program_page {
   /*** COMMON ***/
-  font-size: 16px;
   /*** HEADER ***/
 }
+#program_page .f-40 {
+  font-size: 40px;
+}
+#program_page .f-32 {
+  font-size: 32px;
+}
+#program_page .f-24 {
+  font-size: 24px;
+}
+#program_page .f-18 {
+  font-size: 18px;
+}
+#program_page .f-16 {
+  font-size: 16px;
+}
+#program_page p,
+#program_page div,
+#program_page li,
+#program_page span {
+  font-size: 18px;
+}
+#program_page h4,
+#program_page .sub-desc {
+  font-size: 24px;
+}
+#program_page .sub-desc {
+  margin-bottom: 70px;
+}
 #program_page .base-section-height {
-  margin: 140px 0px;
+  margin: 100px 0px;
 }
 #program_page .program-title-content {
-  font-size: 40px!important;
+  font-size: 32px;
   font-weight: bold!important;
   margin-bottom: 60px;
 }
 #program_page .basic-info-wrap {
   padding: 0px;
-}
-#program_page .hooking-msg p {
-  font-size: 1.4em;
 }
 #program_page .hooking-msg-highlight {
   background: #3E606F;
@@ -1994,29 +2013,29 @@ aside.clients img {
   color: #fff;
   font-weight: bold;
 }
-#program_page .hooking-msg-highlight p {
-  font-size: 20px!important;
-}
 #program_page i.fa {
   margin-right: 1%;
-  margin-bottom: 20px;
-}
-#program_page .sub-desc {
-  font-size: 24px;
-  margin-bottom: 70px;
 }
 @media (max-width: 480px) {
   #program_page .base-section-height {
     margin: 70px 0px;
   }
   #program_page .program-title-content {
-    font-size: 32px!important;
+    font-size: 24px;
+  }
+  #program_page h4,
+  #program_page .sub-desc {
+    font-size: 18px !important;
+  }
+  #program_page p,
+  #program_page div,
+  #program_page li,
+  #program_page span,
+  #program_page a {
+    font-size: 16px !important;
   }
   #program_page .base-three > div:last-child {
     margin-right: 0%;
-  }
-  #program_page .hooking-msg p {
-    font-size: 1.2em;
   }
 }
 #program_page header {
@@ -2031,19 +2050,18 @@ aside.clients img {
 #program_page header .intro-text .intro-heading {
   line-height: 3.0vw;
   text-transform: initial;
+  font-size: 40px;
 }
 #program_page header .intro-text .intro-heading span.small-text {
-  font-size: 2.0vw;
-  font-weight: 200;
+  font-size: 32px;
+  font-weight: 500;
 }
 @media (max-width: 1300px) {
   #program_page header .intro-text > .intro-heading {
     width: 100%;
-    font-size: 4.7vw;
-    line-height: 5.0vw;
+    line-height: 40px;
   }
   #program_page header .intro-text > .intro-heading span.small-text {
-    font-size: 3.0vw;
     font-weight: 200;
   }
 }
@@ -2052,18 +2070,15 @@ aside.clients img {
     height: 300px;
   }
   #program_page header .intro-text > .intro-heading {
-    line-height: 7.5vw;
-    font-size: 5.0vw;
+    line-height: 40px;
+    font-size: 32px;
   }
   #program_page header .intro-text > .intro-heading span.small-text {
-    font-size: 5.0vw;
+    font-size: 24px;
   }
 }
-#program_page .basic-info {
-  margin-top: -100px;
-}
 #program_page .basic-info .base-two > div {
-  height: 250px;
+  height: 300px;
   padding: 15px;
   box-shadow: 4px 4px 15px -3px rgba(0, 0, 0, 0.4);
 }
@@ -2080,66 +2095,64 @@ aside.clients img {
   background: #dee1d5;
   border-right: 2px solid #fff;
   text-align: left;
+  padding: 10px;
 }
 #program_page .basic-info .base-two > div:nth-child(1) .program-name {
+  font-size: 32px;
   color: #3e5f6e;
-  font-size: 3.0vw;
   font-weight: bold;
+  line-height: 1;
+  margin-top: 5%;
 }
 #program_page .basic-info .base-two > div:nth-child(2) {
   background: #CBDBD7;
-  font-size: 1.5vw;
+  font-size: 18px;
 }
-@media (max-width: 550px) {
-  #program_page .basic-info {
-    margin-top: 0;
+@media (max-width: 1050px) {
+  #program_page .basic-info .base-two {
+    display: block;
   }
   #program_page .basic-info .base-two > div {
+    padding: 10px;
     height: auto;
+    width: 100%;
   }
   #program_page .basic-info .base-two > div:nth-child(1) {
-    height: 180px;
-    border-right: 1px;
-  }
-  #program_page .basic-info .base-two > div:nth-child(1) .program-name {
-    font-size: 2.0em;
-    font-weight: bold;
-    line-height: 1.4;
-  }
-  #program_page .basic-info .base-two > div:nth-child(2) {
-    font-size: 0.9em;
-    padding: 20px;
-  }
-  #program_page .basic-info .base-two > div:nth-child(2) span.basic-summary-desc {
-    float: right;
+    border-right: none;
+    margin-bottom: 8px;
+    padding: 40px 10px;
   }
 }
-@media (min-width: 1500px) {
+@media (max-width: 557px) {
   #program_page .basic-info .base-two > div:nth-child(1) .program-name {
-    font-size: 2.3vw;
+    font-size: 24px;
   }
-  #program_page .basic-info .base-two > div:nth-child(2) {
-    font-size: 1.1vw;
+  #program_page .basic-summary-title,
+  #program_page .basic-summary-desc {
+    font-size: 15px;
   }
 }
 #program_page .plan-background {
   margin-top: 110px;
 }
-#program_page .plan-background h3 {
-  margin-bottom: 80px;
-  font-size: 32px!important;
+#program_page .plan-background h2 {
+  margin-bottom: 40px;
+  font-weight: 400!important;
 }
-#program_page .plan-background h3 .three-keyword {
-  font-size: 40px!important;
+#program_page .plan-background h2 .three-keyword {
+  font-size: 32px;
+  font-weight: bold;
   line-height: 1.8em;
 }
 #program_page .plan-background .base-three {
   color: #fff;
-  font-size: 18px;
+}
+#program_page .plan-background .base-three h4 {
+  font-size: 24px;
 }
 #program_page .plan-background .base-three > div {
   background-color: #66808d;
-  height: 300px;
+  height: 350px;
   box-shadow: 4px 4px 15px -3px rgba(0, 0, 0, 0.4);
   margin-bottom: 2%;
 }
@@ -2147,14 +2160,13 @@ aside.clients img {
   text-align: left;
   margin-top: 30px;
 }
-@media (max-width: 1000px) {
-  #program_page .plan-background .base-three > div {
-    height: auto;
+@media (max-width: 1050px) {
+  #program_page .plan-background .base-three {
+    display: block;
   }
-}
-@media (max-width: 480px) {
   #program_page .plan-background .base-three > div {
-    margin-bottom: 2%;
+    width: 100%;
+    height: auto;
   }
 }
 #program_page .program-curriculum .program-title-content {
@@ -2168,7 +2180,7 @@ aside.clients img {
 #program_page .program-curriculum .two-one > div > h4 {
   background-color: #91AAB4;
   padding: 20px;
-  font-size: 20px;
+  font-size: 24px;
 }
 #program_page .program-curriculum .two-one > div > ul > li {
   background-color: #CBDBD7;
@@ -2176,7 +2188,7 @@ aside.clients img {
   padding: 40px;
 }
 #program_page .program-curriculum .two-one > div > ul > li h4 {
-  font-size: 20px;
+  font-size: 24px;
   margin-bottom: 30px;
 }
 #program_page .program-curriculum .two-one > div > ul > li ul {
@@ -2185,7 +2197,6 @@ aside.clients img {
 #program_page .program-curriculum .two-one > div > ul > li ul li {
   list-style: unset;
   text-align: left;
-  font-size: 18px;
 }
 #program_page .program-curriculum .two-one .curriculum-offline {
   flex-grow: 1;
@@ -2200,7 +2211,6 @@ aside.clients img {
   text-align: left;
 }
 #program_page .program-curriculum .two-one .curriculum-online > ul li p {
-  font-size: 16px;
   margin-bottom: 10px;
 }
 #program_page .program-curriculum .two-one .curriculum-online > ul li.img-wrap {
@@ -2218,7 +2228,12 @@ aside.clients img {
     margin-top: 10%;
   }
 }
-#program_page .lecture-method > h3 {
+@media (max-width: 480px) {
+  #program_page .program-curriculum .two-one > div > ul > li {
+    padding: 10px;
+  }
+}
+#program_page .lecture-method > h2 {
   margin-bottom: 60px;
 }
 #program_page .lecture-method .new-container {
@@ -2244,7 +2259,7 @@ aside.clients img {
   margin-bottom: 60px;
 }
 #program_page .target-student .new-container > p {
-  font-size: 32px;
+  font-size: 24px;
   text-align: center;
   color: #000;
 }
@@ -2261,7 +2276,7 @@ aside.clients img {
   color: #fff;
 }
 #program_page .target-student .new-container ul li h4 {
-  font-size: 32px;
+  font-size: 24px;
   color: #ffffff;
   font-weight: bold;
 }
@@ -2298,9 +2313,6 @@ aside.clients img {
   #program_page .target-student ul.level-wrap li h4 {
     font-size: 24px;
   }
-  #program_page .target-student ul.level-wrap li p {
-    font-size: 16px;
-  }
 }
 @media (max-width: 810px) {
   #program_page .target-student .new-container ul li {
@@ -2322,16 +2334,16 @@ aside.clients img {
   height: auto;
   opacity: 1;
   padding-top: 35px;
-  font-size: 16px;
+  font-size: 18px;
 }
 #program_page .program-recommendation:after {
   content: "";
-  background-color: #24272a;
+  background-color: #090a0b;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-  opacity: 0.68;
+  opacity: 0.75;
   top: 0;
   left: 0;
   bottom: 0;
@@ -2343,10 +2355,11 @@ aside.clients img {
   z-index: 2;
 }
 #program_page .program-recommendation > div.new-container h2 {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 #program_page .program-recommendation > div.new-container .sub-desc {
-  font-size: 20px;
+  font-size: 24px;
+  line-height: 1.5;
 }
 #program_page .program-recommendation > div.new-container .recomm-word-wrap > .recomm-word-row {
   height: auto;
@@ -2359,7 +2372,7 @@ aside.clients img {
   background-color: transparent;
 }
 #program_page .program-recommendation > div.new-container .recomm-word-wrap > .recomm-word-row > div .feedback-summary {
-  font-size: 1.2em;
+  font-size: 18px;
   font-weight: 800;
   margin-bottom: 30px;
 }
@@ -2367,7 +2380,7 @@ aside.clients img {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-@media (max-width: 1150px) {
+@media (max-width: 1350px) {
   #program_page .program-recommendation.multiple-cardui-wrap {
     height: auto;
   }
@@ -2377,7 +2390,8 @@ aside.clients img {
   #program_page .program-recommendation.multiple-cardui-wrap div.new-container .recomm-word-wrap > div {
     height: auto;
   }
-  #program_page .program-recommendation.multiple-cardui-wrap div.new-container .recomm-word-wrap > div > div {
+  #program_page .program-recommendation.multiple-cardui-wrap div.new-container .recomm-word-wrap > div > div:not(:last-child) {
+    border-bottom: 1px solid #4d555c;
     width: 100%;
     margin: 0px auto;
     margin-bottom: 40px;
@@ -2413,6 +2427,7 @@ aside.clients img {
 }
 #program_page .tutor-message .one-two > div:nth-child(1) img {
   width: 66%;
+  max-width: 300px;
   border-radius: 50%;
 }
 #program_page .tutor-message .one-two > div:nth-child(2) {
@@ -2421,16 +2436,23 @@ aside.clients img {
   max-width: 56%;
   height: auto;
 }
-#program_page .tutor-message .one-two > div:nth-child(2) p {
-  font-size: 1.2em;
-}
-@media (max-width: 480px) {
+@media (max-width: 1100px) {
+  #program_page .tutor-message .one-two {
+    display: block;
+  }
+  #program_page .tutor-message .one-two > div:nth-child(1) {
+    float: left;
+    height: auto;
+  }
   #program_page .tutor-message .one-two > div:nth-child(2) {
-    max-width: 60%;
+    max-width: 100%;
   }
   #program_page .tutor-message .one-two > div:nth-child(2) p {
-    font-size: 1em;
+    transform: translateY(0%);
   }
+}
+#program_page .program-payinfo {
+  margin-bottom: 140px;
 }
 #program_page .program-payinfo .program-title-content {
   margin-bottom: 60px;
@@ -2444,13 +2466,13 @@ aside.clients img {
   height: 300px;
 }
 #program_page .program-payinfo .one-two .pay-info {
-  font-size: 2.7em;
   font-weight: 200;
   flex-grow: 1;
   max-width: 33%;
   background-color: #ccdbd7;
 }
 #program_page .program-payinfo .one-two .pay-info span {
+  font-size: 40px;
   font-weight: bold;
 }
 #program_page .program-payinfo .one-two .pay-desc {
@@ -2458,6 +2480,7 @@ aside.clients img {
   flex-grow: 2;
   max-width: 66%;
   background-color: #dee1d5;
+  position: relative;
 }
 #program_page .program-payinfo .one-two .pay-desc ul {
   margin-left: 20px;
@@ -2468,26 +2491,11 @@ aside.clients img {
   list-style: unset;
   margin-bottom: 5px;
 }
-#program_page .program-payinfo .one-two .pay-desc ul li a {
-  font-size: 16px;
-}
 #program_page .program-payinfo .one-two .pay-desc > a {
-  position: relative;
-  top: -5%;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
   font-size: 24px;
-  float: right;
-  margin-right: 17%;
-  width: 20%;
-  max-width: 250px;
-  min-width: 135px;
-}
-@media (max-width: 1000px) {
-  #program_page .program-payinfo .one-two .pay-desc button {
-    top: -21%;
-    margin-right: 2%;
-    font-size: 21px;
-    padding: 6px 12px 6px 12px;
-  }
 }
 @media (max-width: 886px) {
   #program_page .program-payinfo .one-two .pay-info {
@@ -2500,13 +2508,18 @@ aside.clients img {
     margin-top: 2%;
     height: auto;
   }
-  #program_page .program-payinfo .one-two .pay-desc button {
-    margin-right: 7%;
-  }
 }
-@media (max-width: 500px) {
-  #program_page .program-payinfo .one-two .pay-desc button {
-    top: -9%;
+@media (max-width: 480px) {
+  #program_page .program-payinfo .one-two .pay-info span {
+    font-size: 32px !important;
+  }
+  #program_page .program-payinfo .one-two .pay-desc {
+    height: 380px;
+  }
+  #program_page .program-payinfo .one-two .pay-desc > a {
+    position: relative;
+    top: 15px;
+    left: 0;
   }
 }
 
