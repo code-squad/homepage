@@ -2001,6 +2001,10 @@ aside.clients img {
   margin-right: 1%;
   margin-bottom: 20px;
 }
+#program_page .sub-desc {
+  font-size: 24px;
+  margin-bottom: 70px;
+}
 @media (max-width: 480px) {
   #program_page .base-section-height {
     margin: 70px 0px;
@@ -2123,13 +2127,18 @@ aside.clients img {
 }
 #program_page .plan-background h3 {
   margin-bottom: 80px;
+  font-size: 32px!important;
+}
+#program_page .plan-background h3 .three-keyword {
+  font-size: 40px!important;
+  line-height: 1.8em;
 }
 #program_page .plan-background .base-three {
   color: #fff;
   font-size: 18px;
 }
 #program_page .plan-background .base-three > div {
-  background-color: #91AAB4;
+  background-color: #66808d;
   height: 300px;
   box-shadow: 4px 4px 15px -3px rgba(0, 0, 0, 0.4);
   margin-bottom: 2%;
@@ -2150,13 +2159,6 @@ aside.clients img {
 }
 #program_page .program-curriculum .program-title-content {
   margin-bottom: 60px;
-}
-#program_page .program-curriculum .img-wrap {
-  margin: 0px auto 70px;
-  max-width: 500px;
-}
-#program_page .program-curriculum .img-wrap img {
-  width: 100%;
 }
 #program_page .program-curriculum .two-one {
   display: flex;
@@ -2200,6 +2202,12 @@ aside.clients img {
 #program_page .program-curriculum .two-one .curriculum-online > ul li p {
   font-size: 16px;
   margin-bottom: 10px;
+}
+#program_page .program-curriculum .two-one .curriculum-online > ul li.img-wrap {
+  max-width: 500px;
+}
+#program_page .program-curriculum .two-one .curriculum-online > ul li.img-wrap img {
+  width: 100%;
 }
 @media (max-width: 1023px) {
   #program_page .program-curriculum .two-one .curriculum-offline,
@@ -2336,6 +2344,9 @@ aside.clients img {
 }
 #program_page .program-recommendation > div.new-container h2 {
   margin-bottom: 20px;
+}
+#program_page .program-recommendation > div.new-container .sub-desc {
+  font-size: 20px;
 }
 #program_page .program-recommendation > div.new-container .recomm-word-wrap > .recomm-word-row {
   height: auto;
