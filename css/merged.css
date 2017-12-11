@@ -1912,7 +1912,7 @@ aside.clients img {
   box-shadow: 4px 4px 15px -3px rgba(0, 0, 0, 0.4);
 }
 #special-page #special-item.base-desc-three ul.level-wrap > li .item-desc ul.program-card li {
-  font-size: 1.2em;
+  font-size: 1.1em;
   margin-bottom: 10px;
   width: 90%;
   overflow: auto;
@@ -1950,7 +1950,7 @@ aside.clients img {
     height: auto;
   }
   #special-page #special-item.base-desc-three ul.level-wrap li .item-desc ul.program-card {
-    padding: 10px;
+    padding: 5px;
   }
   #special-page #special-item.base-desc-three ul.level-wrap li .item-desc ul.program-card li i {
     font-size: 0.8em;
@@ -1960,7 +1960,7 @@ aside.clients img {
     font-size: 0.8em;
   }
   #special-page #special-item.base-desc-three ul.level-wrap li .item-desc ul.program-card li span:nth-child(3) {
-    margin-right: 17px;
+    margin-right: 5px;
   }
 }
 
