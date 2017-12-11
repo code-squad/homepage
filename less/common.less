@@ -215,7 +215,7 @@ section {
 
 .btn-common {
   background: #3498db;
-  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -webkit-linear-gradient(top, #3498db, #2982b9);
   background-image: -moz-linear-gradient(top, #3498db, #2980b9);
   background-image: -ms-linear-gradient(top, #3498db, #2980b9);
   background-image: -o-linear-gradient(top, #3498db, #2980b9);
@@ -467,9 +467,12 @@ header {
                 background-color: rgb(34, 34, 34);
                 margin-left: 15px;
                 padding: 10px;
+                padding-top:25px;
                 color: #fff;
-                width: 80px;
+                width: 180px;
                 display:none;
+                opacity:0.9;
+                visibility: hidden;
             }
         }
     }
@@ -518,6 +521,9 @@ header {
         }
         .navbar-nav>.active>a {
             border-radius: 3px;
+        }
+        .nav li ul.nav-dropdown {
+            visibility: visible;
         }
     }
 }

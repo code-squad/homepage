@@ -22,10 +22,7 @@
     }
 
     .basic-info-wrap {
-        padding: 110px 0px 0px;
-    }
-    section:first-child {
-        margin-top:0px;
+        padding: 0px;
     }
     .hooking-msg {
         p {
@@ -44,7 +41,6 @@
 
     i.fa {
         margin-right: 1%;
-        display: block;
         margin-bottom: 20px;
     }
 
@@ -425,7 +421,7 @@
         text-align: center;
         color: white;
         position:relative;
-        height: 600px;
+        height: auto;
         opacity: 1;
         padding-top: 35px;
         //transition: all 1.2s;
@@ -433,7 +429,7 @@
             content: "";
             background-color :#24272a;
             .background-cover;
-            opacity: 0.65;
+            opacity: 0.68;
             top: 0;
             left: 0;
             bottom: 0;
@@ -447,13 +443,22 @@
             h2 {
                 margin-bottom: 20px;
             }
-             .recomm-word-wrap > div  {
-                height: 460px;
-                div {
+             .recomm-word-wrap > .recomm-word-row {
+                height: auto;
+                > div {
                     padding: 1.2em;
                     line-height: 1.8em;
                     &:hover {
                        background-color:transparent;
+                    }
+                    .feedback-summary {
+                        font-size: 1.2em;
+                        font-weight: 800;
+                        margin-bottom: 30px;
+                    }
+                    > div:last-child {
+                        margin-top:20px;
+                        margin-bottom:20px;
                     }
                 }
 
@@ -495,6 +500,45 @@
         }
     }
 
+    .tutor-message {
+        .one-two {
+            display: flex;
+            flex-flow : row wrap;
+            justify-content: flex-start;
+            >div {
+              height: 300px; 
+            }
+            >div:nth-child(1){
+                text-align: center;
+                font-weight: 200;
+                flex-grow:1;
+                max-width: 33%;
+                img {
+                    width:66%;
+                    border-radius: 50%;
+                }
+            }
+            >div:nth-child(2){
+                margin-left: 10px;
+                flex-grow:2;
+                max-width: 56%;
+                height: auto;
+                p {
+                    font-size: 1.2em;
+                }
+            }
+        } 
+    }
+
+    @media (max-width: 480px) {
+        .tutor-message .one-two > div:nth-child(2) {
+            p {
+                font-size: 1em;
+            }
+            max-width: 60%;
+        }
+    }
+
 
     .program-payinfo {
         .program-title-content {
@@ -504,10 +548,10 @@
            display: flex;
            flex-flow : row wrap;
            justify-content: flex-start;
-            >div {
+           >div {
               height: 300px; 
-          }
-            .pay-info{
+           }
+           .pay-info{
                 font-size: 2.7em;
                 font-weight: 200;
                 flex-grow:1;

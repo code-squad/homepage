@@ -277,7 +277,7 @@ fieldset[disabled] .btn-xl.active {
 }
 .btn-common {
   background: #3498db;
-  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -webkit-linear-gradient(top, #3498db, #2982b9);
   background-image: -moz-linear-gradient(top, #3498db, #2980b9);
   background-image: -ms-linear-gradient(top, #3498db, #2980b9);
   background-image: -o-linear-gradient(top, #3498db, #2980b9);
@@ -459,9 +459,12 @@ header .intro-text .intro-heading a {
   background-color: #222222;
   margin-left: 15px;
   padding: 10px;
+  padding-top: 25px;
   color: #fff;
-  width: 80px;
+  width: 180px;
   display: none;
+  opacity: 0.9;
+  visibility: hidden;
 }
 .navbar-custom .navbar-nav > .active > a {
   border-radius: 0;
@@ -496,6 +499,9 @@ header .intro-text .intro-heading a {
   }
   .navbar-custom .navbar-nav > .active > a {
     border-radius: 3px;
+  }
+  .navbar-custom .nav li ul.nav-dropdown {
+    visibility: visible;
   }
 }
 @media (min-width: 768px) {
@@ -1977,10 +1983,7 @@ aside.clients img {
   margin-bottom: 60px;
 }
 #program_page .basic-info-wrap {
-  padding: 110px 0px 0px;
-}
-#program_page section:first-child {
-  margin-top: 0px;
+  padding: 0px;
 }
 #program_page .hooking-msg p {
   font-size: 1.4em;
@@ -1996,7 +1999,6 @@ aside.clients img {
 }
 #program_page i.fa {
   margin-right: 1%;
-  display: block;
   margin-bottom: 20px;
 }
 @media (max-width: 480px) {
@@ -2309,7 +2311,7 @@ aside.clients img {
   text-align: center;
   color: white;
   position: relative;
-  height: 600px;
+  height: auto;
   opacity: 1;
   padding-top: 35px;
   font-size: 16px;
@@ -2321,7 +2323,7 @@ aside.clients img {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-  opacity: 0.65;
+  opacity: 0.68;
   top: 0;
   left: 0;
   bottom: 0;
@@ -2335,15 +2337,24 @@ aside.clients img {
 #program_page .program-recommendation > div.new-container h2 {
   margin-bottom: 20px;
 }
-#program_page .program-recommendation > div.new-container .recomm-word-wrap > div {
-  height: 460px;
+#program_page .program-recommendation > div.new-container .recomm-word-wrap > .recomm-word-row {
+  height: auto;
 }
-#program_page .program-recommendation > div.new-container .recomm-word-wrap > div div {
+#program_page .program-recommendation > div.new-container .recomm-word-wrap > .recomm-word-row > div {
   padding: 1.2em;
   line-height: 1.8em;
 }
-#program_page .program-recommendation > div.new-container .recomm-word-wrap > div div:hover {
+#program_page .program-recommendation > div.new-container .recomm-word-wrap > .recomm-word-row > div:hover {
   background-color: transparent;
+}
+#program_page .program-recommendation > div.new-container .recomm-word-wrap > .recomm-word-row > div .feedback-summary {
+  font-size: 1.2em;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+#program_page .program-recommendation > div.new-container .recomm-word-wrap > .recomm-word-row > div > div:last-child {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 @media (max-width: 1150px) {
   #program_page .program-recommendation.multiple-cardui-wrap {
@@ -2373,6 +2384,41 @@ aside.clients img {
   }
   #program_page .program-recommendation > div.new-container .recomm-word-wrap > div > div > div {
     padding: 0;
+  }
+}
+#program_page .tutor-message .one-two {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+#program_page .tutor-message .one-two > div {
+  height: 300px;
+}
+#program_page .tutor-message .one-two > div:nth-child(1) {
+  text-align: center;
+  font-weight: 200;
+  flex-grow: 1;
+  max-width: 33%;
+}
+#program_page .tutor-message .one-two > div:nth-child(1) img {
+  width: 66%;
+  border-radius: 50%;
+}
+#program_page .tutor-message .one-two > div:nth-child(2) {
+  margin-left: 10px;
+  flex-grow: 2;
+  max-width: 56%;
+  height: auto;
+}
+#program_page .tutor-message .one-two > div:nth-child(2) p {
+  font-size: 1.2em;
+}
+@media (max-width: 480px) {
+  #program_page .tutor-message .one-two > div:nth-child(2) {
+    max-width: 60%;
+  }
+  #program_page .tutor-message .one-two > div:nth-child(2) p {
+    font-size: 1em;
   }
 }
 #program_page .program-payinfo .program-title-content {

@@ -32,14 +32,14 @@
 
 
 	//2. NAVIGATION DROPDOWN
-	/*
-	document.querySelector(".nav-masters > a").addEventListener("mouseenter", function(evt) {
+	var elDropdownlist = document.querySelector(".dropdown-list > a");
+	elDropdownlist.addEventListener("mouseenter", function(evt) {
 		const el = evt.target;
 		if(el.tagName !== "A") return;
 		else el.nextElementSibling.style.display = "block";
 	});
 
-	document.querySelector(".nav-masters > a").addEventListener("mouseleave", function(evt) {
+	elDropdownlist.addEventListener("mouseleave", function(evt) {
 		function _isNavDropdownElement(elAfterOut) {
 			return (elAfterOut.className === "nav-dropdown" || elAfterOut.parentElement.classame === "nav-dropdown");
 		}
@@ -65,7 +65,6 @@
 		else return;
 
 	});
-	*/
 
 
 	//3. PRIVACE AND TERM Handler on Footer.
