@@ -271,7 +271,9 @@ fieldset[disabled] .btn-xl.active {
 .block-v-center {
   position: relative;
   top: 50%;
-  transform: perspective(1px) translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 .btn-common {
   background: #3498db;
@@ -2381,8 +2383,11 @@ aside.clients img {
   flex-flow: row wrap;
   justify-content: flex-start;
 }
+#program_page .program-payinfo .one-two > div {
+  height: 300px;
+}
 #program_page .program-payinfo .one-two .pay-info {
-  font-size: 3em;
+  font-size: 2.7em;
   font-weight: 200;
   flex-grow: 1;
   max-width: 33%;
@@ -2406,7 +2411,10 @@ aside.clients img {
   list-style: unset;
   margin-bottom: 5px;
 }
-#program_page .program-payinfo .one-two .pay-desc a {
+#program_page .program-payinfo .one-two .pay-desc ul li a {
+  font-size: 16px;
+}
+#program_page .program-payinfo .one-two .pay-desc > a {
   position: relative;
   top: -5%;
   font-size: 24px;
@@ -2443,218 +2451,6 @@ aside.clients img {
   #program_page .program-payinfo .one-two .pay-desc button {
     top: -9%;
   }
-}
-#program_page #masters-class p {
-  font-size: 1.2em;
-}
-#program_page #masters-class h4 {
-  text-transform: none;
-}
-#program_page #masters-level p {
-  font-size: 1.2em;
-}
-#program_page #masters-level li .level-background {
-  font-size: 7em;
-  color: rgba(130, 148, 172, 0.47);
-}
-#program_page #masters-level li .level-desc-wrap {
-  margin-bottom: 20px;
-}
-#program_page #masters-level .button-wrap {
-  margin-top: 4em;
-}
-#program_page #masters-level .button-wrap .base-button-blue {
-  font-size: 20px;
-}
-#program_page #overview {
-  float: none;
-}
-#program_page #overview .section-heading {
-  margin-bottom: 140px;
-}
-#program_page #overview .course-kind span.level-desc {
-  font-size: 0.7em;
-  text-align: center;
-}
-#program_page #overview .course-kind button {
-  width: 100%;
-}
-#program_page #overview .course-kind img {
-  width: 160px;
-  height: 250px;
-  max-height: 235px;
-  max-width: 160px;
-}
-#program_page #overview .course-kind .course-name-summary {
-  text-align: center;
-}
-#program_page #overview .course-kind.course-level div:first-child img {
-  width: 225px;
-  max-height: 235px;
-  max-width: 250px;
-}
-#program_page #overview .course-kind {
-  overflow: auto;
-  max-width: 2400px;
-  margin: 40px auto 60px;
-  padding: 0% 4%;
-}
-#program_page #overview .course-kind button {
-  width: 200px;
-  height: 100px;
-  border: 0;
-}
-#program_page #overview .course-kind .multiple-icon {
-  text-align: center;
-  font-size: 3em;
-  color: #adadb1;
-  line-height: 160px;
-}
-#program_page #join-program {
-  background: #798ca0;
-  box-sizing: content-box;
-  height: 500px;
-  display: flex;
-  align-items: center;
-  color: #fff;
-}
-#program_page #join-program .new-container h2,
-#program_page #join-program .new-container div,
-#program_page #join-program .new-container p,
-#program_page #join-program .new-container a {
-  margin-bottom: 40px;
-  text-align: center;
-}
-#program_page #join-program .new-container h2 {
-  line-height: 40px;
-}
-#program_page #join-program .new-container a {
-  cursor: pointer;
-  color: #798ca0;
-}
-#program_page #join-program .new-container p {
-  font-size: 1.5em;
-  font-weight: bold;
-}
-#program_page #join-program .new-container p.masters_date {
-  color: #e2d235;
-}
-#program_page #masters-oneday div.table-responsive {
-  margin-top: 60px;
-}
-#program_page #masters-oneday table {
-  margin: 0px auto;
-  max-width: 1400px;
-  font-size: 1.2em;
-}
-#program_page #masters-oneday table th {
-  min-width: 200px;
-  padding: 40px;
-}
-#program_page #masters-oneday table td {
-  min-width: 300px;
-  padding: 40px;
-}
-#program_page #master-introduce {
-  overflow: auto;
-}
-#program_page #master-introduce .course-master-profile {
-  margin-top: 100px;
-}
-#program_page #master-introduce .course-master-profile .row {
-  margin-bottom: 6em;
-}
-#program_page #master-introduce .course-master-profile .team-member img {
-  max-width: 240px;
-  border: 5px solid #afafaf;
-}
-#program_page #master-introduce .recomm-people img,
-#program_page #master-introduce .team-member img {
-  margin: 0 auto;
-  border: 7px solid #fff;
-}
-#program_page #master-introduce .img-circle {
-  border-radius: 50%;
-}
-@media (max-width: 1120px) {
-  #masters_page #overview .course-kind.course-level img {
-    width: 130px;
-    height: 191px;
-    max-width: 130px;
-  }
-  #masters_page #overview .course-kind.course-level .glyphicon-arrow-right {
-    position: relative;
-    left: -12px;
-    font-size: 35px;
-  }
-  #masters_page #overview .course-kind.course-level div:first-child img {
-    width: 166px;
-    max-width: 166px;
-  }
-}
-@media (max-width: 1070px) {
-  #masters_page .course-kind div {
-    margin-bottom: 3%;
-  }
-  #masters_page #masters-oneday table th {
-    min-width: 100px;
-    padding: 15px 10px;
-  }
-  #masters_page #masters-oneday table td {
-    min-width: 100px;
-    padding: 15px 10px;
-  }
-}
-@media (max-width: 768px) {
-  #masters_page #about-masters img {
-    width: 40%;
-  }
-  #masters_page #masters-oneday table th {
-    padding: 8px 2px;
-    font-size: 0.8em;
-  }
-  #masters_page #masters-oneday table td {
-    padding: 8px 2px;
-    display: block;
-    font-size: 0.8em;
-  }
-}
-@media (max-width: 460px) {
-  #masters_page #masters-feature li {
-    margin-top: 80px;
-  }
-  #join-program h2,
-  #join-program p {
-    font-size: 20px;
-  }
-}
-#masters-faq .section-heading {
-  margin-bottom: 100px;
-}
-#masters-faq .faq-desc-wrap {
-  font-size: 1.2em;
-  border-bottom: 1px solid #f1f1f1;
-  padding: 10px 10px;
-}
-#masters-faq .faq-desc-wrap:hover {
-  background-color: #f5f5f5;
-}
-#masters-faq .faq-desc-wrap > div {
-  line-height: 1.45;
-}
-#masters-faq .faq-desc-wrap > div .text-bold {
-  font-size: 1.4em;
-}
-#masters-faq .faq-desc-wrap .question {
-  cursor: pointer;
-  padding: 0.3em;
-}
-#masters-faq .faq-desc-wrap .answer {
-  font-weight: 600;
-  max-height: 0px;
-  padding-left: 20px;
-  transition: max-height 0.7s;
-  overflow: hidden;
 }
 
 #program-registration .registration-guide {
