@@ -2014,7 +2014,7 @@ aside.clients img {
   font-weight: bold;
 }
 #program_page i.fa {
-  margin-right: 1%;
+  margin-right: 2%;
 }
 @media (max-width: 480px) {
   #program_page .base-section-height {
@@ -2025,14 +2025,14 @@ aside.clients img {
   }
   #program_page h4,
   #program_page .sub-desc {
-    font-size: 18px !important;
+    font-size: 18px;
   }
   #program_page p,
   #program_page div,
   #program_page li,
   #program_page span,
   #program_page a {
-    font-size: 16px !important;
+    font-size: 16px;
   }
   #program_page .base-three > div:last-child {
     margin-right: 0%;
@@ -2071,10 +2071,10 @@ aside.clients img {
   }
   #program_page header .intro-text > .intro-heading {
     line-height: 40px;
-    font-size: 32px;
+    font-size: 32px !important;
   }
   #program_page header .intro-text > .intro-heading span.small-text {
-    font-size: 24px;
+    font-size: 24px !important;
   }
 }
 #program_page .basic-info .base-two > div {
@@ -2125,11 +2125,11 @@ aside.clients img {
 }
 @media (max-width: 557px) {
   #program_page .basic-info .base-two > div:nth-child(1) .program-name {
-    font-size: 24px;
+    font-size: 24px !important;
   }
   #program_page .basic-summary-title,
   #program_page .basic-summary-desc {
-    font-size: 15px;
+    font-size: 15px!important;
   }
 }
 #program_page .plan-background {
@@ -2537,7 +2537,7 @@ aside.clients img {
 }
 #program-registration .registration-guide .msg-box .iframe-wrap {
   position: relative;
-  height: 1800px;
+  height: 1900px;
 }
 #program-registration .registration-guide .msg-box .iframe-wrap .pre-msg {
   width: 50%;
@@ -2546,7 +2546,6 @@ aside.clients img {
   position: absolute;
   top: 0;
   z-index: -2;
-  line-height: 400px;
   font-size: 1.5em;
   font-weight: bold;
   color: #af8f8f;
