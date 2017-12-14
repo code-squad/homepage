@@ -32,6 +32,7 @@
 
 
 	//2. NAVIGATION DROPDOWN
+	
 	var elDropdownlist = document.querySelector(".dropdown-list > a");
 	elDropdownlist.addEventListener("mouseenter", function(evt) {
 		const el = evt.target;
@@ -65,6 +66,7 @@
 		else return;
 
 	});
+	
 
 
 	//3. PRIVACE AND TERM Handler on Footer.
