@@ -503,6 +503,9 @@ header .intro-text .intro-heading a {
   .navbar-custom .nav li ul.nav-dropdown {
     visibility: visible;
   }
+  .navbar-custom .nav li ul.nav-dropdown li {
+    text-align: center;
+  }
 }
 @media (min-width: 768px) {
   .navbar-custom.affix {
@@ -1899,6 +1902,14 @@ aside.clients img {
   top: 1%;
   right: 2%;
   animation: restmove 12s ease-in-out;
+  display: table;
+}
+#special-page #special-item.base-desc-three ul.level-wrap > li .level-desc-wrap .status-program:after {
+  display: block;
+  text-align: center;
+}
+#special-page #special-item.base-desc-three ul.level-wrap > li .level-desc-wrap .end:after {
+  content: "모집종료";
 }
 #special-page #special-item.base-desc-three ul.level-wrap > li .img-wrap img {
   width: 100%;
@@ -1957,6 +1968,9 @@ aside.clients img {
   font-size: 18px;
 }
 @media (max-width: 1100px) {
+  #special-page header {
+    height: 600px;
+  }
   #special-page #special-item.base-desc-three {
     color: red;
   }
@@ -1965,6 +1979,9 @@ aside.clients img {
   }
 }
 @media (max-width: 480px) {
+  #special-page header {
+    height: 400px;
+  }
   #special-page h1,
   #special-page h2 {
     font-size: 2em;
