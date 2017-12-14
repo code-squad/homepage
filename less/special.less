@@ -59,7 +59,18 @@
 					top: 1%;
 					right: 2%;
 					animation: restmove 12s ease-in-out;
+					display: table;
+					 &:after {
+					 		//content: "모집종료";
+					 		display: block;
+					 		text-align: center;
+					 }
 				}
+				.end {
+					 &:after {
+					 		content: "모집종료";
+					 }
+					}
 			}
 			.img-wrap img {
 				width:100%;
@@ -124,6 +135,9 @@
 
 @media(max-width:1100px) {
 	#special-page {
+		header {
+			height: 600px;
+		}
 		#special-item.base-desc-three {
 			color:red;
 			ul.level-wrap {
@@ -138,6 +152,9 @@
 
 @media(max-width:480px) {
 	#special-page {
+		header {
+			height: 400px;
+		}
 		h1,h2 {
 			font-size: 2em;
 		}
