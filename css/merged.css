@@ -1,6 +1,6 @@
 /*!
  * Start Bootstrap - Agency v3.3.7+1 (http://startbootstrap.com/template-overviews/agency)
- * Copyright 2013-2017 Start Bootstrap
+ * Copyright 2013-2018 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 html {
@@ -1220,6 +1220,25 @@ aside.clients img {
 #masters_page header {
   background-image: url('../img/masters/masters_main-min.v2.jpg');
 }
+#masters_page header .application-card {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  width: 70%;
+  position: absolute;
+  top: 60%;
+  z-index: 1;
+}
+#masters_page header .application-card a.btn-xl {
+  min-width: 100px;
+  max-width: 250px;
+  flex-grow: 1;
+  position: relative;
+  height: 120px;
+  padding-top: 32px;
+  box-shadow: 8px 10px 17px 3px rgba(0, 0, 0, 0.4);
+  font-size: 1.5em;
+}
 #masters_page #about-masters img {
   width: 25%;
 }
@@ -1356,6 +1375,9 @@ aside.clients img {
   border-radius: 50%;
 }
 @media (max-width: 1120px) {
+  #masters_page header .application-card {
+    width: 100%;
+  }
   #masters_page #overview .course-kind.course-level img {
     width: 130px;
     height: 191px;
@@ -1385,6 +1407,11 @@ aside.clients img {
   }
 }
 @media (max-width: 768px) {
+  #masters_page header .application-card a.btn-xl {
+    margin: 0px 15px;
+    padding: 10px 0px;
+    font-size: 1.1em;
+  }
   #masters_page #about-masters img {
     width: 40%;
   }
@@ -1399,6 +1426,10 @@ aside.clients img {
   }
 }
 @media (max-width: 460px) {
+  #masters_page header .application-card a.btn-xl {
+    font-size: 1em;
+    height: 90px;
+  }
   #masters_page #masters-feature li {
     margin-top: 80px;
   }

@@ -25,6 +25,25 @@
 #masters_page {
     header {
         background-image: url('../img/masters/masters_main-min.v2.jpg');
+            .application-card {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-around;
+                width: 70%;
+                position: absolute;
+                top: 60%;
+                z-index: 1;
+                a.btn-xl {
+                    min-width: 100px;
+                    max-width: 250px;
+                    flex-grow: 1;
+                    position: relative;
+                    height: 120px;
+                    padding-top: 32px;
+                    box-shadow: 8px 10px 17px 3px rgba(0, 0, 0, 0.4);
+                    font-size: 1.5em;
+            }
+        }
     }
     #about-masters {
         img {
@@ -184,6 +203,13 @@
 
 @media(max-width:1120px) {
 #masters_page {
+    header {
+        .application-card {
+            width: 100%;
+            a.btn-xl {
+            }
+        }
+    }
     #overview {
         .course-kind.course-level {
             img {
@@ -230,6 +256,15 @@
 
  @media(max-width:768px) {
     #masters_page {
+        header {
+            .application-card {
+                a.btn-xl {
+                    margin:0px 15px;
+                    padding:10px 0px;
+                    font-size: 1.1em;
+                }
+            }
+        }
        #about-masters {
             img {
                 width:40%;
@@ -256,6 +291,14 @@
 
 @media(max-width:460px) {
     #masters_page {
+        header {
+            .application-card {
+                a.btn-xl {
+                    font-size: 1em;
+                    height: 90px;
+                }
+            }
+        }
         #masters-feature {
             li {
                 margin-top:80px;
