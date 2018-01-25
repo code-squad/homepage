@@ -77,7 +77,7 @@ section h3.section-subheading {
 }
 .base-desc p {
   margin-top: 40px;
-  font-size: 1.2em;
+  font-size: 1.3em;
 }
 @media (min-width: 768px) {
   .inner-section {
@@ -1216,6 +1216,9 @@ aside.clients img {
 }
 .backend {
   background-color: #555;
+}
+#masters_page h2 {
+  font-size: 32px;
 }
 #masters_page header {
   background-image: url('../img/masters/masters_main-min.v2.jpg');
