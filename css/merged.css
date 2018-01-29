@@ -459,7 +459,7 @@ header .intro-text .intro-heading a {
   background-color: #222222;
   margin-left: 15px;
   padding: 10px;
-  padding-top: 25px;
+  padding-top: 20px;
   color: #fff;
   width: 180px;
   display: none;
@@ -504,7 +504,8 @@ header .intro-text .intro-heading a {
     visibility: visible;
   }
   .navbar-custom .nav li ul.nav-dropdown li {
-    text-align: center;
+    margin: 5px 0px;
+    text-align: left;
   }
 }
 @media (min-width: 768px) {

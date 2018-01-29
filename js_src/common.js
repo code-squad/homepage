@@ -33,40 +33,41 @@
 
 	//2. NAVIGATION DROPDOWN
 	
-	var elDropdownlist = document.querySelector(".dropdown-list > a");
-	elDropdownlist.addEventListener("mouseenter", function(evt) {
-		const el = evt.target;
-		if(el.tagName !== "A") return;
-		else el.nextElementSibling.style.display = "block";
+	var elDropdownlist = document.querySelectorAll(".dropdown-list > a");
+	Array.from(elDropdownlist).forEach( function(el) {
+		el.addEventListener("mouseenter", function(evt) {
+			const el = evt.target;
+			if(el.tagName !== "A") return;
+			else el.nextElementSibling.style.display = "block";
+		});
+
+		el.addEventListener("mouseleave", function(evt) {
+			function _isNavDropdownElement(elAfterOut) {
+				return (elAfterOut.className === "nav-dropdown" || elAfterOut.parentElement.classame === "nav-dropdown");
+			}
+
+			if(_isNavDropdownElement(evt.relatedTarget)) return;
+			evt.target.nextElementSibling.style.display = "none";
+		});
+	})
+
+	var elNavDropdown = document.querySelectorAll(".nav-dropdown");
+	Array.from(elNavDropdown).forEach(function(el) {
+		el.addEventListener("mouseleave", function (evt) {
+			const el = evt.target;
+			const name = el.tagName;
+
+			function _isMastersAnchorMenu(elAfterOut) {
+				return (elAfterOut.className === "nav-masters" || elAfterOut.parentElement.className === "nav-masters");
+			}
+
+			if (_isMastersAnchorMenu(evt.relatedTarget)) return;
+
+			if (name === "LI") el.parentElement.style.display = "none";
+			else if (name === "UL") el.style.display = "none";
+			else return;
+		});
 	});
-
-	elDropdownlist.addEventListener("mouseleave", function(evt) {
-		function _isNavDropdownElement(elAfterOut) {
-			return (elAfterOut.className === "nav-dropdown" || elAfterOut.parentElement.classame === "nav-dropdown");
-		}
-
-		if(_isNavDropdownElement(evt.relatedTarget)) return;
-		evt.target.nextElementSibling.style.display = "none";
-
-
-	});
-
-	document.querySelector(".nav-dropdown").addEventListener("mouseleave", function(evt) {
-		const el = evt.target;
-		const name = el.tagName;
-
-		function _isMastersAnchorMenu(elAfterOut) {
-			return (elAfterOut.className === "nav-masters" || elAfterOut.parentElement.className === "nav-masters");
-		}
-
-		if(_isMastersAnchorMenu(evt.relatedTarget)) return;
-
-		if(name === "LI") el.parentElement.style.display = "none";
-		else if(name === "UL") el.style.display = "none";
-		else return;
-
-	});
-	
 
 
 	//3. PRIVACE AND TERM Handler on Footer.
