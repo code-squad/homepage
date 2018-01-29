@@ -1223,13 +1223,19 @@ aside.clients img {
 #masters_page header {
   background-image: url('../img/masters/masters_main-min.v2.jpg');
 }
+#masters_page header .intro-text {
+  top: 18%;
+}
+#masters_page header p.premsg {
+  font-size: 2.0vw;
+}
 #masters_page header .application-card {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
   width: 70%;
   position: absolute;
-  top: 60%;
+  bottom: 15%;
   z-index: 1;
 }
 #masters_page header .application-card a.btn-xl {
@@ -1242,8 +1248,11 @@ aside.clients img {
   box-shadow: 8px 10px 17px 3px rgba(0, 0, 0, 0.4);
   font-size: 1.5em;
 }
+#masters_page #about-masters {
+  margin-bottom: 0px;
+}
 #masters_page #about-masters img {
-  width: 25%;
+  width: 35%;
 }
 #masters_page #masters-class p {
   font-size: 1.2em;
@@ -1410,6 +1419,9 @@ aside.clients img {
   }
 }
 @media (max-width: 768px) {
+  #masters_page header p.premsg {
+    font-size: 3.0vw;
+  }
   #masters_page header .application-card a.btn-xl {
     margin: 0px 15px;
     padding: 10px 0px;
@@ -1432,6 +1444,7 @@ aside.clients img {
   #masters_page header .application-card a.btn-xl {
     font-size: 1em;
     height: 90px;
+    margin: 0px 4px;
   }
   #masters_page #masters-feature li {
     margin-top: 80px;
