@@ -2666,6 +2666,10 @@ aside.clients img {
 #program_page .program-curriculum .two-one .curriculum-offline {
   max-width: 100%;
 }
+#program_page .program-recommendation {
+  background-image: none;
+  background-color: #3E606F;
+}
 
 #program-registration .registration-guide {
   margin-top: 100px;
