@@ -17,8 +17,8 @@ var clean = require('gulp-clean');
 gulp.task('less', function() {
     return gulp.src(['less/common.less', 'less/index.less', 'less/master.less',
                     'less/application.less', 'less/schedule.less', 'less/level.less',
-                    'less/sharedcto.less', 'less/special.less', 'less/specialprogram.less',
-                    'less/registration-common.less'])
+                    'less/sharedcto.less', 'less/special/special.less', 'less/program_unit.less',
+                    'less/special/special_tdd.less','less/masters_fe.less', 'less/registration-common.less'])
         .pipe(less())
         .pipe(concat('merged.css'))
         .pipe(header(banner, { pkg: pkg }))
@@ -93,6 +93,7 @@ gulp.task('browserSync', function() {
 // Dev task with browserSync
 gulp.task('dev', ['browserSync', 'minify-css', 'minify-js', 'move-index'], function() {
     gulp.watch('less/*.less', ['less']);
+    gulp.watch('less/*/*.less', ['less']);
     gulp.watch('css/*.css', ['minify-css']);
     gulp.watch('js_src/*.js', ['minify-js']);
     gulp.watch('html_src/*.html', ['move-index']);

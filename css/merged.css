@@ -2134,7 +2134,6 @@ aside.clients img {
   }
 }
 #program_page header {
-  background-image: url('../img/special/tdd_pobi.jpg');
   background-position: center 25%;
   height: 500px;
 }
@@ -2193,14 +2192,19 @@ aside.clients img {
   background: #dee1d5;
   border-right: 2px solid #fff;
   text-align: left;
-  padding: 10px;
+  padding: 20px;
+}
+#program_page .basic-info .base-two > div:nth-child(1) .professor {
+  color: #879a9c;
+  font-weight: bold;
+  font-size: 26px;
 }
 #program_page .basic-info .base-two > div:nth-child(1) .program-name {
   font-size: 32px;
   color: #3e5f6e;
   font-weight: bold;
   line-height: 1;
-  margin-top: 5%;
+  margin-top: 2%;
 }
 #program_page .basic-info .base-two > div:nth-child(2) {
   background: #CBDBD7;
@@ -2619,6 +2623,48 @@ aside.clients img {
     top: 15px;
     left: 0;
   }
+}
+
+#program_page header {
+  background-image: url('../img/special/tdd_pobi.jpg');
+}
+
+#program_page header {
+  background-image: url('../img/masters/fe_title.jpg');
+}
+#program_page .basic-info .base-two > div:nth-child(1) {
+  padding-left: 7%;
+}
+#program_page .basic-info .base-two > div:nth-child(1) .team-member {
+  background-image: url(/img/team/yo.jpg);
+  flex-grow: 1;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+  margin-right: 2%;
+  font-size: 0.9em;
+  margin-top: 20px;
+}
+#program_page .basic-info .base-two > div:nth-child(1) .team-member .member-content {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  height: inherit;
+  color: #fff;
+  opacity: 0;
+  border-radius: 50%;
+  font-weight: bold;
+  transition: 0.1s all;
+}
+#program_page .program-curriculum .two-one {
+  display: block;
+}
+#program_page .program-curriculum .two-one .curriculum-offline {
+  max-width: 100%;
 }
 
 #program-registration .registration-guide {
