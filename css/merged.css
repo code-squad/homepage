@@ -2670,6 +2670,10 @@ aside.clients img {
   background-image: none;
   background-color: #3E606F;
 }
+#program_page .problem-info a {
+  text-decoration: underline;
+  font-size: 24px;
+}
 
 #program-registration .registration-guide {
   margin-top: 100px;
