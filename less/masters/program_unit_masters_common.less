@@ -1,0 +1,104 @@
+.masters_program {
+    header {
+        background-image: url('../img/masters/fe_title.jpg');
+    }
+    .basic-info .base-two>div:nth-child(1) {
+        padding-left: 7%;
+        .team-member {
+            background-image: url(/img/team/yo.jpg);
+            flex-grow: 1;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+            width: 160px;
+            height: 160px;
+            margin-right: 2%;
+            font-size: 0.9em;
+            margin-top: 20px;
+            .member-content {
+                display: flex;
+                flex-flow: column;
+                justify-content: center;
+                height: inherit;
+                color: #fff;
+                opacity: 0;
+                border-radius: 50%;
+                font-weight: bold;
+                transition: 0.1s all;
+            }
+        }
+    }
+    .program-curriculum .two-one {
+        display: block;
+        .curriculum-offline {
+            max-width: 100%;
+        }
+    }
+    .program-recommendation {
+        background-image: none;
+        background-color: #3E606F;
+    }
+    .problem-info {
+        a {
+            text-decoration: underline;
+            font-size: 24px;
+        }
+        .meet_codesquad {
+            margin: 20px 0px;
+            font-size: 24px;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .masters_program .program-payinfo .one-two .pay-desc {
+        height: 300px;
+        a {
+            font-size : 18px;
+        }
+    }
+}
+
+
+#masters_fe {
+    header {
+        //background-image: url('../img/masters/fe_title.jpg');
+        background-image: url('../img/masters/crong_lecture.jpg');
+        &:after {
+            background-color: #443d47;
+        }
+    }
+    .basic-info .base-two>div:nth-child(1) .team-member {
+        background-image: url(/img/team/yo.jpg);
+    }
+}
+
+#masters_be {
+    header {
+        background-image: url('../img/masters/pobi_lecture.jpg');
+        background-position: center 45%;
+        height: 500px;
+        &:after {
+            background-color: #5a686e;
+        }
+    }
+    .basic-info .base-two>div:nth-child(1) .team-member {
+        background-image: url(/img/team/pobi_masters.jpg);
+    }
+}
+
+#masters_ios {
+    header {
+        background-image: url('../img/masters/jk_lecture.jpg');
+        background-position: center 80%;
+        height: 500px;
+        &:after {
+            background-color: #9cafb8;
+        }
+    }
+    .basic-info .base-two>div:nth-child(1) .team-member {
+        background-image: url(/img/team/jk_masters.jpg);
+    }
+}

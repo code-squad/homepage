@@ -6,12 +6,12 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="클린코드를 위한 TDD, 리팩토링 with Java" />
+  <meta name="description" content="웹프론트엔드 레벨2" />
   <meta name="google-site-verification" content="0lG7qy85szvZKUlu04PmDR_WirhpobFqbA1bKnnWdpc" />
   <meta http-equiv="Cache-Control" content="no-cache" />
   <meta http-equiv="Pragma" content="no-cache" />
-  <meta property="og:title" content="클린코드를 위한 TDD, 리팩토링 with Java" />
-  <meta property="og:description" content="자바지기 박재성 마스터와 함께하는 놀라운 성장 경험" />
+  <meta property="og:title" content="웹프론트엔드 레벨2" />
+  <meta property="og:description" content="마스터즈코스 웹프론트엔드 레벨2모집" />
 
   <!-- Bootstrap Core CSS -->
   <link href="/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -24,9 +24,9 @@
 
 
   <!-- Navigation -->
-  @@include('./common/nav.html')
+  @@include('../common/nav.html')
 
-<div id="program_page">
+<div class="program_page masters_program" id="masters_fe">
 
 <dummy class="dummyfornav"></dummy>
 
@@ -42,8 +42,7 @@
 <div class="basic-info-wrap">
   <section class="hooking-msg base-section-height ">
     <div class="new-container">
-      <p class="text-center">어느곳에서나 주니어개발에게 첫번째로 요구되는 것은 프로그래밍 능력입니다. 웹프론트엔드 레벨2를 마치면 더이상 초보개발자가 아닙니다.</p>
-    </div>
+        <p class="text-center">어느 곳에서나 주니어개발자에게 첫 번째로 요구되는 것은 프로그래밍 능력이다.<br> 웹프론트엔드 레벨2를 마치면 더 이상 초보개발자가 아니다.</p>    </div>
   </section>
 
   <section class="hooking-msg-highlight base-section-height">
@@ -69,18 +68,8 @@
         <div class="team-member">
             <div class="member-content member-hover-viewer"></div> 
         </div>  
-
-      </div>
-      <div>
-        <ul>
-          <li><span class="basic-summary-title">모집기간: </span> <span class="basic-summary-desc">02.05 - 03.02</span></li>
-          <li><span class="basic-summary-title">교육기간: </span> <span class="basic-summary-desc">03.05 - 04.27</span></li>
-          <li><span class="basic-summary-title">교육시간: </span> <span class="basic-summary-desc">매일 10시 - 18시</span></li>
-          <li><span class="basic-summary-title">요일별계획: </span> <span class="basic-summary-desc">월/목(마스터오프라인 멘토링)<br>화/수/금(마스터온라인코드리뷰)</span></li>
-          <li><span class="basic-summary-title">장소: </span> <span class="basic-summary-desc">강남구 강남대로 62길 23 4층 코드스쿼드</span></li>
-          <li><span class="basic-summary-title">문의: </span> <span class="basic-summary-desc">070-4117-1005 / yoda@codesquad.kr</span></li>
-        </ul>
-      </div>
+     </div>
+     @@include('../common/masters/common_schedule.html')
     </div>
   </section>
 </div>
@@ -92,20 +81,10 @@
   <div class="new-container text-center">
       <h2 class="program-title-content"><i class="fa fa-file-code-o" aria-hidden="true"></i>레벨2를 수료한 이후에 얻을 수 있는<br><span class="three-keyword">세 가지</span></h2>
       <div class="base-three">
-        <div>
-          <h4>프로그래밍 능력</h4>
-          <div class="why-desc">
-            과정을 마치면 다양한 현실세계의 문제를 풀 수 있는 능력을 가지게 됩니다. 또한 자바스크립트 언어의 특징을 잘 이해하면서, 객체와 함수를 활용한 다양한 프로그래밍 기법을 알게 됩니다.
-            그리고 과정을 마치는 시점의 여러분들의 코드는 실무에서도 인정할 수 있는 수준의 코딩컨벤션과 패턴으로 작성되어 있습니다.
-          </div>
-        </div>
+        @@include('../common/masters/gain_two.html')
         <div>
           <h4>웹프론트엔드 기초</h4>
           <div class="why-desc">DOM, Event, Ajax와 같은 가장 중요한 기초개념을 모두 알게되며, 본인이 생각하는 간단한 웹사이트를 만들 수 있습니다. </div>
-        </div>
-        <div>
-          <h4>학습방법을 깨닫다</h4>
-          <div class="why-desc">본인의 수준을 정확히 알게되고, 어떤 부분을 어떻게 공부할지를 알게 됩니다. 새로운 기술과 문제가 주어져도 이제 '방법'을 알게 됩니다.</div>
         </div>
       </div>
   </div>
@@ -200,71 +179,11 @@
 
 <div class="new-container"> <div class="line-short"></div> </div>
 
-<section class="lecture-method base-section-height">
-  <h2 class="program-title-content text-center"><i class="fa fa-check-square-o" aria-hidden="true"></i>교육특징</h2>
-  <div class="new-container text-left">
-    <section class="msg-box">
-      <h4>개개인 코드리뷰를 통한 심도있는 피드백</h4>
-      <p>
-        <i class="fa fa-quote-left" aria-hidden="true"></i>
-          이 강의에서 가장 중요한 것은 당신이 작성한 소스코드 입니다. 
-          강사는 상시로, 당신의 얼굴이나 말이 아닌 바로 소스코드를 통해 당신을 파악하고 그에 따른 면밀한 1:1 피드백을 드릴 것입니다. 
-          이렇게 남은 피드백 로그는 사실상 그 어떤 강의자료보다도 더욱 당신에게 의미가 있을겁니다. 또한 코드리뷰를 통해서 가장 빨리 성장할 수 있을 겁니다.
-        <i class="fa fa-quote-right" aria-hidden="true"></i>
-      </p>
-    </section>
-    <section class="msg-box">
-      <h4>이론과 미션실습이 잘 섞인 교육방식</h4>
-      <p>
-        <i class="fa fa-quote-left" aria-hidden="true"></i>
-          마스터들의 수년간 S/W교육 경험을 토대로 초보 프로그래머를 벗어나기 위해 꼭 배워야 할 지식을 정리해두었습니다.여러분들은 어떤것이 중요한지 깨닫게 됩니다.
-          또한 필요한 지식을 어떻게 마스터즈코스만의 방식으로 학습하면서 본인의 지식으로 완전하게 만들 수 있을 겁니다. 
-        <i class="fa fa-quote-right" aria-hidden="true"></i>
-      </p>
-    </section>
-  </div>
-</section>
+@@include('../common/masters/lecture_method.html')
 
 <div class="new-container"> <div class="line-short"></div> </div>
 
-<section class="target-student base-desc-three base-section-height">
-  <div class="new-container">
-    <h2 class="program-title-content text-center"><i class="fa fa-user" aria-hidden="true"></i>수강대상</h2>
-    <p> 제대로 개발자의 길을 걷고 싶은 분들 환영합니다. &#9786;</p>
-    <ul class="level-wrap">
-      <li>
-        <div>
-          <h4>프로그래밍 언어를 하나 배워봤음</h4>
-          <div>
-            <p>어떤 프로그래밍 언어든 한가지를 배워서 '함수'까지 구현해보신분. </p>
-          </div>
-        </div>
-      </li>
-
-     <li class="plus-symbol">&nbsp;</li>
-
-      <li>
-        <div>
-          <h4>실무 프로그래머로 가는길이 궁금한 분</h4>
-          <div>
-            <p>프로그래머로 일할 수 있기 위해서 준비해야 할 것이 무엇인지 잘 모르신다면! <strong>레벨2</strong>에서 답을 찾을 수 있습니다.</p>
-          </div>
-        </div>
-      </li>
-
-     <li class="plus-symbol">&nbsp;</li>
-
-      <li>
-        <div>
-          <h4>최신 기술은 알고 있지만,,</h4>
-          <div>
-            <p> 프로그래밍 기초지식 없이 유행에 초점이 맞춰진 기술만 익힌다면 성장에 큰 한계를 느낍니다. 지금 프로그래밍 역량을 충분히 다져보세요!</p>
-          </div>
-        </div>
-      </li>
-    </ul>
-  </div>
-</section>
+@@include('../common/masters/target_student.html')
 
 <section class="program-recommendation multiple-cardui-wrap base-section-height">
   <div class="new-container">
@@ -328,7 +247,7 @@
             이런상황이지만, 당연히도 웹프론트엔드 개발자는 빠르게 기술을 이해해야하고, 다양한 기술을 능숙하게 다룰 줄 알아야 합니다.
             <br><strong>이것이 가능하기 위해서는 어떻게 해야할까요? </strong><br> 
             자바스크립트의 다양한  특징을 활용한 코딩을 할 줄 알아야하고, 실무 경험이 묻어난 프로그래밍을 할 줄 알아야 합니다. 
-            또하 원리를 중심으로, 웹기반 기술을 충분히 이해해야 합니다. <br>레벨2를 마치면 그런점을 알 게 됩니다.<br>
+            또하 원리를 중심으로, 웹기반 기술을 충분히 이해해야 합니다. <br>레벨2를 마치면 그런점을 알 게 됩니다.
             <i class="fa fa-quote-right" aria-hidden="true"></i>
           </p>
         </div>
@@ -346,37 +265,29 @@
   </section>
 </div>
 
-<section class="program-payinfo base-section-height">
-  <div class="new-container text-center">
-      <h2 class="program-title-content"><i class="fa fa-credit-card" aria-hidden="true"></i>수강료</h2>
-      <div class="one-two">
-        <div class="pay-info">
-            <div class="block-v-center"><span>매달 800,000원</span></div>
-        </div>
-        <div class="pay-desc">
-          <ul>
-            <li>매달 따로 결제하며 8주는 총160만원 입니다</li>
-            <li>첫 결제는 3월5일 진행합니다. </li>
-            <li>무통장 입금 또는 현장카드 결제를 할 수 있습니다.</li>
-            <li>이메일 : yoda@codesquad.kr</li>
-            <li>전화 : <a href="tel:070-4117-1005">070-4117-1005</a></li>
-          </ul>
-          <a href="/page/regTddstandby.html" class="btn-common">레벨2 지금신청하기</a>
-        </div>
-      </div>
-  </div>
-</section>
+
+
+@@include('../common/masters/level_test.html')
+
+<div class="new-container"> <div class="line-short"></div> </div>
+
+@@include('../common/masters/payinfo.html')
+
+<div class="new-container"> <div class="line-short"></div> </div>
+
+@@include('../common/masters/faq.html')
 
 </div>
 
-@@include('./common/footer.html')
+@@include('../common/footer.html')
 
-@@include('./common/modal.html')
+@@include('../common/modal.html')
 
-@@include('./common/ga.html')
+@@include('../common/ga.html')
 
 
 <!-- Plugin JavaScript -->
 <script src="/js/common.min.js"></script>
+<script src="/js/masters.min.js"></script>
 </body>
 </html>

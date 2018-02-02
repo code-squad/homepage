@@ -15,10 +15,12 @@ var clean = require('gulp-clean');
 
 // Compile LESS files from /less into /css
 gulp.task('less', function() {
-    return gulp.src(['less/common.less', 'less/index.less', 'less/master.less',
+    return gulp.src(['less/common.less', 'less/index.less', 
                     'less/application.less', 'less/schedule.less', 'less/level.less',
-                    'less/sharedcto.less', 'less/special/special.less', 'less/program_unit.less',
-                    'less/special/special_tdd.less','less/masters_fe.less', 'less/registration-common.less'])
+                    'less/sharedcto.less',
+                    'less/special/special.less', 'less/program_unit.less', 'less/special/special_tdd.less',
+                    'less/masters/master.less','less/masters/program_unit_masters_common.less',
+                    'less/registration-common.less'])
         .pipe(less())
         .pipe(concat('merged.css'))
         .pipe(header(banner, { pkg: pkg }))
@@ -59,7 +61,7 @@ gulp.task('clean-html', function(){
 });
 
 gulp.task('htmlinclude', ['clean-html'], function() {
-  return gulp.src(['html_src/*.html'])
+  return gulp.src(['html_src/*.html', 'html_src/masters/*.html', 'html_src/special/*.html'])
     .pipe(fileinclude({
       prefix: '@@',
       basepath: '@file'
@@ -97,6 +99,7 @@ gulp.task('dev', ['browserSync', 'minify-css', 'minify-js', 'move-index'], funct
     gulp.watch('css/*.css', ['minify-css']);
     gulp.watch('js_src/*.js', ['minify-js']);
     gulp.watch('html_src/*.html', ['move-index']);
+    gulp.watch('html_src/**/*.html', ['move-index']);
     gulp.watch('html_src/common/*.html', ['move-index']);
     // Reloads the browser whenever HTML or JS files change
     gulp.watch('page/*.html', browserSync.reload);
