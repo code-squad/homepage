@@ -2589,7 +2589,7 @@ aside.clients img {
 @media (max-width: 460px) {
   #masters_page header .application-card a.btn-xl {
     font-size: 1em;
-    height: 90px;
+    height: 65px;
     margin: 0px 4px;
   }
   #masters_page #masters-feature li {
@@ -2680,7 +2680,7 @@ aside.clients img {
 }
 /* FE */
 #masters_fe header {
-  background-image: url('../img/masters/fe_title.jpg');
+  background-image: url('../img/masters/crong_lecture.jpg');
 }
 #masters_fe .basic-info .base-two > div:nth-child(1) .team-member {
   background-image: url(/img/team/yo.jpg);
@@ -2692,6 +2692,14 @@ aside.clients img {
 }
 #masters_be .basic-info .base-two > div:nth-child(1) .team-member {
   background-image: url(/img/team/pobi_masters.jpg);
+}
+#masters_ios header {
+  background-image: url('../img/masters/jk_lecture.jpg');
+  background-position: center 80%;
+  height: 500px;
+}
+#masters_ios .basic-info .base-two > div:nth-child(1) .team-member {
+  background-image: url(/img/team/jk_masters.jpg);
 }
 
 #program-registration .registration-guide {
