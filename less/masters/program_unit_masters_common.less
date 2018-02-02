@@ -52,15 +52,25 @@
     }
 }
 
+@media (max-width: 480px) {
+    .masters_program .program-payinfo .one-two .pay-desc {
+        height: 300px;
+        a {
+            font-size : 18px;
+        }
+    }
+}
 
-/* FE */
 
 #masters_fe {
     header {
         //background-image: url('../img/masters/fe_title.jpg');
         background-image: url('../img/masters/crong_lecture.jpg');
+        &:after {
+            background-color: #443d47;
+        }
     }
-    .basic-info .base-two > div:nth-child(1) .team-member {
+    .basic-info .base-two>div:nth-child(1) .team-member {
         background-image: url(/img/team/yo.jpg);
     }
 }
@@ -70,8 +80,11 @@
         background-image: url('../img/masters/pobi_lecture.jpg');
         background-position: center 45%;
         height: 500px;
+        &:after {
+            background-color: #5a686e;
+        }
     }
-    .basic-info .base-two > div:nth-child(1) .team-member {
+    .basic-info .base-two>div:nth-child(1) .team-member {
         background-image: url(/img/team/pobi_masters.jpg);
     }
 }
@@ -81,8 +94,11 @@
         background-image: url('../img/masters/jk_lecture.jpg');
         background-position: center 80%;
         height: 500px;
+        &:after {
+            background-color: #9cafb8;
+        }
     }
-    .basic-info .base-two > div:nth-child(1) .team-member {
+    .basic-info .base-two>div:nth-child(1) .team-member {
         background-image: url(/img/team/jk_masters.jpg);
     }
 }
