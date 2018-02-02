@@ -1,9 +1,8 @@
-#program_page {
+.masters_program {
     header {
         background-image: url('../img/masters/fe_title.jpg');
     }
-
-    .basic-info .base-two  > div:nth-child(1) {
+    .basic-info .base-two>div:nth-child(1) {
         padding-left: 7%;
         .team-member {
             background-image: url(/img/team/yo.jpg);
@@ -30,24 +29,48 @@
                 transition: 0.1s all;
             }
         }
-   }
-
-   .program-curriculum .two-one {
+    }
+    .program-curriculum .two-one {
         display: block;
         .curriculum-offline {
             max-width: 100%;
         }
     }
-
     .program-recommendation {
         background-image: none;
         background-color: #3E606F;
     }
-    
     .problem-info {
         a {
-            text-decoration:underline;
+            text-decoration: underline;
             font-size: 24px;
         }
+        .meet_codesquad {
+            margin: 20px 0px;
+            font-size: 24px;
+        }
+    }
+}
+
+
+/* FE */
+
+#masters_fe {
+    header {
+        background-image: url('../img/masters/fe_title.jpg');
+    }
+    .basic-info .base-two > div:nth-child(1) .team-member {
+        background-image: url(/img/team/yo.jpg);
+    }
+}
+
+#masters_be {
+    header {
+        background-image: url('../img/masters/pobi_lecture.jpg');
+        background-position: center 45%;
+        height: 500px;
+    }
+    .basic-info .base-two > div:nth-child(1) .team-member {
+        background-image: url(/img/team/pobi_masters.jpg);
     }
 }
