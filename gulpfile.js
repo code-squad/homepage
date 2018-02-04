@@ -89,7 +89,7 @@ gulp.task('htmlinclude', ['htmlinclude-masters'], function() {
 
 //goPage
 gulp.task('minify-html-masters',['htmlinclude'], function() {
-    return gulp.src(['html_src/html_merged/masters/*.html'])
+    return gulp.src(['html_src/html_merged/masters/fe.html','html_src/html_merged/masters/be.html','html_src/html_merged/masters/ios.html'])
     .pipe(cachebust({
       type: 'timestamp'
     }))
