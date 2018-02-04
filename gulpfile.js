@@ -56,12 +56,30 @@ gulp.task('minify-js', function() {
 // HTML Process
 
 gulp.task('clean-html', function(){
-    return gulp.src(['page/*.html', 'html_src/html_merged/*.html', './index.html'])
+    return gulp.src(['page/*.html', 'page/**/*.html','html_src/html_merged/*.html','html_src/html_merged/**/*.html', './index.html'])
     .pipe(clean());
 });
 
-gulp.task('htmlinclude', ['clean-html'], function() {
-  return gulp.src(['html_src/*.html', 'html_src/masters/*.html', 'html_src/special/*.html'])
+gulp.task('htmlinclude-reg', ['clean-html'], function() {
+    return gulp.src(['html_src/reg/fe.html', 'html_src/reg/be.html','html_src/reg/ios.html'])
+      .pipe(fileinclude({
+        prefix: '@@',
+        basepath: '@file'
+      }))
+      .pipe(gulp.dest('html_src/html_merged/reg/'));
+});
+
+gulp.task('htmlinclude-masters', ['htmlinclude-reg'], function() {
+  return gulp.src(['html_src/masters/fe.html', 'html_src/masters/be.html','html_src/masters/ios.html'])
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
+    .pipe(gulp.dest('html_src/html_merged/masters/'));
+});
+
+gulp.task('htmlinclude', ['htmlinclude-masters'], function() {
+  return gulp.src(['html_src/*.html','html_src/special/*.html'])
     .pipe(fileinclude({
       prefix: '@@',
       basepath: '@file'
@@ -69,7 +87,26 @@ gulp.task('htmlinclude', ['clean-html'], function() {
     .pipe(gulp.dest('html_src/html_merged/'));
 });
 
-gulp.task('minify-html',['htmlinclude'], function() {
+//goPage
+gulp.task('minify-html-masters',['htmlinclude'], function() {
+    return gulp.src(['html_src/html_merged/masters/fe.html','html_src/html_merged/masters/be.html','html_src/html_merged/masters/ios.html'])
+    .pipe(cachebust({
+      type: 'timestamp'
+    }))
+    .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(gulp.dest('page/masters'));
+})
+
+gulp.task('minify-html-reg',['minify-html-masters'], function() {
+  return gulp.src(['html_src/html_merged/reg/*.html'])
+  .pipe(cachebust({
+    type: 'timestamp'
+  }))
+  .pipe(htmlmin({collapseWhitespace: true}))
+  .pipe(gulp.dest('page/reg'));
+})
+
+gulp.task('minify-html',['minify-html-reg'], function() {
   return gulp.src(['html_src/html_merged/*.html'])
   .pipe(cachebust({
     type: 'timestamp'

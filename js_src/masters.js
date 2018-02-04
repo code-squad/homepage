@@ -25,3 +25,15 @@
 		}
 	});
 })();
+
+//등록 URL 변경
+(function() {
+	var urls = {
+		masters_fe : "",
+		masters_be : "",
+		masters_ios: "/page/reg"
+	}
+	var pageId = document.querySelector(".program_page").id.replace(/masters_/, '');
+	var elRegURL = document.querySelector(".pay-desc .btn-common");
+	elRegURL.href = "/page/reg/" + pageId + ".html";
+})();
