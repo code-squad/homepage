@@ -13,6 +13,7 @@
   <link href="/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Theme CSS -->
   <link href="/css/merged.css" rel="stylesheet">
+  <link rel="stylesheet" href="/libs/billboard/billboard.css">
 </head>
 <body id="page-top" class="index">
 
@@ -187,7 +188,7 @@
 <section id="codesquad-schedule" class="base-desc base-section-height">
   <div class="new-container">
     <h2 class="text-center">코드스쿼드 2018년 일정</h2>
-    <div>blah...</div>
+    <div id="RotatedAxis"></div>
  </div>
 </section>
 
@@ -399,6 +400,115 @@
 <script src="/js/common.min.js"></script>
 <script src="/js/swipe_merge_es5.min.js"></script>
 <script src="/js/index.min.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="/libs/billboard/billboard.js"></script>
+<script> 
+var chart = bb.generate({
+  data: {
+    x: "x",
+    columns: [
+	["x", "마스터즈 레벨1", "마스터즈 레벨2", "마스터즈 레벨3", "마스터즈 레벨4", "스페셜코스 FrontEnd", "스페셜코스 BackEnd", "스페셜코스 iOS", "스페셜코스 Python"],
+	["pv", 90, 20, 20, 20, 20, 20, 20]
+    ],
+    type: "bar"
+  },
+  height:520,
+  axis: {
+    rotated: true,
+    x: {
+      type: "category",
+      tick: {
+        multiline: false
+      },
+      height : 400
+    },
+    y: {
+      tick : {
+        format: function(x) {
+          var fun = function(d) {
+            return ((d+30)/10) + "월"; 
+          }
+          return fun(x);
+        }
+      }
+    },
+  },
+  grid: {
+    x: {
+      show: true
+    },
+    y: {
+      show: true
+    }
+  },
+  bindto: "#RotatedAxis"
+});
+
+chart.legend.hide();
+
+//data parsing
+  function setClonedPath(target, step) {
+    var base = target.getAttribute("d");
+    var xWidth = +(base.replace(/\n/g, '').replace(/^[^L]*L\s+(\d+\.?\d*).*$/, "$1"));
+    var xStart = xWidth * step;
+    //var yStart = +(base.slice(4, 10).trim());
+    var yStart = +(base.replace(/\n/g, '').replace(/^M[^,]*,(\d+\.*\d*).*$/, "$1"));
+    var xTwo = xStart + xWidth;
+    var yThree = +(base.replace(/\n/g, '').replace(/^[^L]*L[^L]*L[^,]*,(\d+\.?\d*).*$/, "$1"));
+
+    target.setAttribute("d", `M ${xStart},${yStart} L ${xTwo},${yStart} L ${xTwo},${yThree} L ${xStart},${yThree} z`);
+  }
+
+var resizerunner = false;
+
+function resizeHanlder() {
+  if (resizerunner) return;
+  resizerunner = true;
+
+  setTimeout(function() {
+    var parent = document.querySelector(".bb-shapes");
+    var clonedTarget = document.querySelector("#RotatedAxis path:nth-child(2)").cloneNode(true);
+    parent.appendChild(clonedTarget);
+    setClonedPath(clonedTarget, 3);
+
+    var clonedTarget2 = document.querySelector("#RotatedAxis path:nth-child(3)");
+    parent.appendChild(clonedTarget2);
+    setClonedPath(clonedTarget2, 1);
+
+    var clonedTarget3 = document.querySelector("#RotatedAxis path:nth-child(8)").cloneNode(true);
+    parent.appendChild(clonedTarget3);
+    setClonedPath(clonedTarget3, 2);
+
+    resizerunner = false;
+  },1000);
+}
+
+window.addEventListener("resize" , resizeHanlder);
+
+resizeHanlder();
+
+
+/*
+var chart = bb.generate({
+  data: {
+    columns: [
+	    ["data1", 30, 200, 100, 400, 150, 250]],
+    types: {
+      data1: "bar"
+    }
+  },
+  bar: {
+    width: {
+      ratio: 0.7
+    }
+  },
+  axis: {
+    rotated: true
+  },
+  bindto: "#RotatedAxis"
+});
+*/
+</script>
 
 </body>
 </html>
