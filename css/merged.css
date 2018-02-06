@@ -2532,6 +2532,24 @@ aside.clients img {
 #masters_page #master-introduce .img-circle {
   border-radius: 50%;
 }
+#masters_page #masters-schedule .new-container {
+  position: relative;
+}
+#masters_page #masters-schedule .new-container .RotatedAxis_preview {
+  text-align: center;
+  font-size: 3em;
+  color: #b0c2cf;
+}
+#masters_page #masters-schedule #RotatedAxis {
+  margin-top: 40px;
+}
+#masters_page #masters-schedule svg tspan {
+  font-size: 1.4em;
+  font-weight: bold;
+}
+#masters_page #masters-schedule svg .bb-axis-x tspan {
+  font-size: 1.2em;
+}
 @media (max-width: 1120px) {
   #masters_page header .application-card {
     width: 100%;
