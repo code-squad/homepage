@@ -43,6 +43,7 @@
 
 //gantt chart
 (function() {
+	if(typeof bb === "undefined") return;
 	var chart = bb.generate({
 		data: {
 			x: "x",
