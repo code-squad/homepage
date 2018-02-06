@@ -49,7 +49,7 @@
 			x: "x",
 			columns: [
 				["x", "마스터즈 레벨1", "마스터즈 레벨2", "마스터즈 레벨3", "마스터즈 레벨4"],
-				["pv", 100, 20, 20, 20]
+				["duration", 100, 20, 20, 20]
 			],
 			type: "bar"
 		},
@@ -98,6 +98,10 @@
 	chart.axis.max({
 		y: 90,
 	 });
+
+	 chart.data.colors({
+		duration: "#833939"
+	});
 
 	//data parsing
 	function setClonedPath(target, step) {
