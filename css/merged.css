@@ -675,6 +675,9 @@ header .intro-text .intro-heading a {
   margin-right: 0%;
 }
 /************************ recommendation ***********************/
+.multiple-cardui-wrap .recomm-word-wrap {
+  margin-top: 100px;
+}
 .multiple-cardui-wrap .recomm-word-wrap > div {
   font-weight: 600;
   width: 100%;
@@ -702,9 +705,6 @@ header .intro-text .intro-heading a {
   background-color: rgba(194, 209, 228, 0.42);
 }
 @media (max-width: 1200px) {
-  .multiple-cardui-wrap .recomm-word-wrap {
-    margin-top: 100px;
-  }
   .multiple-cardui-wrap .recomm-word-wrap > div {
     font-weight: 600;
     width: 100%;
@@ -1018,6 +1018,36 @@ header .intro-text .intro-heading a {
   }
   #team .new-container .member-wrap .team-member img {
     max-width: 240px;
+  }
+}
+#job-list.multiple-cardui-wrap .recomm-word-wrap div.recomm-word-row {
+  margin-bottom: 100px;
+  justify-content: space-around;
+  height: 100px;
+}
+#job-list.multiple-cardui-wrap .recomm-word-wrap div.recomm-word-row div {
+  width: 20%;
+  display: block;
+  padding: 0px;
+  max-width: 200px;
+  padding: 1%;
+}
+#job-list.multiple-cardui-wrap .recomm-word-wrap div.recomm-word-row div:hover {
+  background-color: #fff!important;
+}
+#job-list.multiple-cardui-wrap .recomm-word-wrap div.recomm-word-row div > img[src*="naver"] {
+  outline: 1px solid #c8dac8;
+}
+@media (max-width: 768px) {
+  #job-list.multiple-cardui-wrap .recomm-word-wrap {
+    margin-top: 50px;
+  }
+  #job-list.multiple-cardui-wrap .recomm-word-wrap > div.recomm-word-row {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  #job-list.multiple-cardui-wrap .recomm-word-wrap div.recomm-word-row > div.single {
+    max-width: 100px;
   }
 }
 #wrapper {
