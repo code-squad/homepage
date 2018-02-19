@@ -37,6 +37,7 @@
 	if(el === null) return;
 	var pageId = el.id.replace(/masters_/, '');
 	var elRegURL = document.querySelector(".pay-desc .btn-common");
+	if(!elRegURL) return;
 	elRegURL.href = "/page/reg/" + pageId + ".html";
 })();
 
