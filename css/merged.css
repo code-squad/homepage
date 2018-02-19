@@ -370,6 +370,9 @@ header .intro-text .intro-heading {
   line-height: 4.0vw;
   width: 90%;
 }
+header .intro-text .intro-heading .intro-msg-highlight {
+  color: #cbdbd8;
+}
 header .intro-text .intro-heading a {
   width: 95%;
   max-width: 380px;
