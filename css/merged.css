@@ -1647,7 +1647,7 @@ aside.clients img {
 #special-page h2 {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 3em;
-  color: #765647;
+  color: #121b6d;
 }
 #special-page header {
   background-image: url('../img/special/special_bg.jpg');
@@ -1658,15 +1658,18 @@ aside.clients img {
 #special-page #about-special h2 i.fa.fa-linode {
   margin-right: 10px;
 }
+#special-page #about-special img {
+  width: 60%;
+}
 #special-page #special-item.base-desc-three {
   background-color: #f0f0f0;
 }
 #special-page #special-item.base-desc-three ul.level-wrap > li {
   width: 33.33%;
-  min-width: 450px;
+  min-width: 400px;
   margin: 1em;
   box-sizing: border-box;
-  max-width: 500px;
+  max-width: 400px;
 }
 #special-page #special-item.base-desc-three ul.level-wrap > li .level-desc-wrap {
   margin: 0px;
@@ -1698,7 +1701,7 @@ aside.clients img {
   text-align: center;
 }
 #special-page #special-item.base-desc-three ul.level-wrap > li .level-desc-wrap .end:after {
-  content: "모집종료";
+  content: "모집예정";
 }
 #special-page #special-item.base-desc-three ul.level-wrap > li .img-wrap img {
   width: 100%;
@@ -1709,7 +1712,7 @@ aside.clients img {
   background: #3783ae;
   color: #fff;
   font-weight: bold;
-  height: auto;
+  height: 520px;
   margin-top: 1em;
 }
 #special-page #special-item.base-desc-three ul.level-wrap > li .item-desc h4 {
@@ -1774,6 +1777,15 @@ aside.clients img {
   #special-page h1,
   #special-page h2 {
     font-size: 2em;
+  }
+  #special-page #about-special h2 {
+    letter-spacing: 0.15em;
+  }
+  #special-page #about-special h2 i.fa.fa-linode {
+    margin-right: 10px;
+  }
+  #special-page #about-special img {
+    width: 95%;
   }
   #special-page #special-item.base-desc-three ul.level-wrap li {
     margin-bottom: 80px;

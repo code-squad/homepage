@@ -1,191 +1,200 @@
 @import "../variables.less";
 @import "../mixins.less";
-
-
-
 #special-page {
-
-	a:hover, a:focus {
-    color: #005580;
-    text-decoration: none;
-	}
-
-	h1,h2{
-		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-		font-size: 3em;
-		color:#765647
-	}
-	header {
-		background-image: url('../img/special/special_bg.jpg');
-	}
-
-	#about-special {
-		h2 {
-			letter-spacing: 0.15em;
-			i.fa.fa-linode {
-				margin-right: 10px;
-			}
-		}
-	}
-
-	#special-item.base-desc-three {
-		background-color: #f0f0f0;
-		ul.level-wrap > li {
-			width: 33.33%;
-			min-width: 450px;
-			margin: 1em;
-			box-sizing: border-box;
-			max-width: 500px;
-			.level-desc-wrap {
-				//cursor: pointer;
-				margin:0px;
-				position: relative;
-				box-shadow: 4px 4px 15px -3px rgba(0, 0, 0, 0.4);
-				&:hover {
-					box-shadow: 4px 4px 15px 0 rgba(0, 0, 0, 0.4);
-				}
-				.status-program {
-					position: absolute;
-					width: 70px;
-					height: 70px;
-					background-color: #365067;
-					color: #fff;
-					font-size: 15px;
-					border-radius: 50%;
-					text-align: center;
-					font-weight: bold;
-					line-height: 70px;
-					box-shadow: 1px 1px 1px 1px #b6c1cf;
-					top: 1%;
-					right: 2%;
-					animation: restmove 12s ease-in-out;
-					display: table;
-					 &:after {
-					 		//content: "모집종료";
-					 		display: block;
-					 		text-align: center;
-					 }
-				}
-				.end {
-					 &:after {
-					 		content: "모집종료";
-					 }
-					}
-			}
-			.img-wrap img {
-				width:100%;
-			}
-			.item-desc {
-				display: block;
-				padding:2em;
-				background: #3783ae;
-				color: #fff;
-				font-weight: bold;
-				height: auto;
-				margin-top: 1em;
-				h4 {
-					font-size: 2em;
-					margin-bottom: 1.3em;
-    			margin-top: 1.3em;
-				}
-				.program-card {
-					font-weight: normal;
-				}
-
-				ul.program-card {
-					margin-top: 50px;
-					background: #356b8a;
-					padding: 30px;
-					box-sizing: border-box;
-					box-shadow: 4px 4px 15px -3px rgba(0, 0, 0, 0.4);
-					li {
-						font-size: 1.1em;
-						margin-bottom: 10px;
-						width:90%;
-						overflow: auto;
-						i {
-							width:40px;
-							margin-right: 10px;
-							float:left;
-							font-size: 1.3em;
-						}
-						span:nth-child(2){
-							float:left;
-						}
-						span:nth-child(3){
-							float:right;
-						}
-					}
-				}
-			}
-			.btn-wrap {
-				margin:20px auto;
-				height: 70px;
-				.btn-common { 
-					text-align: center;
-					margin: 0px auto;
-					display: block;
-					width: 30%;
-					font-size: 18px;
-				}
-			}
-		}
-	}
+    a:hover,
+    a:focus {
+        color: #005580;
+        text-decoration: none;
+    }
+    h1,
+    h2 {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 3em;
+		color: #121b6d;
+    }
+    header {
+        background-image: url('../img/special/special_bg.jpg');
+    }
+    #about-special {
+        h2 {
+            letter-spacing: 0.15em;
+            i.fa.fa-linode {
+                margin-right: 10px;
+            }
+        }
+        img {
+            width: 60%;
+        }
+    }
+    #special-item.base-desc-three {
+        background-color: #f0f0f0;
+        ul.level-wrap>li {
+            width: 33.33%;
+            min-width: 400px;
+            margin: 1em;
+            box-sizing: border-box;
+            max-width: 400px;
+            .level-desc-wrap {
+                //cursor: pointer;
+                margin: 0px;
+                position: relative;
+                box-shadow: 4px 4px 15px -3px rgba(0, 0, 0, 0.4);
+                &:hover {
+                    box-shadow: 4px 4px 15px 0 rgba(0, 0, 0, 0.4);
+                }
+                .status-program {
+                    position: absolute;
+                    width: 70px;
+                    height: 70px;
+                    background-color: #365067;
+                    color: #fff;
+                    font-size: 15px;
+                    border-radius: 50%;
+                    text-align: center;
+                    font-weight: bold;
+                    line-height: 70px;
+                    box-shadow: 1px 1px 1px 1px #b6c1cf;
+                    top: 1%;
+                    right: 2%;
+                    animation: restmove 12s ease-in-out;
+                    display: table;
+                    &:after {
+                        //content: "모집종료";
+                        display: block;
+                        text-align: center;
+                    }
+                }
+                .end {
+                    &:after {
+                        content: "모집예정";
+                    }
+                }
+            }
+            .img-wrap img {
+                width: 100%;
+            }
+            .item-desc {
+                display: block;
+                padding: 2em;
+                background: #3783ae;
+                color: #fff;
+                font-weight: bold;
+                //height: auto;
+                height: 520px;
+                margin-top: 1em;
+                h4 {
+                    font-size: 2em;
+                    margin-bottom: 1.3em;
+                    margin-top: 1.3em;
+                }
+                .program-card {
+                    font-weight: normal;
+                }
+                ul.program-card {
+                    margin-top: 50px;
+                    background: #356b8a;
+                    padding: 30px;
+                    box-sizing: border-box;
+                    box-shadow: 4px 4px 15px -3px rgba(0, 0, 0, 0.4);
+                    li {
+                        font-size: 1.1em;
+                        margin-bottom: 10px;
+                        width: 90%;
+                        overflow: auto;
+                        i {
+                            width: 40px;
+                            margin-right: 10px;
+                            float: left;
+                            font-size: 1.3em;
+                        }
+                        span:nth-child(2) {
+                            float: left;
+                        }
+                        span:nth-child(3) {
+                            float: right;
+                        }
+                    }
+                }
+            }
+            .btn-wrap {
+                margin: 20px auto;
+                height: 70px;
+                .btn-common {
+                    text-align: center;
+                    margin: 0px auto;
+                    display: block;
+                    width: 30%;
+                    font-size: 18px;
+                }
+            }
+        }
+    }
 }
 
 @media(max-width:1100px) {
-	#special-page {
-		header {
-			height: 600px;
-		}
-		#special-item.base-desc-three {
-			color:red;
-			ul.level-wrap {
-				li {
-					margin: 0px auto;
-				}
-			}
-		}
-	}
+    #special-page {
+        header {
+            height: 600px;
+        }
+        #special-item.base-desc-three {
+            color: red;
+            ul.level-wrap {
+                li {
+                    margin: 0px auto;
+                }
+            }
+        }
+    }
 }
 
-
 @media(max-width:480px) {
-	#special-page {
-		header {
-			height: 400px;
-		}
-		h1,h2 {
-			font-size: 2em;
-		}
-		 #special-item.base-desc-three {
-			ul.level-wrap {
-				li {
-					margin-bottom: 80px;
-					min-width: 250px;
-					.item-desc { 
-						height: auto;
-						ul.program-card {
-							padding: 5px;
-							li { 
-								i {
-									font-size: 0.8em;
-									width : 13px;
-								}
-								span {
-									font-size: 0.8em;
-								}
-								span:nth-child(3) {
-									margin-right: 5px;
-								}
-							}
-						}
-					}
-					.btn-wrap .btn-common {
-						font-size: 15px;
-					}
-				}
-			}
-		}
-	}
+    #special-page {
+        header {
+            height: 400px;
+        }
+        h1,
+        h2 {
+            font-size: 2em;
+        }
+        #about-special {
+            h2 {
+                letter-spacing: 0.15em;
+                i.fa.fa-linode {
+                    margin-right: 10px;
+                }
+            }
+            img {
+                width: 95%;
+            }
+        }
+        #special-item.base-desc-three {
+            ul.level-wrap {
+                li {
+                    margin-bottom: 80px;
+                    min-width: 250px;
+                    .item-desc {
+                        height: auto;
+                        ul.program-card {
+                            padding: 5px;
+                            li {
+                                i {
+                                    font-size: 0.8em;
+                                    width: 13px;
+                                }
+                                span {
+                                    font-size: 0.8em;
+                                }
+                                span:nth-child(3) {
+                                    margin-right: 5px;
+                                }
+                            }
+                        }
+                    }
+                    .btn-wrap .btn-common {
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+    }
 }
