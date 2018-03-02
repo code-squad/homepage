@@ -2062,8 +2062,8 @@ aside.clients img {
   border: 1px solid #ddd;
   padding: .35em;
 }
-.program_page .program-curriculum .curriculum-wrap table tr:last-child {
-  background-color: #d4e2e2;
+.program_page .program-curriculum .curriculum-wrap table tr:last-child td:first-child {
+  font-weight: bold;
 }
 .program_page .program-curriculum .curriculum-wrap table th,
 .program_page .program-curriculum .curriculum-wrap table td {
