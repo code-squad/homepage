@@ -1712,7 +1712,7 @@ aside.clients img {
   background: #3783ae;
   color: #fff;
   font-weight: bold;
-  height: 520px;
+  height: 620px;
   margin-top: 1em;
 }
 #special-page #special-item.base-desc-three ul.level-wrap > li .item-desc h4 {
@@ -1722,22 +1722,23 @@ aside.clients img {
 }
 #special-page #special-item.base-desc-three ul.level-wrap > li .item-desc .program-card {
   font-weight: normal;
+  font-size: 1.1em;
 }
 #special-page #special-item.base-desc-three ul.level-wrap > li .item-desc ul.program-card {
   margin-top: 50px;
   background: #356b8a;
-  padding: 30px;
+  padding: 10px;
   box-sizing: border-box;
   box-shadow: 4px 4px 15px -3px rgba(0, 0, 0, 0.4);
 }
 #special-page #special-item.base-desc-three ul.level-wrap > li .item-desc ul.program-card li {
-  font-size: 1.1em;
+  font-size: .9em;
   margin-bottom: 10px;
   width: 90%;
   overflow: auto;
 }
 #special-page #special-item.base-desc-three ul.level-wrap > li .item-desc ul.program-card li i {
-  width: 40px;
+  width: 20px;
   margin-right: 10px;
   float: left;
   font-size: 1.3em;
