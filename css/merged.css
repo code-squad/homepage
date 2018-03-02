@@ -2041,6 +2041,9 @@ aside.clients img {
 .program_page .program-curriculum .program-title-content {
   margin-bottom: 60px;
 }
+.program_page .program-curriculum .sub-desc {
+  margin-bottom: 0px;
+}
 .program_page .program-curriculum .curriculum-wrap table {
   border: 1px solid #ccc;
   border-collapse: collapse;
@@ -2054,9 +2057,12 @@ aside.clients img {
   margin: .5em 0 .75em;
 }
 .program_page .program-curriculum .curriculum-wrap table tr {
-  background: #f8f8f8;
+  background: #eaecec;
   border: 1px solid #ddd;
   padding: .35em;
+}
+.program_page .program-curriculum .curriculum-wrap table tr:last-child {
+  background-color: #d4e2e2;
 }
 .program_page .program-curriculum .curriculum-wrap table th,
 .program_page .program-curriculum .curriculum-wrap table td {
@@ -2073,8 +2079,11 @@ aside.clients img {
   text-align: left;
   list-style: square;
 }
+.program_page .program-curriculum .curriculum-wrap table td:nth-child(1) {
+  font-size: 24px;
+}
 .program_page .program-curriculum .curriculum-wrap table th {
-  font-size: .85em;
+  font-size: 24px;
   letter-spacing: .1em;
   text-transform: uppercase;
 }
@@ -2121,53 +2130,6 @@ aside.clients img {
   .program_page .program-curriculum .curriculum-wrap table td:last-child {
     border-bottom: 0;
   }
-}
-.program_page .program-curriculum .two-one {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-start;
-}
-.program_page .program-curriculum .two-one > div > h4 {
-  background-color: #91AAB4;
-  padding: 20px;
-  font-size: 24px;
-}
-.program_page .program-curriculum .two-one > div > ul > li {
-  background-color: #CBDBD7;
-  margin-bottom: 10px;
-  padding: 40px;
-}
-.program_page .program-curriculum .two-one > div > ul > li h4 {
-  font-size: 24px;
-  margin-bottom: 30px;
-}
-.program_page .program-curriculum .two-one > div > ul > li ul {
-  margin-left: 10%;
-}
-.program_page .program-curriculum .two-one > div > ul > li ul li {
-  list-style: unset;
-  text-align: left;
-}
-.program_page .program-curriculum .two-one .curriculum-offline {
-  flex-grow: 1;
-  max-width: 66%;
-}
-.program_page .program-curriculum .two-one .curriculum-online {
-  margin-left: 10px;
-  flex-grow: 2;
-  max-width: 33%;
-}
-.program_page .program-curriculum .two-one .curriculum-online > ul li {
-  text-align: left;
-}
-.program_page .program-curriculum .two-one .curriculum-online > ul li p {
-  margin-bottom: 10px;
-}
-.program_page .program-curriculum .two-one .curriculum-online > ul li.img-wrap {
-  max-width: 500px;
-}
-.program_page .program-curriculum .two-one .curriculum-online > ul li.img-wrap img {
-  width: 100%;
 }
 @media (max-width: 1023px) {
   .program_page .program-curriculum .two-one .curriculum-offline,
@@ -2270,7 +2232,6 @@ aside.clients img {
   }
 }
 .program_page .program-recommendation {
-  background-image: url('../img/special/tdd/pobi_review.jpg');
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center 72%;
@@ -2303,6 +2264,7 @@ aside.clients img {
 .program_page .program-recommendation > div.new-container {
   position: relative;
   z-index: 2;
+  max-width: 1500px;
 }
 .program_page .program-recommendation > div.new-container h2 {
   margin-bottom: 40px;
@@ -2329,6 +2291,19 @@ aside.clients img {
 .program_page .program-recommendation > div.new-container .recomm-word-wrap > .recomm-word-row > div > div:last-child {
   margin-top: 20px;
   margin-bottom: 20px;
+}
+.program_page .program-recommendation .videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 25px;
+  height: 0;
+}
+.program_page .program-recommendation .videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 @media (max-width: 1350px) {
   .program_page .program-recommendation.multiple-cardui-wrap {
