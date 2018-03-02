@@ -1928,7 +1928,7 @@ aside.clients img {
   }
 }
 .program_page .basic-info .base-two > div {
-  height: 300px;
+  height: 400px;
   padding: 15px;
   box-shadow: 4px 4px 15px -3px rgba(0, 0, 0, 0.4);
 }
@@ -1942,22 +1942,33 @@ aside.clients img {
   margin-left: 3%;
 }
 .program_page .basic-info .base-two > div:nth-child(1) {
-  background: #dee1d5;
+  position: relative;
+  background: #f8f8f8;
   border-right: 2px solid #fff;
   text-align: left;
-  padding: 20px;
+  padding: 0px;
+}
+.program_page .basic-info .base-two > div:nth-child(1) img {
+  max-width: 100%;
+  height: auto;
+  max-height: 400px;
+}
+.program_page .basic-info .base-two > div:nth-child(1) .basic-info-title {
+  position: absolute;
+  top: 3%;
+  left: 15%;
+}
+.program_page .basic-info .base-two > div:nth-child(1) .basic-info-title .program-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+  line-height: 1;
+  margin-top: 2%;
 }
 .program_page .basic-info .base-two > div:nth-child(1) .professor {
   color: #879a9c;
   font-weight: bold;
   font-size: 26px;
-}
-.program_page .basic-info .base-two > div:nth-child(1) .program-name {
-  font-size: 32px;
-  color: #3e5f6e;
-  font-weight: bold;
-  line-height: 1;
-  margin-top: 2%;
 }
 .program_page .basic-info .base-two > div:nth-child(2) {
   background: #CBDBD7;
@@ -1969,18 +1980,21 @@ aside.clients img {
   }
   .program_page .basic-info .base-two > div {
     padding: 10px;
-    height: auto;
+    height: 100%;
     width: 100%;
   }
   .program_page .basic-info .base-two > div:nth-child(1) {
     border-right: none;
     margin-bottom: 8px;
-    padding: 40px 10px;
+    padding: 0px;
   }
 }
 @media (max-width: 557px) {
   .program_page .basic-info .base-two > div:nth-child(1) .program-name {
-    font-size: 24px !important;
+    font-size: 18px !important;
+  }
+  .program_page .basic-info .base-two > div:nth-child(1) .basic-info-title {
+    left: 5%;
   }
   .program_page .basic-summary-title,
   .program_page .basic-summary-desc {
@@ -2026,6 +2040,87 @@ aside.clients img {
 }
 .program_page .program-curriculum .program-title-content {
   margin-bottom: 60px;
+}
+.program_page .program-curriculum .curriculum-wrap table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+.program_page .program-curriculum .curriculum-wrap table caption {
+  font-size: 1.5em;
+  margin: .5em 0 .75em;
+}
+.program_page .program-curriculum .curriculum-wrap table tr {
+  background: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: .35em;
+}
+.program_page .program-curriculum .curriculum-wrap table th,
+.program_page .program-curriculum .curriculum-wrap table td {
+  padding: 2.0em;
+  text-align: center;
+}
+.program_page .program-curriculum .curriculum-wrap table th img,
+.program_page .program-curriculum .curriculum-wrap table td img {
+  width: 80%;
+  border: 1px solid #f2ecec;
+}
+.program_page .program-curriculum .curriculum-wrap table th ul > li,
+.program_page .program-curriculum .curriculum-wrap table td ul > li {
+  text-align: left;
+  list-style: square;
+}
+.program_page .program-curriculum .curriculum-wrap table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.program_page .program-curriculum .curriculum-wrap table th:nth-child(1) {
+  width: 20%;
+}
+@media screen and (max-width: 600px) {
+  .program_page .program-curriculum .curriculum-wrap table {
+    border: 0;
+  }
+  .program_page .program-curriculum .curriculum-wrap table caption {
+    font-size: 1.3em;
+  }
+  .program_page .program-curriculum .curriculum-wrap table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  .program_page .program-curriculum .curriculum-wrap table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+  .program_page .program-curriculum .curriculum-wrap table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: 1.0em;
+    text-align: center;
+    padding: 0.8em;
+  }
+  .program_page .program-curriculum .curriculum-wrap table td ul > li {
+    list-style-type: none;
+  }
+  .program_page .program-curriculum .curriculum-wrap table td:before {
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .program_page .program-curriculum .curriculum-wrap table td:last-child {
+    border-bottom: 0;
+  }
 }
 .program_page .program-curriculum .two-one {
   display: flex;

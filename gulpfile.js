@@ -140,6 +140,7 @@ gulp.task('dev', ['browserSync', 'minify-css', 'minify-js', 'move-index'], funct
     gulp.watch('html_src/common/masters/*.html', ['move-index']);
     gulp.watch('html_src/reg/*.html', ['move-index']);
     gulp.watch('html_src/masters/*.html', ['move-index']);
+    gulp.watch('html_src/special/*.html', ['move-index']);
     // Reloads the browser whenever HTML or JS files change
     // gulp.watch('page/*.html', browserSync.reload);
     // gulp.watch('css/*.css', browserSync.reload);
