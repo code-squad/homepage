@@ -1697,8 +1697,15 @@ aside.clients img {
   display: table;
 }
 #special-page #special-item.base-desc-three ul.level-wrap > li .level-desc-wrap .status-program:after {
+  content: "모집중";
   display: block;
   text-align: center;
+}
+#special-page #special-item.base-desc-three ul.level-wrap > li .level-desc-wrap .ing {
+  background-color: #cb3650;
+}
+#special-page #special-item.base-desc-three ul.level-wrap > li .level-desc-wrap .ing:after {
+  font-weight: bold;
 }
 #special-page #special-item.base-desc-three ul.level-wrap > li .level-desc-wrap .end:after {
   content: "모집예정";
