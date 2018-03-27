@@ -2466,6 +2466,9 @@ aside.clients img {
 .curriculum-wrap h4 {
   text-transform: initial;
 }
+.program_page .tutor-message .one-two {
+  flex-flow: row;
+}
 
 .center-emphasis {
   font-size: 1.4em;
