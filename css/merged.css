@@ -98,7 +98,7 @@ section h3.section-subheading {
   }
 }
 .base-section-height {
-  margin: 140px 0px;
+  margin: 120px 0px;
 }
 .text-muted {
   color: #777777;
@@ -2461,6 +2461,10 @@ aside.clients img {
 }
 .specialTddSwiftPage header {
   background-image: url('../img/masters/jk_lecture.jpg');
+  background-position: center 50%;
+}
+.curriculum-wrap h4 {
+  text-transform: initial;
 }
 
 .center-emphasis {
@@ -2675,6 +2679,14 @@ aside.clients img {
 }
 #masters_page #masters-schedule svg .bb-axis-x tspan {
   font-size: 1.2em;
+}
+#masters_page #sponsored .sponsored-company {
+  position: relative;
+  top: 20px;
+}
+#masters_page #sponsored img {
+  max-width: 300px;
+  width: 100%;
 }
 @media (max-width: 1120px) {
   #masters_page header .application-card {
