@@ -2029,7 +2029,7 @@ aside.clients img {
 }
 .program_page .plan-background .base-three > div {
   background-color: #66808d;
-  height: 350px;
+  height: 380px;
   box-shadow: 4px 4px 15px -3px rgba(0, 0, 0, 0.4);
   margin-bottom: 2%;
 }
@@ -2828,6 +2828,9 @@ aside.clients img {
 }
 .masters_program .program-curriculum .two-one .curriculum-offline {
   max-width: 100%;
+}
+.masters_program .program-curriculum .two-one .curriculum-week > li {
+  padding: 40px;
 }
 .masters_program .program-recommendation {
   background-image: none;
