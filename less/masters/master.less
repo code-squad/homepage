@@ -55,14 +55,17 @@
             bottom: 15%;
             z-index: 1;
             a.btn-xl {
-                min-width: 100px;
-                max-width: 250px;
+                min-width: 80px;
+                max-width: 200px;
                 flex-grow: 1;
                 position: relative;
                 height: 120px;
-                padding-top: 32px;
+                padding-top: 25px;
                 box-shadow: 8px 10px 17px 3px rgba(0, 0, 0, 0.4);
-                font-size: 1.5em;
+                font-size: 1.3em;
+            }
+            a:first-child {
+                background-color: green;
             }
         }
     }
@@ -310,7 +313,7 @@
             .application-card {
                 a.btn-xl {
                     margin: 0px 15px;
-                    padding: 10px 0px;
+                    padding: 30px 0px;
                     font-size: 1.1em;
                 }
             }
@@ -336,14 +339,15 @@
     }
 }
 
-@media(max-width:460px) {
+@media(max-width:490px) {
     #masters_page {
         header {
             .application-card {
                 a.btn-xl {
-                    font-size: 1em;
+                    font-size: 0.8em;
                     height: 65px;
                     margin: 0px 4px;
+                    padding: 10px 0px;
                 }
             }
         }
