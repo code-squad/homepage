@@ -110,9 +110,11 @@
 		var xBase = +(base.replace(/\n/g, '').replace(/^M\s*(\d+\.?\d*).*$/, "$1"));
 		var xWidth = +(base.replace(/\n/g, '').replace(/^[^L]*L\s+(\d+\.?\d*).*$/, "$1"));
 		var xStart = (xWidth) * step;
-		var yStart = +(base.replace(/\n/g, '').replace(/^M[^,]*,(\d+\.*\d*).*$/, "$1"));
+		//var yStart = +(base.replace(/\n/g, '').replace(/^M[^,]*,(\d+\.*\d*).*$/, "$1"));
+		var yStart = +(base.replace(/\n/g, '').replace(/^M\s+[\d.]+,?\s*(\d+\.*\d*).*$/, "$1"));
 		var xTwo = xStart + (xWidth-xBase);
-		var yThree = +(base.replace(/\n/g, '').replace(/^[^L]*L[^L]*L[^,]*,(\d+\.?\d*).*$/, "$1"));
+		//var yThree = +(base.replace(/\n/g, '').replace(/^[^L]*L[^L]*L[^,]*,(\d+\.?\d*).*$/, "$1"));
+		var yThree = +(base.replace(/\n/g, '').replace(/^.+\L\s[\d.]+,?\s*(\d+\.?\d*).*$/, "$1"));
 
 		target.setAttribute("d", "M " + xStart + "," + yStart + " L " + xTwo + "," + yStart + " L " + xTwo + "," + yThree + " L " + xStart + "," + yThree + " z");
 	}
