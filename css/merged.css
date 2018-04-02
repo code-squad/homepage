@@ -366,7 +366,7 @@ header .intro-text .intro-heading {
   font-family: 'Nanum', 'Apple Gothic', 'Malgun Gothic', 'Nanum Gothic', 'Dotum', Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 2.5vw;
+  font-size: 2.2vw;
   line-height: 4.0vw;
   width: 90%;
 }
@@ -460,11 +460,11 @@ header .intro-text .intro-heading a {
 .navbar-custom .nav li ul.nav-dropdown {
   position: absolute;
   background-color: #222222;
-  margin-left: 15px;
-  padding: 10px;
+  margin-left: 10px;
+  padding: 5px;
   padding-top: 20px;
   color: #fff;
-  width: 190px;
+  width: 195px;
   display: none;
   opacity: 0.9;
   visibility: hidden;
