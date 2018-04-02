@@ -136,25 +136,30 @@ var isMobile = (/iphone|ipod|android|blackberry|opera|mini|windows\sce|palm|smar
   }
 
   //on resize, recalculate height of button.
-  window.addEventListener("resize", function(){
-  	var elCurrent = elSwapWrap.children[0];
-  	var nHeight =  parseInt(getComputedStyle(elCurrent).height);
-  	elSwapWrap.style.height = nHeight + "px"; 
-  });
+  // window.addEventListener("resize", function(){
+  // 	var elCurrent = elSwapWrap.children[0];
+  // 	var nHeight =  parseInt(getComputedStyle(elCurrent).height);
+  // 	elSwapWrap.style.height = nHeight + "px"; 
+  // });
 
-  (function () {
-  	var resizerunner = false;
+  !(function () {
+    var resizerunner = false;
+
+    function _setHeightListener() {
+      var elCurrent = elSwapWrap.children[0];
+      var nHeight = parseInt(getComputedStyle(elCurrent).height);
+      elSwapWrap.style.height = nHeight + "px";
+      resizerunner = false;
+    }
+
   	window.addEventListener("resize", function(){
   		if(resizerunner)return;
       resizerunner = true;
+      setTimeout( _setHeightListener, 100);	
+    });
 
-      setTimeout( function() {
-      	var elCurrent = elSwapWrap.children[0];
-      	var nHeight =  parseInt(getComputedStyle(elCurrent).height);
-      	elSwapWrap.style.height = nHeight + "px"; 
-      	resizerunner = false;
-    	},100);	
-  	});
+    _setHeightListener();
+
   })();
 
 })();
