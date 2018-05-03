@@ -917,7 +917,11 @@ header .intro-text .intro-heading a {
   content: "기업 고객을 위한";
 }
 @media (max-width: 1340px) {
+  #our-program.base-two-column .course-desc-wrap .program-item a {
+    line-height: 1;
+  }
   #our-program.base-two-column .course-desc-wrap .program-item::before {
+    font-size: 18px;
     top: -9px;
   }
 }
