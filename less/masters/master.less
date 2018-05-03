@@ -54,6 +54,7 @@
             position: absolute;
             bottom: 15%;
             z-index: 1;
+            max-width: 1500px;
             a.btn-xl {
                 min-width: 80px;
                 max-width: 200px;
@@ -258,7 +259,6 @@
         header {
             .application-card {
                 width: 100%;
-                a.btn-xl {}
             }
         }
         #overview {
@@ -304,9 +304,10 @@
     }
 }
 
-@media(max-width:768px) {
+@media(max-width:864px) {
     #masters_page {
         header {
+            height: 600px;
             p.premsg {
                 font-size: 3.0vw;
             }
@@ -339,7 +340,7 @@
     }
 }
 
-@media(max-width:490px) {
+@media(max-width:526px) {
     #masters_page {
         header {
             .application-card {

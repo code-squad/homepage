@@ -399,7 +399,7 @@ header .intro-text .intro-heading a {
 }
 @media (max-width: 480px) {
   header {
-    height: 300px;
+    height: 300px!important;
   }
   header .intro-text {
     top: 10%;
@@ -2528,6 +2528,7 @@ aside.clients img {
   position: absolute;
   bottom: 15%;
   z-index: 1;
+  max-width: 1500px;
 }
 #masters_page header .application-card a.btn-xl {
   min-width: 80px;
@@ -2738,7 +2739,10 @@ aside.clients img {
     padding: 15px 10px;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 864px) {
+  #masters_page header {
+    height: 600px;
+  }
   #masters_page header p.premsg {
     font-size: 3.0vw;
   }
@@ -2760,7 +2764,7 @@ aside.clients img {
     font-size: 0.8em;
   }
 }
-@media (max-width: 490px) {
+@media (max-width: 526px) {
   #masters_page header .application-card a.btn-xl {
     font-size: 0.8em;
     height: 65px;
