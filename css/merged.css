@@ -370,6 +370,9 @@ header .intro-text .intro-heading {
   line-height: 4.0vw;
   width: 90%;
 }
+header .intro-text .intro-heading .intro-message {
+  margin-bottom: 10px;
+}
 header .intro-text .intro-heading .intro-msg-highlight {
   color: #cbdbd8;
 }
@@ -398,9 +401,12 @@ header .intro-text .intro-heading a {
   header {
     height: 300px;
   }
+  header .intro-text {
+    top: 10%;
+  }
   header .intro-text .intro-heading {
-    line-height: 9.0vw;
-    font-size: 6.0vw;
+    line-height: 5.0vw;
+    font-size: 4.0vw;
   }
   header .intro-text .intro-heading a.btn-xl {
     font-size: 3.0vw;
@@ -853,12 +859,14 @@ header .intro-text .intro-heading a {
     display: block;
   }
 }
-#index-header .intro-heading a:nth-of-type(1) {
+#index-header .intro-heading a:nth-of-type(1),
+#index-header .intro-heading a:nth-of-type(2) {
   margin-bottom: 10px;
   background-color: #246334;
   border: 1px solid #246334;
 }
-#index-header .intro-heading a:nth-of-type(1):hover {
+#index-header .intro-heading a:nth-of-type(1):hover,
+#index-header .intro-heading a:nth-of-type(2):hover {
   background-color: #4d925f;
   border-color: #4d925f;
 }
