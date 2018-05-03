@@ -1050,9 +1050,6 @@ header .intro-text .intro-heading a {
 #job-list.multiple-cardui-wrap .recomm-word-wrap div.recomm-word-row div:hover {
   background-color: #fff!important;
 }
-#job-list.multiple-cardui-wrap .recomm-word-wrap div.recomm-word-row div > img[src*="naver"] {
-  outline: 1px solid #c8dac8;
-}
 @media (max-width: 768px) {
   #job-list.multiple-cardui-wrap .recomm-word-wrap {
     margin-top: 50px;
