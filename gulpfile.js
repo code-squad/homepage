@@ -70,7 +70,7 @@ gulp.task('htmlinclude-reg', ['clean-html'], function() {
 });
 
 gulp.task('htmlinclude-masters', ['htmlinclude-reg'], function() {
-  return gulp.src(['html_src/masters/fe.html', 'html_src/masters/be.html','html_src/masters/ios.html'])
+  return gulp.src(['html_src/masters/fe.html', 'html_src/masters/be.html','html_src/masters/ios.html','html_src/masters/level1.html'])
     .pipe(fileinclude({
       prefix: '@@',
       basepath: '@file'
@@ -89,7 +89,7 @@ gulp.task('htmlinclude', ['htmlinclude-masters'], function() {
 
 //goPage
 gulp.task('minify-html-masters',['htmlinclude'], function() {
-    return gulp.src(['html_src/html_merged/masters/fe.html','html_src/html_merged/masters/be.html','html_src/html_merged/masters/ios.html'])
+    return gulp.src(['html_src/html_merged/masters/fe.html','html_src/html_merged/masters/be.html','html_src/html_merged/masters/ios.html','html_src/html_merged/masters/level1.html'])
     .pipe(cachebust({
       type: 'timestamp'
     }))
