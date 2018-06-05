@@ -66,9 +66,11 @@
 				tick: {
 					format: function (x) {
 						var fun = function (d) {
-							var month = ((d + 30) / 10);
+							var month = ((d + 70) / 10);
 							if(month === 13) month = 1;
 							if(month === 14) month = 2;
+							if(month === 15) month = 3;
+							if(month === 16) month = 4;
 							return month + "월";
 						}
 						return fun(x);
@@ -125,26 +127,32 @@
 		resizerunner = true;
 
 		setTimeout(function () {
-			//level 2 addition
 			var parent = document.querySelector(".bb-shapes");
+
+			//level 2 addition
 			var clonedTarget = document.querySelector("#RotatedAxis path:nth-child(2)").cloneNode(true);
 			parent.appendChild(clonedTarget);
-			setClonedPath(clonedTarget, 3);
+			setClonedPath(clonedTarget, 4);
 
-			//level 3 move 
-			var clonedTarget3 = document.querySelector("#RotatedAxis path:nth-child(3)");
+			//level 2 move 
+			var clonedTarget2 = document.querySelector("#RotatedAxis path:nth-child(2)");
+			parent.appendChild(clonedTarget2);
+			setClonedPath(clonedTarget2, 1);
+
+			// //level 3 move 
+			var clonedTarget3 = document.querySelector("#RotatedAxis path:nth-child(2)");
 			parent.appendChild(clonedTarget3);
-			setClonedPath(clonedTarget3, 1);
+			setClonedPath(clonedTarget3, 2);
 
 			//level 3 addition
-			var clonedTarget33 = document.querySelector("#RotatedAxis path:nth-child(5)").cloneNode(true);
-			parent.appendChild(clonedTarget33);
-			setClonedPath(clonedTarget33, 2);
+			var clonedTarget44 = document.querySelector("#RotatedAxis path:nth-child(2)").cloneNode(true);
+			parent.appendChild(clonedTarget44);
+			setClonedPath(clonedTarget44, 3);
 
-			//level 4 move 
-			var clonedTarget4 = document.querySelector("#RotatedAxis path:nth-child(3)");
-			parent.appendChild(clonedTarget4);
-			setClonedPath(clonedTarget4, 2);
+			// //level 4 move 
+			// var clonedTarget4 = document.querySelector("#RotatedAxis path:nth-child(3)");
+			// parent.appendChild(clonedTarget4);
+			// setClonedPath(clonedTarget4, 2);
 
 			resizerunner = false;
 		}, 800);

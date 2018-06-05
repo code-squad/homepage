@@ -374,11 +374,12 @@ header .intro-text .intro-heading .intro-message {
   margin-bottom: 10px;
 }
 header .intro-text .intro-heading .intro-msg-highlight {
-  color: #cbdbd8;
+  color: #1e2423;
 }
 header .intro-text .intro-heading a {
   width: 95%;
   max-width: 380px;
+  margin-right: 1%;
 }
 @media (max-width: 1000px) {
   header .intro-text {
@@ -1914,7 +1915,6 @@ aside.clients img {
 .program_page header .intro-text .intro-heading {
   line-height: 3.0vw;
   text-transform: initial;
-  font-size: 40px;
 }
 .program_page header .intro-text .intro-heading span.small-text {
   font-size: 32px;
@@ -1946,7 +1946,7 @@ aside.clients img {
 }
 .program_page .basic-info .base-two > div {
   height: 400px;
-  padding: 15px;
+  padding: 25px;
 }
 .program_page .basic-info .base-two > div ul {
   line-height: 36px;
@@ -1962,7 +1962,7 @@ aside.clients img {
   border-right: 2px solid #fff;
   text-align: left;
   padding: 0px;
-  padding-top: 15px;
+  padding-top: 25px;
 }
 .program_page .basic-info .base-two > div:nth-child(1) img {
   max-width: 100%;

@@ -61,7 +61,7 @@ gulp.task('clean-html', function(){
 });
 
 gulp.task('htmlinclude-reg', ['clean-html'], function() {
-    return gulp.src(['html_src/reg/fe.html', 'html_src/reg/be.html','html_src/reg/ios.html'])
+    return gulp.src(['html_src/reg/fe.html', 'html_src/reg/be.html','html_src/reg/ios.html', 'html_src/reg/level1.html'])
       .pipe(fileinclude({
         prefix: '@@',
         basepath: '@file'
