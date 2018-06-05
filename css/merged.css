@@ -1947,7 +1947,6 @@ aside.clients img {
 .program_page .basic-info .base-two > div {
   height: 400px;
   padding: 15px;
-  box-shadow: 4px 4px 15px -3px rgba(0, 0, 0, 0.4);
 }
 .program_page .basic-info .base-two > div ul {
   line-height: 36px;
@@ -1960,10 +1959,10 @@ aside.clients img {
 }
 .program_page .basic-info .base-two > div:nth-child(1) {
   position: relative;
-  background: #f8f8f8;
   border-right: 2px solid #fff;
   text-align: left;
   padding: 0px;
+  padding-top: 15px;
 }
 .program_page .basic-info .base-two > div:nth-child(1) img {
   max-width: 100%;
@@ -1987,7 +1986,7 @@ aside.clients img {
   font-weight: bold;
   font-size: 26px;
 }
-.program_page .basic-info .base-two > div:nth-child(2) {
+.program_page .basic-info .base-two > div {
   background: #CBDBD7;
   font-size: 18px;
 }
@@ -2864,6 +2863,15 @@ aside.clients img {
   .masters_program .program-payinfo .one-two .pay-desc a {
     font-size: 18px;
   }
+}
+#masters_level1 header {
+  background-image: url('../img/masters/level1.jpg');
+}
+#masters_level1 header:after {
+  background-color: #443d47;
+}
+#masters_level1 .basic-info .base-two > div:nth-child(1) .team-member {
+  background-image: url(/img/team/honux.jpg);
 }
 #masters_fe header {
   background-image: url('../img/masters/crong_lecture.jpg');
