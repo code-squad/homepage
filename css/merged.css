@@ -1775,7 +1775,7 @@ aside.clients img {
   margin: 0px auto;
   display: block;
   width: 30%;
-  font-size: 18px;
+  font-size: 17px;
 }
 @media (max-width: 1100px) {
   #special-page header {
@@ -2459,6 +2459,13 @@ aside.clients img {
 }
 .specialTddSwiftPage .basic-info .base-two > div:nth-child(1) {
   background-image: url(/img/special/tdd_swift/swiftbanner.jpg);
+}
+.special-masteringjs header {
+  background-image: url('../img/special/masteringjs_banner.jpg');
+  background-position: center 50%;
+}
+.special-masteringjs .basic-info .base-two > div:nth-child(1) {
+  background-image: url(/img/special/masteringjs/masteringjsbanner.jpg);
 }
 .curriculum-wrap h4 {
   text-transform: initial;
