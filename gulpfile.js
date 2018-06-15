@@ -18,7 +18,7 @@ gulp.task('less', function() {
     return gulp.src(['less/common.less', 'less/index.less', 
                     'less/application.less', 'less/schedule.less', 'less/level.less',
                     'less/sharedcto.less',
-                    'less/special/special.less', 'less/program_unit.less', 'less/special/special_tdd.less',
+                    'less/special/special.less', 'less/program_unit.less', 'less/special/special_item.less',
                     'less/masters/master.less','less/masters/program_unit_masters_common.less',
                     'less/registration-common.less'])
         .pipe(less())

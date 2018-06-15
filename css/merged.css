@@ -1742,7 +1742,9 @@ aside.clients img {
   font-size: 1.1em;
 }
 #special-page #special-item.base-desc-three ul.level-wrap > li .item-desc ul.program-card {
-  margin-top: 50px;
+  position: absolute;
+  bottom: 110px;
+  width: 85%;
   background: #356b8a;
   padding: 10px;
   box-sizing: border-box;
@@ -1810,7 +1812,10 @@ aside.clients img {
     min-width: 250px;
   }
   #special-page #special-item.base-desc-three ul.level-wrap li .item-desc {
-    height: auto;
+    height: 520px;
+  }
+  #special-page #special-item.base-desc-three ul.level-wrap li .item-desc .program-card {
+    font-size: 0.9em;
   }
   #special-page #special-item.base-desc-three ul.level-wrap li .item-desc ul.program-card {
     padding: 5px;
@@ -1823,10 +1828,10 @@ aside.clients img {
     font-size: 0.8em;
   }
   #special-page #special-item.base-desc-three ul.level-wrap li .item-desc ul.program-card li span:nth-child(3) {
-    margin-right: 5px;
+    margin-right: 25px;
   }
   #special-page #special-item.base-desc-three ul.level-wrap li .btn-wrap .btn-common {
-    font-size: 15px;
+    font-size: 12px;
   }
 }
 
@@ -2466,6 +2471,69 @@ aside.clients img {
 }
 .special-masteringjs .basic-info .base-two > div:nth-child(1) {
   background-image: url(/img/special/masteringjs/masteringjsbanner.jpg);
+}
+.special-seniorfe .base-section-height {
+  margin: 150px 0px;
+}
+.special-seniorfe header {
+  background-image: url('../img/special/seniorfe/header.jpg');
+  background-position: center 50%;
+  height: 1000px;
+}
+.special-seniorfe header:after {
+  background-color: #171819;
+}
+.special-seniorfe header .intro-text {
+  text-align: center;
+  width: 100%;
+  left: 0%;
+}
+.special-seniorfe header .intro-text .intro-heading {
+  font-size: 4em;
+  color: gold;
+  letter-spacing: 0.06em;
+  width: 100%;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1em;
+}
+.special-seniorfe .basic-info .base-two > div:nth-child(1) {
+  background-image: url(/img/special/masteringjs/masteringjsbanner.jpg);
+}
+.special-seniorfe .program-title-content {
+  font-size: 40px;
+}
+.special-seniorfe .plan-background .base-three > div {
+  background-color: #1b1d1e;
+}
+.special-seniorfe .plan-background .base-three > div .why-desc {
+  font-size: 0.9em;
+}
+.special-seniorfe .program-curriculum .curriculum-wrap table tr {
+  background: #1b1d1e;
+  color: #fff;
+}
+.special-seniorfe .hooking-msg-highlight {
+  background: #1b1d1e;
+}
+.special-seniorfe .programming-schedule .schedule-desc {
+  text-align: center;
+}
+.special-seniorfe .regbtn {
+  margin: 50px auto;
+  display: block;
+  width: 200px;
+  height: 70px;
+  background-color: #32789c;
+  font-weight: bold;
+  color: #fff;
+  font-size: 1.5em;
+  border-radius: 5px;
+}
+.special-seniorfe .regbtn:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.special-seniorfe .regbtn a {
+  color: #fff;
 }
 .curriculum-wrap h4 {
   text-transform: initial;

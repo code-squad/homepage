@@ -97,7 +97,10 @@
                     font-size: 1.1em;
                 }
                 ul.program-card {
-                    margin-top: 50px;
+                    position: absolute;
+                    bottom: 110px;
+                    width: 85%;
+                    //margin-top: 50px;
                     background: #356b8a;
                     padding: 10px;
                     box-sizing: border-box;
@@ -179,7 +182,10 @@
                     margin-bottom: 80px;
                     min-width: 250px;
                     .item-desc {
-                        height: auto;
+                        .program-card {
+                            font-size: 0.9em;
+                        }
+                        height: 520px;
                         ul.program-card {
                             padding: 5px;
                             li {
@@ -191,13 +197,13 @@
                                     font-size: 0.8em;
                                 }
                                 span:nth-child(3) {
-                                    margin-right: 5px;
+                                    margin-right: 25px;
                                 }
                             }
                         }
                     }
                     .btn-wrap .btn-common {
-                        font-size: 15px;
+                        font-size: 12px;
                     }
                 }
             }
