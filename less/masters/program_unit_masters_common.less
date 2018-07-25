@@ -122,3 +122,50 @@
         background-image: url(/img/masters/ios_banner.jpg);
     }
 }
+
+#masters-curriculums {
+    .plan-background .base-three > a {
+        height:130px;
+        padding: 10px;
+        background-color: #fdfdfd;
+        > div {
+            color:#fff;
+            position: relative;
+            top: 25px;
+        }
+        h4 { 
+            margin: 0px;
+            > i {
+                margin-bottom: 10px;
+            }
+        }
+        &[href*="mobile"] {
+            background-color: #ff6f00;
+        }
+        &[href*="backend"] {
+            background-color: #2f6089;
+        }
+        &[href*="frontend"] {
+            background-color: #288282;
+        }
+    }
+    .program-curriculum .curriculum-wrap table tr {
+        border: 2px solid #fff;
+        color:#fff;
+    }
+    .program-curriculum.mobile-curriculum .curriculum-wrap table tr {
+        background: #ff6f00;
+    }
+
+    .program-curriculum.backend-curriculum .curriculum-wrap table tr {
+        background: #2f6089;
+    }
+
+    .program-curriculum.frontend-curriculum .curriculum-wrap table tr {
+        background: #288282;
+    }
+
+    .program-curriculum {
+        h2 {text-transform: initial;}
+    }
+}

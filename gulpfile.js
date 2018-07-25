@@ -61,7 +61,6 @@ gulp.task('clean-html', function(){
 });
 
 gulp.task('htmlinclude-reg', ['clean-html'], function() {
-    //return gulp.src(['html_src/reg/fe.html', 'html_src/reg/be.html','html_src/reg/ios.html', 'html_src/reg/level1.html'])
     return gulp.src(['html_src/reg/*.html'])
       .pipe(fileinclude({
         prefix: '@@',
@@ -71,7 +70,9 @@ gulp.task('htmlinclude-reg', ['clean-html'], function() {
 });
 
 gulp.task('htmlinclude-masters', ['htmlinclude-reg'], function() {
-  return gulp.src(['html_src/masters/fe.html', 'html_src/masters/be.html','html_src/masters/ios.html','html_src/masters/level1.html'])
+  return gulp.src([
+      'html_src/masters/fe.html', 'html_src/masters/be.html','html_src/masters/ios.html',
+      'html_src/masters/level1.html', 'html_src/masters/curriculum.html'])
     .pipe(fileinclude({
       prefix: '@@',
       basepath: '@file'
@@ -90,7 +91,9 @@ gulp.task('htmlinclude', ['htmlinclude-masters'], function() {
 
 //goPage
 gulp.task('minify-html-masters',['htmlinclude'], function() {
-    return gulp.src(['html_src/html_merged/masters/fe.html','html_src/html_merged/masters/be.html','html_src/html_merged/masters/ios.html','html_src/html_merged/masters/level1.html'])
+    return gulp.src([
+        'html_src/html_merged/masters/fe.html','html_src/html_merged/masters/be.html','html_src/html_merged/masters/ios.html',
+        'html_src/html_merged/masters/level1.html', 'html_src/html_merged/masters/curriculum.html'])
     .pipe(cachebust({
       type: 'timestamp'
     }))

@@ -672,7 +672,9 @@ header .intro-text .intro-heading a {
   flex-flow: row wrap;
   justify-content: flex-start;
 }
-.base-three > div {
+.base-three > div,
+.base-three > a {
+  display: block;
   width: 32.3%;
   min-width: 200px;
   flex-grow: 1;
@@ -681,7 +683,8 @@ header .intro-text .intro-heading a {
   height: 200px;
   border-radius: 0.5%;
 }
-.base-three > div:last-child {
+.base-three > div:last-child,
+.base-three > a:last-child {
   margin-right: 0%;
 }
 /************************ recommendation ***********************/
@@ -695,7 +698,6 @@ header .intro-text .intro-heading a {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  1margin-top: 100px;
 }
 .multiple-cardui-wrap .recomm-word-wrap > div > div {
   flex-grow: 1;
@@ -1905,7 +1907,8 @@ aside.clients img {
   .program_page a {
     font-size: 16px;
   }
-  .program_page .base-three > div:last-child {
+  .program_page .base-three > div:last-child,
+  .program_page .base-three > a:last-child {
     margin-right: 0%;
   }
 }
@@ -2026,13 +2029,15 @@ aside.clients img {
 .program_page .plan-background .base-three h4 {
   font-size: 24px;
 }
-.program_page .plan-background .base-three > div {
+.program_page .plan-background .base-three > div,
+.program_page .plan-background .base-three > a {
   background-color: #66808d;
   height: 380px;
   box-shadow: 4px 4px 15px -3px rgba(0, 0, 0, 0.4);
   margin-bottom: 2%;
 }
-.program_page .plan-background .base-three > div .why-desc {
+.program_page .plan-background .base-three > div .why-desc,
+.program_page .plan-background .base-three > a .why-desc {
   text-align: left;
   margin-top: 30px;
 }
@@ -2040,7 +2045,8 @@ aside.clients img {
   .program_page .plan-background .base-three {
     display: block;
   }
-  .program_page .plan-background .base-three > div {
+  .program_page .plan-background .base-three > div,
+  .program_page .plan-background .base-three > a {
     width: 100%;
     height: auto;
   }
@@ -2973,6 +2979,47 @@ aside.clients img {
 }
 #masters_ios .basic-info .base-two > div:nth-child(1) {
   background-image: url(/img/masters/ios_banner.jpg);
+}
+#masters-curriculums .plan-background .base-three > a {
+  height: 130px;
+  padding: 10px;
+  background-color: #fdfdfd;
+}
+#masters-curriculums .plan-background .base-three > a > div {
+  color: #fff;
+  position: relative;
+  top: 25px;
+}
+#masters-curriculums .plan-background .base-three > a h4 {
+  margin: 0px;
+}
+#masters-curriculums .plan-background .base-three > a h4 > i {
+  margin-bottom: 10px;
+}
+#masters-curriculums .plan-background .base-three > a[href*="mobile"] {
+  background-color: #ff6f00;
+}
+#masters-curriculums .plan-background .base-three > a[href*="backend"] {
+  background-color: #2f6089;
+}
+#masters-curriculums .plan-background .base-three > a[href*="frontend"] {
+  background-color: #288282;
+}
+#masters-curriculums .program-curriculum .curriculum-wrap table tr {
+  border: 2px solid #fff;
+  color: #fff;
+}
+#masters-curriculums .program-curriculum.mobile-curriculum .curriculum-wrap table tr {
+  background: #ff6f00;
+}
+#masters-curriculums .program-curriculum.backend-curriculum .curriculum-wrap table tr {
+  background: #2f6089;
+}
+#masters-curriculums .program-curriculum.frontend-curriculum .curriculum-wrap table tr {
+  background: #288282;
+}
+#masters-curriculums .program-curriculum h2 {
+  text-transform: initial;
 }
 
 #program-registration .registration-guide {
