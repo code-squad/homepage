@@ -862,16 +862,21 @@ header .intro-text .intro-heading a {
     display: block;
   }
 }
+#index-header .intro-heading a span {
+  font-size: 1.3em;
+  position: relative;
+  top: 4px;
+}
 #index-header .intro-heading a:nth-of-type(1),
 #index-header .intro-heading a:nth-of-type(2) {
   margin-bottom: 10px;
-  background-color: #246334;
-  border: 1px solid #246334;
+  background-color: #005ea8;
+  border: 1px solid #005ea8;
 }
 #index-header .intro-heading a:nth-of-type(1):hover,
 #index-header .intro-heading a:nth-of-type(2):hover {
-  background-color: #4d925f;
-  border-color: #4d925f;
+  background-color: #318dd6;
+  border-color: #318dd6;
 }
 #about-us p {
   font-size: 2em;
@@ -919,10 +924,10 @@ header .intro-text .intro-heading a {
   font-size: 1.2em;
 }
 #our-program .course-desc-wrap:nth-child(2) .program-item::before {
-  content: "누구나를 위한";
+  content: "취준생을 위한 풀타임코스";
 }
 #our-program .course-desc-wrap:nth-child(3) .program-item::before {
-  content: "바쁜 학생/직장인을 위한";
+  content: "역량강화를 위한 단기코스";
 }
 #our-program .course-desc-wrap:nth-child(4) .program-item::before {
   content: "기업 고객을 위한";
@@ -941,16 +946,22 @@ header .intro-text .intro-heading a {
   h3 {
     font-size: 25px;
   }
-  .base-two-column .course-desc-wrap {
+  #our-program.base-two-column .course-desc-wrap {
     width: 98%;
   }
-  .base-two-column .course-desc-wrap .program-item {
+  #our-program.base-two-column .course-desc-wrap .program-item {
     font-size: 1.8em;
     height: 50px;
     padding-left: 15px;
+    margin-bottom: 0.8em;
   }
-  .base-two-column .course-desc-wrap .program-item::before {
-    display: none;
+  #our-program.base-two-column .course-desc-wrap .program-item::before {
+    left: 15px;
+    top: 0px;
+  }
+  #our-program.base-two-column .course-desc-wrap .program-item a {
+    position: relative;
+    top: 0.5em;
   }
 }
 @media (max-width: 452px) {
