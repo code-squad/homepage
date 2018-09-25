@@ -1081,73 +1081,33 @@ header .intro-text .intro-heading a {
     max-width: 100px;
   }
 }
-#wrapper {
-  max-width: 1200px;
-  margin: 0px auto;
+.fixwindow {
   position: relative;
 }
-#wrapper * {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.247059);
+.swipe {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
 }
-.viewArea {
-  overflow: hidden;
+ul.swipe-imageslider {
+  transition: transform 1.5s ease-in-out;
 }
-#swipeWrap {
-  position: relative;
+ul.swipe-imageslider li {
+  display: inline-block;
+  margin: 0.6em 0.3em;
+}
+ul.swipe-imageslider li img {
   width: 100%;
-  -webkit-transform: translate3d(0px, 0px, 0px);
-  transform: translate3d(0px, 0px, 0px);
-  font-size: 0.9em;
-}
-#swipeWrap > div {
-  width: 100%;
-  position: absolute;
-  top: 0;
-  height: auto;
-}
-#swipeWrap > div > img {
-  width: 100%;
-  height: auto;
-}
-#swipeWrap > div:nth-child(1) {
-  -ms-transform: translate3d(-100%, 0px, 0px);
-  -webkit-transform: translate3d(-100%, 0px, 0px);
-}
-#swipeWrap > div:nth-child(2) {
-  -ms-transform: translate3d(0%, 0px, 0px);
-  -webkit-transform: translate3d(0%, 0px, 0px);
-}
-#swipeWrap > div:nth-child(3) {
-  -ms-transform: translate3d(100%, 0px, 0px);
-  -webkit-transform: translate3d(100%, 0px, 0px);
-}
-#swipeWrap > div:nth-child(4) {
-  -ms-transform: translate3d(200%, 0px, 0px);
-  -webkit-transform: translate3d(200%, 0px, 0px);
-}
-#swipeWrap > div:nth-child(5) {
-  -ms-transform: translate3d(300%, 0px, 0px);
-  -webkit-transform: translate3d(300%, 0px, 0px);
-}
-#swipeWrap > div:nth-child(6) {
-  -ms-transform: translate3d(400%, 0px, 0px);
-  -webkit-transform: translate3d(400%, 0px, 0px);
-}
-#swipeWrap > div:nth-child(7) {
-  -ms-transform: translate3d(500%, 0px, 0px);
-  -webkit-transform: translate3d(500%, 0px, 0px);
-}
-#swipeWrap > div:nth-child(8) {
-  -ms-transform: translate3d(600%, 0px, 0px);
-  -webkit-transform: translate3d(600%, 0px, 0px);
+  max-width: 1000px;
 }
 .buttonNavi {
   position: absolute;
-  top: 300px;
+  top: 35%;
   width: 100%;
 }
 .buttonNavi button {
-  color: #fff;
+  color: #42464a;
   font-size: 6em;
   border: 0;
   margin: 0% 1.0%;
@@ -1170,6 +1130,9 @@ header .intro-text .intro-heading a {
   }
 }
 @media (max-width: 768px) {
+  ul.swipe-imageslider li {
+    height: 400px;
+  }
   .buttonNavi {
     top: 150px;
   }
@@ -1251,7 +1214,6 @@ aside.clients img {
   order: 3;
   float: right;
 }
-/************************************************************/
 
 .jumbotron {
   position: relative;
