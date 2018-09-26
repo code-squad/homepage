@@ -19,7 +19,31 @@ var _ = {
 		oReq.addEventListener("load", reqListener);
 		oReq.open("GET", url);
 		oReq.send();
-	}
+	},
+
+	getWidth(ele) {
+		let nWidth = 0;
+	
+		if (ele.getBoundingClientRect().width) {
+		  nWidth = ele.getBoundingClientRect().width;
+		} else {
+		  nWidth = ele.offsetWidth;
+		}
+		return nWidth
+	  },
+
+	getTranslateX(ele) {
+		let sPreCss = ele.style["transform"];
+		let nPreX = 0;
+	
+		if(sPreCss.indexOf("%") ===  -1) { 
+		  nPreX = +sPreCss.replace(/translateX\((-*\d+(?:\.\d+)*)(px)*\)/g , "$1");
+		} else { 
+		  nPreX = +sPreCss.replace(/translateX\((-*\d+(?:\.\d+)*)(%)*\)/g , "$1");
+		  nPreX = nPreX / 100 * this.getWidth(ele.firstElementChild);
+		}
+		return nPreX;
+	  },
 };
 
 (function () {
