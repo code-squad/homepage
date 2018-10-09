@@ -68,11 +68,6 @@ window.addEventListener("load", function () {
   4. mobile test
   */
 
-
-  var classNameList = Array.prototype.slice.call(btnNaviNode.querySelectorAll("button")).map(function (node) {
-    return node.className;
-  });
-
   function hideNaviBtn() {
     var btnNavi = document.querySelector(".buttonNavi");
     btnNavi.style.display = "none";
@@ -83,20 +78,26 @@ window.addEventListener("load", function () {
     return list.indexOf(name) > 0;
   }
 
-  if (_.chkMobile()) hideNaviBtn();
 
-  //todo. remove ?
-  window.addEventListener('resize', function (e) {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(function () {
+  function getButtonClassNames() {
+    var classNameList = Array.prototype.slice.call(btnNaviNode.querySelectorAll("button")).map(function (node) {
+      return node.className;
+    });
+    return classNameList;
+  }
 
-      //$0.style.transform = "translateX(300px)";
+  function isSwipeUIVisible() {
+    var el = document.querySelector(".swipe");
+    var rect = el.getBoundingClientRect();
+    var elemTop = rect.top;
+    var elemBottom = rect.bottom;
+    
+    var isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
+    return isVisible;
+  }
 
-    }, 300);
-  });
 
-
-  function runScrollAnimation(timestamp) {
+  function runScrollAnimation(maxValue, timestamp) {
     if (!startTime) startTime = timestamp;
     var progress = timestamp - startTime;
     var currentScrollLeft = swipeNode.scrollLeft;
@@ -106,17 +107,35 @@ window.addEventListener("load", function () {
     swipeNode.style.willChange = 'scroll-position';
     swipeNode.scrollLeft = currentScrollLeft + currentValue;
 
-    if (progress < 600) {
-      window.requestAnimationFrame(runScrollAnimation);
+    if (progress < maxValue) {
+      window.requestAnimationFrame(runScrollAnimation.bind(null, maxValue));
     }
   }
 
+
+  // EventHandlers
+  window.addEventListener('resize', function (e) {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () {
+
+      //$0.style.transform = "translateX(300px)";
+
+    }, 300);
+  });
+  
   btnNaviNode.addEventListener("mousedown", function (e) {
+    var buttonClassNameList = getButtonClassNames();
     var className = e.target.className;
-    if(classNameList.indexOf(className) === -1) return;
-    bRight = _isRightButtron(classNameList, className);
+    if(buttonClassNameList.indexOf(className) === -1) return;
+    bRight = _isRightButtron(buttonClassNameList, className);
     startTime = null;
-    requestAnimationFrame(runScrollAnimation);
+    requestAnimationFrame(runScrollAnimation.bind(null,500));
   })
+
+  window.addEventListener("scroll", function(e) {
+    console.log(isSwipeUIVisible());
+  });
+
+  if (_.chkMobile()) hideNaviBtn();
 
 })();

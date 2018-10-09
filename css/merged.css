@@ -1134,7 +1134,7 @@ ul.swipe-imageslider li img {
 }
 @media (max-width: 768px) {
   ul.swipe-imageslider li {
-    height: 400px;
+    height: auto;
   }
   .buttonNavi {
     top: 150px;
