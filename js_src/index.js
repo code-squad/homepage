@@ -132,10 +132,28 @@ window.addEventListener("load", function () {
     requestAnimationFrame(runScrollAnimation.bind(null,500));
   })
 
-  window.addEventListener("scroll", function(e) {
-    console.log(isSwipeUIVisible());
-  });
+  function execImageSwiperHint() {
+    var scrollStartTime = new Date();
+    var bInitialAnimation = false;
+    window.addEventListener("scroll", function (e) {
+      var time = new Date();
+      var diff = time - scrollStartTime;
 
-  if (_.chkMobile()) hideNaviBtn();
+      if (diff < 100) return;
+      if (!isSwipeUIVisible()) return;
+      if (bInitialAnimation) return;
+
+      bRight = true; //왼쪽방향
+      requestAnimationFrame(runScrollAnimation.bind(null, 150));
+      scrollStartTime = new Date();
+      bInitialAnimation = true;
+    });
+  }
+
+  if (_.chkMobile())  {
+    hideNaviBtn();
+    execImageSwiperHint();
+  }
 
 })();
+ 
