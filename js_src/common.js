@@ -21,8 +21,8 @@ var _ = {
 		oReq.send();
 	},
 
-	getWidth(ele) {
-		let nWidth = 0;
+	getWidth : function(ele) {
+		var nWidth = 0;
 	
 		if (ele.getBoundingClientRect().width) {
 		  nWidth = ele.getBoundingClientRect().width;
@@ -32,9 +32,9 @@ var _ = {
 		return nWidth
 	  },
 
-	getTranslateX(ele) {
-		let sPreCss = ele.style["transform"];
-		let nPreX = 0;
+	getTranslateX : function(ele) {
+		var sPreCss = ele.style["transform"];
+		var nPreX = 0;
 	
 		if(sPreCss.indexOf("%") ===  -1) { 
 		  nPreX = +sPreCss.replace(/translateX\((-*\d+(?:\.\d+)*)(px)*\)/g , "$1");
@@ -184,6 +184,7 @@ var _ = {
 		}
 	});
 })();
+
 
 window.addEventListener("load", function () {
 	var cover = document.querySelector("header");

@@ -18,7 +18,7 @@ window.addEventListener("load", function () {
 
   function toggleViewByScroll() {
     setTimeout(function () {
-      var currentScrolly = window.scrollY;
+      var currentScrolly = window.scrollY - 20;
       var diff = (currentScrolly - memberWrapOffsetTop);
 
       var activeElement = document.querySelector("#team .onMemberDesc");
@@ -39,7 +39,7 @@ window.addEventListener("load", function () {
   }
 
   function removeHoverEffect() {
-    document.querySelectorAll(".member-hover-viewer").forEach(function (v) {
+    Array.prototype.slice.call(document.querySelectorAll(".member-hover-viewer")).forEach(function (v) {
       v.classList.remove("member-hover-viewer")
     });
   }
@@ -112,6 +112,32 @@ window.addEventListener("load", function () {
     }
   }
 
+  function setTransformAnimation(distance, duration) {
+    var node = swipeNode.querySelector(".swipe-imageslider");
+    node.style.transform = "translateX(" + distance + "px)";
+    setTimeout(function() {
+      node.style.transform = "translateX(0px)";
+    }, duration)
+  }
+
+  function execImageSwiperHint() {
+    var scrollStartTime = new Date();
+    var bInitialAnimation = false;
+    window.addEventListener("scroll", function (e) {
+      if (bInitialAnimation) return;
+      if (!isSwipeUIVisible()) return;
+
+      var time = new Date();
+      var diff = time - scrollStartTime;
+      if (diff < 100) return;
+
+      setTransformAnimation(-50, 600);
+
+      scrollStartTime = new Date();
+      bInitialAnimation = true;
+    });
+  }
+
 
   // EventHandlers
   window.addEventListener('resize', function (e) {
@@ -123,6 +149,7 @@ window.addEventListener("load", function () {
     }, 300);
   });
   
+
   btnNaviNode.addEventListener("mousedown", function (e) {
     var buttonClassNameList = getButtonClassNames();
     var className = e.target.className;
@@ -132,28 +159,10 @@ window.addEventListener("load", function () {
     requestAnimationFrame(runScrollAnimation.bind(null,500));
   })
 
-  function execImageSwiperHint() {
-    var scrollStartTime = new Date();
-    var bInitialAnimation = false;
-    window.addEventListener("scroll", function (e) {
-      var time = new Date();
-      var diff = time - scrollStartTime;
-
-      if (diff < 100) return;
-      if (!isSwipeUIVisible()) return;
-      if (bInitialAnimation) return;
-
-      bRight = true; //왼쪽방향
-      requestAnimationFrame(runScrollAnimation.bind(null, 150));
-      scrollStartTime = new Date();
-      bInitialAnimation = true;
-    });
-  }
 
   if (_.chkMobile())  {
     hideNaviBtn();
     execImageSwiperHint();
-  }
-
+  } 
 })();
  
