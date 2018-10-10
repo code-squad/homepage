@@ -172,6 +172,7 @@ fieldset[disabled] .btn-primary.active {
   border-radius: 3px;
   font-size: 18px;
   padding: 20px 20px;
+  text-transform: none;
 }
 .btn-xl:hover,
 .btn-xl:focus,
@@ -363,8 +364,8 @@ header .intro-text .intro-lead-in .company-name {
   font-weight: 900;
 }
 header .intro-text .intro-heading {
-  font-family: 'Nanum', 'Apple Gothic', 'Malgun Gothic', 'Nanum Gothic', 'Dotum', Arial, sans-serif;
   text-transform: uppercase;
+  font-family: 'Nanum', 'Apple Gothic', 'Malgun Gothic', 'Nanum Gothic', 'Dotum', Arial, sans-serif;
   font-weight: 700;
   font-size: 2.2vw;
   line-height: 4.0vw;
@@ -2570,21 +2571,19 @@ aside.clients img {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
-  width: 70%;
-  position: absolute;
-  bottom: 15%;
   z-index: 1;
-  max-width: 1500px;
+  padding: 550px 100px 0px;
 }
 #masters_page header .application-card a.btn-xl {
   min-width: 80px;
-  max-width: 200px;
+  max-width: 300px;
   flex-grow: 1;
   position: relative;
   height: 120px;
   padding-top: 25px;
   box-shadow: 8px 10px 17px 3px rgba(0, 0, 0, 0.4);
   font-size: 1.3em;
+  margin-right: 1%;
 }
 #masters_page header .application-card a:first-child {
   background-color: green;
@@ -2785,6 +2784,15 @@ aside.clients img {
     padding: 15px 10px;
   }
 }
+@media (max-width: 1023px) {
+  #masters_page header .application-card {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  #masters_page header .application-card a.btn-xl {
+    max-width: 200px;
+  }
+}
 @media (max-width: 864px) {
   #masters_page header {
     height: 600px;
@@ -2792,10 +2800,12 @@ aside.clients img {
   #masters_page header p.premsg {
     font-size: 3.0vw;
   }
+  #masters_page header .application-card {
+    padding-top: 400px;
+  }
   #masters_page header .application-card a.btn-xl {
-    margin: 0px 15px;
-    padding: 30px 0px;
-    font-size: 1.1em;
+    font-size: 0.8em;
+    padding: 2em;
   }
   #masters_page #about-masters img {
     width: 40%;
@@ -2810,7 +2820,7 @@ aside.clients img {
     font-size: 0.8em;
   }
 }
-@media (max-width: 526px) {
+@media (max-width: 620px) {
   #masters_page header .application-card a.btn-xl {
     font-size: 0.8em;
     height: 65px;
@@ -2823,6 +2833,17 @@ aside.clients img {
   #join-program h2,
   #join-program p {
     font-size: 20px;
+  }
+}
+@media (max-width: 480px) {
+  #masters_page header .application-card {
+    padding-top: 180px;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+  #masters_page header .application-card a.btn-xl {
+    font-size: 0.6em;
+    max-width: 120px;
   }
 }
 #masters-faq .section-heading {
@@ -2936,7 +2957,7 @@ aside.clients img {
   background-image: url(/img/masters/fe_banner.jpg);
 }
 #masters_be header {
-  background-image: url('../img/masters/pobi_lecture.jpg');
+  background-image: url('../img/masters/backend_title.jpg');
   background-position: center 45%;
   height: 500px;
 }

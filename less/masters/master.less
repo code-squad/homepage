@@ -50,20 +50,18 @@
             display: flex;
             flex-flow: row wrap;
             justify-content: space-around;
-            width: 70%;
-            position: absolute;
-            bottom: 15%;
             z-index: 1;
-            max-width: 1500px;
+            padding: 550px 100px 0px;
             a.btn-xl {
                 min-width: 80px;
-                max-width: 200px;
+                max-width: 300px;
                 flex-grow: 1;
                 position: relative;
                 height: 120px;
                 padding-top: 25px;
                 box-shadow: 8px 10px 17px 3px rgba(0, 0, 0, 0.4);
                 font-size: 1.3em;
+                margin-right: 1%;
             }
             a:first-child {
                 background-color: green;
@@ -304,6 +302,21 @@
     }
 }
 
+
+@media(max-width:1023px) {
+    #masters_page {
+        header {
+            .application-card {
+                padding-left:10px;
+                padding-right:10px;
+                a.btn-xl {
+                    max-width: 200px;
+                }
+            }
+        }
+    }
+}
+
 @media(max-width:864px) {
     #masters_page {
         header {
@@ -312,10 +325,10 @@
                 font-size: 3.0vw;
             }
             .application-card {
+                padding-top: 400px;
                 a.btn-xl {
-                    margin: 0px 15px;
-                    padding: 30px 0px;
-                    font-size: 1.1em;
+                    font-size: 0.8em;
+                    padding:2em;
                 }
             }
         }
@@ -340,7 +353,7 @@
     }
 }
 
-@media(max-width:526px) {
+@media(max-width:620px) {
     #masters_page {
         header {
             .application-card {
@@ -365,6 +378,23 @@
         }
     }
 }
+
+@media(max-width:480px) {
+    #masters_page {
+        header {
+            .application-card {
+                padding-top: 180px;
+                padding-left:4px;
+                padding-right:4px;
+                a.btn-xl {
+                    font-size: 0.6em;
+                    max-width: 120px;
+                }
+            }
+        }
+    }
+}
+
 
 //FAQ - inherit base-two-column used index.html
 // #masters-faq.base-two-column {

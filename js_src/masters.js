@@ -1,4 +1,6 @@
 //등록 URL 변경
+//개별등록시 아래 주석 해제
+/*
 (function() {
 	var urls = {
 		masters_fe : "",
@@ -12,6 +14,7 @@
 	if(!elRegURL) return;
 	elRegURL.href = "/page/reg/" + pageId + ".html";
 })();
+*/
 
 
 //gantt chart
