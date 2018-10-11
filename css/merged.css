@@ -380,9 +380,10 @@ header .intro-text .intro-heading .intro-msg-highlight {
 header .intro-text .intro-heading a {
   width: 95%;
   max-width: 380px;
-  margin-right: 1%;
   display: block;
   float: right;
+  margin: 0px auto;
+  margin-right: 1%;
 }
 @media (max-width: 1000px) {
   header .intro-text {
@@ -393,9 +394,9 @@ header .intro-text .intro-heading a {
   header .intro-text .intro-heading {
     width: 100%;
     line-height: 7.0vw;
-    font-size: 5.0vw;
+    font-size: 4.5vw;
   }
-  header .intro-text .intro-heading a.btn-xl {
+  header .intro-text .intro-heading a {
     margin: 0px auto;
     float: none;
     font-size: 2.2vw;
@@ -923,6 +924,9 @@ header .intro-text .intro-heading a {
   font-size: 24px;
   position: absolute;
   left: 42px;
+}
+.base-two-column .course-desc-wrap .program-item a {
+  text-decoration: underline;
 }
 .base-two-column .course-desc-wrap .program-desc {
   line-height: 2em;
@@ -2584,6 +2588,7 @@ aside.clients img {
   box-shadow: 8px 10px 17px 3px rgba(0, 0, 0, 0.4);
   font-size: 1.3em;
   margin-right: 1%;
+  z-index: 1;
 }
 #masters_page header .application-card a:first-child {
   background-color: green;
