@@ -24,7 +24,8 @@
     }
 }
 
-.special-seniorfe {
+//여기서부터 버전2
+.special-seniorfe, .special-aws-basic {
     .base-section-height {
         margin: 150px 0px;
     }
@@ -74,15 +75,16 @@
         }
     }
     .regbtn {
-        margin: 50px auto;
+        margin: 14.6px auto;
         display: block;
-        width: 200px;
+        width: 250px;
         height: 70px;
         background-color: #32789c;
         font-weight: bold;
         color: #fff;
-        font-size: 1.5em;
+        font-size: 1.2em;
         border-radius: 5px;
+        padding: 0.5em;
         &:hover {
             box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
@@ -98,4 +100,99 @@
 
 .program_page .tutor-message .one-two {
     flex-flow: row;
+}
+
+.special-aws-basic {
+    .base-section-height {
+        margin: 150px 0px;
+        .base-three {
+            > div  {
+                height: 462px;
+            }
+            i {
+                font-size: 2em;
+                margin-bottom: 0.5em;
+            }
+        }
+        .program-title-content i{
+            color:#caac0f;
+        }
+    }
+    header {
+        background-image: url('../img/special/aws-basic/header.jpg');
+        height: 800px;
+    }
+    .plan-background .base-three>div,
+    .program-curriculum .curriculum-wrap table tr,
+    .hooking-msg-highlight {
+        background-color: #222C42;
+    }
+
+    .program-question {
+        .program-title-content {
+            margin-bottom: 20px;
+        }
+        p.mini-title {
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+        ul {
+            width: 80%;
+            max-width: 700px;
+            margin: 0px auto;
+            text-align: left;
+            padding: 2em;
+            background: #202c44;
+            color: #fff;
+        }
+        ul > li {
+            list-style: square;
+        }
+    }
+    @media screen and (max-width: 660px) {
+        .program-question {
+            ul {
+                width: 100%;
+            }
+        }
+    }
+}
+
+//animation text
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 17ch;
+    }
+}
+
+@keyframes caret {
+    0% {
+        border-color: #fff;
+    }
+    50% {
+        border-color: transparent;
+    }
+    100% {
+        border-color: #fff;
+        padding-right: 0em;
+    }
+}
+
+.text-animation{
+    margin: 0px auto;
+    max-width: 256px;
+    overflow: hidden;
+    height: auto;
+    white-space: nowrap;
+    border-right: 2px solid black;
+    animation: typing 2s steps(17, end), caret 1.2s step-end infinite;
+}
+
+@media screen and (max-width: 660px) {
+    .text-animation{
+        max-width: 240px;
+    }
 }

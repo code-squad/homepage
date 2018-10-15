@@ -43,6 +43,9 @@
         .f-32;
         font-weight: bold!important;
         margin-bottom: 60px;
+        .emoji {
+            .f-32;
+        }
     }
     .basic-info-wrap {
         padding: 0px;
@@ -53,7 +56,7 @@
         color: #fff;
         font-weight: bold;
     }
-    i.fa {
+    i.fa, i.fas {
         margin-right: 2%;
     }
     i.fa {
@@ -61,7 +64,7 @@
     }
     @media(max-width:480px) {
         .base-section-height {
-            margin: 70px 0px;
+            margin: 70px 0px!important;
         }
         .program-title-content {
             .f-24;
@@ -214,7 +217,6 @@
         margin-top: 110px;
         h2 {
             margin-bottom: 40px;
-            font-weight: 400!important;
             .three-keyword {
                 .f-32;
                 font-weight: bold;
@@ -301,6 +303,47 @@
                     width: 20%;
                 }
             }
+            table.small {
+                width :80%;
+                margin: 0px auto;
+                max-width: 700px;
+                td {
+                    text-align: left;
+                    padding : 1.5em;
+                }
+                td {
+                    .f-24;
+                    ul>li {
+                        .f-24;
+                    }
+                }
+                td:nth-child(1) {
+                    padding-left:2.5em;
+                    width:33%;
+                }
+                tr:last-child {
+                    td:nth-child(1) {
+                        width: 100%;
+                    }
+                }
+            }
+            @media screen and (max-width: 660px) {
+                table.small {
+                    width:100%;
+                    td {
+                        text-align: center;
+                        padding : 1.5em;
+                        .f-18;
+                            ul>li {
+                                font-size:1.0em;
+                                list-style: square;
+                            }
+                    }
+                    td:nth-child(1) {
+                        padding-left:0.5em;
+                    }
+                }
+            }
             @media screen and (max-width: 600px) {
                 table {
                     border: 0;
@@ -341,6 +384,21 @@
                 }
                 table td:last-child {
                     border-bottom: 0;
+                }
+                table.small {
+                    td {
+                        ul>li {
+                            font-size:0.9em;
+                            list-style: square;
+                        }
+                    }
+                    td:nth-child(1) {
+                        text-align: center;
+                        width: 100%;
+                    }
+                    td:nth-child(2) {
+                        padding-left:2em;
+                    }
                 }
             }
         } //deprecated

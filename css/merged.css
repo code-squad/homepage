@@ -1865,6 +1865,9 @@ aside.clients img {
   font-weight: bold!important;
   margin-bottom: 60px;
 }
+.program_page .program-title-content .emoji {
+  font-size: 32px;
+}
 .program_page .basic-info-wrap {
   padding: 0px;
 }
@@ -1874,12 +1877,13 @@ aside.clients img {
   color: #fff;
   font-weight: bold;
 }
-.program_page i.fa {
+.program_page i.fa,
+.program_page i.fas {
   margin-right: 2%;
 }
 @media (max-width: 480px) {
   .program_page .base-section-height {
-    margin: 70px 0px;
+    margin: 70px 0px!important;
   }
   .program_page .program-title-content {
     font-size: 24px;
@@ -2004,7 +2008,6 @@ aside.clients img {
 }
 .program_page .plan-background h2 {
   margin-bottom: 40px;
-  font-weight: 400!important;
 }
 .program_page .plan-background h2 .three-keyword {
   font-size: 32px;
@@ -2088,6 +2091,45 @@ aside.clients img {
 .program_page .program-curriculum .curriculum-wrap table th:nth-child(1) {
   width: 20%;
 }
+.program_page .program-curriculum .curriculum-wrap table.small {
+  width: 80%;
+  margin: 0px auto;
+  max-width: 700px;
+}
+.program_page .program-curriculum .curriculum-wrap table.small td {
+  text-align: left;
+  padding: 1.5em;
+}
+.program_page .program-curriculum .curriculum-wrap table.small td {
+  font-size: 24px;
+}
+.program_page .program-curriculum .curriculum-wrap table.small td ul > li {
+  font-size: 24px;
+}
+.program_page .program-curriculum .curriculum-wrap table.small td:nth-child(1) {
+  padding-left: 2.5em;
+  width: 33%;
+}
+.program_page .program-curriculum .curriculum-wrap table.small tr:last-child td:nth-child(1) {
+  width: 100%;
+}
+@media screen and (max-width: 660px) {
+  .program_page .program-curriculum .curriculum-wrap table.small {
+    width: 100%;
+  }
+  .program_page .program-curriculum .curriculum-wrap table.small td {
+    text-align: center;
+    padding: 1.5em;
+    font-size: 18px;
+  }
+  .program_page .program-curriculum .curriculum-wrap table.small td ul > li {
+    font-size: 1.0em;
+    list-style: square;
+  }
+  .program_page .program-curriculum .curriculum-wrap table.small td:nth-child(1) {
+    padding-left: 0.5em;
+  }
+}
 @media screen and (max-width: 600px) {
   .program_page .program-curriculum .curriculum-wrap table {
     border: 0;
@@ -2127,6 +2169,17 @@ aside.clients img {
   }
   .program_page .program-curriculum .curriculum-wrap table td:last-child {
     border-bottom: 0;
+  }
+  .program_page .program-curriculum .curriculum-wrap table.small td ul > li {
+    font-size: 0.9em;
+    list-style: square;
+  }
+  .program_page .program-curriculum .curriculum-wrap table.small td:nth-child(1) {
+    text-align: center;
+    width: 100%;
+  }
+  .program_page .program-curriculum .curriculum-wrap table.small td:nth-child(2) {
+    padding-left: 2em;
   }
 }
 @media (max-width: 1023px) {
@@ -2463,23 +2516,28 @@ aside.clients img {
 .special-masteringjs .basic-info .base-two > div:nth-child(1) {
   background-image: url(/img/special/masteringjs/masteringjsbanner.jpg);
 }
-.special-seniorfe .base-section-height {
+.special-seniorfe .base-section-height,
+.special-aws-basic .base-section-height {
   margin: 150px 0px;
 }
-.special-seniorfe header {
+.special-seniorfe header,
+.special-aws-basic header {
   background-image: url('../img/special/seniorfe/header.jpg');
   background-position: center 50%;
   height: 1000px;
 }
-.special-seniorfe header:after {
+.special-seniorfe header:after,
+.special-aws-basic header:after {
   background-color: #171819;
 }
-.special-seniorfe header .intro-text {
+.special-seniorfe header .intro-text,
+.special-aws-basic header .intro-text {
   text-align: center;
   width: 100%;
   left: 0%;
 }
-.special-seniorfe header .intro-text .intro-heading {
+.special-seniorfe header .intro-text .intro-heading,
+.special-aws-basic header .intro-text .intro-heading {
   font-size: 4em;
   color: gold;
   letter-spacing: 0.06em;
@@ -2487,43 +2545,54 @@ aside.clients img {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1em;
 }
-.special-seniorfe .basic-info .base-two > div:nth-child(1) {
+.special-seniorfe .basic-info .base-two > div:nth-child(1),
+.special-aws-basic .basic-info .base-two > div:nth-child(1) {
   background-image: url(/img/special/masteringjs/masteringjsbanner.jpg);
 }
-.special-seniorfe .program-title-content {
+.special-seniorfe .program-title-content,
+.special-aws-basic .program-title-content {
   font-size: 40px;
 }
-.special-seniorfe .plan-background .base-three > div {
+.special-seniorfe .plan-background .base-three > div,
+.special-aws-basic .plan-background .base-three > div {
   background-color: #1b1d1e;
 }
-.special-seniorfe .plan-background .base-three > div .why-desc {
+.special-seniorfe .plan-background .base-three > div .why-desc,
+.special-aws-basic .plan-background .base-three > div .why-desc {
   font-size: 0.9em;
 }
-.special-seniorfe .program-curriculum .curriculum-wrap table tr {
+.special-seniorfe .program-curriculum .curriculum-wrap table tr,
+.special-aws-basic .program-curriculum .curriculum-wrap table tr {
   background: #1b1d1e;
   color: #fff;
 }
-.special-seniorfe .hooking-msg-highlight {
+.special-seniorfe .hooking-msg-highlight,
+.special-aws-basic .hooking-msg-highlight {
   background: #1b1d1e;
 }
-.special-seniorfe .programming-schedule .schedule-desc {
+.special-seniorfe .programming-schedule .schedule-desc,
+.special-aws-basic .programming-schedule .schedule-desc {
   text-align: center;
 }
-.special-seniorfe .regbtn {
-  margin: 50px auto;
+.special-seniorfe .regbtn,
+.special-aws-basic .regbtn {
+  margin: 14.6px auto;
   display: block;
-  width: 200px;
+  width: 250px;
   height: 70px;
   background-color: #32789c;
   font-weight: bold;
   color: #fff;
-  font-size: 1.5em;
+  font-size: 1.2em;
   border-radius: 5px;
+  padding: 0.5em;
 }
-.special-seniorfe .regbtn:hover {
+.special-seniorfe .regbtn:hover,
+.special-aws-basic .regbtn:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.special-seniorfe .regbtn a {
+.special-seniorfe .regbtn a,
+.special-aws-basic .regbtn a {
   color: #fff;
 }
 .curriculum-wrap h4 {
@@ -2531,6 +2600,86 @@ aside.clients img {
 }
 .program_page .tutor-message .one-two {
   flex-flow: row;
+}
+.special-aws-basic .base-section-height {
+  margin: 150px 0px;
+}
+.special-aws-basic .base-section-height .base-three > div {
+  height: 462px;
+}
+.special-aws-basic .base-section-height .base-three i {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+.special-aws-basic .base-section-height .program-title-content i {
+  color: #caac0f;
+}
+.special-aws-basic header {
+  background-image: url('../img/special/aws-basic/header.jpg');
+  height: 800px;
+}
+.special-aws-basic .plan-background .base-three > div,
+.special-aws-basic .program-curriculum .curriculum-wrap table tr,
+.special-aws-basic .hooking-msg-highlight {
+  background-color: #222C42;
+}
+.special-aws-basic .program-question .program-title-content {
+  margin-bottom: 20px;
+}
+.special-aws-basic .program-question p.mini-title {
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+.special-aws-basic .program-question ul {
+  width: 80%;
+  max-width: 700px;
+  margin: 0px auto;
+  text-align: left;
+  padding: 2em;
+  background: #202c44;
+  color: #fff;
+}
+.special-aws-basic .program-question ul > li {
+  list-style: square;
+}
+@media screen and (max-width: 660px) {
+  .special-aws-basic .program-question ul {
+    width: 100%;
+  }
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 17ch;
+  }
+}
+@keyframes caret {
+  0% {
+    border-color: #fff;
+  }
+  50% {
+    border-color: transparent;
+  }
+  100% {
+    border-color: #fff;
+    padding-right: 0em;
+  }
+}
+.text-animation {
+  margin: 0px auto;
+  max-width: 256px;
+  overflow: hidden;
+  height: auto;
+  white-space: nowrap;
+  border-right: 2px solid black;
+  animation: typing 2s steps(17, end), caret 1.2s step-end infinite;
+}
+@media screen and (max-width: 660px) {
+  .text-animation {
+    max-width: 240px;
+  }
 }
 
 .center-emphasis {
