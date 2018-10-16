@@ -1886,7 +1886,7 @@ aside.clients img {
     margin: 70px 0px!important;
   }
   .program_page .program-title-content {
-    font-size: 24px;
+    font-size: 24px !important;
   }
   .program_page h4,
   .program_page .sub-desc {
@@ -1916,11 +1916,14 @@ aside.clients img {
   line-height: 3.0vw;
   text-transform: initial;
 }
-.program_page header .intro-text .intro-heading span.small-text {
-  font-size: 32px;
-  font-weight: 500;
-}
 .program_page header .intro-text .intro-heading p.small-text {
+  line-height: 1.2em;
+  font-weight: 500;
+  margin: 20px 0px;
+  font-size: 32px;
+}
+.program_page header .intro-text .intro-heading p.small-text.text-animation {
+  margin: 0px auto;
   font-size: 24px;
 }
 @media (max-width: 1300px) {
@@ -1940,7 +1943,7 @@ aside.clients img {
     line-height: 40px;
     font-size: 32px !important;
   }
-  .program_page header .intro-text > .intro-heading span.small-text {
+  .program_page header .intro-text > .intro-heading p.small-text {
     font-size: 24px !important;
   }
 }
@@ -2642,9 +2645,15 @@ aside.clients img {
 .special-aws-basic .program-question ul > li {
   list-style: square;
 }
+.special-aws-basic a.regbtn {
+  text-align: center;
+}
 @media screen and (max-width: 660px) {
   .special-aws-basic .program-question ul {
     width: 100%;
+  }
+  .special-aws-basic a.regbtn {
+    height: 54px;
   }
 }
 @keyframes typing {
