@@ -2104,10 +2104,14 @@ aside.clients img {
   padding: 1.5em;
 }
 .program_page .program-curriculum .curriculum-wrap table.small td {
-  font-size: 24px;
+  font-size: 18px;
 }
 .program_page .program-curriculum .curriculum-wrap table.small td ul > li {
-  font-size: 24px;
+  font-size: 18px;
+}
+.program_page .program-curriculum .curriculum-wrap table.small td ul > li a,
+.program_page .program-curriculum .curriculum-wrap table.small td ul > li a:visited {
+  color: #fff;
 }
 .program_page .program-curriculum .curriculum-wrap table.small td:nth-child(1) {
   padding-left: 2.5em;
@@ -2583,9 +2587,9 @@ aside.clients img {
   display: block;
   width: 250px;
   height: 70px;
-  background-color: #32789c;
+  background-color: #eac506;
   font-weight: bold;
-  color: #fff;
+  color: #212c43;
   font-size: 1.2em;
   border-radius: 5px;
   padding: 0.5em;
@@ -2645,8 +2649,12 @@ aside.clients img {
 .special-aws-basic .program-question ul > li {
   list-style: square;
 }
+.special-aws-basic .sub-description {
+  margin-top: 50px;
+}
 .special-aws-basic a.regbtn {
   text-align: center;
+  height: 58px;
 }
 @media screen and (max-width: 660px) {
   .special-aws-basic .program-question ul {
