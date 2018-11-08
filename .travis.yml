@@ -16,7 +16,7 @@ deploy:
   skip_cleanup: true
   region: ap-northeast-2
   on:
-    branch: beta
+    branch: master
 
 notifications:
   slack:
