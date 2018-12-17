@@ -343,14 +343,15 @@ header:after {
 header .intro-text {
   position: absolute;
   text-align: right;
-  width: 40%;
-  left: 10%;
   top: 23%;
   padding: 2.5% 0.5%;
   color: #eee;
   border-radius: 0.8%;
   min-width: 250px;
   z-index: 1;
+  width: 100%;
+  text-align: center;
+  left: 0;
 }
 header .intro-text .intro-lead-in {
   font-family: "Nanum Barun Gothic", sans-serif;
@@ -367,9 +368,8 @@ header .intro-text .intro-heading {
   text-transform: uppercase;
   font-family: 'Nanum', 'Apple Gothic', 'Malgun Gothic', 'Nanum Gothic', 'Dotum', Arial, sans-serif;
   font-weight: 700;
-  font-size: 2.2vw;
-  line-height: 4.0vw;
-  width: 90%;
+  font-size: 5rem;
+  width: 100%;
 }
 header .intro-text .intro-heading .intro-message {
   margin-bottom: 10px;
@@ -377,20 +377,7 @@ header .intro-text .intro-heading .intro-message {
 header .intro-text .intro-heading .intro-msg-highlight {
   color: #1e2423;
 }
-header .intro-text .intro-heading a {
-  width: 95%;
-  max-width: 380px;
-  display: block;
-  float: right;
-  margin: 0px auto;
-  margin-right: 1%;
-}
 @media (max-width: 1000px) {
-  header .intro-text {
-    width: 100%;
-    text-align: center;
-    left: 0;
-  }
   header .intro-text .intro-heading {
     width: 100%;
     line-height: 7.0vw;
@@ -883,6 +870,14 @@ header .intro-text .intro-heading a {
 #index-header .intro-heading a:nth-of-type(2):hover {
   background-color: #318dd6;
   border-color: #318dd6;
+}
+#index-header .intro-heading .notice-btn {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0px auto;
 }
 #about-us p {
   font-size: 2em;
@@ -2743,6 +2738,8 @@ aside.clients img {
   justify-content: space-around;
   z-index: 1;
   padding: 550px 100px 0px;
+  max-width: 1440px;
+  margin: 0px auto;
 }
 #masters_page header .application-card a.btn-xl {
   min-width: 80px;

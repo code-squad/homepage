@@ -276,19 +276,19 @@ header {
         bottom: 0;
         right: 0;
         position: absolute;
-        //z-index: -1;  
     }
     .intro-text {
          position: absolute;
          text-align: right;
-         width: 40%;
-         left:10%;
          top: 23%;
          padding: 2.5% 0.5%;
          color: #eee;
          border-radius: 0.8%;
          min-width: 250px;
          z-index: 1;
+         width: 100%;
+         text-align: center;
+         left: 0;
          .intro-lead-in {
             .serif-font;
             font-weight: 500;
@@ -311,16 +311,16 @@ header {
             .body-custom;
             //text-transform: uppercase;
             font-weight: 700;
-            font-size: 2.2vw;
-            line-height: 4.0vw;
-            width: 90%;
+            font-size: 5rem; 
+            // line-height: 4.0vw;
+            width: 100%;
             a {
-                width: 95%;
-                max-width: 380px;
-                display: block;
-                float: right;
-                margin: 0px auto;
-                margin-right: 1%;
+                // width: 95%;
+                // max-width: 380px;
+                // display: block;
+                // float: right;
+                // margin: 0px auto;
+                // margin-right: 1%;
             }
         }
     }
@@ -328,9 +328,6 @@ header {
 
 @media(max-width:1000px) {
     header .intro-text {
-        width:100%;
-        text-align: center;
-        left:0;
         .intro-heading { 
             width:100%;
             line-height: 7.0vw;
