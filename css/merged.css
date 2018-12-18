@@ -344,7 +344,7 @@ header:after {
 header .intro-text {
   position: absolute;
   text-align: right;
-  top: 12rem;
+  top: 8rem;
   padding: 2.5% 0.5%;
   color: #eee;
   border-radius: 0.8%;
@@ -870,13 +870,16 @@ header .intro-text .intro-heading .intro-msg-highlight {
   background-color: #318dd6;
   border-color: #318dd6;
 }
-#index-header .intro-heading .notice-btn {
+.notice-btn {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
   z-index: 1;
   max-width: 800px;
   margin: 8rem auto 0;
+}
+.notice-btn .btn-xl {
+  min-width: 600px;
 }
 #about-us p {
   font-size: 2em;
@@ -948,6 +951,9 @@ header .intro-text .intro-heading .intro-msg-highlight {
   h2,
   h3 {
     font-size: 25px;
+  }
+  #index-header {
+    height: 500px;
   }
   #our-program.base-two-column .course-desc-wrap {
     width: 98%;
@@ -2738,6 +2744,13 @@ h5 {
   max-width: 1440px;
   margin: 0px 10rem;
 }
+#masters_page header p.premsg .highlight {
+  font-size: 2.5rem;
+  background: #678ba9b0;
+  padding: 1.5rem;
+  margin-top: 1rem;
+  display: block;
+}
 #masters_page header .application-card {
   display: flex;
   flex-flow: row wrap;
@@ -2758,9 +2771,6 @@ h5 {
   font-size: 1.3em;
   margin-right: 2rem;
   z-index: 1;
-}
-#masters_page header .application-card a:first-child {
-  background-color: green;
 }
 #masters_page #about-masters {
   margin-bottom: 0px;
@@ -2961,6 +2971,7 @@ h5 {
   #masters_page header .application-card a.btn-xl {
     max-width: 200px;
     margin: .5rem;
+    font-size: 1.5rem;
   }
 }
 @media (max-width: 864px) {
@@ -2973,10 +2984,11 @@ h5 {
   }
   #masters_page header .application-card a.btn-xl {
     font-size: 1.0em;
-    padding: 2em;
+    padding: 1.5em;
+    height: 75px;
   }
   #masters_page header .intro-text {
-    top: 4rem;
+    top: 1rem;
   }
   #masters_page #about-masters img {
     width: 40%;
@@ -3011,7 +3023,7 @@ h5 {
     top: 1rem;
   }
   #masters_page header .application-card {
-    padding-top: 4rem;
+    padding-top: 2rem;
     padding-left: 4px;
     padding-right: 4px;
   }
@@ -3019,9 +3031,14 @@ h5 {
     font-size: 0.5em;
     max-width: 140px;
     min-width: 120px;
+    height: 5rem;
   }
   #masters_page header p.premsg {
     font-size: 1.5rem;
+  }
+  #masters_page header p.premsg .highlight {
+    font-size: 1rem;
+    padding: 0.5rem;
   }
 }
 #masters-faq .section-heading {
