@@ -2768,7 +2768,7 @@ h5 {
   height: 120px;
   padding-top: 25px;
   box-shadow: 8px 10px 17px 3px rgba(0, 0, 0, 0.4);
-  font-size: 1.3em;
+  font-size: 2rem;
   margin-right: 2rem;
   z-index: 1;
 }
@@ -2971,7 +2971,7 @@ h5 {
   #masters_page header .application-card a.btn-xl {
     max-width: 200px;
     margin: .5rem;
-    font-size: 1.5rem;
+    font-size: 1.9rem;
   }
 }
 @media (max-width: 864px) {
@@ -2983,7 +2983,7 @@ h5 {
     margin: 0 3rem;
   }
   #masters_page header .application-card a.btn-xl {
-    font-size: 1.0em;
+    font-size: 1.2rem;
     padding: 1.5em;
     height: 75px;
   }
@@ -3005,7 +3005,7 @@ h5 {
 }
 @media (max-width: 620px) {
   #masters_page header .application-card a.btn-xl {
-    font-size: 0.8em;
+    font-size: 1.2rem;
     height: 65px;
     margin: .5rem;
     padding: 10px 0px;
@@ -3028,8 +3028,8 @@ h5 {
     padding-right: 4px;
   }
   #masters_page header .application-card a.btn-xl {
-    font-size: 0.5em;
-    max-width: 140px;
+    font-size: 1.1rem;
+    max-width: 120px;
     min-width: 120px;
     height: 5rem;
   }
@@ -3037,7 +3037,7 @@ h5 {
     font-size: 1.5rem;
   }
   #masters_page header p.premsg .highlight {
-    font-size: 1rem;
+    font-size: 1.2rem;
     padding: 0.5rem;
   }
 }
