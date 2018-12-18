@@ -370,6 +370,8 @@ header .intro-text .intro-heading {
   font-family: 'Nanum', 'Apple Gothic', 'Malgun Gothic', 'Nanum Gothic', 'Dotum', Arial, sans-serif;
   font-weight: 700;
   font-size: 5rem;
+  max-width: 1000px;
+  margin: 0px auto;
   width: 100%;
 }
 header .intro-text .intro-heading .intro-message {
@@ -1817,6 +1819,13 @@ aside.clients img {
   }
 }
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+  text-transform: none;
+}
 .program_page {
   /*** COMMON ***/
   /*** HEADER ***/
@@ -1905,7 +1914,7 @@ aside.clients img {
   opacity: 0.65;
 }
 .program_page header .intro-text {
-  top: 8rem;
+  top: 4rem;
 }
 .program_page header .intro-text .intro-heading {
   text-transform: initial;
@@ -2768,18 +2777,13 @@ aside.clients img {
 #masters_page #masters-level p {
   font-size: 1.2em;
 }
-#masters_page #masters-level li .level-background {
-  font-size: 7em;
-  color: rgba(130, 148, 172, 0.47);
-}
-#masters_page #masters-level li .level-desc-wrap {
-  margin-bottom: 20px;
-}
-#masters_page #masters-level .button-wrap {
-  margin-top: 4em;
-}
-#masters_page #masters-level .button-wrap .base-button-blue {
-  font-size: 20px;
+#masters_page #masters-level .step23-process-image {
+  background-image: url("../img/masters/step23process.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 40vh;
+  margin: 10rem auto;
 }
 #masters_page #overview {
   float: none;
