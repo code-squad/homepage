@@ -57,7 +57,7 @@
 
 .base-two-column {
     .course-desc-wrap {
-        width: 90%;
+        width: 100%;
         margin: 0px auto;
         margin-top: 100px;
         display: flex;
@@ -180,15 +180,6 @@
     }
 }
 
-//*[@id="masters-course-summary"]/div/ul/li[2]/div[1]/img
-
-#masters-course-summary {
-    .item-img {
-        //filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));
-    }
-}
-
-
 // Team Section
 #team {
     .member-wrap {
@@ -205,10 +196,11 @@
             width: 100%;
             height: auto;
             border-radius: 50%;
-            width: 18%;
-            height: 18.3vw;
+            width: 22%;
+            height: 24.7vw;
             margin-right: 2%;
             font-size: 0.9em;
+            max-height: 45rem;
             .member-content {
                 display: flex;
                 flex-flow: column;
@@ -218,7 +210,9 @@
                 opacity: 0;
                 border-radius: 50%;
                 font-weight: bold;
+                max-height: 45rem;
                 transition: 0.1s all; // &:hover {
+                letter-spacing: 0.18rem;
                 //     opacity: 1;
                 //     background: rgba(61, 68, 78, 0.80);
                 // }
@@ -276,9 +270,7 @@
 }
 
 #job-list.multiple-cardui-wrap .recomm-word-wrap div.recomm-word-row {
-    margin-bottom: 100px;
     justify-content: space-around;
-    height: 100px;
     div {
         width: 20%;
         display: block;
@@ -296,7 +288,6 @@
         margin-top : 50px;
         >div.recomm-word-row  {
             display: flex;
-            margin-bottom: 20px;
         }
         div.recomm-word-row > div.single {
             max-width:100px;

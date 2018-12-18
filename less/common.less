@@ -103,13 +103,13 @@ section {
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
-    1overflow: auto;
     width: 95%;
 }
 
 @media(min-width:768px) {
     .new-container {
         width:80%;
+        max-width: 1440px;
     }
 }
 
@@ -136,6 +136,7 @@ section {
     font-size: 18px;
     padding: 20px 20px;
     text-transform: none;
+    min-width: 400px;
 }
 .btn-customer { height: 100% !important;}
 
@@ -335,7 +336,7 @@ header {
             a {
                 margin: 0px auto;
                 float: none;
-                font-size: 2.2vw;
+                font-size: 1.3rem;
                 width: 80%;
                 max-width: 600px;
             }
@@ -357,12 +358,10 @@ header {
         .intro-text {
             top: 10%;
             .intro-heading { 
-                line-height: 5.0vw;
-                font-size: 4.0vw;
                 a.btn-xl {
-                    font-size: 3.0vw;
                     width: 75%;
                     padding:12px;
+                    min-width: 200px;
                 }
             }
         }
