@@ -343,7 +343,7 @@ header:after {
 header .intro-text {
   position: absolute;
   text-align: right;
-  top: 23%;
+  top: 12rem;
   padding: 2.5% 0.5%;
   color: #eee;
   border-radius: 0.8%;
@@ -877,7 +877,7 @@ header .intro-text .intro-heading .intro-msg-highlight {
   justify-content: space-around;
   z-index: 1;
   max-width: 800px;
-  margin: 0px auto;
+  margin: 8rem auto 0;
 }
 #about-us p {
   font-size: 2em;
@@ -1907,8 +1907,10 @@ aside.clients img {
   background-color: #3e5f6e;
   opacity: 0.65;
 }
+.program_page header .intro-text {
+  top: 8rem;
+}
 .program_page header .intro-text .intro-heading {
-  line-height: 3.0vw;
   text-transform: initial;
 }
 .program_page header .intro-text .intro-heading p.small-text {
@@ -1924,7 +1926,6 @@ aside.clients img {
 @media (max-width: 1300px) {
   .program_page header .intro-text > .intro-heading {
     width: 100%;
-    line-height: 40px;
   }
   .program_page header .intro-text > .intro-heading span.small-text {
     font-weight: 200;
@@ -1935,8 +1936,8 @@ aside.clients img {
     height: 300px;
   }
   .program_page header .intro-text > .intro-heading {
-    line-height: 40px;
-    font-size: 32px !important;
+    line-height: 4rem;
+    font-size: 24px !important;
   }
   .program_page header .intro-text > .intro-heading p.small-text {
     font-size: 24px !important;
@@ -2726,9 +2727,6 @@ aside.clients img {
 #masters_page header {
   background-image: url('../img/masters/masters_main-min.v2.jpg');
 }
-#masters_page header .intro-text {
-  top: 18%;
-}
 #masters_page header p.premsg {
   font-size: 2.0vw;
 }
@@ -2992,7 +2990,7 @@ aside.clients img {
   #masters_page header .application-card a.btn-xl {
     font-size: 0.8em;
     height: 65px;
-    margin: 0px 4px;
+    margin: .5rem;
     padding: 10px 0px;
   }
   #masters_page #masters-feature li {
@@ -3005,13 +3003,14 @@ aside.clients img {
 }
 @media (max-width: 480px) {
   #masters_page header .application-card {
-    padding-top: 180px;
+    padding-top: 13rem;
     padding-left: 4px;
     padding-right: 4px;
   }
   #masters_page header .application-card a.btn-xl {
-    font-size: 0.6em;
-    max-width: 120px;
+    font-size: 0.5em;
+    max-width: 140px;
+    min-width: 120px;
   }
 }
 #masters-faq .section-heading {
