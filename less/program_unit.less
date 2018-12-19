@@ -35,7 +35,7 @@ h1,h2,h3,h4,h5 {
     }
     h4,
     .sub-desc {
-        .f-24;
+        .f-18;
     }
     .sub-desc {
         margin-bottom: 70px;
@@ -75,7 +75,7 @@ h1,h2,h3,h4,h5 {
         }
         h4,
         .sub-desc {
-            .f-18;
+            font-size: 1.4rem;
         }
         p,
         div,
@@ -468,12 +468,12 @@ h1,h2,h3,h4,h5 {
                 margin-bottom: 20px;
                 li {
                     h4 {
-                        .f-24;
+                        font-size: 2rem;
                         color: #ffffff;
                         font-weight: bold;
                     }
                     max-width: 400px;
-                    text-align: center;
+                    text-align: left;
                     flex-grow:3;
                     padding: 3%;
                     background-color: #91aab4;
@@ -526,6 +526,22 @@ h1,h2,h3,h4,h5 {
             }
         }
     }
+
+    @media(max-width:480px) {
+        .target-student {
+            .new-container>p {
+                .f-18;
+                line-height: 1.2;
+            }
+            ul.level-wrap {
+                li {
+                    h4 {
+                        .f-18;
+                    }
+                }
+            }
+        }
+    }
     @media(max-width:810px) {
         .target-student .new-container ul li {
             max-width: 100%;
@@ -571,6 +587,7 @@ h1,h2,h3,h4,h5 {
                 >div {
                     padding: 1.2em;
                     line-height: 1.8em;
+                    text-align: left;
                     &:hover {
                         background-color: transparent;
                     }

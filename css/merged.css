@@ -1859,7 +1859,7 @@ h5 {
 }
 .program_page h4,
 .program_page .sub-desc {
-  font-size: 24px;
+  font-size: 18px;
 }
 .program_page .sub-desc {
   margin-bottom: 70px;
@@ -1897,7 +1897,7 @@ h5 {
   }
   .program_page h4,
   .program_page .sub-desc {
-    font-size: 18px;
+    font-size: 1.4rem;
   }
   .program_page p,
   .program_page div,
@@ -2247,14 +2247,14 @@ h5 {
 }
 .program_page .target-student .new-container ul li {
   max-width: 400px;
-  text-align: center;
+  text-align: left;
   flex-grow: 3;
   padding: 3%;
   background-color: #91aab4;
   color: #fff;
 }
 .program_page .target-student .new-container ul li h4 {
-  font-size: 24px;
+  font-size: 2rem;
   color: #ffffff;
   font-weight: bold;
 }
@@ -2290,6 +2290,15 @@ h5 {
   }
   .program_page .target-student ul.level-wrap li h4 {
     font-size: 24px;
+  }
+}
+@media (max-width: 480px) {
+  .program_page .target-student .new-container > p {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+  .program_page .target-student ul.level-wrap li h4 {
+    font-size: 18px;
   }
 }
 @media (max-width: 810px) {
@@ -2345,6 +2354,7 @@ h5 {
 .program_page .program-recommendation > div.new-container .recomm-word-wrap > .recomm-word-row > div {
   padding: 1.2em;
   line-height: 1.8em;
+  text-align: left;
 }
 .program_page .program-recommendation > div.new-container .recomm-word-wrap > .recomm-word-row > div:hover {
   background-color: transparent;
@@ -3112,7 +3122,7 @@ h5 {
 }
 .masters_program .program-recommendation {
   background-image: none;
-  background-color: #3E606F;
+  background-color: #090a0b;
 }
 .masters_program .problem-info a {
   text-decoration: underline;
@@ -3213,6 +3223,75 @@ h5 {
 }
 #masters-curriculums .program-curriculum h2 {
   text-transform: initial;
+}
+#masters-curriculum.multiple-cardui-wrap .recomm-word-wrap div.recomm-word-row {
+  justify-content: space-around;
+  height: auto;
+}
+#masters-curriculum.multiple-cardui-wrap .recomm-word-wrap div.recomm-word-row > div {
+  position: relative;
+  width: 20%;
+  display: block;
+  padding: 0px;
+  max-width: 200px;
+  max-height: 200px;
+  padding: 4rem 2rem;
+  border: 1px solid gray;
+  width: 18%;
+  margin-right: 0.5%;
+}
+#masters-curriculum.multiple-cardui-wrap .recomm-word-wrap div.recomm-word-row > div:hover {
+  background-color: #fff !important;
+}
+#masters-curriculum.multiple-cardui-wrap .recomm-word-wrap div.recomm-word-row > div .step {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 50px 50px 0 0;
+  border-color: #8faab4 transparent transparent transparent;
+  margin: -4rem -2rem;
+}
+#masters-curriculum.multiple-cardui-wrap .recomm-word-wrap div.recomm-word-row > div .step .stepNumber {
+  position: absolute;
+  top: 0;
+  left: 1rem;
+  color: #fff;
+}
+#masters-curriculum.multiple-cardui-wrap .recomm-word-wrap div.recomm-word-row > div p {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-top: 4rem;
+}
+#masters-curriculum.multiple-cardui-wrap .recomm-word-row + .recomm-word-row {
+  margin-top: 4rem;
+}
+@media (max-width: 768px) {
+  #masters-curriculum.multiple-cardui-wrap .recomm-word-wrap {
+    margin-top: 50px;
+  }
+  #masters-curriculum.multiple-cardui-wrap .recomm-word-wrap > div.recomm-word-row {
+    display: flex;
+  }
+  #masters-curriculum.multiple-cardui-wrap .recomm-word-wrap > div.recomm-word-row > div {
+    padding: 2.5rem 1rem;
+    margin-bottom: 1rem;
+    margin-right: .2%;
+    width: 19%;
+  }
+  #masters-curriculum.multiple-cardui-wrap .recomm-word-wrap > div.recomm-word-row > div .step {
+    display: none;
+  }
+  #masters-curriculum.multiple-cardui-wrap .recomm-word-wrap > div.recomm-word-row > div p {
+    font-size: 1rem;
+    padding-top: 0;
+  }
+  #masters-curriculum.multiple-cardui-wrap .recomm-word-wrap > div.recomm-word-row > div.single {
+    max-width: 100px;
+  }
+  #masters-curriculum.multiple-cardui-wrap .recomm-word-row + .recomm-word-row {
+    margin-top: 1rem;
+  }
 }
 
 #program-registration .registration-guide {

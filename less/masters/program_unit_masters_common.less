@@ -38,13 +38,13 @@
         .curriculum-offline {
             max-width: 100%;
         }
-        .curriculum-week > li {
+        .curriculum-week>li {
             padding: 40px;
         }
     }
     .program-recommendation {
         background-image: none;
-        background-color: #3E606F;
+        background-color: #090a0b;
     }
     .problem-info {
         a {
@@ -62,7 +62,7 @@
     .masters_program .program-payinfo .one-two .pay-desc {
         height: 300px;
         a {
-            font-size : 18px;
+            font-size: 18px;
         }
     }
 }
@@ -74,7 +74,7 @@
             background-color: #443d47;
         }
     }
-    .basic-info .base-two > div:nth-child(1) {
+    .basic-info .base-two>div:nth-child(1) {
         background-image: url(/img/masters/level1_banner.jpg);
     }
     a {
@@ -90,7 +90,7 @@
             background-color: #443d47;
         }
     }
-    .basic-info .base-two > div:nth-child(1) {
+    .basic-info .base-two>div:nth-child(1) {
         background-image: url(/img/masters/fe_banner.jpg);
     }
 }
@@ -104,7 +104,7 @@
             background-color: #5a686e;
         }
     }
-    .basic-info .base-two > div:nth-child(1) {
+    .basic-info .base-two>div:nth-child(1) {
         background-image: url(/img/masters/be_banner.jpg);
     }
 }
@@ -118,24 +118,24 @@
             background-color: #9cafb8;
         }
     }
-    .basic-info .base-two > div:nth-child(1) {
+    .basic-info .base-two>div:nth-child(1) {
         background-image: url(/img/masters/ios_banner.jpg);
     }
 }
 
 #masters-curriculums {
-    .plan-background .base-three > a {
-        height:130px;
+    .plan-background .base-three>a {
+        height: 130px;
         padding: 10px;
         background-color: #fdfdfd;
-        > div {
-            color:#fff;
+        >div {
+            color: #fff;
             position: relative;
             top: 25px;
         }
-        h4 { 
+        h4 {
             margin: 0px;
-            > i {
+            >i {
                 margin-bottom: 10px;
             }
         }
@@ -151,21 +151,93 @@
     }
     .program-curriculum .curriculum-wrap table tr {
         border: 2px solid #fff;
-        color:#fff;
+        color: #fff;
     }
     .program-curriculum.mobile-curriculum .curriculum-wrap table tr {
         background: #ff6f00;
     }
-
     .program-curriculum.backend-curriculum .curriculum-wrap table tr {
         background: #2f6089;
     }
-
     .program-curriculum.frontend-curriculum .curriculum-wrap table tr {
         background: #288282;
     }
-
     .program-curriculum {
-        h2 {text-transform: initial;}
+        h2 {
+            text-transform: initial;
+        }
+    }
+}
+
+#masters-curriculum.multiple-cardui-wrap {
+    .recomm-word-wrap div.recomm-word-row {
+        justify-content: space-around;
+        height: auto;
+        >div {
+            position: relative;
+            width: 20%;
+            display: block;
+            padding: 0px;
+            max-width: 200px;
+            max-height: 200px;
+            padding: 4rem 2rem;
+            border: 1px solid gray;
+            width: 18%;
+            margin-right: 0.5%;
+            &:hover {
+                background-color: #fff !important;
+            }
+            .step {
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 50px 50px 0 0;
+                border-color: #8faab4 transparent transparent transparent;
+                margin: -4rem -2rem;
+                .stepNumber {
+                    position: absolute;
+                    top: 0;
+                    left: 1rem;
+                    color: #fff;
+                }
+            }
+            p {
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+                padding-top: 4rem;
+            }
+        }
+    }
+    .recomm-word-row+.recomm-word-row {
+        margin-top: 4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #masters-curriculum.multiple-cardui-wrap .recomm-word-wrap {
+        margin-top: 50px;
+        >div.recomm-word-row {
+            display: flex;
+            >div {
+                padding: 2.5rem 1rem;
+                margin-bottom: 1rem;
+                margin-right: .2%;
+                width: 19%;
+                .step {
+                    display: none;
+                }
+                p {
+                    font-size: 1rem;
+                    padding-top: 0;
+                }
+            }
+        }
+        >div.recomm-word-row>div.single {
+            max-width: 100px;
+        }
+    }
+    #masters-curriculum.multiple-cardui-wrap .recomm-word-row+.recomm-word-row {
+        margin-top: 1rem;
     }
 }
