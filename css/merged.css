@@ -3096,6 +3096,9 @@ h5 {
 .masters_program header {
   background-image: url('../img/masters/fe_title.jpg');
 }
+.masters_program header .intro-text .intro-heading .btn a {
+  color: #fff;
+}
 .masters_program .basic-info .base-two > div:nth-child(1) {
   padding-left: 7%;
 }
