@@ -999,11 +999,12 @@ header .intro-text .intro-heading .intro-msg-highlight {
   width: 100%;
   height: auto;
   border-radius: 50%;
-  width: 22%;
-  height: 24.7vw;
+  width: 18%;
+  height: 14.3vw;
   margin-right: 2%;
   font-size: 0.9em;
-  max-height: 45rem;
+  max-height: 20.5em;
+  border: 2px solid #5c4d4d;
 }
 #team .member-wrap .team-member .member-content {
   display: flex;
@@ -1014,7 +1015,7 @@ header .intro-text .intro-heading .intro-msg-highlight {
   opacity: 0;
   border-radius: 50%;
   font-weight: bold;
-  max-height: 45rem;
+  max-height: 20.5em;
   transition: 0.1s all;
   letter-spacing: 0.18rem;
 }
@@ -1040,10 +1041,10 @@ header .intro-text .intro-heading .intro-msg-highlight {
   background-image: url(/img/team/honux.jpg);
 }
 #team .member-wrap .team-member:nth-child(4) {
-  background-image: url(/img/team/javajigi.jpg);
+  background-image: url(/img/team/yagom.png);
 }
 #team .member-wrap .team-member:nth-child(5) {
-  background-image: url(/img/team/hacker.jpg);
+  background-image: url(/img/team/sarah.png);
 }
 @media (max-width: 1200px) {
   #team .new-container {
