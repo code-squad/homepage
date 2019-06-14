@@ -935,9 +935,6 @@ header .intro-text .intro-heading .intro-msg-highlight {
 #our-program .course-desc-wrap:nth-child(3) .program-item::before {
   content: "역량강화를 위한 단기코스";
 }
-#our-program .course-desc-wrap:nth-child(4) .program-item::before {
-  content: "기업 고객을 위한";
-}
 @media (max-width: 1340px) {
   #our-program.base-two-column .course-desc-wrap .program-item a {
     line-height: 1;
@@ -2775,7 +2772,6 @@ h5 {
 }
 #masters_page header p.premsg .highlight {
   font-size: 2.5rem;
-  background: #678ba9b0;
   padding: 1.5rem;
   margin-top: 1rem;
   display: block;
