@@ -1656,7 +1656,7 @@ aside.clients img {
 #special-page header .sub-desc {
   font-size: 2.5rem;
   color: #121b6d;
-  margin: 0px 1rem;
+  margin: 2.5rem 1rem 0;
 }
 #special-page #about-special h2 {
   letter-spacing: 0.15em;
