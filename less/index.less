@@ -200,15 +200,16 @@
             flex-grow: 1;
             background-repeat: no-repeat;
             background-size: 100%;
-            width: 100%;
-            height: auto;
             border-radius: 50%;
-            width: 18%;
+            width: calc((92% - 10px) / 5);
             height: 14.3vw;
             margin-right: 2%;
             font-size: 0.9em;
             max-height: 20.5em;
             border: 2px solid #5c4d4d;
+            &:last-child {
+                margin-right:0;
+            }
             .member-content {
                 display: flex;
                 flex-flow: column;
