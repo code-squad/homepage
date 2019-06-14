@@ -686,7 +686,7 @@ header .intro-text .intro-heading .intro-msg-highlight {
 .multiple-cardui-wrap .recomm-word-wrap > div {
   font-weight: 600;
   width: 100%;
-  height: 300px;
+  height: auto;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -993,15 +993,16 @@ header .intro-text .intro-heading .intro-msg-highlight {
   flex-grow: 1;
   background-repeat: no-repeat;
   background-size: 100%;
-  width: 100%;
-  height: auto;
   border-radius: 50%;
-  width: 18%;
+  width: calc(16.4%);
   height: 14.3vw;
   margin-right: 2%;
   font-size: 0.9em;
   max-height: 20.5em;
   border: 2px solid #5c4d4d;
+}
+#team .member-wrap .team-member:last-child {
+  margin-right: 0;
 }
 #team .member-wrap .team-member .member-content {
   display: flex;
