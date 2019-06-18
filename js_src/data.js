@@ -7,7 +7,7 @@ var curriculum = {
                     "description": ""
                 },
                 {
-                    "name": "GIT기초브랜칭",
+                    "name": "GIT 브랜칭",
                     "description": ""
                 },
                 {
@@ -15,7 +15,7 @@ var curriculum = {
                     "description": ""
                 },
                 {
-                    "name": "HTML,CSS,JS",
+                    "name": "HTML, CSS, JS",
                     "description": ""
                 },
                 {
@@ -36,11 +36,11 @@ var curriculum = {
                 },
 
                 {
-                    "name": "인증과 권한부여,oAuth",
+                    "name": "인증과 권한부여, oAuth",
                     "description": ""
                 },
                 {
-                    "name": "RESTful API사용",
+                    "name": "RESTful API 사용",
                     "description": ""
                 },
                 {
