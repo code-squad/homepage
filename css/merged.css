@@ -1652,7 +1652,7 @@ aside.clients img {
 }
 #special-page header .sub-desc {
   font-size: 2.5rem;
-  color: #121b6d;
+  color: #2133d8;
   margin: 2.5rem 1rem 0;
 }
 #special-page #about-special h2 {
@@ -2415,6 +2415,9 @@ h5 {
     padding: 0;
   }
 }
+.program_page .tutor-message .tutor-introduction {
+  margin-bottom: 2rem;
+}
 .program_page .tutor-message .one-two {
   display: flex;
   flex-flow: row wrap;
@@ -2544,82 +2547,82 @@ h5 {
 .special-masteringjs .basic-info .base-two > div:nth-child(1) {
   background-image: url(/img/special/masteringjs/masteringjsbanner.jpg);
 }
-.special-seniorfe .base-section-height,
+.special-react .base-section-height,
 .special-aws-basic .base-section-height {
   margin: 150px 0px;
 }
-.special-seniorfe header,
+.special-react header,
 .special-aws-basic header {
-  background-image: url('../img/special/seniorfe/header.jpg');
+  background-image: url('../img/special/react/header.jpg');
   background-position: center 50%;
-  height: 1000px;
+  height: 600px;
 }
-.special-seniorfe header:after,
+.special-react header:after,
 .special-aws-basic header:after {
   background-color: #171819;
 }
-.special-seniorfe header .intro-text,
+.special-react header .intro-text,
 .special-aws-basic header .intro-text {
   text-align: center;
   width: 100%;
   left: 0%;
 }
-.special-seniorfe header .intro-text .intro-heading,
+.special-react header .intro-text .intro-heading,
 .special-aws-basic header .intro-text .intro-heading {
   font-size: 4em;
-  color: gold;
+  color: #61dafb;
   letter-spacing: 0.06em;
   width: 100%;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1em;
 }
-.special-seniorfe .basic-info .base-two > div:nth-child(1),
+.special-react .basic-info .base-two > div:nth-child(1),
 .special-aws-basic .basic-info .base-two > div:nth-child(1) {
   background-image: url(/img/special/masteringjs/masteringjsbanner.jpg);
 }
-.special-seniorfe .program-title-content,
+.special-react .program-title-content,
 .special-aws-basic .program-title-content {
   font-size: 40px;
 }
-.special-seniorfe .plan-background .base-three > div,
+.special-react .plan-background .base-three > div,
 .special-aws-basic .plan-background .base-three > div {
-  background-color: #1b1d1e;
+  background-color: #282c34;
 }
-.special-seniorfe .plan-background .base-three > div .why-desc,
+.special-react .plan-background .base-three > div .why-desc,
 .special-aws-basic .plan-background .base-three > div .why-desc {
   font-size: 0.9em;
 }
-.special-seniorfe .program-curriculum .curriculum-wrap table tr,
+.special-react .program-curriculum .curriculum-wrap table tr,
 .special-aws-basic .program-curriculum .curriculum-wrap table tr {
-  background: #1b1d1e;
+  background: #282c34;
   color: #fff;
 }
-.special-seniorfe .hooking-msg-highlight,
+.special-react .hooking-msg-highlight,
 .special-aws-basic .hooking-msg-highlight {
-  background: #1b1d1e;
+  background: #282c34;
 }
-.special-seniorfe .programming-schedule .schedule-desc,
+.special-react .programming-schedule .schedule-desc,
 .special-aws-basic .programming-schedule .schedule-desc {
   text-align: center;
 }
-.special-seniorfe .regbtn,
+.special-react .regbtn,
 .special-aws-basic .regbtn {
-  margin: 14.6px auto;
+  margin: 6rem auto;
   display: block;
   width: 250px;
   height: 70px;
-  background-color: #eac506;
+  background-color: #09a8d4;
   font-weight: bold;
   color: #212c43;
   font-size: 1.2em;
   border-radius: 5px;
   padding: 0.5em;
 }
-.special-seniorfe .regbtn:hover,
+.special-react .regbtn:hover,
 .special-aws-basic .regbtn:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.special-seniorfe .regbtn a,
+.special-react .regbtn a,
 .special-aws-basic .regbtn a {
   color: #fff;
 }
