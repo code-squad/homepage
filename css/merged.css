@@ -1652,7 +1652,7 @@ aside.clients img {
 }
 #special-page header .sub-desc {
   font-size: 2.5rem;
-  color: #2133d8;
+  color: #fff;
   margin: 2.5rem 1rem 0;
 }
 #special-page #about-special h2 {
@@ -2575,6 +2575,10 @@ h5 {
   width: 100%;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1em;
+}
+.special-react header .intro-text .intro-heading .reg-button,
+.special-aws-basic header .intro-text .intro-heading .reg-button {
+  margin-top: 2rem;
 }
 .special-react .basic-info .base-two > div:nth-child(1),
 .special-aws-basic .basic-info .base-two > div:nth-child(1) {
