@@ -174,6 +174,11 @@ fieldset[disabled] .btn-primary.active {
   padding: 20px 20px;
   text-transform: none;
   min-width: 400px;
+  box-shadow: 8px 10px 20px 0px rgba(46, 61, 73, 0.15);
+  transition: all 0.3s ease;
+  color: #fff;
+  background-color: #008ec7;
+  border: 0.125rem solid transparent;
 }
 .btn-xl:hover,
 .btn-xl:focus,
@@ -210,6 +215,11 @@ fieldset[disabled] .btn-xl.active {
 .btn-xl .badge {
   color: #0075d6;
   background-color: white;
+}
+.btn-xl:hover {
+  box-shadow: 2px 4px 8px 0px rgba(46, 61, 73, 0.2);
+  border-color: transparent;
+  background-color: #0165a1;
 }
 .btn-customer {
   height: 100% !important;
@@ -861,13 +871,6 @@ header .intro-text .intro-heading .intro-msg-highlight {
 #index-header .intro-heading a:nth-of-type(1),
 #index-header .intro-heading a:nth-of-type(2) {
   margin-bottom: 10px;
-  background-color: #005ea8;
-  border: 1px solid #005ea8;
-}
-#index-header .intro-heading a:nth-of-type(1):hover,
-#index-header .intro-heading a:nth-of-type(2):hover {
-  background-color: #318dd6;
-  border-color: #318dd6;
 }
 .notice-btn {
   display: flex;
