@@ -2593,6 +2593,10 @@ h5 {
 .special-aws-basic .program-title-content {
   font-size: 40px;
 }
+.special-react .program-title-content i,
+.special-aws-basic .program-title-content i {
+  color: #008ec7;
+}
 .special-react .plan-background .base-three > div,
 .special-aws-basic .plan-background .base-three > div {
   background-color: #282c34;
