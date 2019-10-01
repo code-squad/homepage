@@ -179,6 +179,11 @@ fieldset[disabled] .btn-primary.active {
   color: #fff;
   background-color: #008ec7;
   border: 0.125rem solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 50%;
+  margin: 0px auto;
 }
 .btn-xl:hover,
 .btn-xl:focus,
@@ -877,11 +882,8 @@ header .intro-text .intro-heading .intro-msg-highlight {
   flex-flow: row wrap;
   justify-content: space-around;
   z-index: 1;
-  max-width: 800px;
+  max-width: 850px;
   margin: 8rem auto 0;
-}
-.notice-btn .btn-xl {
-  min-width: 600px;
 }
 #about-us p {
   font-size: 2em;
