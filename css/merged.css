@@ -2614,6 +2614,14 @@ h5 {
 .special-aws-basic .programming-schedule .schedule-desc {
   text-align: center;
 }
+.special-react .reg-wrap,
+.special-aws-basic .reg-wrap {
+  min-width: 200px;
+  margin-top: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .special-react .regbtn,
 .special-aws-basic .regbtn {
   margin: 6rem auto;
