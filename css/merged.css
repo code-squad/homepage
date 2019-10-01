@@ -883,7 +883,7 @@ header .intro-text .intro-heading .intro-msg-highlight {
   justify-content: space-around;
   z-index: 1;
   max-width: 850px;
-  margin: 8rem auto 0;
+  margin: 1em auto 0;
 }
 #about-us p {
   font-size: 2em;
