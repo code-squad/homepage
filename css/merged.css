@@ -406,6 +406,8 @@ header .intro-text .intro-heading .intro-msg-highlight {
     float: none;
     font-size: 1.3rem;
     width: 80%;
+  }
+  a.btn-xl {
     max-width: 600px;
   }
 }
@@ -416,7 +418,7 @@ header .intro-text .intro-heading .intro-msg-highlight {
   header .intro-text {
     top: 10%;
   }
-  header .intro-text .intro-heading a.btn-xl {
+  a.btn-xl {
     width: 75%;
     padding: 12px;
     min-width: 200px;
@@ -2620,7 +2622,6 @@ h5 {
 }
 .special-react .reg-wrap,
 .special-aws-basic .reg-wrap {
-  min-width: 200px;
   margin-top: 2em;
   display: flex;
   justify-content: center;
