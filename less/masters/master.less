@@ -479,10 +479,16 @@
         }
         .answer {
             font-weight: 600;
-            max-height: 0px;
+            max-height: 500px;
             padding-left: 20px;
             transition: max-height 0.7s;
             overflow: hidden;
         }
+        &:nth-child(2n+1) {
+            background-color: #e6e6e6;
+        }
+    }
+    .faq-desc-wrap + .faq-desc-wrap {
+        margin-top:3rem;
     }
 }

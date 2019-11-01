@@ -159,6 +159,7 @@ var _ = {
 })();
 
 //FAQ
+/*
 (function () {
 	//execute accodian
 	var faqWrap = document.querySelector("#masters-faq ul");
@@ -184,6 +185,7 @@ var _ = {
 		}
 	});
 })();
+*/
 
 
 window.addEventListener("load", function () {
