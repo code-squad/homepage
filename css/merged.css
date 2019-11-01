@@ -1021,10 +1021,6 @@ header .intro-text .intro-heading .intro-msg-highlight {
     padding-left: 2em;
   }
 }
-.program-curriculum .curriculum-wrap table tr {
-  background: #282c34;
-  color: #fff;
-}
 
 .dummyfornav {
   height: 53px;
@@ -2843,6 +2839,10 @@ h5 {
   margin-right: 2rem;
   z-index: 1;
 }
+#masters_page .schedule-newstyle .curriculum-wrap table tr {
+  background: #008ec7;
+  color: #fff;
+}
 #masters_page #about-masters {
   margin-bottom: 0px;
 }
@@ -2911,7 +2911,7 @@ h5 {
   line-height: 160px;
 }
 #masters_page #join-program {
-  background: #798ca0;
+  background: #008ec7;
   box-sizing: content-box;
   height: 500px;
   display: flex;
