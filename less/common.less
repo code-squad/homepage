@@ -83,6 +83,24 @@ section {
 }
 
 
+ /*** font ***/
+ .f-40 {
+    font-size: 40px;
+}
+.f-32 {
+    font-size: 32px;
+}
+.f-24 {
+    font-size: 24px;
+}
+.f-18 {
+    font-size: 18px;
+}
+.f-16 {
+    font-size: 16px;
+}
+
+
 .base-desc {
     p {
          margin-top: 40px;
@@ -945,3 +963,169 @@ header {
 }
 
 
+
+/************************ schedule table ***********************/
+.schedule-newstyle {
+    .program-title-content {
+        margin-bottom: 60px;
+    }
+    .sub-desc {
+        margin-bottom: 50px;
+    }
+    .curriculum-wrap {
+        table {
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            table-layout: fixed;
+            caption {
+                font-size: 1.5em;
+                margin: .5em 0 .75em;
+            }
+            tr {
+                border: 1px solid #ddd;
+                padding: .35em;
+                background: #282c34;
+                color: #fff;
+            }
+            tr:last-child {
+                td:first-child {
+                    //font-weight: bold;
+                }
+            }
+            th,
+            td {
+                padding: 2.0em;
+                text-align: center;
+                img {
+                    width: 80%;
+                    border: 1px solid #f2ecec;
+                }
+                ul>li {
+                    text-align: left;
+                    list-style: square;
+                }
+            }
+            td:nth-child(1) {
+                .f-24;
+            }
+            th {
+                .f-24;
+                letter-spacing: .1em;
+                text-transform: uppercase;
+            }
+            th:nth-child(1) {
+                width: 20%;
+            }
+        }
+        table.small {
+            width :80%;
+            margin: 0px auto;
+            max-width: 900px;
+            td {
+                text-align: left;
+                padding : 1.5em;
+            }
+            td {
+                .f-18;
+                ul>li {
+                    .f-18;
+                    a, a:visited {
+                        color:#fff;
+                    }
+                }
+            }
+            td:nth-child(1) {
+                padding-left:2.5em;
+                width:33%;
+            }
+            tr:last-child {
+                td:nth-child(1) {
+                    width: 100%;
+                }
+            }
+        }
+        @media screen and (max-width: 660px) {
+            table.small {
+                width:100%;
+                td {
+                    text-align: center;
+                    padding : 1.5em;
+                    .f-18;
+                        ul>li {
+                            font-size:1.0em;
+                            list-style: square;
+                        }
+                }
+                td:nth-child(1) {
+                    padding-left:0.5em;
+                }
+            }
+        }
+        @media screen and (max-width: 600px) {
+            table {
+                border: 0;
+            }
+            table caption {
+                font-size: 1.3em;
+            }
+            table thead {
+                border: none;
+                clip: rect(0 0 0 0);
+                height: 1px;
+                margin: -1px;
+                overflow: hidden;
+                padding: 0;
+                position: absolute;
+                width: 1px;
+            }
+            table tr {
+                border-bottom: 3px solid #ddd;
+                display: block;
+                margin-bottom: .625em;
+            }
+            table td {
+                border-bottom: 1px solid #ddd;
+                display: block;
+                font-size: 1.0em;
+                text-align: center;
+                padding: 0.8em;
+                ul>li {
+                    list-style-type: none;
+                }
+            }
+            table td:before {
+                //content: attr(data-label);
+                float: left;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+            table td:last-child {
+                border-bottom: 0;
+            }
+            table.small {
+                td {
+                    ul>li {
+                        font-size:0.9em;
+                        list-style: square;
+                    }
+                }
+                td:nth-child(1) {
+                    text-align: center;
+                    width: 100%;
+                }
+                td:nth-child(2) {
+                    padding-left:2em;
+                }
+            }
+        }
+    } 
+}
+
+
+.program-curriculum .curriculum-wrap table tr {
+    background: #282c34;
+    color: #fff;
+}
