@@ -116,6 +116,11 @@ section h3.section-subheading {
 .base-section-height {
   margin: 120px 0px;
 }
+@media (max-width: 768px) {
+  .base-section-height {
+    margin: 60px 0px;
+  }
+}
 .text-muted {
   color: #777777;
 }
@@ -927,7 +932,7 @@ header .intro-text .intro-heading .intro-msg-highlight {
   width: 20%;
 }
 .schedule-newstyle .curriculum-wrap table.small {
-  width: 80%;
+  width: 100%;
   margin: 0px auto;
   max-width: 900px;
 }
@@ -2912,7 +2917,7 @@ h5 {
 #masters_page #join-program {
   background: #008ec7;
   box-sizing: content-box;
-  height: 500px;
+  height: 400px;
   display: flex;
   align-items: center;
   color: #fff;
@@ -2921,7 +2926,7 @@ h5 {
 #masters_page #join-program .new-container div,
 #masters_page #join-program .new-container p,
 #masters_page #join-program .new-container a {
-  margin-bottom: 40px;
+  margin: 40px auto;
   text-align: center;
 }
 #masters_page #join-program .new-container h2 {
@@ -2932,7 +2937,7 @@ h5 {
   color: #798ca0;
 }
 #masters_page #join-program .new-container p {
-  font-size: 1.5em;
+  font-size: 32px;
   font-weight: bold;
 }
 #masters_page #join-program .new-container p.masters_date {
@@ -3043,6 +3048,9 @@ h5 {
     margin: .5rem;
     font-size: 1.9rem;
   }
+  #masters_page #join-program .new-container p {
+    font-size: 24px;
+  }
 }
 @media (max-width: 864px) {
   #masters_page header {
@@ -3083,9 +3091,12 @@ h5 {
   #masters_page #masters-feature li {
     margin-top: 80px;
   }
-  #join-program h2,
-  #join-program p {
-    font-size: 20px;
+  #masters_page #join-program {
+    height: auto;
+  }
+  #masters_page #join-program h2,
+  #masters_page #join-program .new-container p {
+    font-size: 18px;
   }
 }
 @media (max-width: 480px) {
