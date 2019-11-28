@@ -1209,13 +1209,13 @@ header .intro-text .intro-heading .intro-msg-highlight {
   background-image: url(/img/team/yo.jpg);
 }
 #team .member-wrap .team-member:nth-child(3) {
-  background-image: url(/img/team/honux.jpg);
+  background-image: url(/img/team/head.jpeg);
 }
 #team .member-wrap .team-member:nth-child(4) {
-  background-image: url(/img/team/yagom.png);
+  background-image: url(/img/team/sarah.png);
 }
 #team .member-wrap .team-member:nth-child(5) {
-  background-image: url(/img/team/sarah.png);
+  background-image: url(/img/team/honux.jpg);
 }
 @media (max-width: 1200px) {
   #team .new-container {
