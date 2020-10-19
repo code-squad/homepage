@@ -12,6 +12,7 @@ var cachebust = require('gulp-cache-bust');
 var concat = require('gulp-concat');
 var fileinclude = require('gulp-file-include');
 var clean = require('gulp-clean');
+const { watch } = require('browser-sync');
 
 // Set the banner content
 var banner = ['/*!\n',
@@ -139,37 +140,64 @@ gulp.task('mv-to-pages', gulp.series(gulp.parallel(
 })
 
 
-// Configure the browserSync task
-gulp.task('browserSync', function() {
-    browserSync.init({
-        server: {
-            baseDir: ''
-        },
-    })
+gulp.task('watch-files', ()=> {
+  gulp.watch( [ 
+    "html_src/reg/*.html",
+    'html_src/common/*.html',
+    'html_src/common/masters/*.html',
+    'html_src/reg/*.html',
+    'html_src/masters/*.html',
+    'html_src/special/*.html'
+  ], gulp.series('mv-to-pages'))
 })
 
-// Dev task with browserSync
-gulp.task('dev', gulp.series('browserSync', 'minify-css', 'minify-js'), function() {
-    gulp.watch('less/*.less', ['less']);
-    gulp.watch('less/*/*.less', ['less']);
-    gulp.watch('css/*.css', ['minify-css']);
-    gulp.watch('js_src/*.js', ['minify-js']);
-    gulp.watch('html_src/*.html', ['move-index']);
-    gulp.watch('html_src/common/*.html', ['move-index']);
-    gulp.watch('html_src/common/masters/*.html', ['move-index']);
-    gulp.watch('html_src/reg/*.html', ['move-index']);
-    gulp.watch('html_src/masters/*.html', ['move-index']);
-    gulp.watch('html_src/special/*.html', ['move-index']);
-    // Reloads the browser whenever HTML or JS files change
-    // gulp.watch('page/*.html', browserSync.reload);
-    // gulp.watch('css/*.css', browserSync.reload);
-    // gulp.watch('js/*.js', browserSync.reload);
+// BrowserSync
+gulp.task('browserSync', function() {
+  browserSync.init({
+      server: {
+          baseDir: './'
+      },
+  })
+})
+
+gulp.task('browserSyncReload', function() {
+  browsersync.reload();
+})
+
+gulp.task('dev', gulp.series(gulp.parallel('watch-files', 'browserSync'), 'browserSyncReload'), () => {
+  browserSync.reload({ stream: true })
 });
 
+// function watchFiles() {
+//   // gulp.watch("./assets/scss/**/*", css);
+//   // gulp.watch("./assets/js/**/*", gulp.series(scriptsLint, scripts));
+//   gulp.watch(
+//     [
+//       "./html_src/**/*"
+//     ],
+//     gulp.series('mv-to-pages', browserSyncReload)
+//   );
+// }
+
+// gulp.task('dev', gulp.series('browserSync', gulp.parallel('minify-css', 'minify-js', 'mv-to-pages')), function() {
+//     gulp.watch('less/*.less', ['less']);
+//     gulp.watch('less/*/*.less', ['less']);
+//     gulp.watch('css/*.css', ['minify-css']);
+//     gulp.watch('js_src/*.js', ['minify-js']);
+//     gulp.watch('html_src/*.html', ['move-index']);
+//     gulp.watch('html_src/common/*.html', ['move-index']);
+//     gulp.watch('html_src/common/masters/*.html', ['move-index']);
+//     gulp.watch('html_src/reg/*.html', ['move-index']);
+//     gulp.watch('html_src/masters/*.html', ['move-index']);
+//     gulp.watch('html_src/special/*.html', ['move-index']);
+//     // Reloads the browser whenever HTML or JS files change
+//     // gulp.watch('page/*.html', browserSync.reload);
+//     // gulp.watch('css/*.css', browserSync.reload);
+//     // gulp.watch('js/*.js', browserSync.reload);
+// });
+
 // // Run everything
-// //gulp.task('default', ['less', 'minify-css', 'minify-js', 'htmlinclude', 'minify-html');
 gulp.task('default', gulp.parallel('minify-css', 'minify-js', 'mv-to-pages'));
-//gulp.task("default", gulp.series("less"));
 
 
 
