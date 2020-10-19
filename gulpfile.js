@@ -100,32 +100,16 @@ gulp.task('htmlinclude', function() {
     .pipe(gulp.dest('html_src/html_merged/'));
 });
 
-// //goPage
-gulp.task('minify-html-masters',gulp.series('htmlinclude', 'htmlinclude-masters', 'htmlinclude-reg' ), function() {
-    // return gulp.src([
-    //     'html_src/html_merged/masters/fe.html','html_src/html_merged/masters/be.html','html_src/html_merged/masters/ios.html',
-    //     'html_src/html_merged/masters/level1.html', 'html_src/html_merged/masters/curriculum.html'])
-    return gulp.src('html_src/html_merged/masters/*.html', {base: './'})
-    // .pipe(cachebust({
-    //   type: 'timestamp'
-    // }))
-    // .pipe(htmlmin({collapseWhitespace: true}))
-    .pipe(gulp.dest('page/masters/'));
+gulp.task('mv-masters', function() {
+  return gulp.src('html_src/html_merged/masters/*.html')
+  .pipe(cachebust({
+    type: 'timestamp'
+  }))
+  .pipe(htmlmin({collapseWhitespace: true}))
+  .pipe(gulp.dest('page/masters/'));
 })
 
-gulp.task('mv', function() {
-    // return gulp.src([
-    //     'html_src/html_merged/masters/fe.html','html_src/html_merged/masters/be.html','html_src/html_merged/masters/ios.html',
-    //     'html_src/html_merged/masters/level1.html', 'html_src/html_merged/masters/curriculum.html'])
-    return gulp.src('html_src/html_merged/masters/*.html', {base: './'})
-    // .pipe(cachebust({
-    //   type: 'timestamp'
-    // }))
-    // .pipe(htmlmin({collapseWhitespace: true}))
-    .pipe(gulp.dest('page/masters/'));
-})
-
-gulp.task('minify-html-reg',gulp.series('minify-html-masters'), function() {
+gulp.task('mv-reg', function() {
   return gulp.src(['html_src/html_merged/reg/*.html'])
   .pipe(cachebust({
     type: 'timestamp'
@@ -134,7 +118,7 @@ gulp.task('minify-html-reg',gulp.series('minify-html-masters'), function() {
   .pipe(gulp.dest('page/reg'));
 })
 
-gulp.task('minify-html', gulp.series('minify-html-reg'), function() {
+gulp.task('mv-mainpages', function() {
   return gulp.src(['html_src/html_merged/*.html'])
   .pipe(cachebust({
     type: 'timestamp'
@@ -143,10 +127,17 @@ gulp.task('minify-html', gulp.series('minify-html-reg'), function() {
   .pipe(gulp.dest('page'));
 });
 
-gulp.task('move-index', gulp.series('minify-html'), function() {
+gulp.task('mv-index', function() {
   return gulp.src('page/index.html')
     .pipe(gulp.dest('./'));
-});
+}) 
+
+gulp.task('mv-to-pages', gulp.series(gulp.parallel(
+  'htmlinclude', 'htmlinclude-masters', 'htmlinclude-reg'
+), 'mv-masters', 'mv-reg', 'mv-mainpages', 'mv-index'), function() {
+  console.log("MOVE TO PAGE")
+})
+
 
 // Configure the browserSync task
 gulp.task('browserSync', function() {
@@ -158,7 +149,7 @@ gulp.task('browserSync', function() {
 })
 
 // Dev task with browserSync
-gulp.task('dev', gulp.series('browserSync', 'minify-css', 'minify-js', 'move-index'), function() {
+gulp.task('dev', gulp.series('browserSync', 'minify-css', 'minify-js'), function() {
     gulp.watch('less/*.less', ['less']);
     gulp.watch('less/*/*.less', ['less']);
     gulp.watch('css/*.css', ['minify-css']);
@@ -177,7 +168,7 @@ gulp.task('dev', gulp.series('browserSync', 'minify-css', 'minify-js', 'move-ind
 
 // // Run everything
 // //gulp.task('default', ['less', 'minify-css', 'minify-js', 'htmlinclude', 'minify-html');
-gulp.task('default', gulp.series('minify-css', 'minify-js', 'move-index'));
+gulp.task('default', gulp.parallel('minify-css', 'minify-js', 'mv-to-pages'));
 //gulp.task("default", gulp.series("less"));
 
 
