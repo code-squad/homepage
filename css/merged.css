@@ -1,7 +1,7 @@
 /*!
- * Start Bootstrap - Agency v3.3.7+1 (http://startbootstrap.com/template-overviews/agency)
- * Copyright 2013-2020 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ * Start Bootstrap -  v1.0.0 (https://github.com/code-squad/homepage#readme)
+ * Copyright 2013-2020 
+ * Licensed under  ()
  */
 html {
   scroll-behavior: smooth;
@@ -419,7 +419,7 @@ header .intro-text .intro-heading .intro-msg-highlight {
 @media (max-width: 1000px) {
   header .intro-text .intro-heading {
     width: 100%;
-    line-height: 7.0vw;
+    line-height: 7vw;
     font-size: 4.5vw;
   }
   header .intro-text .intro-heading a {
@@ -897,17 +897,17 @@ header .intro-text .intro-heading .intro-msg-highlight {
 }
 .schedule-newstyle .curriculum-wrap table caption {
   font-size: 1.5em;
-  margin: .5em 0 .75em;
+  margin: 0.5em 0 0.75em;
 }
 .schedule-newstyle .curriculum-wrap table tr {
   border: 1px solid #ddd;
-  padding: .35em;
+  padding: 0.35em;
   background: #282c34;
   color: #fff;
 }
 .schedule-newstyle .curriculum-wrap table th,
 .schedule-newstyle .curriculum-wrap table td {
-  padding: 2.0em;
+  padding: 2em;
   text-align: center;
 }
 .schedule-newstyle .curriculum-wrap table th img,
@@ -925,7 +925,7 @@ header .intro-text .intro-heading .intro-msg-highlight {
 }
 .schedule-newstyle .curriculum-wrap table th {
   font-size: 24px;
-  letter-spacing: .1em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 .schedule-newstyle .curriculum-wrap table th:nth-child(1) {
@@ -967,7 +967,7 @@ header .intro-text .intro-heading .intro-msg-highlight {
     font-size: 18px;
   }
   .schedule-newstyle .curriculum-wrap table.small td ul > li {
-    font-size: 1.0em;
+    font-size: 1em;
     list-style: square;
   }
   .schedule-newstyle .curriculum-wrap table.small td:nth-child(1) {
@@ -994,12 +994,12 @@ header .intro-text .intro-heading .intro-msg-highlight {
   .schedule-newstyle .curriculum-wrap table tr {
     border-bottom: 3px solid #ddd;
     display: block;
-    margin-bottom: .625em;
+    margin-bottom: 0.625em;
   }
   .schedule-newstyle .curriculum-wrap table td {
     border-bottom: 1px solid #ddd;
     display: block;
-    font-size: 1.0em;
+    font-size: 1em;
     text-align: center;
     padding: 0.8em;
   }
@@ -1167,7 +1167,7 @@ header .intro-text .intro-heading .intro-msg-highlight {
   background-repeat: no-repeat;
   background-size: 100%;
   border-radius: 50%;
-  width: calc(16.4%);
+  width: calc((92% - 10px) / 5);
   height: 14.3vw;
   margin-right: 2%;
   font-size: 0.9em;
@@ -1244,7 +1244,7 @@ header .intro-text .intro-heading .intro-msg-highlight {
   padding: 1%;
 }
 #job-list.multiple-cardui-wrap .recomm-word-wrap div.recomm-word-row div:hover {
-  background-color: #fff!important;
+  background-color: #fff !important;
 }
 @media (max-width: 768px) {
   #job-list.multiple-cardui-wrap .recomm-word-wrap {
@@ -1292,7 +1292,7 @@ ul.swipe-imageslider li img {
   color: #096ed3;
   font-size: 6em;
   border: 0;
-  margin: 0% 1.0%;
+  margin: 0% 1%;
   background-color: Transparent;
   background-repeat: no-repeat;
   border: none;
@@ -1364,7 +1364,7 @@ aside.clients img {
 .blog-banner ul {
   display: flex;
   padding: 0;
-  transition: transform .6s linear;
+  transition: transform 0.6s linear;
   position: relative;
 }
 .blog-banner li {
@@ -1415,7 +1415,7 @@ aside.clients img {
   max-width: 700px;
   margin-left: 10%;
   margin-top: 30px;
-  opacity: 1.0;
+  opacity: 1;
 }
 .jumbotron .presentaion-left img.level-logo {
   max-width: 110px;
@@ -1580,7 +1580,7 @@ aside.clients img {
   margin-top: 60px;
   border-top: 1px solid gray;
   padding-top: 60px;
-  opacity: 1.0;
+  opacity: 1;
 }
 
 #schedule-wrap {
@@ -1918,7 +1918,7 @@ aside.clients img {
   box-shadow: 4px 4px 15px -3px rgba(0, 0, 0, 0.4);
 }
 #special-page #special-item.base-desc-three ul.level-wrap > li .item-desc ul.program-card li {
-  font-size: .9em;
+  font-size: 0.9em;
   margin-bottom: 10px;
   width: 90%;
   overflow: auto;
@@ -3045,7 +3045,7 @@ h5 {
   }
   #masters_page header .application-card a.btn-xl {
     max-width: 200px;
-    margin: .5rem;
+    margin: 0.5rem;
     font-size: 1.9rem;
   }
   #masters_page #join-program .new-container p {
@@ -3085,7 +3085,7 @@ h5 {
   #masters_page header .application-card a.btn-xl {
     font-size: 1.2rem;
     height: 65px;
-    margin: .5rem;
+    margin: 0.5rem;
     padding: 10px 0px;
   }
   #masters_page #masters-feature li {
@@ -3356,7 +3356,7 @@ h5 {
   #masters-curriculum.multiple-cardui-wrap .recomm-word-wrap > div.recomm-word-row > div {
     padding: 2.5rem 1rem;
     margin-bottom: 1rem;
-    margin-right: .2%;
+    margin-right: 0.2%;
     width: 19%;
   }
   #masters-curriculum.multiple-cardui-wrap .recomm-word-wrap > div.recomm-word-row > div .step {
