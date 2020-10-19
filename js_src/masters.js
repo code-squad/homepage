@@ -149,6 +149,7 @@
 
 //curriculum templating
 !(function() {
+	if(!window.curriculum) return;
 	function getTpl(content, count) {
 		const gubunStart = `<div class="recomm-word-row">`;
 		const gubunEnd =  `</div>`;
