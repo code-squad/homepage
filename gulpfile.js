@@ -102,14 +102,27 @@ gulp.task('htmlinclude', function() {
 
 // //goPage
 gulp.task('minify-html-masters',gulp.series('htmlinclude', 'htmlinclude-masters', 'htmlinclude-reg' ), function() {
-    return gulp.src([
-        'html_src/html_merged/masters/fe.html','html_src/html_merged/masters/be.html','html_src/html_merged/masters/ios.html',
-        'html_src/html_merged/masters/level1.html', 'html_src/html_merged/masters/curriculum.html'])
-    .pipe(cachebust({
-      type: 'timestamp'
-    }))
-    .pipe(htmlmin({collapseWhitespace: true}))
-    .pipe(gulp.dest('page/masters'));
+    // return gulp.src([
+    //     'html_src/html_merged/masters/fe.html','html_src/html_merged/masters/be.html','html_src/html_merged/masters/ios.html',
+    //     'html_src/html_merged/masters/level1.html', 'html_src/html_merged/masters/curriculum.html'])
+    return gulp.src('html_src/html_merged/masters/*.html', {base: './'})
+    // .pipe(cachebust({
+    //   type: 'timestamp'
+    // }))
+    // .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(gulp.dest('page/masters/'));
+})
+
+gulp.task('mv', function() {
+    // return gulp.src([
+    //     'html_src/html_merged/masters/fe.html','html_src/html_merged/masters/be.html','html_src/html_merged/masters/ios.html',
+    //     'html_src/html_merged/masters/level1.html', 'html_src/html_merged/masters/curriculum.html'])
+    return gulp.src('html_src/html_merged/masters/*.html', {base: './'})
+    // .pipe(cachebust({
+    //   type: 'timestamp'
+    // }))
+    // .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(gulp.dest('page/masters/'));
 })
 
 gulp.task('minify-html-reg',gulp.series('minify-html-masters'), function() {
