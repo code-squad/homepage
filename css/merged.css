@@ -3365,6 +3365,7 @@ h5 {
   #masters-curriculum.multiple-cardui-wrap .recomm-word-wrap > div.recomm-word-row > div p {
     font-size: 1rem;
     padding-top: 0;
+    top: 15%;
   }
   #masters-curriculum.multiple-cardui-wrap .recomm-word-wrap > div.recomm-word-row > div.single {
     max-width: 100px;

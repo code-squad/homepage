@@ -148,7 +148,6 @@
 */
 
 //curriculum templating
-/*
 !(function() {
 	function getTpl(content, count) {
 		const gubunStart = `<div class="recomm-word-row">`;
@@ -181,4 +180,3 @@
 	parent.innerHTML = htmls + paddingDIV();
 
 })();
-*/
