@@ -18,6 +18,7 @@
 
 
 //gantt chart
+/*
 (function() {
 	if(typeof bb === "undefined") return;
 	var chart = bb.generate({
@@ -143,9 +144,11 @@
 	}, 100);
 
   resizeHanlder();
-})();
+  })();
+*/
 
 //curriculum templating
+/*
 !(function() {
 	function getTpl(content, count) {
 		const gubunStart = `<div class="recomm-word-row">`;
@@ -178,3 +181,4 @@
 	parent.innerHTML = htmls + paddingDIV();
 
 })();
+*/
