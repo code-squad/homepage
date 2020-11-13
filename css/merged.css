@@ -497,11 +497,9 @@ header .intro-text .intro-heading .intro-msg-highlight {
 .navbar-custom .nav li ul.nav-dropdown {
   position: absolute;
   background-color: #222222;
-  margin-left: 10px;
-  padding: 5px;
-  padding-top: 20px;
+  padding: 20px;
   color: #fff;
-  width: 195px;
+  width: 250px;
   display: none;
   opacity: 0.9;
   visibility: hidden;
@@ -544,7 +542,7 @@ header .intro-text .intro-heading .intro-msg-highlight {
     visibility: visible;
   }
   .navbar-custom .nav li ul.nav-dropdown li {
-    margin: 5px 0px;
+    margin: 12px 0px;
     text-align: left;
   }
 }
