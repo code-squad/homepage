@@ -346,6 +346,9 @@ fieldset[disabled] .btn-xl.active {
   font-weight: bold!important;
   margin-bottom: 60px;
 }
+.desc-area-margin {
+  margin-bottom: 2rem;
+}
 /**************************** intro-tex *******************************/
 header {
   background-image: url('../img/background/main.jpg');
@@ -1184,7 +1187,7 @@ header .intro-text .intro-heading .intro-msg-highlight {
   opacity: 0;
   border-radius: 50%;
   font-weight: bold;
-  max-height: 20.5em;
+  max-height: 17.17em;
   transition: 0.1s all;
   letter-spacing: 0.18rem;
 }
