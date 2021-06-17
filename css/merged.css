@@ -1234,6 +1234,9 @@ header .intro-text .intro-heading .intro-msg-highlight {
     max-height: 250px;
     margin: 0px auto 25px;
   }
+  #team .new-container .member-wrap .team-member .member-content {
+    max-height: inherit;
+  }
   #team .new-container .member-wrap .team-member img {
     max-width: 240px;
   }
