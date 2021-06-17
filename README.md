@@ -1,6 +1,6 @@
 # CodeSquad Homepage
 
-[![Build Status](https://travis-ci.org/code-squad/homepage.svg?branch=master)](https://travis-ci.org/code-squad/homepage)
+[![Build Status](https://travis-ci.com/code-squad/homepage.svg?branch=master)](https://travis-ci.com/code-squad/homepage)
 
 ## http://codesquad.kr
 
