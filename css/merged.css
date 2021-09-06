@@ -2588,27 +2588,32 @@ h5 {
   background-image: url(/img/special/masteringjs/masteringjsbanner.jpg);
 }
 .special-react .base-section-height,
-.special-aws-basic .base-section-height {
+.special-aws-basic .base-section-height,
+.masters-cocoa .base-section-height {
   margin: 150px 0px;
 }
 .special-react header,
-.special-aws-basic header {
+.special-aws-basic header,
+.masters-cocoa header {
   background-image: url('../img/special/react/header.jpg');
   background-position: center 50%;
   height: 600px;
 }
 .special-react header:after,
-.special-aws-basic header:after {
+.special-aws-basic header:after,
+.masters-cocoa header:after {
   background-color: #171819;
 }
 .special-react header .intro-text,
-.special-aws-basic header .intro-text {
+.special-aws-basic header .intro-text,
+.masters-cocoa header .intro-text {
   text-align: center;
   width: 100%;
   left: 0%;
 }
 .special-react header .intro-text .intro-heading,
-.special-aws-basic header .intro-text .intro-heading {
+.special-aws-basic header .intro-text .intro-heading,
+.masters-cocoa header .intro-text .intro-heading {
   font-size: 4em;
   color: #61dafb;
   letter-spacing: 0.06em;
@@ -2617,51 +2622,62 @@ h5 {
   line-height: 1em;
 }
 .special-react header .intro-text .intro-heading .reg-button,
-.special-aws-basic header .intro-text .intro-heading .reg-button {
+.special-aws-basic header .intro-text .intro-heading .reg-button,
+.masters-cocoa header .intro-text .intro-heading .reg-button {
   margin-top: 2rem;
 }
 .special-react .basic-info .base-two > div:nth-child(1),
-.special-aws-basic .basic-info .base-two > div:nth-child(1) {
+.special-aws-basic .basic-info .base-two > div:nth-child(1),
+.masters-cocoa .basic-info .base-two > div:nth-child(1) {
   background-image: url(/img/special/masteringjs/masteringjsbanner.jpg);
 }
 .special-react .program-title-content,
-.special-aws-basic .program-title-content {
+.special-aws-basic .program-title-content,
+.masters-cocoa .program-title-content {
   font-size: 40px;
 }
 .special-react .program-title-content i,
-.special-aws-basic .program-title-content i {
+.special-aws-basic .program-title-content i,
+.masters-cocoa .program-title-content i {
   color: #008ec7;
 }
 .special-react .plan-background .base-three > div,
-.special-aws-basic .plan-background .base-three > div {
+.special-aws-basic .plan-background .base-three > div,
+.masters-cocoa .plan-background .base-three > div {
   background-color: #282c34;
 }
 .special-react .plan-background .base-three > div .why-desc,
-.special-aws-basic .plan-background .base-three > div .why-desc {
+.special-aws-basic .plan-background .base-three > div .why-desc,
+.masters-cocoa .plan-background .base-three > div .why-desc {
   font-size: 0.9em;
 }
 .special-react .program-curriculum .curriculum-wrap table tr,
-.special-aws-basic .program-curriculum .curriculum-wrap table tr {
+.special-aws-basic .program-curriculum .curriculum-wrap table tr,
+.masters-cocoa .program-curriculum .curriculum-wrap table tr {
   background: #282c34;
   color: #fff;
 }
 .special-react .hooking-msg-highlight,
-.special-aws-basic .hooking-msg-highlight {
+.special-aws-basic .hooking-msg-highlight,
+.masters-cocoa .hooking-msg-highlight {
   background: #282c34;
 }
 .special-react .programming-schedule .schedule-desc,
-.special-aws-basic .programming-schedule .schedule-desc {
+.special-aws-basic .programming-schedule .schedule-desc,
+.masters-cocoa .programming-schedule .schedule-desc {
   text-align: center;
 }
 .special-react .reg-wrap,
-.special-aws-basic .reg-wrap {
+.special-aws-basic .reg-wrap,
+.masters-cocoa .reg-wrap {
   margin-top: 2em;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .special-react .regbtn,
-.special-aws-basic .regbtn {
+.special-aws-basic .regbtn,
+.masters-cocoa .regbtn {
   margin: 6rem auto;
   display: block;
   width: 250px;
@@ -2674,11 +2690,13 @@ h5 {
   padding: 0.5em;
 }
 .special-react .regbtn:hover,
-.special-aws-basic .regbtn:hover {
+.special-aws-basic .regbtn:hover,
+.masters-cocoa .regbtn:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .special-react .regbtn a,
-.special-aws-basic .regbtn a {
+.special-aws-basic .regbtn a,
+.masters-cocoa .regbtn a {
   color: #fff;
 }
 .curriculum-wrap h4 {
@@ -2686,6 +2704,18 @@ h5 {
 }
 .program_page .tutor-message .one-two {
   flex-flow: row;
+}
+.masters-cocoa header {
+  background-image: url('../img/masters/cocoa.bg.jpg');
+}
+.masters-cocoa header .intro-text .intro-heading {
+  color: #ffa600;
+}
+.masters-cocoa header .intro-text .intro-heading a.btn-xl {
+  background-color: #aa8d27;
+}
+.masters-cocoa .program-title-content i {
+  color: #553414;
 }
 .special-aws-basic .base-section-height {
   margin: 150px 0px;

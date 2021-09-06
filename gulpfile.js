@@ -110,7 +110,7 @@ gulp.task('htmlinclude-reg', function() {
 gulp.task('htmlinclude-masters', function() {
   return gulp.src([
       'html_src/masters/fe.html', 'html_src/masters/be.html','html_src/masters/ios.html',
-      'html_src/masters/level1.html', 'html_src/masters/curriculum.html'])
+      'html_src/masters/curriculum.html', 'html_src/masters/cocoa.html'])
     .pipe(fileinclude({
       prefix: '@@',
       basepath: '@file'
