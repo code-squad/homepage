@@ -41,6 +41,10 @@ a:active,
 a.active {
   color: #0059a3;
 }
+.link-underline {
+  text-decoration: underline;
+  color: #2196f3d9;
+}
 h1,
 h2,
 h3,
