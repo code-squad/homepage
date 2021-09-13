@@ -444,7 +444,7 @@ header .intro-text .intro-heading .intro-msg-highlight {
 }
 @media (max-width: 480px) {
   header {
-    height: 300px!important;
+    height: 320px!important;
   }
   header .intro-text {
     top: 10%;
@@ -1220,7 +1220,7 @@ header .intro-text .intro-heading .intro-msg-highlight {
   background-image: url(/img/team/yo.jpg);
 }
 #team .member-wrap .team-member:nth-child(4) {
-  background-image: url(/img/team/sarah.png);
+  background-image: url(/img/team/sam.jpg);
 }
 #team .member-wrap .team-member:nth-child(5) {
   background-image: url(/img/team/honux.jpg);
@@ -2333,7 +2333,7 @@ h5 {
 @media (max-width: 980px) {
   .program_page .target-student .new-container > p {
     font-size: 24px;
-    line-height: 1.2;
+    line-height: 2;
   }
   .program_page .target-student ul.level-wrap li h4 {
     font-size: 24px;
@@ -2342,7 +2342,7 @@ h5 {
 @media (max-width: 480px) {
   .program_page .target-student .new-container > p {
     font-size: 18px;
-    line-height: 1.2;
+    line-height: 1.6;
   }
   .program_page .target-student ul.level-wrap li h4 {
     font-size: 18px;
