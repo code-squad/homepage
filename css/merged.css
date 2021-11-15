@@ -493,6 +493,7 @@ header .intro-text .intro-heading .intro-msg-highlight {
 .navbar-custom .nav li a {
   font-family: 'Nanum', 'Apple Gothic', 'Malgun Gothic', 'Nanum Gothic', 'Dotum', Arial, sans-serif;
   text-transform: uppercase;
+  text-transform: none;
   font-weight: 400;
   letter-spacing: 1px;
   color: white;
@@ -942,7 +943,7 @@ header .intro-text .intro-heading .intro-msg-highlight {
 .schedule-newstyle .curriculum-wrap table.small {
   width: 100%;
   margin: 0px auto;
-  max-width: 900px;
+  max-width: 1100px;
 }
 .schedule-newstyle .curriculum-wrap table.small td {
   text-align: left;
@@ -2889,7 +2890,7 @@ h5 {
   z-index: 1;
 }
 #masters_page .schedule-newstyle .curriculum-wrap table tr {
-  background: #008ec7;
+  background: #0165a1;
   color: #fff;
 }
 #masters_page #about-masters {
@@ -3310,6 +3311,14 @@ h5 {
 }
 #masters_ios .basic-info .base-two > div:nth-child(1) {
   background-image: url(/img/masters/ios_banner.jpg);
+}
+#masters_android header {
+  background-image: url('../img/masters/android.jpg');
+  background-position: center 80%;
+  height: 500px;
+}
+#masters_android header:after {
+  background-color: #9cafb8;
 }
 #masters-curriculums .plan-background .base-three > a {
   height: 130px;
