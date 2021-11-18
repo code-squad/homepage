@@ -208,7 +208,7 @@ var curriculum = {
                     "description": ""
                 },
                 {
-                    "name": "HIG/머트리얼디자인",
+                    "name": "HIG",
                     "description": ""
                 },
                 {
@@ -276,7 +276,7 @@ var curriculum = {
                     "description": ""
                 },
                 {
-                    "name": "에어비엔디 앱2",
+                    "name": "에어비엔비 앱2",
                     "description": ""
                 },
                 {
@@ -305,7 +305,7 @@ var curriculum = {
                     "description": ""
                 },
                 {
-                    "name": "HIG/머트리얼디자인",
+                    "name": "머트리얼 디자인",
                     "description": ""
                 },
                 {
@@ -373,7 +373,7 @@ var curriculum = {
                     "description": ""
                 },
                 {
-                    "name": "에어비엔디 앱2",
+                    "name": "에어비엔비 앱2",
                     "description": ""
                 },
                 {
