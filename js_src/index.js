@@ -11,7 +11,8 @@ window.addEventListener("load", function () {
   var memberHeight = members[0].offsetHeight;
   var memberCount = members.length;;
   var step = memberHeight * 1.2;
-  var initDiffValue = -250;
+  //var initDiffValue = -window.screen.height/2.5;
+  var initDiffValue = -step*1.2;
   var lastDiffValue = (memberCount * step) + memberHeight;
   var activeClassName = "onMemberDesc";
   var mobileMaxWidth = 768;
