@@ -184,7 +184,7 @@
         display: flex;
         align-items: center;
         flex-flow: row wrap;
-        justify-content: flex-start;
+        justify-content: center;
         margin-top: 50px;
         margin-bottom: 50px;
         .team-member {
@@ -192,12 +192,14 @@
             background-repeat: no-repeat;
             background-size: 100%;
             border-radius: 50%;
-            width: calc((90% - 10px) / 6);
-            height: 11.8vw;
-            margin-right: 2%;
+            height: 15.8vw;
+            margin-right: 7em;
             font-size: 0.9em;
-            max-height: 17.17em;
+            max-height: 15.67em;
             border: 2px solid #5c4d4d;
+            min-width: 200px;
+            max-width: 199px;
+            margin-bottom: 5em;
             &:last-child {
                 margin-right:0;
             }
@@ -210,7 +212,7 @@
                 opacity: 0;
                 border-radius: 50%;
                 font-weight: bold;
-                max-height: 17.17em;
+                max-height: 15.67em;
                 transition: 0.1s all; // &:hover {
                 letter-spacing: 0.18rem;
                 //     opacity: 1;
@@ -236,18 +238,21 @@
             background-image: url(/img/team/jk2.jpg);
         }
         .team-member:nth-child(2) {
-            background-image: url(/img/team/head.jpeg);
+            background-image: url(/img/team/chloe.png);
         }
         .team-member:nth-child(3) {
-            background-image: url(/img/team/yo.jpg);
+            background-image: url(/img/team/head.jpeg);
         }
         .team-member:nth-child(4) {
-            background-image: url(/img/team/sam.jpg);
+            background-image: url(/img/team/yo.jpg);
         }
         .team-member:nth-child(5) {
-            background-image: url(/img/team/honux.jpg);
+            background-image: url(/img/team/sam.jpg);
         }
         .team-member:nth-child(6) {
+            background-image: url(/img/team/honux.jpg);
+        }
+        .team-member:nth-child(7) {
             background-image: url(/img/team/angelo.png);
         }
     }
@@ -262,7 +267,7 @@
                 .team-member {
                     width: 250px;
                     height: 250px;
-                    max-height: 250px;
+                    max-height: 200px;
                     margin: 0px auto 25px;
                     .member-content {
                         max-height: inherit;
