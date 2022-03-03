@@ -32,9 +32,9 @@ const PATH = {
     "less/schedule.less",
     "less/level.less",
     "less/sharedcto.less",
-    "less/special/special.less",
+    "less/code-together/code-together.less",
     "less/program_unit.less",
-    "less/special/special_item.less",
+    "less/code-together/code-together-item.less",
     "less/masters/master.less",
     "less/masters/program_unit_masters_common.less",
     "less/registration-common.less",
@@ -45,7 +45,7 @@ const PATH = {
     'html_src/common/masters/*.html',
     'html_src/reg/*.html',
     'html_src/masters/*.html',
-    'html_src/special/*.html'
+    'html_src/code-together/*.html'
   ]
 };
 
@@ -54,7 +54,7 @@ gulp.task('less', function() {
     return gulp.src(['less/common.less', 'less/index.less', 
                     'less/application.less', 'less/schedule.less', 'less/level.less',
                     'less/sharedcto.less',
-                    'less/special/special.less', 'less/program_unit.less', 'less/special/special_item.less',
+                    'less/code-together/code-together.less', 'less/program_unit.less', 'less/code-together/code-together-item.less',
                     'less/masters/master.less','less/masters/program_unit_masters_common.less',
                     'less/registration-common.less'])
                     .pipe(less())
@@ -120,7 +120,7 @@ gulp.task('htmlinclude-masters', function() {
 });
 
 gulp.task('htmlinclude', function() {
-  return gulp.src(['html_src/*.html','html_src/special/*.html'])
+  return gulp.src(['html_src/*.html','html_src/code-together/*.html'])
     .pipe(fileinclude({
       prefix: '@@',
       basepath: '@file'
