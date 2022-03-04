@@ -478,7 +478,7 @@ header {
 
 /****************************  Navigation Bar **************************/
 .navbar-custom {
-    background-color: @gray-darker;
+    background-color: #fff;
     border-color: transparent;
     .navbar-brand {
         color: @theme-primary;
@@ -491,12 +491,14 @@ header {
         }
         padding:0px;
         img {
-            padding:10px;
-            max-width : 70px;
+            max-width: 200px;
+            top: -14px;
+            position: relative;
         }
     }
     .navbar-collapse {
         border-color: fade(white, 2%);
+        border-top: 1px solid rgb(220, 216, 216);
     }
     .navbar-toggle {
         background-color: @theme-primary;
@@ -516,7 +518,7 @@ header {
                 text-transform: none;
                 font-weight: 400;
                 letter-spacing: 1px;
-                color: white;
+                color: #000;
                 &:hover,
                 &:focus {
                     color:#0075d6;;
@@ -575,10 +577,11 @@ header {
             transition: all 0.3s;
             padding:0px;
             img {
-                padding:0px;
-                max-width: 80px;
+                padding: 0px;
                 position: relative;
-                top: -7px;
+                top: -16px;
+                width: 20rem;
+                left: -30px;
             }
         }
         .navbar-nav>.active>a {
@@ -598,7 +601,7 @@ header {
 
 @media(min-width:768px) {
     .navbar-custom.affix {
-        background-color: @gray-darker;
+        background-color: #fff;
         padding: 10px 0;
         .navbar-brand {
             font-size: 1.5em;

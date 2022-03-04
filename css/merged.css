@@ -457,7 +457,7 @@ header .intro-text .intro-heading .intro-msg-highlight {
 }
 /****************************  Navigation Bar **************************/
 .navbar-custom {
-  background-color: #222222;
+  background-color: #fff;
   border-color: transparent;
 }
 .navbar-custom .navbar-brand {
@@ -472,11 +472,13 @@ header .intro-text .intro-heading .intro-msg-highlight {
   color: #0059a3;
 }
 .navbar-custom .navbar-brand img {
-  padding: 10px;
-  max-width: 70px;
+  max-width: 200px;
+  top: -14px;
+  position: relative;
 }
 .navbar-custom .navbar-collapse {
   border-color: rgba(255, 255, 255, 0.02);
+  border-top: 1px solid #dcd8d8;
 }
 .navbar-custom .navbar-toggle {
   background-color: #0075d6;
@@ -496,7 +498,7 @@ header .intro-text .intro-heading .intro-msg-highlight {
   text-transform: none;
   font-weight: 400;
   letter-spacing: 1px;
-  color: white;
+  color: #000;
 }
 .navbar-custom .nav li a:hover,
 .navbar-custom .nav li a:focus {
@@ -542,9 +544,10 @@ header .intro-text .intro-heading .intro-msg-highlight {
   }
   .navbar-custom .navbar-brand img {
     padding: 0px;
-    max-width: 80px;
     position: relative;
-    top: -7px;
+    top: -16px;
+    width: 20rem;
+    left: -30px;
   }
   .navbar-custom .navbar-nav > .active > a {
     border-radius: 3px;
@@ -559,7 +562,7 @@ header .intro-text .intro-heading .intro-msg-highlight {
 }
 @media (min-width: 768px) {
   .navbar-custom.affix {
-    background-color: #222222;
+    background-color: #fff;
     padding: 10px 0;
   }
   .navbar-custom.affix .navbar-brand {
