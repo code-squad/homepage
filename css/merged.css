@@ -478,7 +478,6 @@ header .intro-text .intro-heading .intro-msg-highlight {
 }
 .navbar-custom .navbar-collapse {
   border-color: rgba(255, 255, 255, 0.02);
-  border-top: 1px solid #dcd8d8;
 }
 .navbar-custom .navbar-toggle {
   background-color: #0075d6;
