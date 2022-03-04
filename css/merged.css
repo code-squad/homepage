@@ -2601,11 +2601,13 @@ h5 {
 .special-masteringjs .basic-info .base-two > div:nth-child(1) {
   background-image: url(/img/special/masteringjs/masteringjsbanner.jpg);
 }
+.javascript-part1 .base-section-height,
 .special-react .base-section-height,
 .special-aws-basic .base-section-height,
 .masters-cocoa .base-section-height {
   margin: 150px 0px;
 }
+.javascript-part1 header,
 .special-react header,
 .special-aws-basic header,
 .masters-cocoa header {
@@ -2613,11 +2615,13 @@ h5 {
   background-position: center 50%;
   height: 600px;
 }
+.javascript-part1 header:after,
 .special-react header:after,
 .special-aws-basic header:after,
 .masters-cocoa header:after {
   background-color: #171819;
 }
+.javascript-part1 header .intro-text,
 .special-react header .intro-text,
 .special-aws-basic header .intro-text,
 .masters-cocoa header .intro-text {
@@ -2625,6 +2629,7 @@ h5 {
   width: 100%;
   left: 0%;
 }
+.javascript-part1 header .intro-text .intro-heading,
 .special-react header .intro-text .intro-heading,
 .special-aws-basic header .intro-text .intro-heading,
 .masters-cocoa header .intro-text .intro-heading {
@@ -2635,52 +2640,62 @@ h5 {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1em;
 }
+.javascript-part1 header .intro-text .intro-heading .reg-button,
 .special-react header .intro-text .intro-heading .reg-button,
 .special-aws-basic header .intro-text .intro-heading .reg-button,
 .masters-cocoa header .intro-text .intro-heading .reg-button {
   margin-top: 2rem;
 }
+.javascript-part1 .basic-info .base-two > div:nth-child(1),
 .special-react .basic-info .base-two > div:nth-child(1),
 .special-aws-basic .basic-info .base-two > div:nth-child(1),
 .masters-cocoa .basic-info .base-two > div:nth-child(1) {
   background-image: url(/img/special/masteringjs/masteringjsbanner.jpg);
 }
+.javascript-part1 .program-title-content,
 .special-react .program-title-content,
 .special-aws-basic .program-title-content,
 .masters-cocoa .program-title-content {
   font-size: 40px;
 }
+.javascript-part1 .program-title-content i,
 .special-react .program-title-content i,
 .special-aws-basic .program-title-content i,
 .masters-cocoa .program-title-content i {
   color: #008ec7;
 }
+.javascript-part1 .plan-background .base-three > div,
 .special-react .plan-background .base-three > div,
 .special-aws-basic .plan-background .base-three > div,
 .masters-cocoa .plan-background .base-three > div {
   background-color: #282c34;
 }
+.javascript-part1 .plan-background .base-three > div .why-desc,
 .special-react .plan-background .base-three > div .why-desc,
 .special-aws-basic .plan-background .base-three > div .why-desc,
 .masters-cocoa .plan-background .base-three > div .why-desc {
   font-size: 0.9em;
 }
+.javascript-part1 .program-curriculum .curriculum-wrap table tr,
 .special-react .program-curriculum .curriculum-wrap table tr,
 .special-aws-basic .program-curriculum .curriculum-wrap table tr,
 .masters-cocoa .program-curriculum .curriculum-wrap table tr {
   background: #282c34;
   color: #fff;
 }
+.javascript-part1 .hooking-msg-highlight,
 .special-react .hooking-msg-highlight,
 .special-aws-basic .hooking-msg-highlight,
 .masters-cocoa .hooking-msg-highlight {
   background: #282c34;
 }
+.javascript-part1 .programming-schedule .schedule-desc,
 .special-react .programming-schedule .schedule-desc,
 .special-aws-basic .programming-schedule .schedule-desc,
 .masters-cocoa .programming-schedule .schedule-desc {
   text-align: center;
 }
+.javascript-part1 .reg-wrap,
 .special-react .reg-wrap,
 .special-aws-basic .reg-wrap,
 .masters-cocoa .reg-wrap {
@@ -2689,6 +2704,7 @@ h5 {
   justify-content: center;
   align-items: center;
 }
+.javascript-part1 .regbtn,
 .special-react .regbtn,
 .special-aws-basic .regbtn,
 .masters-cocoa .regbtn {
@@ -2703,11 +2719,13 @@ h5 {
   border-radius: 5px;
   padding: 0.5em;
 }
+.javascript-part1 .regbtn:hover,
 .special-react .regbtn:hover,
 .special-aws-basic .regbtn:hover,
 .masters-cocoa .regbtn:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+.javascript-part1 .regbtn a,
 .special-react .regbtn a,
 .special-aws-basic .regbtn a,
 .masters-cocoa .regbtn a {
@@ -2718,6 +2736,9 @@ h5 {
 }
 .program_page .tutor-message .one-two {
   flex-flow: row;
+}
+.javascript-part1 header {
+  background-image: url('../img/background/javascript-part1-bg.jpg');
 }
 .masters-cocoa header {
   background-image: url('../img/masters/cocoa.bg.jpg');
