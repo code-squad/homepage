@@ -119,13 +119,23 @@ gulp.task('htmlinclude-masters', function() {
     .pipe(browserSync.reload({stream: true}))
 });
 
-gulp.task('htmlinclude', function() {
-  return gulp.src(['html_src/*.html','html_src/code-together/*.html'])
+gulp.task('htmlinclude-root', function() {
+  return gulp.src(['html_src/*.html'])
     .pipe(fileinclude({
       prefix: '@@',
       basepath: '@file'
     }))
     .pipe(gulp.dest('html_src/html_merged/'))
+    .pipe(browserSync.reload({stream: true}))
+});
+
+gulp.task('htmlinclude-code-together', function() {
+  return gulp.src(['html_src/code-together/*.html'])
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
+    .pipe(gulp.dest('html_src/html_merged/code-together'))
     .pipe(browserSync.reload({stream: true}))
 });
 
@@ -136,6 +146,16 @@ gulp.task('mv-masters', function() {
   }))
   .pipe(htmlmin({collapseWhitespace: true}))
   .pipe(gulp.dest('page/masters/'))
+  .pipe(browserSync.reload({stream: true}))
+})
+
+gulp.task('mv-code-together', function() {
+  return gulp.src('html_src/html_merged/code-together/*.html')
+  .pipe(cachebust({
+    type: 'timestamp'
+  }))
+  .pipe(htmlmin({collapseWhitespace: true}))
+  .pipe(gulp.dest('page/code-together/'))
   .pipe(browserSync.reload({stream: true}))
 })
 
@@ -166,8 +186,8 @@ gulp.task('mv-index', function() {
 }) 
 
 gulp.task('mv-to-pages', gulp.series(gulp.parallel(
-  'htmlinclude', 'htmlinclude-masters', 'htmlinclude-reg'
-), 'mv-masters', 'mv-reg', 'mv-mainpages', 'mv-index'), function() {
+  'htmlinclude-root', 'htmlinclude-code-together', 'htmlinclude-masters', 'htmlinclude-reg'
+), 'mv-masters', 'mv-code-together', 'mv-reg', 'mv-mainpages', 'mv-index'), function() {
   //browserSync.reload({stream: true})
 })
 
