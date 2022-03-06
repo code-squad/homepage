@@ -208,7 +208,7 @@ fieldset[disabled] .btn-primary.active {
   justify-content: center;
   max-width: 50%;
   margin: 0px auto;
-  background-color: #0165a1;
+  background-color: #51a517;
 }
 .btn-xl:hover,
 .btn-xl:focus,
@@ -249,7 +249,7 @@ fieldset[disabled] .btn-xl.active {
 .btn-xl:hover {
   box-shadow: 2px 4px 8px 0px rgba(46, 61, 73, 0.2);
   border-color: transparent;
-  background-color: #008ec7;
+  background-color: #6cd225;
 }
 .btn-customer {
   height: 100% !important;
@@ -1117,7 +1117,7 @@ header .intro-text .intro-heading .intro-msg-highlight {
   content: "취준생을 위한 풀타임코스";
 }
 #our-program .course-desc-wrap:nth-child(3) .program-item::before {
-  content: "역량강화를 위한 단기코스";
+  content: "온라인으로 함께 배우는 단기코스";
 }
 @media (max-width: 1340px) {
   #our-program.base-two-column .course-desc-wrap .program-item a {
@@ -2613,7 +2613,7 @@ h5 {
 .special-react header,
 .special-aws-basic header,
 .masters-cocoa header {
-  background-image: url('../img/special/react/header.jpg');
+  background-image: url('/img/code-together/react/header.jpg');
   background-position: center 50%;
   height: 600px;
 }
@@ -2751,6 +2751,9 @@ h5 {
 }
 .javascript-part1 .program-title-content i {
   color: #d5c539;
+}
+.javascript-part1 .weekly-schedule img {
+  width: 90%;
 }
 .masters-cocoa header {
   background-image: url('../img/masters/cocoa.bg.jpg');
@@ -2930,6 +2933,7 @@ h5 {
   box-shadow: 8px 10px 17px 3px rgba(0, 0, 0, 0.4);
   font-size: 2rem;
   z-index: 1;
+  background-color: #0075d6;
 }
 #masters_page .schedule-newstyle .curriculum-wrap table tr {
   background: #0165a1;

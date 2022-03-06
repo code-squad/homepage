@@ -92,8 +92,8 @@ gulp.task('minify-js', function() {
 // // HTML Process
 
 gulp.task('clean-html', function(){
-    //return gulp.src(['page/*.html', 'page/**/*.html','html_src/html_merged/*.html','html_src/html_merged/**/*.html', './index.html'], {iallowEmpty:true})
-    return gulp.src(['page/*.html', 'page/**/*.html','html_src/html_merged/*.html','html_src/html_merged/**/*.html', './index.html'])
+    //return gulp.src(['page/*.html', 'page/**/*.html','html_src/html_merged/*.html','html_src/html_merged/**/*.html'], {iallowEmpty:true})
+    return gulp.src(['page/*.html', 'page/**/*.html','html_src/html_merged/*.html','html_src/html_merged/**/*.html'], {iallowEmpty:true})
     .pipe(clean());
 });
 
@@ -217,7 +217,7 @@ gulp.task('browserSyncReload', function() {
 })
 
 
-gulp.task('dev', gulp.parallel(['minify-css', 'minify-js', 'mv-to-pages', 'watch-files', 'browserSync']), ()=>{
+gulp.task('dev', gulp.series( 'clean-html', gulp.parallel(['minify-css', 'minify-js', 'mv-to-pages', 'watch-files', 'browserSync'])), ()=>{
   browserSync.reload({ stream: true })
 });
 
