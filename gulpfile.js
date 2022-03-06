@@ -222,7 +222,7 @@ gulp.task('dev', gulp.series( 'clean-html', gulp.parallel(['minify-css', 'minify
 });
 
 // // Run everything
-gulp.task('default', gulp.parallel('minify-css', 'minify-js', 'mv-to-pages'));
+gulp.task('default', gulp.series("clean-html", gulp.parallel(['minify-css', 'minify-js', 'mv-to-pages'])));
 
 
 

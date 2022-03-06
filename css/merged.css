@@ -1845,7 +1845,7 @@ aside.clients img {
   color: #121b6d;
 }
 #special-page header {
-  background-image: url('../img/special/code-together-main.jpg');
+  background-image: url('/img/code-together/code-together-main.jpg');
 }
 #special-page header .sub-desc {
   font-size: 1.8vw;
@@ -2172,7 +2172,7 @@ h5 {
   margin-left: 3%;
 }
 .program_page .basic-info .base-two > div:nth-child(1) {
-  background-image: url(/img/special/tdd_refactoring.png);
+  background-image: url(/img/code-together/tdd_refactoring.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position-y: bottom;
@@ -2587,21 +2587,21 @@ h5 {
 }
 
 .specialTddJava header {
-  background-image: url('../img/special/tdd_pobi.jpg');
+  background-image: url('/img/code-together/tdd_pobi.jpg');
 }
 .specialTddSwiftPage header {
   background-image: url('../img/masters/jk_lecture.jpg');
   background-position: center 50%;
 }
 .specialTddSwiftPage .basic-info .base-two > div:nth-child(1) {
-  background-image: url(/img/special/tdd_swift/swiftbanner.jpg);
+  background-image: url(/img/code-together/tdd_swift/swiftbanner.jpg);
 }
 .special-masteringjs header {
-  background-image: url('../img/special/masteringjs_banner.jpg');
+  background-image: url('/img/code-together/masteringjs_banner.jpg');
   background-position: center 50%;
 }
 .special-masteringjs .basic-info .base-two > div:nth-child(1) {
-  background-image: url(/img/special/masteringjs/masteringjsbanner.jpg);
+  background-image: url(/img/code-together/masteringjs/masteringjsbanner.jpg);
 }
 .javascript-part1 .base-section-height,
 .special-react .base-section-height,
@@ -2652,7 +2652,7 @@ h5 {
 .special-react .basic-info .base-two > div:nth-child(1),
 .special-aws-basic .basic-info .base-two > div:nth-child(1),
 .masters-cocoa .basic-info .base-two > div:nth-child(1) {
-  background-image: url(/img/special/masteringjs/masteringjsbanner.jpg);
+  background-image: url(/img/code-together/masteringjs/masteringjsbanner.jpg);
 }
 .javascript-part1 .program-title-content,
 .special-react .program-title-content,
@@ -2781,7 +2781,7 @@ h5 {
   color: #caac0f;
 }
 .special-aws-basic header {
-  background-image: url('../img/special/aws-basic/header.jpg');
+  background-image: url('/img/code-together/aws-basic/header.jpg');
   height: 800px;
 }
 .special-aws-basic .plan-background .base-three > div,
