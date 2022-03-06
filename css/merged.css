@@ -515,6 +515,9 @@ header .intro-text .intro-heading .intro-msg-highlight {
   display: none;
   opacity: 0.9;
   visibility: hidden;
+  border-right: 1px solid #f5f5f5;
+  border-bottom: 1px solid #f5f5f5;
+  border-left: 1px solid #f5f5f5;
 }
 .navbar-custom .navbar-nav > .active > a {
   border-radius: 0;
@@ -1182,7 +1185,7 @@ header .intro-text .intro-heading .intro-msg-highlight {
   margin-right: 7em;
   font-size: 0.9em;
   max-height: 15.67em;
-  border: 2px solid #5c4d4d;
+  outline: 2px solid #5c4d4d;
   min-width: 200px;
   max-width: 199px;
   margin-bottom: 5em;
@@ -2647,6 +2650,7 @@ h5 {
 .special-aws-basic header .intro-text .intro-heading .reg-button,
 .masters-cocoa header .intro-text .intro-heading .reg-button {
   margin-top: 2rem;
+  background-color: #0075d6;
 }
 .javascript-part1 .basic-info .base-two > div:nth-child(1),
 .special-react .basic-info .base-two > div:nth-child(1),
