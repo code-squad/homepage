@@ -2742,6 +2742,16 @@ h5 {
 .javascript-part1 header {
   background-image: url('../img/background/javascript-part1-bg.jpg');
 }
+.javascript-part1 header .intro-text .intro-heading {
+  color: #d5c539;
+}
+.javascript-part1 header .intro-text .intro-heading a.btn-xl {
+  background-color: #d5c539;
+  color: #000;
+}
+.javascript-part1 .program-title-content i {
+  color: #d5c539;
+}
 .masters-cocoa header {
   background-image: url('../img/masters/cocoa.bg.jpg');
 }
