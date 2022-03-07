@@ -1869,6 +1869,9 @@ aside.clients img {
 #special-page #special-item.base-desc-three {
   background-color: #f0f0f0;
 }
+#special-page #special-item.base-desc-three ul.level-wrap {
+  justify-content: center;
+}
 #special-page #special-item.base-desc-three ul.level-wrap > li {
   width: 33.33%;
   min-width: 400px;
@@ -2000,7 +2003,7 @@ aside.clients img {
     margin-right: 10px;
   }
   #special-page #about-special img {
-    width: 95%;
+    width: 100%;
   }
   #special-page #special-item.base-desc-three ul.level-wrap li {
     margin-bottom: 80px;
