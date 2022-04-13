@@ -66,6 +66,9 @@ li {
 .view-none {
   display: none;
 }
+.disabled-btn {
+  pointer-events: none;
+}
 section h2.section-heading {
   font-size: 30px;
   margin-top: 0;
