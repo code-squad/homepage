@@ -1,68 +1,54 @@
-# CodeSquad Homepage
+<p align="center">
+  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts">
+    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
+  </a>
+</p>
+<h1 align="center">
+  Gatsby minimal TypeScript starter
+</h1>
 
-[![Build Status](https://travis-ci.com/code-squad/homepage.svg?branch=master)](https://travis-ci.com/code-squad/homepage)
+## 🚀 Quick start
 
-## http://codesquad.kr
+1.  **Create a Gatsby site.**
 
-----
+    Use the Gatsby CLI to create a new site, specifying the minimal TypeScript starter.
 
-# build
+    ```shell
+    # create a new Gatsby site using the minimal TypeScript starter
+    npm init gatsby
+    ```
 
-dev_00 -> beta -> master
+2.  **Start developing.**
 
-# development and build guide
+    Navigate into your new site’s directory and start it up.
 
-#### 1. on dev branch
-modification -> commit -> build(gulp) -> commit (build)
+    ```shell
+    cd my-gatsby-site/
+    npm run develop
+    ```
 
-#### 2. on beta branch
-merge dev -> push
+3.  **Open the code and start customizing!**
 
-If a commit occurs on beta, have to rebase on dev branch.
+    Your site is now running at http://localhost:8000!
 
-#### 3. on master branch
-merge beta -> push
+    Edit `src/pages/index.tsx` to see your site update in real-time!
 
+4.  **Learn more**
 
-#### 커밋 메세지 작성 : 소문자 `명령어. 수정내용`
-```git commit -am "change. delete dot
-```
+    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
 
-----
-# [Start Bootstrap](http://startbootstrap.com/) - [Agency](http://startbootstrap.com/template-overviews/agency/)
+    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
 
-[Agency](http://startbootstrap.com/template-overviews/agency/) is a one page agency portfolio theme for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/). This theme features several content sections, a responsive portfolio grid with hover effects, full page portfolio item modals, a responsive timeline, and a working PHP contact form.
+    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
 
-## Getting Started
+    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
 
-Several options are available to get started quickly:
-* [Download the latest release on Start Bootstrap](http://startbootstrap.com/template-overviews/agency/)
-* Clone the repo: `git clone https://github.com/BlackrockDigital/startbootstrap-agency.git`
-* Fork the repo
+    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
 
-## Developing Using Source Files
+    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
 
-To use the source files, you will need to have npm installed globally along with Gulp.js. To start:
-* Run `npm install` in the root directory
-* Run `gulp dev` and edit the files as needed
+## 🚀 Quick start (Gatsby Cloud)
 
-If you need to update the plugins included with this template, simply run the following tasks:
-* First run `npm update` to update the dependencies
-* Then run `gulp copy` to copy the new versions to their proper destinations
+Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
 
-## Bugs and Issues
-
-Have a bug or an issue with this template? [Open a new issue](https://github.com/BlackrockDigital/startbootstrap-agency/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](http://startbootstrap.com/template-overviews/agency/).
-
-## Creator
-
-Start Bootstrap was created by and is maintained by **[David Miller](http://davidmiller.io/)**, Owner of [Blackrock Digital](http://blackrockdigital.io/).
-
-* https://twitter.com/davidmillerskt
-* https://github.com/davidtmiller
-
-Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
-
-## Copyright and License
-
-Copyright 2013-2016 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-agency/blob/gh-pages/LICENSE) license.
+[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal-ts)

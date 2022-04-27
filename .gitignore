@@ -1,14 +1,3 @@
-node_modules
-.DS_Store
-img/.DS_Store
-img/about/.DS_Store
-img/background/.DS_Store
-img/company/.DS_Store
-img/portfolio/.DS_Store
-img/team/.DS_Store
-vendor/.DS_Store
-vendor/bootstrap/.DS_Store
-vendor/font-awesome/.DS_Store
-html/event/payment.html
-.travis_beta.yml
-.vscode
+node_modules/
+.cache/
+public
