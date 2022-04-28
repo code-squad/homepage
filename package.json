@@ -14,7 +14,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "jest --config ./scripts/jest/jest.config.ts",
-    "test:w": "yarn test -- --onlyChanged --watch",
+    "test:w": "jest --config ./scripts/jest/jest.config.ts --watch",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
