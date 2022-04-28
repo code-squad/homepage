@@ -10,6 +10,7 @@ module.exports = {
     "^gatsby-core-utils/(.*)$": `gatsby-core-utils/dist/$1`, // Workaround for https://github.com/facebook/jest/issues/9771
     "^gatsby-plugin-utils/(.*)$": [`gatsby-plugin-utils/dist/$1`, `gatsby-plugin-utils/$1`], // Workaround for https://github.com/facebook/jest/issues/9771
   },
+  moduleDirectories: ["node_modules", "src"],
   testPathIgnorePatterns: [`node_modules`, `\\.cache`, `<rootDir>.*/public`],
   transformIgnorePatterns: [`node_modules/(?!(gatsby)/)`],
   globals: {
