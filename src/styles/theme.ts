@@ -13,6 +13,12 @@ const fontSize = {
   },
 };
 
+const fontWeight = {
+  bold: 700,
+  medium: 500,
+  regular: 400,
+};
+
 const lineHeight = {
   display: {
     lg: "8.2rem",
@@ -58,6 +64,7 @@ const color = {
 
 const theme = {
   fontSize,
+  fontWeight,
   lineHeight,
   letterSpacing,
   color,
