@@ -47,12 +47,14 @@ const SBody = styled.p<{ bold?: boolean }>`
   line-height: ${({ theme: { lineHeight } }) => lineHeight.body.sm};
   letter-spacing: ${({ theme: { letterSpacing } }) => letterSpacing};
 `;
-const XSBody = styled.p<{ bold?: boolean }>`
+const XSBody = styled.p<{ bold?: boolean; fontColor?: string; opacity?: string }>`
   font-size: ${({ theme: { fontSize } }) => fontSize.body.xs};
   font-weight: ${({ bold, theme: { fontWeight } }) =>
     bold ? fontWeight.medium : fontWeight.regular};
   line-height: ${({ theme: { lineHeight } }) => lineHeight.body.xs};
   letter-spacing: ${({ theme: { letterSpacing } }) => letterSpacing};
+  color: ${({ fontColor, theme: { color } }) => fontColor || color.black};
+  opacity: ${({ opacity }) => opacity || 1};
 `;
 
 export { LDisplay, MDisplay, SDisplay, XLBody, LBody, MBody, SBody, XSBody };
