@@ -1,4 +1,5 @@
 import type { GatsbyConfig } from "gatsby";
+import path from "path";
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -6,6 +7,12 @@ const config: GatsbyConfig = {
     siteUrl: `https://codesquad.kr`,
   },
   plugins: [
+    {
+      resolve: "gatsby-plugin-root-import",
+      options: {
+        src: path.join(__dirname, "src"),
+      },
+    },
     "gatsby-plugin-styled-components",
     {
       resolve: "gatsby-plugin-google-analytics",
@@ -25,7 +32,6 @@ const config: GatsbyConfig = {
         name: "images",
         path: "./src/assets/images/",
       },
-      __key: "images",
     },
     {
       resolve: "gatsby-source-filesystem",
@@ -33,7 +39,13 @@ const config: GatsbyConfig = {
         name: "pages",
         path: "./src/pages/",
       },
-      __key: "pages",
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "content",
+        path: "./content",
+      },
     },
   ],
 };
