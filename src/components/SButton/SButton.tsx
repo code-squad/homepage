@@ -1,15 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+// Type
+import { ISButtonProps } from "./SButton.type";
 // Typography
 import { XSBody } from "typography/";
 // Theme
 import theme from "styles/theme";
 
-const SButton: React.FC<{ children?: string; disabled?: boolean; onClick?: () => void }> = ({
-  children,
-  disabled,
-  onClick,
-}) => {
+const SButton: React.FC<ISButtonProps> = ({ children, disabled, onClick }) => {
   const { color } = theme;
 
   return (
