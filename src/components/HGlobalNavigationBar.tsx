@@ -6,8 +6,11 @@ import { SButton } from "components/";
 // Static
 import { HNAVIGATIONBAR } from "assets/static/phrases";
 import { DOMAIN, PATH } from "assets/static/urls";
+// Utils
+import { getCurrentPath } from "lib/utils";
 
-const HomeGlobalNavigationBar: React.FC<{ currentPath?: string }> = ({ currentPath }) => {
+const HGlobalNavigationBar: React.FC = () => {
+  const currentPath = getCurrentPath();
   const links = [
     {
       title: HNAVIGATIONBAR.MASTERS,
@@ -34,7 +37,7 @@ const HomeGlobalNavigationBar: React.FC<{ currentPath?: string }> = ({ currentPa
         <ButtonList>
           {links.map(({ title, path }: any) => (
             <li key={title}>
-              <LinkButton selected={currentPath === path} to={`/${path}`}>
+              <LinkButton selected={currentPath === path} to={path}>
                 {title}
               </LinkButton>
             </li>
@@ -95,4 +98,4 @@ const LinkButton = styled(Link)<{ selected?: boolean }>`
   }
 `;
 
-export default HomeGlobalNavigationBar;
+export default HGlobalNavigationBar;
