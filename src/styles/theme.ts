@@ -39,13 +39,13 @@ const letterSpacing = "-0.008em";
 const color = {
   greyScale: {
     black: "#1B1B1B",
-    black20: "#1B1B1B",
+    black20: "rgba(27, 27, 27, 0.2)",
     grey1: "#3F3F3F",
     grey2: "#777777",
     grey3: "#C4C4C4",
     offWhite: "#FAFAFA",
     white: "#FFFFFF",
-    white20: "#FFFFFF",
+    white20: "rgba(255, 255, 255, 0.2);",
   },
   primary: {
     green1: "#57A620",
