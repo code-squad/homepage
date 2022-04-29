@@ -8,6 +8,10 @@ const HomeGlobalNavigationBar = ({ currentPage }: { currentPage?: string }) => {
   const targetPageUrls = ["masters", "code-together", "faq"];
   const targetPageTitles = ["마스터즈 코스", "코드투게더", "자주 묻는 질문"];
 
+  const handleSubscribeBtnClick = () => {
+    window.open("https://codesquad.kr", "_blank");
+  };
+
   return (
     <HomeGlobalNavigationBarWrapper>
       <ContentWrapper>
@@ -24,7 +28,7 @@ const HomeGlobalNavigationBar = ({ currentPage }: { currentPage?: string }) => {
             </li>
           ))}
           <li>
-            <SButton>소식받아보기</SButton>
+            <SButton onClick={handleSubscribeBtnClick}>소식받아보기</SButton>
           </li>
         </ButtonList>
       </ContentWrapper>
@@ -34,8 +38,8 @@ const HomeGlobalNavigationBar = ({ currentPage }: { currentPage?: string }) => {
 
 const HomeGlobalNavigationBarWrapper = styled.nav`
   width: 100%;
-  min-width: 1440px;
-  min-height: 80px;
+  min-width: 144rem;
+  min-height: 8rem;
   position: fixed;
   display: flex;
   justify-content: center;
@@ -45,8 +49,8 @@ const HomeGlobalNavigationBarWrapper = styled.nav`
 `;
 
 const ContentWrapper = styled.div`
-  width: 1260px;
-  padding: 0 80px;
+  width: 126rem;
+  padding: 0 8rem;
   position: fixed;
   display: flex;
   justify-content: space-between;
@@ -54,13 +58,13 @@ const ContentWrapper = styled.div`
 `;
 
 const HomeSigniture = styled.img`
-  min-width: 155px;
-  min-height: 30px;
+  min-width: 15.5rem;
+  min-height: 3rem;
 `;
 
 const ButtonList = styled.ul`
-  min-width: 424px;
-  min-height: 32px;
+  min-width: 42.4rem;
+  min-height: 3.2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
