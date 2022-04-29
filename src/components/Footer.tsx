@@ -34,25 +34,25 @@ const Footer = () => {
             </div>
           </CompanyInfomationWrapper>
         </CompanyWrapper>
-        <MenuListWrapper>
-          <MenuList>
+        <MenuList>
+          <MenuListItem>
             <XSBody bold fontColor={color.greyScale.white}>
               코드스쿼드
             </XSBody>
-          </MenuList>
-          <MenuList>
+          </MenuListItem>
+          <MenuListItem>
             <XSBody bold fontColor={color.greyScale.white}>
               교육과정
             </XSBody>
             <Button href="https://codesquad.kr/masters">마스터즈 코스</Button>
             <Button href="https://codesquad.kr/code-together">코드투게더</Button>
-          </MenuList>
-          <MenuList>
+          </MenuListItem>
+          <MenuListItem>
             <Button bold href="https://codesquad.kr/faq">
               자주 묻는 질문
             </Button>
-          </MenuList>
-          <MenuList>
+          </MenuListItem>
+          <MenuListItem>
             <XSBody bold fontColor={color.greyScale.white}>
               소셜 미디어
             </XSBody>
@@ -65,8 +65,8 @@ const Footer = () => {
             <Button href="https://www.facebook.com/codesquad.kr/" target="_blank">
               페이스북
             </Button>
-          </MenuList>
-        </MenuListWrapper>
+          </MenuListItem>
+        </MenuList>
       </ContentWrapper>
     </FooterWrapper>
   );
@@ -74,17 +74,17 @@ const Footer = () => {
 
 const FooterWrapper = styled.nav`
   width: 100%;
-  min-width: 1440px;
-  min-height: 250px;
+  min-width: 144rem;
+  min-height: 25rem;
   display: flex;
   justify-content: center;
   background-color: ${({ theme: { color } }) => color.greyScale.black};
 `;
 
 const ContentWrapper = styled.div`
-  min-width: 1260px;
-  min-height: 250px;
-  padding: 0 80px;
+  min-width: 126rem;
+  min-height: 25rem;
+  padding: 0 8rem;
   position: fixed;
   display: flex;
   justify-content: space-between;
@@ -92,31 +92,31 @@ const ContentWrapper = styled.div`
 `;
 
 const CompanyWrapper = styled.div`
-  width: 316px;
-  height: 114px;
+  width: 31.6rem;
+  height: 11.4rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 `;
 
 const CompanyInfomationWrapper = styled.div`
-  height: 80px;
+  height: 8rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-`;
-
-const MenuListWrapper = styled.div`
-  width: 409px;
-  display: flex;
   justify-content: space-between;
 `;
 
 const MenuList = styled.div`
-  width: 85px;
+  width: 40.9rem;
+  display: flex;
+  justify-content: space-between;
+`;
+
+const MenuListItem = styled.div`
+  width: 8.5rem;
   display: flex;
   flex-direction: column;
-  gap: 16px 0;
+  gap: 1.6rem 0;
 `;
 
 const Button = styled.a<{ bold?: boolean }>`
