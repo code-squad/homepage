@@ -1,15 +1,30 @@
 import React from "react";
 import styled from "styled-components";
+import Link from "gatsby-link";
 // Global-Components
 import { SButton } from "components/";
+// Static
+import { HNAVIGATIONBAR } from "assets/static/phrases";
+import { DOMAIN, PATH } from "assets/static/urls";
 
-const HomeGlobalNavigationBar = ({ currentPage }: { currentPage?: string }) => {
-  const rootUrl = "https://codesquad.kr/";
-  const targetPageUrls = ["masters", "code-together", "faq"];
-  const targetPageTitles = ["마스터즈 코스", "코드투게더", "자주 묻는 질문"];
+const HomeGlobalNavigationBar: React.FC<{ currentPath?: string }> = ({ currentPath }) => {
+  const links = [
+    {
+      title: HNAVIGATIONBAR.MASTERS,
+      path: PATH.MASTERS,
+    },
+    {
+      title: HNAVIGATIONBAR.CODE_TOGETHER,
+      path: PATH.CODE_TOGETHER,
+    },
+    {
+      title: HNAVIGATIONBAR.FAQ,
+      path: PATH.FAQ,
+    },
+  ];
 
   const handleSubscribeBtnClick = () => {
-    window.open("https://codesquad.kr", "_blank");
+    window.open(DOMAIN, "_blank");
   };
 
   return (
@@ -17,14 +32,11 @@ const HomeGlobalNavigationBar = ({ currentPage }: { currentPage?: string }) => {
       <ContentWrapper>
         <HomeSigniture />
         <ButtonList>
-          {targetPageUrls.map((targetPageUrl: string, index: number) => (
-            <li key={targetPageUrl}>
-              <Button
-                currentPage={currentPage === targetPageUrls[index]}
-                href={rootUrl + targetPageUrl}
-              >
-                {targetPageTitles[index]}
-              </Button>
+          {links.map(({ title, path }: any) => (
+            <li key={title}>
+              <LinkButton selected={currentPath === path} to={`/${path}`}>
+                {title}
+              </LinkButton>
             </li>
           ))}
           <li>
@@ -70,11 +82,11 @@ const ButtonList = styled.ul`
   align-items: center;
 `;
 
-const Button = styled.a<{ currentPage?: boolean }>`
+const LinkButton = styled(Link)<{ selected?: boolean }>`
   color: ${({ theme: { color } }) => color.greyScale.black};
   font-size: ${({ theme: { fontSize } }) => fontSize.body.sm};
-  font-weight: ${({ currentPage, theme: { fontWeight } }) =>
-    currentPage ? fontWeight.medium : fontWeight.regular};
+  font-weight: ${({ selected, theme: { fontWeight } }) =>
+    selected ? fontWeight.medium : fontWeight.regular};
   line-height: ${({ theme: { lineHeight } }) => lineHeight.body.sm};
   letter-spacing: ${({ theme: { letterSpacing } }) => letterSpacing};
   text-decoration: none;
