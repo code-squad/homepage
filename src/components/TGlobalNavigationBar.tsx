@@ -1,24 +1,35 @@
 import React from "react";
 import styled from "styled-components";
+import Link from "gatsby-link";
+// Static
+import { TNAVIGATIONBAR } from "assets/static/phrases";
+import { PATH } from "assets/static/urls";
+// Utils
+import { getCurrentPath } from "lib/utils";
 
-const TeamGlobalNavigationBar = ({ currentPage }: { currentPage?: string }) => {
-  const rootUrl = "https://codesquad.kr/";
-  const targetPageUrls = ["team-culture", "recruit"];
-  const targetPageTitles = ["팀 문화", "채용소식"];
+const TGlobalNavigationBar: React.FC = () => {
+  const currentPath = getCurrentPath();
+  const links = [
+    {
+      title: TNAVIGATIONBAR.TEAM_CULTURE,
+      path: PATH.TEAM_CULTURE,
+    },
+    {
+      title: TNAVIGATIONBAR.RECRUIT,
+      path: PATH.RECRUIT,
+    },
+  ];
 
   return (
     <TeamGlobalNavigationBarWrapper>
       <ContentWrapper>
         <TeamSigniture />
         <ButtonList>
-          {targetPageUrls.map((targetPageUrl: string, index: number) => (
-            <li key={targetPageUrl}>
-              <Button
-                currentPage={currentPage === targetPageUrls[index]}
-                href={rootUrl + targetPageUrl}
-              >
-                {targetPageTitles[index]}
-              </Button>
+          {links.map(({ title, path }: any) => (
+            <li key={title}>
+              <LinkButton selected={currentPath === path} to={path}>
+                {title}
+              </LinkButton>
             </li>
           ))}
         </ButtonList>
@@ -60,14 +71,17 @@ const ButtonList = styled.ul`
   align-items: center;
 `;
 
-const Button = styled.a<{ currentPage?: boolean }>`
+const LinkButton = styled(Link)<{ selected?: boolean }>`
   color: ${({ theme: { color } }) => color.greyScale.black};
   font-size: ${({ theme: { fontSize } }) => fontSize.body.sm};
-  font-weight: ${({ currentPage, theme: { fontWeight } }) =>
-    currentPage ? fontWeight.medium : fontWeight.regular};
+  font-weight: ${({ selected, theme: { fontWeight } }) =>
+    selected ? fontWeight.medium : fontWeight.regular};
   line-height: ${({ theme: { lineHeight } }) => lineHeight.body.sm};
   letter-spacing: ${({ theme: { letterSpacing } }) => letterSpacing};
-  text-decoration: ${({ currentPage }) => (currentPage ? "underline" : "none")};
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
-export default TeamGlobalNavigationBar;
+export default TGlobalNavigationBar;
