@@ -29,7 +29,7 @@ const TeamGlobalNavigationBar = ({ currentPage }: { currentPage?: string }) => {
 
 const TeamGlobalNavigationBarWrapper = styled.nav`
   width: 100%;
-  min-width: 1440px;
+  min-width: 144rem;
   position: fixed;
   display: flex;
   justify-content: center;
@@ -38,9 +38,9 @@ const TeamGlobalNavigationBarWrapper = styled.nav`
 `;
 
 const ContentWrapper = styled.div`
-  min-width: 1260px;
-  min-height: 80px;
-  padding: 0 80px;
+  min-width: 126rem;
+  min-height: 8rem;
+  padding: 0 8rem;
   position: fixed;
   display: flex;
   justify-content: space-between;
@@ -48,13 +48,13 @@ const ContentWrapper = styled.div`
 `;
 
 const TeamSigniture = styled.img`
-  min-width: 202px;
-  min-height: 30px;
+  min-width: 20.2rem;
+  min-height: 3rem;
 `;
 
 const ButtonList = styled.ul`
-  min-width: 125px;
-  min-height: 32px;
+  min-width: 12.5rem;
+  min-height: 3.2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
