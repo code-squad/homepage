@@ -52,7 +52,7 @@ const TagNavButton = styled.button<{ selected?: boolean }>`
   padding: 0 1.2rem;
   height: 3.6rem;
   background-color: ${({ selected, theme: { color } }) =>
-    selected ? color.primary.white : "transparent"};
+    selected ? color.greyScale.white : "transparent"};
   border: 0;
   border-radius: 99.9rem;
   &:hover {
