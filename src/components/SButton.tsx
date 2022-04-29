@@ -5,14 +5,10 @@ import { XSBody } from "typography/";
 // Theme
 import theme from "styles/theme";
 
-const SButton = ({
+const SButton: React.FC<{ children?: string; disabled?: boolean; onClick?: () => void }> = ({
   children,
   disabled,
   onClick,
-}: {
-  children?: string;
-  disabled?: boolean;
-  onClick?: () => void;
 }) => {
   const { color } = theme;
 
