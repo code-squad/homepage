@@ -3,4 +3,4 @@ export { default as HomeGlobalNavigationBar } from "./HomeGlobalNavigationBar";
 export { default as TeamGlobalNavigationBar } from "./TeamGlobalNavigationBar";
 export { default as Footer } from "./Footer";
 export { Avatar } from "./Avatar";
-// export { InterviewBox } from "./InterviewBox";
+export { InterviewBox } from "./InterviewBox";
