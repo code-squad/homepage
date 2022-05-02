@@ -53,7 +53,7 @@ const XSBody = styled.p<{ bold?: boolean; fontColor?: string }>`
     bold ? fontWeight.medium : fontWeight.regular};
   line-height: ${({ theme: { lineHeight } }) => lineHeight.body.xs};
   letter-spacing: ${({ theme: { letterSpacing } }) => letterSpacing};
-  color: ${({ fontColor, theme: { color } }) => fontColor || color.black};
+  color: ${({ fontColor, theme: { color } }) => fontColor || color.greyScale.black};
 `;
 
 export { LDisplay, MDisplay, SDisplay, XLBody, LBody, MBody, SBody, XSBody };
