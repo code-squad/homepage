@@ -66,7 +66,7 @@ describe("<DropdownItem>", () => {
     const linkProps = {
       category: "교육과정",
       title: "코드스쿼드는 온라인 수업만 진행하나요?",
-      to: "https://www.naver.com",
+      link: "https://www.naver.com",
     };
     const renderDropDownLinkItem = () =>
       render(
