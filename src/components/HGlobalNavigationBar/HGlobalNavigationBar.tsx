@@ -1,30 +1,49 @@
 import React from "react";
 import styled from "styled-components";
+import Link from "gatsby-link";
 // Global-Components
 import { SButton } from "components/";
+// Static
+import { BUTTON } from "assets/static/phrases";
+import { DOMAIN, PATH } from "assets/static/urls";
+// Utils
+import { getCurrentPath } from "lib/utils";
 
-const HomeGlobalNavigationBar = ({ currentPage }: { currentPage?: string }) => {
-  const rootUrl = "https://codesquad.kr/";
-  const targetPageUrls = ["masters", "code-together", "faq"];
-  const targetPageTitles = ["마스터즈 코스", "코드투게더", "자주 묻는 질문"];
+const HGlobalNavigationBar: React.FC = () => {
+  const currentPath = getCurrentPath();
+  const links = [
+    {
+      title: BUTTON.MASTERS,
+      path: PATH.MASTERS,
+    },
+    {
+      title: BUTTON.CODE_TOGETHER,
+      path: PATH.CODE_TOGETHER,
+    },
+    {
+      title: BUTTON.FAQ,
+      path: PATH.FAQ,
+    },
+  ];
+
+  const handleSubscribeBtnClick = () => {
+    window.open(DOMAIN, "_blank");
+  };
 
   return (
     <HomeGlobalNavigationBarWrapper>
       <ContentWrapper>
         <HomeSigniture />
         <ButtonList>
-          {targetPageUrls.map((targetPageUrl: string, index: number) => (
-            <li key={targetPageUrl}>
-              <Button
-                currentPage={currentPage === targetPageUrls[index]}
-                href={rootUrl + targetPageUrl}
-              >
-                {targetPageTitles[index]}
-              </Button>
+          {links.map(({ title, path }: any) => (
+            <li key={title}>
+              <LinkButton selected={currentPath === path} to={path}>
+                {title}
+              </LinkButton>
             </li>
           ))}
           <li>
-            <SButton>소식받아보기</SButton>
+            <SButton onClick={handleSubscribeBtnClick}>소식받아보기</SButton>
           </li>
         </ButtonList>
       </ContentWrapper>
@@ -34,8 +53,8 @@ const HomeGlobalNavigationBar = ({ currentPage }: { currentPage?: string }) => {
 
 const HomeGlobalNavigationBarWrapper = styled.nav`
   width: 100%;
-  min-width: 1440px;
-  min-height: 80px;
+  min-width: 144rem;
+  min-height: 8rem;
   position: fixed;
   display: flex;
   justify-content: center;
@@ -45,8 +64,8 @@ const HomeGlobalNavigationBarWrapper = styled.nav`
 `;
 
 const ContentWrapper = styled.div`
-  width: 1260px;
-  padding: 0 80px;
+  width: 126rem;
+  padding: 0 8rem;
   position: fixed;
   display: flex;
   justify-content: space-between;
@@ -54,23 +73,23 @@ const ContentWrapper = styled.div`
 `;
 
 const HomeSigniture = styled.img`
-  min-width: 155px;
-  min-height: 30px;
+  min-width: 15.5rem;
+  min-height: 3rem;
 `;
 
 const ButtonList = styled.ul`
-  min-width: 424px;
-  min-height: 32px;
+  min-width: 42.4rem;
+  min-height: 3.2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 `;
 
-const Button = styled.a<{ currentPage?: boolean }>`
+const LinkButton = styled(Link)<{ selected?: boolean }>`
   color: ${({ theme: { color } }) => color.greyScale.black};
   font-size: ${({ theme: { fontSize } }) => fontSize.body.sm};
-  font-weight: ${({ currentPage, theme: { fontWeight } }) =>
-    currentPage ? fontWeight.medium : fontWeight.regular};
+  font-weight: ${({ selected, theme: { fontWeight } }) =>
+    selected ? fontWeight.medium : fontWeight.regular};
   line-height: ${({ theme: { lineHeight } }) => lineHeight.body.sm};
   letter-spacing: ${({ theme: { letterSpacing } }) => letterSpacing};
   text-decoration: none;
@@ -79,4 +98,4 @@ const Button = styled.a<{ currentPage?: boolean }>`
   }
 `;
 
-export default HomeGlobalNavigationBar;
+export default HGlobalNavigationBar;

@@ -1,6 +1,9 @@
-export { default as SButton } from "./SButton";
-export { default as HomeGlobalNavigationBar } from "./HomeGlobalNavigationBar";
-export { default as TeamGlobalNavigationBar } from "./TeamGlobalNavigationBar";
-export { default as Footer } from "./Footer";
+export { SButton } from "./SButton";
+export { MButton } from "./MButton";
+export { HGlobalNavigationBar } from "./HGlobalNavigationBar";
+export { TGlobalNavigationBar } from "./TGlobalNavigationBar";
+export { TabNavigationBar } from "./TabNavigationBar";
+export { TagNavigationBar } from "./TagNavigationBar";
+export { Footer } from "./Footer";
 export { Avatar } from "./Avatar";
 // export { InterviewBox } from "./InterviewBox";

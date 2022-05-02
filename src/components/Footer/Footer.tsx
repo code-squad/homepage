@@ -4,69 +4,75 @@ import styled from "styled-components";
 import { XSBody } from "typography/";
 // Theme
 import theme from "styles/theme";
+// Static
+import { BUTTON, MESSAGE } from "assets/static/phrases";
 
-const Footer = () => {
-  const { color } = theme;
+const Footer: React.FC = () => {
+  const {
+    color: {
+      greyScale: { white },
+    },
+  } = theme;
 
   return (
     <FooterWrapper>
       <ContentWrapper>
         <CompanyWrapper>
           <div>
-            <XSBody bold fontColor={color.greyScale.white}>
-              코드스쿼드
+            <XSBody bold fontColor={white}>
+              {MESSAGE.COMPANY_NAME}
             </XSBody>
           </div>
           <CompanyInfomationWrapper>
             <div>
-              <XSBody fontColor={color.greyScale.white}>
-                대표자:김정 | 사업자번호:676-88-00504
-              </XSBody>
-              <XSBody fontColor={color.greyScale.white}>
-                주소:강남구 역삼동 836-24 역삼빌딩 4층 | 전화:070-4117-1005
-              </XSBody>
-              <XSBody fontColor={color.greyScale.white}>yoda@codesquad.kr</XSBody>
+              <XSBody
+                fontColor={white}
+              >{`${MESSAGE.COMPANY_CEO_NAME} | ${MESSAGE.COMPANY_REGISTRATION_NUMBER}`}</XSBody>
+              <XSBody
+                fontColor={white}
+              >{`${MESSAGE.COMPANY_ADDRESS} | ${MESSAGE.COMPANY_TEL_NUMBER}`}</XSBody>
+              <XSBody fontColor={white}>{MESSAGE.COMPANY_EMAIL_ADDRESS}</XSBody>
             </div>
             <div>
-              <XSBody bold fontColor={color.greyScale.white}>
-                개인정보 취급방침 | 환불규정
+              <XSBody bold fontColor={white}>
+                {`${BUTTON.PRIVACY_POLICY} | ${BUTTON.REFUND_POLICY}`}
               </XSBody>
             </div>
           </CompanyInfomationWrapper>
         </CompanyWrapper>
-        <MenuListWrapper>
-          <MenuList>
-            <XSBody bold fontColor={color.greyScale.white}>
-              코드스쿼드
+        <MenuList>
+          <MenuListItem>
+            <XSBody bold fontColor={white}>
+              {MESSAGE.COMPANY_NAME}
             </XSBody>
-          </MenuList>
-          <MenuList>
-            <XSBody bold fontColor={color.greyScale.white}>
-              교육과정
+          </MenuListItem>
+          <MenuListItem>
+            <XSBody bold fontColor={white}>
+              {MESSAGE.CURRICULUM}
             </XSBody>
-            <Button href="https://codesquad.kr/masters">마스터즈 코스</Button>
-            <Button href="https://codesquad.kr/code-together">코드투게더</Button>
-          </MenuList>
-          <MenuList>
+            <Button href="https://codesquad.kr/masters">{BUTTON.MASTERS}</Button>
+            <Button href="https://codesquad.kr/code-together">{BUTTON.CODE_TOGETHER}</Button>
+          </MenuListItem>
+          <MenuListItem>
             <Button bold href="https://codesquad.kr/faq">
-              자주 묻는 질문
+              {BUTTON.FAQ}
             </Button>
-          </MenuList>
-          <MenuList>
-            <XSBody bold fontColor={color.greyScale.white}>
-              소셜 미디어
+          </MenuListItem>
+          <MenuListItem>
+            <XSBody bold fontColor={white}>
+              {MESSAGE.SOCIAL_MEDIA}
             </XSBody>
             <Button href="https://codesquad-yoda.medium.com/" target="_blank">
-              블로그
+              {BUTTON.BLOG}
             </Button>
             <Button href="https://www.youtube.com/channel/UC8OU76dfIn8jvWmXt8roMZg" target="_blank">
-              유튜브
+              {BUTTON.YOUTUBE}
             </Button>
             <Button href="https://www.facebook.com/codesquad.kr/" target="_blank">
-              페이스북
+              {BUTTON.FACEBOOK}
             </Button>
-          </MenuList>
-        </MenuListWrapper>
+          </MenuListItem>
+        </MenuList>
       </ContentWrapper>
     </FooterWrapper>
   );
@@ -74,17 +80,17 @@ const Footer = () => {
 
 const FooterWrapper = styled.nav`
   width: 100%;
-  min-width: 1440px;
-  min-height: 250px;
+  min-width: 144rem;
+  min-height: 25rem;
   display: flex;
   justify-content: center;
   background-color: ${({ theme: { color } }) => color.greyScale.black};
 `;
 
 const ContentWrapper = styled.div`
-  min-width: 1260px;
-  min-height: 250px;
-  padding: 0 80px;
+  min-width: 126rem;
+  min-height: 25rem;
+  padding: 0 8rem;
   position: fixed;
   display: flex;
   justify-content: space-between;
@@ -92,31 +98,31 @@ const ContentWrapper = styled.div`
 `;
 
 const CompanyWrapper = styled.div`
-  width: 316px;
-  height: 114px;
+  width: 31.6rem;
+  height: 11.4rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 `;
 
 const CompanyInfomationWrapper = styled.div`
-  height: 80px;
+  height: 8rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-`;
-
-const MenuListWrapper = styled.div`
-  width: 409px;
-  display: flex;
   justify-content: space-between;
 `;
 
 const MenuList = styled.div`
-  width: 85px;
+  width: 40.9rem;
+  display: flex;
+  justify-content: space-between;
+`;
+
+const MenuListItem = styled.div`
+  width: 8.5rem;
   display: flex;
   flex-direction: column;
-  gap: 16px 0;
+  gap: 1.6rem 0;
 `;
 
 const Button = styled.a<{ bold?: boolean }>`
