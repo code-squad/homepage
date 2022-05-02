@@ -1,6 +1,6 @@
 export { SButton } from "./SButton";
 export { MButton } from "./MButton";
-export { HGlobalNavigationBar } from "./HGlobalNavigationBar";
+export { HomeGlobalNavigationBar } from "./HomeGlobalNavigationBar";
 export { TGlobalNavigationBar } from "./TGlobalNavigationBar";
 export { TabNavigationBar } from "./TabNavigationBar";
 export { TagNavigationBar } from "./TagNavigationBar";

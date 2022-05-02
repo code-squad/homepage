@@ -9,7 +9,7 @@ import { DOMAIN, PATH } from "assets/static/urls";
 // Utils
 import { getCurrentPath } from "lib/utils";
 
-const HGlobalNavigationBar: React.FC = () => {
+const HomeGlobalNavigationBar: React.FC = () => {
   const currentPath = getCurrentPath();
   const links = [
     {
@@ -98,4 +98,4 @@ const LinkButton = styled(Link)<{ selected?: boolean }>`
   }
 `;
 
-export default HGlobalNavigationBar;
+export default HomeGlobalNavigationBar;
