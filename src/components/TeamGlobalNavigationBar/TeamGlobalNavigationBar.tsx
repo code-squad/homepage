@@ -7,7 +7,7 @@ import { PATH } from "assets/static/urls";
 // Utils
 import { getCurrentPath } from "lib/utils";
 
-const TGlobalNavigationBar: React.FC = () => {
+const TeamGlobalNavigationBar: React.FC = () => {
   const currentPath = getCurrentPath();
   const links = [
     {
@@ -84,4 +84,4 @@ const LinkButton = styled(Link)<{ selected?: boolean }>`
   }
 `;
 
-export default TGlobalNavigationBar;
+export default TeamGlobalNavigationBar;

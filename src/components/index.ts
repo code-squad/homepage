@@ -1,7 +1,7 @@
 export { SButton } from "./SButton";
 export { MButton } from "./MButton";
 export { HomeGlobalNavigationBar } from "./HomeGlobalNavigationBar";
-export { TGlobalNavigationBar } from "./TGlobalNavigationBar";
+export { TeamGlobalNavigationBar } from "./TeamGlobalNavigationBar";
 export { TabNavigationBar } from "./TabNavigationBar";
 export { TagNavigationBar } from "./TagNavigationBar";
 export { Footer } from "./Footer";
