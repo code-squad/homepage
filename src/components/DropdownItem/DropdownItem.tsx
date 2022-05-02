@@ -1,25 +1,42 @@
 import React from "react";
 import styled from "styled-components";
 // Assets
-import upArrow from "assets/images/icons/arrow-up.svg";
+import downArrow from "assets/images/icons/arrow-down.svg";
 import rightArrow from "assets/images/icons/arrow-right.svg";
+// Typography
 import { LBody, MBody, XSBody } from "typography";
-// Components
 
 interface IDropdownItem {
   category: string;
   title: string;
   content?: string;
   editDate?: string;
-  to?: string;
+  link?: string;
+  short?: boolean;
 }
 
-const DropdownItem: React.FC<IDropdownItem> = ({ category, title, content, editDate, to }) => {
+const DropdownItem: React.FC<IDropdownItem> = ({
+  category,
+  title,
+  content,
+  editDate,
+  link,
+  short,
+}) => {
   const [open, setOpen] = React.useState(false);
+  const isLinkBoard = Boolean(link);
+
+  const handleCardOpen = () => {
+    if (isLinkBoard) {
+      window.open(link);
+      return;
+    }
+    setOpen(!open);
+  };
 
   return (
-    <DropdownWrapper>
-      <BoardWrapper {...{ open }} onClick={() => setOpen(!open)}>
+    <DropdownWrapper {...{ short }}>
+      <BoardWrapper {...{ open }} onClick={handleCardOpen}>
         <Category>
           <MBody bold>{category}</MBody>
         </Category>
@@ -40,7 +57,7 @@ const DropdownItem: React.FC<IDropdownItem> = ({ category, title, content, editD
         </ArrowWrapper>
       </BoardWrapper>
 
-      {!to ? (
+      {isLinkBoard ? null : (
         <ContentWrapper {...{ open }}>
           <Content>
             <MBody>{content}</MBody>
@@ -49,11 +66,16 @@ const DropdownItem: React.FC<IDropdownItem> = ({ category, title, content, editD
             <XSBody>{editDate}</XSBody>
           </EditDate>
         </ContentWrapper>
-      ) : null}
+      )}
     </DropdownWrapper>
   );
 };
 
+const DropdownWrapper = styled.div<{ short?: boolean }>`
+  width: ${({ short }) => (short ? "96.6rem" : "106.2rem")};
+  display: flex;
+  flex-direction: collinkn;
+`;
 const BoardWrapper = styled.div<{ open?: boolean }>`
   display: flex;
   justify-content: space-between;
@@ -83,17 +105,13 @@ const ArrowWrapper = styled.div<{ open?: boolean }>`
   transform: ${({ open }) => (open ? "rotate(180deg)" : "")};
   transition: transform 0.5s;
 `;
-const DropdownWrapper = styled.div`
-  width: 106.2rem;
-  display: flex;
-  flex-direction: column;
-`;
 const ContentWrapper = styled.div<{ open?: boolean }>`
   overflow: hidden;
-  transition: max-height 0.5s;
+  transition: max-height 0.5s, border 0.5s;
   max-height: ${({ open }) => (open ? "25rem;" : "0")};
   padding-left: 16.9rem;
-  border-bottom: 0.1rem solid ${({ theme: { color } }) => color.greyScale.black20};
+  border-bottom: ${({ open }) => (open ? "0.1rem" : "0")} solid
+    ${({ theme: { color } }) => color.greyScale.black20};
 `;
 const Content = styled.div`
   margin-top: 2rem;
