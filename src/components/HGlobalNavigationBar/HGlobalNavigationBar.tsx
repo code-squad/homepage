@@ -4,7 +4,7 @@ import Link from "gatsby-link";
 // Global-Components
 import { SButton } from "components/";
 // Static
-import { BUTTON } from "assets/static/phrases";
+import { LINK } from "assets/static/phrases";
 import { DOMAIN, PATH } from "assets/static/urls";
 // Utils
 import { getCurrentPath } from "lib/utils";
@@ -13,15 +13,15 @@ const HGlobalNavigationBar: React.FC = () => {
   const currentPath = getCurrentPath();
   const links = [
     {
-      title: BUTTON.MASTERS,
+      title: LINK.MASTERS,
       path: PATH.MASTERS,
     },
     {
-      title: BUTTON.CODE_TOGETHER,
+      title: LINK.CODE_TOGETHER,
       path: PATH.CODE_TOGETHER,
     },
     {
-      title: BUTTON.FAQ,
+      title: LINK.FAQ,
       path: PATH.FAQ,
     },
   ];

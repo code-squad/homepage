@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Link from "gatsby-link";
 // Static
-import { BUTTON } from "assets/static/phrases";
+import { LINK } from "assets/static/phrases";
 import { PATH } from "assets/static/urls";
 // Utils
 import { getCurrentPath } from "lib/utils";
@@ -11,11 +11,11 @@ const TGlobalNavigationBar: React.FC = () => {
   const currentPath = getCurrentPath();
   const links = [
     {
-      title: BUTTON.TEAM_CULTURE,
+      title: LINK.TEAM_CULTURE,
       path: PATH.TEAM_CULTURE,
     },
     {
-      title: BUTTON.RECRUIT,
+      title: LINK.RECRUIT,
       path: PATH.RECRUIT,
     },
   ];

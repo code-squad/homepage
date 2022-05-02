@@ -5,7 +5,7 @@ import { XSBody } from "typography/";
 // Theme
 import theme from "styles/theme";
 // Static
-import { BUTTON, MESSAGE } from "assets/static/phrases";
+import { LINK, MESSAGE } from "assets/static/phrases";
 
 const Footer: React.FC = () => {
   const {
@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
             </div>
             <div>
               <XSBody bold fontColor={white}>
-                {`${BUTTON.PRIVACY_POLICY} | ${BUTTON.REFUND_POLICY}`}
+                {`${LINK.PRIVACY_POLICY} | ${LINK.REFUND_POLICY}`}
               </XSBody>
             </div>
           </CompanyInfomationWrapper>
@@ -50,12 +50,12 @@ const Footer: React.FC = () => {
             <XSBody bold fontColor={white}>
               {MESSAGE.CURRICULUM}
             </XSBody>
-            <Button href="https://codesquad.kr/masters">{BUTTON.MASTERS}</Button>
-            <Button href="https://codesquad.kr/code-together">{BUTTON.CODE_TOGETHER}</Button>
+            <Button href="https://codesquad.kr/masters">{LINK.MASTERS}</Button>
+            <Button href="https://codesquad.kr/code-together">{LINK.CODE_TOGETHER}</Button>
           </MenuListItem>
           <MenuListItem>
             <Button bold href="https://codesquad.kr/faq">
-              {BUTTON.FAQ}
+              {LINK.FAQ}
             </Button>
           </MenuListItem>
           <MenuListItem>
@@ -63,13 +63,13 @@ const Footer: React.FC = () => {
               {MESSAGE.SOCIAL_MEDIA}
             </XSBody>
             <Button href="https://codesquad-yoda.medium.com/" target="_blank">
-              {BUTTON.BLOG}
+              {LINK.BLOG}
             </Button>
             <Button href="https://www.youtube.com/channel/UC8OU76dfIn8jvWmXt8roMZg" target="_blank">
-              {BUTTON.YOUTUBE}
+              {LINK.YOUTUBE}
             </Button>
             <Button href="https://www.facebook.com/codesquad.kr/" target="_blank">
-              {BUTTON.FACEBOOK}
+              {LINK.FACEBOOK}
             </Button>
           </MenuListItem>
         </MenuList>
