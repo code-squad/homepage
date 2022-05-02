@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import Link from "gatsby-link";
+// Assets
+import teamSigniture from "assets/images/logos/TeamSigniture.svg";
 // Static
 import { LINK } from "assets/static/phrases";
 import { PATH } from "assets/static/urls";
@@ -23,7 +25,7 @@ const TeamGlobalNavigationBar: React.FC = () => {
   return (
     <TeamGlobalNavigationBarWrapper>
       <ContentWrapper>
-        <TeamSigniture />
+        <TeamSigniture src={teamSigniture} />
         <ButtonList>
           {links.map(({ title, path }: any) => (
             <li key={title}>

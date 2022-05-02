@@ -3,6 +3,8 @@ import styled from "styled-components";
 import Link from "gatsby-link";
 // Global-Components
 import { SButton } from "components/";
+// Assets
+import homeSigniture from "assets/images/logos/HomeSigniture.svg";
 // Static
 import { LINK } from "assets/static/phrases";
 import { DOMAIN, PATH } from "assets/static/urls";
@@ -33,7 +35,7 @@ const HomeGlobalNavigationBar: React.FC = () => {
   return (
     <HomeGlobalNavigationBarWrapper>
       <ContentWrapper>
-        <HomeSigniture />
+        <HomeSigniture src={homeSigniture} />
         <ButtonList>
           {links.map(({ title, path }: any) => (
             <li key={title}>
