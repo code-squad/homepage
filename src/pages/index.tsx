@@ -1,60 +1,23 @@
 import React from "react";
 // API-Calls
-import { graphql } from "gatsby";
 import GlobalTheme from "../lib/context/GlobalTheme";
-import { XLBody, LBody, MBody, SBody, XSBody, LDisplay, MDisplay, SDisplay } from "typography/";
-import { CultureType } from "../@type/Culture";
+import { Avatar, InterviewBox } from "components";
+import { DropdownItem } from "components/DropdownItem";
 
-const IndexPage = ({ data }: any) => {
-  const { culture } = data;
-  const cultures: CultureType[] = culture.nodes.map(({ frontmatter }: any) => frontmatter);
-
+const IndexPage = () => {
+  const props = {
+    category: "교육과정",
+    title: "코드스쿼드는 온라인 수업만 진행하나요?",
+    content: "마스터즈 코스는 온오프라인 공간을 모두 활용해 학습하는 것을 지향합니다.",
+    editDate: "2019-05-04",
+  };
   return (
     <GlobalTheme>
       <main>
-        <title>Home Page</title>
-        <XLBody>고품질 교육 전담팀, 코드스쿼드</XLBody>
-        <LBody>고품질 교육 전담팀, 코드스쿼드</LBody>
-        <MBody>고품질 교육 전담팀, 코드스쿼드</MBody>
-        <SBody>고품질 교육 전담팀, 코드스쿼드</SBody>
-        <XSBody>고품질 교육 전담팀, 코드스쿼드</XSBody>
-        <LDisplay>고품질 교육 전담팀, 코드스쿼드</LDisplay>
-        <MDisplay>고품질 교육 전담팀, 코드스쿼드</MDisplay>
-        <SDisplay>고품질 교육 전담팀, 코드스쿼드</SDisplay>
+        <DropdownItem {...props} />
       </main>
     </GlobalTheme>
   );
 };
-
-export const query = graphql`
-  query {
-    culture: allMdx(
-      sort: { order: ASC, fields: [frontmatter___index] }
-      filter: { frontmatter: { templateKey: { eq: "main_culture" } } }
-    ) {
-      nodes {
-        frontmatter {
-          title
-          subtitle
-          content
-        }
-      }
-    }
-    master: allMdx(
-      sort: { order: ASC, fields: [frontmatter___index] }
-      filter: { frontmatter: { templateKey: { eq: "main_master" } } }
-    ) {
-      nodes {
-        frontmatter {
-          field
-          name
-          description
-          introduce
-          careers
-        }
-      }
-    }
-  }
-`;
 
 export default IndexPage;

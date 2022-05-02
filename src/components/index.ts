@@ -6,4 +6,4 @@ export { TabNavigationBar } from "./TabNavigationBar";
 export { TagNavigationBar } from "./TagNavigationBar";
 export { Footer } from "./Footer";
 export { Avatar } from "./Avatar";
-// export { InterviewBox } from "./InterviewBox";
+export { InterviewBox } from "./InterviewBox";
