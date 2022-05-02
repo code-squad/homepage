@@ -24,33 +24,54 @@ const Footer: React.FC = () => {
             </div>
           </CompanyInfomationWrapper>
         </CompanyWrapper>
-        <MenuList>
-          <MenuListItem>
-            <XSBody bold>{MESSAGE.COMPANY_NAME}</XSBody>
-          </MenuListItem>
-          <MenuListItem>
-            <XSBody bold>{MESSAGE.CURRICULUM}</XSBody>
-            <Button href="https://codesquad.kr/masters">{LINK.MASTERS}</Button>
-            <Button href="https://codesquad.kr/code-together">{LINK.CODE_TOGETHER}</Button>
-          </MenuListItem>
-          <MenuListItem>
-            <Button bold href="https://codesquad.kr/faq">
-              {LINK.FAQ}
-            </Button>
-          </MenuListItem>
-          <MenuListItem>
-            <XSBody bold>{MESSAGE.SOCIAL_MEDIA}</XSBody>
-            <Button href="https://codesquad-yoda.medium.com/" target="_blank">
-              {LINK.BLOG}
-            </Button>
-            <Button href="https://www.youtube.com/channel/UC8OU76dfIn8jvWmXt8roMZg" target="_blank">
-              {LINK.YOUTUBE}
-            </Button>
-            <Button href="https://www.facebook.com/codesquad.kr/" target="_blank">
-              {LINK.FACEBOOK}
-            </Button>
-          </MenuListItem>
-        </MenuList>
+        <MenuListWrapper>
+          <MenuList>
+            <li>
+              <XSBody bold>{MESSAGE.COMPANY_NAME}</XSBody>
+            </li>
+          </MenuList>
+          <MenuList>
+            <li>
+              <XSBody bold>{MESSAGE.CURRICULUM}</XSBody>
+            </li>
+            <li>
+              <Button href="https://codesquad.kr/masters">{LINK.MASTERS}</Button>
+            </li>
+            <li>
+              <Button href="https://codesquad.kr/code-together">{LINK.CODE_TOGETHER}</Button>
+            </li>
+          </MenuList>
+          <MenuList>
+            <li>
+              <Button bold href="https://codesquad.kr/faq">
+                {LINK.FAQ}
+              </Button>
+            </li>
+          </MenuList>
+          <MenuList>
+            <li>
+              <XSBody bold>{MESSAGE.SOCIAL_MEDIA}</XSBody>
+            </li>
+            <li>
+              <Button href="https://codesquad-yoda.medium.com/" target="_blank">
+                {LINK.BLOG}
+              </Button>
+            </li>
+            <li>
+              <Button
+                href="https://www.youtube.com/channel/UC8OU76dfIn8jvWmXt8roMZg"
+                target="_blank"
+              >
+                {LINK.YOUTUBE}
+              </Button>
+            </li>
+            <li>
+              <Button href="https://www.facebook.com/codesquad.kr/" target="_blank">
+                {LINK.FACEBOOK}
+              </Button>
+            </li>
+          </MenuList>
+        </MenuListWrapper>
       </ContentWrapper>
     </FooterWrapper>
   );
@@ -91,13 +112,13 @@ const CompanyInfomationWrapper = styled.div`
   justify-content: space-between;
 `;
 
-const MenuList = styled.div`
+const MenuListWrapper = styled.div`
   width: 40.9rem;
   display: flex;
   justify-content: space-between;
 `;
 
-const MenuListItem = styled.div`
+const MenuList = styled.ul`
   width: 8.5rem;
   display: flex;
   flex-direction: column;
