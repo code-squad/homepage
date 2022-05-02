@@ -27,7 +27,16 @@ const DropdownItem: React.FC<IDropdownItem> = ({ category, title, content, editD
           <LBody>{title}</LBody>
         </Title>
         <ArrowWrapper {...{ open }}>
-          <img src={upArrow} width="24px" height="24px" />
+          {isLinkBoard ? (
+            <img aria-label="arrow-right" src={rightArrow} width="24px" height="24px" />
+          ) : (
+            <img
+              aria-label={open ? "arrow-up" : "arrow-down"}
+              src={downArrow}
+              width="24px"
+              height="24px"
+            />
+          )}
         </ArrowWrapper>
       </BoardWrapper>
 
