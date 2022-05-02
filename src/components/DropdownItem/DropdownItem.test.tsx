@@ -51,10 +51,7 @@ describe("<DropdownItem>", () => {
     const titleEle = getByText(title);
     fireEvent.click(titleEle);
 
-    const arrowIcon = getByLabelText("arrow-down");
-    expect(arrowIcon).toHaveStyle({
-      transform: "rotate(180deg)",
-    });
+    getByLabelText("arrow-up");
   });
   it("응답내용이 언제 수정되었는지 보여진다.", async () => {
     const { getByText } = renderDropDownItem();
