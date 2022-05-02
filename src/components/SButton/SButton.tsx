@@ -4,17 +4,11 @@ import styled from "styled-components";
 import { ISButtonProps } from "./SButton.type";
 // Typography
 import { XSBody } from "typography/";
-// Theme
-import theme from "styles/theme";
 
 const SButton: React.FC<ISButtonProps> = ({ children, disabled, onClick }) => {
-  const { color } = theme;
-
   return (
     <SButtonWrapper {...{ disabled, onClick }}>
-      <XSBody fontColor={disabled ? color.greyScale.white20 : color.greyScale.white}>
-        {children}
-      </XSBody>
+      <XSBody>{children}</XSBody>
     </SButtonWrapper>
   );
 };
@@ -36,11 +30,9 @@ const SButtonWrapper = styled.button`
   }
   &:disabled {
     cursor: auto;
+    color: ${({ theme: { color } }) => color.greyScale.white20};
     background-color: ${({ theme: { color } }) => color.greyScale.grey2};
     border-color: ${({ theme: { color } }) => color.greyScale.grey2};
-    & > p {
-      opacity: 0.2;
-    }
   }
 `;
 
