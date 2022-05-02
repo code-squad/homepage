@@ -2,54 +2,34 @@ import React from "react";
 import styled from "styled-components";
 // Typography
 import { XSBody } from "typography/";
-// Theme
-import theme from "styles/theme";
 // Static
 import { LINK, MESSAGE } from "assets/static/phrases";
 
 const Footer: React.FC = () => {
-  const {
-    color: {
-      greyScale: { white },
-    },
-  } = theme;
-
   return (
     <FooterWrapper>
       <ContentWrapper>
         <CompanyWrapper>
           <div>
-            <XSBody bold fontColor={white}>
-              {MESSAGE.COMPANY_NAME}
-            </XSBody>
+            <XSBody bold>{MESSAGE.COMPANY_NAME}</XSBody>
           </div>
           <CompanyInfomationWrapper>
             <div>
-              <XSBody
-                fontColor={white}
-              >{`${MESSAGE.COMPANY_CEO_NAME} | ${MESSAGE.COMPANY_REGISTRATION_NUMBER}`}</XSBody>
-              <XSBody
-                fontColor={white}
-              >{`${MESSAGE.COMPANY_ADDRESS} | ${MESSAGE.COMPANY_TEL_NUMBER}`}</XSBody>
-              <XSBody fontColor={white}>{MESSAGE.COMPANY_EMAIL_ADDRESS}</XSBody>
+              <XSBody>{`${MESSAGE.COMPANY_CEO_NAME} | ${MESSAGE.COMPANY_REGISTRATION_NUMBER}`}</XSBody>
+              <XSBody>{`${MESSAGE.COMPANY_ADDRESS} | ${MESSAGE.COMPANY_TEL_NUMBER}`}</XSBody>
+              <XSBody>{MESSAGE.COMPANY_EMAIL_ADDRESS}</XSBody>
             </div>
             <div>
-              <XSBody bold fontColor={white}>
-                {`${LINK.PRIVACY_POLICY} | ${LINK.REFUND_POLICY}`}
-              </XSBody>
+              <XSBody bold>{`${LINK.PRIVACY_POLICY} | ${LINK.REFUND_POLICY}`}</XSBody>
             </div>
           </CompanyInfomationWrapper>
         </CompanyWrapper>
         <MenuList>
           <MenuListItem>
-            <XSBody bold fontColor={white}>
-              {MESSAGE.COMPANY_NAME}
-            </XSBody>
+            <XSBody bold>{MESSAGE.COMPANY_NAME}</XSBody>
           </MenuListItem>
           <MenuListItem>
-            <XSBody bold fontColor={white}>
-              {MESSAGE.CURRICULUM}
-            </XSBody>
+            <XSBody bold>{MESSAGE.CURRICULUM}</XSBody>
             <Button href="https://codesquad.kr/masters">{LINK.MASTERS}</Button>
             <Button href="https://codesquad.kr/code-together">{LINK.CODE_TOGETHER}</Button>
           </MenuListItem>
@@ -59,9 +39,7 @@ const Footer: React.FC = () => {
             </Button>
           </MenuListItem>
           <MenuListItem>
-            <XSBody bold fontColor={white}>
-              {MESSAGE.SOCIAL_MEDIA}
-            </XSBody>
+            <XSBody bold>{MESSAGE.SOCIAL_MEDIA}</XSBody>
             <Button href="https://codesquad-yoda.medium.com/" target="_blank">
               {LINK.BLOG}
             </Button>
@@ -95,6 +73,7 @@ const ContentWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: ${({ theme: { color } }) => color.greyScale.white};
 `;
 
 const CompanyWrapper = styled.div`
