@@ -7,3 +7,5 @@ export { TagNavigationBar } from "./TagNavigationBar";
 export { Footer } from "./Footer";
 export { Avatar } from "./Avatar";
 export { InterviewBox } from "./InterviewBox";
+export { DropdownItem } from "./DropdownItem";
+export { LinkButton } from "./LinkButton";
