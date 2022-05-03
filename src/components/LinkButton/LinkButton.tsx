@@ -10,11 +10,13 @@ interface ILinkButton {
   description: string;
   title: string;
   to: string;
+  short?: boolean;
+  icon?: string;
 }
 
-const LinkButton: React.FC<ILinkButton> = ({ description, title, to }) => {
+const LinkButton: React.FC<ILinkButton> = ({ description, title, to, icon }) => {
   return (
-    <LinkButtonWrapper {...{ to }}>
+    <LinkButtonWrapper {...{ to }} icon={icon}>
       <TextWrapper>
         <Description>
           <MBody bold>{description}</MBody>
@@ -24,14 +26,17 @@ const LinkButton: React.FC<ILinkButton> = ({ description, title, to }) => {
           <img aria-label="arrow-right" src={rightArrow} width="24px" height="24px" />
         </Title>
       </TextWrapper>
+      {icon ? <img alt="link-icon" src={icon} width="80px" height="80px" /> : null}
     </LinkButtonWrapper>
   );
 };
 
-const LinkButtonWrapper = styled(Link)`
-  display: inline-block;
-  width: 98.2rem;
-  height: 5.4rem;
+const LinkButtonWrapper = styled(Link)<{ icon?: string }>`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: ${({ icon }) => (icon ? "51.9rem" : "98.2rem")};
+  height: ${({ icon }) => (icon ? "6.4rem" : "5.4rem")};
   border-radius: 0.8rem;
   border: 0.2rem solid ${({ theme: { color } }) => color.greyScale.grey3};
   background-color: ${({ theme: { color } }) => color.greyScale.offWhite};
