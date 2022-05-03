@@ -51,10 +51,7 @@ describe("<DropdownItem>", () => {
     const titleEle = getByText(title);
     fireEvent.click(titleEle);
 
-    const arrowIcon = getByLabelText("arrow-down");
-    expect(arrowIcon).toHaveStyle({
-      transform: "rotate(180deg)",
-    });
+    getByLabelText("arrow-up");
   });
   it("응답내용이 언제 수정되었는지 보여진다.", async () => {
     const { getByText } = renderDropDownItem();
@@ -69,7 +66,7 @@ describe("<DropdownItem>", () => {
     const linkProps = {
       category: "교육과정",
       title: "코드스쿼드는 온라인 수업만 진행하나요?",
-      to: "https://www.naver.com",
+      link: "https://www.naver.com",
     };
     const renderDropDownLinkItem = () =>
       render(

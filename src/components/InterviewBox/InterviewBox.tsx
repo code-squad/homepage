@@ -24,7 +24,7 @@ const InterviewBox: React.FC<IInterviewBox> = ({
   return (
     <InterviewBoxWrapper>
       <Avatar src={writerPhoto} />
-      <Nutshell data-testid="test">
+      <Nutshell>
         <LBody>{nutshell}</LBody>
       </Nutshell>
       <Content>
