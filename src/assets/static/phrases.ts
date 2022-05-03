@@ -1,12 +1,15 @@
+const BUTTON = {
+  PRIVACY_POLICY: "개인정보 취급방침",
+  REFUND_POLICY: "환불규정",
+};
+
 const LINK = {
   BLOG: "블로그",
   CODE_TOGETHER: "코드투게더",
   FACEBOOK: "페이스북",
   FAQ: "자주 묻는 질문",
   MASTERS: "마스터즈 코스",
-  PRIVACY_POLICY: "개인정보 취급방침",
   RECRUIT: "채용소식",
-  REFUND_POLICY: "환불규정",
   SUBSCRIBE: "소식받아보기",
   TEAM_CULTURE: "팀 문화",
   YOUTUBE: "유뷰트",
@@ -23,4 +26,4 @@ const MESSAGE = {
   SOCIAL_MEDIA: "소셜 미디어",
 };
 
-export { LINK, MESSAGE };
+export { BUTTON, LINK, MESSAGE };
