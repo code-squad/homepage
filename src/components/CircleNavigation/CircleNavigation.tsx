@@ -16,8 +16,9 @@ const CircleNavigation: React.FC<ICircleNavigation> = ({ count, onIndexChanged }
     }
   };
 
-  const indexArray = new Array(count);
-  for (let i = 0; i < count; ++i) indexArray[i] = i;
+  const indexArray = [...Array(count).keys()];
+  // const indexArray = new Array(count);
+  // for (let i = 0; i < count; ++i) indexArray[i] = i;
 
   return (
     <CircleNavigationWrapper>
