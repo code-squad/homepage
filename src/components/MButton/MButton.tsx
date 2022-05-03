@@ -11,9 +11,9 @@ import { XSBody } from "typography/";
 const MButton: React.FC<IMButtonProps> = ({ children, accent, disabled, onClick }) => {
   return (
     <MButtonWrapper {...{ accent, disabled, onClick }}>
-      <PlusButton src={plus} />
+      <ButtonIcon src={plus} {...{ disabled }} />
       <XSBody>{children}</XSBody>
-      <PlusButton src={arrowRight} />
+      <ButtonIcon src={arrowRight} {...{ disabled }} />
     </MButtonWrapper>
   );
 };
@@ -39,16 +39,24 @@ const MButtonWrapper = styled.button<{ accent?: boolean }>`
   &:disabled {
     cursor: auto;
     color: ${({ theme: { color } }) => color.greyScale.grey3};
+    background-color: ${({ theme: { color } }) => color.greyScale.white};
     border-color: ${({ theme: { color } }) => color.greyScale.grey3};
-  }
-  & svg {
-    stroke: red;
   }
 `;
 
-const PlusButton = styled.img<{ disabled?: boolean }>`
+const ButtonIcon = styled.img<{ disabled?: boolean }>`
   width: 1.6rem;
   height: 1.6rem;
+  filter: ${({ disabled }) =>
+    disabled
+      ? "invert(79%) sepia(29%) saturate(7%) hue-rotate(104deg) brightness(94%) contrast(91%)"
+      : "none"};
 `;
+
+// const PlusIcon = styled(plus)`
+//   & > path {
+//     stroke: red;
+//   }
+// `;
 
 export default MButton;

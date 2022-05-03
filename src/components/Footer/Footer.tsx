@@ -2,77 +2,76 @@ import React from "react";
 import styled from "styled-components";
 // Typography
 import { XSBody } from "typography/";
-// Theme
-import theme from "styles/theme";
 // Static
-import { BUTTON, MESSAGE } from "assets/static/phrases";
+import { LINK, MESSAGE } from "assets/static/phrases";
 
 const Footer: React.FC = () => {
-  const {
-    color: {
-      greyScale: { white },
-    },
-  } = theme;
-
   return (
     <FooterWrapper>
       <ContentWrapper>
         <CompanyWrapper>
           <div>
-            <XSBody bold fontColor={white}>
-              {MESSAGE.COMPANY_NAME}
-            </XSBody>
+            <XSBody bold>{MESSAGE.COMPANY_NAME}</XSBody>
           </div>
           <CompanyInfomationWrapper>
             <div>
-              <XSBody
-                fontColor={white}
-              >{`${MESSAGE.COMPANY_CEO_NAME} | ${MESSAGE.COMPANY_REGISTRATION_NUMBER}`}</XSBody>
-              <XSBody
-                fontColor={white}
-              >{`${MESSAGE.COMPANY_ADDRESS} | ${MESSAGE.COMPANY_TEL_NUMBER}`}</XSBody>
-              <XSBody fontColor={white}>{MESSAGE.COMPANY_EMAIL_ADDRESS}</XSBody>
+              <XSBody>{`${MESSAGE.COMPANY_CEO_NAME} | ${MESSAGE.COMPANY_REGISTRATION_NUMBER}`}</XSBody>
+              <XSBody>{`${MESSAGE.COMPANY_ADDRESS} | ${MESSAGE.COMPANY_TEL_NUMBER}`}</XSBody>
+              <XSBody>{MESSAGE.COMPANY_EMAIL_ADDRESS}</XSBody>
             </div>
             <div>
-              <XSBody bold fontColor={white}>
-                {`${BUTTON.PRIVACY_POLICY} | ${BUTTON.REFUND_POLICY}`}
-              </XSBody>
+              <XSBody bold>{`${LINK.PRIVACY_POLICY} | ${LINK.REFUND_POLICY}`}</XSBody>
             </div>
           </CompanyInfomationWrapper>
         </CompanyWrapper>
-        <MenuList>
-          <MenuListItem>
-            <XSBody bold fontColor={white}>
-              {MESSAGE.COMPANY_NAME}
-            </XSBody>
-          </MenuListItem>
-          <MenuListItem>
-            <XSBody bold fontColor={white}>
-              {MESSAGE.CURRICULUM}
-            </XSBody>
-            <Button href="https://codesquad.kr/masters">{BUTTON.MASTERS}</Button>
-            <Button href="https://codesquad.kr/code-together">{BUTTON.CODE_TOGETHER}</Button>
-          </MenuListItem>
-          <MenuListItem>
-            <Button bold href="https://codesquad.kr/faq">
-              {BUTTON.FAQ}
-            </Button>
-          </MenuListItem>
-          <MenuListItem>
-            <XSBody bold fontColor={white}>
-              {MESSAGE.SOCIAL_MEDIA}
-            </XSBody>
-            <Button href="https://codesquad-yoda.medium.com/" target="_blank">
-              {BUTTON.BLOG}
-            </Button>
-            <Button href="https://www.youtube.com/channel/UC8OU76dfIn8jvWmXt8roMZg" target="_blank">
-              {BUTTON.YOUTUBE}
-            </Button>
-            <Button href="https://www.facebook.com/codesquad.kr/" target="_blank">
-              {BUTTON.FACEBOOK}
-            </Button>
-          </MenuListItem>
-        </MenuList>
+        <MenuListWrapper>
+          <MenuList>
+            <li>
+              <XSBody bold>{MESSAGE.COMPANY_NAME}</XSBody>
+            </li>
+          </MenuList>
+          <MenuList>
+            <li>
+              <XSBody bold>{MESSAGE.CURRICULUM}</XSBody>
+            </li>
+            <li>
+              <Button href="https://codesquad.kr/masters">{LINK.MASTERS}</Button>
+            </li>
+            <li>
+              <Button href="https://codesquad.kr/code-together">{LINK.CODE_TOGETHER}</Button>
+            </li>
+          </MenuList>
+          <MenuList>
+            <li>
+              <Button bold href="https://codesquad.kr/faq">
+                {LINK.FAQ}
+              </Button>
+            </li>
+          </MenuList>
+          <MenuList>
+            <li>
+              <XSBody bold>{MESSAGE.SOCIAL_MEDIA}</XSBody>
+            </li>
+            <li>
+              <Button href="https://codesquad-yoda.medium.com/" target="_blank">
+                {LINK.BLOG}
+              </Button>
+            </li>
+            <li>
+              <Button
+                href="https://www.youtube.com/channel/UC8OU76dfIn8jvWmXt8roMZg"
+                target="_blank"
+              >
+                {LINK.YOUTUBE}
+              </Button>
+            </li>
+            <li>
+              <Button href="https://www.facebook.com/codesquad.kr/" target="_blank">
+                {LINK.FACEBOOK}
+              </Button>
+            </li>
+          </MenuList>
+        </MenuListWrapper>
       </ContentWrapper>
     </FooterWrapper>
   );
@@ -95,6 +94,7 @@ const ContentWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: ${({ theme: { color } }) => color.greyScale.white};
 `;
 
 const CompanyWrapper = styled.div`
@@ -112,13 +112,13 @@ const CompanyInfomationWrapper = styled.div`
   justify-content: space-between;
 `;
 
-const MenuList = styled.div`
+const MenuListWrapper = styled.div`
   width: 40.9rem;
   display: flex;
   justify-content: space-between;
 `;
 
-const MenuListItem = styled.div`
+const MenuList = styled.ul`
   width: 8.5rem;
   display: flex;
   flex-direction: column;

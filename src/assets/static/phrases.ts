@@ -1,4 +1,4 @@
-const BUTTON = {
+const LINK = {
   BLOG: "블로그",
   CODE_TOGETHER: "코드투게더",
   FACEBOOK: "페이스북",
@@ -23,4 +23,4 @@ const MESSAGE = {
   SOCIAL_MEDIA: "소셜 미디어",
 };
 
-export { BUTTON, MESSAGE };
+export { LINK, MESSAGE };

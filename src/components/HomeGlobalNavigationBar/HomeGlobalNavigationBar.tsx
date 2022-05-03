@@ -3,25 +3,27 @@ import styled from "styled-components";
 import Link from "gatsby-link";
 // Global-Components
 import { SButton } from "components/";
+// Assets
+import homeSigniture from "assets/images/logos/HomeSigniture.svg";
 // Static
-import { BUTTON } from "assets/static/phrases";
+import { LINK } from "assets/static/phrases";
 import { DOMAIN, PATH } from "assets/static/urls";
 // Utils
 import { getCurrentPath } from "lib/utils";
 
-const HGlobalNavigationBar: React.FC = () => {
+const HomeGlobalNavigationBar: React.FC = () => {
   const currentPath = getCurrentPath();
   const links = [
     {
-      title: BUTTON.MASTERS,
+      title: LINK.MASTERS,
       path: PATH.MASTERS,
     },
     {
-      title: BUTTON.CODE_TOGETHER,
+      title: LINK.CODE_TOGETHER,
       path: PATH.CODE_TOGETHER,
     },
     {
-      title: BUTTON.FAQ,
+      title: LINK.FAQ,
       path: PATH.FAQ,
     },
   ];
@@ -33,7 +35,7 @@ const HGlobalNavigationBar: React.FC = () => {
   return (
     <HomeGlobalNavigationBarWrapper>
       <ContentWrapper>
-        <HomeSigniture />
+        <HomeSigniture src={homeSigniture} />
         <ButtonList>
           {links.map(({ title, path }: any) => (
             <li key={title}>
@@ -98,4 +100,4 @@ const LinkButton = styled(Link)<{ selected?: boolean }>`
   }
 `;
 
-export default HGlobalNavigationBar;
+export default HomeGlobalNavigationBar;
