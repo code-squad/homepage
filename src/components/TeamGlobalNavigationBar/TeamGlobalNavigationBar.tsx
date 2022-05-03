@@ -2,10 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import Link from "gatsby-link";
 // Assets
-import teamSigniture from "assets/images/logos/TeamSigniture.svg";
+import companyLogo from "assets/images/logos/TeamSignature.svg";
 // Static
 import { LINK } from "assets/static/phrases";
-import { PATH } from "assets/static/urls";
+import { INTERNAL } from "assets/static/urls";
 // Utils
 import { getCurrentPath } from "lib/utils";
 
@@ -14,18 +14,20 @@ const TeamGlobalNavigationBar: React.FC = () => {
   const links = [
     {
       title: LINK.TEAM_CULTURE,
-      path: PATH.TEAM_CULTURE,
+      path: INTERNAL.TEAM_CULTURE,
     },
     {
       title: LINK.RECRUIT,
-      path: PATH.RECRUIT,
+      path: INTERNAL.RECRUIT,
     },
   ];
 
   return (
     <TeamGlobalNavigationBarWrapper>
       <ContentWrapper>
-        <TeamSigniture src={teamSigniture} />
+        <Link to="/">
+          <TeamSigniture src={companyLogo} alt="company-logo" />
+        </Link>
         <ButtonList>
           {links.map(({ title, path }: any) => (
             <li key={title}>
