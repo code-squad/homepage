@@ -4,10 +4,10 @@ import Link from "gatsby-link";
 // Global-Components
 import { SButton } from "components/";
 // Assets
-import homeSigniture from "assets/images/logos/HomeSigniture.svg";
+import companyLogo from "assets/images/logos/HomeSignature.svg";
 // Static
 import { LINK } from "assets/static/phrases";
-import { DOMAIN, PATH } from "assets/static/urls";
+import { INTERNAL } from "assets/static/urls";
 // Utils
 import { getCurrentPath } from "lib/utils";
 
@@ -16,26 +16,24 @@ const HomeGlobalNavigationBar: React.FC = () => {
   const links = [
     {
       title: LINK.MASTERS,
-      path: PATH.MASTERS,
+      path: INTERNAL.MASTERS,
     },
     {
       title: LINK.CODE_TOGETHER,
-      path: PATH.CODE_TOGETHER,
+      path: INTERNAL.CODE_TOGETHER,
     },
     {
       title: LINK.FAQ,
-      path: PATH.FAQ,
+      path: INTERNAL.FAQ,
     },
   ];
-
-  const handleSubscribeBtnClick = () => {
-    window.open(DOMAIN, "_blank");
-  };
 
   return (
     <HomeGlobalNavigationBarWrapper>
       <ContentWrapper>
-        <HomeSigniture src={homeSigniture} />
+        <Link to="/">
+          <HomeSigniture src={companyLogo} alt="company-logo" />
+        </Link>
         <ButtonList>
           {links.map(({ title, path }: any) => (
             <li key={title}>
@@ -45,7 +43,7 @@ const HomeGlobalNavigationBar: React.FC = () => {
             </li>
           ))}
           <li>
-            <SButton onClick={handleSubscribeBtnClick}>소식받아보기</SButton>
+            <SButton to="/subscribe">{LINK.SUBSCRIBE}</SButton>
           </li>
         </ButtonList>
       </ContentWrapper>
