@@ -74,7 +74,7 @@ const DropdownItem: React.FC<IDropdownItem> = ({
 const DropdownWrapper = styled.div<{ short?: boolean }>`
   width: ${({ short }) => (short ? "96.6rem" : "106.2rem")};
   display: flex;
-  flex-direction: collinkn;
+  flex-direction: column;
 `;
 const BoardWrapper = styled.div<{ open?: boolean }>`
   display: flex;
