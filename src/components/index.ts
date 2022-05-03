@@ -10,3 +10,4 @@ export { Avatar } from "./Avatar";
 export { InterviewBox } from "./InterviewBox";
 export { DropdownItem } from "./DropdownItem";
 export { LinkButton } from "./LinkButton";
+export { ImageCard } from "./ImageCard";
