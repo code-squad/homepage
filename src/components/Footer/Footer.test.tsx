@@ -3,10 +3,10 @@ import { fireEvent, render } from "@testing-library/react";
 // Testing-Component
 import { Footer } from ".";
 // Assets
-import { LINK, MESSAGE } from "assets/static/phrases";
+import { BUTTON, LINK, MESSAGE } from "assets/static/phrases";
+import { EXTERNAL, INTERNAL } from "assets/static/urls";
 // Libs
 import { TestProvider } from "lib/testUtils";
-import { EXTERNAL, INTERNAL } from "assets/static/urls";
 
 describe("<Footer>", () => {
   const renderFooter = () =>
@@ -45,6 +45,28 @@ describe("<Footer>", () => {
     const { getByText } = renderFooter();
 
     getByText(MESSAGE.CURRICULUM);
+  });
+  it("팀 문화 링크가 보여진다.", async () => {
+    const { getByText } = renderFooter();
+
+    getByText(LINK.TEAM_CULTURE);
+  });
+  it("팀 문화 링크를 클릭하면 마스터즈코스 페이지로 이동된다.", async () => {
+    const { getByRole } = renderFooter();
+
+    const linkEle = getByRole("link", { name: LINK.TEAM_CULTURE });
+    expect(linkEle?.getAttribute("href")).toBe(INTERNAL.TEAM_CULTURE);
+  });
+  it("채용 링크가 보여진다.", async () => {
+    const { getByText } = renderFooter();
+
+    getByText(LINK.TEAM_CULTURE);
+  });
+  it("채용 링크를 클릭하면 마스터즈코스 페이지로 이동된다.", async () => {
+    const { getByRole } = renderFooter();
+
+    const linkEle = getByRole("link", { name: LINK.RECRUIT });
+    expect(linkEle?.getAttribute("href")).toBe(INTERNAL.RECRUIT);
   });
   it("마스터즈 코스 링크가 보여진다.", async () => {
     const { getByText } = renderFooter();
@@ -128,8 +150,16 @@ describe("<Footer>", () => {
     const linkEle = getByRole("link", { name: LINK.FACEBOOK });
     expect(linkEle?.getAttribute("href")).toBe(EXTERNAL.FACEBOOK);
   });
-  //   it("개인정보 취급방침 버튼이 보여진다.", async () => {});
+  it("개인정보 취급방침 버튼이 보여진다.", async () => {
+    const { getByText } = renderFooter();
+
+    getByText(BUTTON.PRIVACY_POLICY);
+  });
   //   it("개인정보 취급방침 버튼을 클릭하면 개인정보 취급방침 내용이 보여진다.", async () => {});
-  //   it("휜불규정 버튼이 보여진다.", async () => {});
+  it("휜불규정 버튼이 보여진다.", async () => {
+    const { getByText } = renderFooter();
+
+    getByText(BUTTON.REFUND_POLICY);
+  });
   //   it("휜불규정 버튼을 클릭하면 환불규정 내용이 보여진다.", async () => {});
 });
