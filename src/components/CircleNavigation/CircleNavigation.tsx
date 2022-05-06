@@ -3,22 +3,25 @@ import styled from "styled-components";
 
 interface ICircleNavigation {
   count: number;
+  index: number;
   onIndexChanged: (index: number) => void;
 }
 
-const CircleNavigation: React.FC<ICircleNavigation> = ({ count, onIndexChanged }) => {
+const CircleNavigation: React.FC<ICircleNavigation> = ({ count, index, onIndexChanged }) => {
   const [currentIndex, setCurrentIndex] = React.useState(0);
 
   const handleCircleClick = (index: number) => {
     if (index !== currentIndex) {
-      setCurrentIndex(index);
       onIndexChanged(index);
+      setCurrentIndex(index);
     }
   };
 
   const indexArray = [...Array(count).keys()];
-  // const indexArray = new Array(count);
-  // for (let i = 0; i < count; ++i) indexArray[i] = i;
+
+  React.useEffect(() => {
+    setCurrentIndex(index);
+  }, [index]);
 
   return (
     <CircleNavigationWrapper>
