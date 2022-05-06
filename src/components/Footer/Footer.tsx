@@ -8,6 +8,9 @@ import { INTERNAL, EXTERNAL } from "assets/static/urls";
 import { Link } from "gatsby";
 
 const Footer: React.FC = () => {
+  const handlePrivacyPolicyClick = () => {};
+  const handleRefundPolicyClick = () => {};
+
   return (
     <FooterWrapper>
       <ContentWrapper>
@@ -18,21 +21,21 @@ const Footer: React.FC = () => {
           <CompanyInfomationWrapper>
             <div>
               <div>
-                <XSBody as="span">{`${MESSAGE.COMPANY_CEO_NAME}`}</XSBody>
+                <XSBody as="span">{MESSAGE.COMPANY_CEO_NAME}</XSBody>
                 <XSBody as="span"> | </XSBody>
-                <XSBody as="span">{`${MESSAGE.COMPANY_REGISTRATION_NUMBER}`}</XSBody>
+                <XSBody as="span">{MESSAGE.COMPANY_REGISTRATION_NUMBER}</XSBody>
               </div>
               <div>
-                <XSBody as="span">{`${MESSAGE.COMPANY_ADDRESS}`}</XSBody>
+                <XSBody as="span">{MESSAGE.COMPANY_ADDRESS}</XSBody>
                 <XSBody as="span"> | </XSBody>
-                <XSBody as="span">{`${MESSAGE.COMPANY_TEL_NUMBER}`}</XSBody>
+                <XSBody as="span">{MESSAGE.COMPANY_TEL_NUMBER}</XSBody>
                 <XSBody>{MESSAGE.COMPANY_EMAIL_ADDRESS}</XSBody>
               </div>
             </div>
             <div>
-              <XSBody as="span">{`${BUTTON.PRIVACY_POLICY}`}</XSBody>
+              <PopupButton>{BUTTON.PRIVACY_POLICY}</PopupButton>
               <XSBody as="span"> | </XSBody>
-              <XSBody as="span">{`${BUTTON.REFUND_POLICY}`}</XSBody>
+              <PopupButton>{BUTTON.REFUND_POLICY}</PopupButton>
             </div>
           </CompanyInfomationWrapper>
         </CompanyWrapper>
@@ -40,6 +43,14 @@ const Footer: React.FC = () => {
           <MenuList>
             <li>
               <XSBody bold>{MESSAGE.COMPANY_NAME}</XSBody>
+            </li>
+            <li>
+              <InternalLinkButton to={INTERNAL.TEAM_CULTURE}>
+                {LINK.TEAM_CULTURE}
+              </InternalLinkButton>
+            </li>
+            <li>
+              <InternalLinkButton to={INTERNAL.RECRUIT}>{LINK.RECRUIT}</InternalLinkButton>
             </li>
           </MenuList>
           <MenuList>
@@ -88,7 +99,7 @@ const Footer: React.FC = () => {
   );
 };
 
-const FooterWrapper = styled.nav`
+const FooterWrapper = styled.div`
   width: 100%;
   min-width: 144rem;
   min-height: 25rem;
@@ -106,6 +117,10 @@ const ContentWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   color: ${({ theme: { color } }) => color.greyScale.white};
+  font-size: ${({ theme: { fontSize } }) => fontSize.body.xs};
+  font-weight: ${({ theme: { fontWeight } }) => fontWeight.regular};
+  line-height: ${({ theme: { lineHeight } }) => lineHeight.body.xs};
+  letter-spacing: ${({ theme: { letterSpacing } }) => letterSpacing};
 `;
 
 const CompanyWrapper = styled.div`
@@ -123,6 +138,18 @@ const CompanyInfomationWrapper = styled.div`
   justify-content: space-between;
 `;
 
+const PopupButton = styled.button`
+  padding: 0;
+  color: ${({ theme: { color } }) => color.greyScale.white};
+  font-size: ${({ theme: { fontSize } }) => fontSize.body.xs};
+  font-weight: ${({ theme: { fontWeight } }) => fontWeight.regular};
+  line-height: ${({ theme: { lineHeight } }) => lineHeight.body.xs};
+  letter-spacing: ${({ theme: { letterSpacing } }) => letterSpacing};
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+`;
+
 const MenuListWrapper = styled.div`
   width: 40.9rem;
   display: flex;
@@ -138,24 +165,16 @@ const MenuList = styled.ul`
 
 const InternalLinkButton = styled(Link)<{ $bold?: boolean }>`
   color: ${({ theme: { color } }) => color.greyScale.white};
-  font-size: ${({ theme: { fontSize } }) => fontSize.body.xs};
   font-weight: ${({ $bold, theme: { fontWeight } }) =>
     $bold ? fontWeight.medium : fontWeight.regular};
-  line-height: ${({ theme: { lineHeight } }) => lineHeight.body.xs};
-  letter-spacing: ${({ theme: { letterSpacing } }) => letterSpacing};
   text-decoration: none;
   &:hover {
     text-decoration: underline;
   }
 `;
 
-const ExternalLinkButton = styled.a<{ bold?: boolean }>`
+const ExternalLinkButton = styled.a`
   color: ${({ theme: { color } }) => color.greyScale.white};
-  font-size: ${({ theme: { fontSize } }) => fontSize.body.xs};
-  font-weight: ${({ bold, theme: { fontWeight } }) =>
-    bold ? fontWeight.medium : fontWeight.regular};
-  line-height: ${({ theme: { lineHeight } }) => lineHeight.body.xs};
-  letter-spacing: ${({ theme: { letterSpacing } }) => letterSpacing};
   text-decoration: none;
   &:hover {
     text-decoration: underline;
