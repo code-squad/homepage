@@ -1,35 +1,45 @@
 import React from "react";
 import styled from "styled-components";
-// Type
-import { IMButtonProps } from "./MButton.type";
 // Icons
 import plus from "assets/images/icons/plus.svg";
 import arrowRight from "assets/images/icons/arrow-right.svg";
 // Typography
-import { XSBody } from "typography/";
+import { Link } from "gatsby";
+import { MBody } from "typography";
 
-const MButton: React.FC<IMButtonProps> = ({ children, accent, disabled, onClick }) => {
+export interface IMButtonProps {
+  children?: string;
+  accent?: boolean;
+  disabled?: boolean;
+  to: string;
+}
+
+const MButton: React.FC<IMButtonProps> = ({ children, accent, disabled, to }) => {
   return (
-    <MButtonWrapper {...{ accent, disabled, onClick }}>
+    <MButtonWrapper $accent={accent} {...{ disabled, to }}>
       <ButtonIcon src={plus} {...{ disabled }} />
-      <XSBody>{children}</XSBody>
+      <MBody bold style={{ marginTop: "0.3rem" }}>
+        {children}
+      </MBody>
       <ButtonIcon src={arrowRight} {...{ disabled }} />
     </MButtonWrapper>
   );
 };
 
-const MButtonWrapper = styled.button<{ accent?: boolean }>`
-  display: flex;
+const MButtonWrapper = styled(Link)<{ $accent?: boolean }>`
+  display: inline-flex;
   justify-content: space-between;
   align-items: center;
   height: 4rem;
   padding: 0.7rem 1.6rem;
+  color: ${({ theme: { color } }) => color.greyScale.grey1};
   border: 0.1rem solid;
   border-radius: 30px;
-  color: ${({ theme: { color } }) => color.greyScale.grey1};
+  border-color: ${({ $accent, theme: { color } }) =>
+    $accent ? color.greyScale.black : color.greyScale.grey3};
   background-color: ${({ theme: { color } }) => color.greyScale.white};
-  border-color: ${({ accent, theme: { color } }) =>
-    accent ? color.greyScale.black : color.greyScale.grey3};
+  text-decoration: none;
+  text-align: center;
   &:hover {
     cursor: pointer;
     color: ${({ theme: { color } }) => color.greyScale.black};

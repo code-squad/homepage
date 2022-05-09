@@ -48,8 +48,9 @@ const TabNavButtonList = styled.ul`
 `;
 
 const TabNavButton = styled.button<{ selected?: boolean }>`
-  padding: 0 5rem;
+  width: 19.3rem;
   height: 5.8rem;
+  padding: 0 5rem;
   color: ${({ selected, theme: { color } }) =>
     selected ? color.primary.green2 : color.greyScale.grey2};
   background-color: transparent;

@@ -1,5 +1,6 @@
 function getCurrentPath() {
-  return window.location.pathname;
+  if (typeof window !== "undefined") return window.location.pathname;
+  return "";
 }
 
 export default getCurrentPath;
