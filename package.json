@@ -15,8 +15,7 @@
     "clean": "gatsby clean",
     "test": "jest --config ./scripts/jest/jest.config.ts",
     "test:w": "jest --config ./scripts/jest/jest.config.ts --watch",
-    "typecheck": "tsc --noEmit",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "NODE_PATH=src start-storybook -p 3001 -c .storybook -s src",
     "build-storybook": "build-storybook"
   },
   "dependencies": {
