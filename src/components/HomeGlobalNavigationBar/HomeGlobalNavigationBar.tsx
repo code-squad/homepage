@@ -10,6 +10,8 @@ import { LINK } from "assets/static/phrases";
 import { INTERNAL } from "assets/static/urls";
 // Utils
 import { getCurrentPath } from "lib/utils";
+// Libs
+import { useScrollPosition } from "lib/hooks";
 
 const HomeGlobalNavigationBar: React.FC = () => {
   const currentPath = getCurrentPath();
@@ -28,8 +30,10 @@ const HomeGlobalNavigationBar: React.FC = () => {
     },
   ];
 
+  const scrollPosition = useScrollPosition();
+
   return (
-    <HomeGlobalNavigationBarWrapper>
+    <HomeGlobalNavigationBarWrapper {...{ scrollPosition }}>
       <ContentWrapper>
         <Link to="/">
           <HomeSigniture src={companyLogo} alt="company-logo" />
@@ -51,7 +55,7 @@ const HomeGlobalNavigationBar: React.FC = () => {
   );
 };
 
-const HomeGlobalNavigationBarWrapper = styled.nav`
+const HomeGlobalNavigationBarWrapper = styled.header<{ scrollPosition: boolean }>`
   width: 100%;
   min-width: 144rem;
   min-height: 8rem;
@@ -60,10 +64,12 @@ const HomeGlobalNavigationBarWrapper = styled.nav`
   justify-content: center;
   align-items: center;
   z-index: 10;
-  background-color: ${({ theme: { color } }) => color.greyScale.white};
+  background-color: ${({ scrollPosition, theme: { color } }) =>
+    scrollPosition ? color.greyScale.white : "transparent"};
+  transition: background-color 0.15s linear;
 `;
 
-const ContentWrapper = styled.div`
+const ContentWrapper = styled.nav`
   width: 126rem;
   padding: 0 8rem;
   position: fixed;
