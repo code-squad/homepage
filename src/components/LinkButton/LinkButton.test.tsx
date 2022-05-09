@@ -2,6 +2,8 @@ import React from "react";
 import { render } from "@testing-library/react";
 // Testing-Component
 import { LinkButton } from ".";
+// assets
+import rightArrow from "assets/images/icons/arrow-right.svg";
 // lib
 import { TestProvider } from "lib/testUtils";
 
@@ -11,10 +13,10 @@ describe("<LinkButton>", () => {
     title: "마스터즈 코스",
     to: "/masters",
   };
-  const renderLinkButton = () =>
+  const renderLinkButton = (icon?: string) =>
     render(
       <TestProvider>
-        <LinkButton {...props} />
+        <LinkButton {...props} {...{ icon }} />
       </TestProvider>
     );
   it("오른쪽 방향의 화살표가 보여진다.", () => {
@@ -42,5 +44,11 @@ describe("<LinkButton>", () => {
     const linkEle = titleEle.closest("a");
 
     expect(linkEle?.getAttribute("href")).toBe(to);
+  });
+  it("icon props가 넘어온다면 아이콘이 보여진다.", () => {
+    const { getByAltText } = renderLinkButton(rightArrow);
+
+    const linkIcon = getByAltText("link-icon");
+    expect(linkIcon.getAttribute("src")).toBe(rightArrow);
   });
 });

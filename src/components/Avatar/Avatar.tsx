@@ -5,8 +5,6 @@ import styled from "styled-components";
 const Avatar: React.FC<{ src: string }> = ({ src }) => {
   const [imgSrc, setImgSrc] = React.useState(src);
 
-  React.useEffect(() => setImgSrc(src), [src]);
-
   return <ImgProfile src={imgSrc} alt="avatar" onError={() => setImgSrc(blankProfile)} />;
 };
 
