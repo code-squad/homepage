@@ -5,13 +5,11 @@ import Link from "gatsby-link";
 import { SButton } from "components/";
 // Assets
 import companyLogo from "assets/images/logos/HomeSignature.svg";
-// Static
 import { LINK } from "assets/static/phrases";
 import { INTERNAL } from "assets/static/urls";
-// Utils
-import { getCurrentPath } from "lib/utils";
 // Libs
 import { useScrollPosition } from "lib/hooks";
+import { getCurrentPath } from "lib/utils";
 
 const HomeGlobalNavigationBar: React.FC = () => {
   const currentPath = getCurrentPath();

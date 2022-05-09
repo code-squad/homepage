@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-// Icons
-import close from "assets/images/icons/close.svg";
+// Typography
 import { MBody, XSBody } from "typography";
+// Assets
+import close from "assets/images/icons/close.svg";
 
 interface IBannerPopup {
   title: string;

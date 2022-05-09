@@ -2,8 +2,6 @@ import React from "react";
 import { fireEvent, render } from "@testing-library/react";
 // Testing-Component
 import { BannerPopup } from ".";
-// Theme
-import theme from "styles/theme";
 // Libs
 import { TestProvider } from "lib/testUtils";
 

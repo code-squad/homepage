@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "gatsby";
 // Typography
 import { XSBody } from "typography/";
-// Static
+// Assets
 import { LINK, MESSAGE } from "assets/static/phrases";
 import { INTERNAL, EXTERNAL } from "assets/static/urls";
-import { Link } from "gatsby";
 
 const Footer: React.FC = () => {
   return (

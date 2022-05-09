@@ -2,10 +2,10 @@ import React from "react";
 import { render } from "@testing-library/react";
 // Testing-Component
 import { TeamGlobalNavigationBar } from ".";
-// Static
+// Assets
 import { LINK } from "assets/static/phrases";
 import { INTERNAL } from "assets/static/urls";
-// lib
+// Libs
 import { TestProvider } from "lib/testUtils";
 
 describe("<TeamGlobalNavigationBar>", () => {

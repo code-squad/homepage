@@ -3,13 +3,11 @@ import styled from "styled-components";
 import Link from "gatsby-link";
 // Assets
 import companyLogo from "assets/images/logos/TeamSignature.svg";
-// Static
 import { LINK } from "assets/static/phrases";
 import { INTERNAL } from "assets/static/urls";
-// Utils
-import { getCurrentPath } from "lib/utils";
 // Libs
 import { useScrollPosition } from "lib/hooks";
+import { getCurrentPath } from "lib/utils";
 
 const TeamGlobalNavigationBar: React.FC = () => {
   const currentPath = getCurrentPath();

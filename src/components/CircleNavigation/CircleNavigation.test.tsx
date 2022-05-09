@@ -1,9 +1,9 @@
 import React from "react";
 import { fireEvent, render } from "@testing-library/react";
-// Testing-Component
-import { CircleNavigation } from ".";
 // Theme
 import theme from "styles/theme";
+// Testing-Component
+import { CircleNavigation } from ".";
 // Libs
 import { TestProvider } from "lib/testUtils";
 
