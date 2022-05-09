@@ -45,12 +45,10 @@ const Footer: React.FC = () => {
               <XSBody bold>{MESSAGE.COMPANY_NAME}</XSBody>
             </li>
             <li>
-              <InternalLinkButton to={INTERNAL.TEAM_CULTURE}>
-                {LINK.TEAM_CULTURE}
-              </InternalLinkButton>
+              <InternalLink to={INTERNAL.TEAM_CULTURE}>{LINK.TEAM_CULTURE}</InternalLink>
             </li>
             <li>
-              <InternalLinkButton to={INTERNAL.RECRUIT}>{LINK.RECRUIT}</InternalLinkButton>
+              <InternalLink to={INTERNAL.RECRUIT}>{LINK.RECRUIT}</InternalLink>
             </li>
           </MenuList>
           <MenuList>
@@ -58,19 +56,17 @@ const Footer: React.FC = () => {
               <XSBody bold>{MESSAGE.CURRICULUM}</XSBody>
             </li>
             <li>
-              <InternalLinkButton to={INTERNAL.MASTERS}>{LINK.MASTERS}</InternalLinkButton>
+              <InternalLink to={INTERNAL.MASTERS}>{LINK.MASTERS}</InternalLink>
             </li>
             <li>
-              <InternalLinkButton to={INTERNAL.CODE_TOGETHER}>
-                {LINK.CODE_TOGETHER}
-              </InternalLinkButton>
+              <InternalLink to={INTERNAL.CODE_TOGETHER}>{LINK.CODE_TOGETHER}</InternalLink>
             </li>
           </MenuList>
           <MenuList>
             <li>
-              <InternalLinkButton $bold to={INTERNAL.FAQ}>
+              <InternalLink $bold to={INTERNAL.FAQ}>
                 {LINK.FAQ}
-              </InternalLinkButton>
+              </InternalLink>
             </li>
           </MenuList>
           <MenuList>
@@ -78,19 +74,19 @@ const Footer: React.FC = () => {
               <XSBody bold>{MESSAGE.SOCIAL_MEDIA}</XSBody>
             </li>
             <li>
-              <ExternalLinkButton href={EXTERNAL.BLOG} target="_blank">
+              <ExternalLink href={EXTERNAL.BLOG} target="_blank">
                 {LINK.BLOG}
-              </ExternalLinkButton>
+              </ExternalLink>
             </li>
             <li>
-              <ExternalLinkButton href={EXTERNAL.YOUTUBE} target="_blank">
+              <ExternalLink href={EXTERNAL.YOUTUBE} target="_blank">
                 {LINK.YOUTUBE}
-              </ExternalLinkButton>
+              </ExternalLink>
             </li>
             <li>
-              <ExternalLinkButton href={EXTERNAL.FACEBOOK} target="_blank">
+              <ExternalLink href={EXTERNAL.FACEBOOK} target="_blank">
                 {LINK.FACEBOOK}
-              </ExternalLinkButton>
+              </ExternalLink>
             </li>
           </MenuList>
         </MenuListWrapper>
@@ -163,7 +159,7 @@ const MenuList = styled.ul`
   gap: 1.6rem 0;
 `;
 
-const InternalLinkButton = styled(Link)<{ $bold?: boolean }>`
+const InternalLink = styled(Link)<{ $bold?: boolean }>`
   color: ${({ theme: { color } }) => color.greyScale.white};
   font-weight: ${({ $bold, theme: { fontWeight } }) =>
     $bold ? fontWeight.medium : fontWeight.regular};
@@ -173,7 +169,7 @@ const InternalLinkButton = styled(Link)<{ $bold?: boolean }>`
   }
 `;
 
-const ExternalLinkButton = styled.a`
+const ExternalLink = styled.a`
   color: ${({ theme: { color } }) => color.greyScale.white};
   text-decoration: none;
   &:hover {
