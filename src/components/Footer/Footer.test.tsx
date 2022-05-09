@@ -3,7 +3,7 @@ import { render } from "@testing-library/react";
 // Testing-Component
 import { Footer } from ".";
 // Assets
-import { BUTTON, LINK, MESSAGE } from "assets/static/phrases";
+import { LINK, MESSAGE } from "assets/static/phrases";
 import { EXTERNAL, INTERNAL } from "assets/static/urls";
 // Libs
 import { TestProvider } from "lib/testUtils";
@@ -46,21 +46,11 @@ describe("<Footer>", () => {
 
     getByText(MESSAGE.CURRICULUM);
   });
-  it("팀 문화 링크가 보여진다.", async () => {
-    const { getByText } = renderFooter();
-
-    getByText(LINK.TEAM_CULTURE);
-  });
   it("팀 문화 링크를 클릭하면 마스터즈코스 페이지로 이동된다.", async () => {
     const { getByRole } = renderFooter();
 
     const linkEle = getByRole("link", { name: LINK.TEAM_CULTURE });
     expect(linkEle?.getAttribute("href")).toBe(INTERNAL.TEAM_CULTURE);
-  });
-  it("채용 링크가 보여진다.", async () => {
-    const { getByText } = renderFooter();
-
-    getByText(LINK.TEAM_CULTURE);
   });
   it("채용 링크를 클릭하면 마스터즈코스 페이지로 이동된다.", async () => {
     const { getByRole } = renderFooter();
@@ -68,43 +58,23 @@ describe("<Footer>", () => {
     const linkEle = getByRole("link", { name: LINK.RECRUIT });
     expect(linkEle?.getAttribute("href")).toBe(INTERNAL.RECRUIT);
   });
-  it("마스터즈 코스 링크가 보여진다.", async () => {
-    const { getByText } = renderFooter();
-
-    getByText(LINK.MASTERS);
-  });
   it("마스터즈 코스 링크를 클릭하면 마스터즈코스 페이지로 이동된다.", async () => {
     const { getByRole } = renderFooter();
 
     const linkEle = getByRole("link", { name: LINK.MASTERS });
     expect(linkEle?.getAttribute("href")).toBe(INTERNAL.MASTERS);
   });
-  it("마스터즈 코스 링크가 보여진다.", async () => {
-    const { getByText } = renderFooter();
-
-    getByText(LINK.MASTERS);
-  });
   it("마스터즈 코스 링크를 클릭하면 마스터즈코스 페이지로 이동된다.", async () => {
     const { getByRole } = renderFooter();
 
     const linkEle = getByRole("link", { name: LINK.MASTERS });
     expect(linkEle?.getAttribute("href")).toBe(INTERNAL.MASTERS);
-  });
-  it("코드투게더 링크가 보여진다.", async () => {
-    const { getByText } = renderFooter();
-
-    getByText(LINK.CODE_TOGETHER);
   });
   it("코드투게더 링크를 클릭하면 마스터즈코스 페이지로 이동된다.", async () => {
     const { getByRole } = renderFooter();
 
     const linkEle = getByRole("link", { name: LINK.CODE_TOGETHER });
     expect(linkEle?.getAttribute("href")).toBe(INTERNAL.CODE_TOGETHER);
-  });
-  it("자주 묻는 질문 링크가 보여진다.", async () => {
-    const { getByText } = renderFooter();
-
-    getByText(LINK.FAQ);
   });
   it("자주 묻는 질문 링크를 클릭하면 마스터즈코스 페이지로 이동된다.", async () => {
     const { getByRole } = renderFooter();
@@ -117,21 +87,11 @@ describe("<Footer>", () => {
 
     getByText(MESSAGE.SOCIAL_MEDIA);
   });
-  it("블로그 링크가 보여진다.", async () => {
-    const { getByText } = renderFooter();
-
-    getByText(LINK.BLOG);
-  });
   it("블로그 링크를 클릭하면 새 블로그 탭이 띄워진다.", async () => {
     const { getByRole } = renderFooter();
 
     const linkEle = getByRole("link", { name: LINK.BLOG });
     expect(linkEle?.getAttribute("href")).toBe(EXTERNAL.BLOG);
-  });
-  it("유튜브 링크가 보여진다.", async () => {
-    const { getByText } = renderFooter();
-
-    getByText(LINK.YOUTUBE);
   });
   it("유튜브 링크를 클릭하면 새 블로그 탭이 띄워진다.", async () => {
     const { getByRole } = renderFooter();
@@ -139,27 +99,22 @@ describe("<Footer>", () => {
     const linkEle = getByRole("link", { name: LINK.YOUTUBE });
     expect(linkEle?.getAttribute("href")).toBe(EXTERNAL.YOUTUBE);
   });
-  it("페이스북 링크가 보여진다.", async () => {
-    const { getByText } = renderFooter();
-
-    getByText(LINK.FACEBOOK);
-  });
   it("페이스북 링크를 클릭하면 새 블로그 탭이 띄워진다.", async () => {
     const { getByRole } = renderFooter();
 
     const linkEle = getByRole("link", { name: LINK.FACEBOOK });
     expect(linkEle?.getAttribute("href")).toBe(EXTERNAL.FACEBOOK);
   });
-  it("개인정보 취급방침 버튼이 보여진다.", async () => {
-    const { getByText } = renderFooter();
+  it("개인정보 취급방침 링크를 클릭하면 개인정보 취급방침 안내 페이지로 이동된다.", async () => {
+    const { getByRole } = renderFooter();
 
-    getByText(BUTTON.PRIVACY_POLICY);
+    const linkEle = getByRole("link", { name: LINK.PRIVACY_POLICY });
+    expect(linkEle?.getAttribute("href")).toBe(INTERNAL.PRIVACY_POLICY);
   });
-  //   it("개인정보 취급방침 버튼을 클릭하면 개인정보 취급방침 내용이 보여진다.", async () => {});
-  it("휜불규정 버튼이 보여진다.", async () => {
-    const { getByText } = renderFooter();
+  it("환불규정 링크를 클릭하면 환불규정 안내 페이지로 이동된다.", async () => {
+    const { getByRole } = renderFooter();
 
-    getByText(BUTTON.REFUND_POLICY);
+    const linkEle = getByRole("link", { name: LINK.REFUND_POLICY });
+    expect(linkEle?.getAttribute("href")).toBe(INTERNAL.REFUND_POLICY);
   });
-  //   it("휜불규정 버튼을 클릭하면 환불규정 내용이 보여진다.", async () => {});
 });
