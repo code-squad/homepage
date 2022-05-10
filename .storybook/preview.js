@@ -1,4 +1,3 @@
-import React from "react";
 import { action } from "@storybook/addon-actions";
 // GlobalTheme
 import GlobalTheme from "../src/lib/context/GlobalTheme";
