@@ -11,9 +11,16 @@ export default {
 
 const Template: ComponentStory<typeof SButton> = (args) => <SButton {...args} />;
 
-export const Cooperate = Template.bind({});
-Cooperate.args = {
-  children: "소식 받아보기",
+export const Default = Template.bind({});
+Default.args = {
+  children: "Button",
   to: "/subscribe",
   disabled: false,
+};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  children: "Button",
+  to: "/subscribe",
+  disabled: true,
 };
