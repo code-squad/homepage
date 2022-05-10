@@ -3,7 +3,7 @@ import { ThemeProvider } from "styled-components";
 import theme from "../../styles/theme";
 import GlobalStyle from "../../styles/GlobalStyle";
 
-const GlobalTheme = ({ children }: { children: React.ReactNode }) => (
+const GlobalTheme: React.FC<{ children: React.ReactNode }> = ({ children }) => (
   <ThemeProvider theme={theme}>
     <GlobalStyle />
     {children}
