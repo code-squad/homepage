@@ -12,8 +12,8 @@ export default {
 
 const Template: ComponentStory<typeof TabNavigationBar> = (args) => <TabNavigationBar {...args} />;
 
-export const Cooperate = Template.bind({});
-Cooperate.args = {
+export const Default = Template.bind({});
+Default.args = {
   titles: ["웹 프론트엔드", "웹 백엔드", "모바일 안드로이드", "모바일 iOS"],
-  onIndexChanged: action("onIndexChanged"),
+  onIndexChanged: action("clicked"),
 };
