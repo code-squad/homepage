@@ -11,8 +11,8 @@ export default {
 
 const Template: ComponentStory<typeof InterviewBox> = (args) => <InterviewBox {...args} />;
 
-export const Chloe = Template.bind({});
-Chloe.args = {
+export const Default = Template.bind({});
+Default.args = {
   writerPhoto: "assets/images/blank-profile.svg",
   nutshell:
     "자율적으로 업무를 보는 문화가 자율성을 추구하는 교육관과 동일하다는 점에서 코드스쿼드가 지향하는 가치에 대한 진심을 느낄 수 있다.",
