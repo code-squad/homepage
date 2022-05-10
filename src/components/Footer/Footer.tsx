@@ -1,16 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "gatsby";
 // Typography
 import { XSBody } from "typography/";
-// Static
-import { BUTTON, LINK, MESSAGE } from "assets/static/phrases";
+// Assets
+import { LINK, MESSAGE } from "assets/static/phrases";
 import { INTERNAL, EXTERNAL } from "assets/static/urls";
-import { Link } from "gatsby";
 
 const Footer: React.FC = () => {
-  const handlePrivacyPolicyClick = () => {};
-  const handleRefundPolicyClick = () => {};
-
   return (
     <FooterWrapper>
       <ContentWrapper>
@@ -33,9 +30,9 @@ const Footer: React.FC = () => {
               </div>
             </div>
             <div>
-              <PopupButton>{BUTTON.PRIVACY_POLICY}</PopupButton>
+              <InternalLink to={INTERNAL.PRIVACY_POLICY}>{LINK.PRIVACY_POLICY}</InternalLink>
               <XSBody as="span"> | </XSBody>
-              <PopupButton>{BUTTON.REFUND_POLICY}</PopupButton>
+              <InternalLink to={INTERNAL.REFUND_POLICY}>{LINK.REFUND_POLICY}</InternalLink>
             </div>
           </CompanyInfomationWrapper>
         </CompanyWrapper>
@@ -95,7 +92,7 @@ const Footer: React.FC = () => {
   );
 };
 
-const FooterWrapper = styled.div`
+const FooterWrapper = styled.footer`
   width: 100%;
   min-width: 144rem;
   min-height: 25rem;
@@ -105,10 +102,8 @@ const FooterWrapper = styled.div`
 `;
 
 const ContentWrapper = styled.div`
-  min-width: 126rem;
-  min-height: 25rem;
-  padding: 0 8rem;
-  position: fixed;
+  min-width: 128rem;
+  padding: 5.6rem 8rem 8rem 8rem;
   display: flex;
   justify-content: space-between;
   align-items: center;

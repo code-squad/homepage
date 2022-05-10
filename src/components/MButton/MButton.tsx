@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-// Icons
-import plus from "assets/images/icons/plus.svg";
-import arrowRight from "assets/images/icons/arrow-right.svg";
-// Typography
 import { Link } from "gatsby";
+// Typography
 import { MBody } from "typography";
+// Assets
+import arrowRight from "assets/images/icons/arrow-right.svg";
+import plus from "assets/images/icons/plus.svg";
 
 export interface IMButtonProps {
   children?: string;

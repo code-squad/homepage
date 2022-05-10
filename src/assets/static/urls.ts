@@ -1,11 +1,13 @@
 const INTERNAL = {
   MAIN: "/",
-  MASTERS: "/masters",
   CODE_TOGETHER: "/code-together",
   FAQ: "/faq",
-  TEAM_CULTURE: "/team-culture",
+  MASTERS: "/masters",
+  PRIVACY_POLICY: "/privacy",
   RECRUIT: "/recruit",
+  REFUND_POLICY: "/refund",
   SUBSCRIBE: "/subscribe",
+  TEAM_CULTURE: "/team-culture",
 };
 
 const EXTERNAL = {

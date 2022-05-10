@@ -4,9 +4,9 @@ import { render } from "@testing-library/react";
 import { MButton } from ".";
 // Assets
 import { LINK } from "assets/static/phrases";
+import { INTERNAL } from "assets/static/urls";
 // Libs
 import { TestProvider } from "lib/testUtils";
-import { INTERNAL } from "assets/static/urls";
 
 describe("<MButton>", () => {
   const props = {

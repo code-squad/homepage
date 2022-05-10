@@ -3,10 +3,10 @@ import styled from "styled-components";
 import Link from "gatsby-link";
 // Assets
 import companyLogo from "assets/images/logos/TeamSignature.svg";
-// Static
 import { LINK } from "assets/static/phrases";
 import { INTERNAL } from "assets/static/urls";
-// Utils
+// Libs
+import { useScrollPosition } from "lib/hooks";
 import { getCurrentPath } from "lib/utils";
 
 const TeamGlobalNavigationBar: React.FC = () => {
@@ -22,8 +22,10 @@ const TeamGlobalNavigationBar: React.FC = () => {
     },
   ];
 
+  const scrollPosition = useScrollPosition();
+
   return (
-    <TeamGlobalNavigationBarWrapper>
+    <TeamGlobalNavigationBarWrapper {...{ scrollPosition }}>
       <ContentWrapper>
         <Link to="/">
           <TeamSigniture src={companyLogo} alt="company-logo" />
@@ -42,17 +44,21 @@ const TeamGlobalNavigationBar: React.FC = () => {
   );
 };
 
-const TeamGlobalNavigationBarWrapper = styled.nav`
+const TeamGlobalNavigationBarWrapper = styled.header<{ scrollPosition: boolean }>`
   width: 100%;
   min-width: 144rem;
+  min-height: 8rem;
   position: fixed;
   display: flex;
   justify-content: center;
   z-index: 10;
-  background-color: ${({ theme: { color } }) => color.greyScale.white};
+  background-color: red;
+  background-color: ${({ scrollPosition, theme: { color } }) =>
+    scrollPosition ? color.greyScale.white : "transparent"};
+  transition: background-color 0.15s linear;
 `;
 
-const ContentWrapper = styled.div`
+const ContentWrapper = styled.nav`
   min-width: 126rem;
   min-height: 8rem;
   padding: 0 8rem;
