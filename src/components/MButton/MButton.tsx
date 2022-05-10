@@ -16,9 +16,16 @@ export interface IMButtonProps {
 
 const MButton: React.FC<IMButtonProps> = ({ children, accent, disabled, to }) => {
   return (
-    <MButtonWrapper $accent={accent} {...{ disabled, to }}>
+    <MButtonWrapper $accent={accent} $disabled={disabled} {...{ to }}>
       <ButtonIcon src={plus} {...{ disabled }} />
-      <MBody bold style={{ marginTop: "0.3rem" }}>
+      <MBody
+        bold
+        style={{
+          marginLeft: "0.4rem",
+          marginRight: "0.4rem",
+          marginTop: "0.4rem",
+        }}
+      >
         {children}
       </MBody>
       <ButtonIcon src={arrowRight} {...{ disabled }} />
@@ -26,31 +33,33 @@ const MButton: React.FC<IMButtonProps> = ({ children, accent, disabled, to }) =>
   );
 };
 
-const MButtonWrapper = styled(Link)<{ $accent?: boolean }>`
+const MButtonWrapper = styled(Link)<{ $accent?: boolean; $disabled?: boolean }>`
   display: inline-flex;
   justify-content: space-between;
   align-items: center;
   height: 4rem;
-  padding: 0.7rem 1.6rem;
-  color: ${({ theme: { color } }) => color.greyScale.grey1};
+  padding: 0 2.4rem;
+  color: ${({ $disabled, theme: { color } }) =>
+    $disabled ? color.greyScale.grey3 : color.greyScale.grey1};
   border: 0.1rem solid;
   border-radius: 30px;
-  border-color: ${({ $accent, theme: { color } }) =>
-    $accent ? color.greyScale.black : color.greyScale.grey3};
+  border-color: ${({ $accent, $disabled, theme: { color } }) =>
+    $disabled ? color.greyScale.grey3 : $accent ? color.greyScale.black : color.greyScale.grey3};
   background-color: ${({ theme: { color } }) => color.greyScale.white};
   text-decoration: none;
   text-align: center;
+  cursor: ${({ $disabled }) => ($disabled ? "unset" : "pointer")};
+  pointer-events: ${({ $disabled }) => ($disabled ? "none" : "auto")};
   &:hover {
-    cursor: pointer;
-    color: ${({ theme: { color } }) => color.greyScale.black};
-    background-color: ${({ theme: { color } }) => color.primary.green4};
-    border-color: ${({ theme: { color } }) => color.greyScale.black};
+    color: ${({ $disabled, theme: { color } }) =>
+      $disabled ? color.greyScale.grey3 : color.greyScale.black};
+    background-color: ${({ $disabled, theme: { color } }) =>
+      $disabled ? color.greyScale.white : color.primary.green4};
+    border-color: ${({ $disabled, theme: { color } }) =>
+      $disabled ? color.greyScale.grey3 : color.greyScale.black};
   }
   &:disabled {
     cursor: auto;
-    color: ${({ theme: { color } }) => color.greyScale.grey3};
-    background-color: ${({ theme: { color } }) => color.greyScale.white};
-    border-color: ${({ theme: { color } }) => color.greyScale.grey3};
   }
 `;
 
