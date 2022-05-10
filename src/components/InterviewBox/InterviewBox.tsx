@@ -45,8 +45,8 @@ const InterviewBox: React.FC<IInterviewBox> = ({
 const InterviewBoxWrapper = styled.div`
   padding: 4.8rem;
   background-color: ${({ theme: { color } }) => color.greyScale.offWhite};
-  width: 51.9rem;
-  height: 45.4rem;
+  width: 42.3rem;
+  height: 35.8rem;
 `;
 
 const Nutshell = styled.div`
