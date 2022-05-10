@@ -13,24 +13,24 @@ const Template: ComponentStory<typeof MButton> = (args) => <MButton {...args} />
 
 export const Default = Template.bind({});
 Default.args = {
-  children: "소식 받아보기",
+  children: "Button",
   accent: false,
   disabled: false,
-  to: "/subscribe",
+  to: "/masters",
 };
 
 export const Accent = Template.bind({});
 Accent.args = {
-  children: "소식 받아보기",
+  children: "Button",
   accent: true,
   disabled: false,
-  to: "/subscribe",
+  to: "/masters",
 };
 
 export const Disabled = Template.bind({});
 Disabled.args = {
-  children: "소식 받아보기",
+  children: "Button",
   accent: false,
   disabled: true,
-  to: "/subscribe",
+  to: "/masters",
 };
