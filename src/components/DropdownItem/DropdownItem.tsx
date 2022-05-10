@@ -95,7 +95,7 @@ const Title = styled.div`
   width: 84.5rem;
   margin-right: 2.4rem;
   &:hover: {
-    font-weight: 700;
+    font-weight: ${({ theme: { fontWeight } }) => fontWeight.bold};
   }
 `;
 
