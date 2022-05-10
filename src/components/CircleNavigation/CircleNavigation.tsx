@@ -38,11 +38,12 @@ const CircleNavigation: React.FC<ICircleNavigation> = ({ count, index, onIndexCh
 };
 
 const CircleNavigationWrapper = styled.ul`
-  width: 38.4rem;
+  width: min-content;
   height: 2.4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 2.4rem;
 `;
 
 const CircleButton = styled.button<{ selected?: boolean }>`
