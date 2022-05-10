@@ -13,7 +13,7 @@ export default {
 
 const Template: ComponentStory<typeof Avatar> = (args) => <Avatar {...args} />;
 
-export const Blank = Template.bind({});
-Blank.args = {
+export const Default = Template.bind({});
+Default.args = {
   src: blankProfile,
 };

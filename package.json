@@ -16,7 +16,8 @@
     "test": "jest --config ./scripts/jest/jest.config.ts",
     "test:w": "jest --config ./scripts/jest/jest.config.ts --watch",
     "storybook": "NODE_PATH=src start-storybook -p 3001 -c .storybook -s src",
-    "build-storybook": "build-storybook"
+    "build-storybook": "NODE_PATH=src build-storybook",
+    "chromatic": "npx chromatic --project-token=23aca7a030ba"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
@@ -58,6 +59,7 @@
     "babel-jest": "^28.0.2",
     "babel-loader": "^8.2.5",
     "babel-preset-gatsby": "^2.13.0",
+    "chromatic": "^6.5.4",
     "gatsby-plugin-root-import": "^2.0.8",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^28.0.2",
