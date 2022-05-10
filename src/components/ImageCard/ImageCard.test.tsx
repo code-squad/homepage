@@ -4,7 +4,6 @@ import { render } from "@testing-library/react";
 import { ImageCard } from ".";
 // assets
 import missionAndCooperate from "assets/images/mission-and-cooperate.svg";
-import rightArrow from "assets/images/icons/arrow-right.svg";
 // lib
 import { TestProvider } from "lib/testUtils";
 

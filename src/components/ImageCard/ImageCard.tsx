@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "gatsby";
 // Typography
-import { LBody, MBody, XLBody } from "typography/";
+import { MBody, XLBody } from "typography/";
 
 interface IImageCard {
   description: string;
