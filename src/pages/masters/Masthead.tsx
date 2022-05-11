@@ -1,8 +1,10 @@
 import React from "react";
-import { graphql, useStaticQuery } from "gatsby";
 import styled from "styled-components";
+import { graphql, useStaticQuery } from "gatsby";
 // Typography
 import { MBody, MDisplay } from "typography";
+// Components
+import InfoItem from "./Masthead.InfoItem";
 // Assets
 import headEmoji from "assets/images/icons/head-emoji.svg";
 import calander from "assets/images/icons/calander.svg";
@@ -36,27 +38,9 @@ const Masthead: React.FC = ({}) => {
           ))}
         </TargetWrapper>
         <ul>
-          <li>
-            <label style={{ display: "flex" }}>
-              <img src={calander} />
-              <MBody bold>교육기간</MBody>
-            </label>
-            <MBody>{trainingDuration}</MBody>
-          </li>
-          <li>
-            <label style={{ display: "flex" }}>
-              <img src={coin} />
-              <MBody bold>비용</MBody>
-            </label>
-            <MBody>{cost}</MBody>
-          </li>
-          <li>
-            <label style={{ display: "flex" }}>
-              <img src={book} />
-              <MBody bold>클래스(택1)</MBody>
-            </label>
-            <MBody>{subject}</MBody>
-          </li>
+          <InfoItem src={calander} label="교육기간" content={trainingDuration} />
+          <InfoItem src={coin} label="비용" content={cost} />
+          <InfoItem src={book} label="클래스(택1)" content={subject} />
         </ul>
       </CourseInfoWrapper>
     </MastheadWrapper>
