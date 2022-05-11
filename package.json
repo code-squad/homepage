@@ -16,8 +16,7 @@
     "test": "jest --config ./scripts/jest/jest.config.ts",
     "test:w": "jest --config ./scripts/jest/jest.config.ts --watch",
     "storybook": "NODE_PATH=src start-storybook -p 3001 -c .storybook -s src",
-    "build-storybook": "NODE_PATH=src build-storybook",
-    "chromatic": "npx chromatic --project-token=23aca7a030ba"
+    "build-storybook": "NODE_PATH=src build-storybook"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
