@@ -1,5 +1,6 @@
 export interface CultureType {
+  image?: string;
   title?: string;
   subtitle?: string;
-  content?: string;
+  description?: string;
 }
