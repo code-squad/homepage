@@ -36,7 +36,7 @@ const TabNavigationBarWrapper = styled.div`
   width: 100%;
   min-width: 106.2rem;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 `;
 
@@ -56,6 +56,8 @@ const TabNavButton = styled.button<{ selected?: boolean }>`
   border: 0;
   border-bottom: ${({ selected, theme: { color } }) =>
     selected ? `0.2rem solid ${color.primary.green2}` : "0.2rem solid transparent"};
+  transition-property: corlor, border-bottom;
+  transition-duration: 0.3s;
   &:hover {
     cursor: pointer;
   }
