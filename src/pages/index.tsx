@@ -22,7 +22,8 @@ import {
   Recruit,
 } from "components";
 // Assets
-import codesquadFeature from "assets/images/codesquad-feature.svg";
+import icons from "assets/images/icons";
+import images from "assets/images";
 import mastersIcon from "assets/images/icons/masters.svg";
 import codeTogetherIcon from "assets/images/icons/code-together.svg";
 import { LINK_DESCRIPTION, LINK, SUBTITLE, TITLE } from "assets/static/phrases";
@@ -37,11 +38,10 @@ const MainPage = ({ data }: any) => {
 
   const fields = masters.map((master) => master.field!);
 
-  const [masterIndex, setMasterIndex] = React.useState(0);
-  const masterIntroduce = masters[masterIndex];
+  const [masterIntroduce, setMasterIntroduce] = React.useState<MasterType>(masters[0]);
 
   const handleTabClick = (index: number) => {
-    setMasterIndex(index);
+    setMasterIntroduce(masters[index]);
   };
 
   return (
@@ -85,7 +85,7 @@ const MainPage = ({ data }: any) => {
                 {`${differ.description}`}
               </MBody>
             </FeatureContent>
-            <FeatureImg src={codesquadFeature} />
+            <FeatureImg src={images[differ.image]} />
           </FeatureContentWrapper>
         </Feature>
         <Culture>
@@ -96,7 +96,7 @@ const MainPage = ({ data }: any) => {
           <CultureContentWrapper>
             {cultures.map((culture) => (
               <CultureContent key={culture.title}>
-                <CultureImg src={culture.image} />
+                <CultureImg src={icons[culture.image]} />
                 <div>
                   <MBody style={{ paddingBottom: "0.4rem" }}>{culture.subtitle}</MBody>
                   <XLBody>{culture.title}</XLBody>
@@ -337,6 +337,7 @@ export const query = graphql`
           title
           subtitle
           description
+          image
         }
       }
     }
@@ -349,6 +350,7 @@ export const query = graphql`
           title
           subtitle
           description
+          image
         }
       }
     }
