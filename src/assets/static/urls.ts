@@ -6,7 +6,7 @@ const INTERNAL = {
   PRIVACY_POLICY: "/privacy",
   RECRUIT: "/recruit",
   REFUND_POLICY: "/refund",
-  SUBSCRIBE: "/subscribe",
+  SUBSCRIPTION: "/subscription",
   TEAM_CULTURE: "/team-culture",
 };
 
