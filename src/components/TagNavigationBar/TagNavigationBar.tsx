@@ -36,7 +36,7 @@ const TagNavigationBarWrapper = styled.div`
   width: 100%;
   min-width: 106.2rem;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 `;
 
@@ -55,6 +55,8 @@ const TagNavButton = styled.button<{ selected?: boolean }>`
     selected ? color.greyScale.white : "transparent"};
   border: 0;
   border-radius: 99.9rem;
+  transition-property: font-weight, background-color;
+  transition-duration: 0.3s;
   &:hover {
     cursor: pointer;
   }
