@@ -45,7 +45,7 @@ const HomeGlobalNavigationBar: React.FC = () => {
             </li>
           ))}
           <li>
-            <SButton to="/subscribe">{LINK.SUBSCRIBE}</SButton>
+            <SButton to="/subscription">{LINK.SUBSCRIPTION}</SButton>
           </li>
         </ButtonList>
       </ContentWrapper>
