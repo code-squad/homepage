@@ -6,6 +6,8 @@ const GlobalStyle = createGlobalStyle`
    License: none (public domain)
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -36,7 +38,7 @@ html {
 }
 body {
   line-height: 1;
-  font-family: Noto Sans KR;
+  font-family: 'Noto Sans KR';
 }
 ol, ul {
 	list-style: none;
