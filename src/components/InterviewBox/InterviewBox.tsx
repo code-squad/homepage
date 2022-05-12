@@ -43,10 +43,9 @@ const InterviewBox: React.FC<IInterviewBox> = ({
 };
 
 const InterviewBoxWrapper = styled.div`
-  padding: 4.8rem;
+  padding: 4.8rem 4.8rem 7rem 4.8rem;
   background-color: ${({ theme: { color } }) => color.greyScale.offWhite};
-  width: 42.3rem;
-  height: 35.8rem;
+  min-width: 42.3rem;
 `;
 
 const Nutshell = styled.div`
@@ -83,4 +82,5 @@ const WriterInfo = styled.span`
   display: inline-block;
   color: ${({ theme: { color } }) => color.greyScale.grey2};
 `;
+
 export default InterviewBox;
