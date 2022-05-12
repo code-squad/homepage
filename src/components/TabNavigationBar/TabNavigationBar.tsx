@@ -3,10 +3,11 @@ import styled from "styled-components";
 // Typography
 import { LBody } from "typography/";
 
-const TabNavigationBar: React.FC<{
+interface ITabNavigationBarProps {
   onIndexChanged: (index: number) => void;
   titles: string[];
-}> = ({ onIndexChanged, titles }) => {
+}
+const TabNavigationBar: React.FC<ITabNavigationBarProps> = ({ onIndexChanged, titles }) => {
   const [currentIndex, setCurrentIndex] = React.useState(0);
 
   const handleTabNavigationButtonClick = (index: number) => {
