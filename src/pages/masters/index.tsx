@@ -9,7 +9,9 @@ import { XSBody } from "typography/";
 
 // Libs
 import { HomeGlobalNavigationBar } from "components/";
-import Masthead from "./Masthead";
+import { Masthead } from "pageComponents/masters/Masthead";
+import { EducationFeatures } from "pageComponents/masters/EducationFeatures";
+import { DetailCurriculum } from "pageComponents/masters/DetailCurriculum";
 
 const MatsersPage: React.FC<PageProps> = ({ data }) => {
   return (
@@ -17,6 +19,8 @@ const MatsersPage: React.FC<PageProps> = ({ data }) => {
       <main>
         <HomeGlobalNavigationBar />
         <Masthead />
+        <EducationFeatures />
+        <DetailCurriculum />
       </main>
     </GlobalTheme>
   );
