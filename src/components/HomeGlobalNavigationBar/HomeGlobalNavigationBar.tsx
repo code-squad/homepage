@@ -45,7 +45,7 @@ const HomeGlobalNavigationBar: React.FC = () => {
             </li>
           ))}
           <li>
-            <SButton to="/subscribe">{LINK.SUBSCRIBE}</SButton>
+            <SButton to="/subscription">{LINK.SUBSCRIPTION}</SButton>
           </li>
         </ButtonList>
       </ContentWrapper>
@@ -68,7 +68,7 @@ const HomeGlobalNavigationBarWrapper = styled.header<{ scrollPosition: boolean }
 `;
 
 const ContentWrapper = styled.nav`
-  width: 126rem;
+  width: 128rem;
   padding: 0 8rem;
   position: fixed;
   display: flex;

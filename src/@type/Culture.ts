@@ -1,5 +1,8 @@
+import icons from "assets/images/icons";
+
 export interface CultureType {
-  title?: string;
-  subtitle?: string;
-  content?: string;
+  image: keyof typeof icons;
+  title: string;
+  subtitle: string;
+  description: string;
 }

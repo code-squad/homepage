@@ -12,3 +12,4 @@ export { DropdownItem } from "./DropdownItem";
 export { LinkButton } from "./LinkButton";
 export { ImageCard } from "./ImageCard";
 export { BannerPopup } from "./BannerPopup";
+export { Recruit } from "./Recruit";

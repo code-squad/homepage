@@ -14,13 +14,13 @@ const Template: ComponentStory<typeof SButton> = (args) => <SButton {...args} />
 export const Default = Template.bind({});
 Default.args = {
   children: "Button",
-  to: "/subscribe",
+  to: "/subscription",
   disabled: false,
 };
 
 export const Disabled = Template.bind({});
 Disabled.args = {
   children: "Button",
-  to: "/subscribe",
+  to: "/subscription",
   disabled: true,
 };
