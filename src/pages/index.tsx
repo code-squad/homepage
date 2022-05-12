@@ -75,7 +75,7 @@ export const query = graphql`
         frontmatter {
           title
           subtitle
-          description
+          descriptions
           image
         }
       }
