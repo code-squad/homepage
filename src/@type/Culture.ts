@@ -4,5 +4,5 @@ export interface CultureType {
   image: keyof typeof icons;
   title: string;
   subtitle: string;
-  description: string;
+  descriptions: string[];
 }
