@@ -3,6 +3,7 @@ const SUBTITLE = {
   CULTURE: "코드스쿼드의 가치가 녹아있는",
   FEATURE: "코드스쿼드는",
   MASTER: "코드스쿼드의 교육 가치를 실현하는",
+  GRADUATE_INTERVIEW: "코드스쿼드의 교육을 경험한",
 };
 
 const TITLE = {
@@ -10,6 +11,7 @@ const TITLE = {
   CULTURE: "교육 및 학습 문화",
   FEATURE: "무엇이 다른가요?",
   MASTER: "분야별 전문 마스터",
+  GRADUATE_INTERVIEW: "졸업생 후기",
 };
 
 const LINK = {
