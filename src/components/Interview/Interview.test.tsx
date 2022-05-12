@@ -54,4 +54,17 @@ describe("<Interview>", () => {
 
     getByText(props.title);
   });
+  it("props로 전달된 interver들이 보여진다.", async () => {
+    const { getAllByAltText, getAllByText, getByText } = renderInterview();
+    const { interviews } = props;
+
+    interviews.forEach((interview) => {
+      const { nutshell, content, writer, writerInfo } = interview;
+      getAllByAltText("avatar");
+      getByText(nutshell);
+      getByText(content);
+      getAllByText(writer);
+      getByText(writerInfo);
+    });
+  });
 });
