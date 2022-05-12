@@ -1,15 +1,16 @@
 import React from "react";
 import { graphql } from "gatsby";
 // Type
-import { CultureType } from "../@type/Culture";
-import { FeatureType } from "../@type/Feature";
+import { CultureType } from "@type/Culture";
+import { FeatureType } from "@type/Feature";
 import { MasterType } from "@type/Master";
 import { ArticleType } from "@type/Article";
+import { InterviewType } from "@type/Interview";
 // Theme
 import GlobalTheme from "../lib/context/GlobalTheme";
 import theme from "styles/theme";
 // Components
-import { Footer, HomeGlobalNavigationBar, Recruit } from "components";
+import { Footer, HomeGlobalNavigationBar, Recruit, Interview } from "components";
 import {
   Introduce,
   Course,
@@ -19,6 +20,8 @@ import {
   Master,
   Article,
 } from "pageComponents/main";
+// Assets
+import { SUBTITLE, TITLE } from "assets/static/phrases";
 // Libs
 import { getDataFromMdx } from "lib/utils";
 
@@ -26,7 +29,8 @@ const MainPage = ({ data }: any) => {
   const cultures: CultureType[] = getDataFromMdx(data.culture);
   const [feature]: FeatureType[] = getDataFromMdx(data.feature);
   const masters: MasterType[] = getDataFromMdx(data.master);
-  const articles: ArticleType[] = getDataFromMdx(data.media);
+  const articles: ArticleType[] = getDataFromMdx(data.article);
+  const interviews: InterviewType[] = getDataFromMdx(data.interview);
 
   return (
     <GlobalTheme>
@@ -38,6 +42,11 @@ const MainPage = ({ data }: any) => {
         <Culture {...{ cultures }} />
         <RecruitLink />
         <Master {...{ masters }} />
+        <Interview
+          subtitle={SUBTITLE.GRADUATE_INTERVIEW}
+          title={TITLE.GRADUATE_INTERVIEW}
+          {...{ interviews }}
+        />
         <Article {...{ articles }} />
         <Recruit backgroundColor={theme.color.primary.green4} />
         <Footer />
@@ -85,9 +94,23 @@ export const query = graphql`
         }
       }
     }
-    media: allMdx(
+    interview: allMdx(
       sort: { order: ASC, fields: [frontmatter___index] }
-      filter: { frontmatter: { templateKey: { eq: "main_media" } } }
+      filter: { frontmatter: { templateKey: { eq: "main_interview" } } }
+    ) {
+      nodes {
+        frontmatter {
+          writerPhoto
+          nutshell
+          content
+          writer
+          writerInfo
+        }
+      }
+    }
+    article: allMdx(
+      sort: { order: ASC, fields: [frontmatter___index] }
+      filter: { frontmatter: { templateKey: { eq: "main_article" } } }
     ) {
       nodes {
         frontmatter {
