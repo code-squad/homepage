@@ -60,8 +60,8 @@ const CloseButton = styled.button`
 `;
 
 const ButtonIcon = styled.img`
-  width: 1.002rem;
-  height: 1.002rem;
+  width: 2.4rem;
+  height: 2.4rem;
   filter: invert(79%) sepia(29%) saturate(7%) hue-rotate(104deg) brightness(94%) contrast(91%);
 `;
 
