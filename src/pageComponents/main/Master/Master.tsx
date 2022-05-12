@@ -5,7 +5,7 @@ import { MasterType } from "@type/Master";
 // Theme
 import theme from "styles/theme";
 // Typography
-import { LBody, MBody, SDisplay, XLBody, XSBody, SBody } from "typography";
+import { LBody, MBody, SDisplay, XLBody, XSBody } from "typography";
 // Components
 import { TabNavigationBar } from "components";
 // Assets
@@ -56,9 +56,7 @@ const Master: React.FC<IMaster> = ({ masters }) => {
             <MBody bold>{masterIntroduce.introduce}</MBody>
             <CareerWrapper>
               {masterIntroduce.careers?.map((career) => (
-                <li key={career}>
-                  <SBody style={{ display: "inline", verticalAlign: "middle" }}>{career}</SBody>
-                </li>
+                <Career>{career}</Career>
               ))}
             </CareerWrapper>
           </Introduce>
@@ -108,6 +106,13 @@ const CareerWrapper = styled.ul`
   gap: 0.8rem;
   list-style-type: disc;
   list-style-position: inside;
+`;
+
+const Career = styled.li`
+  font-size: ${({ theme: { fontSize } }) => fontSize.body.sm};
+  font-weight: ${({ theme: { fontWeight } }) => fontWeight.regular};
+  line-height: ${({ theme: { lineHeight } }) => lineHeight.body.sm};
+  letter-spacing: ${({ theme: { letterSpacing } }) => letterSpacing};
 `;
 
 export default Master;
