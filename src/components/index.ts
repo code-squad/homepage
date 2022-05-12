@@ -7,6 +7,7 @@ export { TagNavigationBar } from "./TagNavigationBar";
 export { CircleNavigation } from "./CircleNavigation";
 export { Footer } from "./Footer";
 export { Avatar } from "./Avatar";
+export { Interview } from "./Interview";
 export { InterviewBox } from "./InterviewBox";
 export { DropdownItem } from "./DropdownItem";
 export { LinkButton } from "./LinkButton";
