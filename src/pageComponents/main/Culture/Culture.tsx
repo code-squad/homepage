@@ -29,7 +29,13 @@ const Culture: React.FC<ICulture> = ({ cultures }) => {
               <MBody style={{ paddingBottom: "0.4rem" }}>{culture.subtitle}</MBody>
               <XLBody>{culture.title}</XLBody>
             </div>
-            <MBody style={{ color: theme.color.greyScale.grey2 }}>{culture.description}</MBody>
+            <DescriptionWrapper>
+              {culture.descriptions.map((description) => (
+                <li>
+                  <MBody style={{ color: theme.color.greyScale.grey2 }}>{description}</MBody>
+                </li>
+              ))}
+            </DescriptionWrapper>
           </CultureContent>
         ))}
       </ContentWrapper>
@@ -71,6 +77,12 @@ const CultureContent = styled.div`
 const CultureImg = styled.img`
   width: 8rem;
   height: 8rem;
+`;
+
+const DescriptionWrapper = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
 `;
 
 export default Culture;
