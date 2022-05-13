@@ -55,6 +55,7 @@ const CurriculumTitleWrapper = styled.div`
 
 const CurriculumHeadTitle = styled.div`
   margin-top: 0.8rem;
+  margin-bottom: 5.2rem;
 `;
 
 const CurriculumWrapper = styled.div`
