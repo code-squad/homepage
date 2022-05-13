@@ -3,7 +3,7 @@ import { render } from "@testing-library/react";
 // Testing-Component
 import { ImageCard } from ".";
 // assets
-import missionAndCooperate from "assets/images/mission-and-cooperate.svg";
+import cooperateBlock from "assets/images/cooperate-block.svg";
 // lib
 import { TestProvider } from "lib/testUtils";
 
@@ -12,7 +12,7 @@ describe("<ImageCard>", () => {
     title: "미션과 협력 중심의 학습",
     description:
       "다양한 미션을 자기주도적으로 해결하면서 필요한 지식을 본인의 것으로 만들 수 있습니다.",
-    img: missionAndCooperate,
+    img: cooperateBlock,
   };
   const renderImageCard = () =>
     render(

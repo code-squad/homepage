@@ -4,12 +4,13 @@ import { graphql, useStaticQuery } from "gatsby";
 // Typography
 import { MBody, MDisplay } from "typography";
 // Components
-import InfoItem from "./Masthead.InfoItem";
+import { InfoItem } from "./InfoItem";
 // Assets
 import headEmoji from "assets/images/icons/head-emoji.svg";
 import calander from "assets/images/icons/calander.svg";
 import coin from "assets/images/icons/coin.svg";
 import book from "assets/images/icons/book.svg";
+import mastersBig from "assets/images/icons/masters-big.svg";
 
 const Masthead: React.FC = ({}) => {
   const data = useStaticQuery(MastHeadQuery);
@@ -18,7 +19,7 @@ const Masthead: React.FC = ({}) => {
   const { title, description, targets, trainingDuration, cost, subject } = frontmatter;
 
   return (
-    <MastheadWrapper>
+    <MastheadWrapper icon={mastersBig}>
       <TitleWrapper>
         <MDisplay>{title}</MDisplay>
         <Description>
@@ -32,7 +33,7 @@ const Masthead: React.FC = ({}) => {
             <MBody bold>교육 과정 대상자</MBody>
           </TargetTitle>
           {targets.map((target: string) => (
-            <TargetItem>
+            <TargetItem key={target}>
               <MBody>{target}</MBody>
             </TargetItem>
           ))}
@@ -47,13 +48,16 @@ const Masthead: React.FC = ({}) => {
   );
 };
 
-const MastheadWrapper = styled.div`
+const MastheadWrapper = styled.div<{ icon: string }>`
   width: 100%;
   min-width: 144rem;
   padding: 16rem 0 7.2rem 0;
   display: flex;
   align-items: center;
   background-color: ${({ theme: { color } }) => color.secondary.blue3};
+  background-image: ${({ icon }) => `url(${icon})`};
+  background-repeat: no-repeat;
+  background-position: right 16rem top 8rem;
   flex-direction: column;
 `;
 
@@ -100,7 +104,7 @@ const TargetItem = styled.li`
 `;
 
 const MastHeadQuery = graphql`
-  query MyQuery {
+  query MastHeadQuery {
     mdx(frontmatter: { templateKey: { eq: "masters_masthead" } }) {
       frontmatter {
         title
