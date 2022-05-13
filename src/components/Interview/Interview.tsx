@@ -67,6 +67,7 @@ const InterviewWrapper = styled.div`
   flex-direction: column;
   align-items: space-between;
   gap: 8rem;
+  overflow-x: hidden;
 `;
 
 const ArrowNavigationWrapper = styled.div`
