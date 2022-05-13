@@ -11,6 +11,8 @@ import images from "assets/images";
 import { SUBTITLE, TITLE } from "assets/static/phrases";
 
 const Feature: React.FC<{ feature: FeatureType }> = ({ feature }) => {
+  const { title, subtitle, description, image } = feature;
+
   return (
     <FeatureWrapper>
       <TitleWrapper>
@@ -20,14 +22,14 @@ const Feature: React.FC<{ feature: FeatureType }> = ({ feature }) => {
       <ContentWrapper>
         <Content>
           <div>
-            <XLBody bold>{feature.title}</XLBody>
+            <XLBody bold>{title}</XLBody>
             <MBody bold style={{ color: `${theme.color.greyScale.grey2}` }}>
-              {feature.subtitle}
+              {subtitle}
             </MBody>
           </div>
-          <MBody style={{ color: theme.color.greyScale.grey2 }}>{`${feature.description}`}</MBody>
+          <MBody style={{ color: theme.color.greyScale.grey2 }}>{`${description}`}</MBody>
         </Content>
-        <FeatureImg src={images[feature.image]} />
+        <FeatureImg src={images[image]} />
       </ContentWrapper>
     </FeatureWrapper>
   );
