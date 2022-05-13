@@ -52,7 +52,7 @@ const Interview: React.FC<IInterview> = ({ subtitle, title, interviews }) => {
         <LBody>{subtitle}</LBody>
         <SDisplay>{title}</SDisplay>
       </TitleWrapper>
-      <InterviewList style={{ left: `-${currentIndex * 54.3}rem` }}>
+      <InterviewList {...{ currentIndex }}>
         {interviews.map((interview) => (
           <InterviewBox key={interview.nutshell} {...{ ...interview }} />
         ))}
@@ -60,6 +60,8 @@ const Interview: React.FC<IInterview> = ({ subtitle, title, interviews }) => {
     </InterviewWrapper>
   );
 };
+
+// style={{ left: `-${currentIndex * 54.3}rem` }}
 
 const InterviewWrapper = styled.div`
   padding-bottom: 20rem;
@@ -108,15 +110,14 @@ const TitleWrapper = styled.div`
   position: relative;
 `;
 
-const InterviewList = styled.ul`
-  width: 100%;
+const InterviewList = styled.ul<{ currentIndex: number }>`
   width: 106.2rem;
   padding: 0 18.9rem;
-  margin: 0 auto;
   position: relative;
   display: flex;
   gap: 2.4rem;
   transition: left 0.5s;
+  left: -${({ currentIndex }) => currentIndex * 54.3}rem;
 `;
 
 export default Interview;
