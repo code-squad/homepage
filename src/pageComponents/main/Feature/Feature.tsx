@@ -10,11 +10,7 @@ import { LBody, MBody, SDisplay, XLBody } from "typography";
 import images from "assets/images";
 import { SUBTITLE, TITLE } from "assets/static/phrases";
 
-interface IFeature {
-  feature: FeatureType;
-}
-
-const Feature: React.FC<IFeature> = ({ feature }) => {
+const Feature: React.FC<{ feature: FeatureType }> = ({ feature }) => {
   return (
     <FeatureWrapper>
       <TitleWrapper>
