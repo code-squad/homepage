@@ -67,11 +67,15 @@ const CurriculumWrapper = styled.div`
 
 const CurriculumQuery = graphql`
   query CurriculumQuery {
-    allMdx(filter: { frontmatter: { templateKey: { glob: "masters_curriculum*" } } }) {
+    allMdx(
+      sort: { order: ASC, fields: [frontmatter___index] }
+      filter: { frontmatter: { templateKey: { glob: "masters_curriculum*" } } }
+    ) {
       edges {
         node {
           frontmatter {
             tabName
+            index
             curriculum {
               index
               subject
