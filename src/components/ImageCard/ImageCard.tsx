@@ -26,7 +26,6 @@ const ImageCard: React.FC<IImageCard> = ({ title, description, img, medium }) =>
 
 const CardWrapper = styled.div<{ medium?: boolean }>`
   width: ${({ medium }) => (medium ? "41rem" : "30.2rem")};
-  height: 24.2rem;
   display: flex;
   flex-direction: column;
 `;

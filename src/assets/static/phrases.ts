@@ -4,6 +4,7 @@ const SUBTITLE = {
   FEATURE: "코드스쿼드는",
   MASTER: "코드스쿼드의 교육 가치를 실현하는",
   GRADUATE_INTERVIEW: "코드스쿼드의 교육을 경험한",
+  MASTERS_COURSE: "마스터즈 코스의",
 };
 
 const TITLE = {
@@ -12,6 +13,8 @@ const TITLE = {
   FEATURE: "무엇이 다른가요?",
   MASTER: "분야별 전문 마스터",
   GRADUATE_INTERVIEW: "졸업생 후기",
+  EDUCATION_FEATURES: "교육 특징",
+  DETAIL_CURRICULUM: "각 클래스 별 상세 커리큘럼",
 };
 
 const LINK = {
