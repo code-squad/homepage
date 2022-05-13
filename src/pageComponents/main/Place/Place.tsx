@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import { graphql, useStaticQuery } from "gatsby";
 // Type
 import { PlaceType } from "@type/Place";
-import { graphql, useStaticQuery } from "gatsby";
 // Theme
 import theme from "styles/theme";
 // Typography
