@@ -5,11 +5,11 @@ import { MasterType } from "@type/Master";
 // Theme
 import theme from "styles/theme";
 // Typography
-import { LBody, MBody, SDisplay, XLBody, XSBody } from "typography";
+import { LBody, MBody, SBody, SDisplay, XLBody, XSBody } from "typography";
 // Components
 import { TabNavigationBar } from "components";
 // Assets
-import { SUBTITLE, TITLE } from "assets/static/phrases";
+import { SUBTITLE, TITLE, DESCRIPTION } from "assets/static/phrases";
 
 interface IMaster {
   masters: MasterType[];
@@ -38,8 +38,7 @@ const Master: React.FC<IMaster> = ({ masters }) => {
             paddingBottom: "4rem",
           }}
         >
-          실무 경험이 풍부하고 소프트웨어 교육을 잘 이해하는 마스터들이 여러분의 성장을 위해
-          멘토링을 지원합니다.
+          {DESCRIPTION.MASTER}
         </MBody>
         <TabNavigationBar titles={fields} onIndexChanged={handleTabClick} />
       </div>
@@ -56,7 +55,9 @@ const Master: React.FC<IMaster> = ({ masters }) => {
             <MBody bold>{masterIntroduce.introduce}</MBody>
             <CareerWrapper>
               {masterIntroduce.careers?.map((career) => (
-                <Career>{career}</Career>
+                <li>
+                  <SBody style={{ display: "inline", verticalAlign: "middle" }}>{career}</SBody>
+                </li>
               ))}
             </CareerWrapper>
           </Introduce>

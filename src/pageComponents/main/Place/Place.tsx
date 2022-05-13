@@ -2,13 +2,15 @@ import React from "react";
 import styled from "styled-components";
 // Type
 import { PlaceType } from "@type/Place";
+// Theme
+import theme from "styles/theme";
 // Typography
 import { LBody, MBody, SDisplay } from "typography";
 // Assets
 import arrowLeft from "assets/images/icons/arrow-left.svg";
 import arrowRight from "assets/images/icons/arrow-right.svg";
 import places from "assets/images/places";
-import theme from "styles/theme";
+import { SUBTITLE, TITLE, DESCRIPTION } from "assets/static/phrases";
 
 interface IPlace {
   places: PlaceType[];
@@ -39,13 +41,10 @@ const Place: React.FC<IPlace> = ({ places: placeList }) => {
         </ArrowButton>
       </ArrowNavigationWrapper>
       <TitleWrapper>
-        <LBody>오프라인 교육장</LBody>
-        <SDisplay>오프라인 교육장</SDisplay>
+        <LBody>{SUBTITLE.PLACE}</LBody>
+        <SDisplay>{TITLE.PLACE}</SDisplay>
       </TitleWrapper>
-      <MBody style={{ color: theme.color.greyScale.grey2 }}>
-        도로명주소: 서울특별시 강남구 강남대로62길 23 4층 | 지번: 서울특별시 강남구 역삼동 836-24
-        4층
-      </MBody>
+      <MBody style={{ color: theme.color.greyScale.grey2 }}>{DESCRIPTION.PLACE}</MBody>
       <PlaceListWrapper>
         <PlaceList {...{ currentIndex }}>
           {placeList.map((place) => (
