@@ -5,3 +5,4 @@ export { Culture } from "./Culture";
 export { RecruitLink } from "./RecruitLink";
 export { Master } from "./Master";
 export { Article } from "./Article";
+export { Place } from "./Place";
