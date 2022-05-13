@@ -56,7 +56,15 @@ const Master: React.FC<IMaster> = ({ masters }) => {
             <CareerWrapper>
               {masterIntroduce.careers?.map((career) => (
                 <li>
-                  <SBody style={{ display: "inline", verticalAlign: "middle" }}>{career}</SBody>
+                  <SBody
+                    style={{
+                      display: "inline",
+                      verticalAlign: "middle",
+                      color: theme.color.greyScale.grey1,
+                    }}
+                  >
+                    {career}
+                  </SBody>
                 </li>
               ))}
             </CareerWrapper>
@@ -106,13 +114,6 @@ const CareerWrapper = styled.ul`
   gap: 0.8rem;
   list-style-type: disc;
   list-style-position: inside;
-`;
-
-const Career = styled.li`
-  font-size: ${({ theme: { fontSize } }) => fontSize.body.sm};
-  font-weight: ${({ theme: { fontWeight } }) => fontWeight.regular};
-  line-height: ${({ theme: { lineHeight } }) => lineHeight.body.sm};
-  letter-spacing: ${({ theme: { letterSpacing } }) => letterSpacing};
 `;
 
 export default Master;
