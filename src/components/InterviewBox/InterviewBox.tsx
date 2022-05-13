@@ -45,7 +45,10 @@ const InterviewBox: React.FC<IInterviewBox> = ({
 const InterviewBoxWrapper = styled.li`
   padding: 4.8rem 4.8rem 7rem 4.8rem;
   background-color: ${({ theme: { color } }) => color.greyScale.offWhite};
+  min-width: 42.3rem;
   width: 42.3rem;
+  border-radius: 1.6rem;
+  list-style-type: none;
 `;
 
 const Nutshell = styled.div`
