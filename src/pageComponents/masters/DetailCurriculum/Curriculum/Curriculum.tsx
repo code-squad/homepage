@@ -20,7 +20,7 @@ const Curriculum: React.FC<{ curriculumInfo: CurriculumType }> = ({ curriculumIn
             </CurriculumTitle>
             <ul>
               {subjectList.map(({ name, detail }) => (
-                <SubjectItem>
+                <SubjectItem key={detail}>
                   <SubjectTitle>
                     <LBody bold>{name}</LBody>
                   </SubjectTitle>
