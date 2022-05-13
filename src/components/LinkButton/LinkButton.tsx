@@ -42,7 +42,6 @@ const LinkButtonWrapper = styled(Link)<{ icon?: string }>`
   background-color: ${({ theme: { color } }) => color.greyScale.offWhite};
   padding: 4rem;
   text-decoration: unset;
-  transition: border 0.3s;
   &:hover {
     border: 0.2rem solid ${({ theme: { color } }) => color.greyScale.black};
   }
