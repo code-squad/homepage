@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { graphql, useStaticQuery } from "gatsby";
 // Type
 import { FeatureType } from "@type/Feature";
 // Theme
@@ -10,8 +11,11 @@ import { LBody, MBody, SDisplay, XLBody } from "typography";
 import images from "assets/images";
 import { SUBTITLE, TITLE } from "assets/static/phrases";
 
-const Feature: React.FC<{ feature: FeatureType }> = ({ feature }) => {
-  const { title, subtitle, description, image } = feature;
+const Feature: React.FC = () => {
+  const data = useStaticQuery(FeatureQuery);
+  const { mdx } = data;
+  const { frontmatter } = mdx;
+  const { title, subtitle, description, image }: FeatureType = frontmatter;
 
   return (
     <FeatureWrapper>
@@ -68,6 +72,19 @@ const Content = styled.div`
 const FeatureImg = styled.img`
   width: 51.9rem;
   height: 44rem;
+`;
+
+const FeatureQuery = graphql`
+  query FeatureQuery {
+    mdx(frontmatter: { templateKey: { eq: "main_feature" } }) {
+      frontmatter {
+        title
+        subtitle
+        description
+        image
+      }
+    }
+  }
 `;
 
 export default Feature;

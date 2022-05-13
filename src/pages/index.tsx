@@ -2,7 +2,6 @@ import React from "react";
 import { graphql } from "gatsby";
 // Type
 import { CultureType } from "@type/Culture";
-import { FeatureType } from "@type/Feature";
 import { MasterType } from "@type/Master";
 import { ArticleType } from "@type/Article";
 // Theme
@@ -26,7 +25,6 @@ import { getDataFromMdx } from "lib/utils";
 
 const MainPage = ({ data }: any) => {
   const cultures: CultureType[] = getDataFromMdx(data.culture);
-  const [feature]: FeatureType[] = getDataFromMdx(data.feature);
   const masters: MasterType[] = getDataFromMdx(data.master);
   const articles: ArticleType[] = getDataFromMdx(data.article);
 
@@ -36,7 +34,7 @@ const MainPage = ({ data }: any) => {
         <HomeGlobalNavigationBar />
         <Welcome />
         <CourseList />
-        <Feature {...{ feature }} />
+        <Feature />
         <Culture {...{ cultures }} />
         <RecruitLink />
         <Master {...{ masters }} />
@@ -52,16 +50,6 @@ const MainPage = ({ data }: any) => {
 
 export const query = graphql`
   query {
-    feature: allMdx(filter: { frontmatter: { templateKey: { eq: "main_feature" } } }) {
-      nodes {
-        frontmatter {
-          title
-          subtitle
-          description
-          image
-        }
-      }
-    }
     culture: allMdx(
       sort: { order: ASC, fields: [frontmatter___index] }
       filter: { frontmatter: { templateKey: { eq: "main_culture" } } }
