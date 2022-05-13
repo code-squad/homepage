@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { graphql, useStaticQuery } from "gatsby";
 // Type
 import { CultureType } from "@type/Culture";
 // Theme
@@ -10,11 +11,12 @@ import { LBody, MBody, SDisplay, XLBody } from "typography";
 import icons from "assets/images/icons";
 import { SUBTITLE, TITLE } from "assets/static/phrases";
 
-interface ICulture {
-  cultures: CultureType[];
-}
+const Culture: React.FC = () => {
+  const data = useStaticQuery(CultureQuery);
+  const { mdx } = data;
+  const { frontmatter } = mdx;
+  const { cultures }: { cultures: CultureType[] } = frontmatter;
 
-const Culture: React.FC<ICulture> = ({ cultures }) => {
   return (
     <CultureWrapper>
       <TitleWrapper>
@@ -82,6 +84,21 @@ const DescriptionWrapper = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
+`;
+
+const CultureQuery = graphql`
+  query CultureQuery {
+    mdx(frontmatter: { templateKey: { eq: "main_cultures" } }) {
+      frontmatter {
+        cultures {
+          image
+          title
+          subtitle
+          descriptions
+        }
+      }
+    }
+  }
 `;
 
 export default Culture;
