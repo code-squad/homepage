@@ -4,5 +4,6 @@ export { Feature } from "./Feature";
 export { Culture } from "./Culture";
 export { RecruitLink } from "./RecruitLink";
 export { Master } from "./Master";
+export { GraduateReview } from "./GraduateReview";
 export { Article } from "./Article";
 export { Place } from "./Place";

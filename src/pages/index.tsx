@@ -5,12 +5,11 @@ import { CultureType } from "@type/Culture";
 import { FeatureType } from "@type/Feature";
 import { MasterType } from "@type/Master";
 import { ArticleType } from "@type/Article";
-import { InterviewType } from "@type/Interview";
 // Theme
 import GlobalTheme from "../lib/context/GlobalTheme";
 import theme from "styles/theme";
 // Components
-import { Footer, HomeGlobalNavigationBar, Recruit, Interview } from "components";
+import { Footer, HomeGlobalNavigationBar, Recruit } from "components";
 import {
   Introduce,
   CourseList,
@@ -18,11 +17,10 @@ import {
   Culture,
   RecruitLink,
   Master,
+  GraduateReview,
   Article,
   Place,
 } from "pageComponents/main";
-// Assets
-import { SUBTITLE, TITLE } from "assets/static/phrases";
 // Libs
 import { getDataFromMdx } from "lib/utils";
 
@@ -31,7 +29,6 @@ const MainPage = ({ data }: any) => {
   const [feature]: FeatureType[] = getDataFromMdx(data.feature);
   const masters: MasterType[] = getDataFromMdx(data.master);
   const articles: ArticleType[] = getDataFromMdx(data.article);
-  const interviews: InterviewType[] = getDataFromMdx(data.interview);
 
   return (
     <GlobalTheme>
@@ -43,11 +40,7 @@ const MainPage = ({ data }: any) => {
         <Culture {...{ cultures }} />
         <RecruitLink />
         <Master {...{ masters }} />
-        <Interview
-          subtitle={SUBTITLE.GRADUATE_INTERVIEW}
-          title={TITLE.GRADUATE_INTERVIEW}
-          {...{ interviews }}
-        />
+        <GraduateReview />
         <Article {...{ articles }} />
         <Place />
         <Recruit backgroundColor={theme.color.primary.green4} />
@@ -93,20 +86,6 @@ export const query = graphql`
           description
           introduce
           careers
-        }
-      }
-    }
-    interview: allMdx(
-      sort: { order: ASC, fields: [frontmatter___index] }
-      filter: { frontmatter: { templateKey: { eq: "main_interview" } } }
-    ) {
-      nodes {
-        frontmatter {
-          writerPhoto
-          nutshell
-          content
-          writer
-          writerInfo
         }
       }
     }
