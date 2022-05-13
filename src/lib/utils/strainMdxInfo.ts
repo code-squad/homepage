@@ -1,8 +1,8 @@
-function strainMdxInfo(data: any, key: string) {
+function strainMdxInfo(data: any) {
   const { mdx } = data;
   const { frontmatter } = mdx;
 
-  return frontmatter[key];
+  return frontmatter;
 }
 
 export default strainMdxInfo;

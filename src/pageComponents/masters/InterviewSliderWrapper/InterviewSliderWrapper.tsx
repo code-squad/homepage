@@ -10,7 +10,7 @@ import images from "assets/images";
 import { strainMdxInfo } from "lib/utils";
 
 const InterviewSliderWrapper: React.FC = ({}) => {
-  const interviewList = strainMdxInfo(useStaticQuery(InterviewListQuery), "interviewList");
+  const { interviewList } = strainMdxInfo(useStaticQuery(InterviewListQuery));
 
   return (
     <TopMargin>
