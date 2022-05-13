@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 // Type
 import { PlaceType } from "@type/Place";
+import { graphql, useStaticQuery } from "gatsby";
 // Theme
 import theme from "styles/theme";
 // Typography
@@ -12,11 +13,12 @@ import arrowRight from "assets/images/icons/arrow-right.svg";
 import places from "assets/images/places";
 import { SUBTITLE, TITLE, DESCRIPTION } from "assets/static/phrases";
 
-interface IPlace {
-  places: PlaceType[];
-}
+const Place: React.FC = () => {
+  const data = useStaticQuery(PlaceQuery);
+  const { mdx } = data;
+  const { frontmatter } = mdx;
+  const { places: placeList }: { places: PlaceType[] } = frontmatter;
 
-const Place: React.FC<IPlace> = ({ places: placeList }) => {
   const [currentIndex, setCurrentIndex] = React.useState(0);
 
   const handleArrowLeftClick = () => {
@@ -122,6 +124,18 @@ const PlaceList = styled.ul<{ currentIndex: number }>`
 const PlaceImage = styled.img`
   width: 106.2rem;
   height: 50rem;
+`;
+
+const PlaceQuery = graphql`
+  query PlaceQuery {
+    mdx(frontmatter: { templateKey: { eq: "main_places" } }) {
+      frontmatter {
+        places {
+          image
+        }
+      }
+    }
+  }
 `;
 
 export default Place;

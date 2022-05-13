@@ -6,7 +6,6 @@ import { FeatureType } from "@type/Feature";
 import { MasterType } from "@type/Master";
 import { ArticleType } from "@type/Article";
 import { InterviewType } from "@type/Interview";
-import { PlaceType } from "@type/Place";
 // Theme
 import GlobalTheme from "../lib/context/GlobalTheme";
 import theme from "styles/theme";
@@ -34,8 +33,6 @@ const MainPage = ({ data }: any) => {
   const articles: ArticleType[] = getDataFromMdx(data.article);
   const interviews: InterviewType[] = getDataFromMdx(data.interview);
 
-  const places: any = getDataFromMdx(data.places)[0].places;
-
   return (
     <GlobalTheme>
       <div style={{ overflowX: "hidden" }}>
@@ -52,7 +49,7 @@ const MainPage = ({ data }: any) => {
           {...{ interviews }}
         />
         <Article {...{ articles }} />
-        <Place {...{ places }} />
+        <Place />
         <Recruit backgroundColor={theme.color.primary.green4} />
         <Footer />
       </div>
@@ -122,18 +119,6 @@ export const query = graphql`
           category
           title
           link
-        }
-      }
-    }
-    places: allMdx(
-      sort: { order: ASC, fields: [frontmatter___index] }
-      filter: { frontmatter: { templateKey: { eq: "masters_places" } } }
-    ) {
-      nodes {
-        frontmatter {
-          places {
-            image
-          }
         }
       }
     }
