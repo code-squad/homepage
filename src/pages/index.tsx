@@ -11,7 +11,7 @@ import theme from "styles/theme";
 // Components
 import { Footer, HomeGlobalNavigationBar, Recruit } from "components";
 import {
-  Introduce,
+  Welcome,
   CourseList,
   Feature,
   Culture,
@@ -34,7 +34,7 @@ const MainPage = ({ data }: any) => {
     <GlobalTheme>
       <div style={{ overflowX: "hidden" }}>
         <HomeGlobalNavigationBar />
-        <Introduce />
+        <Welcome />
         <CourseList />
         <Feature {...{ feature }} />
         <Culture {...{ cultures }} />

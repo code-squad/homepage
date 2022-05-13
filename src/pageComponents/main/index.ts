@@ -1,4 +1,4 @@
-export { Introduce } from "./Introduce";
+export { Welcome } from "./Welcome";
 export { CourseList } from "./CourseList";
 export { Feature } from "./Feature";
 export { Culture } from "./Culture";
