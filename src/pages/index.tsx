@@ -1,7 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
 // Type
-import { MasterType } from "@type/Master";
 import { ArticleType } from "@type/Article";
 // Theme
 import GlobalTheme from "../lib/context/GlobalTheme";
@@ -23,7 +22,6 @@ import {
 import { getDataFromMdx } from "lib/utils";
 
 const MainPage = ({ data }: any) => {
-  const masters: MasterType[] = getDataFromMdx(data.master);
   const articles: ArticleType[] = getDataFromMdx(data.article);
 
   return (
@@ -35,7 +33,7 @@ const MainPage = ({ data }: any) => {
         <Feature />
         <Culture />
         <RecruitLink />
-        <Master {...{ masters }} />
+        <Master />
         <GraduateReview />
         <Article {...{ articles }} />
         <Place />
@@ -48,20 +46,6 @@ const MainPage = ({ data }: any) => {
 
 export const query = graphql`
   query {
-    master: allMdx(
-      sort: { order: ASC, fields: [frontmatter___index] }
-      filter: { frontmatter: { templateKey: { eq: "main_master" } } }
-    ) {
-      nodes {
-        frontmatter {
-          field
-          name
-          description
-          introduce
-          careers
-        }
-      }
-    }
     article: allMdx(
       sort: { order: ASC, fields: [frontmatter___index] }
       filter: { frontmatter: { templateKey: { eq: "main_article" } } }

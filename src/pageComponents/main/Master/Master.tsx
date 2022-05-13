@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { graphql, useStaticQuery } from "gatsby";
 // Type
 import { MasterType } from "@type/Master";
 // Theme
@@ -11,11 +12,12 @@ import { TabNavigationBar } from "components";
 // Assets
 import { SUBTITLE, TITLE, DESCRIPTION } from "assets/static/phrases";
 
-interface IMaster {
-  masters: MasterType[];
-}
+const Master: React.FC = () => {
+  const data = useStaticQuery(MasterQuery);
+  const { mdx } = data;
+  const { frontmatter } = mdx;
+  const { masters }: { masters: MasterType[] } = frontmatter;
 
-const Master: React.FC<IMaster> = ({ masters }) => {
   const fields = masters.map((master) => master.field!);
 
   const [masterIntroduce, setMasterIntroduce] = React.useState<MasterType>(masters[0]);
@@ -114,6 +116,23 @@ const CareerWrapper = styled.ul`
   gap: 0.8rem;
   list-style-type: disc;
   list-style-position: inside;
+`;
+
+const MasterQuery = graphql`
+  query MasterQuery {
+    mdx(frontmatter: { templateKey: { eq: "main_masters" } }) {
+      frontmatter {
+        masters {
+          image
+          field
+          name
+          description
+          introduce
+          careers
+        }
+      }
+    }
+  }
 `;
 
 export default Master;
