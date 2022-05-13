@@ -34,7 +34,6 @@ const Article: React.FC<IArticle> = ({ articles }) => {
   );
 };
 
-// 언론 보도 및 매체 미디어에서 본 코드스쿼드
 const ArticleWrapper = styled.div`
   width: 106.2rem;
   padding: 0 18.9rem;
