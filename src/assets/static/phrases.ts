@@ -5,6 +5,7 @@ const SUBTITLE = {
   MASTER: "코드스쿼드의 교육 가치를 실현하는",
   GRADUATE_INTERVIEW: "코드스쿼드의 교육을 경험한",
   MASTERS_COURSE: "마스터즈 코스의",
+  PLACE: "오프라인 교육장",
 };
 
 const TITLE = {
@@ -15,6 +16,14 @@ const TITLE = {
   GRADUATE_INTERVIEW: "졸업생 후기",
   EDUCATION_FEATURES: "교육 특징",
   DETAIL_CURRICULUM: "각 클래스 별 상세 커리큘럼",
+  PLACE: "오프라인 교육장",
+};
+
+const DESCRIPTION = {
+  MASTER:
+    "실무 경험이 풍부하고 소프트웨어 교육을 잘 이해하는 마스터들이 여러분의 성장을 위해 멘토링을 지원합니다.",
+  PLACE:
+    "도로명주소: 서울특별시 강남구 강남대로62길 23 4층 | 지번: 서울특별시 강남구 역삼동 836-24 4층",
 };
 
 const LINK = {
@@ -49,4 +58,4 @@ const MESSAGE = {
   SOCIAL_MEDIA: "소셜 미디어",
 };
 
-export { LINK_DESCRIPTION, LINK, MESSAGE, SUBTITLE, TITLE };
+export { DESCRIPTION, LINK_DESCRIPTION, LINK, MESSAGE, SUBTITLE, TITLE };
