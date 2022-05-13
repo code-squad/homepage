@@ -37,18 +37,18 @@ const Interview: React.FC<IInterview> = ({ subtitle, title, interviews }) => {
 
   return (
     <InterviewWrapper>
+      <ArrowNavigationWrapper>
+        <ArrowButton disabled={currentIndex === 0} onClick={handleArrowLeftClick}>
+          <img src={arrowLeft} />
+        </ArrowButton>
+        <ArrowButton
+          disabled={currentIndex === interviews.length - 1}
+          onClick={handleArrowRightClick}
+        >
+          <img src={arrowRight} />
+        </ArrowButton>
+      </ArrowNavigationWrapper>
       <TitleWrapper>
-        <ArrowNavigationWrapper>
-          <ArrowButton disabled={currentIndex === 0} onClick={handleArrowLeftClick}>
-            <img src={arrowLeft} />
-          </ArrowButton>
-          <ArrowButton
-            disabled={currentIndex === interviews.length - 1}
-            onClick={handleArrowRightClick}
-          >
-            <img src={arrowRight} />
-          </ArrowButton>
-        </ArrowNavigationWrapper>
         <LBody>{subtitle}</LBody>
         <SDisplay>{title}</SDisplay>
       </TitleWrapper>

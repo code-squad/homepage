@@ -3,11 +3,12 @@ import styled from "styled-components";
 // Type
 import { PlaceType } from "@type/Place";
 // Typography
-import { LBody, SDisplay } from "typography";
+import { LBody, MBody, SDisplay } from "typography";
 // Assets
 import arrowLeft from "assets/images/icons/arrow-left.svg";
 import arrowRight from "assets/images/icons/arrow-right.svg";
 import places from "assets/images/places";
+import theme from "styles/theme";
 
 interface IPlace {
   places: PlaceType[];
@@ -26,21 +27,25 @@ const Place: React.FC<IPlace> = ({ places: placeList }) => {
 
   return (
     <PlaceWrapper>
+      <ArrowNavigationWrapper>
+        <ArrowButton disabled={currentIndex === 0} onClick={handleArrowLeftClick}>
+          <img src={arrowLeft} />
+        </ArrowButton>
+        <ArrowButton
+          disabled={currentIndex === placeList.length - 1}
+          onClick={handleArrowRightClick}
+        >
+          <img src={arrowRight} />
+        </ArrowButton>
+      </ArrowNavigationWrapper>
       <TitleWrapper>
-        <ArrowNavigationWrapper>
-          <ArrowButton disabled={currentIndex === 0} onClick={handleArrowLeftClick}>
-            <img src={arrowLeft} />
-          </ArrowButton>
-          <ArrowButton
-            disabled={currentIndex === placeList.length - 1}
-            onClick={handleArrowRightClick}
-          >
-            <img src={arrowRight} />
-          </ArrowButton>
-        </ArrowNavigationWrapper>
         <LBody>오프라인 교육장</LBody>
         <SDisplay>오프라인 교육장</SDisplay>
       </TitleWrapper>
+      <MBody style={{ color: theme.color.greyScale.grey2 }}>
+        도로명주소: 서울특별시 강남구 강남대로62길 23 4층 | 지번: 서울특별시 강남구 역삼동 836-24
+        4층
+      </MBody>
       <PlaceListWrapper>
         <PlaceList {...{ currentIndex }}>
           {placeList.map((place) => (
@@ -62,7 +67,7 @@ const PlaceWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: space-between;
-  gap: 5.6rem;
+  gap: 4rem;
   overflow-x: hidden;
 `;
 
@@ -71,7 +76,7 @@ const ArrowNavigationWrapper = styled.div`
   height: 3rem;
   position: absolute;
   margin-left: 98.6rem;
-  margin-top: 8.1rem;
+  margin-top: 13.8rem;
   display: flex;
   gap: 1.6rem;
 `;
