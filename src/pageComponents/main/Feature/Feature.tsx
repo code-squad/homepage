@@ -47,7 +47,6 @@ const FeatureWrapper = styled.div`
 `;
 
 const TitleWrapper = styled.div`
-  width: 144rem;
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
