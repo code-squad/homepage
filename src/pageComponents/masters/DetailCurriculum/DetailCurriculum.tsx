@@ -2,12 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
 // Typography
-import { LBody, MBody, MDisplay, SDisplay } from "typography";
+import { LBody, SDisplay } from "typography";
 // Components
 import { TabNavigationBar } from "components";
 import { Curriculum } from "./Curriculum";
 // Assets
-import images from "assets/images";
 import { SUBTITLE, TITLE } from "assets/static/phrases";
 
 const frontMatterReduce = (data: any) => {
