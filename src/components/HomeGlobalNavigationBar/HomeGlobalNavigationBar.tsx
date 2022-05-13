@@ -64,7 +64,12 @@ const HomeGlobalNavigationBarWrapper = styled.header<{ scrollPosition: boolean }
   z-index: 10;
   background-color: ${({ scrollPosition, theme: { color } }) =>
     scrollPosition ? color.greyScale.white : "transparent"};
-  transition: background-color 0.15s linear;
+  border-bottom: 0.1rem solid
+    ${({ scrollPosition, theme: { color } }) =>
+      scrollPosition ? color.greyScale.grey3 : "transparent"};
+  transition-property: background-color, border;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
 `;
 
 const ContentWrapper = styled.nav`
