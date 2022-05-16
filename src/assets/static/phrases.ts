@@ -18,6 +18,9 @@ const TITLE = {
   DETAIL_CURRICULUM: "각 클래스 별 상세 커리큘럼",
   PLACE: "오프라인 교육장",
   SCHEDULE: "곧 시작하는 과정",
+  REFUND_POLICY: `코드스쿼드\n환불규정`,
+  REFUND_REASON: "수강료 반환 원인",
+  REFUND_STANDARD: "수강료 반환 기준",
 };
 
 const DESCRIPTION = {
@@ -25,6 +28,7 @@ const DESCRIPTION = {
     "실무 경험이 풍부하고 소프트웨어 교육을 잘 이해하는 마스터들이 여러분의 성장을 위해 멘토링을 지원합니다.",
   PLACE:
     "도로명주소: 서울특별시 강남구 강남대로62길 23 4층 | 지번: 서울특별시 강남구 역삼동 836-24 4층",
+  REFUND: `보다 자세한 사항은 관리자 메일 yoda@codesquad.kr 주소로 문의바랍니다.​\n코스 진행 이후 환불시 카드결제 수수료나 계좌이체 수수료에 대한 환불 수수료를 제외하고 환불해드립니다`,
 };
 
 const LINK = {
