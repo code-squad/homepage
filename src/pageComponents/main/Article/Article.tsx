@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { graphql, useStaticQuery } from "gatsby";
 // Type
 import { ArticleType } from "@type/Article";
 // Typography
@@ -9,11 +10,12 @@ import { DropdownItem } from "components";
 // Assets
 import { SUBTITLE, TITLE } from "assets/static/phrases";
 
-interface IArticle {
-  articles: ArticleType[];
-}
+const Article: React.FC = () => {
+  const data = useStaticQuery(ArticleQuery);
+  const { mdx } = data;
+  const { frontmatter } = mdx;
+  const { articles }: { articles: ArticleType[] } = frontmatter;
 
-const Article: React.FC<IArticle> = ({ articles }) => {
   return (
     <ArticleWrapper>
       <TitleWrapper>
@@ -34,11 +36,10 @@ const Article: React.FC<IArticle> = ({ articles }) => {
   );
 };
 
-// 언론 보도 및 매체 미디어에서 본 코드스쿼드
 const ArticleWrapper = styled.div`
   width: 106.2rem;
   padding: 0 18.9rem;
-  padding-bottom: 16rem;
+  padding-bottom: 20rem;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -47,7 +48,6 @@ const ArticleWrapper = styled.div`
 `;
 
 const TitleWrapper = styled.div`
-  width: 144rem;
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
@@ -57,6 +57,20 @@ const ArticleList = styled.ul`
   display: flex;
   gap: 4rem;
   flex-direction: column;
+`;
+
+const ArticleQuery = graphql`
+  query ArticleQuery {
+    mdx(frontmatter: { templateKey: { eq: "main_articles" } }) {
+      frontmatter {
+        articles {
+          category
+          title
+          link
+        }
+      }
+    }
+  }
 `;
 
 export default Article;

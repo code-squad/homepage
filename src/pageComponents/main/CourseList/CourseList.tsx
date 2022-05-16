@@ -8,7 +8,7 @@ import codeTogetherIcon from "assets/images/icons/code-together.svg";
 import { LINK_DESCRIPTION, LINK } from "assets/static/phrases";
 import { INTERNAL } from "assets/static/urls";
 
-const Course: React.FC = () => {
+const CourseList: React.FC = () => {
   return (
     <CourseWrapper>
       <LinkButton
@@ -37,4 +37,4 @@ const CourseWrapper = styled.ul`
   gap: 2.4rem;
 `;
 
-export default Course;
+export default CourseList;

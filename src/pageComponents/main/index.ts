@@ -1,7 +1,9 @@
-export { Introduce } from "./Introduce";
-export { Course } from "./Course";
+export { Welcome } from "./Welcome";
+export { CourseList } from "./CourseList";
 export { Feature } from "./Feature";
 export { Culture } from "./Culture";
 export { RecruitLink } from "./RecruitLink";
 export { Master } from "./Master";
+export { GraduateReview } from "./GraduateReview";
 export { Article } from "./Article";
+export { Place } from "./Place";

@@ -37,26 +37,28 @@ const Interview: React.FC<IInterview> = ({ subtitle, title, interviews }) => {
 
   return (
     <InterviewWrapper>
+      <ArrowNavigationWrapper>
+        <ArrowButton disabled={currentIndex === 0} onClick={handleArrowLeftClick}>
+          <img src={arrowLeft} />
+        </ArrowButton>
+        <ArrowButton
+          disabled={currentIndex === interviews.length - 1}
+          onClick={handleArrowRightClick}
+        >
+          <img src={arrowRight} />
+        </ArrowButton>
+      </ArrowNavigationWrapper>
       <TitleWrapper>
-        <ArrowNavigationWrapper>
-          <ArrowButton disabled={currentIndex === 0} onClick={handleArrowLeftClick}>
-            <img src={arrowLeft} />
-          </ArrowButton>
-          <ArrowButton
-            disabled={currentIndex === interviews.length - 1}
-            onClick={handleArrowRightClick}
-          >
-            <img src={arrowRight} />
-          </ArrowButton>
-        </ArrowNavigationWrapper>
         <LBody>{subtitle}</LBody>
         <SDisplay>{title}</SDisplay>
       </TitleWrapper>
-      <InterviewList style={{ left: `-${currentIndex * 54.3}rem` }}>
-        {interviews.map((interview) => (
-          <InterviewBox key={interview.nutshell} {...{ ...interview }} />
-        ))}
-      </InterviewList>
+      <InterviewListWrapper>
+        <InterviewList {...{ currentIndex }}>
+          {interviews.map((interview) => (
+            <InterviewBox key={interview.nutshell} {...{ ...interview }} />
+          ))}
+        </InterviewList>
+      </InterviewListWrapper>
     </InterviewWrapper>
   );
 };
@@ -67,6 +69,7 @@ const InterviewWrapper = styled.div`
   flex-direction: column;
   align-items: space-between;
   gap: 8rem;
+  overflow-x: hidden;
 `;
 
 const ArrowNavigationWrapper = styled.div`
@@ -107,8 +110,11 @@ const TitleWrapper = styled.div`
   position: relative;
 `;
 
-const InterviewList = styled.ul`
-  width: 100%;
+const InterviewListWrapper = styled.div`
+  overflow-x: hidden;
+`;
+
+const InterviewList = styled.ul<{ currentIndex: number }>`
   width: 106.2rem;
   padding: 0 18.9rem;
   margin: 0 auto;
@@ -116,6 +122,7 @@ const InterviewList = styled.ul`
   display: flex;
   gap: 2.4rem;
   transition: left 0.5s;
+  left: -${({ currentIndex }) => currentIndex * 54.3}rem;
 `;
 
 export default Interview;

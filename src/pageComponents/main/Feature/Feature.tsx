@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { graphql, useStaticQuery } from "gatsby";
 // Type
 import { FeatureType } from "@type/Feature";
 // Theme
@@ -10,11 +11,12 @@ import { LBody, MBody, SDisplay, XLBody } from "typography";
 import images from "assets/images";
 import { SUBTITLE, TITLE } from "assets/static/phrases";
 
-interface IFeature {
-  feature: FeatureType;
-}
+const Feature: React.FC = () => {
+  const data = useStaticQuery(FeatureQuery);
+  const { mdx } = data;
+  const { frontmatter } = mdx;
+  const { title, subtitle, description, image }: FeatureType = frontmatter;
 
-const Feature: React.FC<IFeature> = ({ feature }) => {
   return (
     <FeatureWrapper>
       <TitleWrapper>
@@ -24,14 +26,14 @@ const Feature: React.FC<IFeature> = ({ feature }) => {
       <ContentWrapper>
         <Content>
           <div>
-            <XLBody bold>{feature.title}</XLBody>
+            <XLBody bold>{title}</XLBody>
             <MBody bold style={{ color: `${theme.color.greyScale.grey2}` }}>
-              {feature.subtitle}
+              {subtitle}
             </MBody>
           </div>
-          <MBody style={{ color: theme.color.greyScale.grey2 }}>{`${feature.description}`}</MBody>
+          <MBody style={{ color: theme.color.greyScale.grey2 }}>{`${description}`}</MBody>
         </Content>
-        <FeatureImg src={images[feature.image]} />
+        <FeatureImg src={images[image]} />
       </ContentWrapper>
     </FeatureWrapper>
   );
@@ -49,7 +51,6 @@ const FeatureWrapper = styled.div`
 `;
 
 const TitleWrapper = styled.div`
-  width: 144rem;
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
@@ -71,6 +72,19 @@ const Content = styled.div`
 const FeatureImg = styled.img`
   width: 51.9rem;
   height: 44rem;
+`;
+
+const FeatureQuery = graphql`
+  query FeatureQuery {
+    mdx(frontmatter: { templateKey: { eq: "main_feature" } }) {
+      frontmatter {
+        title
+        subtitle
+        description
+        image
+      }
+    }
+  }
 `;
 
 export default Feature;
