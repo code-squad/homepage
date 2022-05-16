@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { graphql, useStaticQuery } from "gatsby";
 // Type
 import { ArticleType } from "@type/Article";
 // Typography
@@ -9,11 +10,12 @@ import { DropdownItem } from "components";
 // Assets
 import { SUBTITLE, TITLE } from "assets/static/phrases";
 
-interface IArticle {
-  articles: ArticleType[];
-}
+const Article: React.FC = () => {
+  const data = useStaticQuery(ArticleQuery);
+  const { mdx } = data;
+  const { frontmatter } = mdx;
+  const { articles }: { articles: ArticleType[] } = frontmatter;
 
-const Article: React.FC<IArticle> = ({ articles }) => {
   return (
     <ArticleWrapper>
       <TitleWrapper>
@@ -55,6 +57,20 @@ const ArticleList = styled.ul`
   display: flex;
   gap: 4rem;
   flex-direction: column;
+`;
+
+const ArticleQuery = graphql`
+  query ArticleQuery {
+    mdx(frontmatter: { templateKey: { eq: "main_articles" } }) {
+      frontmatter {
+        articles {
+          category
+          title
+          link
+        }
+      }
+    }
+  }
 `;
 
 export default Article;

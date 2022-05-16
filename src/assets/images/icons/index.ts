@@ -1,5 +1,13 @@
 import freedomAndResponsibility from "./freedom-and-responsibility.svg";
 import respectAndEmbrace from "./respect-and-embrace.svg";
 import circulationAndDistribution from "./circulation-and-distribution.svg";
+import masters from "./masters.svg";
+import codeTogether from "./code-together.svg";
 
-export default { freedomAndResponsibility, respectAndEmbrace, circulationAndDistribution };
+export default {
+  freedomAndResponsibility,
+  respectAndEmbrace,
+  circulationAndDistribution,
+  masters,
+  codeTogether,
+};
