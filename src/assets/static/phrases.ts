@@ -6,6 +6,7 @@ const SUBTITLE = {
   GRADUATE_INTERVIEW: "코드스쿼드의 교육을 경험한",
   MASTERS_COURSE: "마스터즈 코스의",
   PLACE: "오프라인 교육장",
+  MASTERS_COURSE_SCHEDULE: "대기자 신청부터 수료까지 한 눈에 확인하는",
 };
 
 const TITLE = {
@@ -18,6 +19,7 @@ const TITLE = {
   DETAIL_CURRICULUM: "각 클래스 별 상세 커리큘럼",
   PLACE: "오프라인 교육장",
   SCHEDULE: "곧 시작하는 과정",
+  MASTERS_COURSE_SCHEDULE: "마스터즈 코스 스케쥴",
 };
 
 const DESCRIPTION = {
