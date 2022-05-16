@@ -1,9 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
-// Typography
-import { LBody, SDisplay } from "typography";
 // Components
+import { SectionTitle } from "components/";
 import { ScheduleNav } from "./ScheduleNav";
 import { ScheduleInfo } from "./ScheduleInfo";
 // Assets
@@ -19,12 +18,10 @@ const CourseSchedule: React.FC = ({}) => {
 
   return (
     <CourseScheduleWrapper>
-      <ScheduleTitleWrapper>
-        <LBody bold>{SUBTITLE.MASTERS_COURSE_SCHEDULE}</LBody>
-        <ScheduleHeadTitle>
-          <SDisplay>{TITLE.MASTERS_COURSE_SCHEDULE}</SDisplay>
-        </ScheduleHeadTitle>
-      </ScheduleTitleWrapper>
+      <SectionTitle
+        subTitle={SUBTITLE.MASTERS_COURSE_SCHEDULE}
+        title={TITLE.MASTERS_COURSE_SCHEDULE}
+      />
       <ScheduleWrapper>
         <ScheduleLeftRuler>
           <ScheduleNav {...{ progress, selectedScheduleIndex, setSelectedScheduleIndex }} />
