@@ -17,38 +17,41 @@ const RefundPolicy: React.FC = () => {
 
   return (
     <RefundPolicyWrapper>
-      <LDisplay style={{ paddingTop: "16rem" }}>{TITLE.REFUND_POLICY}</LDisplay>
-      <PolicySpecificationWrapper>
-        <MBody style={{ paddingBottom: "4rem" }}>{updated}</MBody>
-        <div style={{ paddingBottom: "1.6rem" }}>
-          <RefundPolicyTable>
-            <thead>
-              <tr>
-                <RefundPolicyTableHeader>{TITLE.REFUND_REASON}</RefundPolicyTableHeader>
-                <RefundPolicyTableHeader>{TITLE.REFUND_STANDARD}</RefundPolicyTableHeader>
-              </tr>
-            </thead>
-            <tbody>
-              {policies.map(({ reason, standard }) => (
-                <tr key={reason}>
-                  <RefundPolicyTableData>{reason}</RefundPolicyTableData>
-                  <RefundPolicyTableData>{standard}</RefundPolicyTableData>
+      <div style={{ width: "106.2rem", padding: "0 18.9rem", margin: "0 auto" }}>
+        <LDisplay style={{ paddingTop: "16rem", paddingBottom: "4.8rem" }}>
+          {TITLE.REFUND_POLICY}
+        </LDisplay>
+        <PolicySpecificationWrapper>
+          <MBody style={{ paddingBottom: "4rem" }}>{updated}</MBody>
+          <div style={{ paddingBottom: "1.6rem" }}>
+            <RefundPolicyTable>
+              <thead>
+                <tr>
+                  <RefundPolicyTableHeader>{TITLE.REFUND_REASON}</RefundPolicyTableHeader>
+                  <RefundPolicyTableHeader>{TITLE.REFUND_STANDARD}</RefundPolicyTableHeader>
                 </tr>
-              ))}
-            </tbody>
-          </RefundPolicyTable>
-        </div>
-        <MBody style={{ width: "fit-content", paddingBottom: "0.4rem" }}>
-          {DESCRIPTION.REFUND}
-        </MBody>
-      </PolicySpecificationWrapper>
+              </thead>
+              <tbody>
+                {policies.map(({ reason, standard }) => (
+                  <tr key={reason}>
+                    <RefundPolicyTableData>{reason}</RefundPolicyTableData>
+                    <RefundPolicyTableData>{standard}</RefundPolicyTableData>
+                  </tr>
+                ))}
+              </tbody>
+            </RefundPolicyTable>
+          </div>
+          <MBody style={{ width: "fit-content", paddingBottom: "0.4rem" }}>
+            {DESCRIPTION.REFUND}
+          </MBody>
+        </PolicySpecificationWrapper>
+      </div>
     </RefundPolicyWrapper>
   );
 };
 
 const RefundPolicyWrapper = styled.div`
-  width: 106.2rem;
-  padding: 0 18.9rem;
+  width: 100%;
   padding-bottom: 16rem;
   color: ${({ theme: { color } }) => color.greyScale.black};
   background-color: ${({ theme: { color } }) => color.greyScale.offWhite};
