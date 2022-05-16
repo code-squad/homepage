@@ -18,6 +18,7 @@ const WelcomeWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  color: ${({ theme: { color } }) => color.greyScale.black};
   background-color: ${({ theme: { color } }) => color.primary.green4};
   white-space: pre-line;
   text-align: center;
