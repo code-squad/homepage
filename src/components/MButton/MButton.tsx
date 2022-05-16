@@ -42,7 +42,7 @@ const MButtonWrapper = styled(Link)<{ $accent?: boolean; $disabled?: boolean }>`
   color: ${({ $disabled, theme: { color } }) =>
     $disabled ? color.greyScale.grey3 : color.greyScale.grey1};
   border: 0.1rem solid;
-  border-radius: 30px;
+  border-radius: 3rem;
   border-color: ${({ $accent, $disabled, theme: { color } }) =>
     $disabled ? color.greyScale.grey3 : $accent ? color.greyScale.black : color.greyScale.grey3};
   background-color: ${({ theme: { color } }) => color.greyScale.white};
