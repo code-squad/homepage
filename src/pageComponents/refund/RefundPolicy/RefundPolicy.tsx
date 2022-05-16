@@ -13,7 +13,7 @@ const RefundPolicy: React.FC = () => {
   const { mdx } = data;
   const { frontmatter } = mdx;
   const { policies }: { policies: RefundPolicyType[] } = frontmatter;
-  const { updated }: { updated: string } = frontmatter;
+  const { editDate }: { editDate: string } = frontmatter;
 
   return (
     <RefundPolicyWrapper>
@@ -22,7 +22,7 @@ const RefundPolicy: React.FC = () => {
           {TITLE.REFUND_POLICY}
         </LDisplay>
         <PolicySpecificationWrapper>
-          <MBody style={{ paddingBottom: "4rem" }}>{updated}</MBody>
+          <MBody style={{ paddingBottom: "4rem" }}>{`최종 업데이트: ${editDate}`}</MBody>
           <div style={{ paddingBottom: "1.6rem" }}>
             <RefundPolicyTable>
               <thead>
@@ -103,7 +103,7 @@ const RefundPolicyQuery = graphql`
   query RefundPolicyQuery {
     mdx(frontmatter: { templateKey: { eq: "refund_policies" } }) {
       frontmatter {
-        updated
+        editDate
         policies {
           reason
           standard
