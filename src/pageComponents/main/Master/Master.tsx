@@ -59,7 +59,7 @@ const Master: React.FC = () => {
               <MBody bold>{masterIntroduce.introduce}</MBody>
               <CareerWrapper>
                 {masterIntroduce.careers?.map((career) => (
-                  <li>
+                  <li key={career}>
                     <SBody
                       style={{
                         display: "inline",
@@ -80,7 +80,7 @@ const Master: React.FC = () => {
                 </MBody>
                 <ScheduleList>
                   {masterIntroduce.schedules.map(({ image, title, subtitle }) => (
-                    <Schedule>
+                    <Schedule key={title}>
                       <CourseImage src={icons[image]} />
                       <CourseTitleWrapper>
                         <XSBody>{title}</XSBody>

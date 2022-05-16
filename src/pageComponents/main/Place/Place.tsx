@@ -49,9 +49,9 @@ const Place: React.FC = () => {
       <MBody style={{ color: theme.color.greyScale.grey2 }}>{DESCRIPTION.PLACE}</MBody>
       <PlaceListWrapper>
         <PlaceList {...{ currentIndex }}>
-          {placeList.map((place) => (
-            <li>
-              <PlaceImage src={places[place.image]} />
+          {placeList.map(({ image }) => (
+            <li key={image}>
+              <PlaceImage src={places[image]} />
             </li>
           ))}
         </PlaceList>

@@ -33,7 +33,7 @@ const Culture: React.FC = () => {
             </div>
             <DescriptionWrapper>
               {culture.descriptions.map((description) => (
-                <li>
+                <li key={description}>
                   <MBody style={{ color: theme.color.greyScale.grey2 }}>{description}</MBody>
                 </li>
               ))}
