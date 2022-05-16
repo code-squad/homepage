@@ -19,7 +19,7 @@ const ScheduleNav: React.FC<IScheduleNav> = ({
   return (
     <ul>
       {progress.map(({ label }: ProgressType, index) => (
-        <div style={{ position: "relative" }}>
+        <div key={label} style={{ position: "relative" }}>
           <ScheduleNavItem onClick={() => setSelectedScheduleIndex(index)}>
             <LabelWrapper clicked={selectedScheduleIndex === index}>
               <MBody>{label}</MBody>
