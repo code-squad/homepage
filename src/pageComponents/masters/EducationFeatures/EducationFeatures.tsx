@@ -1,10 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
-// Typography
-import { LBody, MBody, MDisplay, SDisplay } from "typography";
 // Components
-import { ImageCard } from "components";
+import { ImageCard, SectionTitle } from "components";
 // Assets
 import images from "assets/images";
 import { SUBTITLE, TITLE } from "assets/static/phrases";
@@ -24,11 +22,8 @@ const EducationFeatures: React.FC = ({}) => {
 
   return (
     <EducationFeaturesWrapper>
+      <SectionTitle subTitle={SUBTITLE.MASTERS_COURSE} title={TITLE.EDUCATION_FEATURES} />
       <FeatureListWrapper>
-        <LBody bold>{SUBTITLE.MASTERS_COURSE}</LBody>
-        <FeatureHeadTitle>
-          <SDisplay>{TITLE.EDUCATION_FEATURES}</SDisplay>
-        </FeatureHeadTitle>
         <FeatureList>
           {features.map(({ title, content, img }) => (
             <FeatureItem key={title}>
@@ -53,10 +48,6 @@ const FeatureListWrapper = styled.ul`
   width: 107rem;
   display: flex;
   flex-direction: column;
-`;
-
-const FeatureHeadTitle = styled.div`
-  margin-top: 0.8rem;
 `;
 
 const FeatureList = styled.ul`
