@@ -17,6 +17,7 @@ const TITLE = {
   EDUCATION_FEATURES: "교육 특징",
   DETAIL_CURRICULUM: "각 클래스 별 상세 커리큘럼",
   PLACE: "오프라인 교육장",
+  SCHEDULE: "곧 시작하는 과정",
 };
 
 const DESCRIPTION = {
