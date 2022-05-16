@@ -34,7 +34,6 @@ window.___navigate = (pathname) => {
 export const decorators = [
   (Story) => (
     <>
-      <GlobalHeader />
       <GlobalTheme>
         <Story />
       </GlobalTheme>
