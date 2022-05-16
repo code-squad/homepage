@@ -121,6 +121,8 @@ const MasterInformationWrapper = styled.div`
 `;
 
 const IntroduceWrapper = styled.div`
+  height: 43.6rem;
+  min-height: 0;
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
