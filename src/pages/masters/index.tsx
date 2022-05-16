@@ -14,6 +14,7 @@ import { Masthead } from "pageComponents/masters/Masthead";
 import { EducationFeatures } from "pageComponents/masters/EducationFeatures";
 import { DetailCurriculum } from "pageComponents/masters/DetailCurriculum";
 import { InterviewSliderWrapper } from "pageComponents/masters/InterviewSliderWrapper";
+import { CourseSchedule } from "pageComponents/masters/CourseSchedule";
 
 const MatsersPage: React.FC<PageProps> = ({ data }) => {
   return (
@@ -24,6 +25,7 @@ const MatsersPage: React.FC<PageProps> = ({ data }) => {
         <EducationFeatures />
         <DetailCurriculum />
         <InterviewSliderWrapper />
+        <CourseSchedule />
       </main>
     </GlobalTheme>
   );
