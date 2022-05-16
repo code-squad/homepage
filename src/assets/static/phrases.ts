@@ -21,6 +21,7 @@ const TITLE = {
   REFUND_POLICY: `코드스쿼드\n환불규정`,
   REFUND_REASON: "수강료 반환 원인",
   REFUND_STANDARD: "수강료 반환 기준",
+  FAQ: "코드스쿼드에\n궁금한 점이 있나요?",
 };
 
 const DESCRIPTION = {
