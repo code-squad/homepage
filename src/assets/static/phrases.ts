@@ -7,6 +7,7 @@ const SUBTITLE = {
   MASTERS_COURSE: "마스터즈 코스의",
   PLACE: "오프라인 교육장",
   MASTERS_COURSE_SCHEDULE: "대기자 신청부터 수료까지 한 눈에 확인하는",
+  FAQ: "교육 과정에 대해",
 };
 
 const TITLE = {
@@ -20,6 +21,7 @@ const TITLE = {
   PLACE: "오프라인 교육장",
   SCHEDULE: "곧 시작하는 과정",
   MASTERS_COURSE_SCHEDULE: "마스터즈 코스 스케쥴",
+  FAQ: "자주 묻는 질문",
 };
 
 const DESCRIPTION = {
