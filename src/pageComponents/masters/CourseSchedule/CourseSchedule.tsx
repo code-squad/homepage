@@ -2,43 +2,35 @@ import React from "react";
 import styled from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
 // Typography
-import { LBody, MBody, MDisplay, SDisplay } from "typography";
+import { LBody, SDisplay } from "typography";
 // Components
-import { ImageCard } from "components";
+import { ScheduleNav } from "./ScheduleNav";
+import { ScheduleInfo } from "./ScheduleInfo";
 // Assets
-import images from "assets/images";
 import { SUBTITLE, TITLE } from "assets/static/phrases";
+// Utils
 import { strainMdxInfo } from "lib/utils";
-
-interface featuresType {
-  index?: number;
-  title: string;
-  content: string;
-  img: keyof typeof images;
-}
 
 const CourseSchedule: React.FC = ({}) => {
   const scheduleInfo = strainMdxInfo(useStaticQuery(ScheduleQuery));
-  const {
-    title,
-    subtitle,
-    description,
-    progress,
-    waiterApplyUrl,
-    applyUrl,
-    waiterApplyUrlBtnText,
-    applyBtnText,
-  } = scheduleInfo;
+  const { progress } = scheduleInfo;
+
+  const [selectedScheduleIndex, setSelectedScheduleIndex] = React.useState(0);
 
   return (
     <CourseScheduleWrapper>
       <ScheduleTitleWrapper>
-        <LBody bold>2021 마스터즈 코스</LBody>
+        <LBody bold>{SUBTITLE.MASTERS_COURSE_SCHEDULE}</LBody>
         <ScheduleHeadTitle>
-          <SDisplay>졸업생 후기</SDisplay>
+          <SDisplay>{TITLE.MASTERS_COURSE_SCHEDULE}</SDisplay>
         </ScheduleHeadTitle>
       </ScheduleTitleWrapper>
-      <ScheduleWrapper></ScheduleWrapper>
+      <ScheduleWrapper>
+        <ScheduleLeftRuler>
+          <ScheduleNav {...{ progress, selectedScheduleIndex, setSelectedScheduleIndex }} />
+          <ScheduleInfo {...{ scheduleInfo, selectedScheduleIndex }} />
+        </ScheduleLeftRuler>
+      </ScheduleWrapper>
     </CourseScheduleWrapper>
   );
 };
@@ -67,17 +59,25 @@ const ScheduleWrapper = styled.div`
   justify-content: center;
   width: 100%;
   min-width: 144rem;
+  padding: 8rem 0 4rem 0;
   background-color: ${({ theme: { color } }) => color.greyScale.offWhite};
+`;
+const ScheduleLeftRuler = styled.div`
+  width: 107rem;
+  display: flex;
+  justify-content: flex-start;
 `;
 
 const ScheduleQuery = graphql`
   query ScheduleQuery {
     mdx(frontmatter: { templateKey: { eq: "masters_schedule" } }) {
       frontmatter {
-        title
-        subtitle
-        description
-        progress
+        progress {
+          label
+          title
+          subtitle
+          description
+        }
         waiterApplyUrl
         applyUrl
         waiterApplyUrlBtnText
