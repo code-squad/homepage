@@ -10,6 +10,7 @@ import { LBody, MBody, SBody, SDisplay, XLBody, XSBody } from "typography";
 // Components
 import { TabNavigationBar } from "components";
 // Assets
+import icons from "assets/images/icons";
 import { SUBTITLE, TITLE, DESCRIPTION } from "assets/static/phrases";
 
 const Master: React.FC = () => {
@@ -18,7 +19,7 @@ const Master: React.FC = () => {
   const { frontmatter } = mdx;
   const { masters }: { masters: MasterType[] } = frontmatter;
 
-  const fields = masters.map((master) => master.field!);
+  const fields = masters.map((master) => master.field);
 
   const [masterIntroduce, setMasterIntroduce] = React.useState<MasterType>(masters[0]);
 
@@ -44,34 +45,54 @@ const Master: React.FC = () => {
         </MBody>
         <TabNavigationBar titles={fields} onIndexChanged={handleTabClick} />
       </div>
-      <div style={{ width: "100%", backgroundColor: theme.color.greyScale.offWhite }}>
-        <IntroduceWrapper>
+      <div style={{ backgroundColor: theme.color.greyScale.offWhite }}>
+        <MasterInformationWrapper>
           <MasterImg />
-          <Introduce>
-            <div style={{ display: "flex", alignItems: "flex-end" }}>
-              <XLBody>{masterIntroduce.name}</XLBody>
-              <XSBody style={{ color: `${theme.color.greyScale.grey2}`, paddingLeft: "0.8rem" }}>
-                {masterIntroduce.description}
-              </XSBody>
-            </div>
-            <MBody bold>{masterIntroduce.introduce}</MBody>
-            <CareerWrapper>
-              {masterIntroduce.careers?.map((career) => (
-                <li>
-                  <SBody
-                    style={{
-                      display: "inline",
-                      verticalAlign: "middle",
-                      color: theme.color.greyScale.grey1,
-                    }}
-                  >
-                    {career}
-                  </SBody>
-                </li>
-              ))}
-            </CareerWrapper>
-          </Introduce>
-        </IntroduceWrapper>
+          <IntroduceWrapper>
+            <Introduce>
+              <div style={{ display: "flex", alignItems: "flex-end" }}>
+                <XLBody>{masterIntroduce.name}</XLBody>
+                <XSBody style={{ color: `${theme.color.greyScale.grey2}`, paddingLeft: "0.8rem" }}>
+                  {masterIntroduce.description}
+                </XSBody>
+              </div>
+              <MBody bold>{masterIntroduce.introduce}</MBody>
+              <CareerWrapper>
+                {masterIntroduce.careers?.map((career) => (
+                  <li>
+                    <SBody
+                      style={{
+                        display: "inline",
+                        verticalAlign: "middle",
+                        color: theme.color.greyScale.grey1,
+                      }}
+                    >
+                      {career}
+                    </SBody>
+                  </li>
+                ))}
+              </CareerWrapper>
+            </Introduce>
+            {masterIntroduce.schedules && (
+              <ScheduleWrapper>
+                <MBody bold style={{ padding: "3.2rem 0 2.4rem 0" }}>
+                  {TITLE.SCHEDULE}
+                </MBody>
+                <ScheduleList>
+                  {masterIntroduce.schedules.map(({ image, title, subtitle }) => (
+                    <Schedule>
+                      <CourseImage src={icons[image]} />
+                      <CourseTitleWrapper>
+                        <XSBody>{title}</XSBody>
+                        <MBody>{subtitle}</MBody>
+                      </CourseTitleWrapper>
+                    </Schedule>
+                  ))}
+                </ScheduleList>
+              </ScheduleWrapper>
+            )}
+          </IntroduceWrapper>
+        </MasterInformationWrapper>
       </div>
     </MasterWrapper>
   );
@@ -91,12 +112,18 @@ const TitleWrapper = styled.div`
   gap: 0.8rem;
 `;
 
-const IntroduceWrapper = styled.div`
+const MasterInformationWrapper = styled.div`
   width: 106.2rem;
   display: flex;
   padding: 5.6rem 18.9rem;
   gap: 7.8rem;
   margin: 0 auto;
+`;
+
+const IntroduceWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
 `;
 
 const Introduce = styled.div`
@@ -118,6 +145,35 @@ const CareerWrapper = styled.ul`
   list-style-position: inside;
 `;
 
+const ScheduleWrapper = styled.div`
+  width: 52rem;
+  border-top: 0.1rem solid ${({ theme: { color } }) => color.greyScale.grey3};
+`;
+
+const ScheduleList = styled.ul`
+  display: flex;
+  gap: 2.4rem;
+`;
+
+const Schedule = styled.li`
+  width: 24.8rem;
+  display: flex;
+  gap: 1.6rem;
+`;
+
+const CourseImage = styled.img`
+  width: 4rem;
+  height: 4rem;
+  border: 0.1rem solid black;
+  border-radius: 0.8rem;
+  border-color: ${({ theme: { color } }) => color.greyScale.grey3};
+`;
+
+const CourseTitleWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 const MasterQuery = graphql`
   query MasterQuery {
     mdx(frontmatter: { templateKey: { eq: "main_masters" } }) {
@@ -129,6 +185,11 @@ const MasterQuery = graphql`
           description
           introduce
           careers
+          schedules {
+            title
+            subtitle
+            image
+          }
         }
       }
     }
