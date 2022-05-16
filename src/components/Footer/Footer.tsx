@@ -11,10 +11,10 @@ const Footer: React.FC = () => {
   return (
     <FooterWrapper>
       <ContentWrapper>
-        <CompanyWrapper>
-          <div>
-            <XSBody bold>{MESSAGE.COMPANY_NAME}</XSBody>
-          </div>
+        <div>
+          <XSBody bold style={{ paddingBottom: "1.6rem" }}>
+            {MESSAGE.COMPANY_NAME}
+          </XSBody>
           <CompanyInfomationWrapper>
             <div>
               <div>
@@ -29,13 +29,11 @@ const Footer: React.FC = () => {
                 <XSBody>{MESSAGE.COMPANY_EMAIL_ADDRESS}</XSBody>
               </div>
             </div>
-            <div>
-              <InternalLink to={INTERNAL.PRIVACY_POLICY}>{LINK.PRIVACY_POLICY}</InternalLink>
-              <XSBody as="span"> | </XSBody>
-              <InternalLink to={INTERNAL.REFUND_POLICY}>{LINK.REFUND_POLICY}</InternalLink>
-            </div>
           </CompanyInfomationWrapper>
-        </CompanyWrapper>
+          <div>
+            <InternalLink to={INTERNAL.REFUND_POLICY}>{LINK.REFUND_POLICY}</InternalLink>
+          </div>
+        </div>
         <MenuListWrapper>
           <MenuList>
             <li>
@@ -95,7 +93,7 @@ const Footer: React.FC = () => {
 const FooterWrapper = styled.footer`
   width: 100%;
   min-width: 144rem;
-  min-height: 25rem;
+  height: 25rem;
   display: flex;
   justify-content: center;
   background-color: ${({ theme: { color } }) => color.greyScale.black};
@@ -114,16 +112,8 @@ const ContentWrapper = styled.div`
   letter-spacing: ${({ theme: { letterSpacing } }) => letterSpacing};
 `;
 
-const CompanyWrapper = styled.div`
-  width: 31.6rem;
-  height: 11.4rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-`;
-
 const CompanyInfomationWrapper = styled.div`
-  height: 8rem;
+  padding-bottom: 0.8rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

@@ -56,10 +56,6 @@ describe("<Footer>", () => {
 
     const links = [
       {
-        name: LINK.PRIVACY_POLICY,
-        path: INTERNAL.PRIVACY_POLICY,
-      },
-      {
         name: LINK.RECRUIT,
         path: INTERNAL.RECRUIT,
       },

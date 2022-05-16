@@ -38,7 +38,6 @@ const LINK = {
   FACEBOOK: "페이스북",
   FAQ: "자주 묻는 질문",
   MASTERS: "마스터즈 코스",
-  PRIVACY_POLICY: "개인정보 취급방침",
   RECRUIT: "채용소식",
   REFUND_POLICY: "환불규정",
   SUBSCRIPTION: "소식받아보기",
