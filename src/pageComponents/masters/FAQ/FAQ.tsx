@@ -9,7 +9,7 @@ import { SUBTITLE, TITLE } from "assets/static/phrases";
 const FAQ: React.FC = ({}) => {
   return (
     <FAQWrapper>
-      <SectionTitle subTitle={SUBTITLE.FAQ} title={TITLE.FAQ} />
+      <SectionTitle subTitle={SUBTITLE.FAQ} title={TITLE.FREQUENTLY_ASKED_QUESTIONS} />
       <DropdownWrapper>
         <DropdownItem
           category="교육과정"

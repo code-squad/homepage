@@ -23,7 +23,7 @@ const TabNavigationBar: React.FC<{
               onClick={() => handleTabNavigationButtonClick(index)}
               selected={index === currentIndex}
             >
-              <LBody bold={index === currentIndex}>{title}</LBody>
+              <LBody bold={index === currentIndex}>{`#${title}`}</LBody>
             </TagNavButton>
           </li>
         ))}

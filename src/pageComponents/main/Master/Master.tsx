@@ -50,12 +50,12 @@ const Master: React.FC = () => {
           <MasterImg />
           <IntroduceWrapper>
             <Introduce>
-              <div style={{ display: "flex", alignItems: "flex-end" }}>
+              <NicknameWrapper>
                 <XLBody>{masterIntroduce.name}</XLBody>
                 <XSBody style={{ color: `${theme.color.greyScale.grey2}`, paddingLeft: "0.8rem" }}>
                   {masterIntroduce.description}
                 </XSBody>
-              </div>
+              </NicknameWrapper>
               <MBody bold>{masterIntroduce.introduce}</MBody>
               <CareerWrapper>
                 {masterIntroduce.careers?.map((career) => (
@@ -132,6 +132,11 @@ const Introduce = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
+`;
+
+const NicknameWrapper = styled.div`
+  display: flex;
+  align-items: flex-end;
 `;
 
 const MasterImg = styled.img`
