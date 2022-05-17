@@ -3,7 +3,7 @@ import React from "react";
 import GlobalTheme from "../lib/context/GlobalTheme";
 import theme from "styles/theme";
 // Components
-import { Footer, HomeGlobalNavigationBar, Recruit } from "components";
+import { Footer, HomeGlobalNavigationBar, Subscription } from "components";
 import {
   Welcome,
   CourseList,
@@ -30,7 +30,7 @@ const MainPage = () => {
         <GraduateReview />
         <Article />
         <Place />
-        <Recruit backgroundColor={theme.color.primary.green4} />
+        <Subscription backgroundColor={theme.color.primary.green4} />
         <Footer />
       </div>
     </GlobalTheme>

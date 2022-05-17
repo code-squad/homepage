@@ -1,18 +1,18 @@
 import React from "react";
 import { render } from "@testing-library/react";
 // Testing-Component
-import { Recruit } from ".";
+import { Subscription } from ".";
 // Assets
 import { LINK, LINK_DESCRIPTION } from "assets/static/phrases";
 import { INTERNAL } from "assets/static/urls";
 // Libs
 import { TestProvider } from "lib/testUtils";
 
-describe("<Recruite>", () => {
+describe("<Subscription>", () => {
   const renderSubscription = () =>
     render(
       <TestProvider>
-        <Recruit />
+        <Subscription />
       </TestProvider>
     );
   it("링크 설명 문구가 보여진다.", () => {
