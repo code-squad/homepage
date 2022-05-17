@@ -11,36 +11,32 @@ import { INTERNAL } from "assets/static/urls";
 const CourseList: React.FC = () => {
   return (
     <CourseWrapper>
-      <CourseListWrapper>
-        <LinkButton
-          to={INTERNAL.MASTERS}
-          title={LINK.MASTERS}
-          description={LINK_DESCRIPTION.MASTERS}
-          icon={mastersIcon}
-        />
-        <LinkButton
-          to={INTERNAL.CODE_TOGETHER}
-          title={LINK.CODE_TOGETHER}
-          description={LINK_DESCRIPTION.CODE_TOGETHER}
-          icon={codeTogetherIcon}
-        />
-      </CourseListWrapper>
+      <LinkButton
+        to={INTERNAL.MASTERS}
+        title={LINK.MASTERS}
+        description={LINK_DESCRIPTION.MASTERS}
+        icon={mastersIcon}
+      />
+      <LinkButton
+        to={INTERNAL.CODE_TOGETHER}
+        title={LINK.CODE_TOGETHER}
+        description={LINK_DESCRIPTION.CODE_TOGETHER}
+        icon={codeTogetherIcon}
+      />
     </CourseWrapper>
   );
 };
 
-const CourseWrapper = styled.div`
-  width: 106.2rem;
-  padding: 0 18.9rem;
-  margin: 0 auto;
-`;
-
-const CourseListWrapper = styled.ul`
+const CourseWrapper = styled.ul`
+  min-width: 144rem;
   padding-top: 8rem;
   padding-bottom: 15rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  & > *:not(:last-child) {
+    margin-right: 2.4rem;
+  }
 `;
 
 export default CourseList;

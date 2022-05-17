@@ -7,12 +7,13 @@ import { PlaceType } from "@type/Place";
 import theme from "styles/theme";
 // Typography
 import { MBody } from "typography";
+// Components
+import { SectionTitleRefac } from "components";
 // Assets
 import arrowLeft from "assets/images/icons/arrow-left.svg";
 import arrowRight from "assets/images/icons/arrow-right.svg";
 import places from "assets/images/places";
 import { SUBTITLE, TITLE, DESCRIPTION } from "assets/static/phrases";
-import { SectionTitleRefac } from "components";
 
 const Place: React.FC = () => {
   const data = useStaticQuery(PlaceQuery);
@@ -44,9 +45,7 @@ const Place: React.FC = () => {
         </ArrowButton>
       </ArrowNavigationWrapper>
       <SectionTitleRefac subTitle={SUBTITLE.PLACE} title={TITLE.PLACE} />
-      <MBody style={{ color: theme.color.greyScale.grey2, padding: "4rem 0" }}>
-        {DESCRIPTION.PLACE}
-      </MBody>
+      <MBody style={{ color: theme.color.greyScale.grey2 }}>{DESCRIPTION.PLACE}</MBody>
       <PlaceListWrapper>
         <PlaceList {...{ currentIndex }}>
           {placeList.map(({ image }) => (
@@ -65,7 +64,13 @@ const PlaceWrapper = styled.div`
   padding: 0 18.9rem;
   padding-bottom: 16rem;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
   overflow-x: hidden;
+  & > *:not(:last-child) {
+    margin-bottom: 4rem;
+  }
 `;
 
 const ArrowNavigationWrapper = styled.div`

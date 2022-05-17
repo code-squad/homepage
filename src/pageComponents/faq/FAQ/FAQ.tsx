@@ -57,7 +57,13 @@ const FAQWrapper = styled.div<{ image: string }>`
   background-size: 100%;
   color: ${({ theme: { color } }) => color.greyScale.black};
   white-space: pre-line;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
   text-align: start;
+  & > *:not(:last-child) {
+    margin-bottom: 4.8rem;
+  }
 `;
 
 const FAQContentWrapper = styled.div`
@@ -71,10 +77,10 @@ const DropdownItemWrapper = styled.ul`
   padding: 4rem 4.8rem 4.8rem 4.8rem;
   display: flex;
   flex-direction: column;
-  & > *:not(:first-child) {
-    margin-top: 4rem;
-  }
   background-color: ${({ theme: { color } }) => color.greyScale.white};
+  & > *:not(:last-child) {
+    margin-bottom: 4rem;
+  }
 `;
 
 const FAQQuery = graphql`

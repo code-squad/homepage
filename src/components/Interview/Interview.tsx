@@ -62,6 +62,13 @@ const Interview: React.FC<IInterview> = ({ subtitle, title, interviews }) => {
 
 const InterviewWrapper = styled.div`
   padding-bottom: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  overflow-x: hidden;
+  & > *:not(:last-child) {
+    margin-bottom: 8rem;
+  }
 `;
 
 const ArrowNavigationWrapper = styled.div`
@@ -101,11 +108,13 @@ const TitleWrapper = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
+  & > *:not(:last-child) {
+    margin-bottom: 0.8rem;
+  }
 `;
 
 const InterviewListWrapper = styled.div`
   overflow-x: hidden;
-  margin-top: 8rem;
 `;
 
 const InterviewList = styled.ul<{ currentIndex: number }>`
@@ -116,7 +125,7 @@ const InterviewList = styled.ul<{ currentIndex: number }>`
   display: flex;
   transition: left 0.5s;
   left: -${({ currentIndex }) => currentIndex * 54.3}rem;
-  & > * {
+  & > *:not(:last-child) {
     margin-right: 2.4rem;
   }
 `;

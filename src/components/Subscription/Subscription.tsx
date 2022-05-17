@@ -29,12 +29,14 @@ const SubscriptionWrapper = styled.div<{ backgroundColor?: string }>`
   justify-content: center;
   background-color: ${({ backgroundColor, theme: { color } }) =>
     backgroundColor || color.secondary.blue3};
+  & > *:not(:last-child) {
+    margin-bottom: 0.8rem;
+  }
 `;
 
 const SubscriptionLink = styled(Link)`
   text-decoration: none;
   color: ${({ theme: { color } }) => color.greyScale.black};
-  margin-top: 0.8rem;
 `;
 
 export default Subscription;

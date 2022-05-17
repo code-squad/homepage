@@ -53,9 +53,7 @@ const Master: React.FC = () => {
                   {masterIntroduce.description}
                 </XSBody>
               </NicknameWrapper>
-              <MBody bold style={{ marginTop: "1.6rem" }}>
-                {masterIntroduce.introduce}
-              </MBody>
+              <MBody bold>{masterIntroduce.introduce}</MBody>
               <CareerWrapper>
                 {masterIntroduce.careers?.map((career) => (
                   <li key={career}>
@@ -74,8 +72,9 @@ const Master: React.FC = () => {
             </Introduce>
             {masterIntroduce.schedules && (
               <ScheduleWrapper>
-                <Divider />
-                <MBody bold>{TITLE.SCHEDULE}</MBody>
+                <MBody bold style={{ padding: "3.2rem 0 2.4rem 0" }}>
+                  {TITLE.SCHEDULE}
+                </MBody>
                 <ScheduleList>
                   {masterIntroduce.schedules.map(({ image, title, subtitle }) => (
                     <Schedule key={title}>
@@ -109,6 +108,9 @@ const MasterInformationWrapper = styled.div`
   display: flex;
   padding: 5.6rem 18.9rem;
   margin: 0 auto;
+  & > *:not(:last-child) {
+    margin-right: 7.8rem;
+  }
 `;
 
 const IntroduceWrapper = styled.div`
@@ -116,11 +118,17 @@ const IntroduceWrapper = styled.div`
   min-height: 0;
   display: flex;
   flex-direction: column;
+  & > *:not(:last-child) {
+    margin-bottom: 3.2rem;
+  }
 `;
 
 const Introduce = styled.div`
   display: flex;
   flex-direction: column;
+  & > *:not(:last-child) {
+    margin-bottom: 1.6rem;
+  }
 `;
 
 const NicknameWrapper = styled.div`
@@ -131,7 +139,6 @@ const NicknameWrapper = styled.div`
 const MasterImg = styled.img`
   width: 41rem;
   height: 41rem;
-  margin-right: 7.8rem;
 `;
 
 const CareerWrapper = styled.ul`
@@ -139,7 +146,6 @@ const CareerWrapper = styled.ul`
   flex-direction: column;
   list-style-type: disc;
   list-style-position: inside;
-  margin-top: 1.6rem;
   & > *:not(:last-child) {
     margin-bottom: 0.8rem;
   }
@@ -147,17 +153,11 @@ const CareerWrapper = styled.ul`
 
 const ScheduleWrapper = styled.div`
   width: 52rem;
-`;
-
-const Divider = styled.div`
-  width: 52rem;
   border-top: 0.1rem solid ${({ theme: { color } }) => color.greyScale.grey3};
-  margin: 3.2rem 0;
 `;
 
 const ScheduleList = styled.ul`
   display: flex;
-  margin-top: 2.4rem;
   & > *:not(:last-child) {
     margin-right: 2.4rem;
   }
@@ -166,6 +166,9 @@ const ScheduleList = styled.ul`
 const Schedule = styled.li`
   width: 24.8rem;
   display: flex;
+  & > *:not(:last-child) {
+    margin-right: 1.6rem;
+  }
 `;
 
 const CourseImage = styled.img`
@@ -179,7 +182,6 @@ const CourseImage = styled.img`
 const CourseTitleWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left: 1.6rem;
 `;
 
 const MasterQuery = graphql`

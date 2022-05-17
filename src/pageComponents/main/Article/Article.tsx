@@ -36,14 +36,19 @@ const ArticleWrapper = styled.div`
   padding: 0 18.9rem;
   padding-bottom: 20rem;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  & > *:not(:last-child) {
+    margin-bottom: 8rem;
+  }
 `;
 
 const ArticleList = styled.ul`
   display: flex;
   flex-direction: column;
-  margin-top: 8rem;
-  & > *:not(:first-child) {
-    margin-top: 4rem;
+  & > *:not(:last-child) {
+    margin-bottom: 4rem;
   }
 `;
 

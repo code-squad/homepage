@@ -30,14 +30,7 @@ const Feature: React.FC = () => {
               {subtitle}
             </MBody>
           </div>
-          {description.split("\n\n").map((descriptionItem: string) => (
-            <MBody
-              key={descriptionItem}
-              style={{ color: theme.color.greyScale.grey2, paddingTop: "1.6rem" }}
-            >
-              {descriptionItem}
-            </MBody>
-          ))}
+          <MBody style={{ color: theme.color.greyScale.grey2 }}>{description}</MBody>
         </Content>
         <FeatureImg src={images[image]} />
       </ContentWrapper>
@@ -50,19 +43,29 @@ const FeatureWrapper = styled.div`
   padding: 0 18.9rem;
   padding-bottom: 16rem;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  & > *:not(:last-child) {
+    margin-bottom: 5.6rem;
+  }
 `;
 
 const ContentWrapper = styled.div`
-  margin-top: 5.6rem;
   display: flex;
-  justify-content: space-between;
   white-space: pre-line;
+  & > *:not(:last-child) {
+    margin-right: 13.2rem;
+  }
 `;
 
 const Content = styled.div`
   width: 41.1rem;
   display: flex;
   flex-direction: column;
+  & > *:not(:last-child) {
+    margin-bottom: 1.6rem;
+  }
 `;
 
 const FeatureImg = styled.img`

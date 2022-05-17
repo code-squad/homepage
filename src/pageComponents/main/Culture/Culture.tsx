@@ -26,7 +26,7 @@ const Culture: React.FC = () => {
         {cultures.map((culture) => (
           <CultureContent key={culture.title}>
             <CultureImg src={icons[culture.image]} />
-            <div style={{ padding: "2.4rem 0" }}>
+            <div>
               <MBody style={{ paddingBottom: "0.4rem" }}>{culture.subtitle}</MBody>
               <XLBody>{culture.title}</XLBody>
             </div>
@@ -49,19 +49,29 @@ const CultureWrapper = styled.div`
   padding: 0 18.9rem;
   padding-bottom: 8rem;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  & > *:not(:last-child) {
+    margin-bottom: 5.6rem;
+  }
 `;
 
 const ContentWrapper = styled.div`
-  margin-top: 5.6rem;
   display: flex;
-  justify-content: space-between;
   white-space: pre-line;
+  & > *:not(:last-child) {
+    margin-right: 7.8rem;
+  }
 `;
 
 const CultureContent = styled.div`
   width: 30.2rem;
   display: flex;
   flex-direction: column;
+  & > *:not(:last-child) {
+    margin-bottom: 2.4rem;
+  }
 `;
 
 const CultureImg = styled.img`
@@ -72,6 +82,9 @@ const CultureImg = styled.img`
 const DescriptionWrapper = styled.ul`
   display: flex;
   flex-direction: column;
+  & > *:not(:last-child) {
+    margin-bottom: 0.8rem;
+  }
 `;
 
 const CultureQuery = graphql`
