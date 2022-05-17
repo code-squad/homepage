@@ -16,7 +16,9 @@ const BannerPopup: React.FC<IBannerPopup> = ({ title, description, onCloseButton
     <BannerPopupWrapper>
       <ContentWrapper>
         <MBody bold>{title}</MBody>
-        <XSBody bold>{description}</XSBody>
+        <XSBody bold style={{ marginTop: "0.4rem" }}>
+          {description}
+        </XSBody>
       </ContentWrapper>
       <CloseButton onClick={onCloseButtonClicked}>
         <ButtonIcon src={close} />
@@ -41,7 +43,6 @@ const ContentWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 0.4rem;
   color: ${({ theme: { color } }) => color.greyScale.white};
 `;
 

@@ -57,10 +57,6 @@ const FAQWrapper = styled.div<{ image: string }>`
   background-size: 100%;
   color: ${({ theme: { color } }) => color.greyScale.black};
   white-space: pre-line;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 4.8rem;
   text-align: start;
 `;
 
@@ -75,7 +71,9 @@ const DropdownItemWrapper = styled.ul`
   padding: 4rem 4.8rem 4.8rem 4.8rem;
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  & > *:not(:first-child) {
+    margin-top: 4rem;
+  }
   background-color: ${({ theme: { color } }) => color.greyScale.white};
 `;
 

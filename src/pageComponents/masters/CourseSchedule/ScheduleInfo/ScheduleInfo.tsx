@@ -50,7 +50,9 @@ const DescriptionWrapper = styled.div`
 const ButtonWrapper = styled.div`
   display: flex;
   margin-top: 4.8rem;
-  gap: 0.8rem;
+  & > *:not(:last-child) {
+    margin-right: 0.8rem;
+  }
 `;
 
 export default ScheduleInfo;

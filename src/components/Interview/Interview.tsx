@@ -2,10 +2,8 @@ import React from "react";
 import styled from "styled-components";
 // Type
 import { InterviewType } from "@type/Interview";
-// Typography
-import { LBody, SDisplay } from "typography";
 // Components
-import { InterviewBox } from "components/InterviewBox";
+import { InterviewBox, SectionTitleRefac } from "components/";
 // Assets
 import arrowLeft from "assets/images/icons/arrow-left.svg";
 import arrowRight from "assets/images/icons/arrow-right.svg";
@@ -37,20 +35,19 @@ const Interview: React.FC<IInterview> = ({ subtitle, title, interviews }) => {
 
   return (
     <InterviewWrapper>
-      <ArrowNavigationWrapper>
-        <ArrowButton disabled={currentIndex === 0} onClick={handleArrowLeftClick}>
-          <img src={arrowLeft} />
-        </ArrowButton>
-        <ArrowButton
-          disabled={currentIndex === interviews.length - 1}
-          onClick={handleArrowRightClick}
-        >
-          <img src={arrowRight} />
-        </ArrowButton>
-      </ArrowNavigationWrapper>
       <TitleWrapper>
-        <LBody>{subtitle}</LBody>
-        <SDisplay>{title}</SDisplay>
+        <ArrowNavigationWrapper>
+          <ArrowButton disabled={currentIndex === 0} onClick={handleArrowLeftClick}>
+            <img src={arrowLeft} />
+          </ArrowButton>
+          <ArrowButton
+            disabled={currentIndex === interviews.length - 1}
+            onClick={handleArrowRightClick}
+          >
+            <img src={arrowRight} />
+          </ArrowButton>
+        </ArrowNavigationWrapper>
+        <SectionTitleRefac subTitle={subtitle} {...{ title }} />
       </TitleWrapper>
       <InterviewListWrapper>
         <InterviewList {...{ currentIndex }}>
@@ -65,11 +62,6 @@ const Interview: React.FC<IInterview> = ({ subtitle, title, interviews }) => {
 
 const InterviewWrapper = styled.div`
   padding-bottom: 20rem;
-  display: flex;
-  flex-direction: column;
-  align-items: space-between;
-  gap: 8rem;
-  overflow-x: hidden;
 `;
 
 const ArrowNavigationWrapper = styled.div`
@@ -79,7 +71,9 @@ const ArrowNavigationWrapper = styled.div`
   margin-left: 98.6rem;
   margin-top: 8.1rem;
   display: flex;
-  gap: 1.6rem;
+  & > *:not(:last-child) {
+    margin-right: 1.6rem;
+  }
 `;
 
 const ArrowButton = styled.button`
@@ -106,12 +100,12 @@ const TitleWrapper = styled.div`
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
   position: relative;
 `;
 
 const InterviewListWrapper = styled.div`
   overflow-x: hidden;
+  margin-top: 8rem;
 `;
 
 const InterviewList = styled.ul<{ currentIndex: number }>`
@@ -120,9 +114,11 @@ const InterviewList = styled.ul<{ currentIndex: number }>`
   margin: 0 auto;
   position: relative;
   display: flex;
-  gap: 2.4rem;
   transition: left 0.5s;
   left: -${({ currentIndex }) => currentIndex * 54.3}rem;
+  & > * {
+    margin-right: 2.4rem;
+  }
 `;
 
 export default Interview;

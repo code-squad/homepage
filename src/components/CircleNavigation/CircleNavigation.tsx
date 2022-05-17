@@ -43,7 +43,9 @@ const CircleNavigationWrapper = styled.ul`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 2.4rem;
+  & > *:not(:last-child) {
+    margin-right: 2.4rem;
+  }
 `;
 
 const CircleButton = styled.button<{ selected?: boolean }>`

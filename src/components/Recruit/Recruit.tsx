@@ -27,7 +27,6 @@ const RecruitWrapper = styled.div<{ backgroundColor?: string }>`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.8rem;
   background-color: ${({ backgroundColor, theme: { color } }) =>
     backgroundColor || color.secondary.blue3};
 `;
@@ -35,6 +34,7 @@ const RecruitWrapper = styled.div<{ backgroundColor?: string }>`
 const RecruitLink = styled(Link)`
   text-decoration: none;
   color: ${({ theme: { color } }) => color.greyScale.black};
+  margin-top: 0.8rem;
 `;
 
 export default Recruite;

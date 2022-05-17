@@ -6,7 +6,9 @@ import { FeatureType } from "@type/Feature";
 // Theme
 import theme from "styles/theme";
 // Typography
-import { LBody, MBody, SDisplay, XLBody } from "typography";
+import { MBody, XLBody } from "typography";
+// Components
+import { SectionTitleRefac } from "components/";
 // Assets
 import images from "assets/images";
 import { SUBTITLE, TITLE } from "assets/static/phrases";
@@ -19,10 +21,7 @@ const Feature: React.FC = () => {
 
   return (
     <FeatureWrapper>
-      <TitleWrapper>
-        <LBody>{SUBTITLE.FEATURE}</LBody>
-        <SDisplay>{TITLE.FEATURE}</SDisplay>
-      </TitleWrapper>
+      <SectionTitleRefac title={TITLE.FEATURE} subTitle={SUBTITLE.FEATURE} />
       <ContentWrapper>
         <Content>
           <div>
@@ -31,7 +30,9 @@ const Feature: React.FC = () => {
               {subtitle}
             </MBody>
           </div>
-          <MBody style={{ color: theme.color.greyScale.grey2 }}>{description}</MBody>
+          <MBody style={{ color: theme.color.greyScale.grey2, paddingTop: "1.6rem" }}>
+            {description}
+          </MBody>
         </Content>
         <FeatureImg src={images[image]} />
       </ContentWrapper>
@@ -44,21 +45,12 @@ const FeatureWrapper = styled.div`
   padding: 0 18.9rem;
   padding-bottom: 16rem;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: space-between;
-  gap: 5.6rem;
-`;
-
-const TitleWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
 `;
 
 const ContentWrapper = styled.div`
+  margin-top: 5.6rem;
   display: flex;
-  gap: 13.2rem;
+  justify-content: space-between;
   white-space: pre-line;
 `;
 
@@ -66,7 +58,6 @@ const Content = styled.div`
   width: 41.1rem;
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
 `;
 
 const FeatureImg = styled.img`

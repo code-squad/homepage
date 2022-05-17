@@ -56,11 +56,6 @@ const RefundPolicyWrapper = styled.div`
   color: ${({ theme: { color } }) => color.greyScale.black};
   background-color: ${({ theme: { color } }) => color.greyScale.offWhite};
   white-space: pre-line;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 4.8rem;
-  text-align: start;
 `;
 
 const PolicySpecificationWrapper = styled.div`
