@@ -45,13 +45,13 @@ const DropdownItem: React.FC<IDropdownItem> = ({
         </Title>
         <ArrowWrapper {...{ open }}>
           {isLinkBoard ? (
-            <img aria-label="arrow-right" src={rightArrow} width="24px" height="24px" />
+            <img aria-label="arrow-right" src={rightArrow} width="2.4rem" height="2.4rem" />
           ) : (
             <img
               aria-label={open ? "arrow-up" : "arrow-down"}
               src={downArrow}
-              width="24px"
-              height="24px"
+              width="2.4rem"
+              height="2.4rem"
             />
           )}
         </ArrowWrapper>
@@ -75,7 +75,11 @@ const DropdownWrapper = styled.div<{ short?: boolean }>`
   width: ${({ short }) => (short ? "96.6rem" : "106.2rem")};
   display: flex;
   flex-direction: column;
+  &:hover ${LBody} {
+    font-weight: ${({ theme: { fontWeight } }) => fontWeight.bold};
+  }
 `;
+
 const BoardWrapper = styled.div<{ open?: boolean }>`
   display: flex;
   justify-content: space-between;
@@ -90,13 +94,9 @@ const Category = styled.div`
   margin-right: 2.4rem;
   color: ${({ theme: { color } }) => color.greyScale.grey2};
 `;
-
 const Title = styled.div`
   width: 84.5rem;
   margin-right: 2.4rem;
-  &:hover: {
-    font-weight: ${({ theme: { fontWeight } }) => fontWeight.bold};
-  }
 `;
 
 const ArrowWrapper = styled.div<{ open?: boolean }>`

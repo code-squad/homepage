@@ -40,6 +40,7 @@ const Title = styled.h4`
 `;
 const Description = styled.div`
   margin-top: 1.6rem;
+  color: ${({ theme: { color } }) => color.greyScale.grey2};
 `;
 
 export default ImageCard;

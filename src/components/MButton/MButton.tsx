@@ -17,17 +17,8 @@ export interface IMButtonProps {
 const MButton: React.FC<IMButtonProps> = ({ children, accent, disabled, to }) => {
   return (
     <MButtonWrapper $accent={accent} $disabled={disabled} {...{ to }}>
-      <ButtonIcon src={plus} {...{ disabled }} />
-      <MBody
-        bold
-        style={{
-          marginLeft: "0.4rem",
-          marginRight: "0.4rem",
-          marginTop: "0.4rem",
-        }}
-      >
-        {children}
-      </MBody>
+      {/* <ButtonIcon src={plus} {...{ disabled }} /> */}
+      <MBody bold>{children}</MBody>
       <ButtonIcon src={arrowRight} {...{ disabled }} />
     </MButtonWrapper>
   );

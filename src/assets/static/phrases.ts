@@ -6,6 +6,8 @@ const SUBTITLE = {
   GRADUATE_INTERVIEW: "코드스쿼드의 교육을 경험한",
   MASTERS_COURSE: "마스터즈 코스의",
   PLACE: "오프라인 교육장",
+  MASTERS_COURSE_SCHEDULE: "대기자 신청부터 수료까지 한 눈에 확인하는",
+  FAQ: "교육 과정에 대해",
 };
 
 const TITLE = {
@@ -18,6 +20,8 @@ const TITLE = {
   DETAIL_CURRICULUM: "각 클래스 별 상세 커리큘럼",
   PLACE: "오프라인 교육장",
   SCHEDULE: "곧 시작하는 과정",
+  MASTERS_COURSE_SCHEDULE: "마스터즈 코스 스케쥴",
+  FREQUENTLY_ASKED_QUESTIONS: "자주 묻는 질문",
   REFUND_POLICY: `코드스쿼드\n환불규정`,
   REFUND_REASON: "수강료 반환 원인",
   REFUND_STANDARD: "수강료 반환 기준",

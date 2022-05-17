@@ -1,3 +1,4 @@
+import images from "assets/images";
 import icons from "assets/images/icons";
 
 interface ScheduleType {
@@ -13,4 +14,12 @@ export interface MasterType {
   introduce: string;
   careers: string[];
   schedules?: ScheduleType[];
+}
+
+export interface MasterInfoType {
+  avatar: keyof typeof images;
+  name: string;
+  position: string;
+  introduce: string;
+  nutshell: string;
 }

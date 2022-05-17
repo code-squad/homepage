@@ -1,6 +1,7 @@
 import { action } from "@storybook/addon-actions";
 // GlobalTheme
 import GlobalTheme from "../src/lib/context/GlobalTheme";
+import GlobalHeader from "../src/lib/context/GlobalHeader";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -32,8 +33,10 @@ window.___navigate = (pathname) => {
 
 export const decorators = [
   (Story) => (
-    <GlobalTheme>
-      <Story />
-    </GlobalTheme>
+    <>
+      <GlobalTheme>
+        <Story />
+      </GlobalTheme>
+    </>
   ),
 ];

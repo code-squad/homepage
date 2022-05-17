@@ -33,9 +33,8 @@ const ListTemplate: ComponentStory<typeof InterviewBox> = (args) => {
     writerInfo: "Chloe, 커뮤니티 매니저",
   };
   return (
-    <ul style={{ display: "flex" }}>
+    <ul style={{ display: "flex", gap: "2.4rem" }}>
       <InterviewBox {...args} />
-
       <InterviewBox {...customArgs} />
     </ul>
   );

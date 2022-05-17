@@ -2,12 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
 // Typography
-import { LBody, MBody, MDisplay, SDisplay } from "typography";
+import { LBody, SDisplay } from "typography";
 // Components
-import { TabNavigationBar } from "components";
+import { SectionTitle, TabNavigationBar } from "components";
 import { Curriculum } from "./Curriculum";
 // Assets
-import images from "assets/images";
 import { SUBTITLE, TITLE } from "assets/static/phrases";
 
 const frontMatterReduce = (data: any) => {
@@ -25,13 +24,10 @@ const DetailCurriculum: React.FC = ({}) => {
 
   return (
     <DetailCurriculumWrapper>
-      <CurriculumTitleWrapper>
-        <LBody bold>{SUBTITLE.MASTERS_COURSE}</LBody>
-        <CurriculumHeadTitle>
-          <SDisplay>{TITLE.DETAIL_CURRICULUM}</SDisplay>
-        </CurriculumHeadTitle>
+      <SectionTitle subTitle={SUBTITLE.MASTERS_COURSE} title={TITLE.DETAIL_CURRICULUM} />
+      <div style={{ width: "107rem" }}>
         <TabNavigationBar {...{ titles }} onIndexChanged={setCurriculumIndex} />
-      </CurriculumTitleWrapper>
+      </div>
       <CurriculumWrapper>
         <Curriculum {...{ curriculumInfo: curriculumInfo[curriculumIndex] }} />
       </CurriculumWrapper>
@@ -47,15 +43,6 @@ const DetailCurriculumWrapper = styled.div`
   min-width: 144rem;
   flex-direction: column;
 `;
-const CurriculumTitleWrapper = styled.div`
-  width: 107rem;
-  display: flex;
-  flex-direction: column;
-`;
-
-const CurriculumHeadTitle = styled.div`
-  margin-top: 0.8rem;
-`;
 
 const CurriculumWrapper = styled.div`
   display: flex;
@@ -67,11 +54,15 @@ const CurriculumWrapper = styled.div`
 
 const CurriculumQuery = graphql`
   query CurriculumQuery {
-    allMdx(filter: { frontmatter: { templateKey: { glob: "masters_curriculum*" } } }) {
+    allMdx(
+      sort: { order: ASC, fields: [frontmatter___index] }
+      filter: { frontmatter: { templateKey: { glob: "masters_curriculum*" } } }
+    ) {
       edges {
         node {
           frontmatter {
             tabName
+            index
             curriculum {
               index
               subject
