@@ -8,7 +8,7 @@ import { LDisplay } from "typography";
 // Components
 import { DropdownItem, TagNavigationBar } from "components";
 // Assets
-import images from "assets/images";
+import backgrounds from "assets/images/backgrounds";
 import { TITLE } from "assets/static/phrases";
 
 const FAQ: React.FC = () => {
@@ -34,7 +34,7 @@ const FAQ: React.FC = () => {
   }, [currentIndex]);
 
   return (
-    <FAQWrapper image={images["hero"]}>
+    <FAQWrapper image={backgrounds["faq"]}>
       <FAQContentWrapper>
         <LDisplay style={{ paddingTop: "16rem", paddingBottom: "3.2rem" }}>{TITLE.FAQ}</LDisplay>
         <TagNavigationBar titles={Array.from(categories)} onIndexChanged={setCurrentIndex} />
