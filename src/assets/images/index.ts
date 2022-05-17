@@ -4,6 +4,7 @@ import cooperateBlock from "./cooperate-block.svg";
 import feedbackBlock from "./feedback-block.svg";
 import puzzleBlock from "./puzzle-block.svg";
 import goalInBlock from "./goal-in-block.svg";
+import hero from "./hero.svg";
 
 export default {
   codesquadFeature,
@@ -12,4 +13,5 @@ export default {
   feedbackBlock,
   puzzleBlock,
   goalInBlock,
+  hero,
 };

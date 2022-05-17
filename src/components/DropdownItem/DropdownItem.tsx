@@ -63,7 +63,7 @@ const DropdownItem: React.FC<IDropdownItem> = ({
             <MBody>{content}</MBody>
           </Content>
           <EditDate>
-            <XSBody>{editDate}</XSBody>
+            <XSBody>{`최종 업데이트: ${editDate}`}</XSBody>
           </EditDate>
         </ContentWrapper>
       )}
