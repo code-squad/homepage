@@ -1,14 +1,11 @@
 import React from "react";
 // Theme
 import GlobalTheme from "lib/context/GlobalTheme";
-import theme from "styles/theme";
 // Components
 import { Footer, HomeGlobalNavigationBar } from "components";
 import { FAQ } from "pageComponents/faq";
-// Assets
-import images from "assets/images";
 
-const FAQPage = () => {
+const FAQPage: React.FC = () => {
   return (
     <GlobalTheme>
       <div style={{ overflowX: "hidden" }}>
