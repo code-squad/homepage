@@ -18,12 +18,12 @@ describe("<Subscription>", () => {
   it("링크 설명 문구가 보여진다.", () => {
     const { getByText } = renderSubscription();
 
-    getByText(LINK_DESCRIPTION.CONFIRM_RECRUIT);
+    getByText(LINK_DESCRIPTION.RECEIVE_SUBSCRIPTION);
   });
   it("버튼을 클릭하면 props로 전달된곳으로 페이지가 이동된다.", () => {
     const { getByRole } = renderSubscription();
 
-    const linkEle = getByRole("link", { name: LINK.CONFIRM_RECRUIT });
-    expect(linkEle?.getAttribute("href")).toBe(INTERNAL.RECRUIT);
+    const linkEle = getByRole("link", { name: LINK.RECEIVE_SUBSCRIPTION });
+    expect(linkEle?.getAttribute("href")).toBe(INTERNAL.SUBSCRIPTION);
   });
 });
