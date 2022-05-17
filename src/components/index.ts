@@ -15,3 +15,4 @@ export { ImageCard } from "./ImageCard";
 export { BannerPopup } from "./BannerPopup";
 export { Recruit } from "./Recruit";
 export { SectionTitle } from "./SectionTitle";
+export { SectionTitleRefac } from "./SectionTitleRefac";
