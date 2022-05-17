@@ -30,9 +30,14 @@ const Feature: React.FC = () => {
               {subtitle}
             </MBody>
           </div>
-          <MBody style={{ color: theme.color.greyScale.grey2, paddingTop: "1.6rem" }}>
-            {description}
-          </MBody>
+          {description.split("\n\n").map((descriptionItem: string) => (
+            <MBody
+              key={descriptionItem}
+              style={{ color: theme.color.greyScale.grey2, paddingTop: "1.6rem" }}
+            >
+              {descriptionItem}
+            </MBody>
+          ))}
         </Content>
         <FeatureImg src={images[image]} />
       </ContentWrapper>
