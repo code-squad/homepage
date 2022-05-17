@@ -7,7 +7,7 @@ import { ImageCard } from ".";
 import cooperateBlock from "assets/images/cooperate-block.svg";
 
 export default {
-  title: "ImageCard",
+  title: "component/ImageCard",
   component: ImageCard,
   argTypes: {
     img: { control: "disable" },

@@ -5,7 +5,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { Recruit } from ".";
 
 export default {
-  title: "Recruit",
+  title: "component/Recruit",
   component: Recruit,
 } as ComponentMeta<typeof Recruit>;
 

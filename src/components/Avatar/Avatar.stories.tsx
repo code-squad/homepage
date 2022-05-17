@@ -7,7 +7,7 @@ import { Avatar } from ".";
 import blankProfile from "assets/images/blank-profile.svg";
 
 export default {
-  title: "Avatar",
+  title: "component/Avatar",
   component: Avatar,
 } as ComponentMeta<typeof Avatar>;
 

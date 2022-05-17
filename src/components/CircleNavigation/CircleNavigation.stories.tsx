@@ -6,7 +6,7 @@ import { action } from "@storybook/addon-actions";
 import { CircleNavigation } from ".";
 
 export default {
-  title: "CircleNavigation",
+  title: "component/CircleNavigation",
   component: CircleNavigation,
 } as ComponentMeta<typeof CircleNavigation>;
 

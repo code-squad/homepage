@@ -5,7 +5,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { TeamGlobalNavigationBar } from ".";
 
 export default {
-  title: "TeamGlobalNavigationBar",
+  title: "component/TeamGlobalNavigationBar",
   component: TeamGlobalNavigationBar,
 } as ComponentMeta<typeof TeamGlobalNavigationBar>;
 

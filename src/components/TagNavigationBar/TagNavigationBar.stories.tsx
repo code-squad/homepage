@@ -6,7 +6,7 @@ import { action } from "@storybook/addon-actions";
 import { TagNavigationBar } from ".";
 
 export default {
-  title: "TagNavigationBar",
+  title: "component/TagNavigationBar",
   component: TagNavigationBar,
 } as ComponentMeta<typeof TagNavigationBar>;
 
@@ -14,6 +14,6 @@ const Template: ComponentStory<typeof TagNavigationBar> = (args) => <TagNavigati
 
 export const Default = Template.bind({});
 Default.args = {
-  titles: ["#전체", "#교육과정", "#결제", "#취업", "#기타"],
+  titles: ["전체", "교육과정", "결제", "취업", "기타"],
   onIndexChanged: action("clicked"),
 };
