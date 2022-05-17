@@ -1,7 +1,6 @@
 import React from "react";
 // Theme
 import GlobalTheme from "lib/context/GlobalTheme";
-import theme from "styles/theme";
 // Components
 import { HomeGlobalNavigationBar } from "components/";
 import { Masthead } from "pageComponents/masters/Masthead";
@@ -24,7 +23,6 @@ const MatsersPage: React.FC = () => {
         <InterviewSliderWrapper />
         <CourseSchedule />
         <FAQ />
-        <Recruit />
         <Footer />
       </main>
     </GlobalTheme>
