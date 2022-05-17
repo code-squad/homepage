@@ -13,17 +13,14 @@ const InterviewSliderWrapper: React.FC = ({}) => {
   const { interviewList } = strainMdxInfo(useStaticQuery(InterviewListQuery));
 
   return (
-    <TopMargin>
+    <div style={{ marginTop: "20rem" }}>
       <Interview
         {...{ title: "졸업생 후기", subtitle: "2021 마스터즈 코스", interviews: interviewList }}
       />
-    </TopMargin>
+    </div>
   );
 };
 
-const TopMargin = styled.div`
-  margin-top: 20rem;
-`;
 const InterviewListQuery = graphql`
   query InterviewListQuery {
     mdx(frontmatter: { templateKey: { eq: "masters_interview_list" } }) {
