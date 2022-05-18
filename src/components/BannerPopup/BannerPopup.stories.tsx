@@ -6,7 +6,7 @@ import { action } from "@storybook/addon-actions";
 import { BannerPopup } from ".";
 
 export default {
-  title: "BannerPopup",
+  title: "component/BannerPopup",
   component: BannerPopup,
 } as ComponentMeta<typeof BannerPopup>;
 

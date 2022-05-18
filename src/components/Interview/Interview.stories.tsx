@@ -5,7 +5,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { Interview } from ".";
 
 export default {
-  title: "Interview",
+  title: "component/Interview",
   component: Interview,
 } as ComponentMeta<typeof Interview>;
 

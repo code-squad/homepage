@@ -5,7 +5,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { DropdownItem } from ".";
 
 export default {
-  title: "DropdownItem",
+  title: "component/DropdownItem",
   component: DropdownItem,
 } as ComponentMeta<typeof DropdownItem>;
 

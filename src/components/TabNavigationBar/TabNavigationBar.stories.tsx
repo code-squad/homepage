@@ -6,7 +6,7 @@ import { action } from "@storybook/addon-actions";
 import { TabNavigationBar } from ".";
 
 export default {
-  title: "TabNavigationBar",
+  title: "component/TabNavigationBar",
   component: TabNavigationBar,
 } as ComponentMeta<typeof TabNavigationBar>;
 

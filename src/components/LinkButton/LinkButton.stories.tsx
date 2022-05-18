@@ -7,7 +7,7 @@ import { LinkButton } from ".";
 import mastersIcon from "assets/images/icons/masters.svg";
 
 export default {
-  title: "LinkButton",
+  title: "component/LinkButton",
   component: LinkButton,
 } as ComponentMeta<typeof LinkButton>;
 

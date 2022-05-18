@@ -5,7 +5,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { Subscription } from ".";
 
 export default {
-  title: "Subscription",
+  title: "component/Subscription",
   component: Subscription,
 } as ComponentMeta<typeof Subscription>;
 
