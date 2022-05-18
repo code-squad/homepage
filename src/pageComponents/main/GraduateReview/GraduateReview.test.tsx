@@ -43,4 +43,10 @@ describe("<GraduateReview>", () => {
       getByText(writerInfo);
     });
   });
+  it("좌우 화살표 버튼들이 보여진다.", async () => {
+    const { getByAltText } = renderGraduateReview();
+
+    getByAltText("arrow-left");
+    getByAltText("arrow-right");
+  });
 });
