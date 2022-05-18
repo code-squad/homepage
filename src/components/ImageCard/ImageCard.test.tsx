@@ -34,9 +34,9 @@ describe("<ImageCard>", () => {
   });
   it("img를 통해 받아온 이미지가 보여진다.", () => {
     const { getByAltText } = renderImageCard();
-    const { img } = props;
+    const { img, title } = props;
 
-    const cardImg = getByAltText("card-img");
+    const cardImg = getByAltText(`card-img-${title}`);
     expect(cardImg.getAttribute("src")).toBe(img);
   });
 });

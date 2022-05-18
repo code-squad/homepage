@@ -13,7 +13,7 @@ interface IImageCard {
 const ImageCard: React.FC<IImageCard> = ({ title, description, img, medium }) => {
   return (
     <CardWrapper {...{ medium }}>
-      <CardImg alt="card-img" src={img} />
+      <CardImg alt={`card-img-${title}`} src={img} />
       <Title>
         <XLBody bold>{title}</XLBody>
       </Title>
