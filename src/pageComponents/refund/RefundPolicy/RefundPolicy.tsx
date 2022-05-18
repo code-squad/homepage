@@ -59,8 +59,10 @@ const RefundPolicyWrapper = styled.div`
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 4.8rem;
   text-align: start;
+  & > *:not(:last-child) {
+    margin-bottom: 4.8rem;
+  }
 `;
 
 const PolicySpecificationWrapper = styled.div`

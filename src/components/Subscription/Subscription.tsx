@@ -5,36 +5,38 @@ import { MBody, SDisplay } from "typography";
 import { INTERNAL } from "assets/static/urls";
 import { LINK, LINK_DESCRIPTION } from "assets/static/phrases";
 
-export interface IRecruit {
+export interface ISubscription {
   backgroundColor?: string;
 }
 
-const Recruite: React.FC<IRecruit> = ({ backgroundColor }) => {
+const Subscription: React.FC<ISubscription> = ({ backgroundColor }) => {
   return (
-    <RecruitWrapper {...{ backgroundColor }}>
-      <MBody bold>{LINK_DESCRIPTION.CONFIRM_RECRUIT}</MBody>
-      <RecruitLink to={INTERNAL.RECRUIT}>
-        <SDisplay>{LINK.CONFIRM_RECRUIT}</SDisplay>
-      </RecruitLink>
-    </RecruitWrapper>
+    <SubscriptionWrapper {...{ backgroundColor }}>
+      <MBody bold>{LINK_DESCRIPTION.RECEIVE_SUBSCRIPTION}</MBody>
+      <SubscriptionLink to={INTERNAL.SUBSCRIPTION}>
+        <SDisplay>{LINK.RECEIVE_SUBSCRIPTION}</SDisplay>
+      </SubscriptionLink>
+    </SubscriptionWrapper>
   );
 };
 
-const RecruitWrapper = styled.div<{ backgroundColor?: string }>`
+const SubscriptionWrapper = styled.div<{ backgroundColor?: string }>`
   min-width: 144rem;
   height: 30.2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.8rem;
   background-color: ${({ backgroundColor, theme: { color } }) =>
     backgroundColor || color.secondary.blue3};
+  & > *:not(:last-child) {
+    margin-bottom: 0.8rem;
+  }
 `;
 
-const RecruitLink = styled(Link)`
+const SubscriptionLink = styled(Link)`
   text-decoration: none;
   color: ${({ theme: { color } }) => color.greyScale.black};
 `;
 
-export default Recruite;
+export default Subscription;

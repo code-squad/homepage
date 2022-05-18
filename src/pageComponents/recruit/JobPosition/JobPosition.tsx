@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
 // Type
-import { FAQType } from "@type/FAQ";
+import { JobPositionType } from "@type/JobPosition";
 // Typography
 import { LDisplay } from "typography";
 // Components
@@ -11,31 +11,31 @@ import { DropdownItem, TagNavigationBar } from "components";
 import backgrounds from "assets/images/backgrounds";
 import { TITLE } from "assets/static/phrases";
 
-const FAQ: React.FC = () => {
-  const data = useStaticQuery(FAQQuery);
+const JobPosition: React.FC = () => {
+  const data = useStaticQuery(JobPositionQuery);
   const { mdx } = data;
   const { frontmatter } = mdx;
-  const { lists }: { lists: FAQType[] } = frontmatter;
+  const { jobPositions }: { jobPositions: JobPositionType[] } = frontmatter;
   const categories = new Set<string>(["전체"]);
-  lists.forEach((list) => categories.add(list.category));
+  jobPositions.forEach((jobPosting) => categories.add(jobPosting.category));
 
   const [currentIndex, setCurrentIndex] = React.useState(0);
-  const [faqList, setFAQList] = React.useState<FAQType[]>(lists);
+  const [faqList, setFAQList] = React.useState<JobPositionType[]>(jobPositions);
 
   React.useEffect(() => {
     if (currentIndex === 0) {
-      setFAQList(lists);
+      setFAQList(jobPositions);
       return;
     }
 
     const category = Array.from(categories)[currentIndex];
-    const filteredLists = lists.filter((list) => list.category === category);
+    const filteredLists = jobPositions.filter((jobPosition) => jobPosition.category === category);
     setFAQList(filteredLists);
   }, [currentIndex]);
 
   return (
-    <FAQWrapper image={backgrounds["faq"]}>
-      <FAQContentWrapper>
+    <JobPositionWrapper image={backgrounds["recruit"]}>
+      <JobPositionContentWrapper>
         <LDisplay style={{ paddingTop: "16rem", paddingBottom: "3.2rem" }}>{TITLE.FAQ}</LDisplay>
         <TagNavigationBar titles={Array.from(categories)} onIndexChanged={setCurrentIndex} />
         <DropdownItemWrapper>
@@ -43,12 +43,12 @@ const FAQ: React.FC = () => {
             <DropdownItem key={title} short {...{ category, title, content, editDate }} />
           ))}
         </DropdownItemWrapper>
-      </FAQContentWrapper>
-    </FAQWrapper>
+      </JobPositionContentWrapper>
+    </JobPositionWrapper>
   );
 };
 
-const FAQWrapper = styled.div<{ image: string }>`
+const JobPositionWrapper = styled.div<{ image: string }>`
   width: 100%;
   min-width: 144rem;
   padding-bottom: 16rem;
@@ -57,16 +57,10 @@ const FAQWrapper = styled.div<{ image: string }>`
   background-size: 100%;
   color: ${({ theme: { color } }) => color.greyScale.black};
   white-space: pre-line;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
   text-align: start;
-  & > *:not(:last-child) {
-    margin-bottom: 4.8rem;
-  }
 `;
 
-const FAQContentWrapper = styled.div`
+const JobPositionContentWrapper = styled.div`
   width: 106.2rem;
   padding: 0 18.9rem;
   margin: 0 auto;
@@ -77,17 +71,17 @@ const DropdownItemWrapper = styled.ul`
   padding: 4rem 4.8rem 4.8rem 4.8rem;
   display: flex;
   flex-direction: column;
-  background-color: ${({ theme: { color } }) => color.greyScale.white};
-  & > *:not(:last-child) {
-    margin-bottom: 4rem;
+  & > *:not(:first-child) {
+    margin-top: 4rem;
   }
+  background-color: ${({ theme: { color } }) => color.greyScale.white};
 `;
 
-const FAQQuery = graphql`
-  query FAQQuery {
-    mdx(frontmatter: { templateKey: { eq: "faq_lists" } }) {
+const JobPositionQuery = graphql`
+  query JobPositionQuery {
+    mdx(frontmatter: { templateKey: { eq: "recruit_jobPositions" } }) {
       frontmatter {
-        lists {
+        jobPositions {
           category
           title
           content
@@ -98,4 +92,4 @@ const FAQQuery = graphql`
   }
 `;
 
-export default FAQ;
+export default JobPosition;

@@ -6,9 +6,9 @@ import { MasterType } from "@type/Master";
 // Theme
 import theme from "styles/theme";
 // Typography
-import { LBody, MBody, SBody, SDisplay, XLBody, XSBody } from "typography";
+import { MBody, SBody, XLBody, XSBody } from "typography";
 // Components
-import { TabNavigationBar } from "components";
+import { SectionTitleRefac, TabNavigationBar } from "components";
 // Assets
 import icons from "assets/images/icons";
 import { SUBTITLE, TITLE, DESCRIPTION } from "assets/static/phrases";
@@ -30,10 +30,7 @@ const Master: React.FC = () => {
   return (
     <MasterWrapper>
       <div style={{ width: "106.2rem", padding: "0 18.9rem", margin: "0 auto" }}>
-        <TitleWrapper>
-          <LBody>{SUBTITLE.MASTER}</LBody>
-          <SDisplay>{TITLE.MASTER}</SDisplay>
-        </TitleWrapper>
+        <SectionTitleRefac subTitle={SUBTITLE.MASTER} title={TITLE.MASTER} />
         <MBody
           style={{
             color: theme.color.greyScale.grey2,
@@ -106,18 +103,14 @@ const MasterWrapper = styled.div`
   align-items: space-between;
 `;
 
-const TitleWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-`;
-
 const MasterInformationWrapper = styled.div`
   width: 106.2rem;
   display: flex;
   padding: 5.6rem 18.9rem;
-  gap: 7.8rem;
   margin: 0 auto;
+  & > *:not(:last-child) {
+    margin-right: 7.8rem;
+  }
 `;
 
 const IntroduceWrapper = styled.div`
@@ -125,13 +118,17 @@ const IntroduceWrapper = styled.div`
   min-height: 0;
   display: flex;
   flex-direction: column;
-  gap: 3.2rem;
+  & > *:not(:last-child) {
+    margin-bottom: 3.2rem;
+  }
 `;
 
 const Introduce = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  & > *:not(:last-child) {
+    margin-bottom: 1.6rem;
+  }
 `;
 
 const NicknameWrapper = styled.div`
@@ -147,9 +144,11 @@ const MasterImg = styled.img`
 const CareerWrapper = styled.ul`
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
   list-style-type: disc;
   list-style-position: inside;
+  & > *:not(:last-child) {
+    margin-bottom: 0.8rem;
+  }
 `;
 
 const ScheduleWrapper = styled.div`
@@ -159,13 +158,17 @@ const ScheduleWrapper = styled.div`
 
 const ScheduleList = styled.ul`
   display: flex;
-  gap: 2.4rem;
+  & > *:not(:last-child) {
+    margin-right: 2.4rem;
+  }
 `;
 
 const Schedule = styled.li`
   width: 24.8rem;
   display: flex;
-  gap: 1.6rem;
+  & > *:not(:last-child) {
+    margin-right: 1.6rem;
+  }
 `;
 
 const CourseImage = styled.img`

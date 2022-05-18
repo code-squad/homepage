@@ -51,8 +51,8 @@ const TeamGlobalNavigationBarWrapper = styled.header<{ scrollPosition: boolean }
   position: fixed;
   display: flex;
   justify-content: center;
+  align-items: center;
   z-index: 10;
-  background-color: red;
   background-color: ${({ scrollPosition, theme: { color } }) =>
     scrollPosition ? color.greyScale.white : "transparent"};
   border-bottom: 0.1rem solid
@@ -64,8 +64,7 @@ const TeamGlobalNavigationBarWrapper = styled.header<{ scrollPosition: boolean }
 `;
 
 const ContentWrapper = styled.nav`
-  min-width: 126rem;
-  min-height: 8rem;
+  width: 128rem;
   padding: 0 8rem;
   position: fixed;
   display: flex;

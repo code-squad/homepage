@@ -2,14 +2,14 @@ import React from "react";
 // Type
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 // Story-Component
-import { Recruit } from ".";
+import { Subscription } from ".";
 
 export default {
-  title: "component/Recruit",
-  component: Recruit,
-} as ComponentMeta<typeof Recruit>;
+  title: "component/Subscription",
+  component: Subscription,
+} as ComponentMeta<typeof Subscription>;
 
-const Template: ComponentStory<typeof Recruit> = (args) => <Recruit {...args} />;
+const Template: ComponentStory<typeof Subscription> = (args) => <Subscription {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
