@@ -46,6 +46,7 @@ const LINK = {
   RECRUIT: "채용소식",
   REFUND_POLICY: "환불규정",
   SUBSCRIPTION: "소식받아보기",
+  RECEIVE_SUBSCRIPTION: "코드스쿼드 소식 받아보기",
   TEAM_CULTURE: "팀 문화",
   YOUTUBE: "유뷰트",
 };
@@ -54,6 +55,7 @@ const LINK_DESCRIPTION = {
   CODE_TOGETHER: "코드스쿼드 온라인 온리 교육 과정",
   CONFIRM_RECRUIT: "코드스쿼드의 교육 가치에 공감한다면",
   MASTERS: "코드스쿼드의 정규 교육과정",
+  RECEIVE_SUBSCRIPTION: "원하는 코스의 오픈 소식을 가장 먼저 알고 싶다면?",
 };
 
 const MESSAGE = {

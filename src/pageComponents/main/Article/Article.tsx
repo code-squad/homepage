@@ -3,10 +3,8 @@ import styled from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
 // Type
 import { ArticleType } from "@type/Article";
-// Typography
-import { LBody, SDisplay } from "typography";
 // Components
-import { DropdownItem } from "components";
+import { DropdownItem, SectionTitleRefac } from "components";
 // Assets
 import { SUBTITLE, TITLE } from "assets/static/phrases";
 
@@ -18,10 +16,7 @@ const Article: React.FC = () => {
 
   return (
     <ArticleWrapper>
-      <TitleWrapper>
-        <LBody>{SUBTITLE.CODESQUAD_IN_MEDIA}</LBody>
-        <SDisplay>{TITLE.CODESQUAD_IN_MEDIA}</SDisplay>
-      </TitleWrapper>
+      <SectionTitleRefac subTitle={SUBTITLE.CODESQUAD_IN_MEDIA} title={TITLE.CODESQUAD_IN_MEDIA} />
       <ArticleList>
         {articles.map((article) => (
           <DropdownItem
@@ -44,19 +39,17 @@ const ArticleWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: space-between;
-  gap: 8rem;
-`;
-
-const TitleWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
+  & > *:not(:last-child) {
+    margin-bottom: 8rem;
+  }
 `;
 
 const ArticleList = styled.ul`
   display: flex;
-  gap: 4rem;
   flex-direction: column;
+  & > *:not(:last-child) {
+    margin-bottom: 4rem;
+  }
 `;
 
 const ArticleQuery = graphql`

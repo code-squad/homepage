@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import Link from "gatsby-link";
-// Global-Components
-import { SButton } from "components/";
 // Assets
 import companyLogo from "assets/images/logos/HomeSignature.svg";
 import { LINK } from "assets/static/phrases";
@@ -44,9 +42,6 @@ const HomeGlobalNavigationBar: React.FC = () => {
               </LinkButton>
             </li>
           ))}
-          <li>
-            <SButton to="/subscription">{LINK.SUBSCRIPTION}</SButton>
-          </li>
         </ButtonList>
       </ContentWrapper>
     </HomeGlobalNavigationBarWrapper>
@@ -87,7 +82,7 @@ const HomeSigniture = styled.img`
 `;
 
 const ButtonList = styled.ul`
-  min-width: 42.4rem;
+  min-width: 29.1rem;
   min-height: 3.2rem;
   display: flex;
   justify-content: space-between;

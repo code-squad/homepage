@@ -6,7 +6,6 @@ import puzzleBlock from "./puzzle-block.svg";
 import goalInBlock from "./goal-in-block.svg";
 import crong from "./crong.svg";
 import honux from "./honux.svg";
-import hero from "./hero.svg";
 
 export default {
   codesquadFeature,
@@ -17,5 +16,4 @@ export default {
   goalInBlock,
   crong,
   honux,
-  hero,
 };

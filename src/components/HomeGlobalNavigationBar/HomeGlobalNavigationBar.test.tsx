@@ -43,10 +43,4 @@ describe("<HomeGlobalNavigationBar>", () => {
     const linkEle = getByRole("link", { name: LINK.FAQ });
     expect(linkEle?.getAttribute("href")).toBe(INTERNAL.FAQ);
   });
-  it("소식받아보기 버튼을 클릭하면 마스터즈코스 페이지로 이동된다.", async () => {
-    const { getByRole } = renderHomeGlobalNavigationBar();
-
-    const linkEle = getByRole("link", { name: LINK.SUBSCRIPTION });
-    expect(linkEle?.getAttribute("href")).toBe(INTERNAL.SUBSCRIPTION);
-  });
 });

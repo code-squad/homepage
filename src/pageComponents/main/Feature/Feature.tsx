@@ -6,7 +6,9 @@ import { FeatureType } from "@type/Feature";
 // Theme
 import theme from "styles/theme";
 // Typography
-import { LBody, MBody, SDisplay, XLBody } from "typography";
+import { MBody, XLBody } from "typography";
+// Components
+import { SectionTitleRefac } from "components/";
 // Assets
 import images from "assets/images";
 import { SUBTITLE, TITLE } from "assets/static/phrases";
@@ -19,10 +21,7 @@ const Feature: React.FC = () => {
 
   return (
     <FeatureWrapper>
-      <TitleWrapper>
-        <LBody>{SUBTITLE.FEATURE}</LBody>
-        <SDisplay>{TITLE.FEATURE}</SDisplay>
-      </TitleWrapper>
+      <SectionTitleRefac title={TITLE.FEATURE} subTitle={SUBTITLE.FEATURE} />
       <ContentWrapper>
         <Content>
           <div>
@@ -47,26 +46,26 @@ const FeatureWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: space-between;
-  gap: 5.6rem;
-`;
-
-const TitleWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
+  & > *:not(:last-child) {
+    margin-bottom: 5.6rem;
+  }
 `;
 
 const ContentWrapper = styled.div`
   display: flex;
-  gap: 13.2rem;
   white-space: pre-line;
+  & > *:not(:last-child) {
+    margin-right: 13.2rem;
+  }
 `;
 
 const Content = styled.div`
   width: 41.1rem;
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  & > *:not(:last-child) {
+    margin-bottom: 1.6rem;
+  }
 `;
 
 const FeatureImg = styled.img`

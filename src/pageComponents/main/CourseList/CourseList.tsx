@@ -34,7 +34,9 @@ const CourseWrapper = styled.ul`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2.4rem;
+  & > *:not(:last-child) {
+    margin-right: 2.4rem;
+  }
 `;
 
 export default CourseList;

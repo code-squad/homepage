@@ -6,7 +6,9 @@ import { PlaceType } from "@type/Place";
 // Theme
 import theme from "styles/theme";
 // Typography
-import { LBody, MBody, SDisplay } from "typography";
+import { MBody } from "typography";
+// Components
+import { SectionTitleRefac } from "components";
 // Assets
 import arrowLeft from "assets/images/icons/arrow-left.svg";
 import arrowRight from "assets/images/icons/arrow-right.svg";
@@ -42,10 +44,7 @@ const Place: React.FC = () => {
           <img src={arrowRight} />
         </ArrowButton>
       </ArrowNavigationWrapper>
-      <TitleWrapper>
-        <LBody>{SUBTITLE.PLACE}</LBody>
-        <SDisplay>{TITLE.PLACE}</SDisplay>
-      </TitleWrapper>
+      <SectionTitleRefac subTitle={SUBTITLE.PLACE} title={TITLE.PLACE} />
       <MBody style={{ color: theme.color.greyScale.grey2 }}>{DESCRIPTION.PLACE}</MBody>
       <PlaceListWrapper>
         <PlaceList {...{ currentIndex }}>
@@ -68,8 +67,10 @@ const PlaceWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: space-between;
-  gap: 4rem;
   overflow-x: hidden;
+  & > *:not(:last-child) {
+    margin-bottom: 4rem;
+  }
 `;
 
 const ArrowNavigationWrapper = styled.div`
@@ -79,7 +80,9 @@ const ArrowNavigationWrapper = styled.div`
   margin-left: 98.6rem;
   margin-top: 13.8rem;
   display: flex;
-  gap: 1.6rem;
+  & > *:not(:last-child) {
+    margin-right: 1.6rem;
+  }
 `;
 
 const ArrowButton = styled.button`
@@ -99,18 +102,10 @@ const ArrowButton = styled.button`
   }
 `;
 
-const TitleWrapper = styled.div`
-  width: 144rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-  position: relative;
-`;
-
 const PlaceListWrapper = styled.div`
   width: 106.2rem;
   margin: 0 auto;
-  overflow-x: hidden;
+  overflow: hidden;
 `;
 
 const PlaceList = styled.ul<{ currentIndex: number }>`

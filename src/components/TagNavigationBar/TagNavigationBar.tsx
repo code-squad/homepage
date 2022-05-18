@@ -45,7 +45,9 @@ const TagNavButtonList = styled.ul`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 0 1.6rem;
+  & > *:not(:last-child) {
+    margin-right: 1.6rem;
+  }
 `;
 
 const TagNavButton = styled.button<{ selected?: boolean }>`

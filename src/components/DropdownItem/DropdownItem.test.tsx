@@ -60,7 +60,7 @@ describe("<DropdownItem>", () => {
     const titleEle = getByText(title);
     fireEvent.click(titleEle);
 
-    getByText(editDate);
+    getByText(`최종 업데이트: ${editDate}`);
   });
   describe("<DrondownItem link>", () => {
     const linkProps = {

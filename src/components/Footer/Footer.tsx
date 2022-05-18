@@ -141,7 +141,9 @@ const MenuList = styled.ul`
   width: 8.5rem;
   display: flex;
   flex-direction: column;
-  gap: 1.6rem 0;
+  & > *:not(:last-child) {
+    margin-bottom: 1.6rem;
+  }
 `;
 
 const InternalLink = styled(Link)<{ $bold?: boolean }>`

@@ -41,8 +41,10 @@ const ContentWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 0.4rem;
   color: ${({ theme: { color } }) => color.greyScale.white};
+  & > *:not(:last-child) {
+    margin-bottom: 0.4rem;
+  }
 `;
 
 const CloseButton = styled.button`
