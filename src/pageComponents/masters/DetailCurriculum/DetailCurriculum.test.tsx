@@ -1,6 +1,8 @@
 import React from "react";
 import * as Gatsby from "gatsby";
 import { fireEvent, render } from "@testing-library/react";
+// Type
+import { CurriculumType } from "@type/Curriculum";
 // Testing-Component
 import { DetailCurriculum } from ".";
 // Mock
@@ -8,9 +10,8 @@ import { DetailCurriculumQueryResult } from "./DetailCurriculum.test.mock";
 // lib
 import { TestProvider } from "lib/testUtils";
 import { strainAllMdxInfo } from "lib/utils";
-import { CurriculumType } from "@type/Curriculum";
 
-describe("<DropdownItem>", () => {
+describe("<DetailCurriculum>", () => {
   const props = {
     category: "교육과정",
     title: "코드스쿼드는 온라인 수업만 진행하나요?",
