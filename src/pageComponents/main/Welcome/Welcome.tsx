@@ -2,12 +2,13 @@ import React from "react";
 import styled from "styled-components";
 // Typography
 import { MDisplay } from "typography";
+// Assets
+import { TITLE } from "assets/static/phrases";
 
 const Welcome: React.FC = () => {
   return (
     <WelcomeWrapper>
-      <MDisplay>{`강의식 수업이 재미 없던 사람들,
-여기여기 모여라!`}</MDisplay>
+      <MDisplay>{TITLE.WELCOME}</MDisplay>
     </WelcomeWrapper>
   );
 };
