@@ -36,7 +36,7 @@ const Feature: React.FC = () => {
             </MBody>
           ))}
         </Content>
-        <FeatureImg src={images[image]} />
+        <FeatureImg src={images[image]} alt="feature" />
       </ContentWrapper>
     </FeatureWrapper>
   );
