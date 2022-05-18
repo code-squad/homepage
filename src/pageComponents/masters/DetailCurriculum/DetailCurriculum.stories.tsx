@@ -9,6 +9,6 @@ export default {
   component: DetailCurriculum,
 } as ComponentMeta<typeof DetailCurriculum>;
 
-const Template: ComponentStory<typeof DetailCurriculum> = (args) => <DetailCurriculum />;
+const Template: ComponentStory<typeof DetailCurriculum> = () => <DetailCurriculum />;
 
 export const Default = Template.bind({});
