@@ -1,6 +1,6 @@
 import React from "react";
 import * as Gatsby from "gatsby";
-import { render, fireEvent } from "@testing-library/react";
+import { render } from "@testing-library/react";
 // Type
 import { FAQType } from "@type/FAQ";
 // Testing-Component
