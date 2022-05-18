@@ -26,6 +26,7 @@ const TITLE = {
   REFUND_REASON: "수강료 반환 원인",
   REFUND_STANDARD: "수강료 반환 기준",
   FAQ: "코드스쿼드에\n궁금한 점이 있나요?",
+  WELCOME: "강의식 수업이 재미 없던 사람들,\n여기여기 모여라!",
 };
 
 const DESCRIPTION = {
