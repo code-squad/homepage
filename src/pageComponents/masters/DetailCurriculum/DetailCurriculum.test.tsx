@@ -12,13 +12,7 @@ import { TestProvider } from "lib/testUtils";
 import { strainAllMdxInfo } from "lib/utils";
 
 describe("<DetailCurriculum>", () => {
-  const props = {
-    category: "교육과정",
-    title: "코드스쿼드는 온라인 수업만 진행하나요?",
-    content: "마스터즈 코스는 온오프라인 공간을 모두 활용해 학습하는 것을 지향합니다.",
-    editDate: "2019-05-04",
-  };
-  const renderEducationfeatures = () =>
+  const renderDetailCurriculum = () =>
     render(
       <TestProvider>
         <DetailCurriculum />
@@ -27,7 +21,7 @@ describe("<DetailCurriculum>", () => {
   const useStaticQuery = jest.spyOn(Gatsby, "useStaticQuery");
   useStaticQuery.mockImplementation(() => DetailCurriculumQueryResult);
   it("각 탭들이 보여진다.", async () => {
-    const { getByText } = renderEducationfeatures();
+    const { getByText } = renderDetailCurriculum();
     const curriculumInfo: CurriculumType[] = strainAllMdxInfo(DetailCurriculumQueryResult);
     const titles = curriculumInfo.map(({ tabName }) => tabName);
 
@@ -36,7 +30,7 @@ describe("<DetailCurriculum>", () => {
     });
   });
   it("각 탭들을 클릭하면 클락한 탭에대한 내용들이 보여진다.", async () => {
-    const { getByText } = renderEducationfeatures();
+    const { getByText } = renderDetailCurriculum();
     const curriculumInfo: CurriculumType[] = strainAllMdxInfo(DetailCurriculumQueryResult);
     const titles = curriculumInfo.map(({ tabName }) => tabName);
     const curriculums = curriculumInfo.map(({ curriculum }) => curriculum);
@@ -53,7 +47,7 @@ describe("<DetailCurriculum>", () => {
     });
   });
   it("각 탭들을 클릭하면 탭에 맞는 마스터의 정보가 보여진다.", async () => {
-    const { getByText } = renderEducationfeatures();
+    const { getByText } = renderDetailCurriculum();
     const curriculumInfo: CurriculumType[] = strainAllMdxInfo(DetailCurriculumQueryResult);
     const titles = curriculumInfo.map(({ tabName }) => tabName);
     const masters = curriculumInfo.map(({ masterInfo }) => masterInfo);
