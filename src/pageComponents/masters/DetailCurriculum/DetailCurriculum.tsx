@@ -13,7 +13,7 @@ import { strainAllMdxInfo } from "lib/utils";
 
 const DetailCurriculum: React.FC = () => {
   const curriculumInfo: CurriculumType[] = strainAllMdxInfo(useStaticQuery(CurriculumQuery));
-  const titles = curriculumInfo.map((curriculum) => curriculum.tabName);
+  const titles = curriculumInfo.map(({ tabName }) => tabName);
 
   const [curriculumIndex, setCurriculumIndex] = React.useState(0);
 
