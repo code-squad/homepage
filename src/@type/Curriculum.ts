@@ -2,7 +2,7 @@ import { MasterInfoType } from "./Master";
 import { SubjectType } from "./Subject";
 
 export interface CurriculumType {
-  tagName: string;
+  tabName: string;
   curriculum: SubjectType[];
   masterInfo: MasterInfoType;
 }
