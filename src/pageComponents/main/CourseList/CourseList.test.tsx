@@ -20,15 +20,15 @@ describe("<CourseList>", () => {
     getByText(LINK.MASTERS);
     getByText(LINK_DESCRIPTION.MASTERS);
 
-    const [linkEle] = getAllByRole("link");
-    expect(linkEle?.getAttribute("href")).toBe(INTERNAL.MASTERS);
+    const [mastersLink] = getAllByRole("link");
+    expect(mastersLink?.getAttribute("href")).toBe(INTERNAL.MASTERS);
   });
   it("코드투게더 링크가 보여진다..", async () => {
     const { getByText, getAllByRole } = renderCourseList();
     getByText(LINK.CODE_TOGETHER);
     getByText(LINK_DESCRIPTION.CODE_TOGETHER);
 
-    const [_, linkEle] = getAllByRole("link");
-    expect(linkEle?.getAttribute("href")).toBe(INTERNAL.CODE_TOGETHER);
+    const [_, codeTogetherLink] = getAllByRole("link");
+    expect(codeTogetherLink?.getAttribute("href")).toBe(INTERNAL.CODE_TOGETHER);
   });
 });
