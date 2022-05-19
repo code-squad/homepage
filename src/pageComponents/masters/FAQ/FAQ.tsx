@@ -20,9 +20,9 @@ const FAQ: React.FC = () => {
       <TitleSet subtitle={SUBTITLE.FAQ} title={TITLE.FREQUENTLY_ASKED_QUESTIONS} />
       <DropdownWrapper>
         {mastersFAQList.map(({ category, title, content, editDate }: FAQType) => (
-          <DropdownItemWrapper key={title}>
+          <li key={title}>
             <DropdownItem {...{ category, title, content, editDate }} />
-          </DropdownItemWrapper>
+          </li>
         ))}
       </DropdownWrapper>
       <MButton children="더보기" to="/faq" />
@@ -39,11 +39,8 @@ const FAQWrapper = styled.div`
   flex-direction: column;
 `;
 const DropdownWrapper = styled.ul`
-  margin-top: 8rem;
-  margin-bottom: 2.4rem;
-`;
-const DropdownItemWrapper = styled.li`
-  margin-bottom: 4rem;
+  margin-top: 4rem;
+  margin-bottom: 6.4rem;
 `;
 
 const FAQListQuery = graphql`
