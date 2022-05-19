@@ -11,7 +11,7 @@ module.exports = {
     "^gatsby-plugin-utils/(.*)$": [`gatsby-plugin-utils/dist/$1`, `gatsby-plugin-utils/$1`], // Workaround for https://github.com/facebook/jest/issues/9771
   },
   moduleDirectories: ["node_modules", "src"],
-  testPathIgnorePatterns: [`node_modules`, `\\.cache`, `<rootDir>.*/public`],
+  testPathIgnorePatterns: [`node_modules`, `\\.cache`, `<rootDir>.*/public`, `storybook-static`],
   transformIgnorePatterns: [`node_modules/(?!(gatsby)/)`],
   globals: {
     __PATH_PREFIX__: ``,
