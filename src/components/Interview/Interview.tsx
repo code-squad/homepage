@@ -5,6 +5,7 @@ import { InterviewType } from "@type/Interview";
 // Components
 import { InterviewBox, SectionTitleRefac } from "components/";
 // Assets
+import avatars from "assets/images/avatars";
 import arrowLeft from "assets/images/icons/arrow-left.svg";
 import arrowRight from "assets/images/icons/arrow-right.svg";
 
@@ -51,8 +52,18 @@ const Interview: React.FC<IInterview> = ({ subtitle, title, interviews }) => {
       </TitleWrapper>
       <InterviewListWrapper>
         <InterviewList {...{ currentIndex }}>
-          {interviews.map((interview) => (
-            <InterviewBox key={interview.nutshell} {...{ ...interview }} />
+          {interviews.map((interview, index) => (
+            <InterviewBox
+              key={interview.nutshell}
+              {...{ ...interview }}
+              writerPhoto={
+                interview.writerPhoto
+                  ? avatars[interview.writerPhoto]
+                  : index % 2 === 0
+                  ? avatars["avatarOrange"]
+                  : avatars["avatarGreen"]
+              }
+            />
           ))}
         </InterviewList>
       </InterviewListWrapper>
