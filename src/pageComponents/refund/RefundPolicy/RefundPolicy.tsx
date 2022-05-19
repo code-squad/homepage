@@ -22,7 +22,7 @@ const RefundPolicy: React.FC = () => {
           {TITLE.REFUND_POLICY}
         </LDisplay>
         <PolicySpecificationWrapper>
-          <MBody style={{ paddingBottom: "4rem" }}>{`최종 업데이트: ${editDate}`}</MBody>
+          <MBody style={{ paddingBottom: "4rem" }}>{`🗓 최종 업데이트: ${editDate}`}</MBody>
           <div style={{ paddingBottom: "1.6rem" }}>
             <RefundPolicyTable>
               <thead>
