@@ -50,10 +50,10 @@ const Master: React.FC = () => {
               <NicknameWrapper>
                 <XLBody>{masterIntroduce.name}</XLBody>
                 <XSBody style={{ color: `${theme.color.greyScale.grey2}`, paddingLeft: "0.8rem" }}>
-                  {masterIntroduce.description}
+                  {masterIntroduce.introduce}
                 </XSBody>
               </NicknameWrapper>
-              <MBody bold>{masterIntroduce.introduce}</MBody>
+              <MBody bold>{masterIntroduce.nutshell}</MBody>
               <CareerWrapper>
                 {masterIntroduce.careers?.map((career) => (
                   <li key={career}>
@@ -192,8 +192,8 @@ const MasterQuery = graphql`
           image
           field
           name
-          description
           introduce
+          nutshell
           careers
           schedules {
             title

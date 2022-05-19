@@ -38,14 +38,14 @@ describe("<Master>", () => {
     });
   });
   const testMasterRendering = (
-    { name, description, introduce, careers, schedules }: MasterType,
+    { name, introduce, nutshell, careers, schedules }: MasterType,
     utils: RenderResult
   ) => {
     const { getByAltText, getAllByAltText, getByText } = utils;
     getByAltText("profile");
     getByText(name);
-    getByText(description);
     getByText(introduce);
+    getByText(nutshell);
     careers.forEach((career: string) => {
       getByText(career);
     });
