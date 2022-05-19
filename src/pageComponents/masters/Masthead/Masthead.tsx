@@ -11,12 +11,13 @@ import calander from "assets/images/icons/calander.svg";
 import coin from "assets/images/icons/coin.svg";
 import book from "assets/images/icons/book.svg";
 import mastersBig from "assets/images/icons/masters-big.svg";
+// Lib
+import { strainMdxInfo } from "lib/utils";
 
-const Masthead: React.FC = ({}) => {
-  const data = useStaticQuery(MastHeadQuery);
-  const { mdx } = data;
-  const { frontmatter } = mdx;
-  const { title, description, targets, trainingDuration, cost, subject } = frontmatter;
+const Masthead: React.FC = () => {
+  const { title, description, targets, trainingDuration, cost, subject } = strainMdxInfo(
+    useStaticQuery(MastheadQuery)
+  );
 
   return (
     <MastheadWrapper icon={mastersBig}>
@@ -103,8 +104,8 @@ const TargetItem = styled.li`
   margin-left: 2.4rem;
 `;
 
-const MastHeadQuery = graphql`
-  query MastHeadQuery {
+const MastheadQuery = graphql`
+  query MastheadQuery {
     mdx(frontmatter: { templateKey: { eq: "masters_masthead" } }) {
       frontmatter {
         title
