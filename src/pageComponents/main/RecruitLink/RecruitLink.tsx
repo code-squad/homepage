@@ -21,8 +21,6 @@ const RecruitLink: React.FC = () => {
 const RecruiteLinkWrapper = styled.div`
   width: 106.2rem;
   display: flex;
-  justify-content: center;
-  padding: 0 18.9rem;
   padding-bottom: 20rem;
   margin: 0 auto;
 `;
