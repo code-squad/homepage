@@ -35,13 +35,13 @@ const Place: React.FC = () => {
     <PlaceWrapper>
       <ArrowNavigationWrapper>
         <ArrowButton disabled={currentIndex === 0} onClick={handleArrowLeftClick}>
-          <img src={arrowLeft} />
+          <img src={arrowLeft} alt="arrow-left" />
         </ArrowButton>
         <ArrowButton
           disabled={currentIndex === placeList.length - 1}
           onClick={handleArrowRightClick}
         >
-          <img src={arrowRight} />
+          <img src={arrowRight} alt="arrow-right" />
         </ArrowButton>
       </ArrowNavigationWrapper>
       <SectionTitleRefac subTitle={SUBTITLE.PLACE} title={TITLE.PLACE} />
@@ -50,7 +50,7 @@ const Place: React.FC = () => {
         <PlaceList {...{ currentIndex }}>
           {placeList.map(({ image }) => (
             <li key={image}>
-              <PlaceImage src={places[image]} />
+              <PlaceImage src={places[image]} alt="codesquad-place" />
             </li>
           ))}
         </PlaceList>

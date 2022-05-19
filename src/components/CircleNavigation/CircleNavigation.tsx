@@ -54,7 +54,7 @@ const CircleButton = styled.button<{ selected?: boolean }>`
   border-radius: 50%;
   background-color: ${({ selected, theme: { color } }) =>
     selected ? color.greyScale.black : "transparent"};
-  border-color: ${({ theme: { color } }) => color.greyScale.black};
+  border: 0.2rem solid ${({ theme: { color } }) => color.greyScale.black};
   &:hover {
     cursor: pointer;
   }

@@ -38,13 +38,13 @@ const Interview: React.FC<IInterview> = ({ subtitle, title, interviews }) => {
       <TitleWrapper>
         <ArrowNavigationWrapper>
           <ArrowButton disabled={currentIndex === 0} onClick={handleArrowLeftClick}>
-            <img src={arrowLeft} />
+            <img src={arrowLeft} alt="arrow-left" />
           </ArrowButton>
           <ArrowButton
             disabled={currentIndex === interviews.length - 1}
             onClick={handleArrowRightClick}
           >
-            <img src={arrowRight} />
+            <img src={arrowRight} alt="arrow-right" />
           </ArrowButton>
         </ArrowNavigationWrapper>
         <SectionTitleRefac subTitle={subtitle} {...{ title }} />

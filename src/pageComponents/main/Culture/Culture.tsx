@@ -25,15 +25,15 @@ const Culture: React.FC = () => {
       <ContentWrapper>
         {cultures.map((culture) => (
           <CultureContent key={culture.title}>
-            <CultureImg src={icons[culture.image]} />
+            <CultureImg src={icons[culture.image]} alt="culture-icon" />
             <div>
               <MBody style={{ paddingBottom: "0.4rem" }}>{culture.subtitle}</MBody>
               <XLBody>{culture.title}</XLBody>
             </div>
             <DescriptionWrapper>
-              {culture.descriptions.map((description) => (
-                <li key={description}>
-                  <MBody style={{ color: theme.color.greyScale.grey2 }}>{description}</MBody>
+              {culture.description.split("\n\n").map((descriptionItem: string) => (
+                <li key={descriptionItem}>
+                  <MBody style={{ color: theme.color.greyScale.grey2 }}>{descriptionItem}</MBody>
                 </li>
               ))}
             </DescriptionWrapper>
@@ -95,7 +95,7 @@ const CultureQuery = graphql`
           image
           title
           subtitle
-          descriptions
+          description
         }
       }
     }

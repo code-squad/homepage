@@ -44,7 +44,7 @@ const Master: React.FC = () => {
       </div>
       <div style={{ backgroundColor: theme.color.greyScale.offWhite }}>
         <MasterInformationWrapper>
-          <MasterImg />
+          <MasterImg alt="profile" />
           <IntroduceWrapper>
             <Introduce>
               <NicknameWrapper>
@@ -78,7 +78,7 @@ const Master: React.FC = () => {
                 <ScheduleList>
                   {masterIntroduce.schedules.map(({ image, title, subtitle }) => (
                     <Schedule key={title}>
-                      <CourseImage src={icons[image]} />
+                      <CourseImage src={icons[image]} alt="course" />
                       <CourseTitleWrapper>
                         <XSBody>{title}</XSBody>
                         <MBody>{subtitle}</MBody>
