@@ -34,7 +34,7 @@ const FAQ: React.FC = () => {
   }, [currentIndex]);
 
   return (
-    <FAQWrapper image={backgrounds["faq"]}>
+    <FAQWrapper image={backgrounds["knot"]}>
       <FAQContentWrapper>
         <LDisplay style={{ paddingTop: "16rem", paddingBottom: "3.2rem" }}>{TITLE.FAQ}</LDisplay>
         <TagNavigationBar titles={Array.from(categories)} onIndexChanged={setCurrentIndex} />

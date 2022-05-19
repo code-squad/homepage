@@ -34,7 +34,7 @@ const JobPosition: React.FC = () => {
   }, [currentIndex]);
 
   return (
-    <JobPositionWrapper image={backgrounds["recruit"]}>
+    <JobPositionWrapper image={backgrounds["diamond"]}>
       <JobPositionContentWrapper>
         <LDisplay style={{ paddingTop: "16rem", paddingBottom: "3.2rem" }}>{TITLE.FAQ}</LDisplay>
         <TagNavigationBar titles={Array.from(categories)} onIndexChanged={setCurrentIndex} />
