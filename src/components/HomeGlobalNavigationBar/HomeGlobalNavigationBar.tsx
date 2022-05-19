@@ -53,6 +53,7 @@ const HomeGlobalNavigationBarWrapper = styled.header<{ scrollPosition: boolean }
   min-width: 144rem;
   min-height: 8rem;
   position: fixed;
+  top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
