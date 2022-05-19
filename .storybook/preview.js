@@ -11,6 +11,7 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  layout: "fullscreen",
 };
 
 // Gatsby's Link overrides:
