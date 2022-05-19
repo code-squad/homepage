@@ -12,6 +12,7 @@ const SUBTITLE = {
 };
 
 const TITLE = {
+  EDUCATION_TARGET: "교육 과정 대상자",
   CODESQUAD_IN_MEDIA: "미디어에서 본 코드스쿼드",
   CULTURE: "교육 및 학습 문화",
   FEATURE: "무엇이 다른가요?",
