@@ -8,16 +8,17 @@ import { MBody, XLBody } from "typography";
 // Components
 import { TitleSet } from "components/";
 // Assets
-import images from "assets/images";
 import { SUBTITLE, TITLE } from "assets/static/phrases";
+import images from "assets/images";
+// Lib
+import { strainMdxInfo } from "lib/utils";
 
 const Feature: React.FC = () => {
-  const theme = useTheme();
+  const { color } = useTheme();
 
-  const data = useStaticQuery(FeatureQuery);
-  const { mdx } = data;
-  const { frontmatter } = mdx;
-  const { title, subtitle, description, image }: FeatureType = frontmatter;
+  const { title, subtitle, description, image }: FeatureType = strainMdxInfo(
+    useStaticQuery(FeatureQuery)
+  );
 
   return (
     <FeatureWrapper>
@@ -26,12 +27,12 @@ const Feature: React.FC = () => {
         <Content>
           <div>
             <XLBody bold>{title}</XLBody>
-            <MBody bold style={{ color: `${theme.color.greyScale.grey2}` }}>
+            <MBody bold style={{ color: color.greyScale.grey2 }}>
               {subtitle}
             </MBody>
           </div>
           {description.split("\n\n").map((descriptionItem: string) => (
-            <MBody key={descriptionItem} style={{ color: theme.color.greyScale.grey2 }}>
+            <MBody key={descriptionItem} style={{ color: color.greyScale.grey2 }}>
               {descriptionItem}
             </MBody>
           ))}
