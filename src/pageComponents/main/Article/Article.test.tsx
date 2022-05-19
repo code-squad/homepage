@@ -10,7 +10,8 @@ import { ArticleResult } from "./Article.test.mock";
 // Assets
 import { SUBTITLE, TITLE } from "assets/static/phrases";
 // Libs
-import { TestProvider, getQueryResultData } from "lib/testUtils";
+import { TestProvider } from "lib/testUtils";
+import { strainMdxInfo } from "lib/utils";
 
 describe("<Article>", () => {
   const renderArticle = () =>
@@ -30,7 +31,7 @@ describe("<Article>", () => {
   it("카테고리 내용이 보여지며 클릭시 해당 링크의 새 차이 보여진다.", async () => {
     window.open = jest.fn();
     const { getByText } = renderArticle();
-    const articles = getQueryResultData(ArticleResult, "articles");
+    const { articles } = strainMdxInfo(ArticleResult);
 
     articles.forEach(({ category, title, link }: ArticleType) => {
       getByText(category);

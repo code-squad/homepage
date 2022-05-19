@@ -1,10 +1,8 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
 // Type
 import { CultureType } from "@type/Culture";
-// Theme
-import theme from "styles/theme";
 // Typography
 import { MBody, XLBody } from "typography";
 // Components
@@ -14,6 +12,8 @@ import icons from "assets/images/icons";
 import { SUBTITLE, TITLE } from "assets/static/phrases";
 
 const Culture: React.FC = () => {
+  const theme = useTheme();
+
   const data = useStaticQuery(CultureQuery);
   const { mdx } = data;
   const { frontmatter } = mdx;
@@ -30,13 +30,13 @@ const Culture: React.FC = () => {
               <MBody style={{ paddingBottom: "0.4rem" }}>{culture.subtitle}</MBody>
               <XLBody>{culture.title}</XLBody>
             </div>
-            <DescriptionWrapper>
+            <DescriptionList>
               {culture.description.split("\n\n").map((descriptionItem: string) => (
-                <li key={descriptionItem}>
-                  <MBody style={{ color: theme.color.greyScale.grey2 }}>{descriptionItem}</MBody>
-                </li>
+                <DescriptionItem key={descriptionItem}>
+                  <MBody>{descriptionItem}</MBody>
+                </DescriptionItem>
               ))}
-            </DescriptionWrapper>
+            </DescriptionList>
           </CultureContent>
         ))}
       </ContentWrapper>
@@ -79,12 +79,16 @@ const CultureImg = styled.img`
   height: 8rem;
 `;
 
-const DescriptionWrapper = styled.ul`
+const DescriptionList = styled.ul`
   display: flex;
   flex-direction: column;
   & > *:not(:last-child) {
     margin-bottom: 0.8rem;
   }
+`;
+
+const DescriptionItem = styled.li`
+  color: ${({ theme: { color } }) => color.greyScale.grey2};
 `;
 
 const CultureQuery = graphql`

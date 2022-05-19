@@ -10,7 +10,8 @@ import { FAQResult } from "./FAQ.test.mock";
 // Assets
 import { TITLE } from "assets/static/phrases";
 // Libs
-import { TestProvider, getQueryResultData, removeLineFeed } from "lib/testUtils";
+import { TestProvider, removeLineFeed } from "lib/testUtils";
+import { strainMdxInfo } from "lib/utils";
 
 describe("<FAQ>", () => {
   const renderFAQ = () =>
@@ -28,7 +29,7 @@ describe("<FAQ>", () => {
   });
   it("카테고리, 질문, 대답, 최종 업데이트 날짜가 보여진다.", async () => {
     const { getByText, getAllByLabelText } = renderFAQ();
-    const lists = getQueryResultData(FAQResult, "lists");
+    const { lists } = strainMdxInfo(FAQResult);
 
     const arrowDownImages = getAllByLabelText("arrow-down");
     expect(arrowDownImages.length).toEqual(lists.length);

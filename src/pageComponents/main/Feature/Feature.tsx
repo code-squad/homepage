@@ -1,10 +1,8 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
 // Type
 import { FeatureType } from "@type/Feature";
-// Theme
-import theme from "styles/theme";
 // Typography
 import { MBody, XLBody } from "typography";
 // Components
@@ -14,6 +12,8 @@ import images from "assets/images";
 import { SUBTITLE, TITLE } from "assets/static/phrases";
 
 const Feature: React.FC = () => {
+  const theme = useTheme();
+
   const data = useStaticQuery(FeatureQuery);
   const { mdx } = data;
   const { frontmatter } = mdx;

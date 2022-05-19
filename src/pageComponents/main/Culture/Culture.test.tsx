@@ -10,7 +10,8 @@ import { CultureResult } from "./Culture.test.mock";
 // Assets
 import { TITLE, SUBTITLE } from "assets/static/phrases";
 // Libs
-import { TestProvider, getQueryResultData } from "lib/testUtils";
+import { TestProvider } from "lib/testUtils";
+import { strainMdxInfo } from "lib/utils";
 
 describe("<Culture>", () => {
   const renderCulture = () =>
@@ -29,7 +30,7 @@ describe("<Culture>", () => {
   });
   it("교육 및 학습 문화들에 대한 내용들이 보여진다.", async () => {
     const { getByText, getAllByAltText } = renderCulture();
-    const cultures = getQueryResultData(CultureResult, "cultures");
+    const { cultures } = strainMdxInfo(CultureResult);
 
     const images = getAllByAltText("culture-icon");
     expect(images.length).toEqual(cultures.length);

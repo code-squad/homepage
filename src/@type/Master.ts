@@ -10,8 +10,8 @@ interface ScheduleType {
 export interface MasterType {
   field: string;
   name: string;
-  description: string;
   introduce: string;
+  nutshell: string;
   careers: string[];
   schedules?: ScheduleType[];
 }

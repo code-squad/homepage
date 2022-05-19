@@ -10,7 +10,8 @@ import { GraduateReviewResult } from "./GraduateReview.test.mock";
 // Assets
 import { TITLE, SUBTITLE } from "assets/static/phrases";
 // Libs
-import { TestProvider, getQueryResultData } from "lib/testUtils";
+import { TestProvider } from "lib/testUtils";
+import { strainMdxInfo } from "lib/utils";
 
 describe("<GraduateReview>", () => {
   const renderGraduateReview = () =>
@@ -29,7 +30,7 @@ describe("<GraduateReview>", () => {
   });
   it("교육 및 학습 문화들에 대한 내용들이 보여진다.", async () => {
     const { getByText, getAllByAltText, getAllByText } = renderGraduateReview();
-    const interviews = getQueryResultData(GraduateReviewResult, "interviews");
+    const { interviews } = strainMdxInfo(GraduateReviewResult);
 
     const images = getAllByAltText("avatar");
     expect(images.length).toEqual(interviews.length);

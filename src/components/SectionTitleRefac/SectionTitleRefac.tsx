@@ -1,6 +1,5 @@
 import React from "react";
-import styled from "styled-components";
-import theme from "styles/theme";
+import styled, { useTheme } from "styled-components";
 // Typography
 import { LBody, SDisplay } from "typography";
 
@@ -10,6 +9,8 @@ interface ICourseSchedule {
 }
 
 const SectionTitle: React.FC<ICourseSchedule> = ({ title, subTitle }) => {
+  const theme = useTheme();
+
   return (
     <TitleWrapper>
       <LBody bold style={{ color: theme.color.greyScale.grey1 }}>

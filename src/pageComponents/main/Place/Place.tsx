@@ -1,10 +1,8 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
 // Type
 import { PlaceType } from "@type/Place";
-// Theme
-import theme from "styles/theme";
 // Typography
 import { MBody } from "typography";
 // Components
@@ -16,6 +14,8 @@ import places from "assets/images/places";
 import { SUBTITLE, TITLE, DESCRIPTION } from "assets/static/phrases";
 
 const Place: React.FC = () => {
+  const theme = useTheme();
+
   const data = useStaticQuery(PlaceQuery);
   const { mdx } = data;
   const { frontmatter } = mdx;
