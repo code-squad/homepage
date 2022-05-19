@@ -10,7 +10,8 @@ import { MasterResult } from "./Master.test.mock";
 // Assets
 import { TITLE, SUBTITLE, DESCRIPTION } from "assets/static/phrases";
 // Libs
-import { TestProvider, getQueryResultData } from "lib/testUtils";
+import { TestProvider } from "lib/testUtils";
+import { strainMdxInfo } from "lib/utils";
 
 describe("<Master>", () => {
   const renderMaster = () =>
@@ -30,7 +31,7 @@ describe("<Master>", () => {
   });
   it("마스터들의 분야에 대한 탭이 보여진다.", async () => {
     const { getByText } = renderMaster();
-    const masters = getQueryResultData(MasterResult, "masters");
+    const { masters } = strainMdxInfo(MasterResult);
 
     masters.forEach(({ field }: MasterType) => {
       getByText(field);
@@ -60,13 +61,14 @@ describe("<Master>", () => {
   };
   it("최초 렌더링시 첫번째 마스터에 대한 내용들이 보여진다.", async () => {
     const utils = renderMaster();
-    const [firstMaster] = getQueryResultData(MasterResult, "masters");
+    const { masters } = strainMdxInfo(MasterResult);
+    const [firstMaster] = masters;
 
     testMasterRendering(firstMaster, utils);
   });
   it("각 탭을 클릭하면 해당되는 마스터에 대한 내용들이 보여진다.", async () => {
     const utils = renderMaster();
-    const masters = getQueryResultData(MasterResult, "masters");
+    const { masters } = strainMdxInfo(MasterResult);
     const fields = masters.map(({ field }: MasterType) => field);
 
     masters.forEach((master: MasterType, index: number) => {
