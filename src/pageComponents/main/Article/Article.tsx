@@ -40,16 +40,13 @@ const ArticleWrapper = styled.div`
   flex-direction: column;
   align-items: space-between;
   & > *:not(:last-child) {
-    margin-bottom: 8rem;
+    margin-bottom: 4rem;
   }
 `;
 
 const ArticleList = styled.ul`
   display: flex;
   flex-direction: column;
-  & > *:not(:last-child) {
-    margin-bottom: 4rem;
-  }
 `;
 
 const ArticleQuery = graphql`
