@@ -36,7 +36,7 @@ const JobPosition: React.FC = () => {
   return (
     <JobPositionWrapper image={backgrounds["diamond"]}>
       <JobPositionContentWrapper>
-        <LDisplay style={{ paddingTop: "16rem", paddingBottom: "3.2rem" }}>{TITLE.FAQ}</LDisplay>
+        <LDisplay style={{ paddingTop: "16rem", paddingBottom: "3.2rem" }}>{TITLE.APPLY}</LDisplay>
         <TagNavigationBar titles={Array.from(categories)} onIndexChanged={setCurrentIndex} />
         <DropdownItemWrapper>
           {faqList.map(({ category, title, content, editDate }) => (
