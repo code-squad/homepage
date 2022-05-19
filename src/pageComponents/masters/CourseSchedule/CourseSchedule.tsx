@@ -37,16 +37,6 @@ const CourseScheduleWrapper = styled.div`
   min-width: 144rem;
   flex-direction: column;
 `;
-const ScheduleTitleWrapper = styled.div`
-  width: 107rem;
-  display: flex;
-  flex-direction: column;
-`;
-
-const ScheduleHeadTitle = styled.div`
-  margin-top: 0.8rem;
-  margin-bottom: 5.2rem;
-`;
 
 const ScheduleWrapper = styled.div`
   display: flex;
@@ -54,6 +44,7 @@ const ScheduleWrapper = styled.div`
   width: 100%;
   min-width: 144rem;
   padding: 8rem 0 4rem 0;
+  margin-top: 4rem;
   background-color: ${({ theme: { color } }) => color.greyScale.offWhite};
 `;
 const ScheduleLeftRuler = styled.div`
