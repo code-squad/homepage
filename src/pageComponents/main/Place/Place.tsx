@@ -6,7 +6,7 @@ import { PlaceType } from "@type/Place";
 // Typography
 import { MBody } from "typography";
 // Components
-import { SectionTitleRefac } from "components";
+import { TitleSet } from "components";
 // Assets
 import arrowLeft from "assets/images/icons/arrow-left.svg";
 import arrowRight from "assets/images/icons/arrow-right.svg";
@@ -44,7 +44,7 @@ const Place: React.FC = () => {
           <img src={arrowRight} alt="arrow-right" />
         </ArrowButton>
       </ArrowNavigationWrapper>
-      <SectionTitleRefac subTitle={SUBTITLE.PLACE} title={TITLE.PLACE} />
+      <TitleSet subtitle={SUBTITLE.PLACE} title={TITLE.PLACE} />
       <MBody style={{ color: theme.color.greyScale.grey2 }}>{DESCRIPTION.PLACE}</MBody>
       <PlaceListWrapper>
         <PlaceList {...{ currentIndex }}>

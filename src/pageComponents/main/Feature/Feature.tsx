@@ -6,7 +6,7 @@ import { FeatureType } from "@type/Feature";
 // Typography
 import { MBody, XLBody } from "typography";
 // Components
-import { SectionTitleRefac } from "components/";
+import { TitleSet } from "components/";
 // Assets
 import images from "assets/images";
 import { SUBTITLE, TITLE } from "assets/static/phrases";
@@ -21,7 +21,7 @@ const Feature: React.FC = () => {
 
   return (
     <FeatureWrapper>
-      <SectionTitleRefac title={TITLE.FEATURE} subTitle={SUBTITLE.FEATURE} />
+      <TitleSet title={TITLE.FEATURE} subtitle={SUBTITLE.FEATURE} />
       <ContentWrapper>
         <Content>
           <div>

@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from "gatsby";
 // Type
 import { FAQType } from "@type/FAQ";
 // Components
-import { DropdownItem, MButton, SectionTitle } from "components";
+import { DropdownItem, MButton, TitleSet } from "components";
 // Assets
 import { SUBTITLE, TITLE } from "assets/static/phrases";
 // Utils
@@ -17,7 +17,7 @@ const FAQ: React.FC = () => {
 
   return (
     <FAQWrapper>
-      <SectionTitle subTitle={SUBTITLE.FAQ} title={TITLE.FREQUENTLY_ASKED_QUESTIONS} />
+      <TitleSet subtitle={SUBTITLE.FAQ} title={TITLE.FREQUENTLY_ASKED_QUESTIONS} />
       <DropdownWrapper>
         {mastersFAQList.map(({ category, title, content, editDate }: FAQType) => (
           <DropdownItemWrapper key={title}>

@@ -3,7 +3,7 @@ import styled from "styled-components";
 // Type
 import { InterviewType } from "@type/Interview";
 // Components
-import { InterviewBox, SectionTitleRefac } from "components/";
+import { InterviewBox, TitleSet } from "components/";
 // Assets
 import arrowLeft from "assets/images/icons/arrow-left.svg";
 import arrowRight from "assets/images/icons/arrow-right.svg";
@@ -47,7 +47,7 @@ const Interview: React.FC<IInterview> = ({ subtitle, title, interviews }) => {
             <img src={arrowRight} alt="arrow-right" />
           </ArrowButton>
         </ArrowNavigationWrapper>
-        <SectionTitleRefac subTitle={subtitle} {...{ title }} />
+        <TitleSet {...{ title, subtitle }} />
       </TitleWrapper>
       <InterviewListWrapper>
         <InterviewList {...{ currentIndex }}>

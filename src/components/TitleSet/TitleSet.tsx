@@ -1,17 +1,21 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 // Typography
 import { LBody, SDisplay } from "typography";
 
-interface ICourseSchedule {
+interface ITitleSet {
   title: string;
-  subTitle: string;
+  subtitle: string;
 }
 
-const SectionTitle: React.FC<ICourseSchedule> = ({ title, subTitle }) => {
+const TitleSet: React.FC<ITitleSet> = ({ title, subtitle }) => {
+  const { color } = useTheme();
+
   return (
     <TitleWrapper>
-      <LBody bold>{subTitle}</LBody>
+      <LBody bold style={{ color: color.greyScale.grey1 }}>
+        {subtitle}
+      </LBody>
       <HeadTitle>
         <SDisplay>{title}</SDisplay>
       </HeadTitle>
@@ -26,7 +30,6 @@ const TitleWrapper = styled.div`
 `;
 const HeadTitle = styled.div`
   margin-top: 0.8rem;
-  margin-bottom: 5.2rem;
 `;
 
-export default SectionTitle;
+export default TitleSet;

@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
 // Components
-import { SectionTitle } from "components/";
+import { TitleSet } from "components/";
 import { ScheduleNav } from "./ScheduleNav";
 import { ScheduleInfo } from "./ScheduleInfo";
 // Assets
@@ -18,10 +18,7 @@ const CourseSchedule: React.FC = ({}) => {
 
   return (
     <CourseScheduleWrapper>
-      <SectionTitle
-        subTitle={SUBTITLE.MASTERS_COURSE_SCHEDULE}
-        title={TITLE.MASTERS_COURSE_SCHEDULE}
-      />
+      <TitleSet subtitle={SUBTITLE.MASTERS_COURSE_SCHEDULE} title={TITLE.MASTERS_COURSE_SCHEDULE} />
       <ScheduleWrapper>
         <ScheduleLeftRuler>
           <ScheduleNav {...{ progress, selectedScheduleIndex, setSelectedScheduleIndex }} />

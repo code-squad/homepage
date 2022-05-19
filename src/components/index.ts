@@ -14,5 +14,4 @@ export { LinkButton } from "./LinkButton";
 export { ImageCard } from "./ImageCard";
 export { BannerPopup } from "./BannerPopup";
 export { Subscription } from "./Subscription";
-export { SectionTitle } from "./SectionTitle";
-export { SectionTitleRefac } from "./SectionTitleRefac";
+export { TitleSet } from "./TitleSet";

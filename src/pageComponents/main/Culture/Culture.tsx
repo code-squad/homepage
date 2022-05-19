@@ -6,7 +6,7 @@ import { CultureType } from "@type/Culture";
 // Typography
 import { MBody, XLBody } from "typography";
 // Components
-import { SectionTitleRefac } from "components/";
+import { TitleSet } from "components/";
 // Assets
 import icons from "assets/images/icons";
 import { SUBTITLE, TITLE } from "assets/static/phrases";
@@ -21,7 +21,7 @@ const Culture: React.FC = () => {
 
   return (
     <CultureWrapper>
-      <SectionTitleRefac subTitle={SUBTITLE.CULTURE} title={TITLE.CULTURE} />
+      <TitleSet subtitle={SUBTITLE.CULTURE} title={TITLE.CULTURE} />
       <ContentWrapper>
         {cultures.map((culture) => (
           <CultureContent key={culture.title}>

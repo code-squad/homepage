@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from "gatsby";
 // Type
 import { ArticleType } from "@type/Article";
 // Components
-import { DropdownItem, SectionTitleRefac } from "components";
+import { DropdownItem, TitleSet } from "components";
 // Assets
 import { SUBTITLE, TITLE } from "assets/static/phrases";
 
@@ -16,7 +16,7 @@ const Article: React.FC = () => {
 
   return (
     <ArticleWrapper>
-      <SectionTitleRefac subTitle={SUBTITLE.CODESQUAD_IN_MEDIA} title={TITLE.CODESQUAD_IN_MEDIA} />
+      <TitleSet subtitle={SUBTITLE.CODESQUAD_IN_MEDIA} title={TITLE.CODESQUAD_IN_MEDIA} />
       <ArticleList>
         {articles.map((article) => (
           <DropdownItem
