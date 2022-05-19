@@ -1,10 +1,8 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
 // Type
 import { MasterType } from "@type/Master";
-// Theme
-import theme from "styles/theme";
 // Typography
 import { MBody, SBody, XLBody, XSBody } from "typography";
 // Components
@@ -14,6 +12,8 @@ import icons from "assets/images/icons";
 import { SUBTITLE, TITLE, DESCRIPTION } from "assets/static/phrases";
 
 const Master: React.FC = () => {
+  const theme = useTheme();
+
   const data = useStaticQuery(MasterQuery);
   const { mdx } = data;
   const { frontmatter } = mdx;
