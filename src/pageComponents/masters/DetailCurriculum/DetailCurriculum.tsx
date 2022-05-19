@@ -20,9 +20,9 @@ const DetailCurriculum: React.FC = () => {
   return (
     <DetailCurriculumWrapper>
       <TitleSet subtitle={SUBTITLE.MASTERS_COURSE} title={TITLE.DETAIL_CURRICULUM} />
-      <div style={{ width: "107rem" }}>
+      <TabNavigationBarWrapper>
         <TabNavigationBar {...{ titles }} onIndexChanged={setCurriculumIndex} />
-      </div>
+      </TabNavigationBarWrapper>
       <CurriculumWrapper>
         <Curriculum {...{ curriculumInfo: curriculumInfo[curriculumIndex] }} />
       </CurriculumWrapper>
@@ -37,6 +37,10 @@ const DetailCurriculumWrapper = styled.div`
   width: 100%;
   min-width: 144rem;
   flex-direction: column;
+`;
+const TabNavigationBarWrapper = styled.div`
+  width: 106.2rem;
+  margin-top: 5.2rem;
 `;
 
 const CurriculumWrapper = styled.div`
