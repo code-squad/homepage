@@ -8,6 +8,7 @@ const SUBTITLE = {
   PLACE: "오프라인 교육장",
   MASTERS_COURSE_SCHEDULE: "대기자 신청부터 수료까지 한 눈에 확인하는",
   FAQ: "교육 과정에 대해",
+  MASTERS_COURSE_2021: "2021 마스터즈 코스",
 };
 
 const TITLE = {
