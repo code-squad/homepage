@@ -18,7 +18,7 @@ import {
 const MainPage = () => {
   return (
     <GlobalTheme>
-      <div style={{ overflowX: "hidden" }}>
+      <main style={{ overflowX: "hidden" }}>
         <HomeGlobalNavigationBar />
         <Welcome />
         <CourseList />
@@ -30,7 +30,7 @@ const MainPage = () => {
         <Article />
         <Place />
         <Footer />
-      </div>
+      </main>
     </GlobalTheme>
   );
 };
