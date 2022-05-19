@@ -45,12 +45,10 @@ const Feature: React.FC = () => {
 
 const FeatureWrapper = styled.div`
   width: 106.2rem;
-  padding: 0 18.9rem;
   padding-bottom: 16rem;
-  margin: 0 auto;
   display: flex;
+  margin: 0 auto;
   flex-direction: column;
-  align-items: space-between;
   & > *:not(:last-child) {
     margin-bottom: 5.6rem;
   }
