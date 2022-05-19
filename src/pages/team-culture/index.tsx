@@ -5,7 +5,7 @@ import GlobalTheme from "lib/context/GlobalTheme";
 import { Footer, HomeGlobalNavigationBar } from "components";
 import { TeamIntroduce, TeamInterview, Welfare } from "pageComponents/team-culture";
 
-const TeamPage = () => {
+const TeamCulturePage = () => {
   return (
     <GlobalTheme>
       <div style={{ overflowX: "hidden" }}>
@@ -19,4 +19,4 @@ const TeamPage = () => {
   );
 };
 
-export default TeamPage;
+export default TeamCulturePage;
