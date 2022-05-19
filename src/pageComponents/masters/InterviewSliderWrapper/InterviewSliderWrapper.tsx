@@ -1,11 +1,9 @@
 import React from "react";
-import styled from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
-// Typography
 // Components
 import { Interview } from "components";
 // Assets
-import images from "assets/images";
+import { SUBTITLE, TITLE } from "assets/static/phrases";
 // Utils
 import { strainMdxInfo } from "lib/utils";
 
@@ -15,7 +13,11 @@ const InterviewSliderWrapper: React.FC = ({}) => {
   return (
     <div style={{ marginTop: "20rem" }}>
       <Interview
-        {...{ title: "졸업생 후기", subtitle: "2021 마스터즈 코스", interviews: interviewList }}
+        {...{
+          title: TITLE.GRADUATE_INTERVIEW,
+          subtitle: SUBTITLE.MASTERS_COURSE_2021,
+          interviews: interviewList,
+        }}
       />
     </div>
   );
