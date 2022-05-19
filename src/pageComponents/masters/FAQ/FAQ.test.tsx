@@ -1,8 +1,8 @@
 import React from "react";
 import * as Gatsby from "gatsby";
-import { fireEvent, render } from "@testing-library/react";
+import { render } from "@testing-library/react";
 // Type
-import { ProgressType } from "@type/Schedule";
+import { FAQType } from "@type/FAQ";
 // Testing-Component
 import { FAQ } from ".";
 // Mock
@@ -12,7 +12,6 @@ import { SUBTITLE, TITLE } from "assets/static/phrases";
 // Lib
 import { strainMdxInfo } from "lib/utils";
 import { TestProvider } from "lib/testUtils";
-import { FAQType } from "@type/FAQ";
 
 describe("<FAQ>", () => {
   const renderFAQ = () =>
