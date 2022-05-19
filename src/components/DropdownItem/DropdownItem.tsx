@@ -35,12 +35,12 @@ const DropdownItem: React.FC<IDropdownItem> = ({
   };
 
   return (
-    <DropdownWrapper {...{ short }}>
+    <DropdownWrapper {...{ short, open }}>
       <BoardWrapper {...{ open }} onClick={handleCardOpen}>
         <Category>
           <MBody bold>{category}</MBody>
         </Category>
-        <Title>
+        <Title {...{ open }}>
           <LBody>{title}</LBody>
         </Title>
         <ArrowWrapper {...{ open }}>
@@ -94,9 +94,13 @@ const Category = styled.div`
   margin-right: 2.4rem;
   color: ${({ theme: { color } }) => color.greyScale.grey2};
 `;
-const Title = styled.div`
+const Title = styled.div<{ open?: boolean }>`
   width: 84.5rem;
   margin-right: 2.4rem;
+  & > p {
+    font-weight: ${({ open, theme: { fontWeight } }) =>
+      open ? fontWeight.bold : fontWeight.regular};
+  }
 `;
 
 const ArrowWrapper = styled.div<{ open?: boolean }>`

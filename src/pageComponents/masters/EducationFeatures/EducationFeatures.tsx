@@ -1,24 +1,19 @@
 import React from "react";
 import styled from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
+// Type
+import { EducationFeatureType } from "@type/EducationFeature";
 // Components
 import { ImageCard, SectionTitle } from "components";
 // Assets
 import images from "assets/images";
 import { SUBTITLE, TITLE } from "assets/static/phrases";
-
-interface featuresType {
-  index?: number;
-  title: string;
-  content: string;
-  img: keyof typeof images;
-}
+// Utils
+import { strainMdxInfo } from "lib/utils";
 
 const EducationFeatures: React.FC = ({}) => {
   const data = useStaticQuery(FeaturesQuery);
-  const { mdx } = data;
-  const { frontmatter } = mdx;
-  const { features }: { features: featuresType[] } = frontmatter;
+  const { features }: { features: EducationFeatureType[] } = strainMdxInfo(data);
 
   return (
     <EducationFeaturesWrapper>

@@ -1,15 +1,14 @@
 import React from "react";
 // Type
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { action } from "@storybook/addon-actions";
 // Story-Component
 import { EducationFeatures } from ".";
 
 export default {
-  title: "pagecomponent/EducationFeatures",
+  title: "pagecomponent/masters/EducationFeatures",
   component: EducationFeatures,
 } as ComponentMeta<typeof EducationFeatures>;
 
-const Template: ComponentStory<typeof EducationFeatures> = (args) => <EducationFeatures />;
+const Template: ComponentStory<typeof EducationFeatures> = () => <EducationFeatures />;
 
 export const Default = Template.bind({});

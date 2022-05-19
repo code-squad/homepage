@@ -16,7 +16,7 @@
     "test": "jest --config ./scripts/jest/jest.config.ts",
     "test:w": "jest --config ./scripts/jest/jest.config.ts --watch",
     "storybook": "NODE_PATH=src start-storybook -p 3001 -c .storybook -s src",
-    "build-storybook": "NODE_PATH=src build-storybook -s src"
+    "build-storybook": "NODE_ENV=test NODE_PATH=src build-storybook -s src"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",

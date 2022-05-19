@@ -1,24 +1,19 @@
 import React from "react";
 import styled from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
-// Typography
-import { LBody, SDisplay } from "typography";
+// Type
+import { CurriculumType } from "@type/Curriculum";
 // Components
 import { SectionTitle, TabNavigationBar } from "components";
 import { Curriculum } from "./Curriculum";
 // Assets
 import { SUBTITLE, TITLE } from "assets/static/phrases";
+// Utils
+import { strainAllMdxInfo } from "lib/utils";
 
-const frontMatterReduce = (data: any) => {
-  const { allMdx } = data;
-  const { edges } = allMdx;
-  return edges.map((v: any) => v.node.frontmatter);
-};
-
-const DetailCurriculum: React.FC = ({}) => {
-  const data = useStaticQuery(CurriculumQuery);
-  const curriculumInfo = frontMatterReduce(data);
-  const titles = curriculumInfo.map((v: any) => v.tabName);
+const DetailCurriculum: React.FC = () => {
+  const curriculumInfo: CurriculumType[] = strainAllMdxInfo(useStaticQuery(CurriculumQuery));
+  const titles = curriculumInfo.map(({ tabName }) => tabName);
 
   const [curriculumIndex, setCurriculumIndex] = React.useState(0);
 
