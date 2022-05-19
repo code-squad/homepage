@@ -1,19 +1,15 @@
 import React from "react";
-import { graphql, useStaticQuery } from "gatsby";
 import styled from "styled-components";
 // Typography
-import { MBody, MDisplay } from "typography";
+import { MBody } from "typography";
 // Assets
-import headEmoji from "assets/images/icons/head-emoji.svg";
-import calander from "assets/images/icons/calander.svg";
-import coin from "assets/images/icons/coin.svg";
-import book from "assets/images/icons/book.svg";
 
 interface IInfoItemProps {
   src: string;
   label: string;
   content: string;
 }
+
 const InfoItem: React.FC<IInfoItemProps> = ({ src, label, content }) => {
   return (
     <InfoItemWrapper>
