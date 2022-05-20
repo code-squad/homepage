@@ -3,7 +3,7 @@ import React from "react";
 import GlobalTheme from "lib/context/GlobalTheme";
 // Components
 import { Footer, HomeGlobalNavigationBar } from "components";
-import { TeamIntroduce, TeamInterview, Welfare } from "pageComponents/team-culture";
+import { TeamIntroduce, TeamCulture, TeamInterview, Welfare } from "pageComponents/team-culture";
 
 const TeamCulturePage = () => {
   return (
@@ -11,6 +11,7 @@ const TeamCulturePage = () => {
       <div style={{ overflowX: "hidden" }}>
         <HomeGlobalNavigationBar />
         <TeamIntroduce />
+        <TeamCulture />
         <TeamInterview />
         <Welfare />
         <Footer />
