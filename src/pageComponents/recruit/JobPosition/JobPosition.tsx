@@ -10,14 +10,14 @@ import { DropdownItem, TagNavigationBar } from "components";
 // Assets
 import backgrounds from "assets/images/backgrounds";
 import { TITLE } from "assets/static/phrases";
+import { strainMdxInfo } from "lib/utils";
 
 const JobPosition: React.FC = () => {
   const data = useStaticQuery(JobPositionQuery);
-  const { mdx } = data;
-  const { frontmatter } = mdx;
-  const { jobPositions }: { jobPositions: JobPositionType[] } = frontmatter;
+  const { jobPositions }: { jobPositions: JobPositionType[] } = strainMdxInfo(data);
+
   const categories = new Set<string>(["전체"]);
-  jobPositions.forEach((jobPosting) => categories.add(jobPosting.category));
+  jobPositions.forEach((jobPosition) => categories.add(jobPosition.category));
 
   const [currentIndex, setCurrentIndex] = React.useState(0);
   const [faqList, setFAQList] = React.useState<JobPositionType[]>(jobPositions);
@@ -68,12 +68,9 @@ const JobPositionContentWrapper = styled.div`
 
 const DropdownItemWrapper = styled.ul`
   margin-top: 4.7rem;
-  padding: 4rem 4.8rem 4.8rem 4.8rem;
+  padding: 0.8rem 4.8rem 4.8rem 4.8rem;
   display: flex;
   flex-direction: column;
-  & > *:not(:first-child) {
-    margin-top: 4rem;
-  }
   background-color: ${({ theme: { color } }) => color.greyScale.white};
 `;
 
