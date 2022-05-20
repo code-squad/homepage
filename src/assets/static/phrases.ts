@@ -9,6 +9,8 @@ const SUBTITLE = {
   MASTERS_COURSE_SCHEDULE: "대기자 신청부터 수료까지 한 눈에 확인하는",
   FAQ: "교육 과정에 대해",
   MASTERS_COURSE_2021: "2021 마스터즈 코스",
+  TEAM_INTERIVIEW: "코드스쿼드 팀원들이 이야기하는",
+  CODESQUAD_TEAM_CULTURE: "핵심 가치가 묻어난",
 };
 
 const TITLE = {
@@ -28,7 +30,12 @@ const TITLE = {
   REFUND_REASON: "수강료 반환 원인",
   REFUND_STANDARD: "수강료 반환 기준",
   FAQ: "코드스쿼드에\n궁금한 점이 있나요?",
+  APPLY: "지금 코드스쿼드에\n지원해 보세요!",
   WELCOME: "강의식 수업이 재미 없던 사람들,\n여기여기 모여라!",
+  TEAM_INTERIVIEW: "우리가 일하는 방식",
+  TEAM_CULTURE:
+    "우리는 교육자와 학생 그리고\n동기들 간의 상호작용을 통해\n고품질 교육을 경험하는 배움터를\n만듭니다.",
+  CODESQUAD_TEAM_CULTURE: "코드스쿼드 팀 문화",
 };
 
 const DESCRIPTION = {
