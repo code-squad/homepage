@@ -1,8 +1,5 @@
 import React from "react";
 import styled, { useTheme } from "styled-components";
-import { graphql, useStaticQuery } from "gatsby";
-// Type
-import { PlaceType } from "@type/Place";
 // Typography
 import { MBody } from "typography";
 // Components
@@ -14,13 +11,9 @@ import places from "assets/images/places";
 import { SUBTITLE, TITLE, DESCRIPTION } from "assets/static/phrases";
 
 const Place: React.FC = () => {
-  const theme = useTheme();
+  const { color } = useTheme();
 
-  const data = useStaticQuery(PlaceQuery);
-  const { mdx } = data;
-  const { frontmatter } = mdx;
-  const { places: placeList }: { places: PlaceType[] } = frontmatter;
-
+  const imgList = Object.values(places);
   const [currentIndex, setCurrentIndex] = React.useState(0);
 
   const handleArrowLeftClick = () => {
@@ -28,7 +21,7 @@ const Place: React.FC = () => {
   };
 
   const handleArrowRightClick = () => {
-    if (currentIndex + 1 <= placeList.length) setCurrentIndex(currentIndex + 1);
+    if (currentIndex + 1 <= imgList.length) setCurrentIndex(currentIndex + 1);
   };
 
   return (
@@ -37,20 +30,17 @@ const Place: React.FC = () => {
         <ArrowButton disabled={currentIndex === 0} onClick={handleArrowLeftClick}>
           <img src={arrowLeft} alt="arrow-left" />
         </ArrowButton>
-        <ArrowButton
-          disabled={currentIndex === placeList.length - 1}
-          onClick={handleArrowRightClick}
-        >
+        <ArrowButton disabled={currentIndex === imgList.length - 1} onClick={handleArrowRightClick}>
           <img src={arrowRight} alt="arrow-right" />
         </ArrowButton>
       </ArrowNavigationWrapper>
       <TitleSet subtitle={SUBTITLE.PLACE} title={TITLE.PLACE} />
-      <MBody style={{ color: theme.color.greyScale.grey2 }}>{DESCRIPTION.PLACE}</MBody>
+      <MBody style={{ color: color.greyScale.grey2 }}>{DESCRIPTION.PLACE}</MBody>
       <PlaceListWrapper>
         <PlaceList {...{ currentIndex }}>
-          {placeList.map(({ image }) => (
-            <li key={image}>
-              <PlaceImage src={places[image]} alt="codesquad-place" />
+          {imgList.map((image, i) => (
+            <li key={`${image}-${i}`}>
+              <PlaceImage src={image} alt="codesquad-place" />
             </li>
           ))}
         </PlaceList>
@@ -119,18 +109,6 @@ const PlaceList = styled.ul<{ currentIndex: number }>`
 const PlaceImage = styled.img`
   width: 106.2rem;
   height: 50rem;
-`;
-
-const PlaceQuery = graphql`
-  query PlaceQuery {
-    mdx(frontmatter: { templateKey: { eq: "main_places" } }) {
-      frontmatter {
-        places {
-          image
-        }
-      }
-    }
-  }
 `;
 
 export default Place;
