@@ -28,7 +28,7 @@ Green.args = {
 };
 
 export const OnlyTitle = Template.bind({});
-Green.args = {
+OnlyTitle.args = {
   backgroundColor: "#B4E791",
   title: "코드스쿼드 채용정보 알아보기",
   to: "/recurit",
