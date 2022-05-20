@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from "gatsby";
 // Type
 import { WelfareType } from "@type/Welfare";
 // Components
-import { ImageCard, SectionTitle } from "components";
+import { ImageCard, TitleSet } from "components";
 // Assets
 import blocks from "assets/images/blocks";
 import { SUBTITLE, TITLE } from "assets/static/phrases";
@@ -17,7 +17,7 @@ const Welfare: React.FC = ({}) => {
 
   return (
     <WelfareWraper>
-      <SectionTitle subTitle={SUBTITLE.MASTERS_COURSE} title={TITLE.EDUCATION_FEATURES} />
+      <TitleSet subtitle={SUBTITLE.MASTERS_COURSE} title={TITLE.EDUCATION_FEATURES} />
       <WelfareListWrapper>
         <WelfareList>
           {welfares.map(({ title, content, img }) => (
