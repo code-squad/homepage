@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
 // Components
-import { SectionTitle } from "components/";
+import { TitleSet } from "components/";
 import { ScheduleNav } from "./ScheduleNav";
 import { ScheduleInfo } from "./ScheduleInfo";
 // Assets
@@ -18,10 +18,7 @@ const CourseSchedule: React.FC = ({}) => {
 
   return (
     <CourseScheduleWrapper>
-      <SectionTitle
-        subTitle={SUBTITLE.MASTERS_COURSE_SCHEDULE}
-        title={TITLE.MASTERS_COURSE_SCHEDULE}
-      />
+      <TitleSet subtitle={SUBTITLE.MASTERS_COURSE_SCHEDULE} title={TITLE.MASTERS_COURSE_SCHEDULE} />
       <ScheduleWrapper>
         <ScheduleLeftRuler>
           <ScheduleNav {...{ progress, selectedScheduleIndex, setSelectedScheduleIndex }} />
@@ -40,16 +37,6 @@ const CourseScheduleWrapper = styled.div`
   min-width: 144rem;
   flex-direction: column;
 `;
-const ScheduleTitleWrapper = styled.div`
-  width: 107rem;
-  display: flex;
-  flex-direction: column;
-`;
-
-const ScheduleHeadTitle = styled.div`
-  margin-top: 0.8rem;
-  margin-bottom: 5.2rem;
-`;
 
 const ScheduleWrapper = styled.div`
   display: flex;
@@ -57,6 +44,7 @@ const ScheduleWrapper = styled.div`
   width: 100%;
   min-width: 144rem;
   padding: 8rem 0 4rem 0;
+  margin-top: 4rem;
   background-color: ${({ theme: { color } }) => color.greyScale.offWhite};
 `;
 const ScheduleLeftRuler = styled.div`

@@ -10,12 +10,11 @@ import { DropdownItem, TagNavigationBar } from "components";
 // Assets
 import backgrounds from "assets/images/backgrounds";
 import { TITLE } from "assets/static/phrases";
+// Lib
+import { strainMdxInfo } from "lib/utils";
 
 const FAQ: React.FC = () => {
-  const data = useStaticQuery(FAQQuery);
-  const { mdx } = data;
-  const { frontmatter } = mdx;
-  const { lists }: { lists: FAQType[] } = frontmatter;
+  const { lists }: { lists: FAQType[] } = strainMdxInfo(useStaticQuery(FAQQuery));
   const categories = new Set<string>(["전체"]);
   lists.forEach((list) => categories.add(list.category));
 
@@ -38,11 +37,11 @@ const FAQ: React.FC = () => {
       <FAQContentWrapper>
         <LDisplay style={{ paddingTop: "16rem", paddingBottom: "3.2rem" }}>{TITLE.FAQ}</LDisplay>
         <TagNavigationBar titles={Array.from(categories)} onIndexChanged={setCurrentIndex} />
-        <DropdownItemWrapper>
+        <DropdownList>
           {faqList.map(({ category, title, content, editDate }) => (
             <DropdownItem key={title} short {...{ category, title, content, editDate }} />
           ))}
-        </DropdownItemWrapper>
+        </DropdownList>
       </FAQContentWrapper>
     </FAQWrapper>
   );
@@ -72,15 +71,12 @@ const FAQContentWrapper = styled.div`
   margin: 0 auto;
 `;
 
-const DropdownItemWrapper = styled.ul`
+const DropdownList = styled.ul`
   margin-top: 4.7rem;
-  padding: 4rem 4.8rem 4.8rem 4.8rem;
+  padding: 0.8rem 4.8rem 4.8rem 4.8rem;
   display: flex;
   flex-direction: column;
   background-color: ${({ theme: { color } }) => color.greyScale.white};
-  & > *:not(:last-child) {
-    margin-bottom: 4rem;
-  }
 `;
 
 const FAQQuery = graphql`

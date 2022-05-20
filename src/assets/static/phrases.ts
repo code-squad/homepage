@@ -8,11 +8,13 @@ const SUBTITLE = {
   PLACE: "오프라인 교육장",
   MASTERS_COURSE_SCHEDULE: "대기자 신청부터 수료까지 한 눈에 확인하는",
   FAQ: "교육 과정에 대해",
+  MASTERS_COURSE_2021: "2021 마스터즈 코스",
   TEAM_INTERIVIEW: "코드스쿼드 팀원들이 이야기하는",
   CODESQUAD_TEAM_CULTURE: "핵심 가치가 묻어난",
 };
 
 const TITLE = {
+  EDUCATION_TARGET: "교육 과정 대상자",
   CODESQUAD_IN_MEDIA: "미디어에서 본 코드스쿼드",
   CULTURE: "교육 및 학습 문화",
   FEATURE: "무엇이 다른가요?",

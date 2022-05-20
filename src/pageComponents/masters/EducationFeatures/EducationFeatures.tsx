@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from "gatsby";
 // Type
 import { EducationFeatureType } from "@type/EducationFeature";
 // Components
-import { ImageCard, SectionTitle } from "components";
+import { ImageCard, TitleSet } from "components";
 // Assets
 import images from "assets/images";
 import { SUBTITLE, TITLE } from "assets/static/phrases";
@@ -17,7 +17,7 @@ const EducationFeatures: React.FC = ({}) => {
 
   return (
     <EducationFeaturesWrapper>
-      <SectionTitle subTitle={SUBTITLE.MASTERS_COURSE} title={TITLE.EDUCATION_FEATURES} />
+      <TitleSet subtitle={SUBTITLE.MASTERS_COURSE} title={TITLE.EDUCATION_FEATURES} />
       <FeatureListWrapper>
         <FeatureList>
           {features.map(({ title, content, img }) => (

@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from "gatsby";
 // Type
 import { ArticleType } from "@type/Article";
 // Components
-import { DropdownItem, SectionTitleRefac } from "components";
+import { DropdownItem, TitleSet } from "components";
 // Assets
 import { SUBTITLE, TITLE } from "assets/static/phrases";
 
@@ -16,7 +16,7 @@ const Article: React.FC = () => {
 
   return (
     <ArticleWrapper>
-      <SectionTitleRefac subTitle={SUBTITLE.CODESQUAD_IN_MEDIA} title={TITLE.CODESQUAD_IN_MEDIA} />
+      <TitleSet subtitle={SUBTITLE.CODESQUAD_IN_MEDIA} title={TITLE.CODESQUAD_IN_MEDIA} />
       <ArticleList>
         {articles.map((article) => (
           <DropdownItem
@@ -40,16 +40,13 @@ const ArticleWrapper = styled.div`
   flex-direction: column;
   align-items: space-between;
   & > *:not(:last-child) {
-    margin-bottom: 8rem;
+    margin-bottom: 4rem;
   }
 `;
 
 const ArticleList = styled.ul`
   display: flex;
   flex-direction: column;
-  & > *:not(:last-child) {
-    margin-bottom: 4rem;
-  }
 `;
 
 const ArticleQuery = graphql`

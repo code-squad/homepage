@@ -3,6 +3,11 @@ import respectAndEmbrace from "./respect-and-embrace.svg";
 import circulationAndDistribution from "./circulation-and-distribution.svg";
 import masters from "./masters.svg";
 import codeTogether from "./code-together.svg";
+import headEmoji from "./head-emoji.svg";
+import calander from "./calander.svg";
+import coin from "./coin.svg";
+import book from "./book.svg";
+import mastersBig from "./masters-big.svg";
 
 export default {
   freedomAndResponsibility,
@@ -10,4 +15,9 @@ export default {
   circulationAndDistribution,
   masters,
   codeTogether,
+  headEmoji,
+  calander,
+  coin,
+  book,
+  mastersBig,
 };

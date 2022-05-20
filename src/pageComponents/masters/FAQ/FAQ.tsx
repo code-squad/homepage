@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from "gatsby";
 // Type
 import { FAQType } from "@type/FAQ";
 // Components
-import { DropdownItem, MButton, SectionTitle } from "components";
+import { DropdownItem, MButton, TitleSet } from "components";
 // Assets
 import { SUBTITLE, TITLE } from "assets/static/phrases";
 // Utils
@@ -17,12 +17,12 @@ const FAQ: React.FC = () => {
 
   return (
     <FAQWrapper>
-      <SectionTitle subTitle={SUBTITLE.FAQ} title={TITLE.FREQUENTLY_ASKED_QUESTIONS} />
+      <TitleSet subtitle={SUBTITLE.FAQ} title={TITLE.FREQUENTLY_ASKED_QUESTIONS} />
       <DropdownWrapper>
         {mastersFAQList.map(({ category, title, content, editDate }: FAQType) => (
-          <DropdownItemWrapper key={title}>
+          <li key={title}>
             <DropdownItem {...{ category, title, content, editDate }} />
-          </DropdownItemWrapper>
+          </li>
         ))}
       </DropdownWrapper>
       <MButton children="더보기" to="/faq" />
@@ -31,7 +31,7 @@ const FAQ: React.FC = () => {
 };
 
 const FAQWrapper = styled.div`
-  margin-top: 16rem;
+  margin: 16rem 0;
   display: flex;
   align-items: center;
   width: 100%;
@@ -39,11 +39,8 @@ const FAQWrapper = styled.div`
   flex-direction: column;
 `;
 const DropdownWrapper = styled.ul`
-  margin-top: 8rem;
-  margin-bottom: 2.4rem;
-`;
-const DropdownItemWrapper = styled.li`
-  margin-bottom: 4rem;
+  margin-top: 4rem;
+  margin-bottom: 6.4rem;
 `;
 
 const FAQListQuery = graphql`

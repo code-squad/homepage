@@ -6,31 +6,27 @@ import { MBody, MDisplay } from "typography";
 // Components
 import { InfoItem } from "./InfoItem";
 // Assets
-import headEmoji from "assets/images/icons/head-emoji.svg";
-import calander from "assets/images/icons/calander.svg";
-import coin from "assets/images/icons/coin.svg";
-import book from "assets/images/icons/book.svg";
-import mastersBig from "assets/images/icons/masters-big.svg";
+import icons from "assets/images/icons";
+import { TITLE } from "assets/static/phrases";
+// Lib
+import { strainMdxInfo } from "lib/utils";
 
-const Masthead: React.FC = ({}) => {
-  const data = useStaticQuery(MastHeadQuery);
-  const { mdx } = data;
-  const { frontmatter } = mdx;
-  const { title, description, targets, trainingDuration, cost, subject } = frontmatter;
+const Masthead: React.FC = () => {
+  const { title, description, targets, trainingDuration, cost, subject } = strainMdxInfo(
+    useStaticQuery(MastheadQuery)
+  );
 
   return (
-    <MastheadWrapper icon={mastersBig}>
+    <MastheadWrapper icon={icons.mastersBig}>
       <TitleWrapper>
         <MDisplay>{title}</MDisplay>
-        <Description>
-          <MBody>{description}</MBody>
-        </Description>
+        <MBody>{description}</MBody>
       </TitleWrapper>
       <CourseInfoWrapper>
         <TargetWrapper>
           <TargetTitle>
-            <img src={headEmoji} style={{ marginRight: ".8rem" }} />
-            <MBody bold>교육 과정 대상자</MBody>
+            <img src={icons.headEmoji} style={{ marginRight: ".8rem" }} />
+            <MBody bold>{TITLE.EDUCATION_TARGET}</MBody>
           </TargetTitle>
           {targets.map((target: string) => (
             <TargetItem key={target}>
@@ -39,9 +35,9 @@ const Masthead: React.FC = ({}) => {
           ))}
         </TargetWrapper>
         <ul>
-          <InfoItem src={calander} label="교육기간" content={trainingDuration} />
-          <InfoItem src={coin} label="비용" content={cost} />
-          <InfoItem src={book} label="클래스(택1)" content={subject} />
+          <InfoItem src={icons.calander} label="교육기간" content={trainingDuration} />
+          <InfoItem src={icons.coin} label="비용" content={cost} />
+          <InfoItem src={icons.book} label="클래스(택1)" content={subject} />
         </ul>
       </CourseInfoWrapper>
     </MastheadWrapper>
@@ -62,18 +58,20 @@ const MastheadWrapper = styled.div<{ icon: string }>`
 `;
 
 const TitleWrapper = styled.div`
-  min-width: 107rem;
+  min-width: 106.2rem;
   display: flex;
   flex-direction: column;
-`;
-const Description = styled.div`
-  margin-top: 2.4rem;
-  width: 50%;
+  & > *:not(:last-child) {
+    margin-bottom: 2.4rem;
+  }
+  & > *:last-child {
+    width: 50%;
+  }
 `;
 
 const CourseInfoWrapper = styled.div`
   display: flex;
-  min-width: 107rem;
+  min-width: 106.2rem;
   justify-content: space-between;
   margin-top: 4rem;
 `;
@@ -103,8 +101,8 @@ const TargetItem = styled.li`
   margin-left: 2.4rem;
 `;
 
-const MastHeadQuery = graphql`
-  query MastHeadQuery {
+const MastheadQuery = graphql`
+  query MastheadQuery {
     mdx(frontmatter: { templateKey: { eq: "masters_masthead" } }) {
       frontmatter {
         title

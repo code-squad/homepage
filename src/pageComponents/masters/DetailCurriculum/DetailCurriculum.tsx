@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from "gatsby";
 // Type
 import { CurriculumType } from "@type/Curriculum";
 // Components
-import { SectionTitle, TabNavigationBar } from "components";
+import { TitleSet, TabNavigationBar } from "components";
 import { Curriculum } from "./Curriculum";
 // Assets
 import { SUBTITLE, TITLE } from "assets/static/phrases";
@@ -19,10 +19,10 @@ const DetailCurriculum: React.FC = () => {
 
   return (
     <DetailCurriculumWrapper>
-      <SectionTitle subTitle={SUBTITLE.MASTERS_COURSE} title={TITLE.DETAIL_CURRICULUM} />
-      <div style={{ width: "107rem" }}>
+      <TitleSet subtitle={SUBTITLE.MASTERS_COURSE} title={TITLE.DETAIL_CURRICULUM} />
+      <TabNavigationBarWrapper>
         <TabNavigationBar {...{ titles }} onIndexChanged={setCurriculumIndex} />
-      </div>
+      </TabNavigationBarWrapper>
       <CurriculumWrapper>
         <Curriculum {...{ curriculumInfo: curriculumInfo[curriculumIndex] }} />
       </CurriculumWrapper>
@@ -37,6 +37,10 @@ const DetailCurriculumWrapper = styled.div`
   width: 100%;
   min-width: 144rem;
   flex-direction: column;
+`;
+const TabNavigationBarWrapper = styled.div`
+  width: 106.2rem;
+  margin-top: 5.2rem;
 `;
 
 const CurriculumWrapper = styled.div`

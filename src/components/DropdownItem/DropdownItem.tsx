@@ -82,6 +82,7 @@ const DropdownWrapper = styled.div<{ short?: boolean }>`
 
 const BoardWrapper = styled.div<{ open?: boolean }>`
   display: flex;
+  padding-top: 4rem;
   justify-content: space-between;
   height: 7.1rem;
   transition: border 0.5s;

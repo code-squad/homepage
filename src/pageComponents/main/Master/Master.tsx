@@ -6,7 +6,7 @@ import { MasterType } from "@type/Master";
 // Typography
 import { MBody, SBody, XLBody, XSBody } from "typography";
 // Components
-import { SectionTitleRefac, TabNavigationBar } from "components";
+import { TitleSet, TabNavigationBar } from "components";
 // Assets
 import icons from "assets/images/icons";
 import { SUBTITLE, TITLE, DESCRIPTION } from "assets/static/phrases";
@@ -30,7 +30,7 @@ const Master: React.FC = () => {
   return (
     <MasterWrapper>
       <div style={{ width: "106.2rem", padding: "0 18.9rem", margin: "0 auto" }}>
-        <SectionTitleRefac subTitle={SUBTITLE.MASTER} title={TITLE.MASTER} />
+        <TitleSet subtitle={SUBTITLE.MASTER} title={TITLE.MASTER} />
         <MBody
           style={{
             color: theme.color.greyScale.grey2,

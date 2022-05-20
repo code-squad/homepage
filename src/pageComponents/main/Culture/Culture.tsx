@@ -6,32 +6,31 @@ import { CultureType } from "@type/Culture";
 // Typography
 import { MBody, XLBody } from "typography";
 // Components
-import { SectionTitleRefac } from "components/";
+import { TitleSet } from "components/";
 // Assets
 import icons from "assets/images/icons";
 import { SUBTITLE, TITLE } from "assets/static/phrases";
+// Lib
+import { strainMdxInfo } from "lib/utils";
 
 const Culture: React.FC = () => {
-  const theme = useTheme();
+  const { color } = useTheme();
 
-  const data = useStaticQuery(CultureQuery);
-  const { mdx } = data;
-  const { frontmatter } = mdx;
-  const { cultures }: { cultures: CultureType[] } = frontmatter;
+  const { cultures }: { cultures: CultureType[] } = strainMdxInfo(useStaticQuery(CultureQuery));
 
   return (
     <CultureWrapper>
-      <SectionTitleRefac subTitle={SUBTITLE.CULTURE} title={TITLE.CULTURE} />
+      <TitleSet subtitle={SUBTITLE.CULTURE} title={TITLE.CULTURE} />
       <ContentWrapper>
-        {cultures.map((culture) => (
-          <CultureContent key={culture.title}>
-            <CultureImg src={icons[culture.image]} alt="culture-icon" />
-            <div>
-              <MBody style={{ paddingBottom: "0.4rem" }}>{culture.subtitle}</MBody>
-              <XLBody>{culture.title}</XLBody>
-            </div>
+        {cultures.map(({ title, image, subtitle, description }) => (
+          <CultureContent key={title}>
+            <CultureImg src={icons[image]} alt="culture-icon" />
+            <TitleWrapper>
+              <MBody style={{ color: color.greyScale.grey1 }}>{subtitle}</MBody>
+              <XLBody>{title}</XLBody>
+            </TitleWrapper>
             <DescriptionList>
-              {culture.description.split("\n\n").map((descriptionItem: string) => (
+              {description.split("\n\n").map((descriptionItem: string) => (
                 <DescriptionItem key={descriptionItem}>
                   <MBody>{descriptionItem}</MBody>
                 </DescriptionItem>
@@ -46,7 +45,6 @@ const Culture: React.FC = () => {
 
 const CultureWrapper = styled.div`
   width: 106.2rem;
-  padding: 0 18.9rem;
   padding-bottom: 8rem;
   margin: 0 auto;
   display: flex;
@@ -77,6 +75,12 @@ const CultureContent = styled.div`
 const CultureImg = styled.img`
   width: 8rem;
   height: 8rem;
+`;
+
+const TitleWrapper = styled.div`
+  & > *:not(:last-child) {
+    padding-bottom: 0.8rem;
+  }
 `;
 
 const DescriptionList = styled.ul`
