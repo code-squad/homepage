@@ -7,13 +7,14 @@ import { RefundPolicyType } from "@type/RefundPolicy";
 import { LDisplay, MBody } from "typography";
 // Assets
 import { DESCRIPTION, TITLE } from "assets/static/phrases";
+// Lib
+import { strainMdxInfo } from "lib/utils";
+
+type RefuncPolicyType = { policies: RefundPolicyType[]; editDate: string };
 
 const RefundPolicy: React.FC = () => {
   const data = useStaticQuery(RefundPolicyQuery);
-  const { mdx } = data;
-  const { frontmatter } = mdx;
-  const { policies }: { policies: RefundPolicyType[] } = frontmatter;
-  const { editDate }: { editDate: string } = frontmatter;
+  const { policies, editDate }: RefuncPolicyType = strainMdxInfo(data);
 
   return (
     <RefundPolicyWrapper>
