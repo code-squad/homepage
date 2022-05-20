@@ -25,7 +25,7 @@ describe("<JobPosition>", () => {
   it("제목이 보여진다.", async () => {
     const { getByText } = renderJobPosition();
 
-    getByText(removeLineFeed(TITLE.FAQ));
+    getByText(removeLineFeed(TITLE.APPLY));
   });
   it("채용 분야, 포지션, 채용 정보, 최종 업데이트 날짜가 보여진다.", async () => {
     const { getByText, getAllByLabelText } = renderJobPosition();
