@@ -3,7 +3,13 @@ import React from "react";
 import GlobalTheme from "lib/context/GlobalTheme";
 // Components
 import { Footer, HomeGlobalNavigationBar } from "components";
-import { TeamIntroduce, TeamCulture, TeamInterview, Welfare } from "pageComponents/team-culture";
+import {
+  TeamIntroduce,
+  TeamCulture,
+  TeamInterview,
+  Welfare,
+  RecruitLink,
+} from "pageComponents/team-culture";
 
 const TeamCulturePage = () => {
   return (
@@ -14,6 +20,7 @@ const TeamCulturePage = () => {
         <TeamCulture />
         <TeamInterview />
         <Welfare />
+        <RecruitLink />
         <Footer />
       </div>
     </GlobalTheme>
