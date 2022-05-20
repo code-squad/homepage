@@ -1,5 +1,7 @@
+import avatars from "assets/images/avatars";
+
 export interface InterviewType {
-  writerPhoto: string;
+  writerPhoto: keyof typeof avatars;
   nutshell: string;
   content: string;
   writer: string;
