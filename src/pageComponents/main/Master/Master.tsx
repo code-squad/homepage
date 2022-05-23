@@ -80,8 +80,12 @@ const Master: React.FC = () => {
                     <Schedule key={title}>
                       <CourseImage src={icons[image]} alt="course" />
                       <CourseTitleWrapper>
-                        <XSBody>{title}</XSBody>
-                        <MBody>{subtitle}</MBody>
+                        <TitleWrapper>
+                          <XSBody>{title}</XSBody>
+                        </TitleWrapper>
+                        <SubtitleWrapper>
+                          <MBody>{subtitle}</MBody>
+                        </SubtitleWrapper>
                       </CourseTitleWrapper>
                     </Schedule>
                   ))}
@@ -173,8 +177,9 @@ const Schedule = styled.li`
 `;
 
 const CourseImage = styled.img`
-  width: 4rem;
-  height: 4rem;
+  width: 3.4rem;
+  height: 3.4rem;
+  padding: 0.2rem 0.2rem;
   border: 0.1rem solid black;
   border-radius: 0.8rem;
   border-color: ${({ theme: { color } }) => color.greyScale.grey3};
@@ -182,7 +187,30 @@ const CourseImage = styled.img`
 
 const CourseTitleWrapper = styled.div`
   display: flex;
+  height: 4.4rem;
   flex-direction: column;
+  &:hover {
+    & > *:first-child {
+      height: 1.7rem;
+      line-height: 1.7rem;
+      border-bottom: 0.1rem solid ${({ theme: { color } }) => color.greyScale.grey1};
+    }
+    & > *:last-child {
+      height: 2.5rem;
+      line-height: 2.5rem;
+      border-bottom: 0.1rem solid ${({ theme: { color } }) => color.greyScale.grey1};
+    }
+  }
+`;
+
+const TitleWrapper = styled.div`
+  width: fit-content;
+  color: ${({ theme: { color } }) => color.greyScale.grey1};
+`;
+
+const SubtitleWrapper = styled.div`
+  width: fit-content;
+  color: ${({ theme: { color } }) => color.greyScale.black};
 `;
 
 const MasterQuery = graphql`
