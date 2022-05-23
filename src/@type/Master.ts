@@ -5,6 +5,7 @@ interface ScheduleType {
   title: string;
   subtitle: string;
   image: keyof typeof icons;
+  path: string;
 }
 
 export interface MasterType {
