@@ -48,7 +48,7 @@ const Interview: React.FC<IInterview> = ({ subtitle, title, interviews, style })
             <img src={arrowLeft} alt="arrow-left" />
           </ArrowButton>
           <ArrowButton
-            disabled={currentIndex === interviews.length - 1}
+            disabled={currentIndex + 2 === interviews.length}
             onClick={handleArrowRightClick}
           >
             <img src={arrowRight} alt="arrow-right" />
