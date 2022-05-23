@@ -14,7 +14,7 @@ import {
 const TeamCulturePage = () => {
   return (
     <GlobalTheme>
-      <div style={{ overflowX: "hidden" }}>
+      <main style={{ overflowX: "hidden" }}>
         <TeamGlobalNavigationBar />
         <TeamIntroduce />
         <TeamCulture />
@@ -22,7 +22,7 @@ const TeamCulturePage = () => {
         <Welfare />
         <RecruitLink />
         <Footer />
-      </div>
+      </main>
     </GlobalTheme>
   );
 };

@@ -8,11 +8,11 @@ import { JobPosition } from "pageComponents/recruit";
 const RecruitPage: React.FC = () => {
   return (
     <GlobalTheme>
-      <div style={{ overflowX: "hidden" }}>
+      <main style={{ overflowX: "hidden" }}>
         <TeamGlobalNavigationBar />
         <JobPosition />
         <Footer />
-      </div>
+      </main>
     </GlobalTheme>
   );
 };

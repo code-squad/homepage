@@ -8,11 +8,11 @@ import { RefundPolicy } from "pageComponents/refund";
 const RefundPage: React.FC = () => {
   return (
     <GlobalTheme>
-      <div style={{ overflowX: "hidden" }}>
+      <main style={{ overflowX: "hidden" }}>
         <HomeGlobalNavigationBar />
         <RefundPolicy />
         <Footer />
-      </div>
+      </main>
     </GlobalTheme>
   );
 };
