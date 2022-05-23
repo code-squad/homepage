@@ -113,7 +113,7 @@ const ArrowWrapper = styled.div<{ open?: boolean }>`
 const ContentWrapper = styled.div<{ open?: boolean }>`
   overflow: hidden;
   transition: max-height 0.5s, border 0.5s;
-  max-height: ${({ open }) => (open ? "25rem;" : "0")};
+  max-height: ${({ open }) => (open ? "50rem" : "0")};
   padding-left: 16.9rem;
   border-bottom: ${({ open }) => (open ? "0.1rem" : "0")} solid
     ${({ theme: { color } }) => color.greyScale.black20};
