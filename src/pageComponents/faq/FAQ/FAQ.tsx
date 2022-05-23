@@ -39,8 +39,8 @@ const FAQ: React.FC = () => {
         <TagNavigationBar titles={Array.from(categories)} onIndexChanged={setCurrentIndex} />
         <DropdownList>
           {faqList.map(({ category, title, content, editDate }) => (
-            <li>
-              <DropdownItem key={title} short {...{ category, title, content, editDate }} />
+            <li key={title}>
+              <DropdownItem short {...{ category, title, content, editDate }} />
             </li>
           ))}
         </DropdownList>
