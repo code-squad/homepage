@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { CSSProperties } from "styled-components";
 // Type
 import { InterviewType } from "@type/Interview";
 // Components
@@ -13,9 +13,10 @@ interface IInterview {
   subtitle: string;
   title: string;
   interviews: InterviewType[];
+  style?: CSSProperties | undefined;
 }
 
-const Interview: React.FC<IInterview> = ({ subtitle, title, interviews }) => {
+const Interview: React.FC<IInterview> = ({ subtitle, title, interviews, style }) => {
   const [currentIndex, setCurrentIndex] = React.useState(0);
 
   const handleArrowLeftClick = () => {
@@ -39,7 +40,7 @@ const Interview: React.FC<IInterview> = ({ subtitle, title, interviews }) => {
   };
 
   return (
-    <InterviewWrapper>
+    <InterviewWrapper {...{ style }}>
       <TitleWrapper>
         <TitleSet {...{ title, subtitle }} />
         <ArrowNavigationWrapper>
@@ -76,7 +77,7 @@ const Interview: React.FC<IInterview> = ({ subtitle, title, interviews }) => {
 };
 
 const InterviewWrapper = styled.div`
-  padding-bottom: 20rem;
+  margin-bottom: 20rem;
   display: flex;
   flex-direction: column;
   align-items: space-between;
