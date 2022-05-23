@@ -60,7 +60,7 @@ const Dot = styled.div<{ clicked: boolean }>`
     clicked ? `.4rem solid ${color.primary.green4}` : "unset"};
   position: relative;
   left: ${({ clicked }) => (clicked ? ".4rem" : "unset")};
-  z-index: 10;
+  z-index: 1;
 `;
 const VerticalLine = styled.div`
   position: absolute;
