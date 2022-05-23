@@ -19,8 +19,11 @@ const Footer: React.FC = () => {
             <div>
               <div>
                 <XSBody as="span">{MESSAGE.COMPANY_CEO_NAME}</XSBody>
-                <XSBody as="span"> | </XSBody>
+              </div>
+              <div>
                 <XSBody as="span">{MESSAGE.COMPANY_REGISTRATION_NUMBER}</XSBody>
+                <XSBody as="span"> | </XSBody>
+                <XSBody as="span">{MESSAGE.COMPANY_MAIL_ORDER_SALES_REGISTRATION_NUMBER}</XSBody>
               </div>
               <div>
                 <XSBody as="span">{MESSAGE.COMPANY_ADDRESS}</XSBody>
@@ -31,7 +34,9 @@ const Footer: React.FC = () => {
             </div>
           </CompanyInfomationWrapper>
           <div>
-            <InternalLink to={INTERNAL.REFUND_POLICY}>{LINK.REFUND_POLICY}</InternalLink>
+            <InternalLink $bold to={INTERNAL.REFUND_POLICY}>
+              {LINK.REFUND_POLICY}
+            </InternalLink>
           </div>
         </div>
         <MenuListWrapper>
