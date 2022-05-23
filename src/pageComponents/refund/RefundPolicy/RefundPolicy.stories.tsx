@@ -5,7 +5,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { RefundPolicy } from ".";
 
 export default {
-  title: "pagecomponent/refund/JobPosition",
+  title: "pagecomponent/refund/RefundPolicy",
   component: RefundPolicy,
 } as ComponentMeta<typeof RefundPolicy>;
 

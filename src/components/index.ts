@@ -13,5 +13,5 @@ export { DropdownItem } from "./DropdownItem";
 export { LinkButton } from "./LinkButton";
 export { ImageCard } from "./ImageCard";
 export { BannerPopup } from "./BannerPopup";
-export { Subscription } from "./Subscription";
+export { BackgroundLink } from "./BackgroundLink";
 export { TitleSet } from "./TitleSet";

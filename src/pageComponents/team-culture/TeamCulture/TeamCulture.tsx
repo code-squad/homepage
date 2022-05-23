@@ -6,23 +6,20 @@ import { TeamCultureType } from "@type/TeamCulture";
 // Typography
 import { LBody, MBody, XLBody } from "typography";
 // Assets
-import { SectionTitleRefac } from "components";
+import { TitleSet } from "components/";
 import { SUBTITLE, TITLE } from "assets/static/phrases";
+// Lib
+import { strainMdxInfo } from "lib/utils";
 
 const TeamCulture: React.FC = () => {
   const { color } = useTheme();
 
   const data = useStaticQuery(TeamCultureQuery);
-  const { mdx } = data;
-  const { frontmatter } = mdx;
-  const { cultures }: { cultures: TeamCultureType[] } = frontmatter;
+  const { cultures }: { cultures: TeamCultureType[] } = strainMdxInfo(data);
 
   return (
     <TeamCultureWrapper>
-      <SectionTitleRefac
-        title={TITLE.CODESQUAD_TEAM_CULTURE}
-        subTitle={SUBTITLE.CODESQUAD_TEAM_CULTURE}
-      />
+      <TitleSet title={TITLE.CODESQUAD_TEAM_CULTURE} subtitle={SUBTITLE.CODESQUAD_TEAM_CULTURE} />
       <TeamCultureList>
         {cultures.map(({ title, cultureFeatures }) => (
           <TeamCultureListItem key={title}>
@@ -33,7 +30,7 @@ const TeamCulture: React.FC = () => {
               {cultureFeatures.map(({ subtitle, description }) => (
                 <TeamCultureContentListItem key={subtitle}>
                   <LBody bold>{subtitle}</LBody>
-                  <MBody style={{ color: `${color.greyScale.grey2}` }}>{description}</MBody>
+                  <MBody style={{ color: color.greyScale.grey2 }}>{description}</MBody>
                 </TeamCultureContentListItem>
               ))}
             </TeamCultureContentList>
