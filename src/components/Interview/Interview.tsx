@@ -27,6 +27,10 @@ const Interview: React.FC<IInterview> = ({ subtitle, title, interviews }) => {
   };
 
   const handleArrowRightClick = () => {
+    if (currentIndex + 3 === interviews.length) {
+      setCurrentIndex(currentIndex + 1);
+      return;
+    }
     if (currentIndex + 2 <= interviews.length) {
       setCurrentIndex(currentIndex + 2);
       return;
