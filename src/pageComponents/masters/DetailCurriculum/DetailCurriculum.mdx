@@ -1,0 +1,75 @@
+<!-- Custom-MDX-Documentation.mdx -->
+
+### 파일 디렉토리
+
+`/content/masters/curriculum_*.mdx`
+
+### 예시
+
+```
+---
+templateKey: masters_curriculum_ios
+index: 3
+tabName: "모바일 iOS"
+curriculum:
+  - index: 1
+    subject: 개인 프로젝트
+    subjectList:
+      - name: 사진 프로파일 앱
+        detail: HIG, 프로그래밍 설계, 뷰 컨트롤러 프로그래밍
+
+      - name: 카드 게임 앱
+        detail: Struct와 Class, 메모리 관리, 스위프트 객체지향
+
+      - name: 그림판 앱
+        detail: 뷰프로그래밍, MVC역할, 단위테스트
+
+      - name: 사진 앨범 앱
+        detail: 옵저버와 노티피케이션, 앱 라이프 사이클, 프로토콜 지향 프로그래밍
+
+  - index: 2
+    subject: 팀 프로젝트
+    subjectList:
+      - name: 할 일 관리 서비스
+        detail: 터치이벤트와 응답체인, 오토레이아웃, 함수형 프로그래밍
+
+      - name: 온라인 주문 서비스
+        detail: 동시성 프로그래밍, 네트워크 프로그래밍
+
+      - name: 스타벅스 클론 앱
+        detail: 영구저장소, 앱 아키텍처 개선
+
+      - name: 온라인 예약 서비스
+        detail: 코어그래픽스, 멀티미디어, 앱 배포
+
+      - name: 이슈 관리 서비스
+        detail: 코어 ML, 뷰렌더링 원리
+
+masterInfo:
+  avatar: jk
+  name: JK
+  position: 모바일 iOS 마스터
+  nutshell: "“나와 지인들에게 필요한 iOS 앱을 직접 만들고 출시까지 도전해보세요”"
+  introduce: 매력적인 애플 플랫폼에서 함께 성장할 개발자를 기다립니다.
+---
+
+```
+
+### 항목별 설명
+
+- templateKey: masters_curriculum~ 의 값을 입력해 주어야 페이지에서 인식할 수 있습니다.
+- tabName: 탭에 보여지는 문구를 입력할 수 있습니다.
+- curriculum: 어떤 커리큘럼이 있는지 보여주는 항목입니다. 각 커리큘럼의 사이에는 회색 언더바가 그어집니다.
+  - subject: 초록색으로 된 문구를 입력할 수 있습니다.
+  - subjectList: 커리큘럼의 각 항목을 보여주는 리스트입니다.
+    - name: 커리큘럼의 이름을 입력할 수 있습니다.
+    - detail: 해당 커리큘럼의 상세내용을 입력할 수 있습니다.
+
+---
+
+- masterInfo: 마스터의 정보를 입력하는 곳 입니다.
+  - avatar: 마스터의 이미지로 보여질 파일의 이름을 입력할 수 있습니다.
+  - name: 마스터의 이미지 바로 옆에 보여질 큰 문구를 입력할 수 있습니다.
+  - position: 이름 옆에 적혀질 옅은 회색의 문구를 입력할 수 있습니다.
+  - nutshell: 마스터의 이름 바로 밑에 적혀질 문구를 적을 수 있습니다. 따옴표를 사용하고 싶다면 "“~따옴표를 써보세요”" 와같이 입력하면 됩니다.
+  - introduce: 마스터의 한마디 밑에 적여질 옅은 회색의 문구를 입력할 수 있습니다.
