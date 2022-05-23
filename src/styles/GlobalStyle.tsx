@@ -37,6 +37,8 @@ html {
 body {
   line-height: 1;
   font-family: 'Noto Sans KR';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 ol, ul {
 	list-style: none;
