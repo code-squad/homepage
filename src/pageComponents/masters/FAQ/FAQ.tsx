@@ -58,6 +58,7 @@ const FAQWrapper = styled.div`
   width: 100%;
   min-width: 144rem;
   flex-direction: column;
+  white-space: pre-line;
 `;
 const DropdownWrapper = styled.ul`
   margin-top: 4rem;
