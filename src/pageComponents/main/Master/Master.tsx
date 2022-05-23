@@ -166,6 +166,7 @@ const ScheduleList = styled.ul`
 const Schedule = styled.li`
   width: 24.8rem;
   display: flex;
+  align-items: center;
   & > *:not(:last-child) {
     margin-right: 1.6rem;
   }
