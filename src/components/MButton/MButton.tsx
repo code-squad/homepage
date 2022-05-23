@@ -5,7 +5,6 @@ import { Link } from "gatsby";
 import { MBody } from "typography";
 // Assets
 import arrowRight from "assets/images/icons/arrow-right.svg";
-import plus from "assets/images/icons/plus.svg";
 
 export interface IMButtonProps {
   children?: string;
@@ -17,7 +16,6 @@ export interface IMButtonProps {
 const MButton: React.FC<IMButtonProps> = ({ children, accent, disabled, to }) => {
   return (
     <MButtonWrapper $accent={accent} $disabled={disabled} {...{ to }}>
-      {/* <ButtonIcon src={plus} {...{ disabled }} /> */}
       <MBody bold>{children}</MBody>
       <ButtonIcon src={arrowRight} {...{ disabled }} />
     </MButtonWrapper>
@@ -62,11 +60,5 @@ const ButtonIcon = styled.img<{ disabled?: boolean }>`
       ? "invert(79%) sepia(29%) saturate(7%) hue-rotate(104deg) brightness(94%) contrast(91%)"
       : "none"};
 `;
-
-// const PlusIcon = styled(plus)`
-//   & > path {
-//     stroke: red;
-//   }
-// `;
 
 export default MButton;
