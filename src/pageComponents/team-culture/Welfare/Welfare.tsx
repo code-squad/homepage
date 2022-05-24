@@ -17,7 +17,7 @@ const Welfare: React.FC = ({}) => {
 
   return (
     <WelfareWraper>
-      <TitleSet subtitle={SUBTITLE.MASTERS_COURSE} title={TITLE.EDUCATION_FEATURES} />
+      <TitleSet subtitle={SUBTITLE.WELFARE} title={TITLE.WELFARE} />
       <WelfareListWrapper>
         <WelfareList>
           {welfares.map(({ title, content, img }) => (
