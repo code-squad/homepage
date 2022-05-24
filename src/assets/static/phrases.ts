@@ -11,6 +11,7 @@ const SUBTITLE = {
   MASTERS_COURSE_2021: "2021 마스터즈 코스",
   TEAM_INTERIVIEW: "코드스쿼드 팀원들이 이야기하는",
   CODESQUAD_TEAM_CULTURE: "핵심 가치가 묻어난",
+  WELFARE: "코드스쿼드 복지",
 };
 
 const TITLE = {
@@ -37,6 +38,7 @@ const TITLE = {
     "우리는 교육자와 학생 그리고\n동기들 간의 상호작용을 통해\n고품질 교육을 경험하는 배움터를\n만듭니다.",
   CODESQUAD_TEAM_CULTURE: "코드스쿼드 팀 문화",
   CODESQUAD_RECRUIT_NEWS: "코드스쿼드 채용 소식 확인하기",
+  WELFARE: "우리는 어떤 지원을 받을까요?",
 };
 
 const DESCRIPTION = {
