@@ -3,8 +3,6 @@ import * as Gatsby from "gatsby";
 import { render } from "@testing-library/react";
 // Testing-Component
 import { Place } from ".";
-// Mocks
-import { PlaceResult } from "./Place.test.mock";
 // Assets
 import { TITLE, SUBTITLE, DESCRIPTION } from "assets/static/phrases";
 // Libs
@@ -17,8 +15,6 @@ describe("<Place>", () => {
         <Place />
       </TestProvider>
     );
-  const useStaticQuery = jest.spyOn(Gatsby, "useStaticQuery");
-  useStaticQuery.mockImplementation(() => ({ ...PlaceResult }));
   it("제목과 부제목 및 설명이 보여진다.", async () => {
     const { getByText, getAllByText } = renderlace();
 
