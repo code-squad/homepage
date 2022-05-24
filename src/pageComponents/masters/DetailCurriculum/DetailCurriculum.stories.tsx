@@ -3,7 +3,7 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 // Story-Component
 import { DetailCurriculum } from ".";
-import DetailCurriculumDocs from "./DetailCurriculum.mdx";
+import DetailCurriculumDocs from "./DetailCurriculum.docs.mdx";
 
 export default {
   title: "pagecomponent/masters/DetailCurriculum",

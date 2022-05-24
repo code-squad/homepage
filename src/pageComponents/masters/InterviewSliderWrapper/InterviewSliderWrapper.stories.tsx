@@ -3,7 +3,7 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 // Story-Component
 import { InterviewSliderWrapper } from ".";
-import InterviewSliderWrapperDoc from "./InterviewSliderWrapper.mdx";
+import InterviewSliderWrapperDoc from "./InterviewSliderWrapper.docs.mdx";
 
 export default {
   title: "pagecomponent/masters/InterviewSliderWrapper",
