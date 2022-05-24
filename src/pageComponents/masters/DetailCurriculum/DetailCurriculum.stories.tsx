@@ -3,10 +3,16 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 // Story-Component
 import { DetailCurriculum } from ".";
+import DetailCurriculumDocs from "./DetailCurriculum.mdx";
 
 export default {
   title: "pagecomponent/masters/DetailCurriculum",
   component: DetailCurriculum,
+  parameters: {
+    docs: {
+      page: DetailCurriculumDocs,
+    },
+  },
 } as ComponentMeta<typeof DetailCurriculum>;
 
 const Template: ComponentStory<typeof DetailCurriculum> = () => <DetailCurriculum />;

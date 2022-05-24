@@ -3,10 +3,16 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 // Story-Component
 import { InterviewSliderWrapper } from ".";
+import InterviewSliderWrapperDoc from "./InterviewSliderWrapper.mdx";
 
 export default {
   title: "pagecomponent/masters/InterviewSliderWrapper",
   component: InterviewSliderWrapper,
+  parameters: {
+    docs: {
+      page: InterviewSliderWrapperDoc,
+    },
+  },
 } as ComponentMeta<typeof InterviewSliderWrapper>;
 
 const Template: ComponentStory<typeof InterviewSliderWrapper> = () => <InterviewSliderWrapper />;
