@@ -8,11 +8,11 @@ import { FAQ } from "pageComponents/faq";
 const FAQPage: React.FC = () => {
   return (
     <GlobalTheme>
-      <div style={{ overflowX: "hidden" }}>
+      <main style={{ overflowX: "hidden" }}>
         <HomeGlobalNavigationBar />
         <FAQ />
         <Footer />
-      </div>
+      </main>
     </GlobalTheme>
   );
 };

@@ -31,6 +31,11 @@ describe("<Footer>", () => {
 
     getByText(MESSAGE.COMPANY_REGISTRATION_NUMBER);
   });
+  it("회사 통신판매신고번호가 보여진다.", async () => {
+    const { getByText } = renderFooter();
+
+    getByText(MESSAGE.COMPANY_MAIL_ORDER_SALES_REGISTRATION_NUMBER);
+  });
   it("회사 주소가 보여진다.", async () => {
     const { getByText } = renderFooter();
 

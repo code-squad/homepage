@@ -16,6 +16,7 @@ const TeamInterview: React.FC = () => {
     <Interview
       subtitle={SUBTITLE.TEAM_INTERIVIEW}
       title={TITLE.TEAM_INTERIVIEW}
+      style={{ marginBottom: "16rem" }}
       {...{ interviews }}
     />
   );

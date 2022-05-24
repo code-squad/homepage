@@ -1,28 +1,27 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "gatsby";
 // Typography
 import { MBody } from "typography";
 // Assets
-import arrowRight from "assets/images/icons/arrow-right.svg";
+import plus from "assets/images/icons/plus.svg";
 
-export interface IMButtonProps {
+export interface IEButtonProps {
   children?: string;
   accent?: boolean;
   disabled?: boolean;
-  to: string;
+  onClick: () => void;
 }
 
-const MButton: React.FC<IMButtonProps> = ({ children, accent, disabled, to }) => {
+const EButton: React.FC<IEButtonProps> = ({ children, accent, disabled, onClick }) => {
   return (
-    <MButtonWrapper $accent={accent} $disabled={disabled} {...{ to }}>
+    <EButtonWrapper $accent={accent} $disabled={disabled} {...{ onClick }}>
+      <ButtonIcon src={plus} {...{ disabled }} />
       <MBody bold>{children}</MBody>
-      <ButtonIcon src={arrowRight} {...{ disabled }} />
-    </MButtonWrapper>
+    </EButtonWrapper>
   );
 };
 
-const MButtonWrapper = styled(Link)<{ $accent?: boolean; $disabled?: boolean }>`
+const EButtonWrapper = styled.button<{ $accent?: boolean; $disabled?: boolean }>`
   display: inline-flex;
   justify-content: space-between;
   align-items: center;
@@ -61,4 +60,4 @@ const ButtonIcon = styled.img<{ disabled?: boolean }>`
       : "none"};
 `;
 
-export default MButton;
+export default EButton;

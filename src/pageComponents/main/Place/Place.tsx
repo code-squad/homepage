@@ -93,7 +93,7 @@ const ArrowButton = styled.button`
 `;
 
 const PlaceListWrapper = styled.div`
-  width: 106.2rem;
+  width: 80rem;
   margin: 0 auto;
   overflow: hidden;
 `;
@@ -103,12 +103,11 @@ const PlaceList = styled.ul<{ currentIndex: number }>`
   position: relative;
   display: flex;
   transition: left 0.5s;
-  left: -${({ currentIndex }) => currentIndex * 106.2}rem;
+  left: -${({ currentIndex }) => currentIndex * 80}rem;
 `;
 
 const PlaceImage = styled.img`
-  width: 106.2rem;
-  height: 50rem;
+  width: 80rem;
 `;
 
 export default Place;

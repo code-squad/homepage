@@ -15,7 +15,7 @@ import {
 const MatsersPage: React.FC = () => {
   return (
     <GlobalTheme>
-      <main>
+      <main style={{ overflowX: "hidden" }}>
         <HomeGlobalNavigationBar />
         <Masthead />
         <EducationFeatures />

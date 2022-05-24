@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { useTheme } from "styled-components";
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql, Link, useStaticQuery } from "gatsby";
 // Type
 import { MasterType } from "@type/Master";
 // Typography
@@ -76,14 +76,20 @@ const Master: React.FC = () => {
                   {TITLE.SCHEDULE}
                 </MBody>
                 <ScheduleList>
-                  {masterIntroduce.schedules.map(({ image, title, subtitle }) => (
-                    <Schedule key={title}>
-                      <CourseImage src={icons[image]} alt="course" />
-                      <CourseTitleWrapper>
-                        <XSBody>{title}</XSBody>
-                        <MBody>{subtitle}</MBody>
-                      </CourseTitleWrapper>
-                    </Schedule>
+                  {masterIntroduce.schedules.map(({ image, title, subtitle, path }) => (
+                    <li>
+                      <Schedule key={title} to={path}>
+                        <CourseImage src={icons[image]} alt="course" />
+                        <CourseTitleWrapper>
+                          <TitleWrapper>
+                            <XSBody>{title}</XSBody>
+                          </TitleWrapper>
+                          <SubtitleWrapper>
+                            <MBody>{subtitle}</MBody>
+                          </SubtitleWrapper>
+                        </CourseTitleWrapper>
+                      </Schedule>
+                    </li>
                   ))}
                 </ScheduleList>
               </ScheduleWrapper>
@@ -163,17 +169,35 @@ const ScheduleList = styled.ul`
   }
 `;
 
-const Schedule = styled.li`
+const Schedule = styled(Link)`
   width: 24.8rem;
   display: flex;
+  align-items: center;
+  text-decoration: none;
   & > *:not(:last-child) {
     margin-right: 1.6rem;
+  }
+  &:hover {
+    cursor: pointer;
+    & > *:last-child {
+      & > *:first-child {
+        height: 1.7rem;
+        line-height: 1.7rem;
+        border-bottom: 0.1rem solid ${({ theme: { color } }) => color.greyScale.grey1};
+      }
+      & > *:last-child {
+        height: 2.5rem;
+        line-height: 2.5rem;
+        border-bottom: 0.1rem solid ${({ theme: { color } }) => color.greyScale.black};
+      }
+    }
   }
 `;
 
 const CourseImage = styled.img`
-  width: 4rem;
-  height: 4rem;
+  width: 3.4rem;
+  height: 3.4rem;
+  padding: 0.2rem 0.2rem;
   border: 0.1rem solid black;
   border-radius: 0.8rem;
   border-color: ${({ theme: { color } }) => color.greyScale.grey3};
@@ -181,7 +205,18 @@ const CourseImage = styled.img`
 
 const CourseTitleWrapper = styled.div`
   display: flex;
+  height: 4.4rem;
   flex-direction: column;
+`;
+
+const TitleWrapper = styled.div`
+  width: fit-content;
+  color: ${({ theme: { color } }) => color.greyScale.grey1};
+`;
+
+const SubtitleWrapper = styled.div`
+  width: fit-content;
+  color: ${({ theme: { color } }) => color.greyScale.black};
 `;
 
 const MasterQuery = graphql`
@@ -199,6 +234,7 @@ const MasterQuery = graphql`
             title
             subtitle
             image
+            path
           }
         }
       }
