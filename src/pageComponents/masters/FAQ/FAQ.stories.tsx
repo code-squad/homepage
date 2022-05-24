@@ -3,7 +3,7 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 // Story-Component
 import { FAQ } from ".";
-import FAQDocs from "./FAQ.mdx";
+import FAQDocs from "./FAQ.docs.mdx";
 
 export default {
   title: "pagecomponent/masters/FAQ",

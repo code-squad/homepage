@@ -3,7 +3,7 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 // Story-Component
 import { Masthead } from ".";
-import MastheadDoc from "./Masthead.mdx";
+import MastheadDoc from "./Masthead.docs.mdx";
 
 export default {
   title: "pagecomponent/masters/Masthead",
