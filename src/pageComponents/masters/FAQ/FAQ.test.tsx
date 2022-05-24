@@ -37,8 +37,6 @@ describe("<FAQ>", () => {
     mastersFAQList.forEach(({ title }) => getByText(title));
   });
   it("교육과정 카테고리의 FAQ의 갯수가 5개 이하이면 더보기 버튼은 보여지지 않는다.", async () => {
-    useStaticQuery.mockImplementation(() => FAQQueryResult);
-    const { lists }: { lists: FAQType[] } = strainMdxInfo(FAQQueryResult);
     const { getAllByText, queryByText } = renderFAQ();
 
     const mastersFAQList = lists.filter((list: FAQType) => list.category === "교육과정");
@@ -61,7 +59,6 @@ describe("<FAQ>", () => {
     getByText("더보기");
   });
   it("화면에 보여지는것 의외에 더 보여줄 수 있는 교육과정 FAQ가 5개 이상 있다면 더보기 버튼 클릭시 5개가 추가되어 보여진다.", async () => {
-    useStaticQuery.mockImplementation(() => FAQQueryResult_ForMoreButtonTest);
     const { lists }: { lists: FAQType[] } = strainMdxInfo(FAQQueryResult_ForMoreButtonTest);
     const { getAllByText, getByText } = renderFAQ();
 
@@ -77,7 +74,6 @@ describe("<FAQ>", () => {
     expect(curriculumFAQ.length).toEqual(10);
   });
   it("화면에 보여지는것 의외에 더 보여줄 수 있는 교육과정 FAQ가 5개 미만이라면 남은 FAQ가 추가되어 보여진다.", async () => {
-    useStaticQuery.mockImplementation(() => FAQQueryResult_ForMoreButtonTest);
     const { lists }: { lists: FAQType[] } = strainMdxInfo(FAQQueryResult_ForMoreButtonTest);
     const { getAllByText, getByText } = renderFAQ();
 
