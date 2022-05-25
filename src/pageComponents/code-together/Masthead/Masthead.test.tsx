@@ -47,7 +47,7 @@ describe("<Masthead>", () => {
       getByText(dueDate);
     });
   });
-  it("각 버튼을 클릭하면 path로 설정된곳으로 페이지가 이동된다.", () => {
+  it("각 모집중 과정을 클릭하면 path로 설정된곳으로 페이지가 이동된다.", () => {
     const { getByLabelText } = renderMasthead();
 
     scheduledCourses.forEach(({ title, path }: ScheduledCourse) => {
