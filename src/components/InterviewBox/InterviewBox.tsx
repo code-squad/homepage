@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 // Assets
-import quotation from "assets/images/icons/quotation.svg";
+import icons from "assets/img/icons";
 // Components
 import { Avatar } from "components";
 import { LBody, MBody, SBody } from "typography";
@@ -59,7 +59,7 @@ const Nutshell = styled.div`
     position: absolute;
     width: 2.4rem;
     height: 2.4rem;
-    background-image: url(${quotation});
+    background-image: url(${icons["quotation"]});
     display: inline-block;
     background-size: contain;
     background-repeat: no-repeat;

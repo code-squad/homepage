@@ -8,7 +8,7 @@ import { MBody, MDisplay } from "typography";
 // Components
 import { Course } from "./Course";
 // Assets
-import icons from "assets/images/icons";
+import icons from "assets/img/icons";
 // Lib
 import { strainMdxInfo } from "lib/utils";
 
@@ -16,7 +16,7 @@ const Masthead: React.FC = () => {
   const { title, description, scheduledCourses } = strainMdxInfo(useStaticQuery(MastheadQuery));
 
   return (
-    <MastheadWrapper icon={icons.codeTogetherBig}>
+    <MastheadWrapper icon={icons.codetogetherBig}>
       <TitleWrapper>
         <MDisplay>{title}</MDisplay>
         <MBody>{description}</MBody>

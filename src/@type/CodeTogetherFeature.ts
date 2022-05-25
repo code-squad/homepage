@@ -1,8 +1,8 @@
-import blocks from "assets/images/blocks";
+import illusts from "assets/img/illusts";
 
 export interface CodeTogetherFeatureType {
   index?: number;
   title: string;
-  img: keyof typeof blocks;
+  img: keyof typeof illusts;
   descriptions: string[];
 }

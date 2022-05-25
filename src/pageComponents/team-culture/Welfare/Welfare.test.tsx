@@ -26,8 +26,8 @@ describe("<Welfare>", () => {
   it("제목이 보여진다.", async () => {
     const { getByText } = renderWelfare();
 
-    getByText(SUBTITLE.MASTERS_COURSE);
-    getByText(TITLE.EDUCATION_FEATURES);
+    getByText(SUBTITLE.WELFARE);
+    getByText(TITLE.WELFARE);
   });
   it("각 특징들의 제목과 설명이 보여진다.", () => {
     const { getByText } = renderWelfare();

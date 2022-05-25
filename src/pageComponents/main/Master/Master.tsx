@@ -8,7 +8,7 @@ import { MBody, SBody, XLBody, XSBody } from "typography";
 // Components
 import { TitleSet, TabNavigationBar } from "components";
 // Assets
-import icons from "assets/images/icons";
+import icons from "assets/img/icons";
 import { SUBTITLE, TITLE, DESCRIPTION } from "assets/static/phrases";
 
 const Master: React.FC = () => {

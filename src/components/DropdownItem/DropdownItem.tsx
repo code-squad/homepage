@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 // Assets
-import downArrow from "assets/images/icons/arrow-down.svg";
-import rightArrow from "assets/images/icons/arrow-right.svg";
+import icons from "assets/img/icons";
 // Typography
 import { LBody, MBody, XSBody } from "typography";
 
@@ -45,11 +44,11 @@ const DropdownItem: React.FC<IDropdownItem> = ({
         </Title>
         <ArrowWrapper {...{ open }}>
           {isLinkBoard ? (
-            <img aria-label="arrow-right" src={rightArrow} width="24px" height="24px" />
+            <img aria-label="arrow-right" src={icons["chevronRight"]} width="24px" height="24px" />
           ) : (
             <img
               aria-label={open ? "arrow-up" : "arrow-down"}
-              src={downArrow}
+              src={icons["chevronDown"]}
               width="24px"
               height="24px"
             />

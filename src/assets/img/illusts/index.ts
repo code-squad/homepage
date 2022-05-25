@@ -12,8 +12,10 @@ import eduFeature3 from "./edu-feature-3.svg";
 import eduFeature4 from "./edu-feature-4.svg";
 import eduFeature5 from "./edu-feature-5.svg";
 import introduce from "./introduce.svg";
+import diamond from "./diamond.svg";
+import knot from "./knot.svg";
 
-export {
+export default {
   benefit1,
   benefit2,
   benefit3,
@@ -28,4 +30,6 @@ export {
   eduFeature4,
   eduFeature5,
   introduce,
+  diamond,
+  knot,
 };

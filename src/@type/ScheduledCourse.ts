@@ -1,4 +1,4 @@
-import icons from "assets/images/icons";
+import icons from "assets/img/icons";
 
 export interface ScheduledCourse {
   img: keyof typeof icons;

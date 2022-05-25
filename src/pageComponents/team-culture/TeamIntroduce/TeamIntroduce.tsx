@@ -3,12 +3,12 @@ import styled from "styled-components";
 // Typography
 import { MDisplay } from "typography";
 // Assets
-import backgrounds from "assets/images/backgrounds";
+import illusts from "assets/img/illusts";
 import { TITLE } from "assets/static/phrases";
 
 const TeamIntroduce: React.FC = () => {
   return (
-    <TeamIntroduceWrapper image={backgrounds["diamond"]}>
+    <TeamIntroduceWrapper image={illusts.diamond}>
       <IntroduceText>
         <MDisplay>{TITLE.TEAM_CULTURE}</MDisplay>
       </IntroduceText>

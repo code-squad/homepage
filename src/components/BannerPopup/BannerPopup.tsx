@@ -3,7 +3,7 @@ import styled from "styled-components";
 // Typography
 import { MBody, XSBody } from "typography";
 // Assets
-import close from "assets/images/icons/close.svg";
+import icons from "assets/img/icons";
 
 interface IBannerPopup {
   title: string;
@@ -19,7 +19,7 @@ const BannerPopup: React.FC<IBannerPopup> = ({ title, description, onCloseButton
         <XSBody bold>{description}</XSBody>
       </ContentWrapper>
       <CloseButton onClick={onCloseButtonClicked}>
-        <ButtonIcon src={close} />
+        <ButtonIcon src={icons.close} />
       </CloseButton>
     </BannerPopupWrapper>
   );

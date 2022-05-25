@@ -4,7 +4,7 @@ import { Link } from "gatsby";
 // Typography
 import { MBody } from "typography";
 // Assets
-import arrowRight from "assets/images/icons/arrow-right.svg";
+import icons from "assets/img/icons";
 
 export interface IMButtonProps {
   children?: string;
@@ -17,7 +17,7 @@ const MButton: React.FC<IMButtonProps> = ({ children, accent, disabled, to }) =>
   return (
     <MButtonWrapper $accent={accent} $disabled={disabled} {...{ to }}>
       <MBody bold>{children}</MBody>
-      <ButtonIcon src={arrowRight} {...{ disabled }} />
+      <ButtonIcon src={icons["chevronRight"]} {...{ disabled }} />
     </MButtonWrapper>
   );
 };

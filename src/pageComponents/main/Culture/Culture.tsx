@@ -8,7 +8,7 @@ import { MBody, XLBody } from "typography";
 // Components
 import { TitleSet } from "components/";
 // Assets
-import icons from "assets/images/icons";
+import icons from "assets/img/icons";
 import { SUBTITLE, TITLE } from "assets/static/phrases";
 // Lib
 import { strainMdxInfo } from "lib/utils";

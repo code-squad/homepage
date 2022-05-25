@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
-// Icons
-import rightArrow from "assets/images/icons/arrow-right.svg";
+// Assets
+import icons from "assets/img/icons";
 // Typography
 import { LBody, MBody } from "typography/";
 
@@ -23,7 +23,7 @@ const LinkButton: React.FC<ILinkButton> = ({ description, title, to, icon }) => 
         </Description>
         <Title>
           <LBody bold>{title}</LBody>
-          <img aria-label="arrow-right" src={rightArrow} width="24px" height="24px" />
+          <img aria-label="arrow-right" src={icons["chevronRight"]} width="24px" height="24px" />
         </Title>
       </TextWrapper>
       {icon ? <img alt="link-icon" src={icon} width="80px" height="80px" /> : null}

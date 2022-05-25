@@ -8,7 +8,7 @@ import { LDisplay } from "typography";
 // Components
 import { DropdownItem, TagNavigationBar } from "components";
 // Assets
-import backgrounds from "assets/images/backgrounds";
+import illusts from "assets/img/illusts";
 import { TITLE } from "assets/static/phrases";
 import { strainMdxInfo } from "lib/utils";
 
@@ -34,7 +34,7 @@ const JobPosition: React.FC = () => {
   }, [currentIndex]);
 
   return (
-    <JobPositionWrapper image={backgrounds["diamond"]}>
+    <JobPositionWrapper image={illusts.diamond}>
       <JobPositionContentWrapper>
         <LDisplay style={{ paddingTop: "16rem", paddingBottom: "3.2rem" }}>{TITLE.APPLY}</LDisplay>
         <TagNavigationBar titles={Array.from(categories)} onIndexChanged={setCurrentIndex} />

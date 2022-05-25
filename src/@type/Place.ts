@@ -1,5 +1,5 @@
-import places from "assets/images/places";
+import picture from "assets/img/picture";
 
 export interface PlaceType {
-  image: keyof typeof places;
+  image: keyof typeof picture;
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 // Assets
-import blankProfile from "assets/images/blank-profile.svg";
+import avatars from "assets/img/avatars";
 
 interface IAvatarProps {
   src: string;
@@ -17,7 +17,7 @@ const Avatar: React.FC<IAvatarProps> = ({ src, width, height }) => {
       {...{ width, height }}
       src={imgSrc}
       alt="avatar"
-      onError={() => setImgSrc(blankProfile)}
+      onError={() => setImgSrc(avatars.profileBlank)}
     />
   );
 };

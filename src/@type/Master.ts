@@ -1,5 +1,5 @@
-import images from "assets/images";
-import icons from "assets/images/icons";
+import avatars from "assets/img/avatars";
+import icons from "assets/img/icons";
 
 interface ScheduleType {
   title: string;
@@ -18,7 +18,7 @@ export interface MasterType {
 }
 
 export interface MasterInfoType {
-  avatar: keyof typeof images;
+  avatar: keyof typeof avatars;
   name: string;
   position: string;
   introduce: string;

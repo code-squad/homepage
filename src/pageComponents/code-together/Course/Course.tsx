@@ -9,7 +9,7 @@ import { MBody } from "typography";
 import { TitleSet } from "components";
 import { CourseCard } from "./CourseCard";
 // Assets
-import icons from "assets/images/icons";
+import icons from "assets/img/icons";
 import { SUBTITLE, TITLE, DESCRIPTION } from "assets/static/phrases";
 // Utils
 import { strainMdxInfo } from "lib/utils";

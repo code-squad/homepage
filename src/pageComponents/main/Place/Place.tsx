@@ -5,15 +5,15 @@ import { MBody } from "typography";
 // Components
 import { TitleSet } from "components";
 // Assets
-import arrowLeft from "assets/images/icons/arrow-left.svg";
-import arrowRight from "assets/images/icons/arrow-right.svg";
-import places from "assets/images/places";
+import icons from "assets/img/icons";
+import picture from "assets/img/picture";
 import { SUBTITLE, TITLE, DESCRIPTION } from "assets/static/phrases";
 
 const Place: React.FC = () => {
   const { color } = useTheme();
+  const { place1, place2, place3, place4, place5, place6, place7 } = picture;
 
-  const imgList = Object.values(places);
+  const imgList = [place1, place2, place3, place4, place5, place6, place7];
   const [currentIndex, setCurrentIndex] = React.useState(0);
 
   const handleArrowLeftClick = () => {
@@ -28,10 +28,10 @@ const Place: React.FC = () => {
     <PlaceWrapper>
       <ArrowNavigationWrapper>
         <ArrowButton disabled={currentIndex === 0} onClick={handleArrowLeftClick}>
-          <img src={arrowLeft} alt="arrow-left" />
+          <img src={icons["chevronLeft"]} alt="arrow-left" />
         </ArrowButton>
         <ArrowButton disabled={currentIndex === imgList.length - 1} onClick={handleArrowRightClick}>
-          <img src={arrowRight} alt="arrow-right" />
+          <img src={icons["chevronRight"]} alt="arrow-right" />
         </ArrowButton>
       </ArrowNavigationWrapper>
       <TitleSet subtitle={SUBTITLE.PLACE} title={TITLE.PLACE} />

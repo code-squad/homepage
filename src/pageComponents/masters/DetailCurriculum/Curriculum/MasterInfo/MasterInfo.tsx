@@ -5,10 +5,10 @@ import { XLBody, LBody, MBody, SBody } from "typography";
 // Components
 import { Avatar } from "components";
 // Assets
-import images from "assets/images";
+import avatars from "assets/img/avatars";
 
 type mastersInfo = {
-  avatar: keyof typeof images;
+  avatar: keyof typeof avatars;
   name: string;
   position: string;
   introduce: string;
@@ -24,7 +24,7 @@ const MasterInfo: React.FC<IMasterInfo> = ({ masterInfo }) => {
   return (
     <MasterInfoWrapper>
       <AvatarWrapper>
-        <Avatar key={images[avatar]} width="12rem" height="12rem" src={images[avatar]} />
+        <Avatar key={avatars[avatar]} width="12rem" height="12rem" src={avatars[avatar]} />
       </AvatarWrapper>
       <InfoWrapper>
         <NameWrapper>

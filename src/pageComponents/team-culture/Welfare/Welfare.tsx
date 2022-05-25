@@ -6,7 +6,7 @@ import { WelfareType } from "@type/Welfare";
 // Components
 import { ImageCard, TitleSet } from "components";
 // Assets
-import blocks from "assets/images/blocks";
+import illusts from "assets/img/illusts";
 import { SUBTITLE, TITLE } from "assets/static/phrases";
 // Utils
 import { strainMdxInfo } from "lib/utils";
@@ -22,7 +22,7 @@ const Welfare: React.FC = ({}) => {
         <WelfareList>
           {welfares.map(({ title, content, img }) => (
             <WelfareItem key={title}>
-              <ImageCard description={content} title={title} img={blocks[img]} />
+              <ImageCard description={content} title={title} img={illusts[img]} />
             </WelfareItem>
           ))}
         </WelfareList>

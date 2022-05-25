@@ -2,8 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Link from "gatsby-link";
 // Assets
-import companyLogo from "assets/images/logos/TeamSignature.svg";
-import companyLogoColors from "assets/images/logos/TeamSignatureColors.svg";
+import icons from "assets/img/icons";
 import { LINK } from "assets/static/phrases";
 import { INTERNAL } from "assets/static/urls";
 // Libs
@@ -30,7 +29,7 @@ const TeamGlobalNavigationBar: React.FC = () => {
       <ContentWrapper>
         <Link to="/">
           <TeamSigniture
-            src={scrollPosition ? companyLogoColors : companyLogo}
+            src={scrollPosition ? icons.teamSignature2 : icons.teamSignature1}
             alt="company-logo"
           />
         </Link>

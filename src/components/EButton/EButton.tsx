@@ -3,7 +3,7 @@ import styled from "styled-components";
 // Typography
 import { MBody } from "typography";
 // Assets
-import plus from "assets/images/icons/plus.svg";
+import icons from "assets/img/icons";
 
 export interface IEButtonProps {
   children?: string;
@@ -15,7 +15,7 @@ export interface IEButtonProps {
 const EButton: React.FC<IEButtonProps> = ({ children, accent, disabled, onClick }) => {
   return (
     <EButtonWrapper $accent={accent} $disabled={disabled} {...{ onClick }}>
-      <ButtonIcon src={plus} {...{ disabled }} />
+      <ButtonIcon src={icons["plus"]} {...{ disabled }} />
       <MBody bold>{children}</MBody>
     </EButtonWrapper>
   );
