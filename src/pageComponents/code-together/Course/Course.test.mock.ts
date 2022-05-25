@@ -9,6 +9,7 @@ export const CourseQueryResult = {
           dueDate: "5월 4일 오후 2시 마감",
           price: "100,000원",
           img: "jsPart1",
+          path: "/code-together/javascript",
           tags: ["입문", "초급"],
         },
         {
@@ -18,6 +19,7 @@ export const CourseQueryResult = {
           dueDate: "5월 5일 오후 2시 마감",
           price: "100,000원",
           img: "jsPart2",
+          path: "/code-together/javascript",
           tags: ["입문", "초급"],
         },
         {
@@ -27,6 +29,7 @@ export const CourseQueryResult = {
           dueDate: "5월 6일 오후 2시 마감",
           price: "100,000원",
           img: "jsPart3",
+          path: "/code-together/javascript",
           tags: ["입문", "초급"],
         },
       ],
@@ -41,6 +44,7 @@ const makeCourse = (index: number) => ({
   dueDate: `5월 ${index} 일 오후 2시 마감`,
   price: "100,000원",
   img: `jsPart${index}`,
+  path: "/code-together/javascript",
   tags: ["입문", "초급"],
 });
 const makeCourses = (count: number) => {

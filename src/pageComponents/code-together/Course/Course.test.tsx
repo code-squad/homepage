@@ -61,26 +61,34 @@ describe("<Course>", () => {
   it("화면에 보여지는것 의외에 더 보여줄 수 있는 교육 과정이 9개 이상 있다면 더보기 버튼 클릭시 9개가 추가되어 보여진다.", async () => {
     const { getByText, getAllByLabelText } = renderCourse();
 
-    let courseCards = getAllByLabelText("course-card");
+    let courseCards = getAllByLabelText(/course-card/i);
     expect(courseCards.length).toEqual(9);
 
     const moreBtn = getByText("더보기");
     fireEvent.click(moreBtn);
-    courseCards = getAllByLabelText("course-card");
+    courseCards = getAllByLabelText(/course-card/i);
     expect(courseCards.length).toEqual(18);
   });
   it("화면에 보여지는것 의외에 더 보여줄 수 있는 교육 과정이 9개 미만이라면 남은 교육 과정이 추가되어 보여진다.", async () => {
     const { getByText, getAllByLabelText } = renderCourse();
 
-    let courseCards = getAllByLabelText("course-card");
+    let courseCards = getAllByLabelText(/course-card/i);
     const moreBtn = getByText("더보기");
 
     fireEvent.click(moreBtn);
-    courseCards = getAllByLabelText("course-card");
+    courseCards = getAllByLabelText(/course-card/i);
     expect(courseCards.length).toEqual(18);
 
     fireEvent.click(moreBtn);
-    courseCards = getAllByLabelText("course-card");
+    courseCards = getAllByLabelText(/course-card/i);
     expect(courseCards.length).toEqual(20);
+  });
+  it("각 코스 카드를 클릭하면 path로 설정된곳으로 페이지가 이동된다.", () => {
+    const { getByLabelText } = renderCourse();
+
+    courses.forEach(({ title, path }) => {
+      const courseCard = getByLabelText(`course-card-${title}`);
+      expect(courseCard.getAttribute("href")).toBe(path);
+    });
   });
 });
