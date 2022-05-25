@@ -25,8 +25,10 @@ const Masthead: React.FC = () => {
         <MBody bold>지금 모집 중인 과정</MBody>
       </CourseAdmissionTitleWrapper>
       <CourseAdmissionsList>
-        {scheduledCourses.map(({ title, dueDate, img }: ScheduledCourse) => (
-          <Course key={img} {...{ title, dueDate }} img={icons[img]} />
+        {scheduledCourses.map(({ title, dueDate, img, path }: ScheduledCourse) => (
+          <li key={img}>
+            <Course {...{ title, dueDate, path }} img={icons[img]} />
+          </li>
         ))}
       </CourseAdmissionsList>
     </MastheadWrapper>
@@ -81,6 +83,7 @@ const MastheadQuery = graphql`
           title
           dueDate
           img
+          path
         }
       }
     }
