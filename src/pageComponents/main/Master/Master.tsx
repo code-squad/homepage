@@ -9,6 +9,7 @@ import { MBody, SBody, XLBody, XSBody } from "typography";
 import { TitleSet, TabNavigationBar } from "components";
 // Assets
 import icons from "assets/img/icons";
+import picture from "assets/img/picture";
 import { SUBTITLE, TITLE, DESCRIPTION } from "assets/static/phrases";
 
 const Master: React.FC = () => {
@@ -44,7 +45,7 @@ const Master: React.FC = () => {
       </div>
       <div style={{ backgroundColor: theme.color.greyScale.offWhite }}>
         <MasterInformationWrapper>
-          <MasterImg alt="profile" />
+          <MasterImg alt="profile" src={picture[masterIntroduce.image]} />
           <IntroduceWrapper>
             <Introduce>
               <NicknameWrapper>
