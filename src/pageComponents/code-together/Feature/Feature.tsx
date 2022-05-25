@@ -20,7 +20,7 @@ const Feature: React.FC = ({}) => {
 
   return (
     <FeatureWrapper>
-      <TitleSet subtitle={SUBTITLE.CODE_TOGETHER_FEATURE} title={TITLE.FEATURE} />
+      <TitleSet subtitle={SUBTITLE.CODE_TOGETHER} title={TITLE.FEATURE} />
       <DescriptionWrapper>
         <MBody style={{ width: "fit-content" }}>{DESCRIPTION.CODE_TOGETHER}</MBody>
       </DescriptionWrapper>

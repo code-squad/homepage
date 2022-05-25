@@ -27,7 +27,7 @@ describe("<Feature>", () => {
     const { getByText } = renderFeature();
 
     getByText(TITLE.FEATURE);
-    getByText(SUBTITLE.CODE_TOGETHER_FEATURE);
+    getByText(SUBTITLE.CODE_TOGETHER);
   });
   it("교육 및 학습 문화들에 대한 내용들이 보여진다.", async () => {
     const { getByText } = renderFeature();
