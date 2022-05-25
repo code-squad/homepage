@@ -10,7 +10,7 @@ import member from "./member.svg";
 import plus from "./plus.svg";
 import quotation from "./quotation.svg";
 import roundFilled from "./round-filled.svg";
-import roundLine from "./roundLine.svg";
+import roundLine from "./round-line.svg";
 import codetogether from "./codetogether.svg";
 import masters from "./masters.svg";
 import pattern1 from "./pattern-1.svg";
