@@ -27,6 +27,7 @@ const CourseList: React.FC = () => {
 };
 
 const CourseWrapper = styled.ul`
+  min-width: 144rem;
   margin-top: 8rem;
   margin-bottom: 15rem;
   display: flex;

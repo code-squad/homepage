@@ -84,10 +84,10 @@ const InterviewWrapper = styled.div`
 `;
 
 const TitleWrapper = styled.div`
-  width: 100%;
   width: 106.2rem;
-  margin: 0 auto;
+  padding: 0 18.9rem;
   padding-bottom: 8rem;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;

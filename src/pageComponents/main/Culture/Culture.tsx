@@ -45,6 +45,7 @@ const Culture: React.FC = () => {
 
 const CultureWrapper = styled.div`
   width: 106.2rem;
+  padding: 0 18.9rem;
   padding-bottom: 8rem;
   margin: 0 auto;
   display: flex;
