@@ -14,7 +14,7 @@ interface IImageCard {
 
 const CourseCard: React.FC<IImageCard> = ({ master, title, dueDate, price, tags, img }) => {
   return (
-    <CourseCardWrapper>
+    <CourseCardWrapper aria-label="course-card">
       <CourseCardImg src={img} />
       <CourseMaster>
         <SBody bold>{master}</SBody>
@@ -30,7 +30,7 @@ const CourseCard: React.FC<IImageCard> = ({ master, title, dueDate, price, tags,
       </CoursePrice>
       <CourseTagList>
         {tags.map((tag) => (
-          <CourseTagItem>
+          <CourseTagItem key={tag}>
             <SBody>{tag}</SBody>
           </CourseTagItem>
         ))}
