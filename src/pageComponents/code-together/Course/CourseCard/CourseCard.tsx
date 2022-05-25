@@ -1,7 +1,8 @@
+import { Link } from "gatsby";
 import React from "react";
 import styled from "styled-components";
 // Typography
-import { LBody, SBody, XLBody } from "typography/";
+import { LBody, SBody } from "typography/";
 
 interface IImageCard {
   master: string;
@@ -10,64 +11,95 @@ interface IImageCard {
   price: string;
   tags: string[];
   img: string;
+  path: string;
 }
 
-const CourseCard: React.FC<IImageCard> = ({ master, title, dueDate, price, tags, img }) => {
+const CourseCard: React.FC<IImageCard> = ({ master, title, dueDate, price, tags, img, path }) => {
   return (
-    <CourseCardWrapper aria-label="course-card">
-      <CourseCardImg src={img} />
-      <CourseMaster>
+    <CourseCardWrapper aria-label={`course-card-${title}`} to={path}>
+      <CardImg src={img} />
+      <MasterWrapper>
         <SBody bold>{master}</SBody>
-      </CourseMaster>
-      <CourseTitle>
+      </MasterWrapper>
+      <TitleWrapper>
         <LBody bold>{title}</LBody>
-      </CourseTitle>
-      <CourseDueDate>
+      </TitleWrapper>
+      <DueDateWrapper>
         <SBody>{dueDate}</SBody>
-      </CourseDueDate>
-      <CoursePrice>
+      </DueDateWrapper>
+      <PriceWrapper>
         <SBody bold>{price}</SBody>
-      </CoursePrice>
-      <CourseTagList>
+      </PriceWrapper>
+      <TagList>
         {tags.map((tag) => (
           <CourseTagItem key={tag}>
             <SBody>{tag}</SBody>
           </CourseTagItem>
         ))}
-      </CourseTagList>
+      </TagList>
     </CourseCardWrapper>
   );
 };
 
-const CourseCardWrapper = styled.div<{ medium?: boolean }>`
+const CourseCardWrapper = styled(Link)<{ medium?: boolean }>`
   width: 24rem;
   height: 41.6rem;
+  text-decoration: none;
+
+  &:hover {
+    cursor: pointer;
+    & > *:nth-child(2) {
+      height: 2.3rem;
+      line-height: 2.3rem;
+      border-bottom: 0.1rem solid ${({ theme: { color } }) => color.greyScale.grey1};
+    }
+    & > *:nth-child(3) {
+      height: 2.9rem;
+      line-height: 2.9rem;
+      border-bottom: 0.1rem solid ${({ theme: { color } }) => color.greyScale.black};
+    }
+    & > *:nth-child(4) {
+      height: 2.3rem;
+      line-height: 2.3rem;
+      border-bottom: 0.1rem solid ${({ theme: { color } }) => color.greyScale.grey1};
+    }
+    & > *:nth-child(5) {
+      height: 2.3rem;
+      line-height: 2.3rem;
+      border-bottom: 0.1rem solid ${({ theme: { color } }) => color.greyScale.black};
+    }
+  }
 `;
 
-const CourseCardImg = styled.img`
-  width: 24rem;
-  height: 24rem;
+const CardImg = styled.img`
+  width: 23.8rem;
+  height: 23.8rem;
+  border: 0.1rem solid ${({ theme: { color } }) => color.greyScale.grey3};
 `;
 
-const CourseMaster = styled.div`
+const MasterWrapper = styled.div`
+  width: fit-content;
   margin-top: 2.4rem;
   color: ${({ theme: { color } }) => color.greyScale.grey1};
 `;
 
-const CourseTitle = styled.div`
+const TitleWrapper = styled.div`
+  width: fit-content;
   color: ${({ theme: { color } }) => color.greyScale.black};
 `;
 
-const CourseDueDate = styled.div`
+const DueDateWrapper = styled.div`
+  width: fit-content;
   margin-top: 0.8rem;
   color: ${({ theme: { color } }) => color.greyScale.grey1};
 `;
 
-const CoursePrice = styled.div`
+const PriceWrapper = styled.div`
+  width: fit-content;
   color: ${({ theme: { color } }) => color.greyScale.black};
 `;
 
-const CourseTagList = styled.ul`
+const TagList = styled.ul`
   display: flex;
   margin-top: 1.6rem;
   & > *:not(:last-child) {

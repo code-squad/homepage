@@ -32,11 +32,13 @@ const Course: React.FC = ({}) => {
       <TitleSet subtitle={SUBTITLE.CODE_TOGETHER_COURSE} title={TITLE.COURSE} />
       <CourseListWrapper>
         <CourseList>
-          {courses.slice(0, courseCount).map(({ master, title, dueDate, price, tags, img }) => (
-            <li key={img}>
-              <CourseCard {...{ master, title, dueDate, price, tags }} img={icons[img]} />
-            </li>
-          ))}
+          {courses
+            .slice(0, courseCount)
+            .map(({ master, title, dueDate, price, tags, img, path }) => (
+              <li key={img}>
+                <CourseCard {...{ master, title, dueDate, price, tags, path }} img={icons[img]} />
+              </li>
+            ))}
         </CourseList>
         {courses.length > 9 && (
           <MoreButtonWrapper>
@@ -100,6 +102,7 @@ const CodeTogetherCourseQuery = graphql`
           dueDate
           price
           img
+          path
           tags
         }
       }

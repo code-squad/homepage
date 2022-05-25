@@ -7,5 +7,6 @@ export interface CourseType {
   dueDate: string;
   price: string;
   tags: string[];
+  path: string;
   img: keyof typeof icons;
 }
