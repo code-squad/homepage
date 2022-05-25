@@ -3,7 +3,7 @@ import React from "react";
 import GlobalTheme from "lib/context/GlobalTheme";
 // Components
 import { HomeGlobalNavigationBar, Footer } from "components/";
-import { Masthead, Feature, Course } from "pageComponents/code-together";
+import { Masthead, Feature, StudyMethod, Course } from "pageComponents/code-together";
 
 const CodeTogetherPage: React.FC = () => {
   return (
@@ -12,6 +12,7 @@ const CodeTogetherPage: React.FC = () => {
         <HomeGlobalNavigationBar />
         <Masthead />
         <Feature />
+        <StudyMethod />
         <Course />
         <Footer />
       </main>
