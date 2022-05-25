@@ -12,7 +12,7 @@ const SUBTITLE = {
   TEAM_INTERIVIEW: "코드스쿼드 팀원들이 이야기하는",
   CODESQUAD_TEAM_CULTURE: "핵심 가치가 묻어난",
   WELFARE: "코드스쿼드 복지",
-  CODE_TOGETHER_FEATURE: "코드투게더는",
+  CODE_TOGETHER: "코드투게더는",
   CODE_TOGETHER_COURSE: "코드투게더의",
 };
 
@@ -42,6 +42,7 @@ const TITLE = {
   CODESQUAD_RECRUIT_NEWS: "코드스쿼드 채용 소식 확인하기",
   WELFARE: "우리는 어떤 지원을 받을까요?",
   COURSE: "교육 과정",
+  HOW_STUDY: "어떻게 학습하나요?",
 };
 
 const DESCRIPTION = {
