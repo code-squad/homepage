@@ -12,7 +12,7 @@ interface ICourse {
 const Course: React.FC<ICourse> = ({ title, dueDate, img }) => {
   return (
     <CourseWrapper>
-      <CourseImg src={img} />
+      <CourseImg src={img} alt={`course-img-${title}`} />
       <CourseInfoWrapper>
         <MBody>{title}</MBody>
         <SBody>{dueDate}</SBody>
