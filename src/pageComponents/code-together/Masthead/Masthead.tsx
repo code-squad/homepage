@@ -45,7 +45,7 @@ const MastheadWrapper = styled.div<{ icon: string }>`
 
 const TitleWrapper = styled.div`
   width: 106.2rem;
-  padding: 0 18.9rem;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   & > *:not(:last-child) {
@@ -58,15 +58,14 @@ const TitleWrapper = styled.div`
 
 const CourseAdmissionTitleWrapper = styled.div`
   width: 106.2rem;
-  padding: 0 18.9rem;
+  margin: 0 auto;
   margin-top: 3.2rem;
 `;
 
 const CourseAdmissionsList = styled.ul`
   width: 106.2rem;
-  padding: 0 18.9rem;
   display: flex;
-  margin-top: 4rem;
+  margin: 4rem auto 0 auto;
   & > *:not(:last-child) {
     margin-right: 6.333rem;
   }
