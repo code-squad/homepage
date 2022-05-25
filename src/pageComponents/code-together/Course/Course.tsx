@@ -20,7 +20,7 @@ const Course: React.FC = ({}) => {
 
   const handleMoreButtonClick = () => {
     if (courseCount + 9 <= courses.length) {
-      setCourseCount(courseCount + 5);
+      setCourseCount(courseCount + 9);
       return;
     }
 
@@ -55,8 +55,6 @@ const Course: React.FC = ({}) => {
 const CourseWrapper = styled.div`
   display: flex;
   align-items: center;
-  width: 100%;
-  min-width: 144rem;
   flex-direction: column;
   margin-top: 16rem;
 `;
@@ -71,6 +69,7 @@ const CourseListWrapper = styled.div`
 const CourseList = styled.ul`
   width: 106.2rem;
   padding: 0 18.9rem;
+  margin: 0 auto;
   background-color: ${({ theme: { color } }) => color.greyScale.offWhite};
   display: flex;
   flex-flow: row wrap;
