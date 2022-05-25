@@ -44,13 +44,13 @@ const Interview: React.FC<IInterview> = ({ subtitle, title, interviews, style })
         <TitleSet {...{ title, subtitle }} />
         <ArrowNavigationWrapper>
           <ArrowButton disabled={currentIndex === 0} onClick={handleArrowLeftClick}>
-            <img src={icons["chevronLeft"]} alt="arrow-left" />
+            <img src={icons.chevronLeft} alt="arrow-left" />
           </ArrowButton>
           <ArrowButton
             disabled={currentIndex + 2 === interviews.length}
             onClick={handleArrowRightClick}
           >
-            <img src={icons["chevronRight"]} alt="arrow-right" />
+            <img src={icons.chevronRight} alt="arrow-right" />
           </ArrowButton>
         </ArrowNavigationWrapper>
       </TitleWrapper>

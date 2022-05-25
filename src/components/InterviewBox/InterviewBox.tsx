@@ -59,7 +59,7 @@ const Nutshell = styled.div`
     position: absolute;
     width: 2.4rem;
     height: 2.4rem;
-    background-image: url(${icons["quotation"]});
+    background-image: url(${icons.quotation});
     display: inline-block;
     background-size: contain;
     background-repeat: no-repeat;

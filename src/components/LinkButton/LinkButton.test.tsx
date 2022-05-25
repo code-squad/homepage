@@ -46,9 +46,9 @@ describe("<LinkButton>", () => {
     expect(linkEle?.getAttribute("href")).toBe(to);
   });
   it("icon props가 넘어온다면 아이콘이 보여진다.", () => {
-    const { getByAltText } = renderLinkButton(icons["chevronRight"]);
+    const { getByAltText } = renderLinkButton(icons.chevronRight);
 
     const linkIcon = getByAltText("link-icon");
-    expect(linkIcon.getAttribute("src")).toBe(icons["chevronRight"]);
+    expect(linkIcon.getAttribute("src")).toBe(icons.chevronRight);
   });
 });

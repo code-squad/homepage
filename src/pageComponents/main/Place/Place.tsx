@@ -28,10 +28,10 @@ const Place: React.FC = () => {
     <PlaceWrapper>
       <ArrowNavigationWrapper>
         <ArrowButton disabled={currentIndex === 0} onClick={handleArrowLeftClick}>
-          <img src={icons["chevronLeft"]} alt="arrow-left" />
+          <img src={icons.chevronLeft} alt="arrow-left" />
         </ArrowButton>
         <ArrowButton disabled={currentIndex === imgList.length - 1} onClick={handleArrowRightClick}>
-          <img src={icons["chevronRight"]} alt="arrow-right" />
+          <img src={icons.chevronRight} alt="arrow-right" />
         </ArrowButton>
       </ArrowNavigationWrapper>
       <TitleSet subtitle={SUBTITLE.PLACE} title={TITLE.PLACE} />

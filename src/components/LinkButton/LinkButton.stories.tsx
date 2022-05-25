@@ -25,5 +25,5 @@ Icon.args = {
   description: "코드스쿼드의 정규 교육 과정",
   title: "마스터즈 코스",
   to: "https://codesquad.kr",
-  icon: icons["masters"],
+  icon: icons.masters,
 };

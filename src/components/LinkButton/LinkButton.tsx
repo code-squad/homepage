@@ -23,7 +23,7 @@ const LinkButton: React.FC<ILinkButton> = ({ description, title, to, icon }) => 
         </Description>
         <Title>
           <LBody bold>{title}</LBody>
-          <img aria-label="arrow-right" src={icons["chevronRight"]} width="24px" height="24px" />
+          <img aria-label="arrow-right" src={icons.chevronRight} width="24px" height="24px" />
         </Title>
       </TextWrapper>
       {icon ? <img alt="link-icon" src={icon} width="80px" height="80px" /> : null}

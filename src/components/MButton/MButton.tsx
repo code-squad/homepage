@@ -17,7 +17,7 @@ const MButton: React.FC<IMButtonProps> = ({ children, accent, disabled, to }) =>
   return (
     <MButtonWrapper $accent={accent} $disabled={disabled} {...{ to }}>
       <MBody bold>{children}</MBody>
-      <ButtonIcon src={icons["chevronRight"]} {...{ disabled }} />
+      <ButtonIcon src={icons.chevronRight} {...{ disabled }} />
     </MButtonWrapper>
   );
 };

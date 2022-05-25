@@ -15,7 +15,7 @@ export interface IEButtonProps {
 const EButton: React.FC<IEButtonProps> = ({ children, accent, disabled, onClick }) => {
   return (
     <EButtonWrapper $accent={accent} $disabled={disabled} {...{ onClick }}>
-      <ButtonIcon src={icons["plus"]} {...{ disabled }} />
+      <ButtonIcon src={icons.plus} {...{ disabled }} />
       <MBody bold>{children}</MBody>
     </EButtonWrapper>
   );
