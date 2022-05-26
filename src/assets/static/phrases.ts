@@ -14,6 +14,7 @@ const SUBTITLE = {
   WELFARE: "코드스쿼드 복지",
   CODE_TOGETHER: "코드투게더는",
   CODE_TOGETHER_COURSE: "코드투게더의",
+  JAVASCRIPT: "자바스크립트 과정을 마친",
 };
 
 const TITLE = {
@@ -43,6 +44,7 @@ const TITLE = {
   WELFARE: "우리는 어떤 지원을 받을까요?",
   COURSE: "교육 과정",
   HOW_STUDY: "어떻게 학습하나요?",
+  STUDENT_INTERVIEW: "수강생 후기",
 };
 
 const DESCRIPTION = {
