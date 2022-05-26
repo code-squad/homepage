@@ -30,7 +30,7 @@ const Background = styled.div`
     display: block;
     width: 28rem;
     height: 28rem;
-    background-color: ${({ theme: { color } }) => color.secondary.blue1};
+    background-color: #b2dee6;
     position: relative;
     right: 48rem;
     transform: rotate(45deg);
