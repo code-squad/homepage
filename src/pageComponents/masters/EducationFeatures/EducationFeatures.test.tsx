@@ -33,7 +33,7 @@ describe("<EducationFeatures>", () => {
     const { getByAltText } = renderEducationfeatures();
     const { features } = strainMdxInfo(EducationFeatureResult);
 
-    features.forEach(({ title, img }: EducationFeatureType) => {
+    features.forEach(({ title }: EducationFeatureType) => {
       const featureImage = getByAltText(`card-img-${title}`);
       expect(featureImage?.getAttribute("src")).toBe("test-file-stub");
     });
