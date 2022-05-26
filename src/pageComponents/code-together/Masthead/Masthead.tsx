@@ -9,6 +9,7 @@ import { MBody, MDisplay } from "typography";
 import { Course } from "./Course";
 // Assets
 import icons from "assets/img/icons";
+import { TITLE } from "assets/static/phrases";
 // Lib
 import { strainMdxInfo } from "lib/utils";
 
@@ -22,9 +23,9 @@ const Masthead: React.FC = () => {
         <MBody>{description}</MBody>
       </TitleWrapper>
       <CourseAdmissionTitleWrapper>
-        <MBody bold>지금 모집 중인 과정</MBody>
+        <MBody bold>{TITLE.SCHEDULED_COURSE}</MBody>
         <MoveButtonWrapper>
-          <MBody bold>{`전체 과정 보기 >`}</MBody>
+          <MBody bold>{TITLE.VIEW_ENTIRE_COURSE}</MBody>
         </MoveButtonWrapper>
       </CourseAdmissionTitleWrapper>
       <CourseAdmissionsList>

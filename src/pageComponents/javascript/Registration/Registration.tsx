@@ -15,11 +15,7 @@ const Registration: React.FC = () => {
   return (
     <RegistrationWrapper>
       {registrations.map(({ title, description, caption, path }) => (
-        <LinkType2Button
-          key={title}
-          {...{ title, description, caption }}
-          to={path}
-        ></LinkType2Button>
+        <LinkType2Button key={title} {...{ title, description, caption }} to={path} />
       ))}
     </RegistrationWrapper>
   );

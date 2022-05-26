@@ -54,7 +54,7 @@ const StudyFeature: React.FC = () => {
       <FeatureList>
         {studyFeatures.map(({ title, descriptions, img }) => (
           <FeatureItem key={title}>
-            <ImageCard descriptions={descriptions} title={title} img={illusts[img]} />
+            <ImageCard {...{ title, descriptions }} img={illusts[img]} />
           </FeatureItem>
         ))}
       </FeatureList>
