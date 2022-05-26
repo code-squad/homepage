@@ -3,7 +3,6 @@ export const FAQResult = {
     frontmatter: {
       lists: [
         {
-          index: 1,
           category: "교육과정",
           title: "코드스쿼드는 온라인 수업만 진행하나요?",
           content:
@@ -11,7 +10,6 @@ export const FAQResult = {
           editDate: "2022-04-21",
         },
         {
-          index: 2,
           category: "교육과정",
           title: "기수마다 수업 정원은 몇 명정도 되나요?",
           content:
@@ -19,7 +17,6 @@ export const FAQResult = {
           editDate: "2022-04-22",
         },
         {
-          index: 3,
           category: "교육과정",
           title: "개발은 처음인데, 저도 수업을 들을 수 있을까요?",
           content:
@@ -27,7 +24,6 @@ export const FAQResult = {
           editDate: "2022-04-23",
         },
         {
-          index: 4,
           category: "교육과정",
           title: "[마스터즈 코스] 선발 시험의 수준과 합격 기준은 어떻게 되나요?",
           content:
@@ -35,7 +31,6 @@ export const FAQResult = {
           editDate: "2022-04-24",
         },
         {
-          index: 5,
           category: "교육과정",
           title: "[마스터즈 코스] 시험 준비 외에 무엇을 학습하면 좋을까요?",
           content:
@@ -43,7 +38,6 @@ export const FAQResult = {
           editDate: "2022-04-25",
         },
         {
-          index: 6,
           category: "결제",
           title: "수강료 결제는 어떻게 하나요?",
           content:
@@ -51,7 +45,6 @@ export const FAQResult = {
           editDate: "2022-04-26",
         },
         {
-          index: 7,
           category: "결제",
           title: "수강료 환급 과정이나 국비 지원이 되나요?",
           content:
@@ -59,7 +52,6 @@ export const FAQResult = {
           editDate: "2022-04-27",
         },
         {
-          index: 8,
           category: "취업",
           title: "교육 과정 수료 후, 취업하기까지 얼마나 걸리나요?",
           content:
@@ -67,7 +59,6 @@ export const FAQResult = {
           editDate: "2022-04-28",
         },
         {
-          index: 9,
           category: "취업",
           title: "교육 과정 수료 후, 취업 지원 시스템이 있나요?",
           content:
@@ -75,7 +66,6 @@ export const FAQResult = {
           editDate: "2022-04-29",
         },
         {
-          index: 10,
           category: "기타",
           title: "과정 중에 빈자리가 생긴다면 들어갈 수 있나요?",
           content:

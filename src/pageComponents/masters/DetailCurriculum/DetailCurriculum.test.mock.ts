@@ -8,7 +8,6 @@ export const DetailCurriculumQueryResult = {
             index: 1,
             curriculum: [
               {
-                index: 1,
                 subject: "개인 프로젝트",
                 subjectList: [
                   {
@@ -42,7 +41,6 @@ export const DetailCurriculumQueryResult = {
                 ],
               },
               {
-                index: 2,
                 subject: "팀 프로젝트",
                 subjectList: [
                   {
@@ -85,7 +83,6 @@ export const DetailCurriculumQueryResult = {
             index: 2,
             curriculum: [
               {
-                index: 1,
                 subject: "개인 프로젝트",
                 subjectList: [
                   {
@@ -107,7 +104,6 @@ export const DetailCurriculumQueryResult = {
                 ],
               },
               {
-                index: 2,
                 subject: "팀 프로젝트",
                 subjectList: [
                   {
@@ -147,7 +143,6 @@ export const DetailCurriculumQueryResult = {
             index: 3,
             curriculum: [
               {
-                index: 1,
                 subject: "개인 프로젝트",
                 subjectList: [
                   {
@@ -169,7 +164,6 @@ export const DetailCurriculumQueryResult = {
                 ],
               },
               {
-                index: 2,
                 subject: "팀 프로젝트",
                 subjectList: [
                   {

@@ -3,7 +3,6 @@ export const CultureResult = {
     frontmatter: {
       cultures: [
         {
-          index: 1,
           image: "freedomAndResponsibility",
           title: "자율과 책임",
           subtitle: "자유롭게 탐색하는 학습",
@@ -12,7 +11,6 @@ export const CultureResult = {
         },
 
         {
-          index: 2,
           image: "respectAndEmbrace",
           title: "존중과 포용",
           subtitle: "동료와 함께하는 학습",
@@ -21,7 +19,6 @@ export const CultureResult = {
         },
 
         {
-          index: 3,
           image: "circulationAndDistribution",
           title: "순환과 공헌",
           subtitle: "학습한 것을 나누는 태도",

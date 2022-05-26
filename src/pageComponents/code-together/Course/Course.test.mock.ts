@@ -3,7 +3,6 @@ export const CourseQueryResult = {
     frontmatter: {
       courses: [
         {
-          index: 1,
           master: "크롱・ 프론트엔드",
           title: "자바스크립트 Part.1",
           dueDate: "5월 4일 오후 2시 마감",
@@ -13,7 +12,6 @@ export const CourseQueryResult = {
           tags: ["입문", "초급"],
         },
         {
-          index: 2,
           master: "크롱・ 프론트엔드",
           title: "자바스크립트 Part.2",
           dueDate: "5월 5일 오후 2시 마감",
@@ -23,7 +21,6 @@ export const CourseQueryResult = {
           tags: ["입문", "초급"],
         },
         {
-          index: 3,
           master: "크롱・ 프론트엔드",
           title: "자바스크립트 Part.3",
           dueDate: "5월 6일 오후 2시 마감",
