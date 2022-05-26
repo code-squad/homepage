@@ -10,6 +10,7 @@ import place5 from "./place5.jpeg";
 import place6 from "./place6.jpeg";
 import place7 from "./place7.jpeg";
 import codetogetherStudy1 from "./codetogether-study-1.svg";
+import javascriptTimetable from "./javascript-timetable.svg";
 
 export default {
   jk,
@@ -24,4 +25,5 @@ export default {
   place6,
   place7,
   codetogetherStudy1,
+  javascriptTimetable,
 };
