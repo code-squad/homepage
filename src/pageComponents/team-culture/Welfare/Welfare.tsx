@@ -64,7 +64,6 @@ const WelfareQuery = graphql`
     mdx(frontmatter: { templateKey: { eq: "team_welfares" } }) {
       frontmatter {
         welfares {
-          index
           title
           content
           img

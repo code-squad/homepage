@@ -12,7 +12,9 @@ import { SUBTITLE, TITLE } from "assets/static/phrases";
 import { strainAllMdxInfo } from "lib/utils";
 
 const DetailCurriculum: React.FC = () => {
-  const curriculumInfo: CurriculumType[] = strainAllMdxInfo(useStaticQuery(CurriculumQuery));
+  const curriculumInfo: CurriculumType[] = strainAllMdxInfo(
+    useStaticQuery(JavascriptCurriculumQuery)
+  );
   const titles = curriculumInfo.map(({ tabName }) => tabName);
 
   const [curriculumIndex, setCurriculumIndex] = React.useState(0);
@@ -51,11 +53,11 @@ const CurriculumWrapper = styled.div`
   background-color: ${({ theme: { color } }) => color.greyScale.offWhite};
 `;
 
-const CurriculumQuery = graphql`
-  query CurriculumQuery {
+const JavascriptCurriculumQuery = graphql`
+  query JavascriptCurriculumQuery {
     allMdx(
       sort: { order: ASC, fields: [frontmatter___index] }
-      filter: { frontmatter: { templateKey: { glob: "masters_curriculum*" } } }
+      filter: { frontmatter: { templateKey: { glob: "codeTogether_javascript_part*" } } }
     ) {
       edges {
         node {

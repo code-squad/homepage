@@ -76,7 +76,7 @@ const Interview: React.FC<IInterview> = ({ subtitle, title, interviews, style })
 };
 
 const InterviewWrapper = styled.div`
-  margin-bottom: 20rem;
+  margin-bottom: 16rem;
   display: flex;
   flex-direction: column;
   align-items: space-between;

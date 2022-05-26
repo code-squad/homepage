@@ -72,7 +72,6 @@ const FAQListQuery = graphql`
         lists {
           content
           editDate
-          index
           title
           category
         }

@@ -96,7 +96,6 @@ const CodeTogetherCourseQuery = graphql`
     mdx(frontmatter: { templateKey: { eq: "codeTogether_courses" } }) {
       frontmatter {
         courses {
-          index
           master
           title
           dueDate

@@ -23,6 +23,9 @@ const Masthead: React.FC = () => {
       </TitleWrapper>
       <CourseAdmissionTitleWrapper>
         <MBody bold>지금 모집 중인 과정</MBody>
+        <MoveButtonWrapper>
+          <MBody bold>{`전체 과정 보기 >`}</MBody>
+        </MoveButtonWrapper>
       </CourseAdmissionTitleWrapper>
       <CourseAdmissionsList>
         {scheduledCourses.map(({ title, dueDate, img, path }: ScheduledCourse) => (
@@ -62,6 +65,14 @@ const CourseAdmissionTitleWrapper = styled.div`
   width: 106.2rem;
   margin: 0 auto;
   margin-top: 3.2rem;
+  display: flex;
+  justify-content: space-between;
+`;
+
+const MoveButtonWrapper = styled.button`
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
 `;
 
 const CourseAdmissionsList = styled.ul`

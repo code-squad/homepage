@@ -1,13 +1,23 @@
 import React from "react";
 import styled from "styled-components";
+import { graphql, useStaticQuery } from "gatsby";
+// Type
+import { CodeTogetherFeatureType } from "@type/CodeTogetherFeature";
 // Components
 import { TitleSet } from "components";
+import { ImageCard } from "./ImageCard";
 // Assets
 import icons from "assets/img/icons";
+import illusts from "assets/img/illusts";
 import picture from "assets/img/picture";
 import { SUBTITLE, TITLE } from "assets/static/phrases";
+// Utils
+import { strainMdxInfo } from "lib/utils";
 
 const StudyMethod: React.FC = () => {
+  const data = useStaticQuery(CodeTogetherStudyMethodQuery);
+  const { studyFeatures }: { studyFeatures: CodeTogetherFeatureType[] } = strainMdxInfo(data);
+
   const { codetogetherStudy1 } = picture;
 
   const imgList = [codetogetherStudy1, codetogetherStudy1];
@@ -32,15 +42,22 @@ const StudyMethod: React.FC = () => {
         </ArrowButton>
       </ArrowNavigationWrapper>
       <TitleSet subtitle={SUBTITLE.CODE_TOGETHER} title={TITLE.HOW_STUDY} />
-      <StudyMethodListWrapper>
-        <StudyMethodList {...{ currentIndex }}>
+      <StudyMethodImgListWrapper>
+        <StudyMethodImgList {...{ currentIndex }}>
           {imgList.map((image, i) => (
             <li key={`${image}-${i}`}>
               <StudyMethodImage src={image} alt="codetogether-studymethod" />
             </li>
           ))}
-        </StudyMethodList>
-      </StudyMethodListWrapper>
+        </StudyMethodImgList>
+      </StudyMethodImgListWrapper>
+      <FeatureList>
+        {studyFeatures.map(({ title, descriptions, img }) => (
+          <FeatureItem key={title}>
+            <ImageCard descriptions={descriptions} title={title} img={illusts[img]} />
+          </FeatureItem>
+        ))}
+      </FeatureList>
     </StudyWrapper>
   );
 };
@@ -88,13 +105,13 @@ const ArrowButton = styled.button`
   }
 `;
 
-const StudyMethodListWrapper = styled.div`
+const StudyMethodImgListWrapper = styled.div`
   width: 80rem;
   margin: 0 auto;
   overflow: hidden;
 `;
 
-const StudyMethodList = styled.ul<{ currentIndex: number }>`
+const StudyMethodImgList = styled.ul<{ currentIndex: number }>`
   display: flex;
   position: relative;
   display: flex;
@@ -104,6 +121,38 @@ const StudyMethodList = styled.ul<{ currentIndex: number }>`
 
 const StudyMethodImage = styled.img`
   width: 77.8rem;
+`;
+
+const FeatureList = styled.ul`
+  width: 106.2rem;
+  margin-top: 6.4rem;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+  & > *:not(:nth-child(3n)) {
+    margin-right: 7.8rem;
+  }
+  & > *:not(:nth-last-child(-n + 3)) {
+    margin-bottom: 8rem;
+  }
+`;
+
+const FeatureItem = styled.li`
+  display: inline-flex;
+`;
+
+const CodeTogetherStudyMethodQuery = graphql`
+  query CodeTogetherStudyMethodQuery {
+    mdx(frontmatter: { templateKey: { eq: "codeTogether_studyFeatures" } }) {
+      frontmatter {
+        studyFeatures {
+          title
+          img
+          descriptions
+        }
+      }
+    }
+  }
 `;
 
 export default StudyMethod;

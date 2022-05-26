@@ -71,7 +71,6 @@ const CodeTogetherFeatureQuery = graphql`
     mdx(frontmatter: { templateKey: { eq: "codeTogether_features" } }) {
       frontmatter {
         features {
-          index
           title
           img
           descriptions

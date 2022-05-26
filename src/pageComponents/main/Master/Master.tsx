@@ -146,6 +146,7 @@ const NicknameWrapper = styled.div`
 const MasterImg = styled.img`
   width: 41rem;
   height: 41rem;
+  border-radius: 1.6rem;
 `;
 
 const CareerWrapper = styled.ul`
