@@ -8,7 +8,8 @@ import { MBody, SBody, XLBody, XSBody } from "typography";
 // Components
 import { TitleSet, TabNavigationBar } from "components";
 // Assets
-import icons from "assets/images/icons";
+import icons from "assets/img/icons";
+import picture from "assets/img/picture";
 import { SUBTITLE, TITLE, DESCRIPTION } from "assets/static/phrases";
 
 const Master: React.FC = () => {
@@ -44,7 +45,7 @@ const Master: React.FC = () => {
       </div>
       <div style={{ backgroundColor: theme.color.greyScale.offWhite }}>
         <MasterInformationWrapper>
-          <MasterImg alt="profile" />
+          <MasterImg alt="profile" src={picture[masterIntroduce.image]} />
           <IntroduceWrapper>
             <Introduce>
               <NicknameWrapper>
@@ -77,8 +78,8 @@ const Master: React.FC = () => {
                 </MBody>
                 <ScheduleList>
                   {masterIntroduce.schedules.map(({ image, title, subtitle, path }) => (
-                    <li>
-                      <Schedule key={title} to={path}>
+                    <li key={title}>
+                      <Schedule to={path}>
                         <CourseImage src={icons[image]} alt="course" />
                         <CourseTitleWrapper>
                           <TitleWrapper>

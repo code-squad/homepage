@@ -8,6 +8,10 @@ import calander from "./calander.svg";
 import coin from "./coin.svg";
 import book from "./book.svg";
 import mastersBig from "./masters-big.svg";
+import codeTogetherBig from "./code-together-big.svg";
+import jsPart1 from "./js-part-1.svg";
+import jsPart2 from "./js-part-2.svg";
+import jsPart3 from "./js-part-3.svg";
 
 export default {
   freedomAndResponsibility,
@@ -20,4 +24,8 @@ export default {
   coin,
   book,
   mastersBig,
+  codeTogetherBig,
+  jsPart1,
+  jsPart2,
+  jsPart3,
 };

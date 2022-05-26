@@ -5,9 +5,8 @@ import { InterviewType } from "@type/Interview";
 // Components
 import { InterviewBox, TitleSet } from "components/";
 // Assets
-import avatars from "assets/images/avatars";
-import arrowLeft from "assets/images/icons/arrow-left.svg";
-import arrowRight from "assets/images/icons/arrow-right.svg";
+import avatars from "assets/img/avatars";
+import icons from "assets/img/icons";
 
 interface IInterview {
   subtitle: string;
@@ -45,13 +44,13 @@ const Interview: React.FC<IInterview> = ({ subtitle, title, interviews, style })
         <TitleSet {...{ title, subtitle }} />
         <ArrowNavigationWrapper>
           <ArrowButton disabled={currentIndex === 0} onClick={handleArrowLeftClick}>
-            <img src={arrowLeft} alt="arrow-left" />
+            <img src={icons.chevronLeft} alt="arrow-left" />
           </ArrowButton>
           <ArrowButton
             disabled={currentIndex + 2 === interviews.length}
             onClick={handleArrowRightClick}
           >
-            <img src={arrowRight} alt="arrow-right" />
+            <img src={icons.chevronRight} alt="arrow-right" />
           </ArrowButton>
         </ArrowNavigationWrapper>
       </TitleWrapper>
@@ -65,8 +64,8 @@ const Interview: React.FC<IInterview> = ({ subtitle, title, interviews, style })
                 interview.writerPhoto
                   ? avatars[interview.writerPhoto]
                   : index % 2 === 0
-                  ? avatars["avatarOrange"]
-                  : avatars["avatarGreen"]
+                  ? avatars.profileMemberA
+                  : avatars.profileMemberB
               }
             />
           ))}
@@ -85,10 +84,10 @@ const InterviewWrapper = styled.div`
 `;
 
 const TitleWrapper = styled.div`
-  width: 100%;
   width: 106.2rem;
-  margin: 0 auto;
+  padding: 0 18.9rem;
   padding-bottom: 8rem;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;

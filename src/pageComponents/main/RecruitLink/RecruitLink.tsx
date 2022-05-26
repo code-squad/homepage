@@ -8,19 +8,20 @@ import { INTERNAL } from "assets/static/urls";
 
 const RecruitLink: React.FC = () => {
   return (
-    <RecruiteLinkWrapper>
+    <RecruitLinkWrapper>
       <LinkButton
         to={INTERNAL.RECRUIT}
         title={LINK.CONFIRM_RECRUIT}
         description={LINK_DESCRIPTION.CONFIRM_RECRUIT}
       />
-    </RecruiteLinkWrapper>
+    </RecruitLinkWrapper>
   );
 };
 
-const RecruiteLinkWrapper = styled.div`
+const RecruitLinkWrapper = styled.div`
   width: 106.2rem;
   display: flex;
+  padding: 0 18.9rem;
   padding-bottom: 20rem;
   margin: 0 auto;
 `;

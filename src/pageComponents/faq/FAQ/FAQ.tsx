@@ -8,7 +8,7 @@ import { LDisplay } from "typography";
 // Components
 import { DropdownItem, TagNavigationBar } from "components";
 // Assets
-import backgrounds from "assets/images/backgrounds";
+import illusts from "assets/img/illusts";
 import { TITLE } from "assets/static/phrases";
 // Lib
 import { strainMdxInfo } from "lib/utils";
@@ -33,7 +33,7 @@ const FAQ: React.FC = () => {
   }, [currentIndex]);
 
   return (
-    <FAQWrapper image={backgrounds["knot"]}>
+    <FAQWrapper image={illusts.knot}>
       <FAQContentWrapper>
         <LDisplay style={{ paddingTop: "16rem", paddingBottom: "3.2rem" }}>{TITLE.FAQ}</LDisplay>
         <TagNavigationBar titles={Array.from(categories)} onIndexChanged={setCurrentIndex} />

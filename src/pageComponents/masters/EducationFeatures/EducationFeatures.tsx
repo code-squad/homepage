@@ -6,7 +6,7 @@ import { EducationFeatureType } from "@type/EducationFeature";
 // Components
 import { ImageCard, TitleSet } from "components";
 // Assets
-import images from "assets/images";
+import illusts from "assets/img/illusts";
 import { SUBTITLE, TITLE } from "assets/static/phrases";
 // Utils
 import { strainMdxInfo } from "lib/utils";
@@ -22,7 +22,7 @@ const EducationFeatures: React.FC = ({}) => {
         <FeatureList>
           {features.map(({ title, content, img }) => (
             <FeatureItem key={title}>
-              <ImageCard description={content} title={title} img={images[img]} medium />
+              <ImageCard description={content} title={title} img={illusts[img]} medium />
             </FeatureItem>
           ))}
         </FeatureList>

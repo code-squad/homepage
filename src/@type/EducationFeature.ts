@@ -1,8 +1,8 @@
-import images from "assets/images";
+import illusts from "assets/img/illusts";
 
 export interface EducationFeatureType {
   index?: number;
   title: string;
   content: string;
-  img: keyof typeof images;
+  img: keyof typeof illusts;
 }

@@ -8,7 +8,7 @@ import { MBody, XLBody } from "typography";
 // Components
 import { TitleSet } from "components/";
 // Assets
-import icons from "assets/images/icons";
+import icons from "assets/img/icons";
 import { SUBTITLE, TITLE } from "assets/static/phrases";
 // Lib
 import { strainMdxInfo } from "lib/utils";
@@ -45,6 +45,7 @@ const Culture: React.FC = () => {
 
 const CultureWrapper = styled.div`
   width: 106.2rem;
+  padding: 0 18.9rem;
   padding-bottom: 8rem;
   margin: 0 auto;
   display: flex;

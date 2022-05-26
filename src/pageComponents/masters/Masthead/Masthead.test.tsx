@@ -1,14 +1,10 @@
 import React from "react";
 import * as Gatsby from "gatsby";
-import { getByText, render } from "@testing-library/react";
-// Type
-import { InterviewType } from "@type/Interview";
+import { render } from "@testing-library/react";
 // Testing-Component
 import { Masthead } from ".";
 // Mock
 import { MastHeadQueryResult } from "./Masthead.test.mock";
-// Assets
-import { SUBTITLE, TITLE } from "assets/static/phrases";
 // Lib
 import { strainMdxInfo } from "lib/utils";
 import { TestProvider } from "lib/testUtils";

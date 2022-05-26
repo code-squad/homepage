@@ -19,7 +19,7 @@ const FAQ: React.FC = () => {
     mastersFAQList.length > 5 ? 5 : mastersFAQList.length
   );
 
-  const handlePlusButtonClick = () => {
+  const handleMoreButtonClick = () => {
     if (faqCount + 5 <= mastersFAQList.length) {
       setFAQCount(faqCount + 5);
       return;
@@ -44,7 +44,7 @@ const FAQ: React.FC = () => {
         <EButton
           children="더보기"
           disabled={faqCount === mastersFAQList.length}
-          onClick={handlePlusButtonClick}
+          onClick={handleMoreButtonClick}
         />
       )}
     </FAQWrapper>

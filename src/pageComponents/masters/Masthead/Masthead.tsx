@@ -6,7 +6,7 @@ import { MBody, MDisplay } from "typography";
 // Components
 import { InfoItem } from "./InfoItem";
 // Assets
-import icons from "assets/images/icons";
+import icons from "assets/img/icons";
 import { TITLE } from "assets/static/phrases";
 // Lib
 import { strainMdxInfo } from "lib/utils";
@@ -25,7 +25,7 @@ const Masthead: React.FC = () => {
       <CourseInfoWrapper>
         <TargetWrapper>
           <TargetTitle>
-            <img src={icons.headEmoji} style={{ marginRight: ".8rem" }} />
+            <img src={icons.member} style={{ marginRight: ".8rem" }} />
             <MBody bold>{TITLE.EDUCATION_TARGET}</MBody>
           </TargetTitle>
           {targets.map((target: string) => (

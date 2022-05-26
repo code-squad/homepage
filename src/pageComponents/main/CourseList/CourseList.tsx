@@ -3,7 +3,7 @@ import styled from "styled-components";
 // Components
 import { LinkButton } from "components";
 // Assets
-import icons from "assets/images/icons";
+import icons from "assets/img/icons";
 import { LINK_DESCRIPTION, LINK } from "assets/static/phrases";
 import { INTERNAL } from "assets/static/urls";
 
@@ -20,13 +20,14 @@ const CourseList: React.FC = () => {
         to={INTERNAL.CODE_TOGETHER}
         title={LINK.CODE_TOGETHER}
         description={LINK_DESCRIPTION.CODE_TOGETHER}
-        icon={icons.codeTogether}
+        icon={icons.codetogether}
       />
     </CourseWrapper>
   );
 };
 
 const CourseWrapper = styled.ul`
+  min-width: 144rem;
   margin-top: 8rem;
   margin-bottom: 15rem;
   display: flex;

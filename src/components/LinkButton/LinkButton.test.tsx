@@ -3,7 +3,7 @@ import { render } from "@testing-library/react";
 // Testing-Component
 import { LinkButton } from ".";
 // assets
-import rightArrow from "assets/images/icons/arrow-right.svg";
+import icons from "assets/img/icons";
 // lib
 import { TestProvider } from "lib/testUtils";
 
@@ -46,9 +46,9 @@ describe("<LinkButton>", () => {
     expect(linkEle?.getAttribute("href")).toBe(to);
   });
   it("icon props가 넘어온다면 아이콘이 보여진다.", () => {
-    const { getByAltText } = renderLinkButton(rightArrow);
+    const { getByAltText } = renderLinkButton(icons.chevronRight);
 
     const linkIcon = getByAltText("link-icon");
-    expect(linkIcon.getAttribute("src")).toBe(rightArrow);
+    expect(linkIcon.getAttribute("src")).toBe(icons.chevronRight);
   });
 });
