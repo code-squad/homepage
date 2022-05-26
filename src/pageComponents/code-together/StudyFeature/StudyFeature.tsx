@@ -14,8 +14,8 @@ import { SUBTITLE, TITLE } from "assets/static/phrases";
 // Utils
 import { strainMdxInfo } from "lib/utils";
 
-const StudyMethod: React.FC = () => {
-  const data = useStaticQuery(CodeTogetherStudyMethodQuery);
+const StudyFeature: React.FC = () => {
+  const data = useStaticQuery(CodeTogetherStudyFeatureQuery);
   const { studyFeatures }: { studyFeatures: CodeTogetherFeatureType[] } = strainMdxInfo(data);
 
   const { codetogetherStudy1 } = picture;
@@ -42,15 +42,15 @@ const StudyMethod: React.FC = () => {
         </ArrowButton>
       </ArrowNavigationWrapper>
       <TitleSet subtitle={SUBTITLE.CODE_TOGETHER} title={TITLE.HOW_STUDY} />
-      <StudyMethodImgListWrapper>
-        <StudyMethodImgList {...{ currentIndex }}>
+      <StudyFeatureImgListWrapper>
+        <StudyFeatureImgList {...{ currentIndex }}>
           {imgList.map((image, i) => (
             <li key={`${image}-${i}`}>
-              <StudyMethodImage src={image} alt="codetogether-studymethod" />
+              <StudyFeatureImg src={image} alt="codetogether-study-feature" />
             </li>
           ))}
-        </StudyMethodImgList>
-      </StudyMethodImgListWrapper>
+        </StudyFeatureImgList>
+      </StudyFeatureImgListWrapper>
       <FeatureList>
         {studyFeatures.map(({ title, descriptions, img }) => (
           <FeatureItem key={title}>
@@ -105,13 +105,13 @@ const ArrowButton = styled.button`
   }
 `;
 
-const StudyMethodImgListWrapper = styled.div`
+const StudyFeatureImgListWrapper = styled.div`
   width: 80rem;
   margin: 0 auto;
   overflow: hidden;
 `;
 
-const StudyMethodImgList = styled.ul<{ currentIndex: number }>`
+const StudyFeatureImgList = styled.ul<{ currentIndex: number }>`
   display: flex;
   position: relative;
   display: flex;
@@ -119,7 +119,7 @@ const StudyMethodImgList = styled.ul<{ currentIndex: number }>`
   left: -${({ currentIndex }) => currentIndex * 77.8}rem;
 `;
 
-const StudyMethodImage = styled.img`
+const StudyFeatureImg = styled.img`
   width: 77.8rem;
 `;
 
@@ -141,8 +141,8 @@ const FeatureItem = styled.li`
   display: inline-flex;
 `;
 
-const CodeTogetherStudyMethodQuery = graphql`
-  query CodeTogetherStudyMethodQuery {
+const CodeTogetherStudyFeatureQuery = graphql`
+  query CodeTogetherStudyFeatureQuery {
     mdx(frontmatter: { templateKey: { eq: "codeTogether_studyFeatures" } }) {
       frontmatter {
         studyFeatures {
@@ -155,4 +155,4 @@ const CodeTogetherStudyMethodQuery = graphql`
   }
 `;
 
-export default StudyMethod;
+export default StudyFeature;
