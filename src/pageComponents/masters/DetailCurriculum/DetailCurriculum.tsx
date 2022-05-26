@@ -63,7 +63,6 @@ const CurriculumQuery = graphql`
             tabName
             index
             curriculum {
-              index
               subject
               subjectList {
                 detail

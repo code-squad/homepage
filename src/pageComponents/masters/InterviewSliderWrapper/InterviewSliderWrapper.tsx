@@ -28,7 +28,6 @@ const InterviewListQuery = graphql`
     mdx(frontmatter: { templateKey: { eq: "masters_interview_list" } }) {
       frontmatter {
         interviewList {
-          index
           writerPhoto
           nutshell
           content

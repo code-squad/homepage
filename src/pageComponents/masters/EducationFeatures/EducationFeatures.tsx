@@ -60,7 +60,6 @@ const FeaturesQuery = graphql`
     mdx(frontmatter: { templateKey: { eq: "masters_features" } }) {
       frontmatter {
         features {
-          index
           title
           content
           img

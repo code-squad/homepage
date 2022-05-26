@@ -146,7 +146,6 @@ const CodeTogetherStudyMethodQuery = graphql`
     mdx(frontmatter: { templateKey: { eq: "codeTogether_studyFeatures" } }) {
       frontmatter {
         studyFeatures {
-          index
           title
           img
           descriptions
