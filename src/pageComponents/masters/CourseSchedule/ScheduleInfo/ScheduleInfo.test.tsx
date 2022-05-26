@@ -1,14 +1,14 @@
 import React from "react";
-import * as Gatsby from "gatsby";
-import { fireEvent, render } from "@testing-library/react";
+import { render } from "@testing-library/react";
 // Testing-Component
 import { ScheduleInfo } from ".";
 // Mock
-import { scheduleInfo } from "./ScheduleInfo.test.mock";
+import { makeScheduleInfo } from "./ScheduleInfo.test.mock";
 // lib
 import { TestProvider } from "lib/testUtils";
 
 describe("<ScheduleInfo>", () => {
+  const scheduleInfo = makeScheduleInfo("지금 바로 마스터즈 코스 지원");
   const renderScheduleInfo = (selectedScheduleIndex: number) =>
     render(
       <TestProvider>
@@ -43,6 +43,18 @@ describe("<ScheduleInfo>", () => {
 
     getByText(waiterApplyUrlBtnText);
     getByText(applyBtnText);
+  });
+  it("progress의 index가 0 이라도 버튼을 나타내는 텍스트가 없다면 보여지지 않는다.", async () => {
+    const { getByText, queryByText } = render(
+      <TestProvider>
+        <ScheduleInfo {...{ selectedScheduleIndex: 0, scheduleInfo: makeScheduleInfo("") }} />
+      </TestProvider>
+    );
+
+    const { waiterApplyUrlBtnText, applyBtnText } = scheduleInfo;
+
+    getByText(waiterApplyUrlBtnText);
+    expect(queryByText(applyBtnText)).toBe(null);
   });
   it("버튼들에는 각 버튼에 맞는 링크주소가 주어져있다.", async () => {
     window.open = jest.fn();
