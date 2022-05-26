@@ -3,12 +3,12 @@ import styled from "styled-components";
 // Typography
 import { MDisplay } from "typography";
 // Assets
-import illusts from "assets/img/illusts";
 import { TITLE } from "assets/static/phrases";
 
 const TeamIntroduce: React.FC = () => {
   return (
-    <TeamIntroduceWrapper image={illusts.diamond}>
+    <TeamIntroduceWrapper>
+      <Background />
       <IntroduceText>
         <MDisplay>{TITLE.TEAM_CULTURE}</MDisplay>
       </IntroduceText>
@@ -16,15 +16,33 @@ const TeamIntroduce: React.FC = () => {
   );
 };
 
-const TeamIntroduceWrapper = styled.div<{ image: string }>`
+const Background = styled.div`
+  position: absolute;
+  z-index: -1;
+  background-color: ${({ theme: { color } }) => color.secondary.blue3};
+  height: 56rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  &::after {
+    content: "";
+    display: block;
+    width: 28rem;
+    height: 28rem;
+    background-color: #b2dee6;
+    position: relative;
+    right: 48rem;
+    transform: rotate(45deg);
+  }
+`;
+
+const TeamIntroduceWrapper = styled.div`
   width: 100%;
   height: calc(100vw * 56 / 144);
   min-width: 144rem;
   min-height: 56rem;
   margin-bottom: 16rem;
-  background-image: ${({ image }) => `url(${image})`};
-  background-repeat: no-repeat;
-  background-size: 100%;
   color: ${({ theme: { color } }) => color.greyScale.black};
   white-space: pre-line;
   text-align: start;

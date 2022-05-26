@@ -8,7 +8,6 @@ import { LDisplay } from "typography";
 // Components
 import { DropdownItem, TagNavigationBar } from "components";
 // Assets
-import illusts from "assets/img/illusts";
 import { TITLE } from "assets/static/phrases";
 import { strainMdxInfo } from "lib/utils";
 
@@ -34,7 +33,8 @@ const JobPosition: React.FC = () => {
   }, [currentIndex]);
 
   return (
-    <JobPositionWrapper image={illusts.diamond}>
+    <JobPositionWrapper>
+      <Background />
       <JobPositionContentWrapper>
         <LDisplay style={{ paddingTop: "16rem", paddingBottom: "3.2rem" }}>{TITLE.APPLY}</LDisplay>
         <TagNavigationBar titles={Array.from(categories)} onIndexChanged={setCurrentIndex} />
@@ -48,13 +48,31 @@ const JobPosition: React.FC = () => {
   );
 };
 
-const JobPositionWrapper = styled.div<{ image: string }>`
+const Background = styled.div`
+  position: absolute;
+  z-index: -1;
+  background-color: ${({ theme: { color } }) => color.secondary.blue3};
+  height: 56rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  &::after {
+    content: "";
+    display: block;
+    width: 28rem;
+    height: 28rem;
+    background-color: #b2dee6;
+    position: relative;
+    right: 48rem;
+    transform: rotate(45deg);
+  }
+`;
+
+const JobPositionWrapper = styled.div`
   width: 100%;
   min-width: 144rem;
   padding-bottom: 16rem;
-  background-image: ${({ image }) => `url(${image})`};
-  background-repeat: no-repeat;
-  background-size: 100%;
   color: ${({ theme: { color } }) => color.greyScale.black};
   white-space: pre-line;
   text-align: start;
