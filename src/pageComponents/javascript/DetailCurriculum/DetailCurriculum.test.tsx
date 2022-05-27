@@ -23,12 +23,14 @@ describe("<DetailCurriculum>", () => {
     );
   const useStaticQuery = jest.spyOn(Gatsby, "useStaticQuery");
   useStaticQuery.mockImplementation(() => DetailCurriculumQueryResult);
+  const curriculumInfo: CodeTogetherCurriculumType[] = strainAllMdxInfo(
+    DetailCurriculumQueryResult
+  );
+  const titles = curriculumInfo.map(({ tabName }) => tabName);
+  const masters = curriculumInfo.map(({ masterInfo }) => masterInfo);
+  const subjectList = curriculumInfo.map(({ subjectList }) => subjectList);
   it("각 탭들이 보여진다.", async () => {
     const { getByText } = renderDetailCurriculum();
-    const curriculumInfo: CodeTogetherCurriculumType[] = strainAllMdxInfo(
-      DetailCurriculumQueryResult
-    );
-    const titles = curriculumInfo.map(({ tabName }) => tabName);
 
     titles.forEach((title: string) => {
       getByText(title);
@@ -36,11 +38,6 @@ describe("<DetailCurriculum>", () => {
   });
   it("각 탭들을 클릭하면 클락한 탭에대한 내용들이 보여진다.", async () => {
     const { getByText } = renderDetailCurriculum();
-    const curriculumInfo: CodeTogetherCurriculumType[] = strainAllMdxInfo(
-      DetailCurriculumQueryResult
-    );
-    const titles = curriculumInfo.map(({ tabName }) => tabName);
-    const subjectList = curriculumInfo.map(({ subjectList }) => subjectList);
 
     titles.forEach((title, i) => {
       const tabTitle = getByText(title);
@@ -53,11 +50,6 @@ describe("<DetailCurriculum>", () => {
   });
   it("각 탭들을 클릭하면 탭에 맞는 마스터의 정보가 보여진다.", async () => {
     const { getByText } = renderDetailCurriculum();
-    const curriculumInfo: CodeTogetherCurriculumType[] = strainAllMdxInfo(
-      DetailCurriculumQueryResult
-    );
-    const titles = curriculumInfo.map(({ tabName }) => tabName);
-    const masters = curriculumInfo.map(({ masterInfo }) => masterInfo);
 
     titles.forEach((title, i) => {
       const tabTitle = getByText(title);
