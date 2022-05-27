@@ -24,7 +24,7 @@ const Registration: React.FC = () => {
 const RegistrationWrapper = styled.div`
   width: 106.2rem;
   padding: 0 18.9rem;
-  padding-top: 16rem;
+  padding-top: 8rem;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
