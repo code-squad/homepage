@@ -1,4 +1,4 @@
-export const scheduleInfo = {
+export const makeScheduleInfo = (btnText: string) => ({
   progress: [
     {
       label: "대기자 신청",
@@ -46,5 +46,5 @@ export const scheduleInfo = {
   waiterApplyUrl: "https://codesuqad.kr",
   applyUrl: "https://codesquad.kr/apply",
   waiterApplyUrlBtnText: "대기자 신청",
-  applyBtnText: "지금 바로 마스터즈 코스 지원",
-};
+  applyBtnText: btnText,
+});

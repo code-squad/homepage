@@ -28,8 +28,10 @@ const ScheduleInfo: React.FC<IScheduleInfo> = ({ scheduleInfo, selectedScheduleI
       ))}
       {selectedScheduleIndex === 0 ? (
         <ButtonWrapper>
-          <MButton to={waiterApplyUrl} children={waiterApplyUrlBtnText} />
-          <MButton to={applyUrl} accent children={applyBtnText} />
+          {waiterApplyUrlBtnText ? (
+            <MButton to={waiterApplyUrl} children={waiterApplyUrlBtnText} />
+          ) : null}
+          {applyBtnText ? <MButton to={applyUrl} accent children={applyBtnText} /> : null}
         </ButtonWrapper>
       ) : null}
     </ScheduleInfoWrapper>
