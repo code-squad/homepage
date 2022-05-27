@@ -23,7 +23,7 @@ const Curriculum: React.FC<{ curriculumInfo: CodeTogetherCurriculumType }> = ({
               </SubjectTitle>
               <SubjectDetailList>
                 {details.map((detail) => (
-                  <li>
+                  <li key={detail}>
                     <MBody as="span">{detail}</MBody>
                   </li>
                 ))}
