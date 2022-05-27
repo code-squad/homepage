@@ -12,6 +12,7 @@ import {
   Master,
   GraduateReview,
   Article,
+  Banner,
   Place,
 } from "pageComponents/main";
 
@@ -20,6 +21,7 @@ const MainPage = () => {
     <GlobalTheme>
       <main style={{ overflowX: "hidden" }}>
         <HomeGlobalNavigationBar />
+        <Banner />
         <Welcome />
         <CourseList />
         <Feature />
