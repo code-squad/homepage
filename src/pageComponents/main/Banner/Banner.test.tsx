@@ -1,8 +1,6 @@
 import React from "react";
 import * as Gatsby from "gatsby";
 import { fireEvent, render } from "@testing-library/react";
-// Type
-import { CultureType } from "@type/Culture";
 // Testing-Component
 import { Banner } from ".";
 // Mocks
