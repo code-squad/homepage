@@ -1,37 +1,18 @@
 import React from "react";
-import styled from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
 // Type
 import { RegistrationType } from "@type/Registration";
 // Components
-import { LinkButton } from "components";
+import { Registration } from "components";
 // Libs
 import { strainMdxInfo } from "lib/utils";
 
-const Registration: React.FC = () => {
+const JavascriptRegistration: React.FC = () => {
   const data = useStaticQuery(JavascriptRegistrationQuery);
   const { registrations }: { registrations: RegistrationType[] } = strainMdxInfo(data);
 
-  return (
-    <RegistrationWrapper>
-      {registrations.map(({ title, description, caption, path }) => (
-        <LinkButton key={title} {...{ title, description, caption }} to={path} />
-      ))}
-    </RegistrationWrapper>
-  );
+  return <Registration {...{ registrations }} />;
 };
-
-const RegistrationWrapper = styled.div`
-  width: 106.2rem;
-  padding: 0 18.9rem;
-  padding-top: 8rem;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  & > *:not(:last-child) {
-    margin-bottom: 2.4rem;
-  }
-`;
 
 const JavascriptRegistrationQuery = graphql`
   query JavascriptRegistrationQuery {
@@ -48,4 +29,4 @@ const JavascriptRegistrationQuery = graphql`
   }
 `;
 
-export default Registration;
+export default JavascriptRegistration;
