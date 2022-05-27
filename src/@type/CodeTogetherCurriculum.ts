@@ -1,8 +1,12 @@
 import { MasterInfoType } from "./Master";
-import { CodeTogetherSubjectType } from "./CodeTogetherSubject";
+
+export interface CodeTogetherSubjectInfoType {
+  details: string[];
+  name: string;
+}
 
 export interface CodeTogetherCurriculumType {
   tabName: string;
-  curriculum: CodeTogetherSubjectType[];
+  subjectList: CodeTogetherSubjectInfoType[];
   masterInfo: MasterInfoType;
 }

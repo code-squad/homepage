@@ -10,32 +10,28 @@ import { MasterInfo } from "./MasterInfo";
 const Curriculum: React.FC<{ curriculumInfo: CodeTogetherCurriculumType }> = ({
   curriculumInfo,
 }) => {
-  const { curriculum, masterInfo } = curriculumInfo;
+  const { subjectList, masterInfo } = curriculumInfo;
 
   return (
     <CurriculumWrapper>
       <CurriculumList>
-        {curriculum.map(({ subjectList }, index) => (
-          <li key={index}>
-            <SubjectList>
-              {subjectList.map(({ name, details }) => (
-                <SubjectItem key={name}>
-                  <SubjectTitle>
-                    <LBody bold>{name}</LBody>
-                  </SubjectTitle>
-                  <SubjectDetailList>
-                    {details.map((detail) => (
-                      <li>
-                        <MBody as="span">{detail}</MBody>
-                      </li>
-                    ))}
-                  </SubjectDetailList>
-                </SubjectItem>
-              ))}
-            </SubjectList>
-            <DivideLine />
-          </li>
-        ))}
+        <SubjectList>
+          {subjectList.map(({ name, details }) => (
+            <SubjectItem key={name}>
+              <SubjectTitle>
+                <LBody bold>{name}</LBody>
+              </SubjectTitle>
+              <SubjectDetailList>
+                {details.map((detail) => (
+                  <li>
+                    <MBody as="span">{detail}</MBody>
+                  </li>
+                ))}
+              </SubjectDetailList>
+            </SubjectItem>
+          ))}
+        </SubjectList>
+        <DivideLine />
         <MasterInfo {...{ masterInfo }} />
       </CurriculumList>
     </CurriculumWrapper>

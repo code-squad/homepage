@@ -64,11 +64,9 @@ const JavascriptCurriculumQuery = graphql`
           frontmatter {
             tabName
             index
-            curriculum {
-              subjectList {
-                details
-                name
-              }
+            subjectList {
+              details
+              name
             }
             masterInfo {
               avatar
