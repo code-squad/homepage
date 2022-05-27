@@ -34,9 +34,9 @@ const Course: React.FC = ({}) => {
         <CourseList>
           {courses
             .slice(0, courseCount)
-            .map(({ master, title, dueDate, price, tags, img, path }) => (
+            .map(({ master, title, dueDate, cost, tags, img, path }) => (
               <li key={img}>
-                <CourseCard {...{ master, title, dueDate, price, tags, path }} img={icons[img]} />
+                <CourseCard {...{ master, title, dueDate, cost, tags, path }} img={icons[img]} />
               </li>
             ))}
         </CourseList>
@@ -99,7 +99,7 @@ const CodeTogetherCourseQuery = graphql`
           master
           title
           dueDate
-          price
+          cost
           img
           path
           tags

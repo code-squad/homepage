@@ -32,11 +32,11 @@ describe("<Course>", () => {
   it("코드투게더의 교육과정들이 보여진다.", async () => {
     const { getAllByText, getByText } = renderCourse();
 
-    courses.forEach(({ master, title, dueDate, price, tags }) => {
+    courses.forEach(({ master, title, dueDate, cost, tags }) => {
       getAllByText(master);
       getByText(title);
       getByText(dueDate);
-      getAllByText(price);
+      getAllByText(cost);
       tags.forEach((tag) => {
         getAllByText(tag);
       });
