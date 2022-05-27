@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
 // Type
-import { CurriculumType } from "@type/Curriculum";
+import { CodeTogetherCurriculumType } from "@type/CodeTogetherCurriculum";
 // Components
 import { TitleSet, TabNavigationBar } from "components";
 import { Curriculum } from "./Curriculum";
@@ -12,7 +12,7 @@ import { SUBTITLE, TITLE } from "assets/static/phrases";
 import { strainAllMdxInfo } from "lib/utils";
 
 const DetailCurriculum: React.FC = () => {
-  const curriculumInfo: CurriculumType[] = strainAllMdxInfo(
+  const curriculumInfo: CodeTogetherCurriculumType[] = strainAllMdxInfo(
     useStaticQuery(JavascriptCurriculumQuery)
   );
   const titles = curriculumInfo.map(({ tabName }) => tabName);
@@ -64,12 +64,9 @@ const JavascriptCurriculumQuery = graphql`
           frontmatter {
             tabName
             index
-            curriculum {
-              subject
-              subjectList {
-                detail
-                name
-              }
+            subjectList {
+              details
+              name
             }
             masterInfo {
               avatar

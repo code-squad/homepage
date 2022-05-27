@@ -1,38 +1,37 @@
 import React from "react";
 import styled from "styled-components";
 // Type
-import { CurriculumType } from "@type/Curriculum";
+import { CodeTogetherCurriculumType } from "@type/CodeTogetherCurriculum";
 // Typography
-import { XLBody, LBody, MBody } from "typography";
+import { LBody, MBody } from "typography";
 // Components
 import { MasterInfo } from "./MasterInfo";
 
-const Curriculum: React.FC<{ curriculumInfo: CurriculumType }> = ({ curriculumInfo }) => {
-  const { curriculum, masterInfo } = curriculumInfo;
+const Curriculum: React.FC<{ curriculumInfo: CodeTogetherCurriculumType }> = ({
+  curriculumInfo,
+}) => {
+  const { subjectList, masterInfo } = curriculumInfo;
 
   return (
     <CurriculumWrapper>
       <CurriculumList>
-        {curriculum.map(({ subject, subjectList }) => (
-          <li key={subject}>
-            <CurriculumTitle>
-              <XLBody bold>{subject}</XLBody>
-            </CurriculumTitle>
-            <ul>
-              {subjectList.map(({ name, detail }) => (
-                <SubjectItem key={detail}>
-                  <SubjectTitle>
-                    <LBody bold>{name}</LBody>
-                  </SubjectTitle>
-                  <SubjectDetail>
-                    <MBody>{detail}</MBody>
-                  </SubjectDetail>
-                </SubjectItem>
-              ))}
-            </ul>
-            <DivideLine />
-          </li>
-        ))}
+        <SubjectList>
+          {subjectList.map(({ name, details }) => (
+            <SubjectItem key={name}>
+              <SubjectTitle>
+                <LBody bold>{name}</LBody>
+              </SubjectTitle>
+              <SubjectDetailList>
+                {details.map((detail) => (
+                  <li key={detail}>
+                    <MBody as="span">{detail}</MBody>
+                  </li>
+                ))}
+              </SubjectDetailList>
+            </SubjectItem>
+          ))}
+        </SubjectList>
+        <DivideLine />
         <MasterInfo {...{ masterInfo }} />
       </CurriculumList>
     </CurriculumWrapper>
@@ -42,25 +41,34 @@ const Curriculum: React.FC<{ curriculumInfo: CurriculumType }> = ({ curriculumIn
 const CurriculumWrapper = styled.div`
   display: flex;
   width: 107rem;
-  padding: 8rem 4rem;
+  padding: 5rem 4rem 8rem 4rem;
 `;
 
 const CurriculumList = styled.ul`
   width: 98.2rem;
 `;
-const CurriculumTitle = styled.h4`
-  color: ${({ theme: { color } }) => color.primary.green2};
+const SubjectList = styled.ul`
+  & > *:not(:first-child) {
+    margin-top: 3rem;
+  }
 `;
 const SubjectItem = styled.li`
   display: flex;
-  margin-top: 3rem;
+  & > * {
+    margin-right: 2.4rem;
+  }
 `;
 const SubjectTitle = styled.h6`
   width: 19rem;
 `;
-const SubjectDetail = styled.div`
+const SubjectDetailList = styled.ul`
+  display: flex;
+  flex-direction: column;
   color: ${({ theme: { color } }) => color.greyScale.grey2};
+  list-style: disc;
+  list-style-position: inside;
 `;
+const SubjectDetail = styled.div``;
 const DivideLine = styled.div`
   border-bottom: 0.1rem solid ${({ theme: { color } }) => color.greyScale.black20};
   margin: 5.6rem 0;

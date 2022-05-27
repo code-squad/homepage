@@ -17,7 +17,12 @@ interface ILinkButton {
 
 const LinkButton: React.FC<ILinkButton> = ({ description, title, to, icon, caption }) => {
   return (
-    <LinkButtonWrapper {...{ to, icon, caption }} as={caption ? "a" : Link}>
+    <LinkButtonWrapper
+      {...{ to, icon, caption }}
+      as={caption ? "a" : Link}
+      href={caption && to}
+      target={caption && "_blank"}
+    >
       <TextWrapper {...{ caption }}>
         <Description>
           <MBody bold>{description}</MBody>
@@ -48,6 +53,7 @@ const LinkButtonWrapper = styled(Link)<{ icon?: string; caption?: string }>`
   padding: ${({ caption, icon }) => (caption ? "2.7rem 4rem" : icon ? "3.2rem 4rem" : "4rem")};
   text-decoration: unset;
   &:hover {
+    cursor: pointer;
     border: 0.2rem solid ${({ theme: { color } }) => color.greyScale.black};
   }
 `;

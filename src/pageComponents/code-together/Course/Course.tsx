@@ -29,14 +29,16 @@ const Course: React.FC = ({}) => {
 
   return (
     <CourseWrapper>
-      <TitleSet subtitle={SUBTITLE.CODE_TOGETHER_COURSE} title={TITLE.COURSE} />
+      <TitleWrapper>
+        <TitleSet subtitle={SUBTITLE.CODE_TOGETHER_COURSE} title={TITLE.COURSE} />
+      </TitleWrapper>
       <CourseListWrapper>
         <CourseList>
           {courses
             .slice(0, courseCount)
-            .map(({ master, title, dueDate, price, tags, img, path }) => (
+            .map(({ master, title, dueDate, cost, tags, img, path }) => (
               <li key={img}>
-                <CourseCard {...{ master, title, dueDate, price, tags, path }} img={icons[img]} />
+                <CourseCard {...{ master, title, dueDate, cost, tags, path }} img={icons[img]} />
               </li>
             ))}
         </CourseList>
@@ -59,6 +61,12 @@ const CourseWrapper = styled.div`
   align-items: center;
   flex-direction: column;
   margin-top: 16rem;
+`;
+
+const TitleWrapper = styled.div`
+  width: 106.2rem;
+  padding: 0 18.9rem;
+  margin: 0 auto;
 `;
 
 const CourseListWrapper = styled.div`
@@ -99,7 +107,7 @@ const CodeTogetherCourseQuery = graphql`
           master
           title
           dueDate
-          price
+          cost
           img
           path
           tags

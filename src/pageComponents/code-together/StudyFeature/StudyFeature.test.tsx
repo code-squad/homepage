@@ -1,6 +1,6 @@
 import React from "react";
 import * as Gatsby from "gatsby";
-import { render, waitFor } from "@testing-library/react";
+import { render } from "@testing-library/react";
 // Type
 import { CodeTogetherFeatureType } from "@type/CodeTogetherFeature";
 // Testing-Component

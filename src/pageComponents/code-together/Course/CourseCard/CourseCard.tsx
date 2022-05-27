@@ -8,13 +8,13 @@ interface IImageCard {
   master: string;
   title: string;
   dueDate: string;
-  price: string;
+  cost: string;
   tags: string[];
   img: string;
   path: string;
 }
 
-const CourseCard: React.FC<IImageCard> = ({ master, title, dueDate, price, tags, img, path }) => {
+const CourseCard: React.FC<IImageCard> = ({ master, title, dueDate, cost, tags, img, path }) => {
   return (
     <CourseCardWrapper aria-label={`course-card-${title}`} to={path}>
       <CardImg src={img} />
@@ -27,9 +27,9 @@ const CourseCard: React.FC<IImageCard> = ({ master, title, dueDate, price, tags,
       <DueDateWrapper>
         <SBody>{dueDate}</SBody>
       </DueDateWrapper>
-      <PriceWrapper>
-        <SBody bold>{price}</SBody>
-      </PriceWrapper>
+      <CostWrapper>
+        <SBody bold>{cost}</SBody>
+      </CostWrapper>
       <TagList>
         {tags.map((tag) => (
           <CourseTagItem key={tag}>
@@ -94,7 +94,7 @@ const DueDateWrapper = styled.div`
   color: ${({ theme: { color } }) => color.greyScale.grey1};
 `;
 
-const PriceWrapper = styled.div`
+const CostWrapper = styled.div`
   width: fit-content;
   color: ${({ theme: { color } }) => color.greyScale.black};
 `;

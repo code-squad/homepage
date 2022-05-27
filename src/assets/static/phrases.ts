@@ -46,7 +46,7 @@ const TITLE = {
   HOW_STUDY: "어떻게 학습하나요?",
   STUDENT_INTERVIEW: "수강생 후기",
   SCHEDULED_COURSE: "지금 모집 중인 과정",
-  VIEW_ENTIRE_COURSE: "전체 과정 보기",
+  VIEW_ENTIRE_COURSE: "전체 과정 보기 >",
 };
 
 const DESCRIPTION = {

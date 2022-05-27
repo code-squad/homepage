@@ -17,7 +17,7 @@ const Masthead: React.FC = () => {
   );
 
   return (
-    <MastheadWrapper icon={icons.mastersBig}>
+    <MastheadWrapper icon={icons.codetogetherBig}>
       <TitleWrapper>
         <MDisplay>{title}</MDisplay>
         <MBody>{description}</MBody>

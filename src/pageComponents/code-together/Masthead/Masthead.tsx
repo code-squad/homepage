@@ -42,7 +42,7 @@ const Masthead: React.FC = () => {
 const MastheadWrapper = styled.div<{ icon: string }>`
   width: 100%;
   min-width: 144rem;
-  padding: 16rem 0 7.2rem 0;
+  padding: 16rem 0 6.2rem 0;
   background-color: ${({ theme: { color } }) => color.secondary.blue3};
   background-image: ${({ icon }) => `url(${icon})`};
   background-repeat: no-repeat;
@@ -65,7 +65,7 @@ const TitleWrapper = styled.div`
 const CourseAdmissionTitleWrapper = styled.div`
   width: 106.2rem;
   margin: 0 auto;
-  margin-top: 3.2rem;
+  margin-top: 5.8rem;
   display: flex;
   justify-content: space-between;
 `;
@@ -79,7 +79,7 @@ const MoveButtonWrapper = styled.button`
 const CourseAdmissionsList = styled.ul`
   width: 106.2rem;
   display: flex;
-  margin: 4rem auto 0 auto;
+  margin: 2.4rem auto 0 auto;
   & > *:not(:last-child) {
     margin-right: 6.333rem;
   }
