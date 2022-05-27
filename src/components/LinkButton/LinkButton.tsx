@@ -20,8 +20,8 @@ const LinkButton: React.FC<ILinkButton> = ({ description, title, to, icon, capti
     <LinkButtonWrapper
       {...{ to, icon, caption }}
       as={caption ? "a" : Link}
-      href={to}
-      target="_blank"
+      href={caption && to}
+      target={caption && "_blank"}
     >
       <TextWrapper {...{ caption }}>
         <Description>
