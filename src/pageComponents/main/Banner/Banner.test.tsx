@@ -18,7 +18,7 @@ describe("<Banner>", () => {
     );
   const useStaticQuery = jest.spyOn(Gatsby, "useStaticQuery");
   useStaticQuery.mockImplementation(() => ({ ...BannerQueryResult }));
-  const { title, description } = strainMdxInfo(BannerQueryResult);
+  const { title } = strainMdxInfo(BannerQueryResult);
   it("x버튼을 눌러 배너를 보이지 않게 할 수 있다.", async () => {
     const { getByText, getByRole } = renderBanner();
 
