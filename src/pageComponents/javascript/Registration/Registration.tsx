@@ -3,8 +3,8 @@ import styled from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
 // Type
 import { RegistrationType } from "@type/Registration";
-// Assets
-import { LinkType2Button } from "components/LinkType2Button";
+// Components
+import { LinkButton } from "components";
 // Libs
 import { strainMdxInfo } from "lib/utils";
 
@@ -15,7 +15,7 @@ const Registration: React.FC = () => {
   return (
     <RegistrationWrapper>
       {registrations.map(({ title, description, caption, path }) => (
-        <LinkType2Button key={title} {...{ title, description, caption }} to={path} />
+        <LinkButton key={title} {...{ title, description, caption }} to={path} />
       ))}
     </RegistrationWrapper>
   );
