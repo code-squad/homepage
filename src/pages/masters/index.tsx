@@ -5,6 +5,7 @@ import GlobalTheme from "lib/context/GlobalTheme";
 import { HomeGlobalNavigationBar, Footer } from "components/";
 import {
   Masthead,
+  MastersRegistration,
   EducationFeatures,
   DetailCurriculum,
   InterviewSliderWrapper,
@@ -18,6 +19,7 @@ const MatsersPage: React.FC = () => {
       <main style={{ overflowX: "hidden" }}>
         <HomeGlobalNavigationBar />
         <Masthead />
+        <MastersRegistration />
         <EducationFeatures />
         <DetailCurriculum />
         <InterviewSliderWrapper />
