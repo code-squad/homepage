@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { graphql } from "gatsby";
 // Type
 import { RegistrationType } from "@type/Registration";
 // Components
