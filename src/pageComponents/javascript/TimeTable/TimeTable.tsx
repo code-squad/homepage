@@ -6,18 +6,18 @@ import { TitleSet } from "components";
 import picture from "assets/img/picture";
 import { SUBTITLE, TITLE } from "assets/static/phrases";
 
-const StudyMethod: React.FC = () => {
+const TimeTable: React.FC = () => {
   return (
-    <StudyWrapper>
+    <TimeTableWrapper>
       <TitleSet subtitle={SUBTITLE.CODE_TOGETHER} title={TITLE.HOW_STUDY} />
-      <StudyMethodImgWrapper>
-        <img src={picture.javascriptTimetable} alt="codetogether-studymethod" />
-      </StudyMethodImgWrapper>
-    </StudyWrapper>
+      <TimeTableImgWrapper>
+        <img src={picture.javascriptTimetable} alt="codetogether-study-feature" />
+      </TimeTableImgWrapper>
+    </TimeTableWrapper>
   );
 };
 
-const StudyWrapper = styled.div`
+const TimeTableWrapper = styled.div`
   width: 106.2rem;
   padding: 0 18.9rem;
   padding-top: 16rem;
@@ -31,10 +31,10 @@ const StudyWrapper = styled.div`
   }
 `;
 
-const StudyMethodImgWrapper = styled.div`
+const TimeTableImgWrapper = styled.div`
   width: 100%;
   margin: 0 auto;
   overflow: hidden;
 `;
 
-export default StudyMethod;
+export default TimeTable;

@@ -3,7 +3,6 @@ export const InterviewListQueryResult = {
     frontmatter: {
       interviewList: [
         {
-          index: 0,
           writerPhoto: "imgProfile",
           nutshell: "내가 선택한 자율에 대한 책임을 키우는 곳",
           content:
@@ -12,7 +11,6 @@ export const InterviewListQueryResult = {
           writerInfo: "Tami, 중고나라",
         },
         {
-          index: 1,
           writerPhoto: "imgProfile",
           nutshell:
             "누구도 강요하지 않고 엄격한 규칙도 없기에 서로를 향한 존중을 바탕으로 성장할 수 있는 문화를 만들어나가는 것이 중요합니다",
@@ -22,7 +20,6 @@ export const InterviewListQueryResult = {
           writerInfo: "Jane, 네이버 웹툰",
         },
         {
-          index: 2,
           writerPhoto: "imgProfile",
           nutshell:
             "마스터즈 코스의 미션들을 통해 개발 지식뿐만 아니라 자율적으로 학습하는 방법과 동료를 존중하며 함께 자라는 방법을 배울 수 있습니다.",
@@ -32,7 +29,6 @@ export const InterviewListQueryResult = {
           writerInfo: "Daisy, 11번가",
         },
         {
-          index: 3,
           writerPhoto: "imgProfile",
           nutshell:
             "컴퓨터 사이언스부터 프로젝트까지 모든 커리큘럼이 개발자로서의 성장에 큰 도움이 됐습니다",
@@ -42,7 +38,6 @@ export const InterviewListQueryResult = {
           writerInfo: "Json, 우아한 형제들",
         },
         {
-          index: 4,
           writerPhoto: "imgProfile",
           nutshell:
             "서로를 향한 존중을 바탕으로 성장할 수 있는 문화를 만들어나가는 것이 중요합니다",

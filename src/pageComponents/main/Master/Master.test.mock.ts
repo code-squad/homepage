@@ -3,7 +3,6 @@ export const MasterResult = {
     frontmatter: {
       masters: [
         {
-          index: 1,
           image: "crong",
           field: "웹 프론트엔드",
           name: "크롱",
@@ -23,7 +22,6 @@ export const MasterResult = {
           ],
         },
         {
-          index: 2,
           image: "honux",
           field: "웹 백엔드",
           name: "호눅스",
@@ -41,7 +39,6 @@ export const MasterResult = {
           ],
         },
         {
-          index: 3,
           image: "ivy",
           field: "모바일 안드로이드",
           name: "아이비",
@@ -57,7 +54,6 @@ export const MasterResult = {
           ],
         },
         {
-          index: 4,
           image: "jk",
           field: "모바일 iOS",
           name: "JK",
