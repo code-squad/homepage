@@ -13,8 +13,8 @@ const Banner: React.FC = () => {
   const [bannerStatus, setBannerStatus] = React.useState(title && !bannerCookie);
 
   const closeHandler = () => {
-    const oneDayMs = 86400;
-    document.cookie = `name=ignoreBanner; value=true; max-age=${oneDayMs}`;
+    const oneDaySec = 86400;
+    document.cookie = `name=ignoreBanner; value=true; max-age=${oneDaySec}`;
 
     setBannerStatus(false);
   };
