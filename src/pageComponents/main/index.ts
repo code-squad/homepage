@@ -7,3 +7,4 @@ export { Master } from "./Master";
 export { GraduateReview } from "./GraduateReview";
 export { Article } from "./Article";
 export { Place } from "./Place";
+export { Banner } from "./Banner";
