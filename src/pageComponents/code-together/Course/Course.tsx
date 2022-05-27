@@ -29,7 +29,9 @@ const Course: React.FC = ({}) => {
 
   return (
     <CourseWrapper>
-      <TitleSet subtitle={SUBTITLE.CODE_TOGETHER_COURSE} title={TITLE.COURSE} />
+      <TitleWrapper>
+        <TitleSet subtitle={SUBTITLE.CODE_TOGETHER_COURSE} title={TITLE.COURSE} />
+      </TitleWrapper>
       <CourseListWrapper>
         <CourseList>
           {courses
@@ -59,6 +61,12 @@ const CourseWrapper = styled.div`
   align-items: center;
   flex-direction: column;
   margin-top: 16rem;
+`;
+
+const TitleWrapper = styled.div`
+  width: 106.2rem;
+  padding: 0 18.9rem;
+  margin: 0 auto;
 `;
 
 const CourseListWrapper = styled.div`
