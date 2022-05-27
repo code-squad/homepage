@@ -16,3 +16,4 @@ export { ImageCard } from "./ImageCard";
 export { BannerPopup } from "./BannerPopup";
 export { BackgroundLink } from "./BackgroundLink";
 export { TitleSet } from "./TitleSet";
+export { Registration } from "./Registration";
