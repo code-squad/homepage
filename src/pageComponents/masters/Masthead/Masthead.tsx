@@ -6,6 +6,7 @@ import { MBody, MDisplay } from "typography";
 // Components
 import { InfoItem } from "./InfoItem";
 // Assets
+import header from "assets/img/illusts/header";
 import icons from "assets/img/icons";
 import { TITLE } from "assets/static/phrases";
 // Lib
@@ -17,7 +18,7 @@ const Masthead: React.FC = () => {
   );
 
   return (
-    <MastheadWrapper icon={icons.mastersBig}>
+    <MastheadWrapper icon={header.mastersCourse}>
       <TitleWrapper>
         <MDisplay>{title}</MDisplay>
         <MBody>{description}</MBody>
@@ -72,7 +73,6 @@ const TitleWrapper = styled.div`
 const CourseInfoWrapper = styled.div`
   display: flex;
   min-width: 106.2rem;
-  justify-content: space-between;
   margin-top: 4rem;
 `;
 
