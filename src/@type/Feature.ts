@@ -1,8 +1,8 @@
-import illusts from "assets/img/illusts";
+import features from "assets/img/illusts/feature";
 
 export interface FeatureType {
   title: string;
   subtitle: string;
   description: string;
-  image: keyof typeof illusts;
+  image: keyof typeof features;
 }
