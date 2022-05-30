@@ -7,16 +7,16 @@ import { Registration } from "components";
 // Libs
 import { strainMdxInfo } from "lib/utils";
 
-const JavascriptRegistration: React.FC = () => {
-  const data = useStaticQuery(JavascriptRegistrationQuery);
+const MastersRegistration: React.FC = () => {
+  const data = useStaticQuery(MastersRegistrationQuery);
   const { registrations }: { registrations: RegistrationType[] } = strainMdxInfo(data);
 
   return <Registration {...{ registrations }} />;
 };
 
-const JavascriptRegistrationQuery = graphql`
-  query JavascriptRegistrationQuery {
-    mdx(frontmatter: { templateKey: { eq: "codeTogether_javascript_registrations" } }) {
+const MastersRegistrationQuery = graphql`
+  query MastersRegistration {
+    mdx(frontmatter: { templateKey: { eq: "masters_registrations" } }) {
       frontmatter {
         registrations {
           title
@@ -29,4 +29,4 @@ const JavascriptRegistrationQuery = graphql`
   }
 `;
 
-export default JavascriptRegistration;
+export default MastersRegistration;

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql, Link, useStaticQuery } from "gatsby";
 // Type
 import { ScheduledCourse } from "@type/ScheduledCourse";
 // Typography
@@ -13,7 +13,7 @@ import { TITLE } from "assets/static/phrases";
 // Lib
 import { strainMdxInfo } from "lib/utils";
 
-const Masthead: React.FC = () => {
+const Masthead: React.FC<{ courseRef?: React.RefObject<HTMLDivElement> }> = ({ courseRef }) => {
   const { title, description, scheduledCourses } = strainMdxInfo(useStaticQuery(MastheadQuery));
 
   return (
@@ -25,7 +25,14 @@ const Masthead: React.FC = () => {
       <CourseAdmissionTitleWrapper>
         <MBody bold>{TITLE.SCHEDULED_COURSE}</MBody>
         <MoveButtonWrapper>
-          <MBody bold>{TITLE.VIEW_ENTIRE_COURSE}</MBody>
+          <MBody
+            bold
+            onClick={() => {
+              courseRef?.current?.scrollIntoView({ block: "nearest", behavior: "smooth" });
+            }}
+          >
+            {TITLE.VIEW_ENTIRE_COURSE}
+          </MBody>
         </MoveButtonWrapper>
       </CourseAdmissionTitleWrapper>
       <CourseAdmissionsList>
