@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { graphql, Link, useStaticQuery } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 // Type
 import { ScheduledCourse } from "@type/ScheduledCourse";
 // Typography
@@ -8,7 +8,8 @@ import { MBody, MDisplay } from "typography";
 // Components
 import { Course } from "./Course";
 // Assets
-import icons from "assets/img/icons";
+import header from "assets/img/illusts/header";
+import illusts from "assets/img/illusts";
 import { TITLE } from "assets/static/phrases";
 // Lib
 import { strainMdxInfo } from "lib/utils";
@@ -17,7 +18,7 @@ const Masthead: React.FC<{ courseRef?: React.RefObject<HTMLDivElement> }> = ({ c
   const { title, description, scheduledCourses } = strainMdxInfo(useStaticQuery(MastheadQuery));
 
   return (
-    <MastheadWrapper icon={icons.codetogetherBig}>
+    <MastheadWrapper icon={header.codeTogether}>
       <TitleWrapper>
         <MDisplay>{title}</MDisplay>
         <MBody>{description}</MBody>
@@ -37,8 +38,9 @@ const Masthead: React.FC<{ courseRef?: React.RefObject<HTMLDivElement> }> = ({ c
       </CourseAdmissionTitleWrapper>
       <CourseAdmissionsList>
         {scheduledCourses.map(({ title, dueDate, img, path }: ScheduledCourse) => (
+          // 이미지 추가 후 이미지 수정 필요
           <li key={img}>
-            <Course {...{ title, dueDate, path }} img={icons[img]} />
+            <Course {...{ title, dueDate, path }} img={illusts.iconBlank} />
           </li>
         ))}
       </CourseAdmissionsList>
