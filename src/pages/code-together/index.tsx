@@ -6,16 +6,14 @@ import { HomeGlobalNavigationBar, Footer } from "components/";
 import { Masthead, Feature, StudyFeature, Course } from "pageComponents/code-together";
 
 const CodeTogetherPage: React.FC = () => {
-  const courseRef = React.useRef(null);
-
   return (
     <GlobalTheme>
       <main style={{ overflowX: "hidden" }}>
         <HomeGlobalNavigationBar />
-        <Masthead {...{ courseRef }} />
+        <Masthead />
         <Feature />
         <StudyFeature />
-        <Course {...{ courseRef }} />
+        <Course />
         <Footer />
       </main>
     </GlobalTheme>
