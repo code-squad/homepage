@@ -35,7 +35,6 @@ const Interview: React.FC<IInterview> = ({ subtitle, title, interviews, style })
       setCurrentIndex(currentIndex + 2);
       return;
     }
-    if (currentIndex + 1 <= interviews.length) setCurrentIndex(currentIndex + 1);
   };
 
   return (
@@ -43,11 +42,14 @@ const Interview: React.FC<IInterview> = ({ subtitle, title, interviews, style })
       <TitleWrapper>
         <TitleSet {...{ title, subtitle }} />
         <ArrowNavigationWrapper>
-          <ArrowButton disabled={currentIndex === 0} onClick={handleArrowLeftClick}>
+          <ArrowButton
+            disabled={currentIndex === 0 || interviews.length <= 2}
+            onClick={handleArrowLeftClick}
+          >
             <img src={icons.chevronLeft} alt="arrow-left" />
           </ArrowButton>
           <ArrowButton
-            disabled={currentIndex + 2 === interviews.length}
+            disabled={currentIndex + 2 === interviews.length || interviews.length <= 2}
             onClick={handleArrowRightClick}
           >
             <img src={icons.chevronRight} alt="arrow-right" />
