@@ -10,7 +10,7 @@ interface ILinkButton {
   description: string;
   title: string;
   to: string;
-  caption: string;
+  caption?: string;
   short?: boolean;
   icon?: string;
 }
