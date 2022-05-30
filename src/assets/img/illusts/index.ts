@@ -1,33 +1,15 @@
-import benefit1 from "./benefit-1.svg";
-import benefit2 from "./benefit-2.svg";
-import benefit3 from "./benefit-3.svg";
-import benefit4 from "./benefit-4.svg";
-import benefit5 from "./benefit-5.svg";
-import benefit6 from "./benefit-6.svg";
-import benefit7 from "./benefit-7.svg";
-import benefit8 from "./benefit-8.svg";
-import eduFeature1 from "./edu-feature-1.svg";
-import eduFeature2 from "./edu-feature-2.svg";
-import eduFeature3 from "./edu-feature-3.svg";
-import eduFeature4 from "./edu-feature-4.svg";
-import eduFeature5 from "./edu-feature-5.svg";
-import introduce from "./introduce.svg";
-import knot from "./knot.svg";
+import iconBlank from "./50x50-blank.svg";
+import illustCardBlank from "./180x130-blank.svg";
+import thumbnailBlank from "./240x240-blank.svg";
+import imageBlank from "./519x440-blank.svg";
+import boardBlank from "./410x410-blank.svg";
+import placeBlank from "./1162x500-blank.svg";
 
 export default {
-  benefit1,
-  benefit2,
-  benefit3,
-  benefit4,
-  benefit5,
-  benefit6,
-  benefit7,
-  benefit8,
-  eduFeature1,
-  eduFeature2,
-  eduFeature3,
-  eduFeature4,
-  eduFeature5,
-  introduce,
-  knot,
+  iconBlank,
+  illustCardBlank,
+  thumbnailBlank,
+  imageBlank,
+  boardBlank,
+  placeBlank,
 };
