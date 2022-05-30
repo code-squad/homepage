@@ -3,7 +3,7 @@ import styled from "styled-components";
 // Components
 import { LinkButton } from "components";
 // Assets
-import icons from "assets/img/icons";
+import thumbnails from "assets/img/illusts/thumbnail";
 import { LINK_DESCRIPTION, LINK } from "assets/static/phrases";
 import { INTERNAL } from "assets/static/urls";
 
@@ -14,13 +14,13 @@ const CourseList: React.FC = () => {
         to={INTERNAL.MASTERS}
         title={LINK.MASTERS}
         description={LINK_DESCRIPTION.MASTERS}
-        icon={icons.masters}
+        icon={thumbnails.mediumMastersCourse}
       />
       <LinkButton
         to={INTERNAL.CODE_TOGETHER}
         title={LINK.CODE_TOGETHER}
         description={LINK_DESCRIPTION.CODE_TOGETHER}
-        icon={icons.codetogether}
+        icon={thumbnails.mediumCodeTogether}
       />
     </CourseWrapper>
   );
