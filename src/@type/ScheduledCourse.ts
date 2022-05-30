@@ -1,7 +1,7 @@
-import icons from "assets/img/icons";
+import illusts from "assets/img/illusts";
 
 export interface ScheduledCourse {
-  img: keyof typeof icons;
+  img: keyof typeof illusts;
   title: string;
   dueDate: string;
   path: string;

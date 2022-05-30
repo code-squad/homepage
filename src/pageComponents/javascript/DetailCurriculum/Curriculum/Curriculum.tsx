@@ -68,7 +68,6 @@ const SubjectDetailList = styled.ul`
   list-style: disc;
   list-style-position: inside;
 `;
-const SubjectDetail = styled.div``;
 const DivideLine = styled.div`
   border-bottom: 0.1rem solid ${({ theme: { color } }) => color.greyScale.black20};
   margin: 5.6rem 0;

@@ -40,7 +40,7 @@ const Course: React.FC<{ courseRef?: React.RefObject<HTMLDivElement> }> = ({ cou
               <li key={img}>
                 <CourseCard
                   {...{ master, title, dueDate, cost, tags, path }}
-                  img={illusts.iconBlank}
+                  img={illusts.thumbnailBlank}
                 />
               </li>
             ))}

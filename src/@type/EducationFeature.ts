@@ -1,7 +1,7 @@
-import illusts from "assets/img/illusts";
+import features from "assets/img/illusts/feature";
 
 export interface EducationFeatureType {
   title: string;
   content: string;
-  img: keyof typeof illusts;
+  img: keyof typeof features;
 }

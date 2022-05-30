@@ -9,7 +9,7 @@ import { TestProvider } from "lib/testUtils";
 
 describe("<MasterInfo>", () => {
   const masterInfo = {
-    avatar: "profileJk" as keyof typeof avatars,
+    avatar: "mediumCrong" as keyof typeof avatars,
     introduce: "매력적인 애플 플랫폼에서 함께 성장할 개발자를 기다립니다.",
     name: "JK",
     nutshell: "“나와 지인들에게 필요한 iOS 앱을 직접 만들고 출시까지 도전해보세요”",
