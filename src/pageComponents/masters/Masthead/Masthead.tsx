@@ -18,7 +18,7 @@ const Masthead: React.FC = () => {
   );
 
   return (
-    <MastheadWrapper icon={header.mastersCourse}>
+    <MastheadWrapper>
       <TitleWrapper>
         <MDisplay>{title}</MDisplay>
         <MBody>{description}</MBody>
@@ -26,7 +26,6 @@ const Masthead: React.FC = () => {
       <CourseInfoWrapper>
         <TargetWrapper>
           <TargetTitle>
-            <img src={icons.member} style={{ marginRight: ".8rem" }} />
             <MBody bold>{TITLE.EDUCATION_TARGET}</MBody>
           </TargetTitle>
           {targets.map((target: string) => (
@@ -45,16 +44,16 @@ const Masthead: React.FC = () => {
   );
 };
 
-const MastheadWrapper = styled.div<{ icon: string }>`
+const MastheadWrapper = styled.div`
   width: 100%;
   min-width: 144rem;
   padding: 16rem 0 7.2rem 0;
   display: flex;
   align-items: center;
-  background-color: ${({ theme: { color } }) => color.secondary.blue3};
-  background-image: ${({ icon }) => `url(${icon})`};
+  background-color: ${({ theme: { color } }) => color.primary.green4};
+  background-image: ${`url(${header.mastersCourse})`};
   background-repeat: no-repeat;
-  background-position: right 16rem top 8rem;
+  background-position: center;
   flex-direction: column;
 `;
 
