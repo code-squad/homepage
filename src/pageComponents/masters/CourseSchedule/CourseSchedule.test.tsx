@@ -10,7 +10,7 @@ import { CourseScheduleQueryResult } from "./CourseSchedule.test.mock";
 // Assets
 import { SUBTITLE, TITLE } from "assets/static/phrases";
 // Lib
-import { strainMdxInfo } from "lib/utils";
+import { strainMdxInfo, getSplittedPhrase } from "lib/utils";
 import { TestProvider } from "lib/testUtils";
 
 describe("<CourseSchedule>", () => {
@@ -36,9 +36,7 @@ describe("<CourseSchedule>", () => {
       const [labelText] = getAllByText(label);
       fireEvent.click(labelText);
 
-      const splitedDescription = description.split("\n\n");
-
-      splitedDescription.forEach((descriptionItem) => {
+      getSplittedPhrase(description).forEach((descriptionItem) => {
         getByText(descriptionItem.trim());
       });
     });

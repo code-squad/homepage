@@ -11,7 +11,7 @@ import { TitleSet } from "components/";
 import { SUBTITLE, TITLE } from "assets/static/phrases";
 import features from "assets/img/illusts/feature";
 // Lib
-import { strainMdxInfo } from "lib/utils";
+import { getSplittedPhrase, strainMdxInfo } from "lib/utils";
 
 const Feature: React.FC = () => {
   const { color } = useTheme();
@@ -19,6 +19,7 @@ const Feature: React.FC = () => {
   const { title, subtitle, description, image }: FeatureType = strainMdxInfo(
     useStaticQuery(FeatureQuery)
   );
+  const splittedDescription = getSplittedPhrase(description);
 
   return (
     <FeatureWrapper>
@@ -31,7 +32,7 @@ const Feature: React.FC = () => {
               {subtitle}
             </MBody>
           </div>
-          {description.split("\n\n").map((descriptionItem: string) => (
+          {splittedDescription.map((descriptionItem: string) => (
             <MBody key={descriptionItem} style={{ color: color.greyScale.grey2 }}>
               {descriptionItem}
             </MBody>

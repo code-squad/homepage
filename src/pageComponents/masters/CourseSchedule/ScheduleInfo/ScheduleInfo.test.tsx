@@ -6,6 +6,7 @@ import { ScheduleInfo } from ".";
 import { makeScheduleInfo } from "./ScheduleInfo.test.mock";
 // lib
 import { TestProvider } from "lib/testUtils";
+import { getSplittedPhrase } from "lib/utils";
 
 describe("<ScheduleInfo>", () => {
   const scheduleInfo = makeScheduleInfo("지금 바로 마스터즈 코스 지원");
@@ -29,9 +30,7 @@ describe("<ScheduleInfo>", () => {
     const { getByText } = renderScheduleInfo(index);
 
     const { description } = progress[index];
-    const splitedDescription = description.split("\n\n");
-
-    splitedDescription.forEach((descriptionItem) => {
+    getSplittedPhrase(description).forEach((descriptionItem) => {
       getByText(descriptionItem.trim());
     });
   });

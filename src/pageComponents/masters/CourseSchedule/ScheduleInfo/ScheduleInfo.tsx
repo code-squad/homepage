@@ -1,11 +1,12 @@
 import React from "react";
-import styled, { useTheme } from "styled-components";
+import styled from "styled-components";
 // Type
 import { ScheduleType } from "@type/Schedule";
 // Typography
 import { LBody, MBody } from "typography";
 // Components
 import { MButton } from "components";
+import { getSplittedPhrase } from "lib/utils";
 // Assets
 
 interface IScheduleInfo {
@@ -21,7 +22,7 @@ const ScheduleInfo: React.FC<IScheduleInfo> = ({ scheduleInfo, selectedScheduleI
     <ScheduleInfoWrapper>
       <LBody bold>{title}</LBody>
       <LBody style={{ marginTop: "2.4rem" }}>{subtitle}</LBody>
-      {description.split("\n\n").map((descriptionItem: string) => (
+      {getSplittedPhrase(description).map((descriptionItem: string) => (
         <DescriptionWrapper key={descriptionItem}>
           <MBody>{descriptionItem}</MBody>
         </DescriptionWrapper>
