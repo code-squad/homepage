@@ -34,11 +34,11 @@ const Masthead: React.FC = () => {
             </TargetItem>
           ))}
         </TargetWrapper>
-        <ul>
+        <InfoItemWrapper>
           <InfoItem src={icons.calander} label="교육기간" content={trainingDuration} />
           <InfoItem src={icons.coin} label="비용" content={cost} />
           <InfoItem src={icons.book} label="클래스(택1)" content={subject} />
-        </ul>
+        </InfoItemWrapper>
       </CourseInfoWrapper>
     </MastheadWrapper>
   );
@@ -71,6 +71,7 @@ const TitleWrapper = styled.div`
 
 const CourseInfoWrapper = styled.div`
   display: flex;
+  justify-content: space-between;
   min-width: 106.2rem;
   margin-top: 4rem;
 `;
@@ -98,6 +99,12 @@ const TargetItem = styled.li`
   }
   margin-top: 0.8rem;
   margin-left: 2.4rem;
+`;
+
+const InfoItemWrapper = styled.ul`
+  display: flex;
+  flex-direction: column;
+  flex-wrap: "wrap";
 `;
 
 const MastheadQuery = graphql`
