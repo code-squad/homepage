@@ -9,7 +9,7 @@ import { MBody } from "typography";
 import { TitleSet } from "components";
 import { ImageCard } from "./ImageCard";
 // Assets
-import illusts from "assets/img/illusts";
+import featureImgs from "assets/img/illusts/feature";
 import { SUBTITLE, TITLE, DESCRIPTION } from "assets/static/phrases";
 // Utils
 import { strainMdxInfo } from "lib/utils";
@@ -27,7 +27,7 @@ const Feature: React.FC = ({}) => {
       <FeatureList>
         {features.map(({ title, descriptions, img }) => (
           <FeatureItem key={title}>
-            <ImageCard descriptions={descriptions} title={title} img={illusts[img]} />
+            <ImageCard descriptions={descriptions} title={title} img={featureImgs[img]} />
           </FeatureItem>
         ))}
       </FeatureList>
