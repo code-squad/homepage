@@ -26,6 +26,7 @@ const Masthead: React.FC = () => {
       <CourseInfoWrapper>
         <TargetWrapper>
           <TargetTitle>
+            <img src={icons.member} style={{ marginRight: ".8rem" }} />
             <MBody bold>{TITLE.EDUCATION_TARGET}</MBody>
           </TargetTitle>
           {targets.map((target: string) => (
