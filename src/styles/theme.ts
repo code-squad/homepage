@@ -61,6 +61,7 @@ const color = {
     blue1: "#1379C4",
     blue2: "#8FDFF3",
     blue3: "#C7E8EF",
+    blue4: "#82C6D1",
   },
 };
 
