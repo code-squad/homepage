@@ -8,7 +8,7 @@ import { LDisplay } from "typography";
 // Components
 import { DropdownItem, TagNavigationBar } from "components";
 // Assets
-import illusts from "assets/img/illusts";
+import headers from "assets/img/illusts/header";
 import { TITLE } from "assets/static/phrases";
 // Lib
 import { strainMdxInfo } from "lib/utils";
@@ -33,7 +33,8 @@ const FAQ: React.FC = () => {
   }, [currentIndex]);
 
   return (
-    <FAQWrapper image={illusts.knot}>
+    <FAQWrapper>
+      <FAQMasthead />
       <FAQContentWrapper>
         <LDisplay style={{ paddingTop: "16rem", paddingBottom: "3.2rem" }}>{TITLE.FAQ}</LDisplay>
         <TagNavigationBar titles={Array.from(categories)} onIndexChanged={setCurrentIndex} />
@@ -49,13 +50,13 @@ const FAQ: React.FC = () => {
   );
 };
 
-const FAQWrapper = styled.div<{ image: string }>`
+const FAQWrapper = styled.div`
   width: 100%;
   min-width: 144rem;
   padding-bottom: 16rem;
-  background-image: ${({ image }) => `url(${image})`};
+  background-image: ${`url(${headers.pattern1})`};
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-position: top right;
   color: ${({ theme: { color } }) => color.greyScale.black};
   white-space: pre-line;
   text-align: center;
@@ -65,6 +66,15 @@ const FAQWrapper = styled.div<{ image: string }>`
   & > *:not(:last-child) {
     margin-bottom: 4.8rem;
   }
+`;
+
+const FAQMasthead = styled.div`
+  position: absolute;
+  top: 0;
+  background-color: #ffc587;
+  height: 56rem;
+  width: 100%;
+  z-index: -1;
 `;
 
 const FAQContentWrapper = styled.div`

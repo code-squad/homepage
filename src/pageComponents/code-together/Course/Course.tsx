@@ -7,7 +7,7 @@ import { CourseType } from "@type/Course";
 import { EButton, TitleSet } from "components";
 import { CourseCard } from "./CourseCard";
 // Assets
-import icons from "assets/img/icons";
+import illusts from "assets/img/illusts";
 import { SUBTITLE, TITLE } from "assets/static/phrases";
 // Utils
 import { strainMdxInfo } from "lib/utils";
@@ -38,7 +38,10 @@ const Course: React.FC<{ courseRef?: React.RefObject<HTMLDivElement> }> = ({ cou
             .slice(0, courseCount)
             .map(({ master, title, dueDate, cost, tags, img, path }) => (
               <li key={img}>
-                <CourseCard {...{ master, title, dueDate, cost, tags, path }} img={icons[img]} />
+                <CourseCard
+                  {...{ master, title, dueDate, cost, tags, path }}
+                  img={illusts.thumbnailBlank}
+                />
               </li>
             ))}
         </CourseList>

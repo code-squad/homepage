@@ -7,6 +7,7 @@ import { MBody, MDisplay } from "typography";
 import { InfoItem } from "./InfoItem";
 // Assets
 import icons from "assets/img/icons";
+import headers from "assets/img/illusts/header";
 import { TITLE } from "assets/static/phrases";
 // Lib
 import { strainMdxInfo } from "lib/utils";
@@ -17,7 +18,7 @@ const Masthead: React.FC = () => {
   );
 
   return (
-    <MastheadWrapper icon={icons.codetogetherBig}>
+    <MastheadWrapper>
       <TitleWrapper>
         <MDisplay>{title}</MDisplay>
         <MBody>{description}</MBody>
@@ -44,16 +45,16 @@ const Masthead: React.FC = () => {
   );
 };
 
-const MastheadWrapper = styled.div<{ icon: string }>`
+const MastheadWrapper = styled.div`
   width: 100%;
   min-width: 144rem;
   padding: 16rem 0 7.2rem 0;
   display: flex;
   align-items: center;
-  background-color: ${({ theme: { color } }) => color.secondary.blue3};
-  background-image: ${({ icon }) => `url(${icon})`};
+  background-color: ${({ theme: { color } }) => color.primary.green4};
+  background-image: ${`url(${headers.codeTogether})`};
+  background-position: center;
   background-repeat: no-repeat;
-  background-position: right 16rem top 8rem;
   flex-direction: column;
 `;
 

@@ -42,7 +42,6 @@ const TeamIntroduceWrapper = styled.div`
   height: calc(100vw * 56 / 144);
   min-width: 144rem;
   min-height: 56rem;
-  margin-bottom: 16rem;
   color: ${({ theme: { color } }) => color.greyScale.black};
   white-space: pre-line;
   text-align: start;

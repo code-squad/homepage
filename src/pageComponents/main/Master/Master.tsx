@@ -8,17 +8,16 @@ import { MBody, SBody, XLBody, XSBody } from "typography";
 // Components
 import { TitleSet, TabNavigationBar } from "components";
 // Assets
-import icons from "assets/img/icons";
+import thumbnails from "assets/img/illusts/thumbnail";
 import picture from "assets/img/picture";
 import { SUBTITLE, TITLE, DESCRIPTION } from "assets/static/phrases";
+// Utils
+import { strainMdxInfo } from "lib/utils";
 
 const Master: React.FC = () => {
   const theme = useTheme();
 
-  const data = useStaticQuery(MasterQuery);
-  const { mdx } = data;
-  const { frontmatter } = mdx;
-  const { masters }: { masters: MasterType[] } = frontmatter;
+  const { masters }: { masters: MasterType[] } = strainMdxInfo(useStaticQuery(MasterQuery));
 
   const fields = masters.map((master) => master.field);
 
@@ -80,7 +79,7 @@ const Master: React.FC = () => {
                   {masterIntroduce.schedules.map(({ image, title, subtitle, path }) => (
                     <li key={title}>
                       <Schedule to={path}>
-                        <CourseImage src={icons[image]} alt="course" />
+                        <CourseImage src={thumbnails[image]} alt="course" />
                         <CourseTitleWrapper>
                           <TitleWrapper>
                             <XSBody>{title}</XSBody>
@@ -197,12 +196,8 @@ const Schedule = styled(Link)`
 `;
 
 const CourseImage = styled.img`
-  width: 3.4rem;
-  height: 3.4rem;
-  padding: 0.2rem 0.2rem;
-  border: 0.1rem solid black;
-  border-radius: 0.8rem;
-  border-color: ${({ theme: { color } }) => color.greyScale.grey3};
+  width: 4rem;
+  height: 4rem;
 `;
 
 const CourseTitleWrapper = styled.div`

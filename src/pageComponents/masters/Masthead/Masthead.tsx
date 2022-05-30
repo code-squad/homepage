@@ -6,6 +6,7 @@ import { MBody, MDisplay } from "typography";
 // Components
 import { InfoItem } from "./InfoItem";
 // Assets
+import header from "assets/img/illusts/header";
 import icons from "assets/img/icons";
 import { TITLE } from "assets/static/phrases";
 // Lib
@@ -17,7 +18,7 @@ const Masthead: React.FC = () => {
   );
 
   return (
-    <MastheadWrapper icon={icons.mastersBig}>
+    <MastheadWrapper>
       <TitleWrapper>
         <MDisplay>{title}</MDisplay>
         <MBody>{description}</MBody>
@@ -34,26 +35,26 @@ const Masthead: React.FC = () => {
             </TargetItem>
           ))}
         </TargetWrapper>
-        <ul>
+        <InfoItemWrapper>
           <InfoItem src={icons.calander} label="교육기간" content={trainingDuration} />
           <InfoItem src={icons.coin} label="비용" content={cost} />
           <InfoItem src={icons.book} label="클래스(택1)" content={subject} />
-        </ul>
+        </InfoItemWrapper>
       </CourseInfoWrapper>
     </MastheadWrapper>
   );
 };
 
-const MastheadWrapper = styled.div<{ icon: string }>`
+const MastheadWrapper = styled.div`
   width: 100%;
   min-width: 144rem;
   padding: 16rem 0 7.2rem 0;
   display: flex;
   align-items: center;
-  background-color: ${({ theme: { color } }) => color.secondary.blue3};
-  background-image: ${({ icon }) => `url(${icon})`};
+  background-color: ${({ theme: { color } }) => color.primary.green4};
+  background-image: ${`url(${header.mastersCourse})`};
   background-repeat: no-repeat;
-  background-position: right 16rem top 8rem;
+  background-position: center;
   flex-direction: column;
 `;
 
@@ -71,8 +72,8 @@ const TitleWrapper = styled.div`
 
 const CourseInfoWrapper = styled.div`
   display: flex;
-  min-width: 106.2rem;
   justify-content: space-between;
+  min-width: 106.2rem;
   margin-top: 4rem;
 `;
 
@@ -99,6 +100,12 @@ const TargetItem = styled.li`
   }
   margin-top: 0.8rem;
   margin-left: 2.4rem;
+`;
+
+const InfoItemWrapper = styled.ul`
+  display: flex;
+  flex-direction: column;
+  flex-wrap: "wrap";
 `;
 
 const MastheadQuery = graphql`

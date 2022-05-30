@@ -1,11 +1,11 @@
 import avatars from "assets/img/avatars";
-import icons from "assets/img/icons";
+import thumbnails from "assets/img/illusts/thumbnail";
 import picture from "assets/img/picture";
 
 interface ScheduleType {
   title: string;
   subtitle: string;
-  image: keyof typeof icons;
+  image: keyof typeof thumbnails;
   path: string;
 }
 

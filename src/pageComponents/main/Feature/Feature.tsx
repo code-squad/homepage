@@ -9,7 +9,7 @@ import { MBody, XLBody } from "typography";
 import { TitleSet } from "components/";
 // Assets
 import { SUBTITLE, TITLE } from "assets/static/phrases";
-import illusts from "assets/img/illusts";
+import features from "assets/img/illusts/feature";
 // Lib
 import { strainMdxInfo } from "lib/utils";
 
@@ -37,7 +37,7 @@ const Feature: React.FC = () => {
             </MBody>
           ))}
         </Content>
-        <FeatureImg src={illusts[image]} alt="feature" />
+        <FeatureImg src={features[image]} alt="feature" />
       </ContentWrapper>
     </FeatureWrapper>
   );

@@ -8,7 +8,7 @@ import { MBody, XLBody } from "typography";
 // Components
 import { TitleSet } from "components/";
 // Assets
-import icons from "assets/img/icons";
+import features from "assets/img/illusts/feature";
 import { SUBTITLE, TITLE } from "assets/static/phrases";
 // Lib
 import { strainMdxInfo } from "lib/utils";
@@ -24,7 +24,7 @@ const Culture: React.FC = () => {
       <ContentWrapper>
         {cultures.map(({ title, image, subtitle, description }) => (
           <CultureContent key={title}>
-            <CultureImg src={icons[image]} alt="culture-icon" />
+            <CultureImg src={features[image]} alt="culture-icon" />
             <TitleWrapper>
               <MBody style={{ color: color.greyScale.grey1 }}>{subtitle}</MBody>
               <XLBody>{title}</XLBody>

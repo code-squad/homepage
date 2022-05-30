@@ -8,8 +8,8 @@ import { TitleSet } from "components";
 import { ImageCard } from "./ImageCard";
 // Assets
 import icons from "assets/img/icons";
+import features from "assets/img/illusts/feature";
 import illusts from "assets/img/illusts";
-import picture from "assets/img/picture";
 import { SUBTITLE, TITLE } from "assets/static/phrases";
 // Utils
 import { strainMdxInfo } from "lib/utils";
@@ -18,9 +18,8 @@ const StudyFeature: React.FC = () => {
   const data = useStaticQuery(CodeTogetherStudyFeatureQuery);
   const { studyFeatures }: { studyFeatures: CodeTogetherFeatureType[] } = strainMdxInfo(data);
 
-  const { codetogetherStudy1 } = picture;
-
-  const imgList = [codetogetherStudy1, codetogetherStudy1];
+  const { placeBlank } = illusts;
+  const imgList = [placeBlank, placeBlank];
   const [currentIndex, setCurrentIndex] = React.useState(0);
 
   const handleArrowLeftClick = () => {
@@ -54,7 +53,7 @@ const StudyFeature: React.FC = () => {
       <FeatureList>
         {studyFeatures.map(({ title, descriptions, img }) => (
           <FeatureItem key={title}>
-            <ImageCard {...{ title, descriptions }} img={illusts[img]} />
+            <ImageCard {...{ title, descriptions }} img={features[img]} />
           </FeatureItem>
         ))}
       </FeatureList>
