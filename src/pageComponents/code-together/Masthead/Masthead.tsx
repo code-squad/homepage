@@ -18,7 +18,7 @@ const Masthead: React.FC<{ courseRef?: React.RefObject<HTMLDivElement> }> = ({ c
   const { title, description, scheduledCourses } = strainMdxInfo(useStaticQuery(MastheadQuery));
 
   return (
-    <MastheadWrapper icon={header.codeTogether}>
+    <MastheadWrapper>
       <TitleWrapper>
         <MDisplay>{title}</MDisplay>
         <MBody>{description}</MBody>
@@ -48,14 +48,14 @@ const Masthead: React.FC<{ courseRef?: React.RefObject<HTMLDivElement> }> = ({ c
   );
 };
 
-const MastheadWrapper = styled.div<{ icon: string }>`
+const MastheadWrapper = styled.div`
   width: 100%;
   min-width: 144rem;
   padding: 16rem 0 6.2rem 0;
-  background-color: ${({ theme: { color } }) => color.secondary.blue3};
-  background-image: ${({ icon }) => `url(${icon})`};
+  background-color: ${({ theme: { color } }) => color.primary.green4};
+  background-image: ${`url(${header.codeTogether})`};
   background-repeat: no-repeat;
-  background-position: right 16rem top 8rem;
+  background-position: center;
 `;
 
 const TitleWrapper = styled.div`
