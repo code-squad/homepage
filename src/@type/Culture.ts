@@ -1,7 +1,7 @@
-import icons from "assets/img/icons";
+import features from "assets/img/illusts/feature";
 
 export interface CultureType {
-  image: keyof typeof icons;
+  image: keyof typeof features;
   title: string;
   subtitle: string;
   description: string;
