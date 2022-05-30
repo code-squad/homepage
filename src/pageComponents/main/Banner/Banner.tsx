@@ -4,17 +4,19 @@ import { graphql, useStaticQuery } from "gatsby";
 // Components
 import { BannerPopup } from "components";
 // Utils
-import { strainMdxInfo } from "lib/utils";
+import { strainMdxInfo, getDocument } from "lib/utils";
 
 const Banner: React.FC = () => {
   const { title, description } = strainMdxInfo(useStaticQuery(BannerQuery));
-  const bannerCookie = Boolean(document.cookie.match("ignoreBanner"));
+  const document = getDocument();
+  const bannerCookie = Boolean(document && document.cookie.match("ignoreBanner"));
 
   const [bannerStatus, setBannerStatus] = React.useState(title && !bannerCookie);
 
   const closeHandler = () => {
     const oneDaySec = 86400;
-    document.cookie = `name=ignoreBanner; value=true; max-age=${oneDaySec}`;
+
+    if (document) document.cookie = `name=ignoreBanner; value=true; max-age=${oneDaySec}`;
 
     setBannerStatus(false);
   };
