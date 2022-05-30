@@ -6,12 +6,12 @@ import { InterviewType } from "@type/Interview";
 import { Interview } from "components/Interview";
 // Assets
 import { SUBTITLE, TITLE } from "assets/static/phrases";
+// Utils
+import { strainMdxInfo } from "lib/utils";
 
 const GraduateReview: React.FC = () => {
   const data = useStaticQuery(ReviewQuery);
-  const { mdx } = data;
-  const { frontmatter } = mdx;
-  const { interviews }: { interviews: InterviewType[] } = frontmatter;
+  const { interviews }: { interviews: InterviewType[] } = strainMdxInfo(data);
 
   return (
     <Interview

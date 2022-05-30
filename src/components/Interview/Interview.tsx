@@ -64,8 +64,8 @@ const Interview: React.FC<IInterview> = ({ subtitle, title, interviews, style })
                 interview.writerPhoto
                   ? avatars[interview.writerPhoto]
                   : index % 2 === 0
-                  ? avatars.profileMemberA
-                  : avatars.profileMemberB
+                  ? avatars.smallMember1
+                  : avatars.smallMember2
               }
             />
           ))}
