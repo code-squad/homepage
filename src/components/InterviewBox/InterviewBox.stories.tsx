@@ -13,7 +13,7 @@ const Template: ComponentStory<typeof InterviewBox> = (args) => <InterviewBox {.
 
 export const Default = Template.bind({});
 Default.args = {
-  writerPhoto: "assets/img/avatars/profile-chloe.svg",
+  writerPhoto: "assets/img/avatars/80-chloe.svg",
   nutshell:
     "자율적으로 업무를 보는 문화가 자율성을 추구하는 교육관과 동일하다는 점에서 코드스쿼드가 지향하는 가치에 대한 진심을 느낄 수 있다.",
   content:
@@ -24,7 +24,7 @@ Default.args = {
 
 const ListTemplate: ComponentStory<typeof InterviewBox> = (args) => {
   const customArgs = {
-    writerPhoto: "assets/img/avatars/profile-chloe.svg",
+    writerPhoto: "assets/img/avatars/80-chloe.svg",
     nutshell:
       "자율적으로 업무를 보는 문화가 자율성을 추구하는 교육관과 동일하다는 점에서 코드스쿼드가 지향하는 가치에 대한 진심을 느낄 수 있다.",
     content:
@@ -42,7 +42,7 @@ const ListTemplate: ComponentStory<typeof InterviewBox> = (args) => {
 
 export const ListInterviewBox = ListTemplate.bind({});
 ListInterviewBox.args = {
-  writerPhoto: "assets/img/avatars/profile-member-a.svg",
+  writerPhoto: "assets/img/avatars/80-member1.svg",
   nutshell:
     "누구도 강요하지 않고 엄격한 규칙도 없기에 서로를 향한 존중을 바탕으로 성장할 수 있는 문화를 만들어나가는 것이 중요합니다",
   content:

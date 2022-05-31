@@ -9,7 +9,7 @@ import { FeatureResult } from "./Feature.test.mock";
 import { TITLE, SUBTITLE } from "assets/static/phrases";
 // Libs
 import { TestProvider } from "lib/testUtils";
-import { strainMdxInfo } from "lib/utils";
+import { getSplittedPhrase, strainMdxInfo } from "lib/utils";
 
 describe("<Feature>", () => {
   const renderFeature = () =>
@@ -32,7 +32,7 @@ describe("<Feature>", () => {
 
     getByText(title);
     getByText(subtitle);
-    description.split("\n\n").forEach((descriptionItem: string) => getByText(descriptionItem));
+    getSplittedPhrase(description).forEach((descriptionItem: string) => getByText(descriptionItem));
     getByAltText("feature");
   });
 });

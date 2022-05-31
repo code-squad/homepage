@@ -22,9 +22,10 @@ const Background = styled.div`
   background-color: ${({ theme: { color } }) => color.secondary.blue3};
   height: 56rem;
   width: 100%;
+  min-width: 144rem;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   &::after {
     content: "";
     display: block;
@@ -32,7 +33,7 @@ const Background = styled.div`
     height: 28rem;
     background-color: #b2dee6;
     position: relative;
-    right: 48rem;
+    left: 32rem;
     transform: rotate(45deg);
   }
 `;

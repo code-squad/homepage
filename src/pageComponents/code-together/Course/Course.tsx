@@ -12,7 +12,7 @@ import { SUBTITLE, TITLE } from "assets/static/phrases";
 // Utils
 import { strainMdxInfo } from "lib/utils";
 
-const Course: React.FC<{ courseRef?: React.RefObject<HTMLDivElement> }> = ({ courseRef }) => {
+const Course: React.FC = () => {
   const data = useStaticQuery(CodeTogetherCourseQuery);
   const { courses }: { courses: CourseType[] } = strainMdxInfo(data);
 
@@ -28,7 +28,7 @@ const Course: React.FC<{ courseRef?: React.RefObject<HTMLDivElement> }> = ({ cou
   };
 
   return (
-    <CourseWrapper ref={courseRef}>
+    <CourseWrapper id="course">
       <TitleWrapper>
         <TitleSet subtitle={SUBTITLE.CODE_TOGETHER_COURSE} title={TITLE.COURSE} />
       </TitleWrapper>

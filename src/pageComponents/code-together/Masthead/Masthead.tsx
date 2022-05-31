@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql, Link, useStaticQuery } from "gatsby";
 // Type
 import { ScheduledCourse } from "@type/ScheduledCourse";
 // Typography
@@ -14,7 +14,7 @@ import { TITLE } from "assets/static/phrases";
 // Lib
 import { strainMdxInfo } from "lib/utils";
 
-const Masthead: React.FC<{ courseRef?: React.RefObject<HTMLDivElement> }> = ({ courseRef }) => {
+const Masthead: React.FC = () => {
   const { title, description, scheduledCourses } = strainMdxInfo(useStaticQuery(MastheadQuery));
 
   return (
@@ -25,16 +25,9 @@ const Masthead: React.FC<{ courseRef?: React.RefObject<HTMLDivElement> }> = ({ c
       </TitleWrapper>
       <CourseAdmissionTitleWrapper>
         <MBody bold>{TITLE.SCHEDULED_COURSE}</MBody>
-        <MoveButtonWrapper>
-          <MBody
-            bold
-            onClick={() => {
-              courseRef?.current?.scrollIntoView({ block: "nearest", behavior: "smooth" });
-            }}
-          >
-            {TITLE.VIEW_ENTIRE_COURSE}
-          </MBody>
-        </MoveButtonWrapper>
+        <MoveLinkWrapper to="#course">
+          <MBody bold>{TITLE.VIEW_ENTIRE_COURSE}</MBody>
+        </MoveLinkWrapper>
       </CourseAdmissionTitleWrapper>
       <CourseAdmissionsList>
         {scheduledCourses.map(({ title, dueDate, img, path }: ScheduledCourse) => (
@@ -79,7 +72,9 @@ const CourseAdmissionTitleWrapper = styled.div`
   justify-content: space-between;
 `;
 
-const MoveButtonWrapper = styled.button`
+const MoveLinkWrapper = styled(Link)`
+  text-decoration: none;
+  color: ${({ theme: { color } }) => color.greyScale.black};
   background-color: transparent;
   border: 0;
   cursor: pointer;

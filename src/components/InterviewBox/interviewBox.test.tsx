@@ -7,7 +7,7 @@ import { TestProvider } from "lib/testUtils";
 
 describe("<InterviewBox>", () => {
   const props = {
-    writerPhoto: "assets/img/avatars/profile-chloe.svg",
+    writerPhoto: "assets/img/avatars/80-chloe.svg",
     nutshell: "자율적으로 업무를 보는 문화가 자율성을 추구하는 교육관과 동일하다는 점에서 코드스",
     content: "자율적인 환경이 마련되니 자연스럽게 다른 가치들도 실천하게 된다. 서로가 하는 업무",
     writer: "클로이",

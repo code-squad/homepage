@@ -3,7 +3,7 @@ export const TeamInterviewQueryResult = {
     frontmatter: {
       interviews: [
         {
-          writerPhoto: "chloe",
+          writerPhoto: "smallChloe",
           nutshell:
             "자율적으로 업무를 보는 문화가 자율성을 추구하는 교육관과 동일하다는 점에서 코드스쿼드가 지향하는 가치에 대한 진심을 느낄 수 있다.",
           content:
@@ -12,7 +12,7 @@ export const TeamInterviewQueryResult = {
           writerInfo: "Chloe, 커뮤니티 매니저",
         },
         {
-          writerPhoto: "head",
+          writerPhoto: "smallHead",
           nutshell: "업무적으로 신뢰할 수 있는 동료가 있기 때문에 마음이 편하다는 건 큰 장점이다.",
           content:
             "팀에 대한 소속감과 팀원들에 대한 신뢰감 덕분에 내가 맡은 업무에도 책임감을 가지고 임할 수 있고, 순발력이 필요한 상황에서는 유연한 대처도 가능하다.",
@@ -20,7 +20,7 @@ export const TeamInterviewQueryResult = {
           writerInfo: "Head, 개발자",
         },
         {
-          writerPhoto: "sam",
+          writerPhoto: "smallSam",
           nutshell:
             "자율성이 확보된 환경에서 일을 하는 것에 만족감을 크게 느끼기 때문에 재택근무와 코어타임 시스템이 가장 도움이 된다.",
           content:

@@ -8,6 +8,13 @@ const config: GatsbyConfig = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-page-creator`,
+      options: {
+        path: `${__dirname}/src/pages`,
+        ignore: [`**/*.stories.tsx`],
+      },
+    },
+    {
       resolve: "gatsby-plugin-root-import",
       options: {
         src: path.join(__dirname, "src"),

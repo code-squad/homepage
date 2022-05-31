@@ -11,7 +11,7 @@ import { CultureResult } from "./Culture.test.mock";
 import { TITLE, SUBTITLE } from "assets/static/phrases";
 // Libs
 import { TestProvider } from "lib/testUtils";
-import { strainMdxInfo } from "lib/utils";
+import { strainMdxInfo, getSplittedPhrase } from "lib/utils";
 
 describe("<Culture>", () => {
   const renderCulture = () =>
@@ -38,7 +38,7 @@ describe("<Culture>", () => {
     cultures.forEach(({ title, subtitle, description }: CultureType) => {
       getByText(title);
       getByText(subtitle);
-      description.split("\n\n").forEach((descriptionItem) => getByText(descriptionItem));
+      getSplittedPhrase(description).forEach((descriptionItem) => getByText(descriptionItem));
     });
   });
 });

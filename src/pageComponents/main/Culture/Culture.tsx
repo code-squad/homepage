@@ -11,7 +11,7 @@ import { TitleSet } from "components/";
 import features from "assets/img/illusts/feature";
 import { SUBTITLE, TITLE } from "assets/static/phrases";
 // Lib
-import { strainMdxInfo } from "lib/utils";
+import { strainMdxInfo, getSplittedPhrase } from "lib/utils";
 
 const Culture: React.FC = () => {
   const { color } = useTheme();
@@ -30,7 +30,7 @@ const Culture: React.FC = () => {
               <XLBody>{title}</XLBody>
             </TitleWrapper>
             <DescriptionList>
-              {description.split("\n\n").map((descriptionItem: string) => (
+              {getSplittedPhrase(description).map((descriptionItem: string) => (
                 <DescriptionItem key={descriptionItem}>
                   <MBody>{descriptionItem}</MBody>
                 </DescriptionItem>

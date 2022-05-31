@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 // Story-Component
 import { LinkButton } from ".";
 // Assets
-import icons from "assets/img/icons";
+import header from "assets/img/illusts/header";
 
 export default {
   title: "component/LinkButton",
@@ -25,5 +25,5 @@ Icon.args = {
   description: "코드스쿼드의 정규 교육 과정",
   title: "마스터즈 코스",
   to: "https://codesquad.kr",
-  icon: icons.masters,
+  icon: header.mastersCourse,
 };
