@@ -74,9 +74,9 @@ const LINK = {
 };
 
 const LINK_DESCRIPTION = {
-  CODE_TOGETHER: "코드스쿼드 온라인 온리 교육 과정",
+  CODE_TOGETHER: "온라인으로 함께 배우는 단기 과정",
   CONFIRM_RECRUIT: "코드스쿼드의 교육 가치에 공감한다면",
-  MASTERS: "코드스쿼드의 정규 교육과정",
+  MASTERS: "분야별 최고의 개발자가 되기 위한 풀타임 과정",
   RECEIVE_SUBSCRIPTION: "원하는 코스의 오픈 소식을 가장 먼저 알고 싶다면?",
 };
 
