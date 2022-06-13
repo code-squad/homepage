@@ -38,7 +38,7 @@ const TITLE = {
   WELCOME: "강의식 수업이 재미 없던 사람들,\n여기여기 모여라!",
   TEAM_INTERIVIEW: "우리가 일하는 방식",
   TEAM_CULTURE:
-    "우리는 교육자와 학생 그리고\n동기료들과의 상호작용을 통해\n고품질 교육을 경험하는 배움터를\n만듭니다.",
+    "우리는 교육자와 학생 그리고\n동료들과의 상호작용을 통해\n고품질 교육을 경험하는 배움터를\n만듭니다.",
   CODESQUAD_TEAM_CULTURE: "코드스쿼드 팀 문화",
   CODESQUAD_RECRUIT_NEWS: "코드스쿼드 채용 소식 확인하기",
   WELFARE: "우리는 어떤 지원을 받을까요?",
