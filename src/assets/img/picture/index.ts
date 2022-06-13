@@ -9,6 +9,8 @@ import place4 from "./place4.jpeg";
 import place5 from "./place5.jpeg";
 import place6 from "./place6.jpeg";
 import place7 from "./place7.jpeg";
+import javascriptTimetable from "./javascript-timetable.png";
+import howToStudy from "./howtostudy.png";
 
 export default {
   jk,
@@ -22,4 +24,6 @@ export default {
   place5,
   place6,
   place7,
+  javascriptTimetable,
+  howToStudy,
 };
