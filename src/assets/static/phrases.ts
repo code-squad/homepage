@@ -5,7 +5,7 @@ const SUBTITLE = {
   MASTER: "코드스쿼드의 교육 가치를 실현하는",
   GRADUATE_INTERVIEW: "코드스쿼드의 교육을 경험한",
   MASTERS_COURSE: "마스터즈 코스의",
-  PLACE: "오프라인 교육장",
+  PLACE: "코드스쿼드의 교육 철학이 담긴",
   MASTERS_COURSE_SCHEDULE: "대기자 신청부터 수료까지 한 눈에 확인하는",
   FAQ: "교육 과정에 대해",
   MASTERS_COURSE_2021: "2021 마스터즈 코스",
