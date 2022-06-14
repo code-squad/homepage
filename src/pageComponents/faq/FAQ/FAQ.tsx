@@ -41,9 +41,13 @@ const FAQ: React.FC = () => {
         <LDisplay style={{ paddingTop: "16rem", paddingBottom: "3.2rem" }}>{TITLE.FAQ}</LDisplay>
         <TagNavigationBar titles={categoryTitles} onIndexChanged={setCurrentIndex} />
         <DropdownList>
-          {faqList.map(({ course, category, title, content, editDate }) => (
+          {faqList.map(({ course, title, content, editDate }) => (
             <li key={course + title}>
-              <DropdownItem short {...{ category, title, content, editDate }} />
+              <DropdownItem
+                short
+                category={course ? CATEGORTY_TPL[course] : "기타"}
+                {...{ title, content, editDate }}
+              />
             </li>
           ))}
         </DropdownList>
