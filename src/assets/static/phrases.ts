@@ -95,7 +95,7 @@ const MESSAGE = {
 const CATEGORTY_TPL: { [key: string]: string } = {
   masters: "마스터즈 코스",
   javascript: "코드투게더 JS 과정",
-  etc: "그외",
+  etc: "기타",
 };
 
 export { DESCRIPTION, LINK_DESCRIPTION, LINK, MESSAGE, SUBTITLE, TITLE, CATEGORTY_TPL };
