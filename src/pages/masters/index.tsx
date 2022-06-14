@@ -2,7 +2,7 @@ import React from "react";
 // Theme
 import GlobalTheme from "lib/context/GlobalTheme";
 // Components
-import { HomeGlobalNavigationBar, Footer } from "components/";
+import { HomeGlobalNavigationBar, Footer, FAQ } from "components/";
 import {
   Masthead,
   MastersRegistration,
@@ -10,7 +10,6 @@ import {
   DetailCurriculum,
   InterviewSliderWrapper,
   CourseSchedule,
-  FAQ,
 } from "pageComponents/masters";
 
 const MatsersPage: React.FC = () => {
@@ -24,7 +23,7 @@ const MatsersPage: React.FC = () => {
         <DetailCurriculum />
         <InterviewSliderWrapper />
         <CourseSchedule />
-        <FAQ />
+        <FAQ course="masters" />
         <Footer />
       </main>
     </GlobalTheme>

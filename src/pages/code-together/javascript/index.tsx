@@ -2,7 +2,7 @@ import React from "react";
 // Theme
 import GlobalTheme from "lib/context/GlobalTheme";
 // Components
-import { HomeGlobalNavigationBar, Footer } from "components/";
+import { HomeGlobalNavigationBar, Footer, FAQ } from "components/";
 import {
   Masthead,
   Registration,
@@ -10,7 +10,6 @@ import {
   TimeTable,
   GraduateReview,
 } from "pageComponents/javascript";
-import { FAQ } from "pageComponents/masters";
 
 const JavascriptPage: React.FC = () => {
   return (
@@ -22,7 +21,7 @@ const JavascriptPage: React.FC = () => {
         <DetailCurriculum />
         <TimeTable />
         <GraduateReview />
-        <FAQ />
+        <FAQ course="javascript" />
         <Footer />
       </main>
     </GlobalTheme>
