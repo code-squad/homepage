@@ -1,5 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import { MDXRenderer } from "gatsby-plugin-mdx";
+// Gloabl
+import Layout from "lib/context/Layout";
 // Assets
 import icons from "assets/img/icons";
 // Typography
@@ -12,6 +15,7 @@ interface IDropdownItem {
   editDate?: string;
   link?: string;
   short?: boolean;
+  body?: string;
 }
 
 const DropdownItem: React.FC<IDropdownItem> = ({
@@ -21,6 +25,7 @@ const DropdownItem: React.FC<IDropdownItem> = ({
   editDate,
   link,
   short,
+  body,
 }) => {
   const [open, setOpen] = React.useState(false);
   const isLinkBoard = Boolean(link);
@@ -39,7 +44,7 @@ const DropdownItem: React.FC<IDropdownItem> = ({
         <Category>
           <MBody bold>{category}</MBody>
         </Category>
-        <Title {...{ open }}>
+        <Title {...{ short, open }}>
           <LBody>{title}</LBody>
         </Title>
         <ArrowWrapper {...{ open }}>
@@ -59,7 +64,13 @@ const DropdownItem: React.FC<IDropdownItem> = ({
       {isLinkBoard ? null : (
         <ContentWrapper {...{ open }}>
           <Content>
-            <MBody>{content}</MBody>
+            {body ? (
+              <Layout>
+                <MDXRenderer>{body}</MDXRenderer>
+              </Layout>
+            ) : (
+              <MBody>{content}</MBody>
+            )}
           </Content>
           <EditDate>
             <XSBody>{`최종 업데이트: ${editDate}`}</XSBody>
@@ -94,8 +105,8 @@ const Category = styled.div`
   margin-right: 2.4rem;
   color: ${({ theme: { color } }) => color.greyScale.grey2};
 `;
-const Title = styled.div<{ open?: boolean }>`
-  width: 84.5rem;
+const Title = styled.div<{ short?: boolean; open?: boolean }>`
+  width: ${({ short }) => (short ? "74.9rem" : "84.5rem")};
   margin-right: 2.4rem;
   & > p {
     font-weight: ${({ open, theme: { fontWeight } }) =>
@@ -112,7 +123,7 @@ const ArrowWrapper = styled.div<{ open?: boolean }>`
 const ContentWrapper = styled.div<{ open?: boolean }>`
   overflow: hidden;
   transition: max-height 0.5s, border 0.5s;
-  max-height: ${({ open }) => (open ? "50rem" : "0")};
+  max-height: ${({ open }) => (open ? "200rem" : "0")};
   padding-left: 16.9rem;
   border-bottom: ${({ open }) => (open ? "0.1rem" : "0")} solid
     ${({ theme: { color } }) => color.greyScale.black20};
