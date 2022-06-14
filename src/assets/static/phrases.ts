@@ -14,7 +14,7 @@ const SUBTITLE = {
   WELFARE: "코드스쿼드 복지",
   CODE_TOGETHER: "코드투게더는",
   CODE_TOGETHER_COURSE: "코드투게더의",
-  JAVASCRIPT: "자바스크립트 과정을 마친",
+  JAVASCRIPT: "자바스크립트 과정을 경험한",
 };
 
 const TITLE = {
