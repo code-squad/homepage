@@ -9,7 +9,7 @@ export const TeamInterviewQueryResult = {
           content:
             "자율적인 환경이 마련되니 자연스럽게 다른 가치들도 실천하게 된다. 서로가 하는 업무에 관심을 기울여주고 피드백을 주면, 그걸 받으면서 내가 받은 만큼 더 잘해서 돌려줘야겠다는 생각이 드니까.",
           writer: "클로이",
-          writerInfo: "Chloe, 커뮤니티 매니저",
+          writerInfo: "Chloe, 커뮤니티 매니저 & 교육 기획",
         },
         {
           writerPhoto: "smallHead",

@@ -15,8 +15,8 @@ export const OneElement = Template.bind({});
 OneElement.args = {
   registrations: [
     {
-      title: "2023년 마스터즈 대기자 신청하기",
-      description: "마스터즈 과정",
+      title: "대기자 신청하기",
+      description: "2023년 마스터즈 코스",
       caption: "교육 기간: 2023년 1월~6월",
       path: "https://docs.google.com/forms/d/e/1FAIpQLScHRPc7dTFVuMiTeCy7kpp6ks23jtkiiB-qZ3Lv0QtDNPU28w/viewform",
     },
@@ -27,8 +27,8 @@ export const TwoElements = Template.bind({});
 TwoElements.args = {
   registrations: [
     {
-      title: "2023년 마스터즈 대기자 신청하기",
-      description: "마스터즈 과정",
+      title: "대기자 신청하기",
+      description: "2023년 마스터즈 코스",
       caption: "교육 기간: 2023년 1월~6월",
       path: "https://docs.google.com/forms/d/e/1FAIpQLScHRPc7dTFVuMiTeCy7kpp6ks23jtkiiB-qZ3Lv0QtDNPU28w/viewform",
     },

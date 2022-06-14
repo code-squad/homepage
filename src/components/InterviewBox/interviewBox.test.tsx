@@ -11,7 +11,7 @@ describe("<InterviewBox>", () => {
     nutshell: "자율적으로 업무를 보는 문화가 자율성을 추구하는 교육관과 동일하다는 점에서 코드스",
     content: "자율적인 환경이 마련되니 자연스럽게 다른 가치들도 실천하게 된다. 서로가 하는 업무",
     writer: "클로이",
-    writerInfo: "Chloe, 커뮤니티 매니저",
+    writerInfo: "Chloe, 커뮤니티 매니저 & 교육 기획",
   };
   const renderInterviewBox = () =>
     render(

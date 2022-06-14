@@ -10,6 +10,7 @@ import { ImageCard } from "./ImageCard";
 import icons from "assets/img/icons";
 import features from "assets/img/illusts/feature";
 import illusts from "assets/img/illusts";
+import picture from "assets/img/picture";
 import { SUBTITLE, TITLE } from "assets/static/phrases";
 // Utils
 import { strainMdxInfo } from "lib/utils";
@@ -19,7 +20,7 @@ const StudyFeature: React.FC = () => {
   const { studyFeatures }: { studyFeatures: CodeTogetherFeatureType[] } = strainMdxInfo(data);
 
   const { placeBlank } = illusts;
-  const imgList = [placeBlank, placeBlank];
+  const imgList = [picture.howToStudy, placeBlank];
   const [currentIndex, setCurrentIndex] = React.useState(0);
 
   const handleArrowLeftClick = () => {
@@ -44,6 +45,7 @@ const StudyFeature: React.FC = () => {
       <StudyFeatureImgListWrapper>
         <StudyFeatureImgList {...{ currentIndex }}>
           {imgList.map((image, i) => (
+            // 이미지 추가 후 이미지 수정 필요
             <li key={`${image}-${i}`}>
               <StudyFeatureImg src={image} alt="codetogether-study-feature" />
             </li>
@@ -53,7 +55,7 @@ const StudyFeature: React.FC = () => {
       <FeatureList>
         {studyFeatures.map(({ title, descriptions, img }) => (
           <FeatureItem key={title}>
-            <ImageCard {...{ title, descriptions }} img={features[img]} />
+            <ImageCard {...{ title, descriptions }} img={illusts.illustCardBlank} medium />
           </FeatureItem>
         ))}
       </FeatureList>
@@ -105,7 +107,7 @@ const ArrowButton = styled.button`
 `;
 
 const StudyFeatureImgListWrapper = styled.div`
-  width: 80rem;
+  width: 77.8rem;
   margin: 0 auto;
   overflow: hidden;
 `;
@@ -128,10 +130,10 @@ const FeatureList = styled.ul`
   display: flex;
   flex-flow: row wrap;
   align-content: flex-start;
-  & > *:not(:nth-child(3n)) {
-    margin-right: 7.8rem;
+  & > *:not(:nth-child(2n)) {
+    margin-right: 13.3rem;
   }
-  & > *:not(:nth-last-child(-n + 3)) {
+  & > *:not(:nth-last-child(-n + 2)) {
     margin-bottom: 8rem;
   }
 `;

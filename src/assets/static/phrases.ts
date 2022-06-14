@@ -5,16 +5,16 @@ const SUBTITLE = {
   MASTER: "코드스쿼드의 교육 가치를 실현하는",
   GRADUATE_INTERVIEW: "코드스쿼드의 교육을 경험한",
   MASTERS_COURSE: "마스터즈 코스의",
-  PLACE: "오프라인 교육장",
+  PLACE: "코드스쿼드의 교육 철학이 담긴",
   MASTERS_COURSE_SCHEDULE: "대기자 신청부터 수료까지 한 눈에 확인하는",
   FAQ: "교육 과정에 대해",
-  MASTERS_COURSE_2021: "2021 마스터즈 코스",
+  MASTERS_COURSE_2021: "마스터즈 코스를 경험한",
   TEAM_INTERIVIEW: "코드스쿼드 팀원들이 이야기하는",
   CODESQUAD_TEAM_CULTURE: "핵심 가치가 묻어난",
   WELFARE: "코드스쿼드 복지",
   CODE_TOGETHER: "코드투게더는",
   CODE_TOGETHER_COURSE: "코드투게더의",
-  JAVASCRIPT: "자바스크립트 과정을 마친",
+  JAVASCRIPT: "자바스크립트 과정을 경험한",
 };
 
 const TITLE = {
@@ -38,7 +38,7 @@ const TITLE = {
   WELCOME: "강의식 수업이 재미 없던 사람들,\n여기여기 모여라!",
   TEAM_INTERIVIEW: "우리가 일하는 방식",
   TEAM_CULTURE:
-    "우리는 교육자와 학생 그리고\n동기들 간의 상호작용을 통해\n고품질 교육을 경험하는 배움터를\n만듭니다.",
+    "우리는 교육자와 학생 그리고\n동료들과의 상호작용을 통해\n고품질 교육을 경험하는 배움터를\n만듭니다.",
   CODESQUAD_TEAM_CULTURE: "코드스쿼드 팀 문화",
   CODESQUAD_RECRUIT_NEWS: "코드스쿼드 채용 소식 확인하기",
   WELFARE: "우리는 어떤 지원을 받을까요?",
@@ -52,7 +52,7 @@ const TITLE = {
 const DESCRIPTION = {
   MASTER:
     "실무 경험이 풍부하고 소프트웨어 교육을 잘 이해하는 마스터들이 여러분의 성장을 위해 멘토링을 지원합니다.",
-  CODE_TOGETHER: `코드투게더는 여러 동료들과 ‘함께’ 소프트웨어를 학습하는 교육 모델입니다.\n우리는 여러분이 스스로 소프트웨어 학습 방법을 배우고, 동료와 함께 성장하기를 기대합니다.`,
+  CODE_TOGETHER: `코드투게더는 여러 동료들과 ‘함께’ 소프트웨어를 학습하는 교육 모델입니다.\n각 과정을 통해 스스로 소프트웨어 학습 방법을 배우고, 동료와 함께 성장하기를 기대합니다.`,
   PLACE:
     "도로명주소: 서울특별시 강남구 강남대로62길 23 4층 | 지번: 서울특별시 강남구 역삼동 836-24 4층",
   REFUND: `보다 자세한 사항은 관리자 메일 yoda@codesquad.kr 주소로 문의바랍니다.​\n코스 진행 이후 환불시 카드결제 수수료나 계좌이체 수수료에 대한 환불 수수료를 제외하고 환불해드립니다`,
@@ -74,9 +74,9 @@ const LINK = {
 };
 
 const LINK_DESCRIPTION = {
-  CODE_TOGETHER: "코드스쿼드 온라인 온리 교육 과정",
+  CODE_TOGETHER: "온라인으로 함께 배우는 단기 과정",
   CONFIRM_RECRUIT: "코드스쿼드의 교육 가치에 공감한다면",
-  MASTERS: "코드스쿼드의 정규 교육과정",
+  MASTERS: "분야별 최고의 개발자가 되기 위한 풀타임 과정",
   RECEIVE_SUBSCRIPTION: "원하는 코스의 오픈 소식을 가장 먼저 알고 싶다면?",
 };
 

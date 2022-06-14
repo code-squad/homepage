@@ -9,15 +9,15 @@ import { RegistrationType } from "@type/Registration";
 describe("<Registration>", () => {
   const registrations: RegistrationType[] = [
     {
-      title: "2022 하반기 자바스크립트 대기자 신청하기",
-      description: "코드투게더 과정",
-      caption: "교육 기간: 미정",
+      title: "코드투게더 자바스크립트 과정",
+      description: "대기자 신청하기",
+      caption: "교육 기간 : 2022년 하반기 (예정)",
       path: "https://docs.google.com/forms/d/e/1FAIpQLSdjZIqBAxYHtBxFjXCUD9B5dAljmbMfuPfVTc-DF2xdn1EuCA/viewform",
     },
     {
-      title: "2023년 마스터즈 대기자 신청하기",
-      description: "마스터즈 과정",
-      caption: "교육 기간: 2023년 1월~6월",
+      title: "마스터즈 코스 과정",
+      description: "대기자 신청",
+      caption: "교육 기간 : 2023년 1월~6월 (예정)",
       path: "https://docs.google.com/forms/d/e/1FAIpQLScHRPc7dTFVuMiTeCy7kpp6ks23jtkiiB-qZ3Lv0QtDNPU28w/viewform",
     },
   ];
