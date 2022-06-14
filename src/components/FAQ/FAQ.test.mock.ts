@@ -297,7 +297,6 @@ export const FAQQueryResult_ForMoreButtonTest = {
           editDate: "2022-06-14",
         },
         {
-          course: "etc",
           category: "채용",
           title: "코드스쿼드에 입사 지원하고 싶습니다. 어떻게 지원하면 되나요?",
           content: `yoda@codesquad.kr 로 이력서(자유 양식)를 보내주세요.\n
