@@ -3,4 +3,5 @@ export interface JobPositionType {
   title: string;
   content: string;
   editDate: string;
+  body?: string;
 }
