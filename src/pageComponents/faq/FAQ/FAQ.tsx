@@ -16,21 +16,21 @@ import { strainMdxInfo } from "lib/utils";
 const FAQ: React.FC = () => {
   const { lists }: { lists: FAQType[] } = strainMdxInfo(useStaticQuery(FAQQuery));
   const categories = new Set<string>([]);
-  lists.forEach(({ course }) => categories.add(course));
+  lists.forEach(({ course }) => categories.add(course || "etc"));
 
   const categoryTitles = Array.from(categories).map((category) => CATEGORTY_TPL[category]);
 
   const [currentIndex, setCurrentIndex] = React.useState(0);
+
   const [faqList, setFAQList] = React.useState<FAQType[]>(lists);
 
   React.useEffect(() => {
-    if (currentIndex === 0) {
-      setFAQList(lists);
-      return;
-    }
-
     const course = Array.from(categories)[currentIndex];
-    const filteredLists = lists.filter((list) => list.course === course);
+
+    let filteredLists;
+    if (course === "etc") filteredLists = lists.filter((list) => !list.course);
+    filteredLists = lists.filter((list) => list.course === course);
+
     setFAQList(filteredLists);
   }, [currentIndex]);
 
