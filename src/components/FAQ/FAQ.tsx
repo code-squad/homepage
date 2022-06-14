@@ -6,20 +6,18 @@ import { FAQType } from "@type/FAQ";
 // Components
 import { DropdownItem, EButton, TitleSet } from "components";
 // Assets
-import { SUBTITLE, TITLE, COURSE_TPL } from "assets/static/phrases";
+import { SUBTITLE, TITLE } from "assets/static/phrases";
 // Utils
 import { strainMdxInfo } from "lib/utils";
 
-type faq = {
+type IFaq = {
   course?: "masters" | "javascript";
 };
 
-const FAQ: React.FC<faq> = ({ course }) => {
+const FAQ: React.FC<IFaq> = ({ course }) => {
   const { lists } = strainMdxInfo(useStaticQuery(FAQListQuery));
 
-  const faqList = course
-    ? lists.filter((list: FAQType) => list.course === COURSE_TPL[course])
-    : lists;
+  const faqList = course ? lists.filter((list: FAQType) => list.course === course) : lists;
 
   const [faqCount, setFAQCount] = React.useState(faqList.length > 5 ? 5 : faqList.length);
 
