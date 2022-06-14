@@ -15,7 +15,7 @@ import { TestProvider } from "lib/testUtils";
 import { fireEvent } from "@storybook/testing-library";
 
 describe("<FAQ>", () => {
-  const renderFAQ = (course: string) =>
+  const renderFAQ = (course?: "masters" | "javascript") =>
     render(
       <TestProvider>
         <FAQ {...{ course }} />
@@ -24,72 +24,70 @@ describe("<FAQ>", () => {
   const useStaticQuery = jest.spyOn(Gatsby, "useStaticQuery");
   useStaticQuery.mockImplementation(() => FAQQueryResult);
   const { lists }: { lists: FAQType[] } = strainMdxInfo(FAQQueryResult);
-  // it("컴포넌트의 제목과 부제목이 보여진다.", () => {
-  //   const { getByText } = renderFAQ();
+  it("컴포넌트의 제목과 부제목이 보여진다.", () => {
+    const { getByText } = renderFAQ();
 
-  //   getByText(TITLE.FREQUENTLY_ASKED_QUESTIONS);
-  //   getByText(SUBTITLE.FAQ);
-  // });
-  // it("교육과정 카테고리의 FAQ만 보여진다.", async () => {
-  //   const { getByText } = renderFAQ();
+    getByText(TITLE.FREQUENTLY_ASKED_QUESTIONS);
+    getByText(SUBTITLE.FAQ);
+  });
+  it("각 과정에 해당되는 내용의 FAQ만 보여진다.", async () => {
+    const courses = ["masters", "javascript"];
 
-  //   const mastersFAQList = lists.filter((list: FAQType) => list.category === "교육과정");
-  //   mastersFAQList.forEach(({ title }) => getByText(title));
-  // });
-  // it("교육과정 카테고리의 FAQ의 갯수가 5개 이하이면 더보기 버튼은 보여지지 않는다.", async () => {
-  //   const { getAllByText, queryByText } = renderFAQ();
+    courses.forEach((course) => {
+      const { getByText } = renderFAQ(course as "masters" | "javascript");
 
-  //   const mastersFAQList = lists.filter((list: FAQType) => list.category === "교육과정");
-  //   expect(mastersFAQList.length).toEqual(5);
+      const faqList = lists.filter((list: FAQType) => list.course === course);
+      faqList.forEach(({ title }) => getByText(title));
+    });
+  });
+  it("FAQ의 갯수가 5개 이하이면 더보기 버튼은 보여지지 않는다.", async () => {
+    const { queryByText } = renderFAQ("masters");
 
-  //   const curriculumFAQ = getAllByText("교육과정");
-  //   expect(curriculumFAQ.length).toEqual(5);
+    const moreBtn = queryByText("더보기");
+    expect(moreBtn).toBeNull();
+  });
+  it("FAQ의 갯수가 6개 이상이면 더보기 버튼이 보여진다.", async () => {
+    useStaticQuery.mockImplementation(() => FAQQueryResult_ForMoreButtonTest);
+    const { lists }: { lists: FAQType[] } = strainMdxInfo(FAQQueryResult_ForMoreButtonTest);
+    const { getByText } = renderFAQ("masters");
 
-  //   const moreBtn = queryByText("더보기");
-  //   expect(moreBtn).toBeNull();
-  // });
-  // it("교육과정 카테고리의 FAQ의 갯수가 6개 이상이면 더보기 버튼이 보여진다.", async () => {
-  //   useStaticQuery.mockImplementation(() => FAQQueryResult_ForMoreButtonTest);
-  //   const { lists }: { lists: FAQType[] } = strainMdxInfo(FAQQueryResult_ForMoreButtonTest);
-  //   const { getByText } = renderFAQ();
+    const faqList = lists.filter((list: FAQType) => list.course === "masters");
+    expect(faqList.length).toEqual(12);
 
-  //   const mastersFAQList = lists.filter((list: FAQType) => list.category === "교육과정");
-  //   expect(mastersFAQList.length).toEqual(12);
+    getByText("더보기");
+  });
+  it("화면에 보여지는것 의외에 더 보여줄 수 있는 FAQ가 5개 이상 있다면 더보기 버튼 클릭시 5개가 추가되어 보여진다.", async () => {
+    const { lists }: { lists: FAQType[] } = strainMdxInfo(FAQQueryResult_ForMoreButtonTest);
+    const { getAllByLabelText, getByText } = renderFAQ("masters");
 
-  //   getByText("더보기");
-  // });
-  // it("화면에 보여지는것 의외에 더 보여줄 수 있는 교육과정 FAQ가 5개 이상 있다면 더보기 버튼 클릭시 5개가 추가되어 보여진다.", async () => {
-  //   const { lists }: { lists: FAQType[] } = strainMdxInfo(FAQQueryResult_ForMoreButtonTest);
-  //   const { getAllByText, getByText } = renderFAQ();
+    const faqList = lists.filter((list: FAQType) => list.course === "masters");
+    expect(faqList.length).toEqual(12);
 
-  //   const mastersFAQList = lists.filter((list: FAQType) => list.category === "교육과정");
-  //   expect(mastersFAQList.length).toEqual(12);
+    let renderedFAQList = getAllByLabelText("faq");
+    expect(renderedFAQList.length).toEqual(5);
 
-  //   let curriculumFAQ = getAllByText("교육과정");
-  //   expect(curriculumFAQ.length).toEqual(5);
+    const moreBtn = getByText("더보기");
+    fireEvent.click(moreBtn);
+    renderedFAQList = getAllByLabelText("faq");
+    expect(renderedFAQList.length).toEqual(10);
+  });
+  it("화면에 보여지는것 의외에 더 보여줄 수 있는 교육과정 FAQ가 5개 미만이라면 남은 FAQ가 추가되어 보여진다.", async () => {
+    const { lists }: { lists: FAQType[] } = strainMdxInfo(FAQQueryResult_ForMoreButtonTest);
+    const { getAllByLabelText, getByText } = renderFAQ("masters");
 
-  //   const moreBtn = getByText("더보기");
-  //   fireEvent.click(moreBtn);
-  //   curriculumFAQ = getAllByText("교육과정");
-  //   expect(curriculumFAQ.length).toEqual(10);
-  // });
-  // it("화면에 보여지는것 의외에 더 보여줄 수 있는 교육과정 FAQ가 5개 미만이라면 남은 FAQ가 추가되어 보여진다.", async () => {
-  //   const { lists }: { lists: FAQType[] } = strainMdxInfo(FAQQueryResult_ForMoreButtonTest);
-  //   const { getAllByText, getByText } = renderFAQ();
+    const faqList = lists.filter((list: FAQType) => list.course === "masters");
+    expect(faqList.length).toEqual(12);
 
-  //   const mastersFAQList = lists.filter((list: FAQType) => list.category === "교육과정");
-  //   expect(mastersFAQList.length).toEqual(12);
+    let renderedFAQList = getAllByLabelText("faq");
+    expect(renderedFAQList.length).toEqual(5);
 
-  //   let curriculumFAQ = getAllByText("교육과정");
-  //   expect(curriculumFAQ.length).toEqual(5);
+    const moreBtn = getByText("더보기");
+    fireEvent.click(moreBtn);
+    renderedFAQList = getAllByLabelText("faq");
+    expect(renderedFAQList.length).toEqual(10);
 
-  //   const moreBtn = getByText("더보기");
-  //   fireEvent.click(moreBtn);
-  //   curriculumFAQ = getAllByText("교육과정");
-  //   expect(curriculumFAQ.length).toEqual(10);
-
-  //   fireEvent.click(moreBtn);
-  //   curriculumFAQ = getAllByText("교육과정");
-  //   expect(curriculumFAQ.length).toEqual(12);
-  // });
+    fireEvent.click(moreBtn);
+    renderedFAQList = getAllByLabelText("faq");
+    expect(renderedFAQList.length).toEqual(12);
+  });
 });
