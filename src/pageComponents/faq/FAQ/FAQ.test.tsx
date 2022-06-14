@@ -1,6 +1,6 @@
 import React from "react";
 import * as Gatsby from "gatsby";
-import { fireEvent, render } from "@testing-library/react";
+import { render } from "@testing-library/react";
 // Type
 import { FAQType } from "@type/FAQ";
 // Testing-Component
@@ -8,10 +8,11 @@ import { FAQ } from ".";
 // Mocks
 import { FAQResult } from "./FAQ.test.mock";
 // Assets
-import { TITLE } from "assets/static/phrases";
+import { TITLE, CATEGORTY_TPL } from "assets/static/phrases";
 // Libs
 import { TestProvider, removeLineFeed } from "lib/testUtils";
 import { strainMdxInfo } from "lib/utils";
+import { fireEvent } from "@storybook/testing-library";
 
 describe("<FAQ>", () => {
   const renderFAQ = () =>
@@ -22,7 +23,6 @@ describe("<FAQ>", () => {
     );
   const useStaticQuery = jest.spyOn(Gatsby, "useStaticQuery");
   useStaticQuery.mockImplementation(() => ({ ...FAQResult }));
-  const { lists }: { lists: FAQType[] } = strainMdxInfo(FAQResult);
   it("제목이 보여진다.", async () => {
     const { getByText } = renderFAQ();
 
@@ -30,23 +30,25 @@ describe("<FAQ>", () => {
   });
   it("카테고리, 질문, 대답, 최종 업데이트 날짜가 보여진다.", async () => {
     const { getByText } = renderFAQ();
+    const course = "masters";
     const { lists } = strainMdxInfo(FAQResult);
+    const filteredLists = lists.filter((list: FAQType) => list.course === course);
 
-    lists.forEach(({ title, content, editDate }: FAQType) => {
+    filteredLists.forEach(({ title, content, editDate }: FAQType) => {
       getByText(title);
       getByText(removeLineFeed(content));
       getByText(`최종 업데이트: ${editDate}`);
     });
   });
-  it("특정 카테고리를 클릭하면 카테고리에 대한 내용들이 보여진다.", async () => {
+  it("과정 제목을 클릭하면 해당 과정에 대한 내용들이 보여진다.", async () => {
     const { getByText } = renderFAQ();
+    const course = "javascript";
+    const { lists } = strainMdxInfo(FAQResult);
+    const filteredLists = lists.filter((list: FAQType) => list.course === course);
 
-    const category = getByText("#코드투게더 JS 과정");
-    fireEvent.click(category);
-
-    const jsFAQList = lists.filter((list: FAQType) => list.course === "javascript");
-
-    jsFAQList.forEach(({ title, content, editDate }) => {
+    const jsFAQBtn = getByText(`#${CATEGORTY_TPL[course]}`);
+    fireEvent.click(jsFAQBtn);
+    filteredLists.forEach(({ title, content, editDate }: FAQType) => {
       getByText(title);
       getByText(removeLineFeed(content));
       getByText(`최종 업데이트: ${editDate}`);

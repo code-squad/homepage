@@ -35,7 +35,7 @@ export const FAQResult = {
           editDate: "2022-04-24",
         },
         {
-          course: "javascript",
+          course: "masters",
           category: "교육과정",
           title: "[마스터즈 코스] 시험 준비 외에 무엇을 학습하면 좋을까요?",
           content:
@@ -75,7 +75,6 @@ export const FAQResult = {
           editDate: "2022-04-29",
         },
         {
-          course: "etc",
           category: "기타",
           title: "과정 중에 빈자리가 생긴다면 들어갈 수 있나요?",
           content:
