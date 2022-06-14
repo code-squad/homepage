@@ -9,14 +9,16 @@ import { LDisplay } from "typography";
 import { DropdownItem, TagNavigationBar } from "components";
 // Assets
 import headers from "assets/img/illusts/header";
-import { TITLE } from "assets/static/phrases";
+import { TITLE, CATEGORTY_TPL } from "assets/static/phrases";
 // Lib
 import { strainMdxInfo } from "lib/utils";
 
 const FAQ: React.FC = () => {
   const { lists }: { lists: FAQType[] } = strainMdxInfo(useStaticQuery(FAQQuery));
-  const categories = new Set<string>(["전체"]);
-  lists.forEach((list) => categories.add(list.category));
+  const categories = new Set<string>([]);
+  lists.forEach(({ course }) => categories.add(course));
+
+  const categoryTitles = Array.from(categories).map((category) => CATEGORTY_TPL[category]);
 
   const [currentIndex, setCurrentIndex] = React.useState(0);
   const [faqList, setFAQList] = React.useState<FAQType[]>(lists);
@@ -27,8 +29,8 @@ const FAQ: React.FC = () => {
       return;
     }
 
-    const category = Array.from(categories)[currentIndex];
-    const filteredLists = lists.filter((list) => list.category === category);
+    const course = Array.from(categories)[currentIndex];
+    const filteredLists = lists.filter((list) => list.course === course);
     setFAQList(filteredLists);
   }, [currentIndex]);
 
@@ -37,10 +39,10 @@ const FAQ: React.FC = () => {
       <FAQMasthead />
       <FAQContentWrapper>
         <LDisplay style={{ paddingTop: "16rem", paddingBottom: "3.2rem" }}>{TITLE.FAQ}</LDisplay>
-        <TagNavigationBar titles={Array.from(categories)} onIndexChanged={setCurrentIndex} />
+        <TagNavigationBar titles={categoryTitles} onIndexChanged={setCurrentIndex} />
         <DropdownList>
-          {faqList.map(({ category, title, content, editDate }) => (
-            <li key={title}>
+          {faqList.map(({ course, category, title, content, editDate }) => (
+            <li key={course + title}>
               <DropdownItem short {...{ category, title, content, editDate }} />
             </li>
           ))}
@@ -100,6 +102,7 @@ const FAQQuery = graphql`
           title
           content
           editDate
+          course
         }
       }
     }
