@@ -26,10 +26,10 @@ const FAQ: React.FC = () => {
 
   React.useEffect(() => {
     const course = Array.from(categories)[currentIndex];
-
-    let filteredLists;
-    if (course === "etc") filteredLists = lists.filter((list) => !list.course);
-    filteredLists = lists.filter((list) => list.course === course);
+    const filteredLists =
+      course === "etc"
+        ? lists.filter((list) => !list.course)
+        : lists.filter((list) => list.course === course);
 
     setFAQList(filteredLists);
   }, [currentIndex]);
