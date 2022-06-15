@@ -18,7 +18,7 @@ const MarkdownLink: React.FC<{ href: string }> = ({ href, ...rest }) => {
 const Layout: React.FC<{ children?: JSX.Element }> = ({ children }) => {
   return (
     <MDXProvider components={{ a: (props) => <MarkdownLink {...props} /> }}>
-      <article className="markdown-body">{children}</article>;
+      <article className="markdown-body">{children}</article>
     </MDXProvider>
   );
 };
