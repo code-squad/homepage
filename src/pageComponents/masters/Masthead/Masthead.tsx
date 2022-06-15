@@ -36,8 +36,12 @@ const Masthead: React.FC = () => {
           ))}
         </TargetWrapper>
         <InfoItemWrapper>
-          <InfoItem src={icons.calander} label="교육기간" content={trainingDuration} />
-          <InfoItem src={icons.coin} label="비용" content={cost} />
+          <InfoItem
+            src={icons.calander}
+            label={TITLE.EDUCATION_PERIOD}
+            content={trainingDuration}
+          />
+          <InfoItem src={icons.coin} label={TITLE.COST} content={cost} />
         </InfoItemWrapper>
       </CourseInfoWrapper>
     </MastheadWrapper>
