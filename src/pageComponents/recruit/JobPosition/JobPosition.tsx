@@ -9,8 +9,8 @@ import { LDisplay } from "typography";
 import { DropdownItem, TagNavigationBar } from "components";
 // Assets
 import { TITLE } from "assets/static/phrases";
-import { strainAllMdxInfo } from "lib/utils";
-import strainAllMdxInfoBody from "lib/utils/strainAllMdxInfoBody";
+// Utils
+import { strainAllMdxInfoBody } from "lib/utils";
 
 const JobPosition: React.FC = () => {
   const jobPositionData = useStaticQuery(JobPositionQuery);

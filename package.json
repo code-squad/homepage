@@ -13,8 +13,8 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "jest --config ./scripts/jest/jest.config.ts",
-    "test:w": "jest --config ./scripts/jest/jest.config.ts --watch",
+    "test": "jest --config ./scripts/jest/jest.config.js",
+    "test:w": "jest --config ./scripts/jest/jest.config.js --watch",
     "storybook": "NODE_PATH=src start-storybook -p 3001 -c .storybook -s src",
     "build-storybook": "NODE_ENV=test NODE_PATH=src build-storybook -s src"
   },
