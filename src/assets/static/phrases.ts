@@ -51,6 +51,7 @@ const TITLE = {
   COST: "비용",
   CORETIME: "코어타임",
   MORE: "더보기",
+  NOT_FOUND: "404",
 };
 
 const DESCRIPTION = {
