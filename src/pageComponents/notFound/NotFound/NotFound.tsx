@@ -15,7 +15,7 @@ const NotFoundWrapper = styled.div`
   width: 100vw;
   height: calc(100vh - 25rem);
   min-width: 144rem;
-  min-height: 8rem;
+  min-height: 53.9rem;
   display: flex;
   justify-content: center;
   align-items: center;
