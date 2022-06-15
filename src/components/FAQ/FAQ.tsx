@@ -42,7 +42,7 @@ const FAQ: React.FC<IFaq> = ({ course }) => {
       </DropdownWrapper>
       {faqList.length > 5 && (
         <EButton
-          children="더보기"
+          children={TITLE.MORE}
           disabled={faqCount === faqList.length}
           onClick={handleMoreButtonClick}
         />

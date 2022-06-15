@@ -48,7 +48,7 @@ const Course: React.FC = () => {
         {courses.length > 9 && (
           <MoreButtonWrapper>
             <EButton
-              children="더보기"
+              children={TITLE.MORE}
               disabled={courseCount === courses.length}
               onClick={handleMoreButtonClick}
             />
