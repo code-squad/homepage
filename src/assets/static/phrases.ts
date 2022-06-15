@@ -50,6 +50,7 @@ const TITLE = {
   EDUCATION_PERIOD: "교육기간",
   COST: "비용",
   CORETIME: "코어타임",
+  MORE: "더보기",
 };
 
 const DESCRIPTION = {
