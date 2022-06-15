@@ -11,7 +11,7 @@ import {
   RecruitLink,
 } from "pageComponents/team-culture";
 
-const TeamCulturePage = () => {
+const TeamCulturePage: React.FC = () => {
   return (
     <GlobalTheme>
       <main style={{ overflowX: "hidden" }}>

@@ -16,7 +16,7 @@ import {
   Place,
 } from "pageComponents/main";
 
-const MainPage = () => {
+const MainPage: React.FC = () => {
   return (
     <GlobalTheme>
       <main style={{ overflowX: "hidden" }}>
