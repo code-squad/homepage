@@ -1,7 +1,7 @@
 module.exports = {
   rootDir: "./../../",
   transform: {
-    "^.+\\.[jt]sx?$": "<rootDir>/scripts/jest/jest-preprocess.ts",
+    "^.+\\.[jt]sx?$": "<rootDir>/scripts/jest/jest-preprocess.js",
   },
   moduleNameMapper: {
     ".+\\.(css|styl|less|sass|scss)$": `identity-obj-proxy`,
@@ -12,11 +12,11 @@ module.exports = {
   },
   moduleDirectories: ["node_modules", "src"],
   testPathIgnorePatterns: [`node_modules`, `\\.cache`, `<rootDir>.*/public`, `storybook-static`],
-  transformIgnorePatterns: [`node_modules/(?!(gatsby)/)`],
+  transformIgnorePatterns: [`node_modules/(?!(gatsby|gatsby-script)/)`],
   globals: {
     __PATH_PREFIX__: ``,
   },
   setupFiles: [`<rootDir>/scripts/jest/loadershim.ts`],
   testEnvironment: `jsdom`,
-  setupFilesAfterEnv: ["<rootDir>/scripts/jest/setup-test-env.ts"],
+  setupFilesAfterEnv: ["<rootDir>/scripts/jest/setup-test-env.tsx"],
 };
