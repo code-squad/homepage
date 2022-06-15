@@ -39,7 +39,7 @@ const DropdownItem: React.FC<IDropdownItem> = ({
   };
 
   return (
-    <DropdownWrapper {...{ short, open }}>
+    <DropdownWrapper aria-label="faq" {...{ short, open }}>
       <BoardWrapper {...{ open }} onClick={handleCardOpen}>
         <Category>
           <MBody bold>{category}</MBody>

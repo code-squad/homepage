@@ -10,40 +10,40 @@ import { SUBTITLE, TITLE } from "assets/static/phrases";
 // Utils
 import { strainMdxInfo } from "lib/utils";
 
-const FAQ: React.FC = () => {
+type IFaq = {
+  course?: "masters" | "javascript";
+};
+
+const FAQ: React.FC<IFaq> = ({ course }) => {
   const { lists } = strainMdxInfo(useStaticQuery(FAQListQuery));
 
-  const mastersFAQList = lists.filter((list: FAQType) => list.category === "교육과정");
+  const faqList = course ? lists.filter((list: FAQType) => list.course === course) : lists;
 
-  const [faqCount, setFAQCount] = React.useState(
-    mastersFAQList.length > 5 ? 5 : mastersFAQList.length
-  );
+  const [faqCount, setFAQCount] = React.useState(faqList.length > 5 ? 5 : faqList.length);
 
   const handleMoreButtonClick = () => {
-    if (faqCount + 5 <= mastersFAQList.length) {
+    if (faqCount + 5 <= faqList.length) {
       setFAQCount(faqCount + 5);
       return;
     }
 
-    setFAQCount(mastersFAQList.length);
+    setFAQCount(faqList.length);
   };
 
   return (
     <FAQWrapper>
       <TitleSet subtitle={SUBTITLE.FAQ} title={TITLE.FREQUENTLY_ASKED_QUESTIONS} />
       <DropdownWrapper>
-        {mastersFAQList
-          .slice(0, faqCount)
-          .map(({ category, title, content, editDate }: FAQType) => (
-            <li key={title}>
-              <DropdownItem {...{ category, title, content, editDate }} />
-            </li>
-          ))}
+        {faqList.slice(0, faqCount).map(({ category, title, content, editDate }: FAQType) => (
+          <li key={title}>
+            <DropdownItem {...{ category, title, content, editDate }} />
+          </li>
+        ))}
       </DropdownWrapper>
-      {mastersFAQList.length > 5 && (
+      {faqList.length > 5 && (
         <EButton
           children="더보기"
-          disabled={faqCount === mastersFAQList.length}
+          disabled={faqCount === faqList.length}
           onClick={handleMoreButtonClick}
         />
       )}
@@ -74,6 +74,7 @@ const FAQListQuery = graphql`
           editDate
           title
           category
+          course
         }
       }
     }

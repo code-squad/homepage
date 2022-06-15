@@ -29,17 +29,17 @@ describe("<StudyFeature>", () => {
     getAllByText(TITLE.HOW_STUDY);
     getAllByText(SUBTITLE.CODE_TOGETHER);
   });
-  it("코드투게더 교육 방식 이미지들이 보여진다.", async () => {
-    const { getAllByAltText } = renderStudyFeature();
+  // it("코드투게더 교육 방식 이미지들이 보여진다.", async () => {
+  //   const { getAllByAltText } = renderStudyFeature();
 
-    getAllByAltText("codetogether-study-feature");
-  });
-  it("좌우 화살표 버튼들이 보여진다.", async () => {
-    const { getByAltText } = renderStudyFeature();
+  //   getAllByAltText("codetogether-study-feature");
+  // });
+  // it("좌우 화살표 버튼들이 보여진다.", async () => {
+  //   const { getByAltText } = renderStudyFeature();
 
-    getByAltText("arrow-left");
-    getByAltText("arrow-right");
-  });
+  //   getByAltText("arrow-left");
+  //   getByAltText("arrow-right");
+  // });
   it("코드투게더 교육 특징에 대한 내용들이 보여진다.", async () => {
     const { getByText } = renderStudyFeature();
 

@@ -3,4 +3,5 @@ export interface FAQType {
   title: string;
   content: string;
   editDate: string;
+  course: string;
 }
