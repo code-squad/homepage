@@ -13,7 +13,7 @@ import { TITLE } from "assets/static/phrases";
 import { strainMdxInfo } from "lib/utils";
 
 const Masthead: React.FC = () => {
-  const { title, description, targets, trainingDuration, cost, subject } = strainMdxInfo(
+  const { title, description, targets, trainingDuration, cost } = strainMdxInfo(
     useStaticQuery(MastheadQuery)
   );
 
@@ -38,7 +38,6 @@ const Masthead: React.FC = () => {
         <InfoItemWrapper>
           <InfoItem src={icons.calander} label="교육기간" content={trainingDuration} />
           <InfoItem src={icons.coin} label="비용" content={cost} />
-          <InfoItem src={icons.book} label="클래스(택1)" content={subject} />
         </InfoItemWrapper>
       </CourseInfoWrapper>
     </MastheadWrapper>
@@ -117,7 +116,6 @@ const MastheadQuery = graphql`
         targets
         trainingDuration
         cost
-        subject
       }
     }
   }
