@@ -11,7 +11,6 @@ export const MastHeadQueryResult = {
       ],
       trainingDuration: "2023년 1월부터 6월까지(약 6개월)",
       cost: "매 달 66만원(6개월 기준 총 369만원)",
-      subject: "웹 프론트엔드, 웹 백엔드, 모바일 안드로이드, 모바일 iOS",
     },
   },
 };

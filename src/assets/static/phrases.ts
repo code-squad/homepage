@@ -47,6 +47,11 @@ const TITLE = {
   STUDENT_INTERVIEW: "수강생 후기",
   SCHEDULED_COURSE: "지금 모집 중인 과정",
   VIEW_ENTIRE_COURSE: "전체 과정 보기 >",
+  EDUCATION_PERIOD: "교육기간",
+  COST: "비용",
+  CORETIME: "코어타임",
+  MORE: "더보기",
+  NOT_FOUND: "404",
 };
 
 const DESCRIPTION = {

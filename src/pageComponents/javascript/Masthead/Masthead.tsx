@@ -36,9 +36,13 @@ const Masthead: React.FC = () => {
           ))}
         </TargetWrapper>
         <ul>
-          <InfoItem src={icons.calander} label="교육기간" content={trainingDuration} />
-          <InfoItem src={icons.book} label="코어타임" content={coreTime} />
-          <InfoItem src={icons.coin} label="비용" content={cost} />
+          <InfoItem
+            src={icons.calander}
+            label={TITLE.EDUCATION_PERIOD}
+            content={trainingDuration}
+          />
+          <InfoItem src={icons.book} label={TITLE.CORETIME} content={coreTime} />
+          <InfoItem src={icons.coin} label={TITLE.COST} content={cost} />
         </ul>
       </CourseInfoWrapper>
     </MastheadWrapper>

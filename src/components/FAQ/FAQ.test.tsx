@@ -43,7 +43,7 @@ describe("<FAQ>", () => {
   it("FAQ의 갯수가 5개 이하이면 더보기 버튼은 보여지지 않는다.", async () => {
     const { queryByText } = renderFAQ("masters");
 
-    const moreBtn = queryByText("더보기");
+    const moreBtn = queryByText(TITLE.MORE);
     expect(moreBtn).toBeNull();
   });
   it("FAQ의 갯수가 6개 이상이면 더보기 버튼이 보여진다.", async () => {
@@ -54,7 +54,7 @@ describe("<FAQ>", () => {
     const faqList = lists.filter((list: FAQType) => list.course === "masters");
     expect(faqList.length).toEqual(12);
 
-    getByText("더보기");
+    getByText(TITLE.MORE);
   });
   it("화면에 보여지는것 의외에 더 보여줄 수 있는 FAQ가 5개 이상 있다면 더보기 버튼 클릭시 5개가 추가되어 보여진다.", async () => {
     const { lists }: { lists: FAQType[] } = strainMdxInfo(FAQQueryResult_ForMoreButtonTest);
@@ -66,7 +66,7 @@ describe("<FAQ>", () => {
     let renderedFAQList = getAllByLabelText("faq");
     expect(renderedFAQList.length).toEqual(5);
 
-    const moreBtn = getByText("더보기");
+    const moreBtn = getByText(TITLE.MORE);
     fireEvent.click(moreBtn);
     renderedFAQList = getAllByLabelText("faq");
     expect(renderedFAQList.length).toEqual(10);
@@ -81,7 +81,7 @@ describe("<FAQ>", () => {
     let renderedFAQList = getAllByLabelText("faq");
     expect(renderedFAQList.length).toEqual(5);
 
-    const moreBtn = getByText("더보기");
+    const moreBtn = getByText(TITLE.MORE);
     fireEvent.click(moreBtn);
     renderedFAQList = getAllByLabelText("faq");
     expect(renderedFAQList.length).toEqual(10);
