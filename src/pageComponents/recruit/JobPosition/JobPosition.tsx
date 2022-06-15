@@ -9,27 +9,31 @@ import { LDisplay } from "typography";
 import { DropdownItem, TagNavigationBar } from "components";
 // Assets
 import { TITLE } from "assets/static/phrases";
-import { strainMdxInfo } from "lib/utils";
+import { strainAllMdxInfo } from "lib/utils";
+import strainAllMdxInfoBody from "lib/utils/strainAllMdxInfoBody";
 
 const JobPosition: React.FC = () => {
-  const data = useStaticQuery(JobPositionQuery);
-  const { jobPositions }: { jobPositions: JobPositionType[] } = strainMdxInfo(data);
+  const jobPositionData = useStaticQuery(JobPositionQuery);
+  const jobPositionInfoList: JobPositionType[] = strainAllMdxInfoBody(jobPositionData);
 
   const categories = new Set<string>(["전체"]);
-  jobPositions.forEach((jobPosition) => categories.add(jobPosition.category));
+  jobPositionInfoList.forEach((jobPosition) => categories.add(jobPosition.category));
 
   const [currentIndex, setCurrentIndex] = React.useState(0);
-  const [faqList, setFAQList] = React.useState<JobPositionType[]>(jobPositions);
+  const [jobPositionList, setJobPositionList] =
+    React.useState<JobPositionType[]>(jobPositionInfoList);
 
   React.useEffect(() => {
     if (currentIndex === 0) {
-      setFAQList(jobPositions);
+      setJobPositionList(jobPositionList);
       return;
     }
 
     const category = Array.from(categories)[currentIndex];
-    const filteredLists = jobPositions.filter((jobPosition) => jobPosition.category === category);
-    setFAQList(filteredLists);
+    const filteredLists = jobPositionInfoList.filter(
+      (jobPosition) => jobPosition.category === category
+    );
+    setJobPositionList(filteredLists);
   }, [currentIndex]);
 
   return (
@@ -39,8 +43,8 @@ const JobPosition: React.FC = () => {
         <LDisplay style={{ paddingTop: "16rem", paddingBottom: "3.2rem" }}>{TITLE.APPLY}</LDisplay>
         <TagNavigationBar titles={Array.from(categories)} onIndexChanged={setCurrentIndex} />
         <DropdownItemWrapper>
-          {faqList.map(({ category, title, content, editDate }) => (
-            <DropdownItem key={title} short {...{ category, title, content, editDate }} />
+          {jobPositionList.map(({ category, title, body, editDate }) => (
+            <DropdownItem key={title} short {...{ category, title, body, editDate }} />
           ))}
         </DropdownItemWrapper>
       </JobPositionContentWrapper>
@@ -94,13 +98,19 @@ const DropdownItemWrapper = styled.ul`
 
 const JobPositionQuery = graphql`
   query JobPositionQuery {
-    mdx(frontmatter: { templateKey: { eq: "recruit_jobPositions" } }) {
-      frontmatter {
-        jobPositions {
-          category
-          title
-          content
-          editDate
+    allMdx(
+      sort: { order: ASC, fields: [frontmatter___editDate] }
+      filter: { frontmatter: { templateKey: { glob: "recruit_jobPositions_*" } } }
+    ) {
+      edges {
+        node {
+          body
+          frontmatter {
+            category
+            title
+            content
+            editDate
+          }
         }
       }
     }
