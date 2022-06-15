@@ -47,7 +47,7 @@ describe("<Course>", () => {
 
     expect(courses.length <= 9).toBeTruthy();
 
-    const moreBtn = queryByText("더보기");
+    const moreBtn = queryByText(TITLE.MORE);
     expect(moreBtn).toBeNull();
   });
   it("교육 과정의 갯수가 10개 이상이면 더보기 버튼이 보여진다.", async () => {
@@ -56,7 +56,7 @@ describe("<Course>", () => {
     const { getByText } = renderCourse();
 
     expect(courses.length >= 10).toBeTruthy();
-    getByText("더보기");
+    getByText(TITLE.MORE);
   });
   it("화면에 보여지는것 의외에 더 보여줄 수 있는 교육 과정이 9개 이상 있다면 더보기 버튼 클릭시 9개가 추가되어 보여진다.", async () => {
     const { getByText, getAllByLabelText } = renderCourse();
@@ -64,7 +64,7 @@ describe("<Course>", () => {
     let courseCards = getAllByLabelText(/course-card/i);
     expect(courseCards.length).toEqual(9);
 
-    const moreBtn = getByText("더보기");
+    const moreBtn = getByText(TITLE.MORE);
     fireEvent.click(moreBtn);
     courseCards = getAllByLabelText(/course-card/i);
     expect(courseCards.length).toEqual(18);
@@ -73,7 +73,7 @@ describe("<Course>", () => {
     const { getByText, getAllByLabelText } = renderCourse();
 
     let courseCards = getAllByLabelText(/course-card/i);
-    const moreBtn = getByText("더보기");
+    const moreBtn = getByText(TITLE.MORE);
 
     fireEvent.click(moreBtn);
     courseCards = getAllByLabelText(/course-card/i);
