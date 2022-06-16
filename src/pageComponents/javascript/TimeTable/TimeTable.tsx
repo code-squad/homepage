@@ -36,15 +36,15 @@ const TimeTable: React.FC = () => {
         <DescriptionWrapper>
           <TagList>
             {tags.map(({ color, name }: TagType) => (
-              <TagWrapper>
-                <TagColor background={color} />
+              <TagWrapper key={name}>
+                <TagColor aria-label={`${name}-tag-color`} background={color} />
                 <XSBody>{name}</XSBody>
               </TagWrapper>
             ))}
           </TagList>
           <PlanList>
             {planList.map(({ name, description, color }) => (
-              <PlanListWrapper>
+              <PlanListWrapper key={name}>
                 <PlanLabel {...{ color }}>
                   <XSBody>{name}</XSBody>
                 </PlanLabel>
