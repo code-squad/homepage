@@ -77,7 +77,7 @@ const FAQWrapper = styled.div`
 const FAQMasthead = styled.div`
   position: absolute;
   top: 0;
-  background-color: #ffc587;
+  background-color: ${({ theme: { color } }) => color.primary.orange4};
   height: 56rem;
   width: 100%;
   z-index: -1;
