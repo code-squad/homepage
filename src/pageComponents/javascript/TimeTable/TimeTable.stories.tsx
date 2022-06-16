@@ -3,10 +3,16 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 // Story-Component
 import { TimeTable } from ".";
+import TimeTableDocs from "./TimeTable.docs.mdx";
 
 export default {
   title: "pagecomponent/code-together/javascript/TimeTable",
   component: TimeTable,
+  parameters: {
+    docs: {
+      page: TimeTableDocs,
+    },
+  },
 } as ComponentMeta<typeof TimeTable>;
 
 const Template: ComponentStory<typeof TimeTable> = () => <TimeTable />;
