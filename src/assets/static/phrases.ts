@@ -15,6 +15,7 @@ const SUBTITLE = {
   CODE_TOGETHER: "코드투게더는",
   CODE_TOGETHER_COURSE: "코드투게더의",
   JAVASCRIPT: "자바스크립트 과정을 경험한",
+  JAVASCRIPT_COURSE: "자바스크립트 코스의",
 };
 
 const TITLE = {
@@ -25,7 +26,8 @@ const TITLE = {
   MASTER: "분야별 전문 마스터",
   GRADUATE_INTERVIEW: "졸업생 후기",
   EDUCATION_FEATURES: "교육 특징",
-  DETAIL_CURRICULUM: "각 클래스 별 상세 커리큘럼",
+  MASTERS_DETAIL_CURRICULUM: "각 클래스 별 상세 커리큘럼",
+  JAVASCRIPT_DETAIL_CURRICULUM: "각 파트 별 상세 커리큘럼",
   PLACE: "오프라인 교육장",
   SCHEDULE: "곧 시작하는 과정",
   MASTERS_COURSE_SCHEDULE: "마스터즈 코스 스케쥴",
@@ -35,10 +37,10 @@ const TITLE = {
   REFUND_STANDARD: "수강료 반환 기준",
   FAQ: "코드스쿼드에\n궁금한 점이 있나요?",
   APPLY: "지금 코드스쿼드에\n지원해 보세요!",
-  WELCOME: "강의식 수업이 재미 없던 사람들,\n여기여기 모여라!",
+  WELCOME: "스스로 찾은 방법으로\n함께 묶은 매듭은 풀리지 않습니다",
   TEAM_INTERIVIEW: "우리가 일하는 방식",
   TEAM_CULTURE:
-    "우리는 교육자와 학생 그리고\n동료들과의 상호작용을 통해\n고품질 교육을 경험하는 배움터를\n만듭니다.",
+    "우리는 교육자와 학생 그리고\n동료들과의 상호작용을 통해\n고품질 교육을 경험하는 배움터를\n만듭니다",
   CODESQUAD_TEAM_CULTURE: "코드스쿼드 팀 문화",
   CODESQUAD_RECRUIT_NEWS: "코드스쿼드 채용 소식 확인하기",
   WELFARE: "우리는 어떤 지원을 받을까요?",
@@ -48,7 +50,7 @@ const TITLE = {
   SCHEDULED_COURSE: "지금 모집 중인 과정",
   VIEW_ENTIRE_COURSE: "전체 과정 보기 >",
   EDUCATION_PERIOD: "교육기간",
-  COST: "비용",
+  COST: "수강료",
   CORETIME: "코어타임",
   MORE: "더보기",
   NOT_FOUND: "404",

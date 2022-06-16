@@ -22,6 +22,7 @@ const LinkButton: React.FC<ILinkButton> = ({ description, title, to, icon, capti
       as={caption ? "a" : Link}
       href={caption && to}
       target={caption && "_blank"}
+      rel={caption ? "noopener noreferrer nofollow" : undefined}
     >
       <TextWrapper {...{ caption }}>
         <Description>
