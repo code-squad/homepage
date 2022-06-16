@@ -40,9 +40,9 @@ export const MasterResult = {
         },
         {
           image: "ivy",
-          field: "모바일 안드로이드",
+          field: "모바일 Android",
           name: "아이비",
-          introduce: "Ivy, 모바일 안드로이드 마스터",
+          introduce: "Ivy, 모바일 Android 마스터",
           nutshell:
             "“가치 있는 무언가를 직접 만드는 과정을 즐길 수 있다면, 직접 부딪혀서 확인해보세요!”",
           careers: [
