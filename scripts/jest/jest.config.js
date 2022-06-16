@@ -19,4 +19,5 @@ module.exports = {
   setupFiles: [`<rootDir>/scripts/jest/loadershim.ts`],
   testEnvironment: `jsdom`,
   setupFilesAfterEnv: ["<rootDir>/scripts/jest/setup-test-env.tsx"],
+  modulePathIgnorePatterns: ["<rootDir>/.cache"],
 };
