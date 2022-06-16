@@ -15,14 +15,20 @@ export interface IMButtonProps {
 
 const MButton: React.FC<IMButtonProps> = ({ children, accent, disabled, to }) => {
   return (
-    <MButtonWrapper $accent={accent} $disabled={disabled} {...{ to }}>
+    <MButtonWrapper
+      $accent={accent}
+      $disabled={disabled}
+      href={to}
+      target="_blank"
+      rel="noopener noreferrer nofollow"
+    >
       <MBody bold>{children}</MBody>
       <ButtonIcon src={icons.chevronRight} {...{ disabled }} />
     </MButtonWrapper>
   );
 };
 
-const MButtonWrapper = styled(Link)<{ $accent?: boolean; $disabled?: boolean }>`
+const MButtonWrapper = styled.a<{ $accent?: boolean; $disabled?: boolean }>`
   display: inline-flex;
   justify-content: space-between;
   align-items: center;
