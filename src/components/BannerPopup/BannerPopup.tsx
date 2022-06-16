@@ -16,7 +16,7 @@ const BannerPopup: React.FC<IBannerPopup> = ({ title, description, onCloseButton
     <BannerPopupWrapper>
       <ContentWrapper>
         <MBody bold>{title}</MBody>
-        <XSBody bold>{description}</XSBody>
+        {description && <XSBody bold>{description}</XSBody>}
       </ContentWrapper>
       <CloseButton onClick={onCloseButtonClicked}>
         <ButtonIcon src={icons.close} />
