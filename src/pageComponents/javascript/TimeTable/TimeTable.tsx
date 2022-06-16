@@ -12,12 +12,12 @@ import { TitleSet } from "components";
 // Assets
 import { SUBTITLE, TITLE } from "assets/static/phrases";
 // Utils
-import { strinMdxInfoBody } from "lib/utils";
+import { strainMdxInfoBody } from "lib/utils";
 
 const TimeTable: React.FC = () => {
   const data = useStaticQuery(JavascriptTimeTableQuery);
   const { planList, tags, body }: { planList: PlanType[]; tags: TagType[]; body: string } =
-    strinMdxInfoBody(data);
+    strainMdxInfoBody(data);
 
   React.useEffect(() => {
     tags.forEach((tag, i: number) => {
