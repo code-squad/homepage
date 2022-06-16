@@ -1,10 +1,10 @@
-interface PlanType {
+export interface PlanType {
   name: string;
   description: string;
   color: string;
 }
 
-interface TagType {
+export interface TagType {
   name: string;
   color: string;
 }
