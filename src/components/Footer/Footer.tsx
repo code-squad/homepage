@@ -74,17 +74,25 @@ const Footer: React.FC = () => {
               <XSBody bold>{MESSAGE.SOCIAL_MEDIA}</XSBody>
             </li>
             <li>
-              <ExternalLink href={EXTERNAL.BLOG} target="_blank">
+              <ExternalLink href={EXTERNAL.BLOG} target="_blank" rel="noopener noreferrer nofollow">
                 {LINK.BLOG}
               </ExternalLink>
             </li>
             <li>
-              <ExternalLink href={EXTERNAL.YOUTUBE} target="_blank">
+              <ExternalLink
+                href={EXTERNAL.YOUTUBE}
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+              >
                 {LINK.YOUTUBE}
               </ExternalLink>
             </li>
             <li>
-              <ExternalLink href={EXTERNAL.FACEBOOK} target="_blank">
+              <ExternalLink
+                href={EXTERNAL.FACEBOOK}
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+              >
                 {LINK.FACEBOOK}
               </ExternalLink>
             </li>
