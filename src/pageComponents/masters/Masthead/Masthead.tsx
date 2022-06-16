@@ -21,7 +21,7 @@ const Masthead: React.FC = () => {
     <MastheadWrapper>
       <TitleWrapper>
         <MDisplay>{title}</MDisplay>
-        <MBody>{description}</MBody>
+        <MBody style={{ whiteSpace: "pre-line" }}>{description}</MBody>
       </TitleWrapper>
       <CourseInfoWrapper>
         <TargetWrapper>
