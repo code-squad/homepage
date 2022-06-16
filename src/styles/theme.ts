@@ -48,8 +48,8 @@ const color = {
     white20: "rgba(255, 255, 255, 0.2);",
   },
   primary: {
-    green1: "#57A620",
-    green2: "#6DD028",
+    green1: "#60B71C",
+    green2: "#73C92D",
     green3: "#8AD953",
     green4: "#B4E791",
     orange1: "#CC7210",

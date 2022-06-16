@@ -21,7 +21,7 @@ const DetailCurriculum: React.FC = () => {
 
   return (
     <DetailCurriculumWrapper>
-      <TitleSet subtitle={SUBTITLE.MASTERS_COURSE} title={TITLE.DETAIL_CURRICULUM} />
+      <TitleSet subtitle={SUBTITLE.JAVASCRIPT_COURSE} title={TITLE.JAVASCRIPT_DETAIL_CURRICULUM} />
       <TabNavigationBarWrapper>
         <TabNavigationBar {...{ titles }} onIndexChanged={setCurriculumIndex} />
       </TabNavigationBarWrapper>

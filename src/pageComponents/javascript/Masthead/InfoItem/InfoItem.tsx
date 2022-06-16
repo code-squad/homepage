@@ -17,14 +17,14 @@ const InfoItem: React.FC<IInfoItemProps> = ({ src, label, content }) => {
         <img src={src} style={{ marginRight: ".8rem" }} />
         <MBody bold>{label}</MBody>
       </InfoLabel>
-      <MBody>{content}</MBody>
+      <MBody style={{ whiteSpace: "pre-line" }}>{content}</MBody>
     </InfoItemWrapper>
   );
 };
 
 const InfoItemWrapper = styled.li`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 1.6rem;
 `;
 const InfoLabel = styled.label`

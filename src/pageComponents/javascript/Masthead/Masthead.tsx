@@ -21,7 +21,7 @@ const Masthead: React.FC = () => {
     <MastheadWrapper>
       <TitleWrapper>
         <MDisplay>{title}</MDisplay>
-        <MBody>{description}</MBody>
+        <MBody style={{ whiteSpace: "pre-line" }}>{description}</MBody>
       </TitleWrapper>
       <CourseInfoWrapper>
         <TargetWrapper>
@@ -77,8 +77,11 @@ const TitleWrapper = styled.div`
 const CourseInfoWrapper = styled.div`
   display: flex;
   min-width: 106.2rem;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin-top: 4rem;
+  & > *:not(:last-child) {
+    margin-right: 12.4rem;
+  }
 `;
 
 const TargetTitle = styled.h4`
@@ -92,6 +95,7 @@ const TargetWrapper = styled.ul`
   align-items: flex-start;
   justify-content: flex-start;
   list-style: disc;
+  width: 51.9rem;
 `;
 const TargetItem = styled.li`
   &:before {
