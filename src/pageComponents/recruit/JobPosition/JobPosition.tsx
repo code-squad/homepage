@@ -80,6 +80,7 @@ const JobPositionWrapper = styled.div`
   color: ${({ theme: { color } }) => color.greyScale.black};
   white-space: pre-line;
   text-align: start;
+  position: relative;
 `;
 
 const JobPositionContentWrapper = styled.div`

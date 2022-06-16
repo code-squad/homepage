@@ -55,6 +55,7 @@ const PlaceWrapper = styled.div`
   padding-bottom: 16rem;
   margin: 0 auto;
   display: flex;
+  position: relative;
   flex-direction: column;
   align-items: space-between;
   overflow-x: hidden;
