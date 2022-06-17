@@ -1,6 +1,7 @@
 import React from "react";
 // Theme
-import GlobalTheme from "../lib/context/GlobalTheme";
+import GlobalTheme from "lib/context/GlobalTheme";
+import GlobalHeader from "lib/context/GlobalHeader";
 // Components
 import { Footer, HomeGlobalNavigationBar } from "components";
 import {
@@ -15,7 +16,6 @@ import {
   Banner,
   Place,
 } from "pageComponents/main";
-import GlobalHeader from "lib/context/GlobalHeader";
 
 const MainPage: React.FC = () => {
   return (
