@@ -9,7 +9,7 @@ import { Masthead } from ".";
 import { MastHeadQueryResult } from "./Masthead.test.mock";
 // Lib
 import { strainMdxInfo } from "lib/utils";
-import { TestProvider } from "lib/testUtils";
+import { removeLineFeed, TestProvider } from "lib/testUtils";
 
 describe("<Masthead>", () => {
   const renderMasthead = () =>
@@ -25,17 +25,7 @@ describe("<Masthead>", () => {
     const { getByText } = renderMasthead();
 
     getByText(title);
-    getByText(description);
-  });
-  it("모집중인 과정의 이미지, 제목, 모집 마감일시가 보여진다.", () => {
-    const { getByText, getByAltText } = renderMasthead();
-
-    scheduledCourses.forEach(({ title, dueDate }: ScheduledCourse) => {
-      const featureImage = getByAltText(`course-img-${title}`);
-      expect(featureImage?.getAttribute("src")).toBe("test-file-stub");
-      getByText(title);
-      getByText(dueDate);
-    });
+    getByText(removeLineFeed(description));
   });
   it("모집중인 과정의 이미지, 제목, 모집 마감일시가 보여진다.", () => {
     const { getByText, getByAltText } = renderMasthead();
