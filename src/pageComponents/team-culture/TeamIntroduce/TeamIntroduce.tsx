@@ -39,8 +39,8 @@ const Background = styled.div`
 `;
 
 const TeamIntroduceWrapper = styled.div`
+  position: relative;
   width: 100%;
-  height: calc(100vw * 56 / 144);
   min-width: 144rem;
   min-height: 56rem;
   color: ${({ theme: { color } }) => color.greyScale.black};

@@ -47,7 +47,7 @@ const LinkButtonWrapper = styled(Link)<{ icon?: string; caption?: string }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: ${({ icon }) => (icon ? "43.5rem" : "106.2rem")};
+  width: ${({ icon }) => (icon ? "43.5rem" : "98.2rem")};
   border-radius: 0.8rem;
   border: 0.2rem solid ${({ theme: { color } }) => color.greyScale.grey3};
   background-color: ${({ theme: { color } }) => color.greyScale.offWhite};

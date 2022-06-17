@@ -15,10 +15,12 @@ import {
   Banner,
   Place,
 } from "pageComponents/main";
+import GlobalHeader from "lib/context/GlobalHeader";
 
 const MainPage: React.FC = () => {
   return (
     <GlobalTheme>
+      <GlobalHeader />
       <main style={{ overflowX: "hidden" }}>
         <HomeGlobalNavigationBar />
         <Banner />
