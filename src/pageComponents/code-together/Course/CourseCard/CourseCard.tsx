@@ -74,7 +74,6 @@ const CourseCardWrapper = styled(Link)<{ medium?: boolean }>`
 const CardImg = styled.img`
   width: 23.8rem;
   height: 23.8rem;
-  border: 0.1rem solid ${({ theme: { color } }) => color.greyScale.grey3};
 `;
 
 const MasterWrapper = styled.div`
