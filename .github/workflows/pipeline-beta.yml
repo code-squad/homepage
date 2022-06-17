@@ -60,15 +60,15 @@ jobs:
           node-version: "14"
       - name: Build gatsby application
         run: npm run build
-      - name: Build storybook
-        run: npm run build-storybook
+      # - name: Build storybook
+      #   run: npm run build-storybook
 
-      - name: Publish to Chromatic
-        uses: chromaui/action@v1
-        with:
-          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-          storybookBuildDir: storybook-static
-          workingDir: ./
+      # - name: Publish to Chromatic
+      #   uses: chromaui/action@v1
+      #   with:
+      #     projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+      #     storybookBuildDir: storybook-static
+      #     workingDir: ./
 
       - name: Declare commit id use on s3 upload
         id: vars
@@ -76,6 +76,16 @@ jobs:
         run: |
           echo "GITHUB_SHA: ${GITHUB_SHA}"
           echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+
+      - name: Any Name Bash Test Step
+        shell: bash
+        env:
+          AWS_S3_BUCKET: beta.codesquad.kr
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        run: |
+          echo "ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}"
+          echo "SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}"
 
       - name: AWS S3 Deploy
         uses: jakejarvis/s3-sync-action@master
