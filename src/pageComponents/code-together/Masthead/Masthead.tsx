@@ -9,7 +9,7 @@ import { MBody, MDisplay } from "typography";
 import { Course } from "./Course";
 // Assets
 import header from "assets/img/illusts/header";
-import illusts from "assets/img/illusts";
+import thumbnail from "assets/img/illusts/thumbnail";
 import { TITLE } from "assets/static/phrases";
 // Lib
 import { strainMdxInfo } from "lib/utils";
@@ -33,7 +33,7 @@ const Masthead: React.FC = () => {
         {scheduledCourses.map(({ title, dueDate, img, path }: ScheduledCourse) => (
           // 이미지 추가 후 이미지 수정 필요
           <li key={img}>
-            <Course {...{ title, dueDate, path }} img={illusts.iconBlank} />
+            <Course {...{ title, dueDate, path, img: thumbnail[img] }} />
           </li>
         ))}
       </CourseAdmissionsList>
