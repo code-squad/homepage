@@ -96,6 +96,7 @@ const PlanWrapper = styled.div`
 
 const DescriptionWrapper = styled.div`
   display: flex;
+  margin-left: 8rem;
   flex-direction: column;
 `;
 const PlanListWrapper = styled.ul`
