@@ -7,7 +7,7 @@ import { CourseType } from "@type/Course";
 import { EButton, TitleSet } from "components";
 import { CourseCard } from "./CourseCard";
 // Assets
-import illusts from "assets/img/illusts";
+import thumbnail from "assets/img/illusts/thumbnail";
 import { SUBTITLE, TITLE } from "assets/static/phrases";
 // Utils
 import { strainMdxInfo } from "lib/utils";
@@ -39,8 +39,7 @@ const Course: React.FC = () => {
             .map(({ master, title, dueDate, cost, tags, img, path }) => (
               <li key={img}>
                 <CourseCard
-                  {...{ master, title, dueDate, cost, tags, path }}
-                  img={illusts.thumbnailBlank}
+                  {...{ master, title, dueDate, cost, tags, path, img: thumbnail[img] }}
                 />
               </li>
             ))}

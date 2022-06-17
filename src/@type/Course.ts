@@ -1,4 +1,4 @@
-import illusts from "assets/img/illusts";
+import thumbnail from "assets/img/illusts/thumbnail";
 
 export interface CourseType {
   master: string;
@@ -7,5 +7,5 @@ export interface CourseType {
   cost: string;
   tags: string[];
   path: string;
-  img: keyof typeof illusts;
+  img: keyof typeof thumbnail;
 }
