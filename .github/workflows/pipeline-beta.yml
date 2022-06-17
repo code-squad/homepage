@@ -77,16 +77,6 @@ jobs:
           echo "GITHUB_SHA: ${GITHUB_SHA}"
           echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
 
-      - name: Any Name Bash Test Step
-        shell: bash
-        env:
-          AWS_S3_BUCKET: beta.codesquad.kr
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        run: |
-          echo "ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}"
-          echo "SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}"
-
       - name: AWS S3 Deploy
         uses: jakejarvis/s3-sync-action@master
         with:
@@ -98,18 +88,10 @@ jobs:
           AWS_REGION: "ap-northeast-2"
           SOURCE_DIR: "./public"
 
-      # - name: AWS Deploy push
-      #   env:
-      #     CI: true
-      #     AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-      #     AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      #     AWS_DEFAULT_REGION: "ap-northeast-2"
-      #   run: aws s3 sync ./public s3://beta.codesquad.kr/
-
       - name: Slack Notification
         uses: 8398a7/action-slack@v3
         with:
           status: ${{ job.status }}
           fields: repo,commit,message,author,action,ref
         env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
