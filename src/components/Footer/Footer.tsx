@@ -132,18 +132,6 @@ const CompanyInfomationWrapper = styled.div`
   justify-content: space-between;
 `;
 
-const PopupButton = styled.button`
-  padding: 0;
-  color: ${({ theme: { color } }) => color.greyScale.white};
-  font-size: ${({ theme: { fontSize } }) => fontSize.body.xs};
-  font-weight: ${({ theme: { fontWeight } }) => fontWeight.regular};
-  line-height: ${({ theme: { lineHeight } }) => lineHeight.body.xs};
-  letter-spacing: ${({ theme: { letterSpacing } }) => letterSpacing};
-  background-color: transparent;
-  border: 0;
-  cursor: pointer;
-`;
-
 const MenuListWrapper = styled.div`
   width: 40.9rem;
   display: flex;
