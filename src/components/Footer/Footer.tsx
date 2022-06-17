@@ -107,6 +107,15 @@ const Footer: React.FC = () => {
                 {LINK.FACEBOOK}
               </ExternalLink>
             </li>
+            <li>
+              <ExternalLink
+                href={EXTERNAL.KAKAOTALK_CHANNEL}
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+              >
+                {LINK.KAKAOTALK_CHANNEL}
+              </ExternalLink>
+            </li>
           </MenuList>
         </MenuListWrapper>
       </ContentWrapper>
