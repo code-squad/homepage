@@ -29,7 +29,18 @@ const Footer: React.FC = () => {
                 <XSBody as="span">{MESSAGE.COMPANY_ADDRESS}</XSBody>
                 <XSBody as="span"> | </XSBody>
                 <XSBody as="span">{MESSAGE.COMPANY_TEL_NUMBER}</XSBody>
-                <XSBody>{MESSAGE.COMPANY_EMAIL_ADDRESS}</XSBody>
+              </div>
+              <div>
+                <XSBody as="span">{MESSAGE.COMPANY_EMAIL}</XSBody>
+                <XSBody as="span"> | </XSBody>
+                <ExternalLink
+                  href={`mailto:${EXTERNAL.EMAIL}`}
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  underline
+                >
+                  {MESSAGE.COMPANY_EMAIL_ADDRESS}
+                </ExternalLink>
               </div>
             </div>
           </CompanyInfomationWrapper>
@@ -157,9 +168,10 @@ const InternalLink = styled(Link)<{ $bold?: boolean }>`
   }
 `;
 
-const ExternalLink = styled.a`
+const ExternalLink = styled.a<{ underline?: boolean }>`
   color: ${({ theme: { color } }) => color.greyScale.white};
   text-decoration: none;
+  text-decoration: ${({ underline }) => (underline ? "underline" : "none")};
   &:hover {
     text-decoration: underline;
   }

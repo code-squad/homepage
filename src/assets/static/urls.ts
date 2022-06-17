@@ -13,6 +13,7 @@ const EXTERNAL = {
   BLOG: "https://codesquad-yoda.medium.com/",
   YOUTUBE: "https://www.youtube.com/channel/UC8OU76dfIn8jvWmXt8roMZg",
   FACEBOOK: "https://www.facebook.com/codesquad.kr/",
+  EMAIL: "yoda@codesquad.kr",
 };
 
 export { INTERNAL, EXTERNAL };

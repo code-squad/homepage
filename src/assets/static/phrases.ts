@@ -90,6 +90,7 @@ const LINK_DESCRIPTION = {
 const MESSAGE = {
   COMPANY_ADDRESS: "주소:강남구 역삼동 836-24 역삼빌딩 4층",
   COMPANY_CEO_NAME: "대표자:김정",
+  COMPANY_EMAIL: "대표 이메일:",
   COMPANY_EMAIL_ADDRESS: "yoda@codesquad.kr",
   COMPANY_NAME: "코드스쿼드",
   COMPANY_REGISTRATION_NUMBER: "사업자등록번호:676-88-00504",
