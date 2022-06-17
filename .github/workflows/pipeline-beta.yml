@@ -61,6 +61,7 @@ jobs:
         run: npm run build
 
       - name: Chromatic Deploy push
+        uses: chromaui/action-next@v1
         run: npx chromatic --project-token=${{ secrets.CHROMATIC_PROJECT_TOKEN }} --force-rebuild
 
       - name: Declare commit id use on s3 upload
