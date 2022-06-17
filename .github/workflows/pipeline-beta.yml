@@ -77,13 +77,24 @@ jobs:
           echo "GITHUB_SHA: ${GITHUB_SHA}"
           echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
 
-      - name: AWS Deploy push
+      - name: AWS S3 Deploy
+        uses: jakejarvis/s3-sync-action@master
+        with:
+          args: --acl public-read --follow-symlinks --delete
         env:
-          CI: true
+          AWS_S3_BUCKET: s3://beta.codesquad.kr/
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_DEFAULT_REGION: "ap-northeast-2"
-        run: aws s3 sync ./public s3://beta.codesquad.kr/
+          AWS_REGION: "ap-northeast-2"
+          SOURCE_DIR: "./public"
+
+      # - name: AWS Deploy push
+      #   env:
+      #     CI: true
+      #     AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      #     AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      #     AWS_DEFAULT_REGION: "ap-northeast-2"
+      #   run: aws s3 sync ./public s3://beta.codesquad.kr/
 
       - name: Slack Notification
         uses: 8398a7/action-slack@v3
