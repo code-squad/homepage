@@ -77,7 +77,7 @@ const LINK = {
   SUBSCRIPTION: "소식받아보기",
   RECEIVE_SUBSCRIPTION: "코드스쿼드 소식 받아보기",
   TEAM_CULTURE: "팀 문화",
-  YOUTUBE: "유뷰트",
+  YOUTUBE: "유튜브",
 };
 
 const LINK_DESCRIPTION = {
