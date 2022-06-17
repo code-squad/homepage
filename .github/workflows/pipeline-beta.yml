@@ -78,10 +78,14 @@ jobs:
           AWS_DEFAULT_REGION: "ap-northeast-2"
         run: aws s3 sync ./public s3://beta.codesquad.kr/
 
+      - uses: actions/checkout@v2
       - name: Slack Notification
-        uses: 8398a7/action-slack@v3
-        with:
-          status: ${{ job.status }}
-          fields: repo,commit,message,author,action,ref
+        uses: rtCamp/action-slack-notify@v2
         env:
+          SLACK_CHANNEL: homepage
+          SLACK_COLOR: ${{ job.status }}
+          SLACK_ICON: https://github.com/rtCamp.png?size=48
+          SLACK_MESSAGE: ":rocket: Deploy finished"
+          SLACK_TITLE: Homepage Build Notification
+          SLACK_USERNAME: HomepageBot
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
