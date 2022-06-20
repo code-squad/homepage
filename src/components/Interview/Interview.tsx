@@ -59,9 +59,8 @@ const Interview: React.FC<IInterview> = ({ subtitle, title, interviews, style })
       <InterviewListWrapper>
         <InterviewList {...{ currentIndex }}>
           {interviews.map((interview, index) => (
-            <li style={{ display: "flex", alignSelf: "stretch" }}>
+            <li key={interview.nutshell} style={{ display: "flex", alignSelf: "stretch" }}>
               <InterviewBox
-                key={interview.nutshell}
                 {...{ ...interview }}
                 writerPhoto={
                   interview.writerPhoto
