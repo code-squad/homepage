@@ -62,6 +62,7 @@ const TabNavButton = styled.button<{ selected?: boolean }>`
   &:hover {
     cursor: pointer;
   }
+  font-family: inherit;
 `;
 
 export default TabNavigationBar;
