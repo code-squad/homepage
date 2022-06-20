@@ -2,7 +2,6 @@ export { SButton } from "./SButton";
 export { MButton } from "./MButton";
 export { EButton } from "./EButton";
 export { HomeGlobalNavigationBar } from "./HomeGlobalNavigationBar";
-export { TeamGlobalNavigationBar } from "./TeamGlobalNavigationBar";
 export { TabNavigationBar } from "./TabNavigationBar";
 export { TagNavigationBar } from "./TagNavigationBar";
 export { CircleNavigation } from "./CircleNavigation";

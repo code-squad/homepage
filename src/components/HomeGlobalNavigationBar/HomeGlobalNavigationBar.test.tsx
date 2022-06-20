@@ -43,4 +43,16 @@ describe("<HomeGlobalNavigationBar>", () => {
     const linkEle = getByRole("link", { name: LINK.FAQ });
     expect(linkEle?.getAttribute("href")).toBe(INTERNAL.FAQ);
   });
+  it("코드투게더 링크를 클릭하면 마스터즈코스 페이지로 이동된다.", async () => {
+    const { getByRole } = renderHomeGlobalNavigationBar();
+
+    const linkEle = getByRole("link", { name: LINK.CODE_TOGETHER });
+    expect(linkEle?.getAttribute("href")).toBe(INTERNAL.CODE_TOGETHER);
+  });
+  it("팀 문화 링크를 클릭하면 마스터즈코스 페이지로 이동된다.", async () => {
+    const { getByRole } = renderHomeGlobalNavigationBar();
+
+    const linkEle = getByRole("link", { name: LINK.TEAM_CULTURE });
+    expect(linkEle?.getAttribute("href")).toBe(INTERNAL.TEAM_CULTURE);
+  });
 });

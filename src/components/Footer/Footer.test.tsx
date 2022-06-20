@@ -96,6 +96,10 @@ describe("<Footer>", () => {
         name: LINK.FACEBOOK,
         path: EXTERNAL.FACEBOOK,
       },
+      {
+        name: LINK.KAKAOTALK_CHANNEL,
+        path: EXTERNAL.KAKAOTALK_CHANNEL,
+      },
     ];
 
     links.forEach((link) => {

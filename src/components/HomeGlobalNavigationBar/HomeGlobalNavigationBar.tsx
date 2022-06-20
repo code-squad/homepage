@@ -24,6 +24,10 @@ const HomeGlobalNavigationBar: React.FC = () => {
       title: LINK.FAQ,
       path: INTERNAL.FAQ,
     },
+    {
+      title: LINK.TEAM_CULTURE,
+      path: INTERNAL.TEAM_CULTURE,
+    },
   ];
 
   const scrollPosition = useScrollPosition();
@@ -86,7 +90,7 @@ const HomeSigniture = styled.img`
 `;
 
 const ButtonList = styled.ul`
-  min-width: 29.1rem;
+  min-width: 36.2rem;
   min-height: 3.2rem;
   display: flex;
   justify-content: space-between;

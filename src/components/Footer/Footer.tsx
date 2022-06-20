@@ -29,7 +29,18 @@ const Footer: React.FC = () => {
                 <XSBody as="span">{MESSAGE.COMPANY_ADDRESS}</XSBody>
                 <XSBody as="span"> | </XSBody>
                 <XSBody as="span">{MESSAGE.COMPANY_TEL_NUMBER}</XSBody>
-                <XSBody>{MESSAGE.COMPANY_EMAIL_ADDRESS}</XSBody>
+              </div>
+              <div>
+                <XSBody as="span">{MESSAGE.COMPANY_EMAIL}</XSBody>
+                <XSBody as="span"> | </XSBody>
+                <ExternalLink
+                  href={`mailto:${EXTERNAL.EMAIL}`}
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  underline
+                >
+                  {MESSAGE.COMPANY_EMAIL_ADDRESS}
+                </ExternalLink>
               </div>
             </div>
           </CompanyInfomationWrapper>
@@ -96,6 +107,15 @@ const Footer: React.FC = () => {
                 {LINK.FACEBOOK}
               </ExternalLink>
             </li>
+            <li>
+              <ExternalLink
+                href={EXTERNAL.KAKAOTALK_CHANNEL}
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+              >
+                {LINK.KAKAOTALK_CHANNEL}
+              </ExternalLink>
+            </li>
           </MenuList>
         </MenuListWrapper>
       </ContentWrapper>
@@ -132,18 +152,6 @@ const CompanyInfomationWrapper = styled.div`
   justify-content: space-between;
 `;
 
-const PopupButton = styled.button`
-  padding: 0;
-  color: ${({ theme: { color } }) => color.greyScale.white};
-  font-size: ${({ theme: { fontSize } }) => fontSize.body.xs};
-  font-weight: ${({ theme: { fontWeight } }) => fontWeight.regular};
-  line-height: ${({ theme: { lineHeight } }) => lineHeight.body.xs};
-  letter-spacing: ${({ theme: { letterSpacing } }) => letterSpacing};
-  background-color: transparent;
-  border: 0;
-  cursor: pointer;
-`;
-
 const MenuListWrapper = styled.div`
   width: 40.9rem;
   display: flex;
@@ -169,9 +177,10 @@ const InternalLink = styled(Link)<{ $bold?: boolean }>`
   }
 `;
 
-const ExternalLink = styled.a`
+const ExternalLink = styled.a<{ underline?: boolean }>`
   color: ${({ theme: { color } }) => color.greyScale.white};
   text-decoration: none;
+  text-decoration: ${({ underline }) => (underline ? "underline" : "none")};
   &:hover {
     text-decoration: underline;
   }

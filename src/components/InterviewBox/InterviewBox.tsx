@@ -48,7 +48,6 @@ const InterviewBoxWrapper = styled.div`
   min-width: 42.3rem;
   width: 42.3rem;
   border-radius: 1.6rem;
-  list-style-type: none;
 `;
 
 const Nutshell = styled.div`

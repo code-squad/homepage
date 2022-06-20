@@ -109,6 +109,7 @@ const PlaceList = styled.ul<{ currentIndex: number }>`
 
 const PlaceImage = styled.img`
   width: 80rem;
+  border-radius: 0.8rem;
 `;
 
 export default Place;
