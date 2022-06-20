@@ -40,6 +40,14 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+body, main { height: 100vh;}
+
+main > footer {
+  position: sticky;
+  top: 100vh;
+}
+
 ol, ul {
 	list-style: none;
 }

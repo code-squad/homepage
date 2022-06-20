@@ -1,6 +1,6 @@
 import jk from "./jk.png";
 import crong from "./crong.png";
-import honux from "./honux.jpeg";
+import honux from "./honux.png";
 import ivy from "./ivy.png";
 import place1 from "./place1.jpeg";
 import place2 from "./place2.jpeg";
