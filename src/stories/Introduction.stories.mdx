@@ -1,0 +1,118 @@
+import { Meta } from "@storybook/addon-docs";
+
+<Meta title="Home/Introduction" />
+
+# 홈페이지 스토리북에 대하여
+
+홈페이지에 대한 스토리북입니다. 각 페이지 컴포넌트에 사용되는 mdx 파일의 관리를 어떻게 해야하는지 설명해 두었습니다.
+
+# mdx파일 보는법
+
+### 파일 디렉토리
+
+해당 파일의 디렉토리를 나타냅니다. 나중에 베타서버까지 배포된 후에는 해당 파일에 깃헙 링크를 걸어두도록 하겠습니다.
+
+```
+ex)
+`/content/recruit/jobPosition.mdx`
+```
+
+### 예시
+
+해당 mdx파일이 어떻게 사용되고 있는지 예시코드가 보여집니다.
+
+```
+ex)
+---
+title: 마스터즈 코스
+subtitle: 최선과 최고의 선택
+---
+```
+
+### 항목별 설명
+
+위에서 예시로 나온 항목들을 간단하게 설명해둔 항목입니다.
+
+```
+ex1)
+
+* title: 제목을 입력할 수 있습니다.
+* subtitle: 소제목에 대해 입력할 수 있습니다.
+```
+
+위의 예시 문단에서 항목들이 보여질 때 아래와 같은 형식이라면 해당 항목은 그와 같은 형태로 입력되어야 합니다. '입력할 수 있습니다.' 문구가 붙은 값들만 해당 값에 대해 직접적으로 입력하는 것이며,
+아닌 경우에는 여러가지 다른 방법으로 입력하게 됩니다. 이런경우에 인덴트를 확인하거나 예시를 확인하면 쉽게 파악할 수 있습니다.
+
+```
+ex2)
+career:
+
+- 초등학교 졸업
+- 중학교 졸업
+- 대학교 졸업
+
+ex2) 해당 경우에는 모든 컬럼에 붙던
+interviewList
+
+- title: 최고의 선택이었다.
+  description: 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세
+  writer: micky
+
+- title: 최악의 선택이었다.
+  description: 이몸이 죽고죽어 일백번 고쳐죽어
+  writer: Skeleton
+
+```
+
+# MDX문서 페이지들
+
+- main(메인 페이지)
+
+  - [코드스쿼드 소개](?path=/docs/pagecomponent-main-feature--default)
+  - [교육 및 학습문화](?path=/docs/pagecomponent-main-culture--default)
+  - [마스터 설명](?path=/docs/pagecomponent-main-master--default)
+  - [졸업생 리뷰](?path=/docs/pagecomponent-main-graduatereview--default)
+  - [미디어 기사들](?path=/docs/pagecomponent-main-article--default)
+
+- masters(마스터즈 페이지)
+
+  - [소개](?path=/docs/pagecomponent-masters-masthead--default)
+  - [교육 특징](?path=/docs/pagecomponent-masters-educationfeatures--default)
+  - [커리큘럼](?path=/docs/pagecomponent-masters-detailcurriculum--default)
+  - [졸업생 리뷰](?path=/docs/pagecomponent-masters-interviewsliderwrapper--default)
+  - [스케쥴](?path=/docs/pagecomponent-masters-courseschedule--default)
+  - [FAQ](?path=/docs/pagecomponent-masters-faq--default)
+
+- faq(FAQ페이지))
+
+  - [faq](?path=/docs/pagecomponent-faq-faq--default)
+
+- recruit(채용 페이지)
+
+  - [채용 정보](?path=/docs/pagecomponent-recruit-jobposition--default)
+
+- refund(환불 페이지)
+
+  - [환불 정책](?path=/docs/pagecomponent-refund-refundpolicy--default)
+
+- team-culture(코드스쿼드 팀 페이지)
+
+  - [팀 문화](?path=/docs/pagecomponent-team-culture-teamculture--default)
+  - [팀원들의 인터뷰](?path=/docs/pagecomponent-team-culture-teaminterview--default)
+  - [복지](?path=/docs/pagecomponent-team-culture-welfare--default)
+
+- code-together(코드투게더 페이지)
+
+  - [코드투게더 소개](?path=/docs/pagecomponent-code-together-masthead--default)
+  - [코드투게더 특징](?path=/story/pagecomponent-code-together-feature--default)
+  - [코드투게더 학습방식](?path=/story/pagecomponent-code-together-studyfeature--default)
+  - [코드투게더 교육 과정](?path=/story/pagecomponent-code-together-course--default)
+
+- code-together/javascript(자바스크립트 페이지)
+
+  - [자바스크립트 과정 소개](?path=/story/pagecomponent-code-together-javascript-masthead--default)
+  - [자바스크립트 과정 신청](?path=/story/pagecomponent-code-together-javascript-registration--default)
+  - [자바스크립트 과정 커리큘럼](?path=/story/pagecomponent-code-together-javascript-detailcurriculum--default)
+  - [자바스크립트 과정 타임테이블](?path=/story/pagecomponent-code-together-javascript-timetable--default)
+  - [자바스크립트 과정 수강생 후기](?path=/story/pagecomponent-code-together-javascript-graduatereview--default)
+  - [FAQ](?path=/docs/pagecomponent-masters-faq--default)
