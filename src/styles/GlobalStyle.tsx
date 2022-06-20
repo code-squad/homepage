@@ -41,7 +41,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-body, main { height: 100vh;}
+body, main { min-height: 100vh;}
 
 main > footer {
   position: sticky;
