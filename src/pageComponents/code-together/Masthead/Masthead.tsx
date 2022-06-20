@@ -44,7 +44,7 @@ const Masthead: React.FC = () => {
 const MastheadWrapper = styled.div`
   width: 100%;
   min-width: 144rem;
-  padding: 16rem 0 6.2rem 0;
+  padding: 16rem 0 7rem 0;
   background-color: ${({ theme: { color } }) => color.primary.green4};
   background-image: ${`url(${header.codeTogether})`};
   background-repeat: no-repeat;

@@ -89,14 +89,14 @@ const LINK_DESCRIPTION = {
 };
 
 const MESSAGE = {
-  COMPANY_ADDRESS: "주소:강남구 역삼동 836-24 역삼빌딩 4층",
-  COMPANY_CEO_NAME: "대표자:김정",
-  COMPANY_EMAIL: "대표 이메일:",
+  COMPANY_ADDRESS: "주소: 강남구 역삼동 836-24 역삼빌딩 4층",
+  COMPANY_CEO_NAME: "대표자: 김정",
+  COMPANY_EMAIL: "대표 이메일: ",
   COMPANY_EMAIL_ADDRESS: "yoda@codesquad.kr",
   COMPANY_NAME: "코드스쿼드",
-  COMPANY_REGISTRATION_NUMBER: "사업자등록번호:676-88-00504",
+  COMPANY_REGISTRATION_NUMBER: "사업자등록번호: 676-88-00504",
   COMPANY_MAIL_ORDER_SALES_REGISTRATION_NUMBER: "통신판매신고: 제 2017-서울강남-04281호",
-  COMPANY_TEL_NUMBER: "전화:070-4117-1005",
+  COMPANY_TEL_NUMBER: "전화: 070-4117-1005",
   CURRICULUM: "교육 과정",
   SOCIAL_MEDIA: "미디어",
 };

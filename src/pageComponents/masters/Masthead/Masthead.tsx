@@ -51,7 +51,7 @@ const Masthead: React.FC = () => {
 const MastheadWrapper = styled.div`
   width: 100%;
   min-width: 144rem;
-  padding: 16rem 0 7.2rem 0;
+  padding: 16rem 0 7.8rem 0;
   display: flex;
   align-items: center;
   background-color: ${({ theme: { color } }) => color.primary.green4};

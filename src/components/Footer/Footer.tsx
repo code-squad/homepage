@@ -32,7 +32,6 @@ const Footer: React.FC = () => {
               </div>
               <div>
                 <XSBody as="span">{MESSAGE.COMPANY_EMAIL}</XSBody>
-                <XSBody as="span"> | </XSBody>
                 <ExternalLink
                   href={`mailto:${EXTERNAL.EMAIL}`}
                   target="_blank"
