@@ -10,16 +10,18 @@ import { removeCookie, TestProvider } from "lib/testUtils";
 import { strainMdxInfo } from "lib/utils";
 
 describe("<Banner>", () => {
+  const bannerStatus = true;
+  const setBannerStatus = jest.fn();
   const renderBanner = () =>
     render(
       <TestProvider>
-        <Banner />
+        <Banner {...{ bannerStatus, setBannerStatus }} />
       </TestProvider>
     );
   const useStaticQuery = jest.spyOn(Gatsby, "useStaticQuery");
   useStaticQuery.mockImplementation(() => ({ ...BannerQueryResult }));
   const { title } = strainMdxInfo(BannerQueryResult);
-  it("x버튼을 눌러 배너를 보이지 않게 할 수 있다.", async () => {
+  it("x버튼을 누르면 setBannerStatus 함수가 실행된다.", async () => {
     const { getByText, getByRole } = renderBanner();
 
     expect(getByText(title)).toBeVisible();
@@ -27,7 +29,7 @@ describe("<Banner>", () => {
     const closeBtn = getByRole("button");
     fireEvent.click(closeBtn);
 
-    expect(getByText(title)).not.toBeVisible();
+    expect(setBannerStatus).toBeCalled();
     removeCookie("ignoreBanner");
   });
   it("닫기 버튼을 클릭하면 쿠키가 설정된다.", async () => {
