@@ -1,17 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-import { graphql, useStaticQuery } from "gatsby";
+import { useStaticQuery } from "gatsby";
+// Type
+import { IBannerProps } from "./Banner.type";
+// Query
+import { BannerQuery } from "pages/index";
 // Components
 import { BannerPopup } from "components";
 // Utils
-import { strainMdxInfo, getDocument } from "lib/utils";
+import { strainMdxInfo } from "lib/utils";
 
-const Banner: React.FC = () => {
+const Banner: React.FC<IBannerProps> = ({ bannerStatus, setBannerStatus }) => {
   const { title, description } = strainMdxInfo(useStaticQuery(BannerQuery));
-  const document = getDocument();
-  const bannerCookie = Boolean(document && document.cookie.match("ignoreBanner"));
-
-  const [bannerStatus, setBannerStatus] = React.useState(title && !bannerCookie);
 
   const closeHandler = () => {
     const oneDaySec = 86400;
@@ -33,17 +33,6 @@ const BannerWrapper = styled.div<{ bannerStatus?: boolean }>`
   position: fixed;
   top: 0;
   z-index: 10;
-`;
-
-const BannerQuery = graphql`
-  query BannerQuery {
-    mdx(frontmatter: { templateKey: { eq: "main_banner" } }) {
-      frontmatter {
-        title
-        description
-      }
-    }
-  }
 `;
 
 export default Banner;

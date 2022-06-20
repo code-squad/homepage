@@ -1,16 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 import Link from "gatsby-link";
+import { graphql, useStaticQuery } from "gatsby";
 // Assets
 import signiture from "assets/img/illusts/header/signiture";
 import { LINK } from "assets/static/phrases";
 import { INTERNAL } from "assets/static/urls";
 // Libs
 import { useScrollPosition } from "lib/hooks";
-import { getCurrentPath } from "lib/utils";
+import { getCurrentPath, getDocument, strainMdxInfo } from "lib/utils";
 
-const HomeGlobalNavigationBar: React.FC = () => {
+const HomeGlobalNavigationBar: React.FC<{ bannerStatus: boolean }> = ({ bannerStatus }) => {
   const currentPath = getCurrentPath();
+
   const links = [
     {
       title: LINK.MASTERS,
@@ -33,7 +35,7 @@ const HomeGlobalNavigationBar: React.FC = () => {
   const scrollPosition = useScrollPosition();
 
   return (
-    <HomeGlobalNavigationBarWrapper {...{ scrollPosition }}>
+    <HomeGlobalNavigationBarWrapper {...{ bannerStatus, scrollPosition }}>
       <ContentWrapper>
         <Link to="/">
           <HomeSigniture
@@ -55,12 +57,15 @@ const HomeGlobalNavigationBar: React.FC = () => {
   );
 };
 
-const HomeGlobalNavigationBarWrapper = styled.header<{ scrollPosition: boolean }>`
+const HomeGlobalNavigationBarWrapper = styled.header<{
+  bannerStatus: boolean;
+  scrollPosition: boolean;
+}>`
   width: 100%;
   min-width: 144rem;
   min-height: 8rem;
   position: fixed;
-  top: 0;
+  top: ${({ bannerStatus }) => (bannerStatus ? "8rem" : "0")};
   display: flex;
   justify-content: center;
   align-items: center;
