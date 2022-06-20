@@ -1,17 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-import { useStaticQuery } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 // Type
 import { IBannerProps } from "./Banner.type";
-// Query
-import { BannerQuery } from "pages/index";
 // Components
 import { BannerPopup } from "components";
 // Utils
 import { strainMdxInfo } from "lib/utils";
 
 const Banner: React.FC<IBannerProps> = ({ bannerStatus, setBannerStatus }) => {
-  const { title, description } = strainMdxInfo(useStaticQuery(BannerQuery));
+  const { title, description } = strainMdxInfo(useStaticQuery(BannerContentQuery));
 
   const closeHandler = () => {
     const oneDaySec = 86400;
@@ -33,6 +31,17 @@ const BannerWrapper = styled.div<{ bannerStatus?: boolean }>`
   position: fixed;
   top: 0;
   z-index: 10;
+`;
+
+export const BannerContentQuery = graphql`
+  query BannerContentQuery {
+    mdx(frontmatter: { templateKey: { eq: "main_banner" } }) {
+      frontmatter {
+        title
+        description
+      }
+    }
+  }
 `;
 
 export default Banner;

@@ -10,7 +10,7 @@ import { INTERNAL } from "assets/static/urls";
 import { useScrollPosition } from "lib/hooks";
 import { getCurrentPath, getDocument, strainMdxInfo } from "lib/utils";
 
-const HomeGlobalNavigationBar: React.FC<{ bannerStatus: boolean }> = ({ bannerStatus }) => {
+const HomeGlobalNavigationBar: React.FC<{ bannerStatus?: boolean }> = ({ bannerStatus }) => {
   const currentPath = getCurrentPath();
 
   const links = [
@@ -58,7 +58,7 @@ const HomeGlobalNavigationBar: React.FC<{ bannerStatus: boolean }> = ({ bannerSt
 };
 
 const HomeGlobalNavigationBarWrapper = styled.header<{
-  bannerStatus: boolean;
+  bannerStatus?: boolean;
   scrollPosition: boolean;
 }>`
   width: 100%;
