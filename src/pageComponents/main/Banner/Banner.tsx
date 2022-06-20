@@ -31,7 +31,7 @@ const Banner: React.FC = () => {
 const BannerWrapper = styled.div<{ bannerStatus?: boolean }>`
   display: ${({ bannerStatus }) => (bannerStatus ? "block" : "none")};
   position: fixed;
-  bottom: 0;
+  top: 0;
   z-index: 10;
 `;
 
