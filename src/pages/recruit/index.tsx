@@ -3,7 +3,7 @@ import React from "react";
 import GlobalTheme from "lib/context/GlobalTheme";
 import GlobalHeader from "lib/context/GlobalHeader";
 // Components
-import { Footer, TeamGlobalNavigationBar } from "components";
+import { Footer, HomeGlobalNavigationBar } from "components";
 import { JobPosition } from "pageComponents/recruit";
 
 const RecruitPage: React.FC = () => {
@@ -11,7 +11,7 @@ const RecruitPage: React.FC = () => {
     <GlobalTheme>
       <GlobalHeader />
       <main style={{ overflowX: "hidden" }}>
-        <TeamGlobalNavigationBar />
+        <HomeGlobalNavigationBar />
         <JobPosition />
         <Footer />
       </main>

@@ -3,7 +3,7 @@ import React from "react";
 import GlobalTheme from "lib/context/GlobalTheme";
 import GlobalHeader from "lib/context/GlobalHeader";
 // Components
-import { Footer, TeamGlobalNavigationBar } from "components";
+import { Footer, HomeGlobalNavigationBar } from "components";
 import {
   TeamIntroduce,
   TeamCulture,
@@ -17,7 +17,7 @@ const TeamCulturePage: React.FC = () => {
     <GlobalTheme>
       <GlobalHeader />
       <main style={{ overflowX: "hidden" }}>
-        <TeamGlobalNavigationBar />
+        <HomeGlobalNavigationBar />
         <TeamIntroduce />
         <TeamCulture />
         <TeamInterview />
