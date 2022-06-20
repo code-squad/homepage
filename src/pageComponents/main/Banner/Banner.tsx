@@ -23,15 +23,21 @@ const Banner: React.FC = () => {
 
   return (
     <BannerWrapper {...{ bannerStatus }}>
-      <BannerPopup {...{ title, description, onCloseButtonClicked: closeHandler }} />
+      <BannerContentWrapper>
+        <BannerPopup {...{ title, description, onCloseButtonClicked: closeHandler }} />
+      </BannerContentWrapper>
     </BannerWrapper>
   );
 };
 
 const BannerWrapper = styled.div<{ bannerStatus?: boolean }>`
   display: ${({ bannerStatus }) => (bannerStatus ? "block" : "none")};
+  position: relative;
+  height: 8rem;
+`;
+
+const BannerContentWrapper = styled.div`
   position: fixed;
-  bottom: 0;
   z-index: 10;
 `;
 

@@ -33,34 +33,41 @@ const HomeGlobalNavigationBar: React.FC = () => {
   const scrollPosition = useScrollPosition();
 
   return (
-    <HomeGlobalNavigationBarWrapper {...{ scrollPosition }}>
-      <ContentWrapper>
-        <Link to="/">
-          <HomeSigniture
-            src={scrollPosition ? signiture.home2 : signiture.home1}
-            alt="company-logo"
-          />
-        </Link>
-        <ButtonList>
-          {links.map(({ title, path }: any) => (
-            <li key={title}>
-              <LinkButton selected={currentPath === path} to={path}>
-                {title}
-              </LinkButton>
-            </li>
-          ))}
-        </ButtonList>
-      </ContentWrapper>
+    <HomeGlobalNavigationBarWrapper>
+      <HomeGlobalNavigationBarContentWrapper {...{ scrollPosition }}>
+        <ContentWrapper>
+          <Link to="/">
+            <HomeSigniture
+              src={scrollPosition ? signiture.home2 : signiture.home1}
+              alt="company-logo"
+            />
+          </Link>
+          <ButtonList>
+            {links.map(({ title, path }: any) => (
+              <li key={title}>
+                <LinkButton selected={currentPath === path} to={path}>
+                  {title}
+                </LinkButton>
+              </li>
+            ))}
+          </ButtonList>
+        </ContentWrapper>
+      </HomeGlobalNavigationBarContentWrapper>
     </HomeGlobalNavigationBarWrapper>
   );
 };
 
-const HomeGlobalNavigationBarWrapper = styled.header<{ scrollPosition: boolean }>`
+const HomeGlobalNavigationBarWrapper = styled.header`
+  position: relative;
+  height: 8rem;
+  background-color: transparent;
+`;
+
+const HomeGlobalNavigationBarContentWrapper = styled.div<{ scrollPosition: boolean }>`
   width: 100%;
   min-width: 144rem;
   min-height: 8rem;
   position: fixed;
-  top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -78,7 +85,6 @@ const HomeGlobalNavigationBarWrapper = styled.header<{ scrollPosition: boolean }
 const ContentWrapper = styled.nav`
   width: 128rem;
   padding: 0 8rem;
-  position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: center;

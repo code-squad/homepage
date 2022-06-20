@@ -14,6 +14,8 @@ const Welcome: React.FC = () => {
 };
 
 const WelcomeWrapper = styled.div`
+  position: static;
+  top: 0;
   min-width: 144rem;
   min-height: 100vh;
   display: flex;

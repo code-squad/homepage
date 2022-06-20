@@ -22,8 +22,8 @@ const MainPage: React.FC = () => {
     <GlobalTheme>
       <GlobalHeader />
       <main style={{ overflowX: "hidden" }}>
-        <HomeGlobalNavigationBar />
         <Banner />
+        <HomeGlobalNavigationBar />
         <Welcome />
         <CourseList />
         <Feature />
