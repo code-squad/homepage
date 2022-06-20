@@ -15,6 +15,8 @@ export default {
   },
 } as ComponentMeta<typeof Banner>;
 
-const Template: ComponentStory<typeof Banner> = () => <Banner />;
+const Template: ComponentStory<typeof Banner> = () => (
+  <Banner {...{ bannerStatus: true, setBannerStatus: () => {} }} />
+);
 
 export const Default = Template.bind({});
