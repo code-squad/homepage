@@ -54,6 +54,12 @@ const config: GatsbyConfig = {
         path: "./content",
       },
     },
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        icon: "./src/assets/favicon/ms-icon-310x310.png",
+      },
+    },
   ],
 };
 
