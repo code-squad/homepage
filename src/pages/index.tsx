@@ -17,14 +17,14 @@ import {
   Banner,
   Place,
 } from "pageComponents/main";
-import { getDocument, strainMdxInfo } from "lib/utils";
+import { strainMdxInfo } from "lib/utils";
 
 const MainPage: React.FC = () => {
   const { title } = strainMdxInfo(useStaticQuery(BannerQuery));
-  const document = getDocument();
-  const bannerCookie = Boolean(document && document.cookie.match("ignoreBanner"));
 
-  const [bannerStatus, setBannerStatus] = React.useState(title && !bannerCookie);
+  const showPopup = Boolean(localStorage.getItem("showPopup"));
+
+  const [bannerStatus, setBannerStatus] = React.useState(title && !showPopup);
 
   return (
     <GlobalTheme>
