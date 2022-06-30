@@ -17,7 +17,7 @@ import {
   Banner,
   Place,
 } from "pageComponents/main";
-import { getDocument, strainMdxInfo } from "lib/utils";
+import { strainMdxInfo } from "lib/utils";
 
 const MainPage: React.FC = () => {
   const { title } = strainMdxInfo(useStaticQuery(BannerQuery));
