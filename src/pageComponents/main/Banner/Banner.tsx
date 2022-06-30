@@ -11,10 +11,20 @@ import { strainMdxInfo } from "lib/utils";
 const Banner: React.FC<IBannerProps> = ({ bannerStatus, setBannerStatus }) => {
   const { title, description } = strainMdxInfo(useStaticQuery(BannerContentQuery));
 
+  React.useEffect(() => {
+    const maxAge = localStorage.getItem("maxAge");
+
+    if (maxAge && Number(maxAge) < Date.now()) {
+      localStorage.removeItem("maxAge");
+      localStorage.removeItem("showPopup");
+    }
+  }, []);
+
   const closeHandler = () => {
     const oneDaySec = 86400;
 
-    if (document) document.cookie = `name=ignoreBanner; value=true; max-age=${oneDaySec}`;
+    localStorage.setItem("showPopup", "true");
+    localStorage.setItem("maxAge", `${Date.now() + oneDaySec}`);
 
     setBannerStatus(false);
   };
