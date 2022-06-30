@@ -22,7 +22,8 @@ import { strainMdxInfo } from "lib/utils";
 const MainPage: React.FC = () => {
   const { title } = strainMdxInfo(useStaticQuery(BannerQuery));
 
-  const showPopup = Boolean(localStorage.getItem("showPopup"));
+  const localStorage = typeof window !== "undefined" ? window.localStorage : null;
+  const showPopup = Boolean(localStorage?.getItem("showPopup"));
 
   const [bannerStatus, setBannerStatus] = React.useState(title && !showPopup);
 
