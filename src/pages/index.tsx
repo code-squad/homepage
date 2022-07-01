@@ -23,9 +23,9 @@ const MainPage: React.FC = () => {
   const { title } = strainMdxInfo(useStaticQuery(BannerQuery));
 
   const localStorage = typeof window !== "undefined" ? window.localStorage : null;
-  const showPopup = Boolean(localStorage?.getItem("showPopup"));
+  const maxAge = localStorage?.getItem("maxAge");
 
-  const [bannerStatus, setBannerStatus] = React.useState(title && !showPopup);
+  const [bannerStatus, setBannerStatus] = React.useState(title && !maxAge);
 
   return (
     <GlobalTheme>
