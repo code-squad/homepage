@@ -30,16 +30,16 @@ describe("<Banner>", () => {
     fireEvent.click(closeBtn);
 
     expect(setBannerStatus).toBeCalled();
-    localStorage.removeItem("showPopup");
+    localStorage.removeItem("maxAge");
   });
   it("닫기 버튼을 클릭하면 로컬스토리지가 설정된다.", async () => {
     const { getByRole } = renderBanner();
 
-    expect(localStorage.getItem("showPopup")).toBe(null);
+    expect(localStorage.getItem("maxAge")).toBe(null);
 
     const closeBtn = getByRole("button");
     fireEvent.click(closeBtn);
 
-    expect(localStorage.getItem("showPopup")).toBe("true");
+    expect(localStorage.getItem("maxAge")).not.toBe(null);
   });
 });

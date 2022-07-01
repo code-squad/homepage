@@ -17,14 +17,14 @@ const Banner: React.FC<IBannerProps> = ({ bannerStatus, setBannerStatus }) => {
 
     if (maxAge && Number(maxAge) < Date.now()) {
       localStorage?.removeItem("maxAge");
-      localStorage?.removeItem("showPopup");
+
+      setBannerStatus(true);
     }
   }, []);
 
   const closeHandler = () => {
-    const oneDaySec = 86400;
+    const oneDaySec = 86400000;
 
-    localStorage?.setItem("showPopup", "true");
     localStorage?.setItem("maxAge", `${Date.now() + oneDaySec}`);
 
     setBannerStatus(false);
