@@ -15,7 +15,7 @@ const SUBTITLE = {
   CODE_TOGETHER: "코드투게더는",
   CODE_TOGETHER_COURSE: "코드투게더의",
   JAVASCRIPT: "자바스크립트 과정을 경험한",
-  JAVASCRIPT_COURSE: "자바스크립트 코스의",
+  JAVASCRIPT_COURSE: "자바스크립트 과정의",
 };
 
 const TITLE = {
