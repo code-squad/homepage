@@ -8,13 +8,14 @@ import icons from "assets/img/icons";
 interface IBannerPopup {
   title: string;
   description: string;
+  to: string;
   onCloseButtonClicked: () => void;
 }
 
-const BannerPopup: React.FC<IBannerPopup> = ({ title, description, onCloseButtonClicked }) => {
+const BannerPopup: React.FC<IBannerPopup> = ({ title, description, to, onCloseButtonClicked }) => {
   return (
     <BannerPopupWrapper>
-      <ContentWrapper>
+      <ContentWrapper href={to} target="_blank" rel="noopener noreferrer nofollow">
         <MBody bold>{title}</MBody>
         {description && <XSBody bold>{description}</XSBody>}
       </ContentWrapper>
@@ -35,13 +36,14 @@ const BannerPopupWrapper = styled.div`
   background-color: ${({ theme: { color } }) => color.greyScale.black};
 `;
 
-const ContentWrapper = styled.div`
+const ContentWrapper = styled.a`
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: ${({ theme: { color } }) => color.greyScale.white};
+  text-decoration: none;
   & > *:not(:last-child) {
     margin-bottom: 0.4rem;
   }
