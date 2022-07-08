@@ -12,11 +12,18 @@ import {
   InterviewSliderWrapper,
   CourseSchedule,
 } from "pageComponents/masters";
+// Assets
+import { SEO_TITLE, SEO_DESCRIPTION } from "assets/static/seo";
+import { INTERNAL } from "assets/static/urls";
 
 const MatsersPage: React.FC = () => {
   return (
     <GlobalTheme>
-      <GlobalHeader />
+      <GlobalHeader
+        title={SEO_TITLE.MASTERS}
+        description={SEO_DESCRIPTION.MASTERS}
+        url={INTERNAL.MASTERS}
+      />
       <main style={{ overflowX: "hidden" }}>
         <HomeGlobalNavigationBar />
         <Masthead />

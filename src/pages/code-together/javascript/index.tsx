@@ -11,11 +11,18 @@ import {
   TimeTable,
   GraduateReview,
 } from "pageComponents/javascript";
+// Assets
+import { SEO_TITLE, SEO_DESCRIPTION } from "assets/static/seo";
+import { INTERNAL } from "assets/static/urls";
 
 const JavascriptPage: React.FC = () => {
   return (
     <GlobalTheme>
-      <GlobalHeader />
+      <GlobalHeader
+        title={SEO_TITLE.JAVASCRIPT}
+        description={SEO_DESCRIPTION.JAVASCRIPT}
+        url={INTERNAL.JAVASCRIPT}
+      />
       <main style={{ overflowX: "hidden" }}>
         <HomeGlobalNavigationBar />
         <Masthead />

@@ -17,6 +17,10 @@ import {
   Banner,
   Place,
 } from "pageComponents/main";
+// Assets
+import { SEO_TITLE, SEO_DESCRIPTION } from "assets/static/seo";
+import { INTERNAL } from "assets/static/urls";
+// Libs
 import { strainMdxInfo } from "lib/utils";
 
 const MainPage: React.FC = () => {
@@ -29,7 +33,7 @@ const MainPage: React.FC = () => {
 
   return (
     <GlobalTheme>
-      <GlobalHeader />
+      <GlobalHeader title={SEO_TITLE.MAIN} description={SEO_DESCRIPTION.MAIN} url={INTERNAL.MAIN} />
       <main style={{ overflowX: "hidden" }}>
         <HomeGlobalNavigationBar {...{ bannerStatus }} />
         <Banner {...{ bannerStatus, setBannerStatus }} />
