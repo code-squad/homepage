@@ -29,14 +29,24 @@ const MainPage: React.FC = () => {
   const localStorage = typeof window !== "undefined" ? window.localStorage : null;
   const maxAge = localStorage?.getItem("maxAge");
 
-  const [bannerStatus, setBannerStatus] = React.useState(title && !maxAge);
+  const [bannerStatus, setBannerStatus] = React.useState(
+    title && (maxAge === null || (maxAge !== null && Number(maxAge) < Date.now()))
+  );
+
+  React.useEffect(() => {
+    if (maxAge !== null && Number(maxAge) < Date.now()) {
+      localStorage?.removeItem("maxAge");
+
+      setBannerStatus(true);
+    }
+  }, []);
 
   return (
     <GlobalTheme>
       <GlobalHeader title={SEO_TITLE.MAIN} description={SEO_DESCRIPTION.MAIN} url={INTERNAL.MAIN} />
       <main style={{ overflowX: "hidden" }}>
         <HomeGlobalNavigationBar {...{ bannerStatus }} />
-        <Banner {...{ bannerStatus, setBannerStatus }} />
+        {bannerStatus && <Banner {...{ bannerStatus, setBannerStatus }} />}
         <Welcome />
         <CourseList />
         <Feature />
@@ -57,7 +67,6 @@ export const BannerQuery = graphql`
     mdx(frontmatter: { templateKey: { eq: "main_banner" } }) {
       frontmatter {
         title
-        description
       }
     }
   }
