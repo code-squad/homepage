@@ -1,14 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import Link from "gatsby-link";
-import { graphql, useStaticQuery } from "gatsby";
 // Assets
 import signiture from "assets/img/illusts/header/signiture";
 import { LINK } from "assets/static/phrases";
 import { INTERNAL } from "assets/static/urls";
 // Libs
 import { useScrollPosition } from "lib/hooks";
-import { getCurrentPath, getDocument, strainMdxInfo } from "lib/utils";
+import { getCurrentPath } from "lib/utils";
 
 const HomeGlobalNavigationBar: React.FC<{ bannerStatus?: boolean }> = ({ bannerStatus }) => {
   const currentPath = getCurrentPath();
@@ -44,13 +43,21 @@ const HomeGlobalNavigationBar: React.FC<{ bannerStatus?: boolean }> = ({ bannerS
           />
         </Link>
         <ButtonList>
-          {links.map(({ title, path }: any) => (
-            <li key={title}>
-              <LinkButton selected={currentPath === path} to={path}>
-                {title}
-              </LinkButton>
-            </li>
-          ))}
+          {links.map(({ title, path }: any) => {
+            const currentFirstPath = currentPath.split("/")[1];
+            const firstPath = path.split("/")[1];
+
+            return (
+              <li key={title}>
+                <LinkButton
+                  selected={currentPath === path || currentFirstPath === firstPath}
+                  to={path}
+                >
+                  {title}
+                </LinkButton>
+              </li>
+            );
+          })}
         </ButtonList>
       </ContentWrapper>
     </HomeGlobalNavigationBarWrapper>

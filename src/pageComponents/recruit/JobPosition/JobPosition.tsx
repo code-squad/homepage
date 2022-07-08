@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from "gatsby";
 // Type
 import { JobPositionType } from "@type/JobPosition";
 // Typography
-import { LDisplay } from "typography";
+import { MDisplay } from "typography";
 // Components
 import { DropdownItem, TagNavigationBar } from "components";
 // Assets
@@ -40,7 +40,7 @@ const JobPosition: React.FC = () => {
     <JobPositionWrapper>
       <Background />
       <JobPositionContentWrapper>
-        <LDisplay style={{ paddingTop: "16rem", paddingBottom: "3.2rem" }}>{TITLE.APPLY}</LDisplay>
+        <MDisplay style={{ paddingTop: "16rem", paddingBottom: "3.2rem" }}>{TITLE.APPLY}</MDisplay>
         <TagNavigationBar titles={Array.from(categories)} onIndexChanged={setCurrentIndex} />
         <DropdownItemWrapper>
           {jobPositionList.map(({ category, title, body, editDate }) => (

@@ -6,7 +6,7 @@ import { Banner } from ".";
 // Mocks
 import { BannerQueryResult } from "./Banner.test.mock";
 // Libs
-import { removeCookie, TestProvider } from "lib/testUtils";
+import { TestProvider } from "lib/testUtils";
 import { strainMdxInfo } from "lib/utils";
 
 describe("<Banner>", () => {
@@ -30,16 +30,16 @@ describe("<Banner>", () => {
     fireEvent.click(closeBtn);
 
     expect(setBannerStatus).toBeCalled();
-    removeCookie("ignoreBanner");
+    localStorage.removeItem("maxAge");
   });
-  it("닫기 버튼을 클릭하면 쿠키가 설정된다.", async () => {
+  it("닫기 버튼을 클릭하면 로컬스토리지가 설정된다.", async () => {
     const { getByRole } = renderBanner();
 
-    expect(document.cookie).toBe("");
+    expect(localStorage.getItem("maxAge")).toBe(null);
 
     const closeBtn = getByRole("button");
     fireEvent.click(closeBtn);
 
-    expect(document.cookie).toBe("name=ignoreBanner");
+    expect(localStorage.getItem("maxAge")).not.toBe(null);
   });
 });

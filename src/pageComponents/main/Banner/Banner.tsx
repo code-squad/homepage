@@ -8,26 +8,26 @@ import { BannerPopup } from "components";
 // Utils
 import { strainMdxInfo } from "lib/utils";
 
-const Banner: React.FC<IBannerProps> = ({ bannerStatus, setBannerStatus }) => {
-  const { title, description } = strainMdxInfo(useStaticQuery(BannerContentQuery));
+const Banner: React.FC<IBannerProps> = ({ setBannerStatus }) => {
+  const { title, description, to } = strainMdxInfo(useStaticQuery(BannerContentQuery));
+  const localStorage = typeof window !== "undefined" ? window.localStorage : null;
 
   const closeHandler = () => {
-    const oneDaySec = 86400;
+    const oneDaySec = 86400000;
 
-    if (document) document.cookie = `name=ignoreBanner; value=true; max-age=${oneDaySec}`;
+    localStorage?.setItem("maxAge", `${Date.now() + oneDaySec}`);
 
     setBannerStatus(false);
   };
 
   return (
-    <BannerWrapper {...{ bannerStatus }}>
-      <BannerPopup {...{ title, description, onCloseButtonClicked: closeHandler }} />
+    <BannerWrapper>
+      <BannerPopup {...{ title, description, to, onCloseButtonClicked: closeHandler }} />
     </BannerWrapper>
   );
 };
 
-const BannerWrapper = styled.div<{ bannerStatus?: boolean }>`
-  display: ${({ bannerStatus }) => (bannerStatus ? "block" : "none")};
+const BannerWrapper = styled.div`
   position: fixed;
   top: 0;
   z-index: 10;
@@ -39,6 +39,7 @@ export const BannerContentQuery = graphql`
       frontmatter {
         title
         description
+        to
       }
     }
   }

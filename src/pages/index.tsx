@@ -17,21 +17,36 @@ import {
   Banner,
   Place,
 } from "pageComponents/main";
-import { getDocument, strainMdxInfo } from "lib/utils";
+// Assets
+import { SEO_TITLE, SEO_DESCRIPTION } from "assets/static/seo";
+import { INTERNAL } from "assets/static/urls";
+// Libs
+import { strainMdxInfo } from "lib/utils";
 
 const MainPage: React.FC = () => {
   const { title } = strainMdxInfo(useStaticQuery(BannerQuery));
-  const document = getDocument();
-  const bannerCookie = Boolean(document && document.cookie.match("ignoreBanner"));
 
-  const [bannerStatus, setBannerStatus] = React.useState(title && !bannerCookie);
+  const localStorage = typeof window !== "undefined" ? window.localStorage : null;
+  const maxAge = localStorage?.getItem("maxAge");
+
+  const [bannerStatus, setBannerStatus] = React.useState(
+    title && (maxAge === null || (maxAge !== null && Number(maxAge) < Date.now()))
+  );
+
+  React.useEffect(() => {
+    if (maxAge !== null && Number(maxAge) < Date.now()) {
+      localStorage?.removeItem("maxAge");
+
+      setBannerStatus(true);
+    }
+  }, []);
 
   return (
     <GlobalTheme>
-      <GlobalHeader />
+      <GlobalHeader title={SEO_TITLE.MAIN} description={SEO_DESCRIPTION.MAIN} url={INTERNAL.MAIN} />
       <main style={{ overflowX: "hidden" }}>
         <HomeGlobalNavigationBar {...{ bannerStatus }} />
-        <Banner {...{ bannerStatus, setBannerStatus }} />
+        {bannerStatus && <Banner {...{ bannerStatus, setBannerStatus }} />}
         <Welcome />
         <CourseList />
         <Feature />
@@ -52,7 +67,6 @@ export const BannerQuery = graphql`
     mdx(frontmatter: { templateKey: { eq: "main_banner" } }) {
       frontmatter {
         title
-        description
       }
     }
   }

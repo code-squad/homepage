@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from "gatsby";
 // Type
 import { FAQType } from "@type/FAQ";
 // Typography
-import { LDisplay } from "typography";
+import { MDisplay } from "typography";
 // Components
 import { DropdownItem, TagNavigationBar } from "components";
 // Assets
@@ -38,7 +38,7 @@ const FAQ: React.FC = () => {
     <FAQWrapper>
       <FAQMasthead />
       <FAQContentWrapper>
-        <LDisplay style={{ paddingTop: "16rem", paddingBottom: "3.2rem" }}>{TITLE.FAQ}</LDisplay>
+        <MDisplay style={{ paddingTop: "16rem", paddingBottom: "3.2rem" }}>{TITLE.FAQ}</MDisplay>
         <TagNavigationBar titles={categoryTitles} onIndexChanged={setCurrentIndex} />
         <DropdownList>
           {faqList.map(({ course, title, content, editDate }) => (

@@ -6,12 +6,19 @@ import theme from "../../styles/theme";
 // Components
 import { Footer, HomeGlobalNavigationBar } from "components";
 import { RefundPolicy } from "pageComponents/refund";
+// Assets
+import { SEO_TITLE, SEO_DESCRIPTION } from "assets/static/seo";
+import { INTERNAL } from "assets/static/urls";
 
 const RefundPage: React.FC = () => {
   const { color } = theme;
   return (
     <GlobalTheme>
-      <GlobalHeader />
+      <GlobalHeader
+        title={SEO_TITLE.REFUND}
+        description={SEO_DESCRIPTION.REFUND}
+        url={INTERNAL.REFUND_POLICY}
+      />
       <main style={{ overflowX: "hidden", backgroundColor: color.greyScale.offWhite }}>
         <HomeGlobalNavigationBar />
         <RefundPolicy />
