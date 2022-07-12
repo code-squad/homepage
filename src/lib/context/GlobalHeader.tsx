@@ -9,6 +9,7 @@ const GlobalHeader: React.FC<{ title: string; description: string; url: string }
   url,
 }) => (
   <Helmet>
+    <title>{title}</title>
     <meta name="viewport" content="width=1440" />
     <meta property="og:type" content="website" />
     <meta name="og:image" content={seo["codesquad"]} />
