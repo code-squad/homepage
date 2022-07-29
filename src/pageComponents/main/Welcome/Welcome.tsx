@@ -3,6 +3,7 @@ import styled from "styled-components";
 // Typography
 import { MDisplay } from "typography";
 // Assets
+import headers from "assets/img/illusts/header";
 import { TITLE } from "assets/static/phrases";
 
 const Welcome: React.FC = () => {
@@ -20,9 +21,13 @@ const WelcomeWrapper = styled.div`
   justify-content: center;
   align-items: center;
   color: ${({ theme: { color } }) => color.greyScale.black};
-  background-color: ${({ theme: { color } }) => color.primary.green4};
   white-space: pre-line;
   text-align: center;
+  background-color: ${({ theme: { color } }) => color.primary.green4};
+  background-image: ${`url(${headers.hero})`};
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 `;
 
 export default Welcome;
