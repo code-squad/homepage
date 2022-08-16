@@ -8,6 +8,13 @@ declare module "styled-components" {
         md: string;
         sm: string;
       };
+      bold: {
+        xl: string;
+        lg: string;
+        md: string;
+        sm: string;
+        xs: string;
+      };
       body: {
         xl: string;
         lg: string;
@@ -27,6 +34,13 @@ declare module "styled-components" {
         md: string;
         sm: string;
       };
+      bold: {
+        xl: string;
+        lg: string;
+        md: string;
+        sm: string;
+        xs: string;
+      };
       body: {
         xl: string;
         lg: string;
@@ -37,14 +51,20 @@ declare module "styled-components" {
     };
     letterSpacing: string;
     color: {
-      greyScale: {
+      blackAndWhite: {
         black: string;
-        black20: string;
+        white: string;
+      };
+      greyScale: {
         grey1: string;
         grey2: string;
         grey3: string;
-        offWhite: string;
-        white: string;
+        grey4: string;
+      };
+      surface: {
+        offWhite1: string;
+        offWhite2: string;
+        black20: string;
         white20: string;
       };
       primary: {

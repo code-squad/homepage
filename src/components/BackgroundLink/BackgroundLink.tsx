@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Link from "gatsby-link";
 // Typography
-import { MBody, SDisplay } from "typography";
+import { MBold, SDisplay } from "typography";
 
 export interface IBackgroundLink {
   backgroundColor?: string;
@@ -14,7 +14,7 @@ export interface IBackgroundLink {
 const BackgroundLink: React.FC<IBackgroundLink> = ({ backgroundColor, title, subtitle, to }) => {
   return (
     <BackgroundLinkWrapper {...{ backgroundColor }}>
-      <MBody bold>{subtitle}</MBody>
+      <MBold>{subtitle}</MBold>
       <LinkItem {...{ to }}>
         <SDisplay>{title}</SDisplay>
       </LinkItem>
@@ -38,7 +38,7 @@ const BackgroundLinkWrapper = styled.div<{ backgroundColor?: string }>`
 
 const LinkItem = styled(Link)`
   text-decoration: none;
-  color: ${({ theme: { color } }) => color.greyScale.black};
+  color: ${({ theme: { color } }) => color.blackAndWhite.black};
 `;
 
 export default BackgroundLink;

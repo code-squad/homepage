@@ -45,7 +45,7 @@ const ScheduleWrapper = styled.div`
   min-width: 144rem;
   padding: 8rem 0 4rem 0;
   margin-top: 4rem;
-  background-color: ${({ theme: { color } }) => color.greyScale.offWhite};
+  background-color: ${({ theme: { color } }) => color.surface.offWhite1};
 `;
 const ScheduleLeftRuler = styled.div`
   width: 107rem;

@@ -19,7 +19,7 @@ const RefundPage: React.FC = () => {
         description={SEO_DESCRIPTION.REFUND}
         url={INTERNAL.REFUND_POLICY}
       />
-      <main style={{ overflowX: "hidden", backgroundColor: color.greyScale.offWhite }}>
+      <main style={{ overflowX: "hidden", backgroundColor: color.surface.offWhite1 }}>
         <HomeGlobalNavigationBar />
         <RefundPolicy />
         <Footer />

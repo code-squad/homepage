@@ -89,7 +89,7 @@ const ArrowButton = styled.button`
   }
   &:disabled {
     cursor: auto;
-    filter: invert(50%) sepia(7%) saturate(6%) hue-rotate(351deg) brightness(92%) contrast(89%);
+    filter: invert(78%) sepia(1%) saturate(1%) hue-rotate(1deg) brightness(103%) contrast(89%);
   }
 `;
 

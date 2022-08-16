@@ -4,7 +4,7 @@ import { graphql, Link, useStaticQuery } from "gatsby";
 // Type
 import { MasterType } from "@type/Master";
 // Typography
-import { MBody, SBody, XLBody, XSBody } from "typography";
+import { MBody, SBody, XLBody, XSBody, HLBold, MBold, SBold } from "typography";
 // Components
 import { TitleSet, TabNavigationBar } from "components";
 // Assets
@@ -42,18 +42,18 @@ const Master: React.FC = () => {
         </MBody>
         <TabNavigationBar titles={fields} onIndexChanged={handleTabClick} />
       </div>
-      <div style={{ backgroundColor: theme.color.greyScale.offWhite }}>
+      <div style={{ backgroundColor: theme.color.surface.offWhite1 }}>
         <MasterInformationWrapper>
           <MasterImg alt="profile" src={picture[masterIntroduce.image]} />
           <IntroduceWrapper>
             <Introduce>
               <NicknameWrapper>
-                <XLBody>{masterIntroduce.name}</XLBody>
+                <HLBold>{masterIntroduce.name}</HLBold>
                 <XSBody style={{ color: `${theme.color.greyScale.grey2}`, paddingLeft: "0.8rem" }}>
                   {masterIntroduce.introduce}
                 </XSBody>
               </NicknameWrapper>
-              <MBody bold>{masterIntroduce.nutshell}</MBody>
+              <MBold>{masterIntroduce.nutshell}</MBold>
               <CareerWrapper>
                 {masterIntroduce.careers?.map((career) => (
                   <li key={career}>
@@ -72,9 +72,7 @@ const Master: React.FC = () => {
             </Introduce>
             {masterIntroduce.schedules && (
               <ScheduleWrapper>
-                <MBody bold style={{ padding: "3.2rem 0 2.4rem 0" }}>
-                  {TITLE.SCHEDULE}
-                </MBody>
+                <MBold style={{ padding: "3.2rem 0 2.4rem 0" }}>{TITLE.SCHEDULE}</MBold>
                 <ScheduleList>
                   {masterIntroduce.schedules.map(({ image, title, subtitle, path }) => (
                     <li key={title}>
@@ -85,7 +83,7 @@ const Master: React.FC = () => {
                             <XSBody>{title}</XSBody>
                           </TitleWrapper>
                           <SubtitleWrapper>
-                            <MBody>{subtitle}</MBody>
+                            <SBold>{subtitle}</SBold>
                           </SubtitleWrapper>
                         </CourseTitleWrapper>
                       </Schedule>
@@ -107,6 +105,7 @@ const MasterWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: space-between;
+  color: ${({ theme: { color } }) => color.blackAndWhite.black};
 `;
 
 const MasterInformationWrapper = styled.div`
@@ -160,7 +159,7 @@ const CareerWrapper = styled.ul`
 
 const ScheduleWrapper = styled.div`
   width: 52rem;
-  border-top: 0.1rem solid ${({ theme: { color } }) => color.greyScale.grey3};
+  border-top: 0.1rem solid ${({ theme: { color } }) => color.greyScale.grey4};
 `;
 
 const ScheduleList = styled.ul`
@@ -189,7 +188,7 @@ const Schedule = styled(Link)`
       & > *:last-child {
         height: 2.5rem;
         line-height: 2.5rem;
-        border-bottom: 0.1rem solid ${({ theme: { color } }) => color.greyScale.black};
+        border-bottom: 0.1rem solid ${({ theme: { color } }) => color.blackAndWhite.black};
       }
     }
   }
@@ -202,7 +201,7 @@ const CourseImage = styled.img`
 
 const CourseTitleWrapper = styled.div`
   display: flex;
-  height: 4.4rem;
+  height: 4.2rem;
   flex-direction: column;
 `;
 
@@ -213,7 +212,7 @@ const TitleWrapper = styled.div`
 
 const SubtitleWrapper = styled.div`
   width: fit-content;
-  color: ${({ theme: { color } }) => color.greyScale.black};
+  color: ${({ theme: { color } }) => color.blackAndWhite.black};
 `;
 
 const MasterQuery = graphql`

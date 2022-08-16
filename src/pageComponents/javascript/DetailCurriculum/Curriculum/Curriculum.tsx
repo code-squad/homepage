@@ -3,7 +3,7 @@ import styled from "styled-components";
 // Type
 import { CodeTogetherCurriculumType } from "@type/CodeTogetherCurriculum";
 // Typography
-import { LBody, MBody } from "typography";
+import { SHLBold, MBody } from "typography";
 // Components
 import { MasterInfo } from "./MasterInfo";
 
@@ -19,7 +19,7 @@ const Curriculum: React.FC<{ curriculumInfo: CodeTogetherCurriculumType }> = ({
           {subjectList.map(({ name, details }) => (
             <SubjectItem key={name}>
               <SubjectTitle>
-                <LBody bold>{name}</LBody>
+                <SHLBold>{name}</SHLBold>
               </SubjectTitle>
               <SubjectDetailList>
                 {details.map((detail) => (
@@ -60,6 +60,7 @@ const SubjectItem = styled.li`
 `;
 const SubjectTitle = styled.h6`
   width: 19rem;
+  color: ${({ theme: { color } }) => color.blackAndWhite.black};
 `;
 const SubjectDetailList = styled.ul`
   display: flex;
@@ -69,7 +70,7 @@ const SubjectDetailList = styled.ul`
   list-style-position: inside;
 `;
 const DivideLine = styled.div`
-  border-bottom: 0.1rem solid ${({ theme: { color } }) => color.greyScale.black20};
+  border-bottom: 0.1rem solid ${({ theme: { color } }) => color.greyScale.grey4};
   margin: 5.6rem 0;
   width: 100%;
 `;

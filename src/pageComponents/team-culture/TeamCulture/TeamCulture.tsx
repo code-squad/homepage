@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from "gatsby";
 // Type
 import { TeamCultureType } from "@type/TeamCulture";
 // Typography
-import { LBody, MBody, XLBody } from "typography";
+import { SHLBold, MBody, HLBold } from "typography";
 // Assets
 import { TitleSet } from "components/";
 import { SUBTITLE, TITLE } from "assets/static/phrases";
@@ -24,12 +24,12 @@ const TeamCulture: React.FC = () => {
         {cultures.map(({ title, cultureFeatures }) => (
           <TeamCultureListItem key={title}>
             <TeamCultureTitle>
-              <XLBody bold>{title}</XLBody>
+              <HLBold>{title}</HLBold>
             </TeamCultureTitle>
             <TeamCultureContentList>
               {cultureFeatures.map(({ subtitle, description }) => (
                 <TeamCultureContentListItem key={subtitle}>
-                  <LBody bold>{subtitle}</LBody>
+                  <SHLBold>{subtitle}</SHLBold>
                   <MBody style={{ color: color.greyScale.grey2 }}>{description}</MBody>
                 </TeamCultureContentListItem>
               ))}
@@ -48,7 +48,7 @@ const TeamCultureWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: space-between;
-  color: ${({ theme: { color } }) => color.greyScale.black};
+  color: ${({ theme: { color } }) => color.blackAndWhite.black};
   & > *:not(:last-child) {
     margin-bottom: 5.6rem;
   }

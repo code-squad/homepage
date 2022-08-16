@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 // Typography
-import { MBody } from "typography";
+import { MBold, MBody } from "typography";
 // Assets
 
 interface IInfoItemProps {
@@ -15,7 +15,7 @@ const InfoItem: React.FC<IInfoItemProps> = ({ src, label, content }) => {
     <InfoItemWrapper>
       <InfoLabel>
         <img src={src} style={{ marginRight: ".8rem" }} />
-        <MBody bold>{label}</MBody>
+        <MBold>{label}</MBold>
       </InfoLabel>
       <MBody style={{ whiteSpace: "pre-line" }}>{content}</MBody>
     </InfoItemWrapper>

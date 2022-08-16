@@ -4,7 +4,7 @@ import { Link } from "gatsby";
 // Assets
 import icons from "assets/img/icons";
 // Typography
-import { LBody, MBody, XSBody } from "typography/";
+import { SHLBold, MBold, XSBold } from "typography/";
 
 interface ILinkButton {
   description: string;
@@ -26,15 +26,15 @@ const LinkButton: React.FC<ILinkButton> = ({ description, title, to, icon, capti
     >
       <TextWrapper {...{ caption }}>
         <Description>
-          <MBody bold>{description}</MBody>
+          <MBold>{description}</MBold>
         </Description>
         <Title>
-          <LBody bold>{title}</LBody>
+          <SHLBold>{title}</SHLBold>
           <img aria-label="arrow-right" src={icons.chevronRight} width="24px" height="24px" />
         </Title>
         {caption ? (
           <Caption>
-            <XSBody bold>{caption}</XSBody>
+            <XSBold>{caption}</XSBold>
           </Caption>
         ) : null}
       </TextWrapper>
@@ -50,12 +50,12 @@ const LinkButtonWrapper = styled(Link)<{ icon?: string; caption?: string }>`
   width: ${({ icon }) => (icon ? "43.5rem" : "98.2rem")};
   border-radius: 0.8rem;
   border: 0.2rem solid ${({ theme: { color } }) => color.greyScale.grey3};
-  background-color: ${({ theme: { color } }) => color.greyScale.offWhite};
+  background-color: ${({ theme: { color } }) => color.surface.offWhite1};
   padding: ${({ caption, icon }) => (caption ? "2.7rem 4rem" : icon ? "3.2rem 4rem" : "4rem")};
   text-decoration: unset;
   &:hover {
     cursor: pointer;
-    border: 0.2rem solid ${({ theme: { color } }) => color.greyScale.black};
+    border: 0.2rem solid ${({ theme: { color } }) => color.blackAndWhite.black};
   }
 `;
 
@@ -70,7 +70,7 @@ const Description = styled.div`
 const Title = styled.div`
   display: flex;
   align-items: center;
-  color: ${({ theme: { color } }) => color.greyScale.black};
+  color: ${({ theme: { color } }) => color.blackAndWhite.black};
 `;
 const Caption = styled.div`
   margin-top: 0.8rem;

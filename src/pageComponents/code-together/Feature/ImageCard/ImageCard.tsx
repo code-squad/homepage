@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 // Typography
-import { MBody, XLBody } from "typography/";
+import { MBody, HLBold } from "typography/";
 
 interface IImageCard {
   title: string;
@@ -15,7 +15,7 @@ const ImageCard: React.FC<IImageCard> = ({ title, descriptions, img, medium }) =
     <CardWrapper {...{ medium }}>
       <CardImg alt={`card-img-${title}`} src={img} />
       <Title>
-        <XLBody bold>{title}</XLBody>
+        <HLBold>{title}</HLBold>
       </Title>
       <DescriptionList>
         {descriptions.map((description) => (
@@ -41,6 +41,7 @@ const CardImg = styled.img`
 `;
 const Title = styled.h4`
   margin-top: 3.2rem;
+  color: ${({ theme: { color } }) => color.blackAndWhite.black};
 `;
 const DescriptionList = styled.ul`
   margin-top: 1.6rem;

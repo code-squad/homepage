@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
 // Typography
-import { MBody, MDisplay } from "typography";
+import { MBody, MDisplay, MBold } from "typography";
 // Components
 import { InfoItem } from "./InfoItem";
 // Assets
@@ -27,7 +27,7 @@ const Masthead: React.FC = () => {
         <TargetWrapper>
           <TargetTitle>
             <img src={icons.member} style={{ marginRight: ".8rem" }} />
-            <MBody bold>{TITLE.EDUCATION_TARGET}</MBody>
+            <MBold>{TITLE.EDUCATION_TARGET}</MBold>
           </TargetTitle>
           {targets.map((target: string) => (
             <TargetItem key={target}>
@@ -55,6 +55,7 @@ const MastheadWrapper = styled.div`
   padding: 16rem 0 6.2rem 0;
   display: flex;
   align-items: center;
+  color: ${({ theme: { color } }) => color.blackAndWhite.black};
   background-color: ${({ theme: { color } }) => color.primary.green4};
   background-image: ${`url(${headers.codeTogether})`};
   background-position: center;

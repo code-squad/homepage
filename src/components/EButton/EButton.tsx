@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 // Typography
-import { MBody } from "typography";
+import { MBold } from "typography";
 // Assets
 import icons from "assets/img/icons";
 
@@ -16,7 +16,7 @@ const EButton: React.FC<IEButtonProps> = ({ children, accent, disabled, onClick 
   return (
     <EButtonWrapper {...{ accent, disabled, onClick }}>
       <ButtonIcon src={icons.plus} {...{ disabled }} />
-      <MBody bold>{children}</MBody>
+      <MBold>{children}</MBold>
     </EButtonWrapper>
   );
 };
@@ -32,19 +32,19 @@ const EButtonWrapper = styled.button<{ accent?: boolean; disabled?: boolean }>`
   border: 0.1rem solid;
   border-radius: 3rem;
   border-color: ${({ accent, disabled, theme: { color } }) =>
-    disabled ? color.greyScale.grey3 : accent ? color.greyScale.black : color.greyScale.grey3};
-  background-color: ${({ theme: { color } }) => color.greyScale.white};
+    disabled ? color.greyScale.grey3 : accent ? color.blackAndWhite.black : color.greyScale.grey3};
+  background-color: ${({ theme: { color } }) => color.blackAndWhite.white};
   text-decoration: none;
   text-align: center;
   cursor: ${({ disabled }) => (disabled ? "unset" : "pointer")};
   pointer-events: ${({ disabled }) => (disabled ? "none" : "auto")};
   &:hover {
     color: ${({ disabled, theme: { color } }) =>
-      disabled ? color.greyScale.grey3 : color.greyScale.black};
+      disabled ? color.greyScale.grey3 : color.blackAndWhite.black};
     background-color: ${({ disabled, theme: { color } }) =>
-      disabled ? color.greyScale.white : color.primary.green4};
+      disabled ? color.blackAndWhite.white : color.primary.green4};
     border-color: ${({ disabled, theme: { color } }) =>
-      disabled ? color.greyScale.grey3 : color.greyScale.black};
+      disabled ? color.greyScale.grey3 : color.blackAndWhite.black};
   }
   &:disabled {
     cursor: auto;

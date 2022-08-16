@@ -48,7 +48,7 @@ const CurriculumWrapper = styled.div`
   justify-content: center;
   width: 100%;
   min-width: 144rem;
-  background-color: ${({ theme: { color } }) => color.greyScale.offWhite};
+  background-color: ${({ theme: { color } }) => color.surface.offWhite1};
 `;
 
 const CurriculumQuery = graphql`

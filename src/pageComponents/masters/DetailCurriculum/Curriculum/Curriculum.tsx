@@ -3,7 +3,7 @@ import styled from "styled-components";
 // Type
 import { CurriculumType } from "@type/Curriculum";
 // Typography
-import { XLBody, LBody, MBody } from "typography";
+import { HLBold, SHLBold, MBody } from "typography";
 // Components
 import { MasterInfo } from "./MasterInfo";
 
@@ -16,13 +16,13 @@ const Curriculum: React.FC<{ curriculumInfo: CurriculumType }> = ({ curriculumIn
         {curriculum.map(({ subject, subjectList }) => (
           <li key={subject}>
             <CurriculumTitle>
-              <XLBody bold>{subject}</XLBody>
+              <HLBold>{subject}</HLBold>
             </CurriculumTitle>
             <ul>
               {subjectList.map(({ name, detail }) => (
                 <SubjectItem key={detail}>
                   <SubjectTitle>
-                    <LBody bold>{name}</LBody>
+                    <SHLBold>{name}</SHLBold>
                   </SubjectTitle>
                   <SubjectDetail>
                     <MBody>{detail}</MBody>
@@ -57,12 +57,13 @@ const SubjectItem = styled.li`
 `;
 const SubjectTitle = styled.h6`
   width: 19rem;
+  color: ${({ theme: { color } }) => color.blackAndWhite.black};
 `;
 const SubjectDetail = styled.div`
   color: ${({ theme: { color } }) => color.greyScale.grey2};
 `;
 const DivideLine = styled.div`
-  border-bottom: 0.1rem solid ${({ theme: { color } }) => color.greyScale.black20};
+  border-bottom: 0.1rem solid ${({ theme: { color } }) => color.greyScale.grey4};
   margin: 5.6rem 0;
   width: 100%;
 `;

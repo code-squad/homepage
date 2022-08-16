@@ -4,8 +4,15 @@ const fontSize = {
     md: "4.8rem",
     sm: "4rem",
   },
-  body: {
+  bold: {
     xl: "2.6rem",
+    lg: "2rem",
+    md: "1.6rem",
+    sm: "1.4rem",
+    xs: "1.2rem",
+  },
+  body: {
+    xl: "2.4rem",
     lg: "2rem",
     md: "1.6rem",
     sm: "1.4rem",
@@ -25,8 +32,15 @@ const lineHeight = {
     md: "7rem",
     sm: "5.8rem",
   },
-  body: {
+  bold: {
     xl: "3.8rem",
+    lg: "3rem",
+    md: "2.6rem",
+    sm: "2.4rem",
+    xs: "1.8rem",
+  },
+  body: {
+    xl: "3.6rem",
     lg: "3rem",
     md: "2.6rem",
     sm: "2.4rem",
@@ -37,14 +51,20 @@ const lineHeight = {
 const letterSpacing = "-0.008em";
 
 const color = {
-  greyScale: {
+  blackAndWhite: {
     black: "#1B1B1B",
-    black20: "rgba(27, 27, 27, 0.2)",
+    white: "#FFFFFF",
+  },
+  greyScale: {
     grey1: "#3F3F3F",
     grey2: "#777777",
     grey3: "#C4C4C4",
-    offWhite: "#FAFAFA",
-    white: "#FFFFFF",
+    grey4: "#D9D9D9",
+  },
+  surface: {
+    offWhite1: "#FAFAFA",
+    offWhite2: "#F8FAFF",
+    black20: "rgba(27, 27, 27, 0.2)",
     white20: "rgba(255, 255, 255, 0.2);",
   },
   primary: {

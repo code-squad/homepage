@@ -3,7 +3,7 @@ import styled from "styled-components";
 // Type
 import { ScheduleType } from "@type/Schedule";
 // Typography
-import { LBody, MBody } from "typography";
+import { SHLBold, LBody, MBody } from "typography";
 // Components
 import { MButton } from "components";
 import { getSplittedPhrase } from "lib/utils";
@@ -20,7 +20,7 @@ const ScheduleInfo: React.FC<IScheduleInfo> = ({ scheduleInfo, selectedScheduleI
 
   return (
     <ScheduleInfoWrapper>
-      <LBody bold>{title}</LBody>
+      <SHLBold>{title}</SHLBold>
       <LBody style={{ marginTop: "2.4rem" }}>{subtitle}</LBody>
       {getSplittedPhrase(description).map((descriptionItem: string) => (
         <DescriptionWrapper key={descriptionItem}>
@@ -44,6 +44,7 @@ const ScheduleInfoWrapper = styled.div`
   margin-left: 8.5rem;
   display: flex;
   flex-direction: column;
+  color: ${({ theme: { color } }) => color.blackAndWhite.black};
 `;
 const DescriptionWrapper = styled.div`
   color: ${({ theme: { color } }) => color.greyScale.grey2};
