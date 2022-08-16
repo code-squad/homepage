@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from "gatsby";
 // Type
 import { FeatureType } from "@type/Feature";
 // Typography
-import { MBody, XLBody } from "typography";
+import { MBody, HLBold, SBold } from "typography";
 // Components
 import { TitleSet } from "components/";
 // Assets
@@ -27,15 +27,11 @@ const Feature: React.FC = () => {
       <ContentWrapper>
         <Content>
           <div>
-            <XLBody bold>{title}</XLBody>
-            <MBody bold style={{ color: color.greyScale.grey2 }}>
-              {subtitle}
-            </MBody>
+            <HLBold style={{ color: color.greyScale.grey1 }}>{title}</HLBold>
+            <SBold>{subtitle}</SBold>
           </div>
           {splittedDescription.map((descriptionItem: string) => (
-            <MBody key={descriptionItem} style={{ color: color.greyScale.grey2 }}>
-              {descriptionItem}
-            </MBody>
+            <MBody key={descriptionItem}>{descriptionItem}</MBody>
           ))}
         </Content>
         <FeatureImg src={features[image]} alt="feature" />
@@ -51,6 +47,7 @@ const FeatureWrapper = styled.div`
   display: flex;
   margin: 0 auto;
   flex-direction: column;
+  color: ${({ theme: { color } }) => color.greyScale.grey2};
   & > *:not(:last-child) {
     margin-bottom: 5.6rem;
   }

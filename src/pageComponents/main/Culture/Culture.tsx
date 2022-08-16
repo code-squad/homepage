@@ -1,10 +1,10 @@
 import React from "react";
-import styled, { useTheme } from "styled-components";
+import styled from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
 // Type
 import { CultureType } from "@type/Culture";
 // Typography
-import { MBody, XLBody } from "typography";
+import { HLBold, MBold, MBody } from "typography";
 // Components
 import { TitleSet } from "components/";
 // Assets
@@ -14,8 +14,6 @@ import { SUBTITLE, TITLE } from "assets/static/phrases";
 import { strainMdxInfo, getSplittedPhrase } from "lib/utils";
 
 const Culture: React.FC = () => {
-  const { color } = useTheme();
-
   const { cultures }: { cultures: CultureType[] } = strainMdxInfo(useStaticQuery(CultureQuery));
 
   return (
@@ -26,8 +24,8 @@ const Culture: React.FC = () => {
           <CultureContent key={title}>
             <CultureImg src={features[image]} alt="culture-icon" />
             <TitleWrapper>
-              <MBody style={{ color: color.greyScale.grey1 }}>{subtitle}</MBody>
-              <XLBody>{title}</XLBody>
+              <MBold>{subtitle}</MBold>
+              <HLBold>{title}</HLBold>
             </TitleWrapper>
             <DescriptionList>
               {getSplittedPhrase(description).map((descriptionItem: string) => (
@@ -79,6 +77,7 @@ const CultureImg = styled.img`
 `;
 
 const TitleWrapper = styled.div`
+  color: ${({ theme: { color } }) => color.blackAndWhite.black};
   & > *:not(:last-child) {
     padding-bottom: 0.8rem;
   }

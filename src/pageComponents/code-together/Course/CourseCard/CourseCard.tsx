@@ -2,7 +2,7 @@ import { Link } from "gatsby";
 import React from "react";
 import styled from "styled-components";
 // Typography
-import { LBody, SBody } from "typography/";
+import { SHLBold, SBody, SBold } from "typography/";
 
 interface IImageCard {
   master: string;
@@ -19,16 +19,16 @@ const CourseCard: React.FC<IImageCard> = ({ master, title, dueDate, cost, tags, 
     <CourseCardWrapper aria-label={`course-card-${title}`} to={path}>
       <CardImg src={img} />
       <MasterWrapper>
-        <SBody bold>{master}</SBody>
+        <SBold>{master}</SBold>
       </MasterWrapper>
       <TitleWrapper>
-        <LBody bold>{title}</LBody>
+        <SHLBold>{title}</SHLBold>
       </TitleWrapper>
       <DueDateWrapper>
         <SBody>{dueDate}</SBody>
       </DueDateWrapper>
       <CostWrapper>
-        <SBody bold>{cost}</SBody>
+        <SBold>{cost}</SBold>
       </CostWrapper>
       <TagList>
         {tags.map((tag) => (
@@ -56,7 +56,7 @@ const CourseCardWrapper = styled(Link)<{ medium?: boolean }>`
     & > *:nth-child(3) {
       height: 2.9rem;
       line-height: 2.9rem;
-      border-bottom: 0.1rem solid ${({ theme: { color } }) => color.greyScale.black};
+      border-bottom: 0.1rem solid ${({ theme: { color } }) => color.blackAndWhite.black};
     }
     & > *:nth-child(4) {
       height: 2.3rem;
@@ -66,7 +66,7 @@ const CourseCardWrapper = styled(Link)<{ medium?: boolean }>`
     & > *:nth-child(5) {
       height: 2.3rem;
       line-height: 2.3rem;
-      border-bottom: 0.1rem solid ${({ theme: { color } }) => color.greyScale.black};
+      border-bottom: 0.1rem solid ${({ theme: { color } }) => color.blackAndWhite.black};
     }
   }
 `;
@@ -84,7 +84,7 @@ const MasterWrapper = styled.div`
 
 const TitleWrapper = styled.div`
   width: fit-content;
-  color: ${({ theme: { color } }) => color.greyScale.black};
+  color: ${({ theme: { color } }) => color.blackAndWhite.black};
 `;
 
 const DueDateWrapper = styled.div`
@@ -95,7 +95,7 @@ const DueDateWrapper = styled.div`
 
 const CostWrapper = styled.div`
   width: fit-content;
-  color: ${({ theme: { color } }) => color.greyScale.black};
+  color: ${({ theme: { color } }) => color.blackAndWhite.black};
 `;
 
 const TagList = styled.ul`
@@ -104,7 +104,7 @@ const TagList = styled.ul`
   & > *:not(:last-child) {
     margin-right: 0.8rem;
   }
-  color: ${({ theme: { color } }) => color.greyScale.black};
+  color: ${({ theme: { color } }) => color.blackAndWhite.black};
 `;
 
 const CourseTagItem = styled.div`

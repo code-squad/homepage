@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 // Typography
-import { SBody, MBody } from "typography";
+import { SBody, MBold } from "typography";
 
 interface ICourse {
   title: string;
@@ -17,7 +17,7 @@ const Course: React.FC<ICourse> = ({ title, dueDate, img, path }) => {
       <CourseImg src={img} alt={`course-img-${title}`} />
       <CourseInfoWrapper>
         <TitleWrapper>
-          <MBody bold>{title}</MBody>
+          <MBold>{title}</MBold>
         </TitleWrapper>
         <DueDateWrapper>
           <SBody>{dueDate}</SBody>

@@ -1,12 +1,12 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import "./TimeTable.css";
 // Type
 import { PlanType, TagType } from "@type/TimeTable";
 // Typography
-import { XSBody } from "typography";
+import { XSBody, SBold } from "typography";
 // Components
 import { TitleSet } from "components";
 // Assets
@@ -15,6 +15,8 @@ import { SUBTITLE, TITLE } from "assets/static/phrases";
 import { strainMdxInfoBody } from "lib/utils";
 
 const TimeTable: React.FC = () => {
+  const { color: colorTheme } = useTheme();
+
   const data = useStaticQuery(JavascriptTimeTableQuery);
   const { planList, tags, body }: { planList: PlanType[]; tags: TagType[]; body: string } =
     strainMdxInfoBody(data);
@@ -46,9 +48,9 @@ const TimeTable: React.FC = () => {
             {planList.map(({ name, description, color }) => (
               <PlanListWrapper key={name}>
                 <PlanLabel {...{ color }}>
-                  <XSBody>{name}</XSBody>
+                  <SBold>{name}</SBold>
                 </PlanLabel>
-                <XSBody>{description}</XSBody>
+                <XSBody style={{ color: colorTheme.greyScale.grey1 }}>{description}</XSBody>
               </PlanListWrapper>
             ))}
           </PlanList>
@@ -92,6 +94,7 @@ const PlanWrapper = styled.div`
   width: 100%;
   margin: 0 auto;
   overflow: hidden;
+  color: ${({ theme: { color } }) => color.blackAndWhite.black};
 `;
 
 const DescriptionWrapper = styled.div`

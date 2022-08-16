@@ -20,7 +20,7 @@ const WelcomeWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: ${({ theme: { color } }) => color.greyScale.black};
+  color: ${({ theme: { color } }) => color.blackAndWhite.black};
   white-space: pre-line;
   text-align: center;
   background-color: ${({ theme: { color } }) => color.primary.green4};

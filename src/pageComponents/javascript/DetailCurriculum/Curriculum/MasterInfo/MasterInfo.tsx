@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 // Typography
-import { XLBody, LBody, MBody, SBody } from "typography";
+import { HLBold, SHLBold, MBody, SBody } from "typography";
 // Components
 import { Avatar } from "components";
 // Assets
@@ -28,13 +28,13 @@ const MasterInfo: React.FC<IMasterInfo> = ({ masterInfo }) => {
       </AvatarWrapper>
       <InfoWrapper>
         <NameWrapper>
-          <XLBody bold>{name}</XLBody>
+          <HLBold>{name}</HLBold>
           <PositionWrapper>
             <SBody>{position}</SBody>
           </PositionWrapper>
         </NameWrapper>
         <NutshellWrapper>
-          <LBody bold>{nutshell}</LBody>
+          <SHLBold>{nutshell}</SHLBold>
         </NutshellWrapper>
         <IntroduceWrapper>
           <MBody>{introduce}</MBody>
@@ -58,6 +58,7 @@ const InfoWrapper = styled.div`
 const NameWrapper = styled.div`
   display: flex;
   align-items: flex-end;
+  color: ${({ theme: { color } }) => color.blackAndWhite.black};
 `;
 const PositionWrapper = styled.div`
   color: ${({ theme: { color } }) => color.greyScale.grey1};
@@ -65,6 +66,7 @@ const PositionWrapper = styled.div`
 `;
 const NutshellWrapper = styled.div`
   margin-top: 1.6rem;
+  color: ${({ theme: { color } }) => color.blackAndWhite.black};
 `;
 const IntroduceWrapper = styled.div`
   margin-top: 0.8rem;

@@ -4,7 +4,7 @@ import { graphql, Link, useStaticQuery } from "gatsby";
 // Type
 import { ScheduledCourse } from "@type/ScheduledCourse";
 // Typography
-import { MBody, MDisplay } from "typography";
+import { MBody, MDisplay, MBold } from "typography";
 // Components
 import { Course } from "./Course";
 // Assets
@@ -24,9 +24,9 @@ const Masthead: React.FC = () => {
         <MBody>{description}</MBody>
       </TitleWrapper>
       <CourseAdmissionTitleWrapper>
-        <MBody bold>{TITLE.SCHEDULED_COURSE}</MBody>
+        <MBold>{TITLE.SCHEDULED_COURSE}</MBold>
         <MoveLinkWrapper to="#course">
-          <MBody bold>{TITLE.VIEW_ENTIRE_COURSE}</MBody>
+          <MBold>{TITLE.VIEW_ENTIRE_COURSE}</MBold>
         </MoveLinkWrapper>
       </CourseAdmissionTitleWrapper>
       <CourseAdmissionsList>
@@ -45,6 +45,7 @@ const MastheadWrapper = styled.div`
   width: 100%;
   min-width: 144rem;
   padding: 16rem 0 7rem 0;
+  color: ${({ theme: { color } }) => color.blackAndWhite.black};
   background-color: ${({ theme: { color } }) => color.primary.green4};
   background-image: ${`url(${header.codeTogether})`};
   background-repeat: no-repeat;
@@ -74,7 +75,7 @@ const CourseAdmissionTitleWrapper = styled.div`
 
 const MoveLinkWrapper = styled(Link)`
   text-decoration: none;
-  color: ${({ theme: { color } }) => color.greyScale.black};
+  color: ${({ theme: { color } }) => color.blackAndWhite.black};
   background-color: transparent;
   border: 0;
   cursor: pointer;

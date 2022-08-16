@@ -54,8 +54,8 @@ const RefundPolicy: React.FC = () => {
 const RefundPolicyWrapper = styled.div`
   width: 100%;
   padding-bottom: 16rem;
-  color: ${({ theme: { color } }) => color.greyScale.black};
-  background-color: ${({ theme: { color } }) => color.greyScale.offWhite};
+  color: ${({ theme: { color } }) => color.blackAndWhite.black};
+  background-color: ${({ theme: { color } }) => color.surface.offWhite1};
   white-space: pre-line;
   text-align: center;
   display: flex;
@@ -69,14 +69,14 @@ const RefundPolicyWrapper = styled.div`
 const PolicySpecificationWrapper = styled.div`
   padding: 4.8rem;
   border: 0.1rem solid ${({ theme: { color } }) => color.greyScale.grey3};
-  background-color: ${({ theme: { color } }) => color.greyScale.white};
+  background-color: ${({ theme: { color } }) => color.blackAndWhite.white};
 `;
 
 const RefundPolicyTable = styled.table`
   width: 48rem;
   border: 0.1rem solid ${({ theme: { color } }) => color.greyScale.grey3};
   border-collapse: collapse;
-  background-color: ${({ theme: { color } }) => color.greyScale.white};
+  background-color: ${({ theme: { color } }) => color.blackAndWhite.white};
   font-size: 1.4rem;
   line-height: 2.4rem;
 `;
@@ -87,7 +87,7 @@ const RefundPolicyTableHeader = styled.th`
   padding: 0 1rem;
   border: 0.1rem solid ${({ theme: { color } }) => color.greyScale.grey3};
   border-collapse: collapse;
-  background-color: ${({ theme: { color } }) => color.greyScale.offWhite};
+  background-color: ${({ theme: { color } }) => color.surface.offWhite1};
   vertical-align: middle;
   text-align: start;
 `;

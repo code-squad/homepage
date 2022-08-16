@@ -63,7 +63,7 @@ const FAQWrapper = styled.div`
   background-image: ${`url(${headers.pattern1})`};
   background-repeat: no-repeat;
   background-position: top right;
-  color: ${({ theme: { color } }) => color.greyScale.black};
+  color: ${({ theme: { color } }) => color.blackAndWhite.black};
   white-space: pre-line;
   text-align: center;
   display: flex;
@@ -94,7 +94,7 @@ const DropdownList = styled.ul`
   padding: 0.8rem 4.8rem 4.8rem 4.8rem;
   display: flex;
   flex-direction: column;
-  background-color: ${({ theme: { color } }) => color.greyScale.white};
+  background-color: ${({ theme: { color } }) => color.blackAndWhite.white};
 `;
 
 const FAQQuery = graphql`

@@ -75,14 +75,14 @@ const CourseListWrapper = styled.div`
   width: 100%;
   margin-top: 4rem;
   padding: 8rem;
-  background-color: ${({ theme: { color } }) => color.greyScale.offWhite};
+  background-color: ${({ theme: { color } }) => color.surface.offWhite1};
 `;
 
 const CourseList = styled.ul`
   width: 106.2rem;
   padding: 0 18.9rem;
   margin: 0 auto;
-  background-color: ${({ theme: { color } }) => color.greyScale.offWhite};
+  background-color: ${({ theme: { color } }) => color.surface.offWhite1};
   display: flex;
   flex-flow: row wrap;
   & > *:not(:nth-child(3n)) {
