@@ -1,17 +1,20 @@
 @font-face {
-  font-family: "Noto Sans KR";
-  src: local("Noto Sans KR"), url("../assets/fonts/NotoSansKR-Regular.otf") format("opentype");
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: "Noto Sans KR";
-  src: local("Noto Sans KR"), url("../assets/fonts/NotoSansKR-Medium.otf") format("opentype");
-  font-weight: 500;
-}
-
-@font-face {
-  font-family: "Noto Sans KR";
-  src: local("Noto Sans KR"), url("../assets/fonts/NotoSansKR-Bold.otf") format("opentype");
+  font-family: "Pretendard";
   font-weight: 700;
+  font-display: swap;
+  src: local("Pretendard Bold"), url("../assets/fonts/Pretendard-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 500;
+  font-display: swap;
+  src: local("Pretendard Medium"), url("../assets/fonts/Pretendard-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 400;
+  font-display: swap;
+  src: local("Pretendard Regular"), url("../assets/fonts/Pretendard-Regular.woff2") format("woff2");
 }
