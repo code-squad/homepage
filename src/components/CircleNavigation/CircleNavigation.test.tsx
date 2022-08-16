@@ -30,7 +30,7 @@ describe("<CircleNavigation>", () => {
     const { getAllByRole } = renderCircleNavigation();
     const {
       color: {
-        greyScale: { black },
+        blackAndWhite: { black },
       },
     } = theme;
 
