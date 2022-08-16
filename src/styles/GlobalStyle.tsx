@@ -36,7 +36,7 @@ html {
 }
 body {
   line-height: 1;
-  font-family: 'Noto Sans KR';
+  font-family: 'Pretendard';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
