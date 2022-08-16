@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 // Typography
-import { MBody, XSBody } from "typography";
+import { MBold, XSBold } from "typography";
 // Assets
 import icons from "assets/img/icons";
 
@@ -16,8 +16,8 @@ const BannerPopup: React.FC<IBannerPopup> = ({ title, description, to, onCloseBu
   return (
     <BannerPopupWrapper>
       <ContentWrapper href={to} target="_blank" rel="noopener noreferrer nofollow">
-        <MBody bold>{title}</MBody>
-        {description && <XSBody bold>{description}</XSBody>}
+        <MBold>{title}</MBold>
+        {description && <XSBold>{description}</XSBold>}
       </ContentWrapper>
       <CloseButton onClick={onCloseButtonClicked}>
         <ButtonIcon src={icons.close} />
@@ -33,7 +33,7 @@ const BannerPopupWrapper = styled.div`
   display: flex;
   position: relative;
   justify-content: center;
-  background-color: ${({ theme: { color } }) => color.greyScale.black};
+  background-color: ${({ theme: { color } }) => color.blackAndWhite.black};
 `;
 
 const ContentWrapper = styled.a`
@@ -42,7 +42,7 @@ const ContentWrapper = styled.a`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: ${({ theme: { color } }) => color.greyScale.white};
+  color: ${({ theme: { color } }) => color.blackAndWhite.white};
   text-decoration: none;
   & > *:not(:last-child) {
     margin-bottom: 0.4rem;

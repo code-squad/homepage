@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 // Typography
-import { LBody } from "typography/";
+import { SHLBold } from "typography/";
 
 interface ITabNavigationBarProps {
   onIndexChanged: (index: number) => void;
@@ -24,7 +24,7 @@ const TabNavigationBar: React.FC<ITabNavigationBarProps> = ({ onIndexChanged, ti
               onClick={() => handleTabNavigationButtonClick(index)}
               selected={index === currentIndex}
             >
-              <LBody>{title}</LBody>
+              <SHLBold>{title}</SHLBold>
             </TabNavButton>
           </li>
         ))}
@@ -59,10 +59,10 @@ const TabNavButton = styled.button<{ selected?: boolean }>`
     selected ? `0.2rem solid ${color.primary.green2}` : "0.2rem solid transparent"};
   transition-property: corlor, border-bottom;
   transition-duration: 0.3s;
+  font-family: inherit;
   &:hover {
     cursor: pointer;
   }
-  font-family: inherit;
 `;
 
 export default TabNavigationBar;

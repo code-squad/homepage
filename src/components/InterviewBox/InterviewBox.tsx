@@ -4,7 +4,7 @@ import styled from "styled-components";
 import icons from "assets/img/icons";
 // Components
 import { Avatar } from "components";
-import { LBody, MBody, SBody } from "typography";
+import { LBody, MBody, SBody, SBold } from "typography";
 
 interface IInterviewBox {
   writerPhoto: string;
@@ -32,7 +32,7 @@ const InterviewBox: React.FC<IInterviewBox> = ({
       </Content>
       <WriterWrapper>
         <WriterName>
-          <SBody bold>{writer}</SBody>
+          <SBold>{writer}</SBold>
         </WriterName>
         <WriterInfo>
           <SBody>{writerInfo}</SBody>
@@ -44,7 +44,7 @@ const InterviewBox: React.FC<IInterviewBox> = ({
 
 const InterviewBoxWrapper = styled.div`
   padding: 4.8rem 4.8rem 7rem 4.8rem;
-  background-color: ${({ theme: { color } }) => color.greyScale.offWhite};
+  background-color: ${({ theme: { color } }) => color.surface.offWhite1};
   min-width: 42.3rem;
   width: 42.3rem;
   border-radius: 1.6rem;
@@ -53,7 +53,7 @@ const InterviewBoxWrapper = styled.div`
 const Nutshell = styled.div`
   margin: 3.2rem 0 0 3.6rem;
   position: relative;
-  color: ${({ theme: { color } }) => color.greyScale.black};
+  color: ${({ theme: { color } }) => color.blackAndWhite.black};
   &:before {
     content: "";
     position: absolute;

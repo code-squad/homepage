@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 // Typography
-import { LBody } from "typography/";
+import { MBold, MBody } from "typography/";
 
 const TabNavigationBar: React.FC<{
   onIndexChanged: (index: number) => void;
@@ -23,7 +23,7 @@ const TabNavigationBar: React.FC<{
               onClick={() => handleTabNavigationButtonClick(index)}
               selected={index === currentIndex}
             >
-              <LBody bold={index === currentIndex}>{`#${title}`}</LBody>
+              {index === currentIndex ? <MBold>{`#${title}`}</MBold> : <MBody>{`#${title}`}</MBody>}
             </TagNavButton>
           </li>
         ))}
@@ -54,15 +54,16 @@ const TagNavButton = styled.button<{ selected?: boolean }>`
   padding: 0 1.2rem;
   height: 3.6rem;
   background-color: ${({ selected, theme: { color } }) =>
-    selected ? color.greyScale.white : "transparent"};
+    selected ? color.blackAndWhite.white : "transparent"};
   border: 0;
   border-radius: 99.9rem;
   transition-property: font-weight, background-color;
   transition-duration: 0.3s;
+  color: ${({ theme: { color } }) => color.blackAndWhite.black};
+  font-family: inherit;
   &:hover {
     cursor: pointer;
   }
-  font-family: inherit;
 `;
 
 export default TabNavigationBar;

@@ -6,7 +6,7 @@ import Layout from "lib/context/Layout";
 // Assets
 import icons from "assets/img/icons";
 // Typography
-import { LBody, MBody, XSBody } from "typography";
+import { MBold, LBody, MBody, XSBody } from "typography";
 
 interface IDropdownItem {
   category: string;
@@ -41,8 +41,8 @@ const DropdownItem: React.FC<IDropdownItem> = ({
   return (
     <DropdownWrapper aria-label="faq" {...{ short, open }}>
       <BoardWrapper {...{ open }} onClick={handleCardOpen}>
-        <Category>
-          <MBody bold>{category}</MBody>
+        <Category {...{ isLinkBoard }}>
+          <MBold>{category}</MBold>
         </Category>
         <Title {...{ short, open }}>
           <LBody>{title}</LBody>
@@ -97,17 +97,19 @@ const BoardWrapper = styled.div<{ open?: boolean }>`
   height: 7.1rem;
   transition: border 0.5s;
   border-bottom: 0.1rem solid
-    ${({ open, theme: { color } }) => (open ? color.greyScale.grey2 : color.greyScale.black20)};
+    ${({ open, theme: { color } }) => (open ? color.greyScale.grey2 : color.greyScale.grey4)};
   cursor: pointer;
 `;
-const Category = styled.div`
+const Category = styled.div<{ isLinkBoard?: boolean }>`
   width: 14.5rem;
   margin-right: 2.4rem;
-  color: ${({ theme: { color } }) => color.greyScale.grey2};
+  color: ${({ isLinkBoard, theme: { color } }) =>
+    isLinkBoard ? color.primary.green2 : color.greyScale.grey2};
 `;
 const Title = styled.div<{ short?: boolean; open?: boolean }>`
   width: ${({ short }) => (short ? "74.9rem" : "84.5rem")};
   margin-right: 2.4rem;
+  color: ${({ theme: { color } }) => color.blackAndWhite.black};
   & > p {
     font-weight: ${({ open, theme: { fontWeight } }) =>
       open ? fontWeight.bold : fontWeight.regular};
@@ -126,7 +128,7 @@ const ContentWrapper = styled.div<{ open?: boolean }>`
   max-height: ${({ open }) => (open ? "200rem" : "0")};
   padding-left: 16.9rem;
   border-bottom: ${({ open }) => (open ? "0.1rem" : "0")} solid
-    ${({ theme: { color } }) => color.greyScale.black20};
+    ${({ theme: { color } }) => color.surface.black20};
 `;
 const Content = styled.div`
   margin-top: 2rem;
