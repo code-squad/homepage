@@ -15,7 +15,9 @@ import { SUBTITLE, TITLE } from "assets/static/phrases";
 import { strainMdxInfoBody } from "lib/utils";
 
 const TimeTable: React.FC = () => {
-  const { color: colorTheme } = useTheme();
+  const {
+    color: { greyScale },
+  } = useTheme();
 
   const data = useStaticQuery(JavascriptTimeTableQuery);
   const { planList, tags, body }: { planList: PlanType[]; tags: TagType[]; body: string } =
@@ -50,7 +52,7 @@ const TimeTable: React.FC = () => {
                 <PlanLabel {...{ color }}>
                   <SBold>{name}</SBold>
                 </PlanLabel>
-                <XSBody style={{ color: colorTheme.greyScale.grey1 }}>{description}</XSBody>
+                <XSBody style={{ color: greyScale.grey1 }}>{description}</XSBody>
               </PlanListWrapper>
             ))}
           </PlanList>
