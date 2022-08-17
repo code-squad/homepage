@@ -17,7 +17,7 @@ const EducationFeatures: React.FC = ({}) => {
 
   return (
     <EducationFeaturesWrapper>
-      <TitleSet subtitle={SUBTITLE.MASTERS_COURSE} title={TITLE.EDUCATION_FEATURES} />
+      <TitleSet subtitle={SUBTITLE.MASTERS_COURSE} title={TITLE.EDUCATION_FEATURES} bigSubtitle />
       <FeatureListWrapper>
         <FeatureList>
           {features.map(({ title, content, img }) => (
