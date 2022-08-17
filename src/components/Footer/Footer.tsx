@@ -11,42 +11,38 @@ const Footer: React.FC = () => {
   return (
     <FooterWrapper>
       <ContentWrapper>
-        <div>
-          <XSBold style={{ paddingBottom: "1.6rem" }}>{MESSAGE.COMPANY_NAME}</XSBold>
-          <CompanyInfomationWrapper>
-            <div>
-              <div>
-                <XSBody as="span">{MESSAGE.COMPANY_CEO_NAME}</XSBody>
-              </div>
-              <div>
-                <XSBody as="span">{MESSAGE.COMPANY_REGISTRATION_NUMBER}</XSBody>
-                <XSBody as="span"> | </XSBody>
-                <XSBody as="span">{MESSAGE.COMPANY_MAIL_ORDER_SALES_REGISTRATION_NUMBER}</XSBody>
-              </div>
-              <div>
-                <XSBody as="span">{MESSAGE.COMPANY_ADDRESS}</XSBody>
-                <XSBody as="span"> | </XSBody>
-                <XSBody as="span">{MESSAGE.COMPANY_TEL_NUMBER}</XSBody>
-              </div>
-              <div>
-                <XSBody as="span">{MESSAGE.COMPANY_EMAIL}</XSBody>
-                <ExternalLink
-                  href={`mailto:${EXTERNAL.EMAIL}`}
-                  target="_blank"
-                  rel="noopener noreferrer nofollow"
-                  underline
-                >
-                  {MESSAGE.COMPANY_EMAIL_ADDRESS}
-                </ExternalLink>
-              </div>
-            </div>
-          </CompanyInfomationWrapper>
+        <CompanyInfomationWrapper>
+          <XSBold>{MESSAGE.COMPANY_NAME}</XSBold>
           <div>
-            <InternalLink $bold to={INTERNAL.REFUND_POLICY}>
-              {LINK.REFUND_POLICY}
-            </InternalLink>
+            <div>
+              <XSBody as="span">{MESSAGE.COMPANY_CEO_NAME}</XSBody>
+            </div>
+            <div>
+              <XSBody as="span">{MESSAGE.COMPANY_REGISTRATION_NUMBER}</XSBody>
+              <XSBody as="span"> | </XSBody>
+              <XSBody as="span">{MESSAGE.COMPANY_MAIL_ORDER_SALES_REGISTRATION_NUMBER}</XSBody>
+            </div>
+            <div>
+              <XSBody as="span">{MESSAGE.COMPANY_ADDRESS}</XSBody>
+              <XSBody as="span"> | </XSBody>
+              <XSBody as="span">{MESSAGE.COMPANY_TEL_NUMBER}</XSBody>
+            </div>
+            <div>
+              <XSBody as="span">{MESSAGE.COMPANY_EMAIL}</XSBody>
+              <ExternalLink
+                href={`mailto:${EXTERNAL.EMAIL}`}
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+                underline
+              >
+                {MESSAGE.COMPANY_EMAIL_ADDRESS}
+              </ExternalLink>
+            </div>
           </div>
-        </div>
+          <InternalLink $bold to={INTERNAL.REFUND_POLICY}>
+            {LINK.REFUND_POLICY}
+          </InternalLink>
+        </CompanyInfomationWrapper>
         <MenuListWrapper>
           <MenuList>
             <li>
@@ -143,10 +139,12 @@ const ContentWrapper = styled.div`
 `;
 
 const CompanyInfomationWrapper = styled.div`
-  padding-bottom: 0.8rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  & > *:not(:last-child) {
+    padding-bottom: 1.6rem;
+  }
 `;
 
 const MenuListWrapper = styled.div`
