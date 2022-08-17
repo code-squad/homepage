@@ -3,14 +3,12 @@ import styled from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
 // Type
 import { CodeTogetherFeatureType } from "@type/CodeTogetherFeature";
-// Typography
-import { MBody } from "typography";
 // Components
 import { TitleSet } from "components";
 import { ImageCard } from "./ImageCard";
 // Assets
 import featureImgs from "assets/img/illusts/feature";
-import { SUBTITLE, TITLE, DESCRIPTION } from "assets/static/phrases";
+import { SUBTITLE, TITLE } from "assets/static/phrases";
 // Utils
 import { strainMdxInfo } from "lib/utils";
 
@@ -21,9 +19,6 @@ const Feature: React.FC = ({}) => {
   return (
     <FeatureWrapper>
       <TitleSet subtitle={SUBTITLE.CODE_TOGETHER} title={TITLE.FEATURE} />
-      <DescriptionWrapper>
-        <MBody style={{ width: "fit-content" }}>{DESCRIPTION.CODE_TOGETHER}</MBody>
-      </DescriptionWrapper>
       <FeatureList>
         {features.map(({ title, descriptions, img }) => (
           <FeatureItem key={title}>
