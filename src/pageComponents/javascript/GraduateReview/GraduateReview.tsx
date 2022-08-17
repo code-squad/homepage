@@ -14,7 +14,7 @@ const GraduateReview: React.FC = () => {
   const { interviews }: { interviews: InterviewType[] } = frontmatter;
 
   return (
-    <div style={{ marginTop: "16rem" }}>
+    <div style={{ marginTop: "18rem" }}>
       <Interview
         subtitle={SUBTITLE.JAVASCRIPT}
         title={TITLE.STUDENT_INTERVIEW}
