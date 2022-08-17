@@ -54,6 +54,7 @@ const TITLE = {
   CORETIME: "코어타임",
   MORE: "더보기",
   NOT_FOUND: "404",
+  VIEW_COURSES: "코드스쿼드 과정 바로 보기",
 };
 
 const DESCRIPTION = {
