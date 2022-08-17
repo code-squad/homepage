@@ -41,7 +41,7 @@ const FeatureWrapper = styled.div`
 
 const FeatureList = styled.ul`
   width: 106.2rem;
-  margin-top: 6.4rem;
+  margin-top: 8rem;
   display: flex;
   flex-flow: row wrap;
   align-content: flex-start;
