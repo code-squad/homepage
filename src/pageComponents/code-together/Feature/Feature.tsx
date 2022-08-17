@@ -36,7 +36,7 @@ const FeatureWrapper = styled.div`
   width: 100%;
   min-width: 144rem;
   flex-direction: column;
-  margin-top: 16rem;
+  margin-top: 8rem;
 `;
 
 const FeatureList = styled.ul`
