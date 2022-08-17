@@ -32,7 +32,7 @@ const EducationFeatures: React.FC = ({}) => {
 };
 
 const EducationFeaturesWrapper = styled.div`
-  margin-top: 16rem;
+  margin-top: 18rem;
   display: flex;
   align-items: center;
   min-width: 106.2rem;
