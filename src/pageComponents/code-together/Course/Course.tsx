@@ -30,7 +30,7 @@ const Course: React.FC = () => {
   return (
     <CourseWrapper id="course">
       <TitleWrapper>
-        <TitleSet subtitle={SUBTITLE.CODE_TOGETHER_COURSE} title={TITLE.COURSE} />
+        <TitleSet subtitle={SUBTITLE.CODE_TOGETHER_COURSE} title={TITLE.COURSE} bigSubtitle />
       </TitleWrapper>
       <CourseListWrapper>
         <CourseList>
