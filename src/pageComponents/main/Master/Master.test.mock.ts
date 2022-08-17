@@ -44,7 +44,7 @@ export const MasterResult = {
           name: "아이비",
           introduce: "Ivy, 모바일 Android 마스터",
           nutshell:
-            "“가치 있는 무언가를 직접 만드는 과정을 즐길 수 있다면, 직접 부딪혀서 확인해보세요!”",
+            "“가치 있는 무언가를 만드는 과정을 즐길 수 있다면, 직접 부딪혀서 확인해보세요!”",
           careers: [
             "현 코드스쿼드, Udemy Android 앱 개발 강의",
             "2021 네이버 커넥트재단 부스트캠프 Android 앱 개발 강의",
