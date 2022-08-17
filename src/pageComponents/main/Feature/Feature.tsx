@@ -23,8 +23,9 @@ const Feature: React.FC = () => {
 
   return (
     <FeatureWrapper>
-      <TitleSet title={TITLE.FEATURE} subtitle={SUBTITLE.FEATURE} />
+      <TitleSet title={TITLE.FEATURE} subtitle={SUBTITLE.FEATURE} bigSubtitle />
       <ContentWrapper>
+        <FeatureImg src={features[image]} alt="feature" />
         <Content>
           <div>
             <HLBold style={{ color: color.greyScale.grey1 }}>{title}</HLBold>
@@ -34,7 +35,6 @@ const Feature: React.FC = () => {
             <MBody key={descriptionItem}>{descriptionItem}</MBody>
           ))}
         </Content>
-        <FeatureImg src={features[image]} alt="feature" />
       </ContentWrapper>
     </FeatureWrapper>
   );
@@ -43,7 +43,7 @@ const Feature: React.FC = () => {
 const FeatureWrapper = styled.div`
   width: 106.2rem;
   padding: 0 18.9rem;
-  padding-bottom: 16rem;
+  padding-bottom: 18rem;
   display: flex;
   margin: 0 auto;
   flex-direction: column;
