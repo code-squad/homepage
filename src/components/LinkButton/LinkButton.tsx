@@ -53,7 +53,7 @@ const LinkButtonWrapper = styled(Link)<{ icon?: string; caption?: string }>`
   border-radius: 0.8rem;
   border: 0.2rem solid ${({ theme: { color } }) => color.greyScale.grey3};
   background-color: ${({ theme: { color } }) => color.surface.offWhite1};
-  padding: ${({ caption, icon }) => (caption ? "3.9rem 4rem" : icon ? "3.2rem 4rem" : "4rem")};
+  padding: ${({ caption, icon }) => (caption ? "3.9rem 4rem" : icon ? "3.4rem 4rem" : "4rem")};
   text-decoration: unset;
   &:hover {
     cursor: pointer;
