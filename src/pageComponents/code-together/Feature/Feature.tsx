@@ -18,7 +18,7 @@ const Feature: React.FC = ({}) => {
 
   return (
     <FeatureWrapper>
-      <TitleSet subtitle={SUBTITLE.CODE_TOGETHER} title={TITLE.FEATURE} />
+      <TitleSet subtitle={SUBTITLE.CODE_TOGETHER} title={TITLE.FEATURE} bigSubtitle />
       <FeatureList>
         {features.map(({ title, descriptions, img }) => (
           <FeatureItem key={title}>
@@ -37,13 +37,6 @@ const FeatureWrapper = styled.div`
   min-width: 144rem;
   flex-direction: column;
   margin-top: 16rem;
-`;
-
-const DescriptionWrapper = styled.div`
-  width: 106.2rem;
-  color: ${({ theme: { color } }) => color.greyScale.grey2};
-  margin-top: 2.4rem;
-  white-space: pre-line;
 `;
 
 const FeatureList = styled.ul`
