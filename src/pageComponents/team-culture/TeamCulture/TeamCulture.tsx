@@ -43,7 +43,7 @@ const TeamCulture: React.FC = () => {
 
 const TeamCultureWrapper = styled.div`
   width: 106.2rem;
-  padding: 16rem 18.9rem;
+  padding: 8rem 18.9rem 16rem 18.9rem;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
