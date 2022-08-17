@@ -46,4 +46,12 @@ describe("<TeamCulture>", () => {
       });
     });
   });
+  it("카테고리에 맞는 이미지가 보여진다.", async () => {
+    const { getByAltText } = renderTeamCulture();
+
+    cultures.forEach(({ title }) => {
+      const featureImage = getByAltText(`team-culture-icon-${title}`);
+      expect(featureImage?.getAttribute("src")).toBe("test-file-stub");
+    });
+  });
 });
