@@ -4,14 +4,15 @@ import styled from "styled-components";
 import { HLBold, SDisplay } from "typography";
 
 interface ITitleSet {
-  title: string;
-  subtitle: string;
+  title?: string;
+  subtitle?: string;
+  bigSubtitle?: boolean;
 }
 
-const TitleSet: React.FC<ITitleSet> = ({ title, subtitle }) => {
+const TitleSet: React.FC<ITitleSet> = ({ title, subtitle, bigSubtitle }) => {
   return (
     <TitleWrapper>
-      <HLBold>{subtitle}</HLBold>
+      {bigSubtitle ? <SDisplay>{subtitle}</SDisplay> : <HLBold>{subtitle}</HLBold>}
       <HeadTitle>
         <SDisplay>{title}</SDisplay>
       </HeadTitle>
