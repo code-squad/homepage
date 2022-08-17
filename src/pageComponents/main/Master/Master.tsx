@@ -35,7 +35,7 @@ const Master: React.FC = () => {
           style={{
             color: theme.color.greyScale.grey2,
             paddingTop: "2.4rem",
-            paddingBottom: "4rem",
+            paddingBottom: "5.6rem",
           }}
         >
           {DESCRIPTION.MASTER}
@@ -101,7 +101,7 @@ const Master: React.FC = () => {
 
 const MasterWrapper = styled.div`
   width: 100%;
-  padding-bottom: 20rem;
+  padding-bottom: 18rem;
   display: flex;
   flex-direction: column;
   align-items: space-between;

@@ -16,3 +16,15 @@ Default.args = {
   title: "무엇이 다른가요?",
   subtitle: "코드스쿼드는",
 };
+
+export const BigSubtitle = Template.bind({});
+BigSubtitle.args = {
+  title: "무엇이 다른가요?",
+  subtitle: "코드스쿼드는",
+  bigSubtitle: true,
+};
+
+export const SubtitleOnly = Template.bind({});
+SubtitleOnly.args = {
+  subtitle: "코드스쿼드 과정 바로 보기",
+};

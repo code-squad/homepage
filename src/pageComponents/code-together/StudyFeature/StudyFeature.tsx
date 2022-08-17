@@ -65,7 +65,7 @@ const StudyFeature: React.FC = () => {
 const StudyWrapper = styled.div`
   width: 106.2rem;
   padding: 0 18.9rem;
-  padding-top: 16rem;
+  padding-top: 18rem;
   margin: 0 auto;
   display: flex;
   flex-direction: column;

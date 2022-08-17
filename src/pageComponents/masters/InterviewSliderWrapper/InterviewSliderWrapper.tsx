@@ -11,7 +11,7 @@ const InterviewSliderWrapper: React.FC = ({}) => {
   const { interviewList } = strainMdxInfo(useStaticQuery(InterviewListQuery));
 
   return (
-    <div style={{ marginTop: "20rem" }}>
+    <div style={{ marginTop: "18rem" }}>
       <Interview
         {...{
           title: TITLE.GRADUATE_INTERVIEW,

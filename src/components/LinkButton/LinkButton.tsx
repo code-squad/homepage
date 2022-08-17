@@ -25,9 +25,11 @@ const LinkButton: React.FC<ILinkButton> = ({ description, title, to, icon, capti
       rel={caption ? "noopener noreferrer nofollow" : undefined}
     >
       <TextWrapper {...{ caption }}>
-        <Description>
-          <MBold>{description}</MBold>
-        </Description>
+        {description ? (
+          <Description>
+            <MBold>{description}</MBold>
+          </Description>
+        ) : null}
         <Title>
           <SHLBold>{title}</SHLBold>
           <img aria-label="arrow-right" src={icons.chevronRight} width="24px" height="24px" />
@@ -51,7 +53,7 @@ const LinkButtonWrapper = styled(Link)<{ icon?: string; caption?: string }>`
   border-radius: 0.8rem;
   border: 0.2rem solid ${({ theme: { color } }) => color.greyScale.grey3};
   background-color: ${({ theme: { color } }) => color.surface.offWhite1};
-  padding: ${({ caption, icon }) => (caption ? "2.7rem 4rem" : icon ? "3.2rem 4rem" : "4rem")};
+  padding: ${({ caption, icon }) => (caption ? "3.9rem 4rem" : icon ? "3.4rem 4rem" : "4rem")};
   text-decoration: unset;
   &:hover {
     cursor: pointer;
@@ -61,7 +63,7 @@ const LinkButtonWrapper = styled(Link)<{ icon?: string; caption?: string }>`
 
 const TextWrapper = styled.div<{ caption?: string }>`
   max-width: 50rem;
-  height: ${({ caption }) => (caption ? "8rem" : "5.4rem")};
+  height: ${({ caption }) => (caption ? "5.6rem" : "5.4rem")};
 `;
 
 const Description = styled.div`

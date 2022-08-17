@@ -17,12 +17,12 @@ const EducationFeatures: React.FC = ({}) => {
 
   return (
     <EducationFeaturesWrapper>
-      <TitleSet subtitle={SUBTITLE.MASTERS_COURSE} title={TITLE.EDUCATION_FEATURES} />
+      <TitleSet subtitle={SUBTITLE.MASTERS_COURSE} title={TITLE.EDUCATION_FEATURES} bigSubtitle />
       <FeatureListWrapper>
         <FeatureList>
           {features.map(({ title, content, img }) => (
             <FeatureItem key={title}>
-              <ImageCard description={content} title={title} img={featuresImg[img]} medium />
+              <ImageCard description={content} title={title} img={featuresImg[img]} />
             </FeatureItem>
           ))}
         </FeatureList>
@@ -32,11 +32,11 @@ const EducationFeatures: React.FC = ({}) => {
 };
 
 const EducationFeaturesWrapper = styled.div`
-  margin-top: 16rem;
+  margin-top: 18rem;
   display: flex;
   align-items: center;
-  width: 100%;
-  min-width: 144rem;
+  min-width: 106.2rem;
+  padding: 0 18.9rem;
   flex-direction: column;
 `;
 const FeatureListWrapper = styled.ul`
@@ -48,11 +48,13 @@ const FeatureListWrapper = styled.ul`
 const FeatureList = styled.ul`
   flex-flow: row wrap;
   align-content: flex-start;
+  & > *:not(:nth-child(3n)) {
+    margin-right: 7.9rem;
+  }
 `;
 const FeatureItem = styled.li`
   margin-top: 8rem;
   display: inline-flex;
-  margin-right: 12rem;
 `;
 
 const FeaturesQuery = graphql`

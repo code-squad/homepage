@@ -34,7 +34,7 @@ const Article: React.FC = () => {
 const ArticleWrapper = styled.div`
   width: 106.2rem;
   padding: 0 18.9rem;
-  padding-bottom: 20rem;
+  padding-bottom: 18rem;
   margin: 0 auto;
   display: flex;
   flex-direction: column;

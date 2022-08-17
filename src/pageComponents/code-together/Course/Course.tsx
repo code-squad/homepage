@@ -30,7 +30,7 @@ const Course: React.FC = () => {
   return (
     <CourseWrapper id="course">
       <TitleWrapper>
-        <TitleSet subtitle={SUBTITLE.CODE_TOGETHER_COURSE} title={TITLE.COURSE} />
+        <TitleSet subtitle={SUBTITLE.CODE_TOGETHER_COURSE} title={TITLE.COURSE} bigSubtitle />
       </TitleWrapper>
       <CourseListWrapper>
         <CourseList>
@@ -62,7 +62,7 @@ const CourseWrapper = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-top: 16rem;
+  margin-top: 18rem;
 `;
 
 const TitleWrapper = styled.div`
@@ -74,7 +74,7 @@ const TitleWrapper = styled.div`
 const CourseListWrapper = styled.div`
   width: 100%;
   margin-top: 4rem;
-  padding: 8rem;
+  padding: 8rem 0 16rem 0;
   background-color: ${({ theme: { color } }) => color.surface.offWhite1};
 `;
 
@@ -95,7 +95,7 @@ const CourseList = styled.ul`
 
 const MoreButtonWrapper = styled.div`
   width: 100%;
-  margin-top: 8rem;
+  margin-top: 6.4rem;
   display: flex;
   justify-content: center;
   align-items: center;

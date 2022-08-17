@@ -52,7 +52,7 @@ const FAQ: React.FC<IFaq> = ({ course }) => {
 };
 
 const FAQWrapper = styled.div`
-  margin: 16rem 0;
+  margin: 18rem 0 16rem 0;
   display: flex;
   align-items: center;
   width: 100%;

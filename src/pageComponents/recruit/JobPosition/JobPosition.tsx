@@ -40,7 +40,7 @@ const JobPosition: React.FC = () => {
     <JobPositionWrapper>
       <Background />
       <JobPositionContentWrapper>
-        <MDisplay style={{ paddingTop: "16rem", paddingBottom: "3.2rem" }}>{TITLE.APPLY}</MDisplay>
+        <MDisplay style={{ paddingTop: "16rem", paddingBottom: "2.4rem" }}>{TITLE.APPLY}</MDisplay>
         <TagNavigationBar titles={Array.from(categories)} onIndexChanged={setCurrentIndex} />
         <DropdownItemWrapper>
           {jobPositionList.map(({ category, title, body, editDate }) => (
@@ -90,8 +90,8 @@ const JobPositionContentWrapper = styled.div`
 `;
 
 const DropdownItemWrapper = styled.ul`
-  margin-top: 4.7rem;
-  padding: 0.8rem 4.8rem 4.8rem 4.8rem;
+  margin-top: 4rem;
+  padding: 0rem 4.8rem 4.8rem 4.8rem;
   display: flex;
   flex-direction: column;
   background-color: ${({ theme: { color } }) => color.blackAndWhite.white};

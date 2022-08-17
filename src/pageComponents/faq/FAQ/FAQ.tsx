@@ -38,7 +38,7 @@ const FAQ: React.FC = () => {
     <FAQWrapper>
       <FAQMasthead />
       <FAQContentWrapper>
-        <MDisplay style={{ paddingTop: "16rem", paddingBottom: "3.2rem" }}>{TITLE.FAQ}</MDisplay>
+        <MDisplay style={{ paddingTop: "16rem", paddingBottom: "2.4rem" }}>{TITLE.FAQ}</MDisplay>
         <TagNavigationBar titles={categoryTitles} onIndexChanged={setCurrentIndex} />
         <DropdownList>
           {faqList.map(({ course, title, content, editDate }) => (
@@ -90,8 +90,8 @@ const FAQContentWrapper = styled.div`
 `;
 
 const DropdownList = styled.ul`
-  margin-top: 4.7rem;
-  padding: 0.8rem 4.8rem 4.8rem 4.8rem;
+  margin-top: 4rem;
+  padding: 0rem 4.8rem 4.8rem 4.8rem;
   display: flex;
   flex-direction: column;
   background-color: ${({ theme: { color } }) => color.blackAndWhite.white};

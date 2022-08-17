@@ -33,7 +33,7 @@ const DetailCurriculum: React.FC = () => {
 };
 
 const DetailCurriculumWrapper = styled.div`
-  margin-top: 16rem;
+  margin-top: 18rem;
   display: flex;
   align-items: center;
   width: 100%;
