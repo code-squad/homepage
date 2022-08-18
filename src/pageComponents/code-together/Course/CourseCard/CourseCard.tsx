@@ -15,8 +15,14 @@ interface IImageCard {
 }
 
 const CourseCard: React.FC<IImageCard> = ({ master, title, dueDate, cost, tags, img, path }) => {
+  const urlRegex = /(http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-/]))?/;
   return (
-    <CourseCardWrapper aria-label={`course-card-${title}`} to={path}>
+    <CourseCardWrapper
+      aria-label={`course-card-${title}`}
+      to={path}
+      target={path.match(urlRegex) ? "_blank" : undefined}
+      rel={path.match(urlRegex) ? "noopener noreferrer nofollow" : undefined}
+    >
       <CardImg src={img} />
       <MasterWrapper>
         <SBold>{master}</SBold>
