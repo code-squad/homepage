@@ -12,8 +12,14 @@ interface ICourse {
 }
 
 const Course: React.FC<ICourse> = ({ title, dueDate, img, path }) => {
+  const urlRegex = /(http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-/]))?/;
   return (
-    <CourseWrapper aria-label={`course-card-${title}`} to={path}>
+    <CourseWrapper
+      aria-label={`course-card-${title}`}
+      to={path}
+      target={path.match(urlRegex) ? "_blank" : undefined}
+      rel={path.match(urlRegex) ? "noopener noreferrer nofollow" : undefined}
+    >
       <CourseImg src={img} alt={`course-img-${title}`} />
       <CourseInfoWrapper>
         <TitleWrapper>
