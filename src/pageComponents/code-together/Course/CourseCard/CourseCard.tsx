@@ -19,7 +19,9 @@ const CourseCard: React.FC<IImageCard> = ({ master, title, dueDate, cost, tags, 
   return (
     <CourseCardWrapper
       aria-label={`course-card-${title}`}
+      as={path.match(urlRegex) ? "a" : Link}
       to={path}
+      href={path}
       target={path.match(urlRegex) ? "_blank" : undefined}
       rel={path.match(urlRegex) ? "noopener noreferrer nofollow" : undefined}
     >

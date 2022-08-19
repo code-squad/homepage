@@ -1,41 +1,30 @@
 import React from "react";
 import styled from "styled-components";
 // Typography
-import { MBold, MBody } from "typography";
+import { LBody, SBody } from "typography";
 
 interface IInfoItemProps {
-  src: string;
-  label: string;
+  title: string;
   content: string;
+  icon: string;
 }
 
-const InfoItem: React.FC<IInfoItemProps> = ({ src, label, content }) => {
+const InfoItem: React.FC<IInfoItemProps> = ({ icon, title, content }) => {
   return (
     <InfoItemWrapper>
-      <InfoLabel>
-        <img src={src} style={{ marginRight: ".8rem" }} />
-        <MBold>{label}</MBold>
-      </InfoLabel>
-      <InfoContent>
-        <MBody>{content}</MBody>
-      </InfoContent>
+      <img src={icon} alt={`course-info-img-${title}`} />
+      <LBody>{title + (content ? "/" : "")}</LBody>
+      <SBody>{content}</SBody>
     </InfoItemWrapper>
   );
 };
 
 const InfoItemWrapper = styled.li`
   display: flex;
-  align-items: flex-start;
-  margin-bottom: 1.6rem;
-`;
-const InfoLabel = styled.label`
-  display: flex;
   align-items: center;
-  width: 12rem;
-  margin-right: 1.6rem;
-`;
-const InfoContent = styled.div`
-  width: 28.3rem;
+  & > *:not(:last-child) {
+    margin-right: 0.4rem;
+  }
 `;
 
 export default InfoItem;

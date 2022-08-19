@@ -13,16 +13,17 @@ interface ILinkButton {
   caption?: string;
   short?: boolean;
   icon?: string;
+  external?: boolean;
 }
 
-const LinkButton: React.FC<ILinkButton> = ({ description, title, to, icon, caption }) => {
+const LinkButton: React.FC<ILinkButton> = ({ description, title, to, icon, caption, external }) => {
   return (
     <LinkButtonWrapper
       {...{ to, icon, caption }}
-      as={caption ? "a" : Link}
-      href={caption && to}
-      target={caption && "_blank"}
-      rel={caption ? "noopener noreferrer nofollow" : undefined}
+      as={caption || external ? "a" : Link}
+      href={caption || external ? to : undefined}
+      target={caption || external ? "_blank" : undefined}
+      rel={caption || external ? "noopener noreferrer nofollow" : undefined}
     >
       <TextWrapper {...{ caption }}>
         {description ? (

@@ -1,16 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 // Typography
-import { MDisplay } from "typography";
+import { LDisplay, HLBold } from "typography";
 // Assets
-import { TITLE } from "assets/static/phrases";
+import { TITLE, SUBTITLE } from "assets/static/phrases";
 
 const TeamIntroduce: React.FC = () => {
   return (
     <TeamIntroduceWrapper>
       <Background />
       <IntroduceText>
-        <MDisplay>{TITLE.TEAM_CULTURE}</MDisplay>
+        <LDisplay>{SUBTITLE.WE}</LDisplay>
+        <HLBold>{TITLE.TEAM_CULTURE}</HLBold>
       </IntroduceText>
     </TeamIntroduceWrapper>
   );
@@ -39,6 +40,8 @@ const Background = styled.div`
 `;
 
 const TeamIntroduceWrapper = styled.div`
+  display: flex;
+  align-items: center;
   position: relative;
   width: 100%;
   min-width: 144rem;
@@ -50,7 +53,6 @@ const TeamIntroduceWrapper = styled.div`
 
 const IntroduceText = styled.div`
   width: 106.2rem;
-  padding: 16rem 18.9rem 3.2rem 18.9rem;
   margin: 0 auto;
 `;
 

@@ -16,6 +16,7 @@ const SUBTITLE = {
   CODE_TOGETHER_COURSE: "코드투게더의",
   JAVASCRIPT: "자바스크립트 과정을 경험한",
   JAVASCRIPT_COURSE: "자바스크립트 과정의",
+  WE: "우리는",
 };
 
 const TITLE = {
@@ -37,10 +38,11 @@ const TITLE = {
   REFUND_STANDARD: "수강료 반환 기준",
   FAQ: "코드스쿼드에\n궁금한 점이 있나요?",
   APPLY: "지금 코드스쿼드에\n지원해 보세요!",
+  WE: "우리는",
   WELCOME: "스스로 찾은 방법으로\n함께 묶은 매듭은 풀리지 않습니다",
   TEAM_INTERIVIEW: "우리가 일하는 방식",
   TEAM_CULTURE:
-    "우리는 교육자와 학생 그리고\n동료들과의 상호작용을 통해\n고품질 교육을 경험하는 배움터를\n만듭니다",
+    "교육자와 학생 그리고 동료들과의 상호작용을 통해\n고품질 교육을 경험하는 배움터를 만듭니다",
   CODESQUAD_TEAM_CULTURE: "코드스쿼드 팀 문화",
   CODESQUAD_RECRUIT_NEWS: "코드스쿼드 채용 소식 확인하기",
   WELFARE: "우리는 어떤 지원을 받을까요?",
@@ -48,13 +50,14 @@ const TITLE = {
   HOW_STUDY: "어떻게 학습하나요?",
   STUDENT_INTERVIEW: "수강생 후기",
   SCHEDULED_COURSE: "지금 모집 중인 과정",
-  VIEW_ENTIRE_COURSE: "전체 과정 보기 >",
+  VIEW_ENTIRE_COURSE: "전체 과정 보기",
   EDUCATION_PERIOD: "교육기간",
   COST: "수강료",
   CORETIME: "코어타임",
   MORE: "더보기",
   NOT_FOUND: "404",
   VIEW_COURSES: "코드스쿼드 과정 바로 보기",
+  CODE_TOGETHER_COURSE: "코드투게더 과정",
 };
 
 const DESCRIPTION = {
@@ -79,6 +82,8 @@ const LINK = {
   TEAM_CULTURE: "팀 문화",
   YOUTUBE: "유튜브",
   KAKAOTALK_CHANNEL: "카카오톡 채널",
+  JAVASCRIPT: "자바스크립트 파트1•2",
+  CLEAN_SWIFT: "클린 스위프트",
 };
 
 const LINK_DESCRIPTION = {
@@ -86,6 +91,8 @@ const LINK_DESCRIPTION = {
   CONFIRM_RECRUIT: "코드스쿼드의 교육 가치에 공감한다면",
   MASTERS: "분야별 최고의 개발자가 되기 위한 풀타임 과정",
   RECEIVE_SUBSCRIPTION: "원하는 코스의 오픈 소식을 가장 먼저 알고 싶다면?",
+  JAVASCRIPT: "프로그래밍 기초부터 간단한 웹 애플리케이션 개발까지 경험해보는",
+  CLEAN_SWIFT: "스위프트 언어와 iOS 플랫폼에서 유지보수하기 좋은 구조를 설계해보는",
 };
 
 const MESSAGE = {

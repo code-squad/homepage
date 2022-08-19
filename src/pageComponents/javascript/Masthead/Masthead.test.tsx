@@ -18,8 +18,7 @@ describe("<Masthead>", () => {
     );
   const useStaticQuery = jest.spyOn(Gatsby, "useStaticQuery");
   useStaticQuery.mockImplementation(() => MastHeadQueryResult);
-  const { title, description, targets, trainingDuration, coreTime, cost } =
-    strainMdxInfo(MastHeadQueryResult);
+  const { title, description, targets, courseInfos } = strainMdxInfo(MastHeadQueryResult);
   it("제목과 설명이 보여진다.", () => {
     const { getByText } = renderMasthead();
 
@@ -33,11 +32,20 @@ describe("<Masthead>", () => {
       getByText(target);
     });
   });
-  it("교육 기간, 코어타임, 비용이 보여진다.", () => {
+  it("코스에 대한 정보들의 제목과 설명이 보여진다.", () => {
     const { getByText } = renderMasthead();
 
-    getByText(trainingDuration);
-    getByText(coreTime);
-    getByText(cost);
+    for (const { title, content } of courseInfos) {
+      getByText(title + (content ? "/" : ""));
+      if (content) getByText(content);
+    }
+  });
+  it("코스에 대한 정보들의 아이콘들이 보여진다.", () => {
+    const { getByAltText } = renderMasthead();
+
+    for (const { img, title } of courseInfos) {
+      const featureImage = getByAltText(`course-info-img-${title}`);
+      expect(featureImage?.getAttribute("src")).toBe("test-file-stub");
+    }
   });
 });

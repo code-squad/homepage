@@ -55,7 +55,9 @@ const TagNavButton = styled.button<{ selected?: boolean }>`
   height: 3.6rem;
   background-color: ${({ selected, theme: { color } }) =>
     selected ? color.blackAndWhite.white : "transparent"};
-  border: 0;
+  border-width: 0.1rem;
+  border-color: ${({ selected, theme: { color } }) =>
+    selected ? color.blackAndWhite.black : "transparent"};
   border-radius: 99.9rem;
   transition-property: font-weight, background-color;
   transition-duration: 0.3s;
