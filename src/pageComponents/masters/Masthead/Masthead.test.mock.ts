@@ -9,8 +9,18 @@ export const MastHeadQueryResult = {
         "6개월 이상 프로그래밍을 공부해보았고, 동료와 함께 성장하고 싶은 사람",
         "실무 프로그래머로 가는 길이 궁금한 사람",
       ],
-      trainingDuration: "2023년 1월부터 6월까지(약 6개월)",
-      cost: "매 달 66만원(6개월 기준 총 369만원)",
+      courseInfos: [
+        {
+          title: "6개월",
+          content: "",
+          img: "calander",
+        },
+        {
+          title: "매달 66만원",
+          content: "6개월 기준 총 396만원",
+          img: "coin",
+        },
+      ],
     },
   },
 };
