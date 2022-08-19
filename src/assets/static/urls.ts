@@ -17,6 +17,8 @@ const EXTERNAL = {
   FACEBOOK: "https://www.facebook.com/codesquad.kr/",
   EMAIL: "yoda@codesquad.kr",
   KAKAOTALK_CHANNEL: "https://pf.kakao.com/_zZxcAd",
+  CLEAN_SWIFT:
+    "https://docs.google.com/forms/d/e/1FAIpQLSe4gEzbZXRAG_Fgj31QOBvaRWLsPjb9NqaXqsLcZN7meLSvQA/viewform",
 };
 
 export { INTERNAL, EXTERNAL };
