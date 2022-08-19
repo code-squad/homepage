@@ -16,6 +16,7 @@ const SUBTITLE = {
   CODE_TOGETHER_COURSE: "코드투게더의",
   JAVASCRIPT: "자바스크립트 과정을 경험한",
   JAVASCRIPT_COURSE: "자바스크립트 과정의",
+  WE: "우리는",
 };
 
 const TITLE = {
@@ -37,10 +38,11 @@ const TITLE = {
   REFUND_STANDARD: "수강료 반환 기준",
   FAQ: "코드스쿼드에\n궁금한 점이 있나요?",
   APPLY: "지금 코드스쿼드에\n지원해 보세요!",
+  WE: "우리는",
   WELCOME: "스스로 찾은 방법으로\n함께 묶은 매듭은 풀리지 않습니다",
   TEAM_INTERIVIEW: "우리가 일하는 방식",
   TEAM_CULTURE:
-    "우리는 교육자와 학생 그리고\n동료들과의 상호작용을 통해\n고품질 교육을 경험하는 배움터를\n만듭니다",
+    "교육자와 학생 그리고 동료들과의 상호작용을 통해\n고품질 교육을 경험하는 배움터를 만듭니다",
   CODESQUAD_TEAM_CULTURE: "코드스쿼드 팀 문화",
   CODESQUAD_RECRUIT_NEWS: "코드스쿼드 채용 소식 확인하기",
   WELFARE: "우리는 어떤 지원을 받을까요?",
