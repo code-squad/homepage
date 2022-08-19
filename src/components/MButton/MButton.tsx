@@ -19,6 +19,8 @@ const MButton: React.FC<IMButtonProps> = ({ children, accent, disabled, to }) =>
     <MButtonWrapper
       $accent={accent}
       $disabled={disabled}
+      as={to.match(urlRegex) ? "a" : Link}
+      {...{ to }}
       href={to}
       target={to.match(urlRegex) ? "_blank" : undefined}
       rel={to.match(urlRegex) ? "noopener noreferrer nofollow" : undefined}
@@ -33,7 +35,7 @@ const MButton: React.FC<IMButtonProps> = ({ children, accent, disabled, to }) =>
   );
 };
 
-const MButtonWrapper = styled.a<{ $accent?: boolean; $disabled?: boolean }>`
+const MButtonWrapper = styled(Link)<{ $accent?: boolean; $disabled?: boolean }>`
   display: inline-flex;
   justify-content: space-between;
   align-items: center;
