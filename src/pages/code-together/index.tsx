@@ -4,7 +4,7 @@ import GlobalTheme from "lib/context/GlobalTheme";
 import GlobalHeader from "lib/context/GlobalHeader";
 // Components
 import { HomeGlobalNavigationBar, Footer } from "components/";
-import { Masthead, Feature, StudyFeature, Course } from "pageComponents/code-together";
+import { Masthead, CourseList, Feature, StudyFeature, Course } from "pageComponents/code-together";
 // Assets
 import { SEO_TITLE, SEO_DESCRIPTION } from "assets/static/seo";
 import { INTERNAL } from "assets/static/urls";
@@ -20,6 +20,7 @@ const CodeTogetherPage: React.FC = () => {
       <main style={{ overflowX: "hidden" }}>
         <HomeGlobalNavigationBar />
         <Masthead />
+        <CourseList />
         <Feature />
         <StudyFeature />
         <Course />
