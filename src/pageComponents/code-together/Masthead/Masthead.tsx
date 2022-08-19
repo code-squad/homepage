@@ -16,26 +16,37 @@ const Masthead: React.FC = () => {
 
   return (
     <MastheadWrapper>
-      <TitleWrapper>
-        <MDisplay>{title}</MDisplay>
-        <MBody>{description}</MBody>
-      </TitleWrapper>
-      <MoveLinkWrapper>
-        <MButton to="#course" children={TITLE.VIEW_ENTIRE_COURSE} />
-      </MoveLinkWrapper>
+      <ContentWrapper>
+        <TitleWrapper>
+          <MDisplay>{title}</MDisplay>
+          <MBody>{description}</MBody>
+        </TitleWrapper>
+        <MoveLinkWrapper>
+          <MButton to="#course" children={TITLE.VIEW_ENTIRE_COURSE} />
+        </MoveLinkWrapper>
+      </ContentWrapper>
     </MastheadWrapper>
   );
 };
 
 const MastheadWrapper = styled.div`
+  position: relative;
   width: 100%;
   min-width: 144rem;
-  padding: 16rem 0 7rem 0;
+  height: 56rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   color: ${({ theme: { color } }) => color.blackAndWhite.black};
   background-color: ${({ theme: { color } }) => color.primary.green4};
   background-image: ${`url(${header.codeTogether})`};
   background-repeat: no-repeat;
   background-position: center;
+`;
+
+const ContentWrapper = styled.div`
+  position: absolute;
+  bottom: 8rem;
 `;
 
 const TitleWrapper = styled.div`
