@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
 // Typography
-import { MBody, MDisplay, MBold } from "typography";
+import { LDisplay, MBody, MBold } from "typography";
 // Components
 import { InfoItem } from "./InfoItem";
 // Assets
@@ -13,45 +13,64 @@ import { TITLE } from "assets/static/phrases";
 import { strainMdxInfo } from "lib/utils";
 
 const Masthead: React.FC = () => {
-  const { title, description, targets, trainingDuration, cost } = strainMdxInfo(
-    useStaticQuery(MastheadQuery)
-  );
+  const { title, description, targets, courseInfos } = strainMdxInfo(useStaticQuery(MastheadQuery));
+
+  console.log(courseInfos);
 
   return (
     <MastheadWrapper>
-      <TitleWrapper>
-        <MDisplay>{title}</MDisplay>
-        <MBody style={{ whiteSpace: "pre-line" }}>{description}</MBody>
-      </TitleWrapper>
-      <CourseInfoWrapper>
-        <TargetWrapper>
-          <TargetTitle>
-            <img src={icons.member} style={{ marginRight: ".8rem" }} />
-            <MBold>{TITLE.EDUCATION_TARGET}</MBold>
-          </TargetTitle>
-          {targets.map((target: string) => (
-            <TargetItem key={target}>
-              <MBody>{target}</MBody>
-            </TargetItem>
-          ))}
-        </TargetWrapper>
-        <InfoItemWrapper>
-          <InfoItem
-            src={icons.calander}
-            label={TITLE.EDUCATION_PERIOD}
-            content={trainingDuration}
-          />
-          <InfoItem src={icons.coin} label={TITLE.COST} content={cost} />
-        </InfoItemWrapper>
-      </CourseInfoWrapper>
+      <ContentWrapper>
+        <TitleWrapper>
+          <LDisplay>{title}</LDisplay>
+        </TitleWrapper>
+        <CourseInfoWrapper>
+          <InfoItemWrapper>
+            <MBody style={{ whiteSpace: "pre-line", marginBottom: "1.6rem" }}>{description}</MBody>
+            {courseInfos.map(
+              ({
+                title,
+                content,
+                img,
+              }: {
+                title: string;
+                content: string;
+                img: keyof typeof icons;
+              }) => (
+                <InfoItem key={title} icon={icons[img]} {...{ title, content }} />
+              )
+            )}
+          </InfoItemWrapper>
+          <TargetWrapper>
+            <TargetTitle>
+              <img src={icons.member} style={{ marginRight: ".8rem" }} />
+              <MBold>{TITLE.EDUCATION_TARGET}</MBold>
+            </TargetTitle>
+            <TargetItemWrapper>
+              {targets.map((target: string) => (
+                <li key={target}>
+                  <MBody
+                    style={{
+                      display: "inline",
+                      verticalAlign: "middle",
+                    }}
+                  >
+                    {target}
+                  </MBody>
+                </li>
+              ))}
+            </TargetItemWrapper>
+          </TargetWrapper>
+        </CourseInfoWrapper>
+      </ContentWrapper>
     </MastheadWrapper>
   );
 };
 
 const MastheadWrapper = styled.div`
+  position: relative;
   width: 100%;
   min-width: 144rem;
-  padding: 16rem 0 7.8rem 0;
+  height: 56rem;
   display: flex;
   align-items: center;
   color: ${({ theme: { color } }) => color.blackAndWhite.black};
@@ -60,6 +79,11 @@ const MastheadWrapper = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   flex-direction: column;
+`;
+
+const ContentWrapper = styled.div`
+  position: absolute;
+  bottom: 8rem;
 `;
 
 const TitleWrapper = styled.div`
@@ -86,30 +110,31 @@ const TargetTitle = styled.h4`
   align-items: center;
   margin-bottom: 0.8rem;
 `;
-const TargetWrapper = styled.ul`
+const TargetWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  list-style: disc;
 `;
-const TargetItem = styled.li`
-  &:before {
-    unicode-bidi: isolate;
-    font-variant-numeric: tabular-nums;
-    text-transform: none;
-    text-indent: 0px !important;
-    text-align: start !important;
-    text-align-last: start !important;
+
+const TargetItemWrapper = styled.ul`
+  display: flex;
+  flex-direction: column;
+  list-style-type: disc;
+  list-style-position: inside;
+  margin-left: 1rem;
+  & > *:not(:last-child) {
+    margin-bottom: 0.8rem;
   }
-  margin-top: 0.8rem;
-  margin-left: 2.4rem;
 `;
 
 const InfoItemWrapper = styled.ul`
   display: flex;
   flex-direction: column;
   flex-wrap: "wrap";
+  & > *:not(:last-child) {
+    margin-bottom: 0.8rem;
+  }
 `;
 
 const MastheadQuery = graphql`
@@ -119,8 +144,11 @@ const MastheadQuery = graphql`
         title
         description
         targets
-        trainingDuration
-        cost
+        courseInfos {
+          title
+          content
+          img
+        }
       }
     }
   }
