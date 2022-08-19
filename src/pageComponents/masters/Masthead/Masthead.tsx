@@ -15,8 +15,6 @@ import { strainMdxInfo } from "lib/utils";
 const Masthead: React.FC = () => {
   const { title, description, targets, courseInfos } = strainMdxInfo(useStaticQuery(MastheadQuery));
 
-  console.log(courseInfos);
-
   return (
     <MastheadWrapper>
       <ContentWrapper>
