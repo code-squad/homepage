@@ -1,21 +1,18 @@
 import React from "react";
 import styled from "styled-components";
-import { graphql, Link, useStaticQuery } from "gatsby";
-// Type
-import { ScheduledCourse } from "@type/ScheduledCourse";
+import { graphql, useStaticQuery } from "gatsby";
 // Typography
-import { MBody, MDisplay, MBold } from "typography";
+import { MBody, MDisplay } from "typography";
 // Components
-import { Course } from "./Course";
+import { MButton } from "components";
 // Assets
 import header from "assets/img/illusts/header";
-import thumbnail from "assets/img/illusts/thumbnail";
 import { TITLE } from "assets/static/phrases";
 // Lib
 import { strainMdxInfo } from "lib/utils";
 
 const Masthead: React.FC = () => {
-  const { title, description, scheduledCourses } = strainMdxInfo(useStaticQuery(MastheadQuery));
+  const { title, description } = strainMdxInfo(useStaticQuery(MastheadQuery));
 
   return (
     <MastheadWrapper>
@@ -23,20 +20,9 @@ const Masthead: React.FC = () => {
         <MDisplay>{title}</MDisplay>
         <MBody>{description}</MBody>
       </TitleWrapper>
-      <CourseAdmissionTitleWrapper>
-        <MBold>{TITLE.SCHEDULED_COURSE}</MBold>
-        <MoveLinkWrapper to="#course">
-          <MBold>{TITLE.VIEW_ENTIRE_COURSE}</MBold>
-        </MoveLinkWrapper>
-      </CourseAdmissionTitleWrapper>
-      <CourseAdmissionsList>
-        {scheduledCourses.map(({ title, dueDate, img, path }: ScheduledCourse) => (
-          // 이미지 추가 후 이미지 수정 필요
-          <li key={img}>
-            <Course {...{ title, dueDate, path, img: thumbnail[img] }} />
-          </li>
-        ))}
-      </CourseAdmissionsList>
+      <MoveLinkWrapper>
+        <MButton to="#course" children={TITLE.VIEW_ENTIRE_COURSE} />
+      </MoveLinkWrapper>
     </MastheadWrapper>
   );
 };
@@ -65,29 +51,12 @@ const TitleWrapper = styled.div`
   }
 `;
 
-const CourseAdmissionTitleWrapper = styled.div`
+const MoveLinkWrapper = styled.div`
   width: 106.2rem;
   margin: 0 auto;
   margin-top: 5.8rem;
   display: flex;
   justify-content: space-between;
-`;
-
-const MoveLinkWrapper = styled(Link)`
-  text-decoration: none;
-  color: ${({ theme: { color } }) => color.blackAndWhite.black};
-  background-color: transparent;
-  border: 0;
-  cursor: pointer;
-`;
-
-const CourseAdmissionsList = styled.ul`
-  width: 106.2rem;
-  display: flex;
-  margin: 2.4rem auto 0 auto;
-  & > *:not(:last-child) {
-    margin-right: 6.333rem;
-  }
 `;
 
 const MastheadQuery = graphql`
@@ -96,12 +65,6 @@ const MastheadQuery = graphql`
       frontmatter {
         title
         description
-        scheduledCourses {
-          title
-          dueDate
-          img
-          path
-        }
       }
     }
   }
