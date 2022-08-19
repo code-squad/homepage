@@ -1,7 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-// Type
-import icons from "assets/img/icons";
 // Typography
 import { LBody, SBody } from "typography";
 
