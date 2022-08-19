@@ -18,7 +18,7 @@ describe("<Masthead>", () => {
     );
   const useStaticQuery = jest.spyOn(Gatsby, "useStaticQuery");
   useStaticQuery.mockImplementation(() => MastHeadQueryResult);
-  const { title, description, scheduledCourses } = strainMdxInfo(MastHeadQueryResult);
+  const { title, description } = strainMdxInfo(MastHeadQueryResult);
   it("제목과 설명이 보여진다.", () => {
     const { getByText } = renderMasthead();
 
