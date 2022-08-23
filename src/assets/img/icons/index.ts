@@ -7,6 +7,7 @@ import chevronUp from "./chevron-up.svg";
 import clock from "./clock.svg";
 import close from "./close.svg";
 import coin from "./coin.svg";
+import hash from "./hash.svg";
 import member from "./member.svg";
 import plus from "./plus.svg";
 import quotation from "./quotation.svg";
@@ -28,4 +29,5 @@ export default {
   quotation,
   roundFilled,
   roundLine,
+  hash,
 };
