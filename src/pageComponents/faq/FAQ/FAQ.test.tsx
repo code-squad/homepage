@@ -47,7 +47,7 @@ describe("<FAQ>", () => {
     const { lists } = strainMdxInfo(FAQResult);
     const filteredLists = lists.filter((list: FAQType) => list.course === course);
 
-    const jsFAQBtn = getByText(`#${CATEGORTY_TPL[course]}`);
+    const jsFAQBtn = getByText(`${CATEGORTY_TPL[course]}`);
     fireEvent.click(jsFAQBtn);
     filteredLists.forEach(({ title, content, editDate }: FAQType) => {
       getAllByText(CATEGORTY_TPL[course]);
@@ -61,7 +61,7 @@ describe("<FAQ>", () => {
     const { lists } = strainMdxInfo(FAQResult);
     const filteredLists = lists.filter((list: FAQType) => !list.course);
 
-    const jsFAQBtn = getByText(`#기타`);
+    const jsFAQBtn = getByText(`기타`);
     fireEvent.click(jsFAQBtn);
     filteredLists.forEach(({ title, content, editDate }: FAQType) => {
       getAllByText("기타");
