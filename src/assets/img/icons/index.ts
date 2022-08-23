@@ -1,5 +1,5 @@
 import book from "./book.svg";
-import calander from "./calander.svg";
+import calendar from "./calendar.svg";
 import chevronDown from "./chevron-down.svg";
 import chevronLeft from "./chevron-left.svg";
 import chevronRight from "./chevron-right.svg";
@@ -16,7 +16,7 @@ import roundLine from "./round-line.svg";
 
 export default {
   book,
-  calander,
+  calendar,
   chevronDown,
   chevronLeft,
   chevronRight,
