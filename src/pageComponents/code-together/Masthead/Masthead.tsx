@@ -39,8 +39,8 @@ const MastheadWrapper = styled.div`
   align-items: center;
   color: ${({ theme: { color } }) => color.blackAndWhite.black};
   background-color: ${({ theme: { color } }) => color.primary.green4};
-  background-image: ${`url(${header.codeTogether})`};
-  background-repeat: no-repeat;
+  background-image: ${`url(${header.pattern3})`};
+  background-position: top right;
   background-position: center;
 `;
 
