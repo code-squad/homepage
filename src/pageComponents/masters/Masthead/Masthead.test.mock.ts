@@ -13,7 +13,7 @@ export const MastHeadQueryResult = {
         {
           title: "6개월",
           content: "",
-          img: "calander",
+          img: "calendar",
         },
         {
           title: "매달 66만원",
