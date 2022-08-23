@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 // Typography
 import { MBold, MBody } from "typography/";
+// Assets
+import icons from "assets/img/icons";
 
 const TabNavigationBar: React.FC<{
   onIndexChanged: (index: number) => void;
@@ -23,7 +25,10 @@ const TabNavigationBar: React.FC<{
               onClick={() => handleTabNavigationButtonClick(index)}
               selected={index === currentIndex}
             >
-              {index === currentIndex ? <MBold>{`#${title}`}</MBold> : <MBody>{`#${title}`}</MBody>}
+              <>
+                <img src={icons.hash} style={{ width: "1.6rem", height: "1.6rem" }} />
+                {index === currentIndex ? <MBold>{title}</MBold> : <MBody>{title}</MBody>}
+              </>
             </TagNavButton>
           </li>
         ))}
@@ -51,8 +56,10 @@ const TagNavButtonList = styled.ul`
 `;
 
 const TagNavButton = styled.button<{ selected?: boolean }>`
-  padding: 0 1.2rem;
-  height: 3.6rem;
+  display: flex;
+  align-items: center;
+  padding: 0 1.6rem 0 1.2rem;
+  height: 3.2rem;
   background-color: ${({ selected, theme: { color } }) =>
     selected ? color.blackAndWhite.white : "transparent"};
   border-width: 0.1rem;
