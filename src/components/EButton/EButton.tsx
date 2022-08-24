@@ -25,6 +25,7 @@ const EButtonWrapper = styled.button<{ accent?: boolean; disabled?: boolean }>`
   display: inline-flex;
   justify-content: space-between;
   align-items: center;
+  width: fit-content;
   height: 4rem;
   padding: 0 2.4rem;
   color: ${({ accent, disabled, theme: { color } }) =>
