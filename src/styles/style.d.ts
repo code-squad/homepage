@@ -83,5 +83,10 @@ declare module "styled-components" {
         blue3: string;
       };
     };
+    breakPoint: {
+      mobile: string;
+      tablet: string;
+      desktop: string;
+    };
   }
 }
