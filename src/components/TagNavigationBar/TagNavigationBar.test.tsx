@@ -20,14 +20,14 @@ describe("<TagNavigationBar>", () => {
     const { getByText } = renderTagNavigationBar();
 
     props.titles.forEach((title) => {
-      getByText(`#${title}`);
+      getByText(`${title}`);
     });
   });
   it("제목을 클릭하면 props로 전달된 onIndexChanged 콜백이 호출된다.", () => {
     const { getByText } = renderTagNavigationBar();
 
     props.titles.forEach((title, index) => {
-      const renderedTitle = getByText(`#${title}`);
+      const renderedTitle = getByText(`${title}`);
 
       fireEvent.click(renderedTitle);
       expect(props.onIndexChanged).toBeCalledTimes(index + 1);
@@ -37,7 +37,7 @@ describe("<TagNavigationBar>", () => {
     const { getByText } = renderTagNavigationBar();
 
     props.titles.forEach((title, index) => {
-      const renderedTitle = getByText(`#${title}`);
+      const renderedTitle = getByText(`${title}`);
 
       fireEvent.click(renderedTitle);
       expect(props.onIndexChanged.mock.results[index].value).toBe(index);

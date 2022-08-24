@@ -41,7 +41,9 @@ const LinkButton: React.FC<ILinkButton> = ({ description, title, to, icon, capti
           </Caption>
         ) : null}
       </TextWrapper>
-      {icon ? <img alt="link-icon" src={icon} width="80px" height="80px" /> : null}
+      {icon ? (
+        <img alt="link-icon" src={icon} style={{ width: "5.4rem", height: "5.4rem" }} />
+      ) : null}
     </LinkButtonWrapper>
   );
 };
@@ -54,11 +56,12 @@ const LinkButtonWrapper = styled(Link)<{ icon?: string; caption?: string }>`
   border-radius: 0.8rem;
   border: 0.2rem solid ${({ theme: { color } }) => color.greyScale.grey3};
   background-color: ${({ theme: { color } }) => color.surface.offWhite1};
-  padding: ${({ caption, icon }) => (caption ? "3.9rem 4rem" : icon ? "3.4rem 4rem" : "4rem")};
+  padding: ${({ caption }) => (caption ? "3.9rem 4rem" : "3rem 4rem")};
   text-decoration: unset;
   &:hover {
     cursor: pointer;
     border: 0.2rem solid ${({ theme: { color } }) => color.blackAndWhite.black};
+    background-color: ${({ theme: { color } }) => color.primary.green4};
   }
 `;
 

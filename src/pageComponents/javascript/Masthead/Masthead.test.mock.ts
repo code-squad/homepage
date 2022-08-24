@@ -13,7 +13,7 @@ export const MastHeadQueryResult = {
         {
           title: "파트 당 4주",
           content: "파트2 시작 전 1주 브레이크 기간 포함 총 9주",
-          img: "calander",
+          img: "calendar",
         },
         {
           title: "매주 월•화•수, 오후 7시~10시",

@@ -116,7 +116,7 @@ const LinkButton = styled(Link)<{ selected?: boolean }>`
     selected ? fontWeight.medium : fontWeight.regular};
   line-height: ${({ theme: { lineHeight } }) => lineHeight.body.sm};
   letter-spacing: ${({ theme: { letterSpacing } }) => letterSpacing};
-  text-decoration: none;
+  text-decoration: ${({ selected }) => (selected ? "underline" : "none")};
   &:hover {
     text-decoration: underline;
   }

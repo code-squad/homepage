@@ -73,9 +73,9 @@ const MastheadWrapper = styled.div`
   align-items: center;
   color: ${({ theme: { color } }) => color.blackAndWhite.black};
   background-color: ${({ theme: { color } }) => color.primary.green4};
-  background-image: ${`url(${header.mastersCourse})`};
+  background-image: ${`url(${header.pattern3})`};
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: top right;
   flex-direction: column;
 `;
 
