@@ -1,21 +1,25 @@
 import React from "react";
 import styled from "styled-components";
 // Typography
-import { MDisplay } from "typography";
+import { MDisplay, SDisplay } from "typography";
 // Assets
 import headers from "assets/img/illusts/header";
 import { TITLE } from "assets/static/phrases";
+// Libs
+import { useResponsive } from "lib/hooks";
 
 const Welcome: React.FC = () => {
+  const { isMobile } = useResponsive();
+
   return (
     <WelcomeWrapper>
-      <MDisplay>{TITLE.WELCOME}</MDisplay>
+      {isMobile && <SDisplay>{TITLE.WELCOME}</SDisplay>}
+      {!isMobile && <MDisplay>{TITLE.WELCOME}</MDisplay>}
     </WelcomeWrapper>
   );
 };
 
 const WelcomeWrapper = styled.div`
-  min-width: 144rem;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -28,6 +32,9 @@ const WelcomeWrapper = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  @media (min-width: ${({ theme }) => theme.breakPoint.mobile}) {
+    padding: 0 2.4rem;
+  }
 `;
 
 export default Welcome;
