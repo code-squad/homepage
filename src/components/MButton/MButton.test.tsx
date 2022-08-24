@@ -17,7 +17,9 @@ describe("<MButton>", () => {
   const renderMButton = (buttonText: string) =>
     render(
       <TestProvider>
-        <MButton {...props}>{buttonText}</MButton>
+        <MButton {...props} type="right">
+          {buttonText}
+        </MButton>
       </TestProvider>
     );
   it("버튼 문구가 보여진다.", () => {

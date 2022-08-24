@@ -10,27 +10,35 @@ export interface IMButtonProps {
   children?: string;
   accent?: boolean;
   disabled?: boolean;
-  to: string;
+  to?: string;
+  onClick?: () => void;
+  type: "left" | "none" | "right";
 }
 
-const MButton: React.FC<IMButtonProps> = ({ children, accent, disabled, to }) => {
+const MButton: React.FC<IMButtonProps> = ({ children, accent, disabled, to, onClick, type }) => {
   const urlRegex = /(http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-/]))?/;
   return (
     <MButtonWrapper
       $accent={accent}
       $disabled={disabled}
-      as={to.match(urlRegex) ? "a" : Link}
+      as={to ? (to.match(urlRegex) ? "a" : Link) : "button"}
       {...{ to }}
       href={to}
-      target={to.match(urlRegex) ? "_blank" : undefined}
-      rel={to.match(urlRegex) ? "noopener noreferrer nofollow" : undefined}
+      target={to && to.match(urlRegex) ? "_blank" : undefined}
+      rel={to && to.match(urlRegex) ? "noopener noreferrer nofollow" : undefined}
+      onClick={onClick || undefined}
     >
+      {type === "left" && (
+        <ButtonIcon src={icons.plus} {...{ accent, disabled }} style={{ marginRight: "0.4rem" }} />
+      )}
       <MBold>{children}</MBold>
-      <ButtonIcon
-        src={icons.chevronRight}
-        {...{ accent, disabled }}
-        style={{ marginLeft: "0.4rem" }}
-      />
+      {type === "right" && (
+        <ButtonIcon
+          src={icons.chevronRight}
+          {...{ accent, disabled }}
+          style={{ marginLeft: "0.4rem" }}
+        />
+      )}
     </MButtonWrapper>
   );
 };
@@ -39,6 +47,7 @@ const MButtonWrapper = styled(Link)<{ $accent?: boolean; $disabled?: boolean }>`
   display: inline-flex;
   justify-content: space-between;
   align-items: center;
+  width: fit-content;
   height: 3.8rem;
   padding: 0 2.4rem;
   color: ${({ $accent, $disabled, theme: { color } }) =>
