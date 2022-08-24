@@ -9,7 +9,7 @@ import { INTERNAL, EXTERNAL } from "assets/static/urls";
 const CourseList: React.FC = () => {
   return (
     <CourseWrapper>
-      <TitleSet subtitle={TITLE.SCHEDULED_COURSE}></TitleSet>
+      <TitleSet title={TITLE.SCHEDULED_COURSE}></TitleSet>
       <CourseListWrapper>
         <LinkButton
           to={INTERNAL.JAVASCRIPT}
