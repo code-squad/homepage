@@ -58,6 +58,7 @@ const TITLE = {
   NOT_FOUND: "404",
   VIEW_COURSES: "코드스쿼드 과정 바로 보기",
   CODE_TOGETHER_COURSE: "코드투게더 과정",
+  VIEW_DETAIL: "자세히 보기",
 };
 
 const DESCRIPTION = {
