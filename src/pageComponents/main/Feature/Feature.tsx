@@ -4,21 +4,25 @@ import { graphql, useStaticQuery } from "gatsby";
 // Type
 import { FeatureType } from "@type/Feature";
 // Typography
-import { MBody, HLBold, SBold } from "typography";
+import { MBody, HLBold, SHLBold, SBold } from "typography";
 // Components
-import { TitleSet } from "components/";
+import { MButton, TitleSet } from "components/";
 // Assets
 import { SUBTITLE, TITLE } from "assets/static/phrases";
 import features from "assets/img/illusts/feature";
 // Lib
 import { getSplittedPhrase, strainMdxInfo } from "lib/utils";
+import { useResponsive } from "lib/hooks";
 
 const Feature: React.FC = () => {
   const { color } = useTheme();
+  const { isMobile } = useResponsive();
 
   const { title, subtitle, description, image }: FeatureType = strainMdxInfo(
     useStaticQuery(FeatureQuery)
   );
+  const [detailView, setDetailView] = React.useState(false);
+
   const splittedDescription = getSplittedPhrase(description);
 
   return (
@@ -28,28 +32,46 @@ const Feature: React.FC = () => {
         <FeatureImg src={features[image]} alt="feature" />
         <Content>
           <div>
-            <HLBold style={{ color: color.greyScale.grey1 }}>{title}</HLBold>
+            {isMobile && <SHLBold style={{ color: color.greyScale.grey1 }}>{title}</SHLBold>}
+            {!isMobile && <HLBold style={{ color: color.greyScale.grey1 }}>{title}</HLBold>}
             <SBold>{subtitle}</SBold>
           </div>
-          {splittedDescription.map((descriptionItem: string) => (
-            <MBody key={descriptionItem}>{descriptionItem}</MBody>
-          ))}
+          {splittedDescription.map((descriptionItem: string, index: number) => {
+            if (isMobile && !detailView && index > 0) return null;
+            return <MBody key={descriptionItem}>{descriptionItem}</MBody>;
+          })}
         </Content>
       </ContentWrapper>
+      {isMobile && (
+        <MButton
+          children={detailView ? TITLE.FOLD : TITLE.VIEW_DETAIL}
+          onClick={() => setDetailView(!detailView)}
+          type={detailView ? "none" : "left"}
+        />
+      )}
     </FeatureWrapper>
   );
 };
 
 const FeatureWrapper = styled.div`
-  width: 106.2rem;
-  padding: 0 18.9rem;
-  padding-bottom: 18rem;
   display: flex;
-  margin: 0 auto;
   flex-direction: column;
   color: ${({ theme: { color } }) => color.greyScale.grey2};
-  & > *:not(:last-child) {
-    margin-bottom: 5.6rem;
+  @media (min-width: ${({ theme }) => theme.breakPoint.mobile}) {
+    padding: 0 2.4rem;
+    padding-bottom: 12rem;
+    & > *:not(:last-child) {
+      margin-bottom: 2.4rem;
+    }
+  }
+  @media (min-width: ${({ theme }) => theme.breakPoint.desktop}) {
+    width: 106.2rem;
+    padding: 0 18.9rem;
+    padding-bottom: 18rem;
+    margin: 0 auto;
+    & > *:not(:last-child) {
+      margin-bottom: 5.6rem;
+    }
   }
 `;
 
@@ -59,20 +81,36 @@ const ContentWrapper = styled.div`
   & > *:not(:last-child) {
     margin-right: 13.2rem;
   }
+  @media (min-width: ${({ theme }) => theme.breakPoint.mobile}) {
+    flex-direction: column;
+  }
+  @media (min-width: ${({ theme }) => theme.breakPoint.desktop}) {
+    flex-direction: row;
+  }
 `;
 
 const Content = styled.div`
-  width: 41.1rem;
   display: flex;
   flex-direction: column;
   & > *:not(:last-child) {
     margin-bottom: 1.6rem;
   }
+  @media (min-width: ${({ theme }) => theme.breakPoint.mobile}) {
+    margin-top: 3.2rem;
+  }
+  @media (min-width: ${({ theme }) => theme.breakPoint.desktop}) {
+    width: 41.1rem;
+  }
 `;
 
 const FeatureImg = styled.img`
-  width: 51.9rem;
-  height: 44rem;
+  @media (min-width: ${({ theme }) => theme.breakPoint.mobile}) {
+    width: 100%;
+  }
+  @media (min-width: ${({ theme }) => theme.breakPoint.desktop}) {
+    width: 51.9rem;
+    height: 44rem;
+  }
 `;
 
 const FeatureQuery = graphql`
