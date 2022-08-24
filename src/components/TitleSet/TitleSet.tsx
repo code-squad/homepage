@@ -6,7 +6,7 @@ import { HLBold, SHLBold, SDisplay } from "typography";
 import { useResponsive } from "lib/hooks";
 
 interface ITitleSet {
-  title?: string;
+  title: string;
   subtitle?: string;
   bigSubtitle?: boolean;
 }
