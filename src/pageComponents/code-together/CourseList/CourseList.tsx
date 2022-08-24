@@ -30,6 +30,7 @@ const CourseList: React.FC = () => {
 const CourseWrapper = styled.ul`
   width: 106.2rem;
   padding: 0 18.9rem;
+  margin: 0 auto;
   margin-top: 8rem;
   margin-bottom: 18rem;
   display: flex;
