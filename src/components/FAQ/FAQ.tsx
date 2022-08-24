@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from "gatsby";
 // Type
 import { FAQType } from "@type/FAQ";
 // Components
-import { DropdownItem, EButton, TitleSet } from "components";
+import { DropdownItem, MButton, TitleSet } from "components";
 // Assets
 import { SUBTITLE, TITLE } from "assets/static/phrases";
 // Utils
@@ -41,10 +41,11 @@ const FAQ: React.FC<IFaq> = ({ course }) => {
         ))}
       </DropdownWrapper>
       {faqList.length > 5 && (
-        <EButton
+        <MButton
           children={TITLE.MORE}
           disabled={faqCount === faqList.length}
           onClick={handleMoreButtonClick}
+          type="left"
         />
       )}
     </FAQWrapper>
