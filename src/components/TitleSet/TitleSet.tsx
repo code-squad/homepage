@@ -42,7 +42,7 @@ const TitleWrapper = styled.div`
   color: ${({ theme: { color } }) => color.blackAndWhite.black};
 `;
 const HeadTitle = styled.div<{ subtitle?: boolean }>`
-  @media (min-width: ${({ theme }) => theme.breakPoint.mobile}) {
+  @media ${({ theme }) => theme.device.desktop} {
     margin-top: ${({ subtitle }) => (subtitle ? "0.4rem" : "0rem")};
   }
 `;
