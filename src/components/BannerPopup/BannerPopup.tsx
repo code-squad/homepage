@@ -28,12 +28,14 @@ const BannerPopup: React.FC<IBannerPopup> = ({ title, description, to, onCloseBu
 
 const BannerPopupWrapper = styled.div`
   width: 100vw;
-  min-width: 144rem;
   min-height: 8rem;
   display: flex;
   position: relative;
   justify-content: center;
   background-color: ${({ theme: { color } }) => color.blackAndWhite.black};
+  @media ${({ theme }) => theme.device.desktop} {
+    min-width: 144rem;
+  }
 `;
 
 const ContentWrapper = styled.a`
@@ -52,7 +54,6 @@ const ContentWrapper = styled.a`
 const CloseButton = styled.button`
   width: 2.4rem;
   height: 2.4rem;
-  right: 8rem;
   top: 50%;
   transform: translateY(-50%);
   position: absolute;
@@ -60,6 +61,12 @@ const CloseButton = styled.button`
   background-color: transparent;
   &:hover {
     cursor: pointer;
+  }
+  @media ${({ theme }) => theme.device.mobile} {
+    right: 2.8rem;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    right: 8rem;
   }
 `;
 
