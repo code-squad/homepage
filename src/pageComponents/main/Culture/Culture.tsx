@@ -92,22 +92,19 @@ const CultureWrapper = styled.div`
 `;
 
 const TitleWrapper = styled.div`
-  @media (min-width: ${({ theme }) => theme.breakPoint.mobile}) {
+  @media ${({ theme }) => theme.device.mobile} {
     padding: 0 2.4rem;
-  }
-  @media (min-width: ${({ theme }) => theme.breakPoint.desktop}) {
-    padding: 0;
   }
 `;
 
 const ContentWrapper = styled.ul<{ currentIndex: number }>`
   position: relative;
   display: flex;
-  @media (min-width: ${({ theme }) => theme.breakPoint.mobile}) {
+  @media ${({ theme }) => theme.device.mobile} {
     width: 300%;
     flex-direction: row;
   }
-  @media (min-width: ${({ theme }) => theme.breakPoint.desktop}) {
+  @media ${({ theme }) => theme.device.desktop} {
     flex-direction: row;
     white-space: pre-line;
     & > *:not(:last-child) {
@@ -124,21 +121,21 @@ const CultureContent = styled.li`
   & > *:not(:last-child) {
     margin-bottom: 2.4rem;
   }
-  @media (min-width: ${({ theme }) => theme.breakPoint.mobile}) {
+  @media ${({ theme }) => theme.device.mobile} {
     width: 100%;
   }
-  @media (min-width: ${({ theme }) => theme.breakPoint.desktop}) {
+  @media ${({ theme }) => theme.device.desktop} {
     width: 30.2rem;
   }
 `;
 
 const CultureImg = styled.img`
-  @media (min-width: ${({ theme }) => theme.breakPoint.mobile}) {
+  @media ${({ theme }) => theme.device.mobile} {
     width: 100%;
     height: 21rem;
     background-color: ${({ theme: { color } }) => color.surface.offWhite1};
   }
-  @media (min-width: ${({ theme }) => theme.breakPoint.desktop}) {
+  @media ${({ theme }) => theme.device.desktop} {
     width: 8rem;
     height: 8rem;
     background-color: transparent;
@@ -150,22 +147,18 @@ const CultureTitleWrapper = styled.div`
   & > *:not(:last-child) {
     padding-bottom: 0.4rem;
   }
-  @media (min-width: ${({ theme }) => theme.breakPoint.mobile}) {
+  @media ${({ theme }) => theme.device.mobile} {
     padding: 0 2.4rem;
-  }
-  @media (min-width: ${({ theme }) => theme.breakPoint.desktop}) {
-    padding: 0;
   }
 `;
 
 const DescriptionList = styled.ul`
   display: flex;
   flex-direction: column;
-  @media (min-width: ${({ theme }) => theme.breakPoint.mobile}) {
+  @media ${({ theme }) => theme.device.mobile} {
     padding: 0 2.4rem;
   }
-  @media (min-width: ${({ theme }) => theme.breakPoint.desktop}) {
-    padding: 0;
+  @media ${({ theme }) => theme.device.desktop} {
     & > *:not(:last-child) {
       margin-bottom: 0.8rem;
     }

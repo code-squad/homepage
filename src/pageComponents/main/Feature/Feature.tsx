@@ -57,14 +57,14 @@ const FeatureWrapper = styled.div`
   display: flex;
   flex-direction: column;
   color: ${({ theme: { color } }) => color.greyScale.grey2};
-  @media (min-width: ${({ theme }) => theme.breakPoint.mobile}) {
+  @media ${({ theme }) => theme.device.mobile} {
     padding: 0 2.4rem;
     padding-bottom: 12rem;
     & > *:not(:last-child) {
       margin-bottom: 2.4rem;
     }
   }
-  @media (min-width: ${({ theme }) => theme.breakPoint.desktop}) {
+  @media ${({ theme }) => theme.device.desktop} {
     width: 106.2rem;
     padding: 0 18.9rem;
     padding-bottom: 18rem;
@@ -81,10 +81,10 @@ const ContentWrapper = styled.div`
   & > *:not(:last-child) {
     margin-right: 13.2rem;
   }
-  @media (min-width: ${({ theme }) => theme.breakPoint.mobile}) {
+  @media ${({ theme }) => theme.device.mobile} {
     flex-direction: column;
   }
-  @media (min-width: ${({ theme }) => theme.breakPoint.desktop}) {
+  @media ${({ theme }) => theme.device.desktop} {
     flex-direction: row;
   }
 `;
@@ -95,19 +95,19 @@ const Content = styled.div`
   & > *:not(:last-child) {
     margin-bottom: 1.6rem;
   }
-  @media (min-width: ${({ theme }) => theme.breakPoint.mobile}) {
+  @media ${({ theme }) => theme.device.mobile} {
     margin-top: 3.2rem;
   }
-  @media (min-width: ${({ theme }) => theme.breakPoint.desktop}) {
+  @media ${({ theme }) => theme.device.desktop} {
     width: 41.1rem;
   }
 `;
 
 const FeatureImg = styled.img`
-  @media (min-width: ${({ theme }) => theme.breakPoint.mobile}) {
+  @media ${({ theme }) => theme.device.mobile} {
     width: 100%;
   }
-  @media (min-width: ${({ theme }) => theme.breakPoint.desktop}) {
+  @media ${({ theme }) => theme.device.desktop} {
     width: 51.9rem;
     height: 44rem;
   }
