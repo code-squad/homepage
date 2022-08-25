@@ -7,6 +7,8 @@ import Layout from "lib/context/Layout";
 import icons from "assets/img/icons";
 // Typography
 import { MBold, LBody, MBody, XSBody } from "typography";
+// Lib
+import { useResponsive } from "lib/hooks";
 
 interface IDropdownItem {
   category: string;
@@ -27,6 +29,8 @@ const DropdownItem: React.FC<IDropdownItem> = ({
   short,
   body,
 }) => {
+  const { isMobile } = useResponsive();
+
   const [open, setOpen] = React.useState(false);
   const isLinkBoard = Boolean(link);
 
@@ -42,10 +46,10 @@ const DropdownItem: React.FC<IDropdownItem> = ({
     <DropdownWrapper aria-label="faq" {...{ short, open }}>
       <BoardWrapper {...{ open }} onClick={handleCardOpen}>
         <Category {...{ isLinkBoard }}>
-          <MBold>{category}</MBold>
+          {isMobile ? <XSBody>{category}</XSBody> : <MBold>{category}</MBold>}
         </Category>
         <Title {...{ short, open }}>
-          <LBody>{title}</LBody>
+          {isMobile ? <MBody>{title}</MBody> : <LBody>{title}</LBody>}
         </Title>
         <ArrowWrapper {...{ open }}>
           {isLinkBoard ? (
@@ -82,37 +86,60 @@ const DropdownItem: React.FC<IDropdownItem> = ({
 };
 
 const DropdownWrapper = styled.div<{ short?: boolean }>`
-  width: ${({ short }) => (short ? "96.6rem" : "106.2rem")};
   display: flex;
   flex-direction: column;
   &:hover ${LBody} {
     font-weight: ${({ theme: { fontWeight } }) => fontWeight.bold};
   }
+  @media ${({ theme }) => theme.device.mobile} {
+    min-width: 31.2rem;
+    margin-top: 1.6rem;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    width: ${({ short }) => (short ? "96.6rem" : "106.2rem")};
+  }
 `;
 
 const BoardWrapper = styled.div<{ open?: boolean }>`
   display: flex;
-  padding-top: 4rem;
-  justify-content: space-between;
-  height: 7.1rem;
-  transition: border 0.5s;
+  cursor: pointer;
   border-bottom: 0.1rem solid
     ${({ open, theme: { color } }) => (open ? color.greyScale.grey2 : color.greyScale.grey4)};
-  cursor: pointer;
+  @media ${({ theme }) => theme.device.mobile} {
+    flex-direction: column;
+    & > *:not(:last-child) {
+      margin-bottom: 0.4rem;
+    }
+    padding-bottom: 1.2rem;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    padding-top: 4rem;
+    justify-content: space-between;
+    height: 7.1rem;
+    transition: border 0.5s;
+  }
 `;
 const Category = styled.div<{ isLinkBoard?: boolean }>`
-  width: 14.5rem;
-  margin-right: 2.4rem;
   color: ${({ isLinkBoard, theme: { color } }) =>
     isLinkBoard ? color.primary.green2 : color.greyScale.grey2};
+  @media ${({ theme }) => theme.device.mobile} {
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    width: 14.5rem;
+    margin-right: 2.4rem;
+  }
 `;
 const Title = styled.div<{ short?: boolean; open?: boolean }>`
-  width: ${({ short }) => (short ? "74.9rem" : "84.5rem")};
-  margin-right: 2.4rem;
   color: ${({ theme: { color } }) => color.blackAndWhite.black};
   & > p {
     font-weight: ${({ open, theme: { fontWeight } }) =>
       open ? fontWeight.bold : fontWeight.regular};
+  }
+  @media ${({ theme }) => theme.device.mobile} {
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    width: ${({ short }) => (short ? "74.9rem" : "84.5rem")};
+    margin-right: 2.4rem;
   }
 `;
 
@@ -121,6 +148,9 @@ const ArrowWrapper = styled.div<{ open?: boolean }>`
   height: 2.4rem;
   transform: ${({ open }) => (open ? "rotate(180deg)" : "")};
   transition: transform 0.5s;
+  @media ${({ theme }) => theme.device.mobile} {
+    display: none;
+  }
 `;
 const ContentWrapper = styled.div<{ open?: boolean }>`
   overflow: hidden;
