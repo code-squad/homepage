@@ -37,6 +37,7 @@ const ArticleWrapper = styled.div`
   align-items: space-between;
   @media ${({ theme }) => theme.device.mobile} {
     padding: 0 2.4rem;
+    padding-bottom: 12rem;
     & > *:not(:last-child) {
       margin-bottom: 0.8rem;
     }
