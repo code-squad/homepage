@@ -1,13 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 // Typography
-import { SHLBold } from "typography/";
+import { SHLBold, MBold } from "typography/";
+// Lib
+import { useResponsive } from "lib/hooks";
 
 interface ITabNavigationBarProps {
   onIndexChanged: (index: number) => void;
   titles: string[];
 }
 const TabNavigationBar: React.FC<ITabNavigationBarProps> = ({ onIndexChanged, titles }) => {
+  const { isMobile } = useResponsive();
+
   const [currentIndex, setCurrentIndex] = React.useState(0);
 
   const handleTabNavigationButtonClick = (index: number) => {
@@ -19,12 +23,12 @@ const TabNavigationBar: React.FC<ITabNavigationBarProps> = ({ onIndexChanged, ti
     <TabNavigationBarWrapper>
       <TabNavButtonList>
         {titles.map((title: string, index: number) => (
-          <li key={title}>
+          <li key={title} style={{ minWidth: "fit-content" }}>
             <TabNavButton
               onClick={() => handleTabNavigationButtonClick(index)}
               selected={index === currentIndex}
             >
-              <SHLBold>{title}</SHLBold>
+              {isMobile ? <MBold>{title}</MBold> : <SHLBold>{title}</SHLBold>}
             </TabNavButton>
           </li>
         ))}
@@ -34,11 +38,13 @@ const TabNavigationBar: React.FC<ITabNavigationBarProps> = ({ onIndexChanged, ti
 };
 
 const TabNavigationBarWrapper = styled.div`
-  width: 100%;
-  min-width: 106.2rem;
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  @media ${({ theme }) => theme.device.desktop} {
+    width: 100%;
+    min-width: 106.2rem;
+  }
 `;
 
 const TabNavButtonList = styled.ul`
@@ -49,8 +55,6 @@ const TabNavButtonList = styled.ul`
 `;
 
 const TabNavButton = styled.button<{ selected?: boolean }>`
-  width: 19.3rem;
-  height: 5.8rem;
   color: ${({ selected, theme: { color } }) =>
     selected ? color.primary.green2 : color.greyScale.grey2};
   background-color: transparent;
@@ -62,6 +66,15 @@ const TabNavButton = styled.button<{ selected?: boolean }>`
   font-family: inherit;
   &:hover {
     cursor: pointer;
+  }
+  @media ${({ theme }) => theme.device.mobile} {
+    width: fit-content;
+    height: 3.2rem;
+    margin-right: 2.4rem;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    width: 19.3rem;
+    height: 4rem;
   }
 `;
 
