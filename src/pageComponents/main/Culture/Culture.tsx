@@ -91,7 +91,7 @@ const ContentWrapper = styled.ul<{ currentIndex: number }>`
   position: relative;
   display: flex;
   @media ${({ theme }) => theme.device.mobile} {
-    width: 300%;
+    width: 300vw;
   }
   @media ${({ theme }) => theme.device.desktop} {
     white-space: pre-line;
@@ -100,7 +100,7 @@ const ContentWrapper = styled.ul<{ currentIndex: number }>`
     }
   }
   transition: left 0.5s;
-  left: -${({ currentIndex }) => currentIndex * 100}%;
+  left: -${({ currentIndex }) => currentIndex * 100}vw;
 `;
 
 const CultureContent = styled.li`
