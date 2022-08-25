@@ -106,6 +106,9 @@ const LinkButtonWrapper = styled(Link)<{ icon?: string; caption?: string }>`
 
 const Description = styled.div`
   color: ${({ theme: { color } }) => color.greyScale.grey2};
+  @media ${({ theme }) => theme.device.mobile} {
+    margin-bottom: 0.8rem;
+  }
 `;
 const Title = styled.div`
   display: flex;
