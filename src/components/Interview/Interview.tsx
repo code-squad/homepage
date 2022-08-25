@@ -82,7 +82,7 @@ const Interview: React.FC<IInterview> = ({ subtitle, title, interviews, style })
       </InterviewList>
       {isMobile && (
         <RectangleNavigationWrapper>
-          <RectangleNavigation count={3} index={currentIndex} onIndexChanged={handleIndexChanged} />
+          <RectangleNavigation count={4} index={currentIndex} onIndexChanged={handleIndexChanged} />
         </RectangleNavigationWrapper>
       )}
     </InterviewWrapper>
@@ -152,8 +152,8 @@ const InterviewList = styled.ul<{ currentIndex: number }>`
   display: flex;
   transition: left 0.5s;
   @media ${({ theme }) => theme.device.mobile} {
-    width: 300%;
-    left: -${({ currentIndex }) => currentIndex * 100}%;
+    width: 300vw;
+    left: -${({ currentIndex }) => currentIndex * 100}vw;
   }
   @media ${({ theme }) => theme.device.desktop} {
     width: 106.2rem;
