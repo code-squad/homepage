@@ -35,18 +35,8 @@ const Culture: React.FC = () => {
           <CultureContent key={title}>
             <CultureImg src={features[image]} alt="culture-icon" />
             <CultureTitleWrapper>
-              {isMobile && (
-                <>
-                  <MBold>{subtitle}</MBold>
-                  <SHLBold>{title}</SHLBold>
-                </>
-              )}
-              {!isMobile && (
-                <>
-                  <MBold>{subtitle}</MBold>
-                  <HLBold>{title}</HLBold>
-                </>
-              )}
+              <MBold>{subtitle}</MBold>
+              {isMobile ? <SHLBold>{title}</SHLBold> : <HLBold>{title}</HLBold>}
             </CultureTitleWrapper>
             <DescriptionList>
               {getSplittedPhrase(description).map((descriptionItem: string) => (
