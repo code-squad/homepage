@@ -88,15 +88,18 @@ const DropdownItem: React.FC<IDropdownItem> = ({
 const DropdownWrapper = styled.div<{ short?: boolean }>`
   display: flex;
   flex-direction: column;
-  &:hover ${LBody} {
-    font-weight: ${({ theme: { fontWeight } }) => fontWeight.bold};
-  }
   @media ${({ theme }) => theme.device.mobile} {
     min-width: 31.2rem;
     margin-top: 1.6rem;
+    &:active ${MBody} {
+      font-weight: ${({ theme: { fontWeight } }) => fontWeight.bold};
+    }
   }
   @media ${({ theme }) => theme.device.desktop} {
     width: ${({ short }) => (short ? "96.6rem" : "106.2rem")};
+    &:hover ${LBody} {
+      font-weight: ${({ theme: { fontWeight } }) => fontWeight.bold};
+    }
   }
 `;
 
