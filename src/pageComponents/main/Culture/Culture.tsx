@@ -92,10 +92,8 @@ const ContentWrapper = styled.ul<{ currentIndex: number }>`
   display: flex;
   @media ${({ theme }) => theme.device.mobile} {
     width: 300%;
-    flex-direction: row;
   }
   @media ${({ theme }) => theme.device.desktop} {
-    flex-direction: row;
     white-space: pre-line;
     & > *:not(:last-child) {
       margin-right: 7.8rem;

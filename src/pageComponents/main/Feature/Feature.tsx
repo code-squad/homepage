@@ -84,9 +84,6 @@ const ContentWrapper = styled.div`
   @media ${({ theme }) => theme.device.mobile} {
     flex-direction: column;
   }
-  @media ${({ theme }) => theme.device.desktop} {
-    flex-direction: row;
-  }
 `;
 
 const Content = styled.div`
