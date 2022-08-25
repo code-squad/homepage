@@ -91,6 +91,12 @@ const breakPoint = {
   desktop: "1440px",
 };
 
+const device = {
+  mobile: `screen and (max-width: calc(${breakPoint.tablet} - 1px))`,
+  tablet: `(min-width: ${breakPoint.mobile}) and (max-width: calc(${breakPoint.desktop} - 1px))`,
+  desktop: `(min-width: ${breakPoint.desktop})`,
+};
+
 const theme = {
   fontSize,
   fontWeight,
@@ -98,6 +104,7 @@ const theme = {
   letterSpacing,
   color,
   breakPoint,
+  device,
 };
 
 export default theme;

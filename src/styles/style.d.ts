@@ -88,5 +88,10 @@ declare module "styled-components" {
       tablet: string;
       desktop: string;
     };
+    device: {
+      mobile: string;
+      tablet: string;
+      desktop: string;
+    };
   }
 }
