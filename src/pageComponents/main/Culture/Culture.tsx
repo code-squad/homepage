@@ -61,13 +61,13 @@ const CultureWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: space-between;
-  @media (min-width: ${({ theme }) => theme.breakPoint.mobile}) {
+  @media ${({ theme }) => theme.device.mobile} {
     width: 100%;
     & > *:not(:last-child) {
       margin-bottom: 2.4rem;
     }
   }
-  @media (min-width: ${({ theme }) => theme.breakPoint.desktop}) {
+  @media ${({ theme }) => theme.device.desktop} {
     width: 106.2rem;
     padding: 0 18.9rem;
     padding-bottom: 8rem;

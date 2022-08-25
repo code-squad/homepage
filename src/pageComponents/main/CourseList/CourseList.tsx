@@ -55,12 +55,12 @@ const CourseWrapper = styled.ul`
 const CourseListWrapper = styled.ul`
   display: flex;
   justify-content: center;
-  @media (min-width: ${({ theme }) => theme.breakPoint.mobile}) {
+  @media ${({ theme }) => theme.device.mobile} {
     & > *:not(:last-child) {
       margin-right: 1.6rem;
     }
   }
-  @media (min-width: ${({ theme }) => theme.breakPoint.desktop}) {
+  @media ${({ theme }) => theme.device.desktop} {
     & > *:not(:last-child) {
       margin-right: 2.4rem;
     }
