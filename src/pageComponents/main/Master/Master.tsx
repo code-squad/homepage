@@ -127,11 +127,16 @@ const Master: React.FC = () => {
 
 const MasterWrapper = styled.div`
   width: 100%;
-  padding-bottom: 18rem;
   display: flex;
   flex-direction: column;
   align-items: space-between;
   color: ${({ theme: { color } }) => color.blackAndWhite.black};
+  @media ${({ theme }) => theme.device.mobile} {
+    padding-bottom: 12rem;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    padding-bottom: 18rem;
+  }
 `;
 
 const MasterCourseIntroduceWrapper = styled.div`
@@ -189,6 +194,7 @@ const MasterImg = styled.img`
     width: 8rem;
     height: 8rem;
     border-radius: 99.9rem;
+    position: absolute;
   }
   @media ${({ theme }) => theme.device.desktop} {
     width: 41rem;
@@ -198,10 +204,6 @@ const MasterImg = styled.img`
 `;
 
 const IntroduceWrapper = styled.div`
-  @media ${({ theme }) => theme.device.mobile} {
-    position: relative;
-    top: -8rem;
-  }
   @media ${({ theme }) => theme.device.desktop} {
     height: 43.6rem;
     display: flex;
