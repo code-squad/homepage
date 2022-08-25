@@ -32,7 +32,7 @@ const CourseList: React.FC = () => {
 const CourseWrapper = styled.ul`
   display: flex;
   flex-direction: column;
-  @media (min-width: ${({ theme }) => theme.breakPoint.mobile}) {
+  @media ${({ theme }) => theme.device.mobile} {
     padding: 0 2.4rem;
     margin-top: 8rem;
     margin-bottom: 12rem;
@@ -40,7 +40,7 @@ const CourseWrapper = styled.ul`
       margin-bottom: 2.4rem;
     }
   }
-  @media (min-width: ${({ theme }) => theme.breakPoint.desktop}) {
+  @media ${({ theme }) => theme.device.desktop} {
     width: 106.2rem;
     padding: 0 18.9rem;
     margin: 0 auto;
