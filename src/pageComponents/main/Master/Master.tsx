@@ -164,7 +164,10 @@ const CourseIntroduceWrapper = styled.div`
 const TabNavigationWrapper = styled.div`
   @media ${({ theme }) => theme.device.mobile} {
     padding-left: 2.4rem;
-    overflow-x: scroll;
+    overflow-x: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
   @media ${({ theme }) => theme.device.desktop} {
     width: 106.2rem;
