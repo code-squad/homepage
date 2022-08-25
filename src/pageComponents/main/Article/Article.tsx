@@ -32,15 +32,23 @@ const Article: React.FC = () => {
 };
 
 const ArticleWrapper = styled.div`
-  width: 106.2rem;
-  padding: 0 18.9rem;
-  padding-bottom: 18rem;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: space-between;
-  & > *:not(:last-child) {
-    margin-bottom: 4rem;
+  @media ${({ theme }) => theme.device.mobile} {
+    padding: 0 2.4rem;
+    & > *:not(:last-child) {
+      margin-bottom: 0.8rem;
+    }
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    width: 106.2rem;
+    padding: 0 18.9rem;
+    padding-bottom: 18rem;
+    margin: 0 auto;
+    & > *:not(:last-child) {
+      margin-bottom: 4rem;
+    }
   }
 `;
 
