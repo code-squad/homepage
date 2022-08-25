@@ -32,7 +32,7 @@ const WelcomeWrapper = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  @media (min-width: ${({ theme }) => theme.breakPoint.mobile}) {
+  @media ${({ theme }) => theme.device.mobile} {
     padding: 0 2.4rem;
   }
 `;
