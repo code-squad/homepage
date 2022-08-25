@@ -103,7 +103,6 @@ const theme = {
   lineHeight,
   letterSpacing,
   color,
-  breakPoint,
   device,
 };
 
