@@ -9,6 +9,7 @@ import close from "./close.svg";
 import coin from "./coin.svg";
 import hash from "./hash.svg";
 import member from "./member.svg";
+import menu from "./menu.svg";
 import plus from "./plus.svg";
 import quotation from "./quotation.svg";
 import roundFilled from "./round-filled.svg";
@@ -25,6 +26,7 @@ export default {
   close,
   coin,
   member,
+  menu,
   plus,
   quotation,
   roundFilled,
