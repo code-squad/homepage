@@ -12,9 +12,9 @@ import { SUBTITLE, TITLE, DESCRIPTION } from "assets/static/phrases";
 import { useResponsive } from "lib/hooks";
 
 const Place: React.FC = () => {
+  const { color } = useTheme();
   const { isMobile } = useResponsive();
 
-  const { color } = useTheme();
   const { place1, place2, place3, place4, place5, place6, place7 } = picture;
 
   const imgList = [place1, place2, place3, place4, place5, place6, place7];

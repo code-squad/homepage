@@ -16,7 +16,7 @@ import { strainMdxInfo } from "lib/utils";
 import { useResponsive } from "lib/hooks";
 
 const Master: React.FC = () => {
-  const theme = useTheme();
+  const { color } = useTheme();
   const { isMobile } = useResponsive();
 
   const { masters }: { masters: MasterType[] } = strainMdxInfo(useStaticQuery(MasterQuery));
@@ -40,7 +40,7 @@ const Master: React.FC = () => {
       <TabNavigationWrapper>
         <TabNavigationBar titles={fields} onIndexChanged={handleTabClick} />
       </TabNavigationWrapper>
-      <div style={{ backgroundColor: theme.color.surface.offWhite1 }}>
+      <div style={{ backgroundColor: color.surface.offWhite1 }}>
         <MasterInformationWrapper>
           <MasterImg alt="profile" src={picture[masterIntroduce.image]} />
           <IntroduceWrapper>
@@ -74,7 +74,7 @@ const Master: React.FC = () => {
                         style={{
                           display: "inline",
                           verticalAlign: "middle",
-                          color: theme.color.greyScale.grey1,
+                          color: color.greyScale.grey1,
                         }}
                       >
                         {career}
@@ -84,7 +84,7 @@ const Master: React.FC = () => {
                         style={{
                           display: "inline",
                           verticalAlign: "middle",
-                          color: theme.color.greyScale.grey1,
+                          color: color.greyScale.grey1,
                         }}
                       >
                         {career}
