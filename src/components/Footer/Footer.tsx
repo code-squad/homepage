@@ -73,74 +73,80 @@ const Footer: React.FC = () => {
             {LINK.REFUND_POLICY}
           </InternalLink>
         </CompanyInfomationWrapper>
-        <MenuListWrapper>
-          <MenuList>
-            <li>
-              <XSBold>{MESSAGE.COMPANY_NAME}</XSBold>
-            </li>
-            <li>
-              <InternalLink to={INTERNAL.TEAM_CULTURE}>{LINK.TEAM_CULTURE}</InternalLink>
-            </li>
-            <li>
-              <InternalLink to={INTERNAL.RECRUIT}>{LINK.RECRUIT}</InternalLink>
-            </li>
-          </MenuList>
-          <MenuList>
-            <li>
-              <XSBold>{MESSAGE.CURRICULUM}</XSBold>
-            </li>
-            <li>
-              <InternalLink to={INTERNAL.MASTERS}>{LINK.MASTERS}</InternalLink>
-            </li>
-            <li>
-              <InternalLink to={INTERNAL.CODE_TOGETHER}>{LINK.CODE_TOGETHER}</InternalLink>
-            </li>
-          </MenuList>
-          <MenuList>
-            <li>
-              <InternalLink $bold to={INTERNAL.FAQ}>
-                {LINK.FAQ}
-              </InternalLink>
-            </li>
-          </MenuList>
-          <MenuList>
-            <li>
-              <XSBold>{MESSAGE.SOCIAL_MEDIA}</XSBold>
-            </li>
-            <li>
-              <ExternalLink href={EXTERNAL.BLOG} target="_blank" rel="noopener noreferrer nofollow">
-                {LINK.BLOG}
-              </ExternalLink>
-            </li>
-            <li>
-              <ExternalLink
-                href={EXTERNAL.YOUTUBE}
-                target="_blank"
-                rel="noopener noreferrer nofollow"
-              >
-                {LINK.YOUTUBE}
-              </ExternalLink>
-            </li>
-            <li>
-              <ExternalLink
-                href={EXTERNAL.FACEBOOK}
-                target="_blank"
-                rel="noopener noreferrer nofollow"
-              >
-                {LINK.FACEBOOK}
-              </ExternalLink>
-            </li>
-            <li>
-              <ExternalLink
-                href={EXTERNAL.KAKAOTALK_CHANNEL}
-                target="_blank"
-                rel="noopener noreferrer nofollow"
-              >
-                {LINK.KAKAOTALK_CHANNEL}
-              </ExternalLink>
-            </li>
-          </MenuList>
-        </MenuListWrapper>
+        {isDesktop && (
+          <MenuListWrapper>
+            <MenuList>
+              <li>
+                <XSBold>{MESSAGE.COMPANY_NAME}</XSBold>
+              </li>
+              <li>
+                <InternalLink to={INTERNAL.TEAM_CULTURE}>{LINK.TEAM_CULTURE}</InternalLink>
+              </li>
+              <li>
+                <InternalLink to={INTERNAL.RECRUIT}>{LINK.RECRUIT}</InternalLink>
+              </li>
+            </MenuList>
+            <MenuList>
+              <li>
+                <XSBold>{MESSAGE.CURRICULUM}</XSBold>
+              </li>
+              <li>
+                <InternalLink to={INTERNAL.MASTERS}>{LINK.MASTERS}</InternalLink>
+              </li>
+              <li>
+                <InternalLink to={INTERNAL.CODE_TOGETHER}>{LINK.CODE_TOGETHER}</InternalLink>
+              </li>
+            </MenuList>
+            <MenuList>
+              <li>
+                <InternalLink $bold to={INTERNAL.FAQ}>
+                  {LINK.FAQ}
+                </InternalLink>
+              </li>
+            </MenuList>
+            <MenuList>
+              <li>
+                <XSBold>{MESSAGE.SOCIAL_MEDIA}</XSBold>
+              </li>
+              <li>
+                <ExternalLink
+                  href={EXTERNAL.BLOG}
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                >
+                  {LINK.BLOG}
+                </ExternalLink>
+              </li>
+              <li>
+                <ExternalLink
+                  href={EXTERNAL.YOUTUBE}
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                >
+                  {LINK.YOUTUBE}
+                </ExternalLink>
+              </li>
+              <li>
+                <ExternalLink
+                  href={EXTERNAL.FACEBOOK}
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                >
+                  {LINK.FACEBOOK}
+                </ExternalLink>
+              </li>
+              <li>
+                <ExternalLink
+                  href={EXTERNAL.KAKAOTALK_CHANNEL}
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                >
+                  {LINK.KAKAOTALK_CHANNEL}
+                </ExternalLink>
+              </li>
+            </MenuList>
+          </MenuListWrapper>
+        )}
       </ContentWrapper>
     </FooterWrapper>
   );
@@ -191,9 +197,6 @@ const CompanyInfomationWrapper = styled.div`
 
 const MenuListWrapper = styled.div`
   display: flex;
-  @media ${({ theme }) => theme.device.mobile} {
-    display: none;
-  }
   @media ${({ theme }) => theme.device.desktop} {
     justify-content: space-between;
     width: 40.9rem;
