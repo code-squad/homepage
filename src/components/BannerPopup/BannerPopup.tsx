@@ -65,6 +65,9 @@ const CloseButton = styled.button`
   @media ${({ theme }) => theme.device.mobile} {
     right: 2.8rem;
   }
+  @media ${({ theme }) => theme.device.tablet} {
+    right: 8rem;
+  }
   @media ${({ theme }) => theme.device.desktop} {
     right: 8rem;
   }
