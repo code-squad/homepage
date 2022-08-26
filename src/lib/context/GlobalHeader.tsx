@@ -9,7 +9,8 @@ const GlobalHeader: React.FC<{ title: string; description: string; url: string }
   url,
 }) => {
   let viewportContent = "width=device-width initial-scale=1";
-  if (window.innerWidth < 360) viewportContent = "width=360 initial-scale=0.8";
+  if (typeof window !== "undefined" && window.innerWidth < 360)
+    viewportContent = "width=360 initial-scale=0.8";
 
   return (
     <Helmet>
