@@ -154,6 +154,9 @@ const ButtonList = styled.ul`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media ${({ theme }) => theme.device.mobile} {
+    display: none;
+  }
 `;
 
 const LinkButton = styled(Link)<{ selected?: boolean }>`
