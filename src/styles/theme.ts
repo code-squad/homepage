@@ -86,15 +86,15 @@ const color = {
 };
 
 const breakPoint = {
-  mobile: "360px",
-  tablet: "768px",
-  desktop: "1440px",
+  mobile: 360,
+  tablet: 768,
+  desktop: 1440,
 };
 
 const device = {
-  mobile: `screen and (max-width: calc(${breakPoint.tablet} - 1px))`,
-  tablet: `(min-width: ${breakPoint.mobile}) and (max-width: calc(${breakPoint.desktop} - 1px))`,
-  desktop: `(min-width: ${breakPoint.desktop})`,
+  mobile: `screen and (max-width: calc(${breakPoint.tablet}px - 1px))`,
+  tablet: `(min-width: ${breakPoint.mobile}px) and (max-width: calc(${breakPoint.desktop}px - 1px))`,
+  desktop: `(min-width: ${breakPoint.desktop}px)`,
 };
 
 const theme = {
@@ -103,6 +103,7 @@ const theme = {
   lineHeight,
   letterSpacing,
   color,
+  breakPoint,
   device,
 };
 
