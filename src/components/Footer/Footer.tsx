@@ -179,6 +179,9 @@ const ContentWrapper = styled.div`
   @media ${({ theme }) => theme.device.mobile} {
     padding: 4rem 2.4rem;
   }
+  @media ${({ theme }) => theme.device.tablet} {
+    padding: 4rem 8rem;
+  }
   @media ${({ theme }) => theme.device.desktop} {
     min-width: 128rem;
     padding: 5.6rem 8rem 8rem 8rem;
@@ -213,7 +216,6 @@ const MenuList = styled.ul`
 `;
 
 const InternalLink = styled(Link)<{ $bold?: boolean }>`
-  color: ${({ theme: { color } }) => color.greyScale.grey3};
   font-weight: ${({ $bold, theme: { fontWeight } }) =>
     $bold ? fontWeight.medium : fontWeight.regular};
   text-decoration: none;
@@ -221,6 +223,11 @@ const InternalLink = styled(Link)<{ $bold?: boolean }>`
     text-decoration: underline;
   }
   @media ${({ theme }) => theme.device.mobile} {
+    color: ${({ theme: { color } }) => color.greyScale.grey3};
+    font-size: ${({ theme: { fontSize } }) => fontSize.body.sm};
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    color: ${({ theme: { color } }) => color.greyScale.grey3};
     font-size: ${({ theme: { fontSize } }) => fontSize.body.sm};
   }
   @media ${({ theme }) => theme.device.desktop} {
