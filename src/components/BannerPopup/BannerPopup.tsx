@@ -28,6 +28,7 @@ const BannerPopup: React.FC<IBannerPopup> = ({ title, description, to, onCloseBu
 
 const BannerPopupWrapper = styled.div`
   width: 100vw;
+  min-width: 36rem;
   min-height: 8rem;
   display: flex;
   position: relative;

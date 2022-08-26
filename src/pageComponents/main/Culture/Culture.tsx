@@ -121,6 +121,7 @@ const CultureContent = styled.li`
     margin-bottom: 2.4rem;
   }
   @media ${({ theme }) => theme.device.mobile} {
+    min-width: 36rem;
     width: 100%;
   }
   @media ${({ theme }) => theme.device.tablet} {

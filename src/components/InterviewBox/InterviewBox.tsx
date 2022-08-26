@@ -45,7 +45,7 @@ const InterviewBox: React.FC<IInterviewBox> = ({
 const InterviewBoxWrapper = styled.div`
   background-color: ${({ theme: { color } }) => color.surface.offWhite1};
   @media ${({ theme }) => theme.device.mobile} {
-    width: 100vw;
+    min-width: 26.4rem;
     padding: 3.2rem 4.8rem 3.2rem 4.8rem;
     box-sizing: border-box;
   }

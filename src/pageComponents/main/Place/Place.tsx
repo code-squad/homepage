@@ -84,6 +84,7 @@ const PlaceWrapper = styled.div`
     }
   }
   @media ${({ theme }) => theme.device.tablet} {
+    min-width: 36rem;
     padding: 0 8rem;
     padding-bottom: 8rem;
     & > *:not(:last-child) {
@@ -188,6 +189,7 @@ const PlaceList = styled.ul<{ currentIndex: number }>`
 const PlaceImage = styled.img`
   @media ${({ theme }) => theme.device.mobile} {
     width: 100vw;
+    min-width: 36rem;
   }
   @media ${({ theme }) => theme.device.tablet} {
     width: 100%;
