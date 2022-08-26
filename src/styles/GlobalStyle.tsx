@@ -32,7 +32,6 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 html {
-  min-width: 360px;
   font-size: 62.5%;
 }
 body {
