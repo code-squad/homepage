@@ -19,11 +19,22 @@ const RecruitLink: React.FC = () => {
 };
 
 const RecruitLinkWrapper = styled.div`
-  width: 106.2rem;
   display: flex;
-  padding: 0 18.9rem;
-  padding-bottom: 18rem;
-  margin: 0 auto;
+  @media ${({ theme }) => theme.device.mobile} {
+    padding: 0 2.4rem;
+    padding-bottom: 12rem;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    padding: 0 8rem;
+    padding-bottom: 18rem;
+    margin: 0 auto;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    width: 106.2rem;
+    padding: 0 18.9rem;
+    padding-bottom: 18rem;
+    margin: 0 auto;
+  }
 `;
 
 export default RecruitLink;

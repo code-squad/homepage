@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from "gatsby";
 // Type
 import { CourseType } from "@type/Course";
 // Components
-import { EButton, TitleSet } from "components";
+import { MButton, TitleSet } from "components";
 import { CourseCard } from "./CourseCard";
 // Assets
 import thumbnail from "assets/img/illusts/thumbnail";
@@ -46,10 +46,11 @@ const Course: React.FC = () => {
         </CourseList>
         {courses.length > 9 && (
           <MoreButtonWrapper>
-            <EButton
+            <MButton
               children={TITLE.MORE}
               disabled={courseCount === courses.length}
               onClick={handleMoreButtonClick}
+              type="left"
             />
           </MoreButtonWrapper>
         )}

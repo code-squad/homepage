@@ -3,10 +3,12 @@ import styled, { CSSProperties } from "styled-components";
 // Type
 import { InterviewType } from "@type/Interview";
 // Components
-import { InterviewBox, TitleSet } from "components/";
+import { InterviewBox, TitleSet, RectangleNavigation } from "components/";
 // Assets
 import avatars from "assets/img/avatars";
 import icons from "assets/img/icons";
+// Libs
+import { useResponsive } from "lib/hooks";
 
 interface IInterview {
   subtitle: string;
@@ -16,6 +18,8 @@ interface IInterview {
 }
 
 const Interview: React.FC<IInterview> = ({ subtitle, title, interviews, style }) => {
+  const { isMobile } = useResponsive();
+
   const [currentIndex, setCurrentIndex] = React.useState(0);
 
   const handleArrowLeftClick = () => {
@@ -37,63 +41,91 @@ const Interview: React.FC<IInterview> = ({ subtitle, title, interviews, style })
     }
   };
 
+  const handleIndexChanged = (index: number) => {
+    setCurrentIndex(index);
+  };
+
   return (
     <InterviewWrapper {...{ style }}>
       <TitleWrapper>
         <TitleSet {...{ title, subtitle }} />
-        <ArrowNavigationWrapper>
-          <ArrowButton
-            disabled={currentIndex === 0 || interviews.length <= 2}
-            onClick={handleArrowLeftClick}
-          >
-            <img src={icons.chevronLeft} alt="arrow-left" />
-          </ArrowButton>
-          <ArrowButton
-            disabled={currentIndex + 2 === interviews.length || interviews.length <= 2}
-            onClick={handleArrowRightClick}
-          >
-            <img src={icons.chevronRight} alt="arrow-right" />
-          </ArrowButton>
-        </ArrowNavigationWrapper>
+        {!isMobile && (
+          <ArrowNavigationWrapper>
+            <ArrowButton
+              disabled={currentIndex === 0 || interviews.length <= 2}
+              onClick={handleArrowLeftClick}
+            >
+              <img src={icons.chevronLeft} alt="arrow-left" />
+            </ArrowButton>
+            <ArrowButton
+              disabled={currentIndex + 2 === interviews.length || interviews.length <= 2}
+              onClick={handleArrowRightClick}
+            >
+              <img src={icons.chevronRight} alt="arrow-right" />
+            </ArrowButton>
+          </ArrowNavigationWrapper>
+        )}
       </TitleWrapper>
-      <InterviewListWrapper>
-        <InterviewList {...{ currentIndex }}>
-          {interviews.map((interview, index) => (
-            <li key={interview.nutshell} style={{ display: "flex", alignSelf: "stretch" }}>
-              <InterviewBox
-                {...{ ...interview }}
-                writerPhoto={
-                  interview.writerPhoto
-                    ? avatars[interview.writerPhoto]
-                    : index % 2 === 0
-                    ? avatars.smallMember1
-                    : avatars.smallMember2
-                }
-              />
-            </li>
-          ))}
-        </InterviewList>
-      </InterviewListWrapper>
+      <InterviewList {...{ currentIndex }}>
+        {interviews.map((interview, index) => (
+          <li key={interview.nutshell} style={{ display: "flex", alignSelf: "stretch" }}>
+            <InterviewBox
+              {...{ ...interview }}
+              writerPhoto={
+                interview.writerPhoto
+                  ? avatars[interview.writerPhoto]
+                  : index % 2 === 0
+                  ? avatars.smallMember1
+                  : avatars.smallMember2
+              }
+            />
+          </li>
+        ))}
+      </InterviewList>
+      {isMobile && (
+        <RectangleNavigationWrapper>
+          <RectangleNavigation count={4} index={currentIndex} onIndexChanged={handleIndexChanged} />
+        </RectangleNavigationWrapper>
+      )}
     </InterviewWrapper>
   );
 };
 
 const InterviewWrapper = styled.div`
-  margin-bottom: 18rem;
   display: flex;
   flex-direction: column;
-  align-items: space-between;
-  overflow-x: hidden;
+  @media ${({ theme }) => theme.device.mobile} {
+    margin-bottom: 12rem;
+    align-items: space-between;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    margin-bottom: 18rem;
+    align-items: space-between;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    margin-bottom: 18rem;
+    align-items: space-between;
+  }
 `;
 
 const TitleWrapper = styled.div`
-  width: 106.2rem;
-  padding: 0 18.9rem;
-  padding-bottom: 8rem;
-  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  @media ${({ theme }) => theme.device.mobile} {
+    padding: 0 2.4rem;
+    padding-bottom: 2.4rem;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    padding: 0 8rem;
+    padding-bottom: 8rem;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    width: 106.2rem;
+    padding: 0 18.9rem;
+    padding-bottom: 8rem;
+    margin: 0 auto;
+  }
 `;
 
 const ArrowNavigationWrapper = styled.div`
@@ -122,21 +154,37 @@ const ArrowButton = styled.button`
   }
 `;
 
-const InterviewListWrapper = styled.div`
-  overflow-x: hidden;
-`;
-
 const InterviewList = styled.ul<{ currentIndex: number }>`
-  width: 106.2rem;
-  padding: 0 18.9rem;
-  margin: 0 auto;
   position: relative;
   display: flex;
   transition: left 0.5s;
-  left: -${({ currentIndex }) => currentIndex * 54.3}rem;
-  & > *:not(:last-child) {
-    margin-right: 2.4rem;
+  @media ${({ theme }) => theme.device.mobile} {
+    width: 300vw;
+    left: -${({ currentIndex }) => currentIndex * 100}vw;
   }
+  @media ${({ theme }) => theme.device.tablet} {
+    padding: 0 8rem;
+    left: -${({ currentIndex }) => currentIndex * 54.3}rem;
+    & > *:not(:last-child) {
+      margin-right: 2.4rem;
+    }
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    width: 106.2rem;
+    padding: 0 18.9rem;
+    margin: 0 auto;
+    left: -${({ currentIndex }) => currentIndex * 54.3}rem;
+    & > *:not(:last-child) {
+      margin-right: 2.4rem;
+    }
+  }
+`;
+
+const RectangleNavigationWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  height: 0.4rem;
+  margin-top: 3.2rem;
 `;
 
 export default Interview;

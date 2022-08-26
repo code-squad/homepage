@@ -85,12 +85,26 @@ const color = {
   },
 };
 
+const breakPoint = {
+  mobile: 360,
+  tablet: 768,
+  desktop: 1440,
+};
+
+const device = {
+  mobile: `screen and (max-width: calc(${breakPoint.tablet}px - 1px))`,
+  tablet: `(min-width: ${breakPoint.tablet}px) and (max-width: calc(${breakPoint.desktop}px - 1px))`,
+  desktop: `(min-width: ${breakPoint.desktop}px)`,
+};
+
 const theme = {
   fontSize,
   fontWeight,
   lineHeight,
   letterSpacing,
   color,
+  breakPoint,
+  device,
 };
 
 export default theme;

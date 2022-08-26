@@ -4,7 +4,7 @@ import { graphql, Link, useStaticQuery } from "gatsby";
 // Type
 import { MasterType } from "@type/Master";
 // Typography
-import { MBody, SBody, XLBody, XSBody, HLBold, MBold, SBold } from "typography";
+import { MBody, SBody, XSBody, HLBold, SHLBold, MBold, SBold } from "typography";
 // Components
 import { TitleSet, TabNavigationBar } from "components";
 // Assets
@@ -13,9 +13,11 @@ import picture from "assets/img/picture";
 import { SUBTITLE, TITLE, DESCRIPTION } from "assets/static/phrases";
 // Utils
 import { strainMdxInfo } from "lib/utils";
+import { useResponsive } from "lib/hooks";
 
 const Master: React.FC = () => {
-  const theme = useTheme();
+  const { color } = useTheme();
+  const { isMobile } = useResponsive();
 
   const { masters }: { masters: MasterType[] } = strainMdxInfo(useStaticQuery(MasterQuery));
 
@@ -29,50 +31,74 @@ const Master: React.FC = () => {
 
   return (
     <MasterWrapper>
-      <div style={{ width: "106.2rem", padding: "0 18.9rem", margin: "0 auto" }}>
+      <MasterCourseIntroduceWrapper>
         <TitleSet subtitle={SUBTITLE.MASTER} title={TITLE.MASTER} />
-        <MBody
-          style={{
-            color: theme.color.greyScale.grey2,
-            paddingTop: "2.4rem",
-            paddingBottom: "5.6rem",
-          }}
-        >
-          {DESCRIPTION.MASTER}
-        </MBody>
+        <CourseIntroduceWrapper>
+          <MBody>{DESCRIPTION.MASTER}</MBody>
+        </CourseIntroduceWrapper>
+      </MasterCourseIntroduceWrapper>
+      <TabNavigationWrapper>
         <TabNavigationBar titles={fields} onIndexChanged={handleTabClick} />
-      </div>
-      <div style={{ backgroundColor: theme.color.surface.offWhite1 }}>
+      </TabNavigationWrapper>
+      <div style={{ backgroundColor: color.surface.offWhite1 }}>
         <MasterInformationWrapper>
           <MasterImg alt="profile" src={picture[masterIntroduce.image]} />
           <IntroduceWrapper>
             <Introduce>
               <NicknameWrapper>
-                <HLBold>{masterIntroduce.name}</HLBold>
-                <XSBody style={{ color: `${theme.color.greyScale.grey2}`, paddingLeft: "0.8rem" }}>
-                  {masterIntroduce.introduce}
-                </XSBody>
+                {isMobile ? (
+                  <SHLBold>{masterIntroduce.name}</SHLBold>
+                ) : (
+                  <HLBold>{masterIntroduce.name}</HLBold>
+                )}
+                <MasterIntroduceWrapper>
+                  {isMobile ? (
+                    <XSBody>{masterIntroduce.introduce}</XSBody>
+                  ) : (
+                    <SBody>{masterIntroduce.introduce}</SBody>
+                  )}
+                </MasterIntroduceWrapper>
               </NicknameWrapper>
-              <MBold>{masterIntroduce.nutshell}</MBold>
+              <MasterNutshellWrapper>
+                {isMobile ? (
+                  <SHLBold>{masterIntroduce.nutshell}</SHLBold>
+                ) : (
+                  <MBold>{masterIntroduce.nutshell}</MBold>
+                )}
+              </MasterNutshellWrapper>
               <CareerWrapper>
                 {masterIntroduce.careers?.map((career) => (
                   <li key={career}>
-                    <SBody
-                      style={{
-                        display: "inline",
-                        verticalAlign: "middle",
-                        color: theme.color.greyScale.grey1,
-                      }}
-                    >
-                      {career}
-                    </SBody>
+                    {isMobile ? (
+                      <XSBody
+                        style={{
+                          display: "inline",
+                          verticalAlign: "middle",
+                          color: color.greyScale.grey1,
+                        }}
+                      >
+                        {career}
+                      </XSBody>
+                    ) : (
+                      <SBody
+                        style={{
+                          display: "inline",
+                          verticalAlign: "middle",
+                          color: color.greyScale.grey1,
+                        }}
+                      >
+                        {career}
+                      </SBody>
+                    )}
                   </li>
                 ))}
               </CareerWrapper>
             </Introduce>
             {masterIntroduce.schedules && (
               <ScheduleWrapper>
-                <MBold style={{ padding: "3.2rem 0 2.4rem 0" }}>{TITLE.SCHEDULE}</MBold>
+                <ScheduleTitleWrapper>
+                  <MBold>{TITLE.SCHEDULE}</MBold>
+                </ScheduleTitleWrapper>
                 <ScheduleList>
                   {masterIntroduce.schedules.map(({ image, title, subtitle, path }) => (
                     <li key={title}>
@@ -101,71 +127,247 @@ const Master: React.FC = () => {
 
 const MasterWrapper = styled.div`
   width: 100%;
-  padding-bottom: 18rem;
   display: flex;
   flex-direction: column;
   align-items: space-between;
   color: ${({ theme: { color } }) => color.blackAndWhite.black};
+  @media ${({ theme }) => theme.device.mobile} {
+    padding-bottom: 12rem;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    padding-bottom: 18rem;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    padding-bottom: 18rem;
+  }
+`;
+
+const MasterCourseIntroduceWrapper = styled.div`
+  @media ${({ theme }) => theme.device.mobile} {
+    padding: 0 2.4rem;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    padding: 0 8rem;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    width: 106.2rem;
+    padding: 0 18.9rem;
+    margin: 0 auto;
+  }
+`;
+
+const CourseIntroduceWrapper = styled.div`
+  color: ${({ theme: { color } }) => color.greyScale.grey2};
+  padding-top: 2.4rem;
+  @media ${({ theme }) => theme.device.mobile} {
+    padding-bottom: 4rem;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    padding-bottom: 3rem;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    padding-bottom: 5.6rem;
+  }
+`;
+
+const TabNavigationWrapper = styled.div`
+  @media ${({ theme }) => theme.device.mobile} {
+    padding-left: 2.4rem;
+    overflow-x: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    padding-left: 8.2rem;
+    overflow-x: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    width: 106.2rem;
+    padding: 0 18.9rem;
+    margin: 0 auto;
+  }
 `;
 
 const MasterInformationWrapper = styled.div`
-  width: 106.2rem;
   display: flex;
-  padding: 5.6rem 18.9rem;
-  margin: 0 auto;
-  & > *:not(:last-child) {
-    margin-right: 7.8rem;
+  @media ${({ theme }) => theme.device.mobile} {
+    flex-direction: column;
+    padding: 3.2rem 2.4rem;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    padding: 3.2rem 8rem;
+    margin: 0 auto;
+    & > *:not(:last-child) {
+      margin-right: 2.4rem;
+    }
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    width: 106.2rem;
+    padding: 5.6rem 18.9rem;
+    margin: 0 auto;
+    & > *:not(:last-child) {
+      margin-right: 7.8rem;
+    }
+  }
+`;
+
+const MasterImg = styled.img`
+  @media ${({ theme }) => theme.device.mobile} {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 99.9rem;
+    position: absolute;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    width: 21.3rem;
+    height: 21.3rem;
+    border-radius: 1.6rem;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    width: 41rem;
+    height: 41rem;
+    border-radius: 1.6rem;
   }
 `;
 
 const IntroduceWrapper = styled.div`
-  height: 43.6rem;
-  min-height: 0;
-  display: flex;
-  flex-direction: column;
-  & > *:not(:last-child) {
-    margin-bottom: 3.2rem;
+  @media ${({ theme }) => theme.device.tablet} {
+    display: flex;
+    flex-direction: column;
+    & > *:not(:last-child) {
+      margin-bottom: 3.2rem;
+    }
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    height: 43.6rem;
+    display: flex;
+    flex-direction: column;
+    & > *:not(:last-child) {
+      margin-bottom: 3.2rem;
+    }
   }
 `;
 
 const Introduce = styled.div`
   display: flex;
   flex-direction: column;
-  & > *:not(:last-child) {
-    margin-bottom: 1.6rem;
+  @media ${({ theme }) => theme.device.tablet} {
+    & > *:not(:last-child) {
+      margin-bottom: 1.6rem;
+    }
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    & > *:not(:last-child) {
+      margin-bottom: 1.6rem;
+    }
   }
 `;
 
 const NicknameWrapper = styled.div`
   display: flex;
-  align-items: flex-end;
+  @media ${({ theme }) => theme.device.mobile} {
+    height: 8rem;
+    margin-left: 9.8rem;
+    flex-direction: column;
+    justify-content: center;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    height: auto;
+    align-items: flex-end;
+    justify-content: flex-start;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    height: auto;
+    align-items: flex-end;
+    justify-content: flex-start;
+  }
 `;
 
-const MasterImg = styled.img`
-  width: 41rem;
-  height: 41rem;
-  border-radius: 1.6rem;
+const MasterIntroduceWrapper = styled.div`
+  color: ${({ theme: { color } }) => color.greyScale.grey2};
+  @media ${({ theme }) => theme.device.tablet} {
+    padding-left: 0.8rem;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    padding-left: 0.8rem;
+  }
+`;
+
+const MasterNutshellWrapper = styled.div`
+  @media ${({ theme }) => theme.device.mobile} {
+    margin-top: 2.4rem;
+  }
 `;
 
 const CareerWrapper = styled.ul`
   display: flex;
   flex-direction: column;
   list-style-type: disc;
-  list-style-position: inside;
-  & > *:not(:last-child) {
-    margin-bottom: 0.8rem;
+  @media ${({ theme }) => theme.device.mobile} {
+    padding-left: 1.6rem;
+    list-style-position: outside;
+    margin-top: 1.6rem;
+    & > *:not(:last-child) {
+      margin-bottom: 0.8rem;
+    }
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    margin-left: 0.8rem;
+    list-style-position: inside;
+    & > *:not(:last-child) {
+      margin-bottom: 0.8rem;
+    }
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    margin-left: 0.8rem;
+    list-style-position: inside;
+    & > *:not(:last-child) {
+      margin-bottom: 0.8rem;
+    }
   }
 `;
 
 const ScheduleWrapper = styled.div`
-  width: 52rem;
   border-top: 0.1rem solid ${({ theme: { color } }) => color.greyScale.grey4};
+  @media ${({ theme }) => theme.device.mobile} {
+    margin-top: 2.4rem;
+  }
+`;
+
+const ScheduleTitleWrapper = styled.div`
+  @media ${({ theme }) => theme.device.mobile} {
+    padding: 2.4rem 0 1.6rem 0;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    padding: 3.2rem 0 2.4rem 0;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    padding: 3.2rem 0 2.4rem 0;
+  }
 `;
 
 const ScheduleList = styled.ul`
   display: flex;
-  & > *:not(:last-child) {
-    margin-right: 2.4rem;
+  @media ${({ theme }) => theme.device.mobile} {
+    flex-direction: column;
+    & > *:not(:last-child) {
+      margin-bottom: 1.8rem;
+    }
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    flex-direction: column;
+    & > *:not(:last-child) {
+      margin-bottom: 1.8rem;
+    }
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    & > *:not(:last-child) {
+      margin-right: 2.4rem;
+    }
   }
 `;
 

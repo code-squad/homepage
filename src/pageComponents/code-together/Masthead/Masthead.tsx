@@ -22,7 +22,7 @@ const Masthead: React.FC = () => {
           <MBody>{description}</MBody>
         </TitleWrapper>
         <MoveLinkWrapper>
-          <MButton to="#course" children={TITLE.VIEW_ENTIRE_COURSE} />
+          <MButton to="#course" children={TITLE.VIEW_ENTIRE_COURSE} type="right" />
         </MoveLinkWrapper>
       </ContentWrapper>
     </MastheadWrapper>

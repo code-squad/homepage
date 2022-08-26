@@ -5,9 +5,11 @@ import { Link } from "gatsby";
 import icons from "assets/img/icons";
 // Typography
 import { SHLBold, MBold, XSBold } from "typography/";
+// Libs
+import { useResponsive } from "lib/hooks";
 
 interface ILinkButton {
-  description: string;
+  description?: string;
   title: string;
   to: string;
   caption?: string;
@@ -17,34 +19,64 @@ interface ILinkButton {
 }
 
 const LinkButton: React.FC<ILinkButton> = ({ description, title, to, icon, caption, external }) => {
+  const { isMobile } = useResponsive();
+
   return (
-    <LinkButtonWrapper
-      {...{ to, icon, caption }}
-      as={caption || external ? "a" : Link}
-      href={caption || external ? to : undefined}
-      target={caption || external ? "_blank" : undefined}
-      rel={caption || external ? "noopener noreferrer nofollow" : undefined}
-    >
-      <TextWrapper {...{ caption }}>
-        {description ? (
-          <Description>
-            <MBold>{description}</MBold>
-          </Description>
-        ) : null}
-        <Title>
-          <SHLBold>{title}</SHLBold>
-          <img aria-label="arrow-right" src={icons.chevronRight} width="24px" height="24px" />
-        </Title>
-        {caption ? (
-          <Caption>
-            <XSBold>{caption}</XSBold>
-          </Caption>
-        ) : null}
-      </TextWrapper>
-      {icon ? (
-        <img alt="link-icon" src={icon} style={{ width: "5.4rem", height: "5.4rem" }} />
-      ) : null}
-    </LinkButtonWrapper>
+    <>
+      {isMobile && (
+        <LinkButtonWrapper
+          {...{ to, icon, caption }}
+          as={caption || external ? "a" : Link}
+          href={caption || external ? to : undefined}
+          target={caption || external ? "_blank" : undefined}
+          rel={caption || external ? "noopener noreferrer nofollow" : undefined}
+        >
+          <div>
+            {description ? (
+              <Description>
+                <XSBold>{description}</XSBold>
+              </Description>
+            ) : null}
+            <Title>
+              <MBold>{title}</MBold>
+              <img aria-label="arrow-right" src={icons.chevronRight} width="24px" height="24px" />
+            </Title>
+            {caption ? (
+              <Caption>
+                <XSBold>{caption}</XSBold>
+              </Caption>
+            ) : null}
+          </div>
+        </LinkButtonWrapper>
+      )}
+      {!isMobile && (
+        <LinkButtonWrapper
+          {...{ to, icon, caption }}
+          as={caption || external ? "a" : Link}
+          href={caption || external ? to : undefined}
+          target={caption || external ? "_blank" : undefined}
+          rel={caption || external ? "noopener noreferrer nofollow" : undefined}
+        >
+          <div>
+            {description ? (
+              <Description>
+                <MBold>{description}</MBold>
+              </Description>
+            ) : null}
+            <Title>
+              <SHLBold>{title}</SHLBold>
+              <img aria-label="arrow-right" src={icons.chevronRight} width="24px" height="24px" />
+            </Title>
+            {caption ? (
+              <Caption>
+                <XSBold>{caption}</XSBold>
+              </Caption>
+            ) : null}
+          </div>
+          {icon ? <img alt="link-icon" src={icon} width="54px" height="54px" /> : null}
+        </LinkButtonWrapper>
+      )}
+    </>
   );
 };
 
@@ -52,26 +84,34 @@ const LinkButtonWrapper = styled(Link)<{ icon?: string; caption?: string }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: ${({ icon }) => (icon ? "43.5rem" : "98.2rem")};
   border-radius: 0.8rem;
   border: 0.2rem solid ${({ theme: { color } }) => color.greyScale.grey3};
   background-color: ${({ theme: { color } }) => color.surface.offWhite1};
-  padding: ${({ caption }) => (caption ? "3.9rem 4rem" : "3rem 4rem")};
   text-decoration: unset;
   &:hover {
     cursor: pointer;
     border: 0.2rem solid ${({ theme: { color } }) => color.blackAndWhite.black};
     background-color: ${({ theme: { color } }) => color.primary.green4};
   }
-`;
-
-const TextWrapper = styled.div<{ caption?: string }>`
-  max-width: 50rem;
-  height: ${({ caption }) => (caption ? "5.6rem" : "5.4rem")};
+  @media ${({ theme }) => theme.device.mobile} {
+    flex: 1;
+    padding: 1.6rem;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    width: ${({ icon }) => (icon ? "43.5rem" : "98.2rem")};
+    padding: ${({ caption }) => (caption ? "3.9rem 4rem" : "3rem 4rem")};
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    width: ${({ icon }) => (icon ? "43.5rem" : "98.2rem")};
+    padding: ${({ caption }) => (caption ? "3.9rem 4rem" : "3rem 4rem")};
+  }
 `;
 
 const Description = styled.div`
   color: ${({ theme: { color } }) => color.greyScale.grey2};
+  @media ${({ theme }) => theme.device.mobile} {
+    margin-bottom: 0.8rem;
+  }
 `;
 const Title = styled.div`
   display: flex;

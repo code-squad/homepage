@@ -10,7 +10,7 @@ import { INTERNAL } from "assets/static/urls";
 const CourseList: React.FC = () => {
   return (
     <CourseWrapper>
-      <TitleSet subtitle={TITLE.VIEW_COURSES}></TitleSet>
+      <TitleSet title={TITLE.VIEW_COURSES}></TitleSet>
       <CourseListWrapper>
         <LinkButton
           to={INTERNAL.MASTERS}
@@ -30,23 +30,54 @@ const CourseList: React.FC = () => {
 };
 
 const CourseWrapper = styled.ul`
-  width: 106.2rem;
-  padding: 0 18.9rem;
-  margin 0 auto;
-  margin-top: 8rem;
-  margin-bottom: 18rem;
   display: flex;
   flex-direction: column;
-  & > *:not(:last-child) {
-    margin-bottom: 3.2rem;
+  @media ${({ theme }) => theme.device.mobile} {
+    padding: 0 2.4rem;
+    margin-top: 8rem;
+    margin-bottom: 12rem;
+    & > *:not(:last-child) {
+      margin-bottom: 2.4rem;
+    }
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    padding: 0 8rem;
+    margin: 0 auto;
+    margin-top: 8rem;
+    margin-bottom: 18rem;
+    & > *:not(:last-child) {
+      margin-bottom: 3.2rem;
+    }
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    width: 106.2rem;
+    padding: 0 18.9rem;
+    margin: 0 auto;
+    margin-top: 8rem;
+    margin-bottom: 18rem;
+    & > *:not(:last-child) {
+      margin-bottom: 3.2rem;
+    }
   }
 `;
 
 const CourseListWrapper = styled.ul`
   display: flex;
   justify-content: center;
-  & > *:not(:last-child) {
-    margin-right: 2.4rem;
+  @media ${({ theme }) => theme.device.mobile} {
+    & > *:not(:last-child) {
+      margin-right: 1.6rem;
+    }
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    & > *:not(:last-child) {
+      margin-right: 2.4rem;
+    }
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    & > *:not(:last-child) {
+      margin-right: 2.4rem;
+    }
   }
 `;
 

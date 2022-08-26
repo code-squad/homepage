@@ -43,11 +43,24 @@ const InterviewBox: React.FC<IInterviewBox> = ({
 };
 
 const InterviewBoxWrapper = styled.div`
-  padding: 4.8rem 4.8rem 7rem 4.8rem;
   background-color: ${({ theme: { color } }) => color.surface.offWhite1};
-  min-width: 42.3rem;
-  width: 42.3rem;
-  border-radius: 1.6rem;
+  @media ${({ theme }) => theme.device.mobile} {
+    min-width: 26.4rem;
+    padding: 3.2rem 4.8rem 3.2rem 4.8rem;
+    box-sizing: border-box;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    padding: 4.8rem 4.8rem 7rem 4.8rem;
+    min-width: 42.3rem;
+    width: 42.3rem;
+    border-radius: 1.6rem;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    padding: 4.8rem 4.8rem 7rem 4.8rem;
+    min-width: 42.3rem;
+    width: 42.3rem;
+    border-radius: 1.6rem;
+  }
 `;
 
 const Nutshell = styled.div`
@@ -65,6 +78,15 @@ const Nutshell = styled.div`
     background-repeat: no-repeat;
     left: -3.6rem;
     top: 0;
+  }
+  @media ${({ theme }) => theme.device.mobile} {
+    min-width: 23rem;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    min-width: 38.9rem;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    min-width: 38.9rem;
   }
 `;
 

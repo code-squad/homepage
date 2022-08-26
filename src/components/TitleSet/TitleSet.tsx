@@ -1,21 +1,36 @@
 import React from "react";
 import styled from "styled-components";
 // Typography
-import { HLBold, SDisplay } from "typography";
+import { HLBold, SHLBold, SDisplay } from "typography";
+// Libs
+import { useResponsive } from "lib/hooks";
 
 interface ITitleSet {
-  title?: string;
+  title: string;
   subtitle?: string;
   bigSubtitle?: boolean;
 }
 
 const TitleSet: React.FC<ITitleSet> = ({ title, subtitle, bigSubtitle }) => {
+  const { isMobile } = useResponsive();
+
   return (
     <TitleWrapper>
-      {bigSubtitle ? <SDisplay>{subtitle}</SDisplay> : <HLBold>{subtitle}</HLBold>}
-      <HeadTitle>
-        <SDisplay>{title}</SDisplay>
-      </HeadTitle>
+      {isMobile && (
+        <>
+          {bigSubtitle ? <HLBold>{subtitle}</HLBold> : <SHLBold>{subtitle}</SHLBold>}
+          <HeadTitle>{subtitle ? <HLBold>{title}</HLBold> : <SHLBold>{title}</SHLBold>}</HeadTitle>
+        </>
+      )}
+      {!isMobile && (
+        <>
+          {subtitle &&
+            (bigSubtitle ? <SDisplay>{subtitle}</SDisplay> : <HLBold>{subtitle}</HLBold>)}
+          <HeadTitle subtitle={Boolean(subtitle)}>
+            {subtitle ? <SDisplay>{title}</SDisplay> : <HLBold>{title}</HLBold>}
+          </HeadTitle>
+        </>
+      )}
     </TitleWrapper>
   );
 };
@@ -26,8 +41,10 @@ const TitleWrapper = styled.div`
   flex-direction: column;
   color: ${({ theme: { color } }) => color.blackAndWhite.black};
 `;
-const HeadTitle = styled.div`
-  margin-top: 0.4rem;
+const HeadTitle = styled.div<{ subtitle?: boolean }>`
+  @media ${({ theme }) => theme.device.desktop} {
+    margin-top: ${({ subtitle }) => (subtitle ? "0.4rem" : "0rem")};
+  }
 `;
 
 export default TitleSet;
