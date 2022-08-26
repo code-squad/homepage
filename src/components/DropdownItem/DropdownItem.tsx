@@ -29,7 +29,7 @@ const DropdownItem: React.FC<IDropdownItem> = ({
   short,
   body,
 }) => {
-  const { isMobile } = useResponsive();
+  const { isDesktop } = useResponsive();
 
   const [open, setOpen] = React.useState(false);
   const isLinkBoard = Boolean(link);
@@ -45,26 +45,39 @@ const DropdownItem: React.FC<IDropdownItem> = ({
   return (
     <DropdownWrapper aria-label="faq" {...{ short, open }}>
       <BoardWrapper {...{ open }} onClick={handleCardOpen}>
-        <Category {...{ isLinkBoard }}>
-          {isMobile ? <XSBody>{category}</XSBody> : <MBold>{category}</MBold>}
-        </Category>
-        <Title {...{ short, open }}>
-          {isMobile ? <MBody>{title}</MBody> : <LBody>{title}</LBody>}
-        </Title>
-        <ArrowWrapper {...{ open }}>
-          {isLinkBoard ? (
-            <img aria-label="arrow-right" src={icons.chevronRight} width="24px" height="24px" />
-          ) : (
-            <img
-              aria-label={open ? "arrow-up" : "arrow-down"}
-              src={icons.chevronDown}
-              width="24px"
-              height="24px"
-            />
-          )}
-        </ArrowWrapper>
+        {!isDesktop && (
+          <>
+            <Category {...{ isLinkBoard }}>
+              <XSBody>{category}</XSBody>
+            </Category>
+            <Title {...{ short, open }}>
+              <MBody>{title}</MBody>
+            </Title>
+          </>
+        )}
+        {isDesktop && (
+          <>
+            <Category {...{ isLinkBoard }}>
+              <MBold>{category}</MBold>
+            </Category>
+            <Title {...{ short, open }}>
+              <LBody>{title}</LBody>
+            </Title>
+            <ArrowWrapper {...{ open }}>
+              {isLinkBoard ? (
+                <img aria-label="arrow-right" src={icons.chevronRight} width="24px" height="24px" />
+              ) : (
+                <img
+                  aria-label={open ? "arrow-up" : "arrow-down"}
+                  src={icons.chevronDown}
+                  width="24px"
+                  height="24px"
+                />
+              )}
+            </ArrowWrapper>
+          </>
+        )}
       </BoardWrapper>
-
       {isLinkBoard ? null : (
         <ContentWrapper {...{ open }}>
           <Content>
@@ -95,6 +108,13 @@ const DropdownWrapper = styled.div<{ short?: boolean }>`
       font-weight: ${({ theme: { fontWeight } }) => fontWeight.bold};
     }
   }
+  @media ${({ theme }) => theme.device.tablet} {
+    min-width: 31.2rem;
+    margin-top: 1.6rem;
+    &:active ${MBody} {
+      font-weight: ${({ theme: { fontWeight } }) => fontWeight.bold};
+    }
+  }
   @media ${({ theme }) => theme.device.desktop} {
     width: ${({ short }) => (short ? "96.6rem" : "106.2rem")};
     &:hover ${LBody} {
@@ -115,6 +135,13 @@ const BoardWrapper = styled.div<{ open?: boolean }>`
     }
     padding-bottom: 1.2rem;
   }
+  @media ${({ theme }) => theme.device.tablet} {
+    flex-direction: column;
+    & > *:not(:last-child) {
+      margin-bottom: 0.4rem;
+    }
+    padding-bottom: 1.2rem;
+  }
   @media ${({ theme }) => theme.device.desktop} {
     padding-top: 4rem;
     justify-content: space-between;
@@ -125,8 +152,6 @@ const BoardWrapper = styled.div<{ open?: boolean }>`
 const Category = styled.div<{ isLinkBoard?: boolean }>`
   color: ${({ isLinkBoard, theme: { color } }) =>
     isLinkBoard ? color.primary.green2 : color.greyScale.grey2};
-  @media ${({ theme }) => theme.device.mobile} {
-  }
   @media ${({ theme }) => theme.device.desktop} {
     width: 14.5rem;
     margin-right: 2.4rem;
@@ -137,8 +162,6 @@ const Title = styled.div<{ short?: boolean; open?: boolean }>`
   & > p {
     font-weight: ${({ open, theme: { fontWeight } }) =>
       open ? fontWeight.bold : fontWeight.regular};
-  }
-  @media ${({ theme }) => theme.device.mobile} {
   }
   @media ${({ theme }) => theme.device.desktop} {
     width: ${({ short }) => (short ? "74.9rem" : "84.5rem")};
@@ -151,9 +174,6 @@ const ArrowWrapper = styled.div<{ open?: boolean }>`
   height: 2.4rem;
   transform: ${({ open }) => (open ? "rotate(180deg)" : "")};
   transition: transform 0.5s;
-  @media ${({ theme }) => theme.device.mobile} {
-    display: none;
-  }
 `;
 const ContentWrapper = styled.div<{ open?: boolean }>`
   overflow: hidden;

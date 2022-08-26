@@ -49,20 +49,22 @@ const Interview: React.FC<IInterview> = ({ subtitle, title, interviews, style })
     <InterviewWrapper {...{ style }}>
       <TitleWrapper>
         <TitleSet {...{ title, subtitle }} />
-        <ArrowNavigationWrapper>
-          <ArrowButton
-            disabled={currentIndex === 0 || interviews.length <= 2}
-            onClick={handleArrowLeftClick}
-          >
-            <img src={icons.chevronLeft} alt="arrow-left" />
-          </ArrowButton>
-          <ArrowButton
-            disabled={currentIndex + 2 === interviews.length || interviews.length <= 2}
-            onClick={handleArrowRightClick}
-          >
-            <img src={icons.chevronRight} alt="arrow-right" />
-          </ArrowButton>
-        </ArrowNavigationWrapper>
+        {!isMobile && (
+          <ArrowNavigationWrapper>
+            <ArrowButton
+              disabled={currentIndex === 0 || interviews.length <= 2}
+              onClick={handleArrowLeftClick}
+            >
+              <img src={icons.chevronLeft} alt="arrow-left" />
+            </ArrowButton>
+            <ArrowButton
+              disabled={currentIndex + 2 === interviews.length || interviews.length <= 2}
+              onClick={handleArrowRightClick}
+            >
+              <img src={icons.chevronRight} alt="arrow-right" />
+            </ArrowButton>
+          </ArrowNavigationWrapper>
+        )}
       </TitleWrapper>
       <InterviewList {...{ currentIndex }}>
         {interviews.map((interview, index) => (
@@ -96,6 +98,10 @@ const InterviewWrapper = styled.div`
     margin-bottom: 12rem;
     align-items: space-between;
   }
+  @media ${({ theme }) => theme.device.tablet} {
+    margin-bottom: 18rem;
+    align-items: space-between;
+  }
   @media ${({ theme }) => theme.device.desktop} {
     margin-bottom: 18rem;
     align-items: space-between;
@@ -109,6 +115,10 @@ const TitleWrapper = styled.div`
   @media ${({ theme }) => theme.device.mobile} {
     padding: 0 2.4rem;
     padding-bottom: 2.4rem;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    padding: 0 8rem;
+    padding-bottom: 8rem;
   }
   @media ${({ theme }) => theme.device.desktop} {
     width: 106.2rem;
@@ -124,9 +134,6 @@ const ArrowNavigationWrapper = styled.div`
   display: flex;
   & > *:not(:last-child) {
     margin-right: 1.6rem;
-  }
-  @media ${({ theme }) => theme.device.mobile} {
-    display: none;
   }
 `;
 
@@ -154,6 +161,13 @@ const InterviewList = styled.ul<{ currentIndex: number }>`
   @media ${({ theme }) => theme.device.mobile} {
     width: 300vw;
     left: -${({ currentIndex }) => currentIndex * 100}vw;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    padding: 0 8rem;
+    left: -${({ currentIndex }) => currentIndex * 54.3}rem;
+    & > *:not(:last-child) {
+      margin-right: 2.4rem;
+    }
   }
   @media ${({ theme }) => theme.device.desktop} {
     width: 106.2rem;

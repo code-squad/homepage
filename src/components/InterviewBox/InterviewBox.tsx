@@ -49,6 +49,12 @@ const InterviewBoxWrapper = styled.div`
     padding: 3.2rem 4.8rem 3.2rem 4.8rem;
     box-sizing: border-box;
   }
+  @media ${({ theme }) => theme.device.tablet} {
+    padding: 4.8rem 4.8rem 7rem 4.8rem;
+    min-width: 42.3rem;
+    width: 42.3rem;
+    border-radius: 1.6rem;
+  }
   @media ${({ theme }) => theme.device.desktop} {
     padding: 4.8rem 4.8rem 7rem 4.8rem;
     min-width: 42.3rem;
@@ -75,6 +81,9 @@ const Nutshell = styled.div`
   }
   @media ${({ theme }) => theme.device.mobile} {
     min-width: 23rem;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    min-width: 38.9rem;
   }
   @media ${({ theme }) => theme.device.desktop} {
     min-width: 38.9rem;

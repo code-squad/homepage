@@ -7,7 +7,6 @@ import icons from "assets/img/icons";
 import { SHLBold, MBold, XSBold } from "typography/";
 // Libs
 import { useResponsive } from "lib/hooks";
-import theme from "styles/theme";
 
 interface ILinkButton {
   description?: string;
@@ -97,6 +96,10 @@ const LinkButtonWrapper = styled(Link)<{ icon?: string; caption?: string }>`
   @media ${({ theme }) => theme.device.mobile} {
     flex: 1;
     padding: 1.6rem;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    width: ${({ icon }) => (icon ? "43.5rem" : "98.2rem")};
+    padding: ${({ caption }) => (caption ? "3.9rem 4rem" : "3rem 4rem")};
   }
   @media ${({ theme }) => theme.device.desktop} {
     width: ${({ icon }) => (icon ? "43.5rem" : "98.2rem")};

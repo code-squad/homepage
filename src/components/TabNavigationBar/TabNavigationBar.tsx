@@ -1,17 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 // Typography
-import { SHLBold, MBold } from "typography/";
-// Lib
-import { useResponsive } from "lib/hooks";
+import { MBold } from "typography/";
 
 interface ITabNavigationBarProps {
   onIndexChanged: (index: number) => void;
   titles: string[];
 }
 const TabNavigationBar: React.FC<ITabNavigationBarProps> = ({ onIndexChanged, titles }) => {
-  const { isMobile } = useResponsive();
-
   const [currentIndex, setCurrentIndex] = React.useState(0);
 
   const handleTabNavigationButtonClick = (index: number) => {
@@ -28,7 +24,7 @@ const TabNavigationBar: React.FC<ITabNavigationBarProps> = ({ onIndexChanged, ti
               onClick={() => handleTabNavigationButtonClick(index)}
               selected={index === currentIndex}
             >
-              {isMobile ? <MBold>{title}</MBold> : <SHLBold>{title}</SHLBold>}
+              <MBold>{title}</MBold>
             </TabNavButton>
           </li>
         ))}
@@ -71,6 +67,10 @@ const TabNavButton = styled.button<{ selected?: boolean }>`
     width: fit-content;
     height: 3.2rem;
     margin-right: 2.4rem;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    width: 19.3rem;
+    height: 4rem;
   }
   @media ${({ theme }) => theme.device.desktop} {
     width: 19.3rem;
