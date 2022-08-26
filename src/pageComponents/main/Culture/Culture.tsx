@@ -67,13 +67,19 @@ const CultureWrapper = styled.div`
       margin-bottom: 2.4rem;
     }
   }
+  @media ${({ theme }) => theme.device.tablet} {
+    padding: 0 8rem;
+    padding-bottom: 8rem;
+    margin: 0 auto;
+    & > *:not(:last-child) {
+      margin-bottom: 3.2rem;
+    }
+  }
   @media ${({ theme }) => theme.device.desktop} {
     width: 106.2rem;
     padding: 0 18.9rem;
     padding-bottom: 8rem;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
     align-items: space-between;
     & > *:not(:last-child) {
       margin-bottom: 5.6rem;
@@ -90,11 +96,16 @@ const TitleWrapper = styled.div`
 const ContentWrapper = styled.ul<{ currentIndex: number }>`
   position: relative;
   display: flex;
+  white-space: pre-line;
   @media ${({ theme }) => theme.device.mobile} {
     width: 300vw;
   }
+  @media ${({ theme }) => theme.device.tablet} {
+    & > *:not(:last-child) {
+      margin-right: 4rem;
+    }
+  }
   @media ${({ theme }) => theme.device.desktop} {
-    white-space: pre-line;
     & > *:not(:last-child) {
       margin-right: 7.8rem;
     }
@@ -112,6 +123,9 @@ const CultureContent = styled.li`
   @media ${({ theme }) => theme.device.mobile} {
     width: 100%;
   }
+  @media ${({ theme }) => theme.device.tablet} {
+    width: 100%;
+  }
   @media ${({ theme }) => theme.device.desktop} {
     width: 30.2rem;
   }
@@ -122,6 +136,11 @@ const CultureImg = styled.img`
     width: 100%;
     height: 21rem;
     background-color: ${({ theme: { color } }) => color.surface.offWhite1};
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    width: 8rem;
+    height: 8rem;
+    background-color: transparent;
   }
   @media ${({ theme }) => theme.device.desktop} {
     width: 8rem;
@@ -146,7 +165,14 @@ const DescriptionList = styled.ul`
   @media ${({ theme }) => theme.device.mobile} {
     padding: 0 2.4rem;
   }
+  @media ${({ theme }) => theme.device.tablet} {
+    min-width: 17.6rem;
+    & > *:not(:last-child) {
+      margin-bottom: 0.8rem;
+    }
+  }
   @media ${({ theme }) => theme.device.desktop} {
+    width: 30.2rem;
     & > *:not(:last-child) {
       margin-bottom: 0.8rem;
     }

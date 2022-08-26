@@ -29,7 +29,9 @@ const Feature: React.FC = () => {
     <FeatureWrapper>
       <TitleSet title={TITLE.FEATURE} subtitle={SUBTITLE.FEATURE} bigSubtitle />
       <ContentWrapper>
-        <FeatureImg src={features[image]} alt="feature" />
+        <FeatureImgWrapper>
+          <FeatureImg src={features[image]} alt="feature" />
+        </FeatureImgWrapper>
         <Content>
           <div>
             {isMobile && <SHLBold style={{ color: color.greyScale.grey1 }}>{title}</SHLBold>}
@@ -64,6 +66,13 @@ const FeatureWrapper = styled.div`
       margin-bottom: 2.4rem;
     }
   }
+  @media ${({ theme }) => theme.device.tablet} {
+    padding: 0 8rem;
+    padding-bottom: 18rem;
+    & > *:not(:last-child) {
+      margin-bottom: 3.2rem;
+    }
+  }
   @media ${({ theme }) => theme.device.desktop} {
     width: 106.2rem;
     padding: 0 18.9rem;
@@ -78,11 +87,22 @@ const FeatureWrapper = styled.div`
 const ContentWrapper = styled.div`
   display: flex;
   white-space: pre-line;
-  & > *:not(:last-child) {
-    margin-right: 13.2rem;
-  }
+
   @media ${({ theme }) => theme.device.mobile} {
     flex-direction: column;
+    & > *:not(:last-child) {
+      margin-right: 2.6rem;
+    }
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    & > *:not(:last-child) {
+      margin-right: 2.6rem;
+    }
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    & > *:not(:last-child) {
+      margin-right: 13.2rem;
+    }
   }
 `;
 
@@ -95,19 +115,33 @@ const Content = styled.div`
   @media ${({ theme }) => theme.device.mobile} {
     margin-top: 3.2rem;
   }
+  @media ${({ theme }) => theme.device.tablet} {
+    min-width: 29.2rem;
+    flex: 1;
+  }
   @media ${({ theme }) => theme.device.desktop} {
     width: 41.1rem;
   }
 `;
 
-const FeatureImg = styled.img`
+const FeatureImgWrapper = styled.div`
   @media ${({ theme }) => theme.device.mobile} {
     width: 100%;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    display: flex;
+    align-items: flex-start;
+    min-width: 29rem;
+    flex: 1;
   }
   @media ${({ theme }) => theme.device.desktop} {
     width: 51.9rem;
     height: 44rem;
   }
+`;
+
+const FeatureImg = styled.img`
+  width: 100%;
 `;
 
 const FeatureQuery = graphql`

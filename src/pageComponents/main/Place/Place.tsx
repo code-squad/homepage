@@ -34,14 +34,19 @@ const Place: React.FC = () => {
 
   return (
     <PlaceWrapper>
-      <ArrowNavigationWrapper>
-        <ArrowButton disabled={currentIndex === 0} onClick={handleArrowLeftClick}>
-          <img src={icons.chevronLeft} alt="arrow-left" />
-        </ArrowButton>
-        <ArrowButton disabled={currentIndex === imgList.length - 1} onClick={handleArrowRightClick}>
-          <img src={icons.chevronRight} alt="arrow-right" />
-        </ArrowButton>
-      </ArrowNavigationWrapper>
+      {!isMobile && (
+        <ArrowNavigationWrapper>
+          <ArrowButton disabled={currentIndex === 0} onClick={handleArrowLeftClick}>
+            <img src={icons.chevronLeft} alt="arrow-left" />
+          </ArrowButton>
+          <ArrowButton
+            disabled={currentIndex === imgList.length - 1}
+            onClick={handleArrowRightClick}
+          >
+            <img src={icons.chevronRight} alt="arrow-right" />
+          </ArrowButton>
+        </ArrowNavigationWrapper>
+      )}
       <PlaceIntroduceWrapper>
         <TitleSet subtitle={SUBTITLE.PLACE} title={TITLE.PLACE} />
         {isMobile ? (
@@ -78,6 +83,13 @@ const PlaceWrapper = styled.div`
       margin-bottom: 2.4rem;
     }
   }
+  @media ${({ theme }) => theme.device.tablet} {
+    padding: 0 8rem;
+    padding-bottom: 8rem;
+    & > *:not(:last-child) {
+      margin-bottom: 5.6rem;
+    }
+  }
   @media ${({ theme }) => theme.device.desktop} {
     width: 106.2rem;
     padding: 0 18.9rem;
@@ -90,14 +102,28 @@ const PlaceWrapper = styled.div`
 `;
 
 const ArrowNavigationWrapper = styled.div`
-  width: 7.6rem;
-  height: 3rem;
-  position: absolute;
-  margin-left: 98.6rem;
-  margin-top: 12.2rem;
-  display: flex;
-  & > *:not(:last-child) {
-    margin-right: 1.6rem;
+  @media ${({ theme }) => theme.device.tablet} {
+    width: 7.6rem;
+    height: 3rem;
+    position: absolute;
+
+    top: 6.5rem;
+    right: 7.5rem;
+    display: flex;
+    & > *:not(:last-child) {
+      margin-right: 1.6rem;
+    }
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    width: 7.6rem;
+    height: 3rem;
+    position: absolute;
+    margin-left: 98.6rem;
+    margin-top: 12.2rem;
+    display: flex;
+    & > *:not(:last-child) {
+      margin-right: 1.6rem;
+    }
   }
 `;
 
@@ -130,9 +156,15 @@ const PlaceIntroduceWrapper = styled.div`
 `;
 
 const PlaceListWrapper = styled.div`
-  width: 106.2rem;
-  margin: 0 auto;
-  overflow: hidden;
+  @media ${({ theme }) => theme.device.tablet} {
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    width: 106.2rem;
+    margin: 0 auto;
+    overflow: hidden;
+  }
 `;
 
 const PlaceList = styled.ul<{ currentIndex: number }>`
@@ -144,6 +176,10 @@ const PlaceList = styled.ul<{ currentIndex: number }>`
     width: 700vw;
     left: -${({ currentIndex }) => currentIndex * 100}vw;
   }
+  @media ${({ theme }) => theme.device.tablet} {
+    width: 700%;
+    left: -${({ currentIndex }) => currentIndex * 100}%;
+  }
   @media ${({ theme }) => theme.device.desktop} {
     left: -${({ currentIndex }) => currentIndex * 106.2}rem;
   }
@@ -152,6 +188,9 @@ const PlaceList = styled.ul<{ currentIndex: number }>`
 const PlaceImage = styled.img`
   @media ${({ theme }) => theme.device.mobile} {
     width: 100vw;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    width: 100%;
   }
   @media ${({ theme }) => theme.device.desktop} {
     width: 106.2rem;

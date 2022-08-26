@@ -40,6 +40,15 @@ const CourseWrapper = styled.ul`
       margin-bottom: 2.4rem;
     }
   }
+  @media ${({ theme }) => theme.device.tablet} {
+    padding: 0 8rem;
+    margin: 0 auto;
+    margin-top: 8rem;
+    margin-bottom: 18rem;
+    & > *:not(:last-child) {
+      margin-bottom: 3.2rem;
+    }
+  }
   @media ${({ theme }) => theme.device.desktop} {
     width: 106.2rem;
     padding: 0 18.9rem;
@@ -58,6 +67,11 @@ const CourseListWrapper = styled.ul`
   @media ${({ theme }) => theme.device.mobile} {
     & > *:not(:last-child) {
       margin-right: 1.6rem;
+    }
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    & > *:not(:last-child) {
+      margin-right: 2.4rem;
     }
   }
   @media ${({ theme }) => theme.device.desktop} {

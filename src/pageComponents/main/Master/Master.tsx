@@ -134,6 +134,9 @@ const MasterWrapper = styled.div`
   @media ${({ theme }) => theme.device.mobile} {
     padding-bottom: 12rem;
   }
+  @media ${({ theme }) => theme.device.tablet} {
+    padding-bottom: 18rem;
+  }
   @media ${({ theme }) => theme.device.desktop} {
     padding-bottom: 18rem;
   }
@@ -142,6 +145,9 @@ const MasterWrapper = styled.div`
 const MasterCourseIntroduceWrapper = styled.div`
   @media ${({ theme }) => theme.device.mobile} {
     padding: 0 2.4rem;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    padding: 0 8rem;
   }
   @media ${({ theme }) => theme.device.desktop} {
     width: 106.2rem;
@@ -154,7 +160,10 @@ const CourseIntroduceWrapper = styled.div`
   color: ${({ theme: { color } }) => color.greyScale.grey2};
   padding-top: 2.4rem;
   @media ${({ theme }) => theme.device.mobile} {
-    padding-bottom: 4.2rem;
+    padding-bottom: 4rem;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    padding-bottom: 3rem;
   }
   @media ${({ theme }) => theme.device.desktop} {
     padding-bottom: 5.6rem;
@@ -164,6 +173,13 @@ const CourseIntroduceWrapper = styled.div`
 const TabNavigationWrapper = styled.div`
   @media ${({ theme }) => theme.device.mobile} {
     padding-left: 2.4rem;
+    overflow-x: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    padding-left: 8.2rem;
     overflow-x: auto;
     &::-webkit-scrollbar {
       display: none;
@@ -182,6 +198,13 @@ const MasterInformationWrapper = styled.div`
     flex-direction: column;
     padding: 3.2rem 2.4rem;
   }
+  @media ${({ theme }) => theme.device.tablet} {
+    padding: 3.2rem 8rem;
+    margin: 0 auto;
+    & > *:not(:last-child) {
+      margin-right: 2.4rem;
+    }
+  }
   @media ${({ theme }) => theme.device.desktop} {
     width: 106.2rem;
     padding: 5.6rem 18.9rem;
@@ -199,6 +222,11 @@ const MasterImg = styled.img`
     border-radius: 99.9rem;
     position: absolute;
   }
+  @media ${({ theme }) => theme.device.tablet} {
+    width: 21.3rem;
+    height: 21.3rem;
+    border-radius: 1.6rem;
+  }
   @media ${({ theme }) => theme.device.desktop} {
     width: 41rem;
     height: 41rem;
@@ -207,6 +235,13 @@ const MasterImg = styled.img`
 `;
 
 const IntroduceWrapper = styled.div`
+  @media ${({ theme }) => theme.device.tablet} {
+    display: flex;
+    flex-direction: column;
+    & > *:not(:last-child) {
+      margin-bottom: 3.2rem;
+    }
+  }
   @media ${({ theme }) => theme.device.desktop} {
     height: 43.6rem;
     display: flex;
@@ -220,6 +255,11 @@ const IntroduceWrapper = styled.div`
 const Introduce = styled.div`
   display: flex;
   flex-direction: column;
+  @media ${({ theme }) => theme.device.tablet} {
+    & > *:not(:last-child) {
+      margin-bottom: 1.6rem;
+    }
+  }
   @media ${({ theme }) => theme.device.desktop} {
     & > *:not(:last-child) {
       margin-bottom: 1.6rem;
@@ -235,6 +275,11 @@ const NicknameWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
   }
+  @media ${({ theme }) => theme.device.tablet} {
+    height: auto;
+    align-items: flex-end;
+    justify-content: flex-start;
+  }
   @media ${({ theme }) => theme.device.desktop} {
     height: auto;
     align-items: flex-end;
@@ -244,6 +289,9 @@ const NicknameWrapper = styled.div`
 
 const MasterIntroduceWrapper = styled.div`
   color: ${({ theme: { color } }) => color.greyScale.grey2};
+  @media ${({ theme }) => theme.device.tablet} {
+    padding-left: 0.8rem;
+  }
   @media ${({ theme }) => theme.device.desktop} {
     padding-left: 0.8rem;
   }
@@ -267,7 +315,15 @@ const CareerWrapper = styled.ul`
       margin-bottom: 0.8rem;
     }
   }
+  @media ${({ theme }) => theme.device.tablet} {
+    margin-left: 0.8rem;
+    list-style-position: inside;
+    & > *:not(:last-child) {
+      margin-bottom: 0.8rem;
+    }
+  }
   @media ${({ theme }) => theme.device.desktop} {
+    margin-left: 0.8rem;
     list-style-position: inside;
     & > *:not(:last-child) {
       margin-bottom: 0.8rem;
@@ -280,14 +336,14 @@ const ScheduleWrapper = styled.div`
   @media ${({ theme }) => theme.device.mobile} {
     margin-top: 2.4rem;
   }
-  @media ${({ theme }) => theme.device.desktop} {
-    width: 52rem;
-  }
 `;
 
 const ScheduleTitleWrapper = styled.div`
   @media ${({ theme }) => theme.device.mobile} {
     padding: 2.4rem 0 1.6rem 0;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    padding: 3.2rem 0 2.4rem 0;
   }
   @media ${({ theme }) => theme.device.desktop} {
     padding: 3.2rem 0 2.4rem 0;
@@ -297,6 +353,12 @@ const ScheduleTitleWrapper = styled.div`
 const ScheduleList = styled.ul`
   display: flex;
   @media ${({ theme }) => theme.device.mobile} {
+    flex-direction: column;
+    & > *:not(:last-child) {
+      margin-bottom: 1.8rem;
+    }
+  }
+  @media ${({ theme }) => theme.device.tablet} {
     flex-direction: column;
     & > *:not(:last-child) {
       margin-bottom: 1.8rem;

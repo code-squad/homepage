@@ -42,6 +42,13 @@ const ArticleWrapper = styled.div`
       margin-bottom: 0.8rem;
     }
   }
+  @media ${({ theme }) => theme.device.tablet} {
+    padding: 0 8rem;
+    padding-bottom: 18rem;
+    & > *:not(:last-child) {
+      margin-bottom: 4rem;
+    }
+  }
   @media ${({ theme }) => theme.device.desktop} {
     width: 106.2rem;
     padding: 0 18.9rem;
