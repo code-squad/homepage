@@ -31,13 +31,14 @@ describe("<RectangleNavigation>", () => {
     const {
       color: {
         blackAndWhite: { black },
+        greyScale: { grey3 },
       },
     } = theme;
 
     const rectangleBtns = getAllByRole("button");
     rectangleBtns.forEach((RectangleBtn, index) => {
       if (index === props.index) expect(RectangleBtn).toHaveStyle(`background-color: ${black}`);
-      if (index !== props.index) expect(RectangleBtn).toHaveStyle(`background-color: transparent`);
+      if (index !== props.index) expect(RectangleBtn).toHaveStyle(`background-color: ${grey3}`);
     });
   });
   it("현재 인덱스에 해당되는 버튼을 클릭하면 props로 전달된 onIndexChanged 콜백이 호출되지 않는다.", () => {
