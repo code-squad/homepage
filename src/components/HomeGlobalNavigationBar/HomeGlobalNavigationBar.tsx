@@ -18,6 +18,14 @@ const HomeGlobalNavigationBar: React.FC<{ bannerStatus?: boolean }> = ({ bannerS
 
   const currentPath = getCurrentPath();
 
+  React.useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "scroll";
+    }
+  }, [open]);
+
   const links = [
     {
       title: LINK.MASTERS,
