@@ -38,7 +38,7 @@ const BackgroundLinkWrapper = styled.div<{ backgroundColor?: string }>`
 
 const LinkItem = styled(Link)`
   text-decoration: none;
-  color: ${({ theme: { color } }) => color.blackAndWhite.black};
+  color: ${({ theme: { color } }) => color.black};
 `;
 
 export default BackgroundLink;

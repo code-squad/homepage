@@ -37,7 +37,7 @@ const CardImg = styled.img`
 `;
 const Title = styled.h4`
   margin-top: 3.2rem;
-  color: ${({ theme: { color } }) => color.blackAndWhite.black};
+  color: ${({ theme: { color } }) => color.black};
 `;
 const Description = styled.div`
   margin-top: 1.6rem;

@@ -158,7 +158,7 @@ const Category = styled.div<{ isLinkBoard?: boolean }>`
   }
 `;
 const Title = styled.div<{ short?: boolean; open?: boolean }>`
-  color: ${({ theme: { color } }) => color.blackAndWhite.black};
+  color: ${({ theme: { color } }) => color.black};
   & > p {
     font-weight: ${({ open, theme: { fontWeight } }) =>
       open ? fontWeight.bold : fontWeight.regular};

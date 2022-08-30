@@ -20,18 +20,17 @@ const SButtonWrapper = styled(Link)<{ $disabled?: boolean }>`
   display: inline-block;
   height: 3.2rem;
   padding: 0 0.8rem;
-  color: ${({ $disabled, theme: { color } }) =>
-    $disabled ? color.surface.white20 : color.blackAndWhite.white};
+  color: ${({ $disabled, theme: { color } }) => ($disabled ? color.surface.white20 : color.white)};
   font-size: ${({ theme: { fontSize } }) => fontSize.body.xs};
   font-weight: ${({ theme: { fontWeight } }) => fontWeight.medium};
   line-height: 3.2rem;
   letter-spacing: ${({ theme: { letterSpacing } }) => letterSpacing};
   border-color: ${({ $disabled, theme: { color } }) =>
-    $disabled ? color.greyScale.grey2 : color.blackAndWhite.black};
+    $disabled ? color.greyScale.grey2 : color.black};
   border-width: 0;
   border-radius: 0.8rem;
   background-color: ${({ $disabled, theme: { color } }) =>
-    $disabled ? color.greyScale.grey2 : color.blackAndWhite.black};
+    $disabled ? color.greyScale.grey2 : color.black};
   text-decoration: none;
   cursor: pointer;
   pointer-events: ${({ $disabled }) => ($disabled ? "none" : "auto")};

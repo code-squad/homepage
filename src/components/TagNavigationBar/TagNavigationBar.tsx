@@ -60,15 +60,13 @@ const TagNavButton = styled.button<{ selected?: boolean }>`
   align-items: center;
   padding: 0 1.6rem 0 1.2rem;
   height: 3.2rem;
-  background-color: ${({ selected, theme: { color } }) =>
-    selected ? color.blackAndWhite.white : "transparent"};
+  background-color: ${({ selected, theme: { color } }) => (selected ? color.white : "transparent")};
   border-width: 0.1rem;
-  border-color: ${({ selected, theme: { color } }) =>
-    selected ? color.blackAndWhite.black : "transparent"};
+  border-color: ${({ selected, theme: { color } }) => (selected ? color.black : "transparent")};
   border-radius: 99.9rem;
   transition-property: font-weight, background-color;
   transition-duration: 0.3s;
-  color: ${({ theme: { color } }) => color.blackAndWhite.black};
+  color: ${({ theme: { color } }) => color.black};
   font-family: inherit;
   &:hover {
     cursor: pointer;

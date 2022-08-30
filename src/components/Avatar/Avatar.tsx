@@ -23,7 +23,7 @@ const Avatar: React.FC<IAvatarProps> = ({ src, width, height }) => {
 };
 
 const ImgProfile = styled.img<{ width?: string; height?: string }>`
-  border: ${({ theme: { color } }) => `.2rem solid ${color.blackAndWhite.black}`};
+  border: ${({ theme: { color } }) => `.2rem solid ${color.black}`};
   border-radius: 50%;
   width: ${({ width }) => (width ? width : "8rem")};
   height: ${({ height }) => (height ? height : "8rem")};

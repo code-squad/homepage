@@ -30,7 +30,7 @@ describe("<RectangleNavigation>", () => {
     const { getAllByRole } = renderRectangleNavigation();
     const {
       color: {
-        blackAndWhite: { black },
+        black,
         greyScale: { grey3 },
       },
     } = theme;

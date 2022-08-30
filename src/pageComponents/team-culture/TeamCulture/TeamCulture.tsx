@@ -32,9 +32,7 @@ const TeamCulture: React.FC = () => {
             {cultureFeatures.map(({ subtitle, description }) => (
               <TeamCultureContentList key={subtitle}>
                 <TeamCultureContentListItem key={subtitle}>
-                  <MBold style={{ marginBottom: "0.8rem", color: color.blackAndWhite.black }}>
-                    {subtitle}
-                  </MBold>
+                  <MBold style={{ marginBottom: "0.8rem", color: color.black }}>{subtitle}</MBold>
                   <MBody style={{ color: color.greyScale.grey1 }}>{description}</MBody>
                 </TeamCultureContentListItem>
               </TeamCultureContentList>

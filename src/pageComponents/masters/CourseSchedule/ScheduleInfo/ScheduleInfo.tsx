@@ -46,7 +46,7 @@ const ScheduleInfoWrapper = styled.div`
   margin-left: 8.5rem;
   display: flex;
   flex-direction: column;
-  color: ${({ theme: { color } }) => color.blackAndWhite.black};
+  color: ${({ theme: { color } }) => color.black};
 `;
 const DescriptionWrapper = styled.div`
   color: ${({ theme: { color } }) => color.greyScale.grey2};

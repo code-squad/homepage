@@ -90,7 +90,7 @@ const LinkButtonWrapper = styled(Link)<{ icon?: string; caption?: string }>`
   text-decoration: unset;
   &:hover {
     cursor: pointer;
-    border: 0.2rem solid ${({ theme: { color } }) => color.blackAndWhite.black};
+    border: 0.2rem solid ${({ theme: { color } }) => color.black};
     background-color: ${({ theme: { color } }) => color.primary.green4};
   }
   @media ${({ theme }) => theme.device.mobile} {
@@ -116,7 +116,7 @@ const Description = styled.div`
 const Title = styled.div`
   display: flex;
   align-items: center;
-  color: ${({ theme: { color } }) => color.blackAndWhite.black};
+  color: ${({ theme: { color } }) => color.black};
 `;
 const Caption = styled.div`
   margin-top: 0.8rem;

@@ -54,10 +54,9 @@ const RectangleButton = styled.button<{ selected?: boolean }>`
   height: 0rem;
   border-radius: 0;
   background-color: ${({ selected, theme: { color } }) =>
-    selected ? color.blackAndWhite.black : color.greyScale.grey3};
+    selected ? color.black : color.greyScale.grey3};
   border: 0.1rem solid
-    ${({ selected, theme: { color } }) =>
-      selected ? color.blackAndWhite.black : color.greyScale.grey3};
+    ${({ selected, theme: { color } }) => (selected ? color.black : color.greyScale.grey3)};
   &:hover {
     cursor: pointer;
   }

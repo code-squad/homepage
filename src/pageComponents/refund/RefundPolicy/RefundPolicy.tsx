@@ -54,7 +54,7 @@ const RefundPolicy: React.FC = () => {
 const RefundPolicyWrapper = styled.div`
   width: 100%;
   padding-bottom: 16rem;
-  color: ${({ theme: { color } }) => color.blackAndWhite.black};
+  color: ${({ theme: { color } }) => color.black};
   background-color: ${({ theme: { color } }) => color.surface.offWhite1};
   white-space: pre-line;
   text-align: center;
@@ -69,14 +69,14 @@ const RefundPolicyWrapper = styled.div`
 const PolicySpecificationWrapper = styled.div`
   padding: 4.8rem;
   border: 0.1rem solid ${({ theme: { color } }) => color.greyScale.grey3};
-  background-color: ${({ theme: { color } }) => color.blackAndWhite.white};
+  background-color: ${({ theme: { color } }) => color.white};
 `;
 
 const RefundPolicyTable = styled.table`
   width: 48rem;
   border: 0.1rem solid ${({ theme: { color } }) => color.greyScale.grey3};
   border-collapse: collapse;
-  background-color: ${({ theme: { color } }) => color.blackAndWhite.white};
+  background-color: ${({ theme: { color } }) => color.white};
   font-size: 1.4rem;
   line-height: 2.4rem;
 `;

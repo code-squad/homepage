@@ -58,7 +58,7 @@ const InfoWrapper = styled.div`
 const NameWrapper = styled.div`
   display: flex;
   align-items: flex-end;
-  color: ${({ theme: { color } }) => color.blackAndWhite.black};
+  color: ${({ theme: { color } }) => color.black};
 `;
 const PositionWrapper = styled.div`
   color: ${({ theme: { color } }) => color.greyScale.grey1};
@@ -66,7 +66,7 @@ const PositionWrapper = styled.div`
 `;
 const NutshellWrapper = styled.div`
   margin-top: 1.6rem;
-  color: ${({ theme: { color } }) => color.blackAndWhite.black};
+  color: ${({ theme: { color } }) => color.black};
 `;
 const IntroduceWrapper = styled.div`
   margin-top: 0.8rem;
