@@ -8,6 +8,7 @@ import { InfoItem } from "./InfoItem";
 import header from "assets/img/illusts/header";
 import icons from "assets/img/icons";
 import { TITLE } from "assets/static/phrases";
+import { useResponsive } from "lib/hooks";
 
 interface ICourseInfo {
   backgroundImage: string;
@@ -32,15 +33,20 @@ const CourseInfo: React.FC<ICourseInfo> = ({
   targets,
   courseInfos,
 }) => {
+  const { isMobile } = useResponsive();
+
   return (
     <CourseInfoWrapper {...{ backgroundImage, backgroundColor }}>
       <ContentWrapper>
         <TitleWrapper>
-          <Typography type="LDisplay">{title}</Typography>
+          <Typography type={isMobile ? "SDisplay" : "LDisplay"}>{title}</Typography>
         </TitleWrapper>
         <InfoWrapper>
           <InfoItemWrapper>
-            <Typography type="MBody" style={{ whiteSpace: "pre-line", marginBottom: "1.6rem" }}>
+            <Typography
+              type={isMobile ? "SBody" : "MBody"}
+              style={{ whiteSpace: "pre-line", marginBottom: "1.6rem" }}
+            >
               {description}
             </Typography>
             {courseInfos.map(({ title, content, img }) => (
@@ -56,7 +62,7 @@ const CourseInfo: React.FC<ICourseInfo> = ({
               {targets.map((target: string) => (
                 <li key={target}>
                   <Typography
-                    type="MBody"
+                    type={isMobile ? "XSBody" : "MBody"}
                     style={{
                       display: "inline",
                       verticalAlign: "middle",
@@ -76,47 +82,87 @@ const CourseInfo: React.FC<ICourseInfo> = ({
 
 const CourseInfoWrapper = styled.div<{ backgroundImage: string; backgroundColor: string }>`
   position: relative;
-  width: 100%;
-  min-width: 144rem;
-  height: 56rem;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   color: ${({ theme: { color } }) => color.blackAndWhite.black};
   background-color: ${({ backgroundColor }) => backgroundColor};
   background-image: ${({ backgroundImage }) => `url(${backgroundImage})`};
   background-repeat: no-repeat;
   background-position: top right;
-  flex-direction: column;
+  @media ${({ theme }) => theme.device.mobile} {
+    min-width: 31.2rem;
+    padding: 14.2rem 2.4rem 4.4rem 2.4rem;
+    background-size: contain;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    min-width: 60.8rem;
+    padding: 16rem 8rem 5.6rem 8rem;
+    background-size: contain;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    align-items: center;
+    min-width: 144rem;
+    height: 56rem;
+  }
 `;
 
 const ContentWrapper = styled.div`
-  position: absolute;
-  bottom: 8rem;
+  @media ${({ theme }) => theme.device.mobile} {
+    box-sizing: border-box;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    position: absolute;
+    bottom: 8rem;
+  }
 `;
 
 const TitleWrapper = styled.div`
-  min-width: 106.2rem;
   display: flex;
-  flex-direction: column;
-  & > *:not(:last-child) {
-    margin-bottom: 2.4rem;
+  @media ${({ theme }) => theme.device.mobile} {
+    margin-bottom: 1.6rem;
   }
-  & > *:last-child {
-    width: 50%;
+  @media ${({ theme }) => theme.device.tablet} {
+    margin-bottom: 1.6rem;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    min-width: 106.2rem;
+    flex-direction: column;
+    & > *:not(:last-child) {
+      margin-bottom: 2.4rem;
+    }
+    & > *:last-child {
+      width: 50%;
+    }
   }
 `;
 
 const InfoWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
-  min-width: 106.2rem;
-  margin-top: 4rem;
+  @media ${({ theme }) => theme.device.mobile} {
+    flex-direction: column;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    flex-direction: column;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    justify-content: space-between;
+    min-width: 106.2rem;
+    margin-top: 4rem;
+  }
 `;
 
 const TargetTitle = styled.h4`
   display: flex;
-  align-items: center;
-  margin-bottom: 0.8rem;
+  @media ${({ theme }) => theme.device.mobile} {
+    margin: 1.6rem 0 0.8rem 0;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    margin: 1.6rem 0 0.8rem 0;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    align-items: center;
+    margin-bottom: 0.8rem;
+  }
 `;
 const TargetWrapper = styled.div`
   display: flex;
@@ -129,8 +175,8 @@ const TargetItemWrapper = styled.ul`
   display: flex;
   flex-direction: column;
   list-style-type: disc;
-  list-style-position: inside;
-  margin-left: 1rem;
+  list-style-position: outside;
+  margin-left: 2rem;
   & > *:not(:last-child) {
     margin-bottom: 0.8rem;
   }
@@ -143,6 +189,7 @@ const InfoItemWrapper = styled.ul`
   & > *:not(:last-child) {
     margin-bottom: 0.8rem;
   }
+  max-width: 45rem;
 `;
 
 export default CourseInfo;
