@@ -4,28 +4,38 @@ import styled from "styled-components";
 import { MBody, HLBold } from "typography/";
 
 interface IImageCard {
-  description: string;
+  description?: string;
+  descriptions?: string[];
   title: string;
   img: string;
-  medium?: boolean;
 }
 
-const ImageCard: React.FC<IImageCard> = ({ title, description, img, medium }) => {
+const ImageCard: React.FC<IImageCard> = ({ img, title, description, descriptions }) => {
   return (
-    <CardWrapper {...{ medium }}>
+    <CardWrapper>
       <CardImg alt={`card-img-${title}`} src={img} />
       <Title>
         <HLBold>{title}</HLBold>
       </Title>
-      <Description>
-        <MBody>{description}</MBody>
-      </Description>
+      {descriptions ? (
+        <DescriptionList>
+          {descriptions.map((description) => (
+            <li key={description}>
+              <MBody style={{ display: "inline", verticalAlign: "middle" }}>{description}</MBody>
+            </li>
+          ))}
+        </DescriptionList>
+      ) : (
+        <Description>
+          <MBody>{description}</MBody>
+        </Description>
+      )}
     </CardWrapper>
   );
 };
 
-const CardWrapper = styled.div<{ medium?: boolean }>`
-  width: ${({ medium }) => (medium ? "41rem" : "30.2rem")};
+const CardWrapper = styled.div`
+  max-width: 30.2rem;
   display: flex;
   flex-direction: column;
 `;
@@ -42,6 +52,19 @@ const Title = styled.h4`
 const Description = styled.div`
   margin-top: 1.6rem;
   color: ${({ theme: { color } }) => color.greyScale.grey2};
+`;
+
+const DescriptionList = styled.ul`
+  margin-top: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  color: ${({ theme: { color } }) => color.greyScale.grey2};
+  list-style: disc;
+  list-style-position: outside;
+  margin-left: 2.3rem;
+  & > *:not(:last-child) {
+    margin-bottom: 0.8rem;
+  }
 `;
 
 export default ImageCard;
