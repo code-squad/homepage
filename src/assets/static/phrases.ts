@@ -84,8 +84,6 @@ const LINK = {
   TEAM_CULTURE: "팀 문화",
   YOUTUBE: "유튜브",
   KAKAOTALK_CHANNEL: "카카오톡 채널",
-  JAVASCRIPT: "자바스크립트 파트1•2",
-  CLEAN_SWIFT: "클린 스위프트",
 };
 
 const LINK_DESCRIPTION = {
@@ -93,8 +91,6 @@ const LINK_DESCRIPTION = {
   CONFIRM_RECRUIT: "코드스쿼드의 교육 가치에 공감한다면",
   MASTERS: "분야별 최고의 개발자가 되기 위한 풀타임 과정",
   RECEIVE_SUBSCRIPTION: "원하는 코스의 오픈 소식을 가장 먼저 알고 싶다면?",
-  JAVASCRIPT: "프로그래밍 기초부터 간단한 웹 애플리케이션 개발까지 경험해보는",
-  CLEAN_SWIFT: "스위프트 언어와 iOS 플랫폼에서 유지보수하기 좋은 구조를 설계해보는",
 };
 
 const MESSAGE = {
