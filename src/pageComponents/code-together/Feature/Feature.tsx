@@ -4,8 +4,7 @@ import { graphql, useStaticQuery } from "gatsby";
 // Type
 import { CodeTogetherFeatureType } from "@type/CodeTogetherFeature";
 // Components
-import { TitleSet } from "components";
-import { ImageCard } from "./ImageCard";
+import { ImageCard, TitleSet } from "components";
 // Assets
 import featureImgs from "assets/img/illusts/feature";
 import { SUBTITLE, TITLE } from "assets/static/phrases";
