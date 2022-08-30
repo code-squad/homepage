@@ -71,7 +71,7 @@ const MastheadWrapper = styled.div`
   height: 56rem;
   display: flex;
   align-items: center;
-  color: ${({ theme: { color } }) => color.blackAndWhite.black};
+  color: ${({ theme: { color } }) => color.black};
   background-color: ${({ theme: { color } }) => color.primary.green4};
   background-image: ${`url(${header.pattern3})`};
   background-repeat: no-repeat;

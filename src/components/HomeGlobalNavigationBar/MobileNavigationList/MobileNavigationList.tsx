@@ -3,7 +3,7 @@ import React from "react";
 import { MESSAGE } from "assets/static/phrases";
 import styled from "styled-components";
 import { Link } from "gatsby";
-import { SBody } from "typography";
+import { Typography } from "typography";
 import { EXTERNAL } from "assets/static/urls";
 import { getCurrentPath } from "lib/utils";
 
@@ -13,7 +13,6 @@ const MobileNavigationList: React.FC<{
 }> = ({ links, open }) => {
   const currentPath = getCurrentPath();
 
-  console.log(open);
   return (
     <NavigationListWrapper {...{ open }}>
       <ButtonList>
@@ -34,9 +33,9 @@ const MobileNavigationList: React.FC<{
         })}
       </ButtonList>
       <CompanyInfoWrapper>
-        <SBody>{MESSAGE.COPYRIGHT}</SBody>
+        <Typography type="SBody">{MESSAGE.COPYRIGHT}</Typography>
         <div>
-          <SBody as="span">{MESSAGE.COMPANY_EMAIL}</SBody>
+          <Typography type="SBody">{MESSAGE.COMPANY_EMAIL}</Typography>
           <ExternalLink
             href={`mailto:${EXTERNAL.EMAIL}`}
             target="_blank"
@@ -46,8 +45,8 @@ const MobileNavigationList: React.FC<{
             {MESSAGE.COMPANY_EMAIL_ADDRESS}
           </ExternalLink>
         </div>
-        <SBody>{MESSAGE.COMPANY_TEL_NUMBER}</SBody>
-        <SBody>{MESSAGE.COMPANY_ADDRESS}</SBody>
+        <Typography type="SBody">{MESSAGE.COMPANY_TEL_NUMBER}</Typography>
+        <Typography type="SBody">{MESSAGE.COMPANY_ADDRESS}</Typography>
       </CompanyInfoWrapper>
     </NavigationListWrapper>
   );
@@ -55,14 +54,14 @@ const MobileNavigationList: React.FC<{
 
 const NavigationListWrapper = styled.div<{ open: boolean }>`
   display: flex;
+  flex-direction: column;
   z-index: 10;
   width: 100vw;
   height: ${({ open }) => (open ? "calc(100vh - 6.2rem)" : "0")};
   overflow: hidden;
-  transition: height, background-color 0.15s linear;
   position: fixed;
   top: 6.2rem;
-  background-color: ${({ theme: { color } }) => color.blackAndWhite.white};
+  background-color: ${({ theme: { color } }) => color.white};
 `;
 
 const ButtonList = styled.ul`
@@ -82,13 +81,13 @@ const ExternalLink = styled.a<{ underline?: boolean }>`
     font-size: ${({ theme: { fontSize } }) => fontSize.body.sm};
   }
   @media ${({ theme }) => theme.device.desktop} {
-    color: ${({ theme: { color } }) => color.blackAndWhite.white};
+    color: ${({ theme: { color } }) => color.white};
     font-size: ${({ theme: { fontSize } }) => fontSize.body.xs};
   }
 `;
 
 const LinkButton = styled(Link)<{ selected?: boolean }>`
-  color: ${({ theme: { color } }) => color.blackAndWhite.black};
+  color: ${({ theme: { color } }) => color.black};
   font-size: ${({ theme: { fontSize } }) => fontSize.body.sm};
   font-weight: ${({ selected, theme: { fontWeight } }) =>
     selected ? fontWeight.medium : fontWeight.regular};

@@ -64,7 +64,7 @@ const CourseCardWrapper = styled(Link)<{ medium?: boolean }>`
     & > *:nth-child(3) {
       height: 2.9rem;
       line-height: 2.9rem;
-      border-bottom: 0.1rem solid ${({ theme: { color } }) => color.blackAndWhite.black};
+      border-bottom: 0.1rem solid ${({ theme: { color } }) => color.black};
     }
     & > *:nth-child(4) {
       height: 2.3rem;
@@ -74,7 +74,7 @@ const CourseCardWrapper = styled(Link)<{ medium?: boolean }>`
     & > *:nth-child(5) {
       height: 2.3rem;
       line-height: 2.3rem;
-      border-bottom: 0.1rem solid ${({ theme: { color } }) => color.blackAndWhite.black};
+      border-bottom: 0.1rem solid ${({ theme: { color } }) => color.black};
     }
   }
 `;
@@ -92,7 +92,7 @@ const MasterWrapper = styled.div`
 
 const TitleWrapper = styled.div`
   width: fit-content;
-  color: ${({ theme: { color } }) => color.blackAndWhite.black};
+  color: ${({ theme: { color } }) => color.black};
 `;
 
 const DueDateWrapper = styled.div`
@@ -103,7 +103,7 @@ const DueDateWrapper = styled.div`
 
 const CostWrapper = styled.div`
   width: fit-content;
-  color: ${({ theme: { color } }) => color.blackAndWhite.black};
+  color: ${({ theme: { color } }) => color.black};
 `;
 
 const TagList = styled.ul`
@@ -112,7 +112,7 @@ const TagList = styled.ul`
   & > *:not(:last-child) {
     margin-right: 0.8rem;
   }
-  color: ${({ theme: { color } }) => color.blackAndWhite.black};
+  color: ${({ theme: { color } }) => color.black};
 `;
 
 const CourseTagItem = styled.div`

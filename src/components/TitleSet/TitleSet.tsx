@@ -39,7 +39,7 @@ const TitleWrapper = styled.div`
   width: 107rem;
   display: flex;
   flex-direction: column;
-  color: ${({ theme: { color } }) => color.blackAndWhite.black};
+  color: ${({ theme: { color } }) => color.black};
 `;
 const HeadTitle = styled.div<{ subtitle?: boolean }>`
   @media ${({ theme }) => theme.device.desktop} {

@@ -51,10 +51,8 @@ const lineHeight = {
 const letterSpacing = "-0.008em";
 
 const color = {
-  blackAndWhite: {
-    black: "#1B1B1B",
-    white: "#FFFFFF",
-  },
+  black: "#1B1B1B",
+  white: "#FFFFFF",
   greyScale: {
     grey1: "#3F3F3F",
     grey2: "#777777",

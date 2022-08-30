@@ -130,7 +130,7 @@ const MasterWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: space-between;
-  color: ${({ theme: { color } }) => color.blackAndWhite.black};
+  color: ${({ theme: { color } }) => color.black};
   @media ${({ theme }) => theme.device.mobile} {
     padding-bottom: 12rem;
   }
@@ -390,7 +390,7 @@ const Schedule = styled(Link)`
       & > *:last-child {
         height: 2.5rem;
         line-height: 2.5rem;
-        border-bottom: 0.1rem solid ${({ theme: { color } }) => color.blackAndWhite.black};
+        border-bottom: 0.1rem solid ${({ theme: { color } }) => color.black};
       }
     }
   }
@@ -414,7 +414,7 @@ const TitleWrapper = styled.div`
 
 const SubtitleWrapper = styled.div`
   width: fit-content;
-  color: ${({ theme: { color } }) => color.blackAndWhite.black};
+  color: ${({ theme: { color } }) => color.black};
 `;
 
 const MasterQuery = graphql`

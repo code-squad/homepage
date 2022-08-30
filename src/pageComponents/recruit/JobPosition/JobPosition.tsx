@@ -77,7 +77,7 @@ const Background = styled.div`
 const JobPositionWrapper = styled.div`
   width: 100%;
   padding-bottom: 16rem;
-  color: ${({ theme: { color } }) => color.blackAndWhite.black};
+  color: ${({ theme: { color } }) => color.black};
   white-space: pre-line;
   text-align: start;
   position: relative;
@@ -94,7 +94,7 @@ const DropdownItemWrapper = styled.ul`
   padding: 0rem 4.8rem 4.8rem 4.8rem;
   display: flex;
   flex-direction: column;
-  background-color: ${({ theme: { color } }) => color.blackAndWhite.white};
+  background-color: ${({ theme: { color } }) => color.white};
 `;
 
 const JobPositionQuery = graphql`

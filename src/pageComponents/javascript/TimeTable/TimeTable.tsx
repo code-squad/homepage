@@ -96,7 +96,7 @@ const PlanWrapper = styled.div`
   width: 100%;
   margin: 0 auto;
   overflow: hidden;
-  color: ${({ theme: { color } }) => color.blackAndWhite.black};
+  color: ${({ theme: { color } }) => color.black};
 `;
 
 const DescriptionWrapper = styled.div`

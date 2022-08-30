@@ -151,7 +151,7 @@ const CultureImg = styled.img`
 `;
 
 const CultureTitleWrapper = styled.div`
-  color: ${({ theme: { color } }) => color.blackAndWhite.black};
+  color: ${({ theme: { color } }) => color.black};
   & > *:not(:last-child) {
     padding-bottom: 0.4rem;
   }

@@ -100,7 +100,7 @@ const HomeGlobalNavigationBarWrapper = styled.header<{
   display: flex;
   z-index: 10;
   background-color: ${({ scrollPosition, open, theme: { color } }) =>
-    scrollPosition || open ? color.blackAndWhite.white : "transparent"};
+    scrollPosition || open ? color.white : "transparent"};
   border-bottom: 0.1rem solid
     ${({ scrollPosition, theme: { color } }) =>
       scrollPosition ? color.greyScale.grey3 : "transparent"};
@@ -168,7 +168,7 @@ const ButtonList = styled.ul`
 `;
 
 const LinkButton = styled(Link)<{ selected?: boolean }>`
-  color: ${({ theme: { color } }) => color.blackAndWhite.black};
+  color: ${({ theme: { color } }) => color.black};
   font-size: ${({ theme: { fontSize } }) => fontSize.body.sm};
   font-weight: ${({ selected, theme: { fontWeight } }) =>
     selected ? fontWeight.medium : fontWeight.regular};

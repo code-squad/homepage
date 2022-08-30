@@ -37,7 +37,7 @@ const MastheadWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: ${({ theme: { color } }) => color.blackAndWhite.black};
+  color: ${({ theme: { color } }) => color.black};
   background-color: ${({ theme: { color } }) => color.primary.green4};
   background-image: ${`url(${header.pattern3})`};
   background-position: top right;

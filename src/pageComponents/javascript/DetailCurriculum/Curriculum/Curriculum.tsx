@@ -60,7 +60,7 @@ const SubjectItem = styled.li`
 `;
 const SubjectTitle = styled.h6`
   width: 19rem;
-  color: ${({ theme: { color } }) => color.blackAndWhite.black};
+  color: ${({ theme: { color } }) => color.black};
 `;
 const SubjectDetailList = styled.ul`
   display: flex;
