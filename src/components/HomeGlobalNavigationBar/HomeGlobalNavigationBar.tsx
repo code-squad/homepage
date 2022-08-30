@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import Link from "gatsby-link";
+// Components
+import { MobileNavigationList } from "./MobileNavigationList";
 // Assets
 import icons from "assets/img/icons";
 import signiture from "assets/img/illusts/header/signiture";
@@ -17,6 +19,14 @@ const HomeGlobalNavigationBar: React.FC<{ bannerStatus?: boolean }> = ({ bannerS
   const [open, setOpen] = React.useState(false);
 
   const currentPath = getCurrentPath();
+
+  React.useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "scroll";
+    }
+  }, [open]);
 
   const links = [
     {
@@ -37,25 +47,24 @@ const HomeGlobalNavigationBar: React.FC<{ bannerStatus?: boolean }> = ({ bannerS
     },
   ];
 
-  const onMenuButtonClicked = () => {
-    setOpen(!open);
-  };
   return (
     <>
       <HomeGlobalNavigationBarWrapper {...{ bannerStatus, scrollPosition, open }}>
         <ContentWrapper {...{ open }}>
           <Link to="/">
-            {!open && (
-              <HomeSigniture
-                src={scrollPosition ? signiture.home2 : signiture.home1}
-                alt="company-logo"
-              />
-            )}
+            <HomeSigniture
+              {...{ open }}
+              src={scrollPosition ? signiture.home2 : signiture.home1}
+              alt="company-logo"
+            />
           </Link>
           {isMobile ? (
-            <Button onClick={onMenuButtonClicked}>
-              <ButtonIcon src={open ? icons.close : icons.menu} />
-            </Button>
+            <>
+              <Button onClick={() => setOpen(!open)}>
+                <ButtonIcon src={open ? icons.close : icons.menu} />
+              </Button>
+              <MobileNavigationList {...{ links, open }} />
+            </>
           ) : (
             <ButtonList>
               {links.map(({ title, path }: any) => {
@@ -92,16 +101,13 @@ const HomeGlobalNavigationBarWrapper = styled.header<{
   width: 100%;
   z-index: 10;
   background-color: ${({ scrollPosition, open, theme: { color } }) =>
-    scrollPosition || open ? color.blackAndWhite.white : "transparent"};
+    scrollPosition || open ? color.white : "transparent"};
   border-bottom: 0.1rem solid
     ${({ scrollPosition, theme: { color } }) =>
       scrollPosition ? color.greyScale.grey3 : "transparent"};
-  transition-property: background-color, border;
-  transition-duration: 0.15s;
-  transition-timing-function: linear;
   @media ${({ theme }) => theme.device.mobile} {
     min-width: 36rem;
-    height: ${({ open }) => (open ? "100vh" : "6.2rem")};
+    height: 6.2rem;
     align-items: ${({ open }) => (open ? "flex-start" : "center")};
   }
   @media ${({ theme }) => theme.device.tablet} {
@@ -142,9 +148,11 @@ const ContentWrapper = styled.nav<{ open: boolean }>`
   }
 `;
 
-const HomeSigniture = styled.img`
+const HomeSigniture = styled.img<{ open: boolean }>`
   min-width: 15.5rem;
   min-height: 3rem;
+  opacity: ${({ open }) => (open ? "0" : "1")};
+  transition: opacity 0.15s linear;
 `;
 
 const ButtonList = styled.ul`
@@ -159,7 +167,7 @@ const ButtonList = styled.ul`
 `;
 
 const LinkButton = styled(Link)<{ selected?: boolean }>`
-  color: ${({ theme: { color } }) => color.blackAndWhite.black};
+  color: ${({ theme: { color } }) => color.black};
   font-size: ${({ theme: { fontSize } }) => fontSize.body.sm};
   font-weight: ${({ selected, theme: { fontWeight } }) =>
     selected ? fontWeight.medium : fontWeight.regular};
@@ -187,4 +195,8 @@ const ButtonIcon = styled.img`
   filter: invert(0%) sepia(8%) saturate(4576%) hue-rotate(78deg) brightness(84%) contrast(79%);
 `;
 
+const OpacityWrapper = styled.div<{ open: boolean }>`
+  opacity: ${({ open }) => (open ? "1" : "0")};
+  transition: opacity 0.15s linear;
+`;
 export default HomeGlobalNavigationBar;

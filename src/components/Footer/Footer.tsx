@@ -18,9 +18,9 @@ const Footer: React.FC = () => {
       <ContentWrapper>
         <CompanyInfomationWrapper>
           {!isDesktop ? (
-            <SBold style={{ color: color.blackAndWhite.white }}>{MESSAGE.COMPANY_NAME}</SBold>
+            <SBold style={{ color: color.white }}>{MESSAGE.COMPANY_NAME}</SBold>
           ) : (
-            <XSBold style={{ color: color.blackAndWhite.white }}>{MESSAGE.COMPANY_NAME}</XSBold>
+            <XSBold style={{ color: color.white }}>{MESSAGE.COMPANY_NAME}</XSBold>
           )}
           <div>
             {!isDesktop ? (
@@ -154,7 +154,7 @@ const Footer: React.FC = () => {
 
 const FooterWrapper = styled.footer`
   display: flex;
-  background-color: ${({ theme: { color } }) => color.blackAndWhite.black};
+  background-color: ${({ theme: { color } }) => color.black};
   @media ${({ theme }) => theme.device.mobile} {
     align-items: center;
     width: 100%;
@@ -171,7 +171,7 @@ const ContentWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: ${({ theme: { color } }) => color.blackAndWhite.white};
+  color: ${({ theme: { color } }) => color.white};
   font-size: ${({ theme: { fontSize } }) => fontSize.body.xs};
   font-weight: ${({ theme: { fontWeight } }) => fontWeight.regular};
   line-height: ${({ theme: { lineHeight } }) => lineHeight.body.xs};
@@ -231,7 +231,7 @@ const InternalLink = styled(Link)<{ $bold?: boolean }>`
     font-size: ${({ theme: { fontSize } }) => fontSize.body.sm};
   }
   @media ${({ theme }) => theme.device.desktop} {
-    color: ${({ theme: { color } }) => color.blackAndWhite.white};
+    color: ${({ theme: { color } }) => color.white};
     font-size: ${({ theme: { fontSize } }) => fontSize.body.xs};
   }
 `;
@@ -247,7 +247,7 @@ const ExternalLink = styled.a<{ underline?: boolean }>`
     font-size: ${({ theme: { fontSize } }) => fontSize.body.sm};
   }
   @media ${({ theme }) => theme.device.desktop} {
-    color: ${({ theme: { color } }) => color.blackAndWhite.white};
+    color: ${({ theme: { color } }) => color.white};
     font-size: ${({ theme: { fontSize } }) => fontSize.body.xs};
   }
 `;

@@ -1,4 +1,6 @@
+import React from "react";
 import styled from "styled-components";
+import { CSSProperties } from "styled-components";
 
 const LDisplay = styled.p`
   font-size: ${({ theme: { fontSize } }) => fontSize.display.lg};
@@ -81,6 +83,33 @@ const XSBody = styled.p`
   letter-spacing: ${({ theme: { letterSpacing } }) => letterSpacing};
 `;
 
+const typographys = {
+  LDisplay,
+  MDisplay,
+  SDisplay,
+  HLBold,
+  SHLBold,
+  MBold,
+  SBold,
+  XSBold,
+  XLBody,
+  LBody,
+  MBody,
+  SBody,
+  XSBody,
+};
+
+interface ITypography {
+  type: keyof typeof typographys;
+  children: React.ReactNode;
+  style?: CSSProperties;
+}
+
+const Typography: React.FC<ITypography> = ({ type, style, children }) => {
+  const TargetTypography = typographys[type];
+  return <TargetTypography {...{ style }}>{children}</TargetTypography>;
+};
+
 export {
   LDisplay,
   MDisplay,
@@ -95,4 +124,5 @@ export {
   MBody,
   SBody,
   XSBody,
+  Typography,
 };

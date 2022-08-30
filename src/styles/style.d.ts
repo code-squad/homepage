@@ -51,10 +51,8 @@ declare module "styled-components" {
     };
     letterSpacing: string;
     color: {
-      blackAndWhite: {
-        black: string;
-        white: string;
-      };
+      black: string;
+      white: string;
       greyScale: {
         grey1: string;
         grey2: string;

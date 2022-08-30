@@ -66,7 +66,7 @@ const InterviewBoxWrapper = styled.div`
 const Nutshell = styled.div`
   margin: 3.2rem 0 0 3.6rem;
   position: relative;
-  color: ${({ theme: { color } }) => color.blackAndWhite.black};
+  color: ${({ theme: { color } }) => color.black};
   &:before {
     content: "";
     position: absolute;

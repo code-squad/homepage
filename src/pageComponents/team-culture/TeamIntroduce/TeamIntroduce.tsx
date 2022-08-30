@@ -46,7 +46,7 @@ const TeamIntroduceWrapper = styled.div`
   width: 100%;
   min-width: 144rem;
   min-height: 56rem;
-  color: ${({ theme: { color } }) => color.blackAndWhite.black};
+  color: ${({ theme: { color } }) => color.black};
   white-space: pre-line;
   text-align: start;
 `;

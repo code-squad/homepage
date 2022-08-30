@@ -51,36 +51,24 @@ const MButtonWrapper = styled(Link)<{ $accent?: boolean; $disabled?: boolean }>`
   height: 3.8rem;
   padding: 0 2.4rem;
   color: ${({ $accent, $disabled, theme: { color } }) =>
-    $disabled
-      ? color.greyScale.grey4
-      : $accent
-      ? color.blackAndWhite.white
-      : color.greyScale.grey1};
+    $disabled ? color.greyScale.grey4 : $accent ? color.white : color.greyScale.grey1};
   border: 0.1rem solid;
   border-radius: 3rem;
   border-color: ${({ $accent, $disabled, theme: { color } }) =>
-    $disabled
-      ? color.greyScale.grey4
-      : $accent
-      ? color.blackAndWhite.black
-      : color.greyScale.grey3};
+    $disabled ? color.greyScale.grey4 : $accent ? color.black : color.greyScale.grey3};
   background-color: ${({ $disabled, $accent, theme: { color } }) =>
-    $disabled
-      ? color.blackAndWhite.white
-      : $accent
-      ? color.blackAndWhite.black
-      : color.blackAndWhite.white};
+    $disabled ? color.white : $accent ? color.black : color.white};
   text-decoration: none;
   text-align: center;
   cursor: ${({ $disabled }) => ($disabled ? "unset" : "pointer")};
   pointer-events: ${({ $disabled }) => ($disabled ? "none" : "auto")};
   &:hover {
     color: ${({ $disabled, theme: { color } }) =>
-      $disabled ? color.greyScale.grey4 : color.blackAndWhite.black};
+      $disabled ? color.greyScale.grey4 : color.black};
     background-color: ${({ $disabled, theme: { color } }) =>
-      $disabled ? color.blackAndWhite.white : color.primary.green4};
+      $disabled ? color.white : color.primary.green4};
     border-color: ${({ $disabled, theme: { color } }) =>
-      $disabled ? color.greyScale.grey4 : color.blackAndWhite.black};
+      $disabled ? color.greyScale.grey4 : color.black};
   }
   &:disabled {
     cursor: auto;

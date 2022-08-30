@@ -33,7 +33,7 @@ const BannerPopupWrapper = styled.div`
   display: flex;
   position: relative;
   justify-content: center;
-  background-color: ${({ theme: { color } }) => color.blackAndWhite.black};
+  background-color: ${({ theme: { color } }) => color.black};
   @media ${({ theme }) => theme.device.desktop} {
     min-width: 144rem;
   }
@@ -45,7 +45,7 @@ const ContentWrapper = styled.a`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: ${({ theme: { color } }) => color.blackAndWhite.white};
+  color: ${({ theme: { color } }) => color.white};
   text-decoration: none;
   & > *:not(:last-child) {
     margin-bottom: 0.4rem;
