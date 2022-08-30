@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Swiper as SwiperClass } from "swiper";
-import "swiper/css";
+import "swiper/swiper.min.css";
 // Type
 import { CultureType } from "@type/Culture";
 // Typography

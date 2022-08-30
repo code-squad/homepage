@@ -2,7 +2,7 @@ import React from "react";
 import styled, { useTheme } from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Swiper as SwiperClass } from "swiper";
-import "swiper/css";
+import "swiper/swiper.min.css";
 // Typography
 import { MBody, SBody } from "typography";
 // Components
