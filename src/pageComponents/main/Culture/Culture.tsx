@@ -34,7 +34,7 @@ const Culture: React.FC = () => {
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
         }}
-        slidesPerView={isMobile ? 1 : 3}
+        slidesPerView={isMobile ? 1 : cultures.length}
         spaceBetween={isMobile ? 0 : 40}
         allowTouchMove={isMobile ? true : false}
         onActiveIndexChange={({ activeIndex }) => setCurrentIndex(activeIndex)}
