@@ -8,3 +8,9 @@ export interface CourseType {
   path: string;
   tags: string[];
 }
+
+export interface CourseListType {
+  title: string;
+  description: string;
+  path: string;
+}
