@@ -10,8 +10,9 @@ import { TestProvider } from "lib/testUtils";
 
 describe("<SButton>", () => {
   const props = {
-    disabled: false,
+    type: "Black" as "Black" | "Orange" | "Green",
     to: INTERNAL.SUBSCRIPTION,
+    children: "test",
   };
   const renderSButton = (buttonText: string) =>
     render(

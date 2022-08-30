@@ -1,39 +1,44 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import Link from "gatsby-link";
 
 export interface ISButtonProps {
+  type: "Black" | "Green" | "Orange";
   children?: string;
-  disabled?: boolean;
   to: string;
 }
 
-const SButton: React.FC<ISButtonProps> = ({ children, disabled, to }) => {
-  return (
-    <SButtonWrapper $disabled={disabled} {...{ to }}>
-      {children}
-    </SButtonWrapper>
-  );
+const SButton: React.FC<ISButtonProps> = ({ type, children, to }) => {
+  const {
+    color: {
+      black,
+      primary: { green2, orange2 },
+    },
+  } = useTheme();
+
+  let backgroundColor = "";
+  if (type === "Black") backgroundColor = black;
+  if (type === "Green") backgroundColor = green2;
+  if (type === "Orange") backgroundColor = orange2;
+
+  return <SButtonWrapper {...{ to, backgroundColor }}>{children}</SButtonWrapper>;
 };
 
-const SButtonWrapper = styled(Link)<{ $disabled?: boolean }>`
-  display: inline-block;
-  height: 3.2rem;
-  padding: 0 0.8rem;
-  color: ${({ $disabled, theme: { color } }) => ($disabled ? color.surface.white20 : color.white)};
+const SButtonWrapper = styled(Link)<{ backgroundColor?: string }>`
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 4.8rem;
+  height: 2.4rem;
+  color: ${({ theme: { color } }) => color.white};
   font-size: ${({ theme: { fontSize } }) => fontSize.body.xs};
   font-weight: ${({ theme: { fontWeight } }) => fontWeight.medium};
-  line-height: 3.2rem;
   letter-spacing: ${({ theme: { letterSpacing } }) => letterSpacing};
-  border-color: ${({ $disabled, theme: { color } }) =>
-    $disabled ? color.greyScale.grey2 : color.black};
   border-width: 0;
-  border-radius: 0.8rem;
-  background-color: ${({ $disabled, theme: { color } }) =>
-    $disabled ? color.greyScale.grey2 : color.black};
+  background-color: ${({ backgroundColor }) => backgroundColor};
   text-decoration: none;
   cursor: pointer;
-  pointer-events: ${({ $disabled }) => ($disabled ? "none" : "auto")};
+  pointer-events: auto;
   &:active {
     background-color: ${({ theme: { color } }) => color.greyScale.grey1};
     border-color: ${({ theme: { color } }) => color.greyScale.grey1};
