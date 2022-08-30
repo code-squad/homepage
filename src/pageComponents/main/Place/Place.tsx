@@ -1,5 +1,8 @@
 import React from "react";
 import styled, { useTheme } from "styled-components";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper as SwiperClass } from "swiper";
+import "swiper/css";
 // Typography
 import { MBody, SBody } from "typography";
 // Components
@@ -13,19 +16,22 @@ import { useResponsive } from "lib/hooks";
 
 const Place: React.FC = () => {
   const { color } = useTheme();
-  const { isMobile } = useResponsive();
+  const { isMobile, isTablet, isDesktop } = useResponsive();
 
   const { place1, place2, place3, place4, place5, place6, place7 } = picture;
-
   const imgList = [place1, place2, place3, place4, place5, place6, place7];
+
   const [currentIndex, setCurrentIndex] = React.useState(0);
+  const swiperRef = React.useRef<SwiperClass | null>(null);
 
   const handleArrowLeftClick = () => {
     if (currentIndex - 1 >= 0) setCurrentIndex(currentIndex - 1);
+    if (swiperRef.current) swiperRef.current.slidePrev();
   };
 
   const handleArrowRightClick = () => {
     if (currentIndex + 1 <= imgList.length) setCurrentIndex(currentIndex + 1);
+    if (swiperRef.current) swiperRef.current.slideNext();
   };
 
   const handleIndexChanged = (index: number) => {
@@ -34,7 +40,7 @@ const Place: React.FC = () => {
 
   return (
     <PlaceWrapper>
-      {!isMobile && (
+      {(isTablet || isDesktop) && (
         <ArrowNavigationWrapper>
           <ArrowButton disabled={currentIndex === 0} onClick={handleArrowLeftClick}>
             <img src={icons.chevronLeft} alt="arrow-left" />
@@ -55,15 +61,20 @@ const Place: React.FC = () => {
           <MBody style={{ color: color.greyScale.grey2 }}>{DESCRIPTION.PLACE}</MBody>
         )}
       </PlaceIntroduceWrapper>
-      <PlaceListWrapper>
-        <PlaceList {...{ currentIndex }}>
-          {imgList.map((image, i) => (
-            <li key={`${image}-${i}`}>
-              <PlaceImage src={image} alt="codesquad-place" />
-            </li>
-          ))}
-        </PlaceList>
-      </PlaceListWrapper>
+      <Swiper
+        onSwiper={(swiper) => {
+          swiperRef.current = swiper;
+        }}
+        style={{ width: "100%" }}
+        allowTouchMove={isMobile ? true : false}
+        onActiveIndexChange={({ activeIndex }) => setCurrentIndex(activeIndex)}
+      >
+        {imgList.map((image) => (
+          <SwiperSlide key={image}>
+            <PlaceImage src={image} alt="codesquad-place" />
+          </SwiperSlide>
+        ))}
+      </Swiper>
       {isMobile && (
         <RectangleNavigationWrapper>
           <RectangleNavigation count={7} index={currentIndex} onIndexChanged={handleIndexChanged} />
