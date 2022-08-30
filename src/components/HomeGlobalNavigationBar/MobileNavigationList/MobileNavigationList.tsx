@@ -61,13 +61,18 @@ const NavigationListWrapper = styled.div<{ open: boolean }>`
   overflow: hidden;
   position: fixed;
   top: 6.2rem;
+  right: 0;
   background-color: ${({ theme: { color } }) => color.white};
 `;
 
 const ButtonList = styled.ul`
   display: flex;
   flex-direction: column;
-  marginbottom: 18.9rem;
+  margin: 8rem 0 18.9rem 0;
+  padding: 0 2.4rem;
+  & > *:not(:last-child) {
+    margin-bottom: 2.4rem;
+  }
 `;
 
 const ExternalLink = styled.a<{ underline?: boolean }>`
@@ -88,7 +93,7 @@ const ExternalLink = styled.a<{ underline?: boolean }>`
 
 const LinkButton = styled(Link)<{ selected?: boolean }>`
   color: ${({ theme: { color } }) => color.black};
-  font-size: ${({ theme: { fontSize } }) => fontSize.body.sm};
+  font-size: ${({ theme: { fontSize } }) => fontSize.bold.xl};
   font-weight: ${({ selected, theme: { fontWeight } }) =>
     selected ? fontWeight.medium : fontWeight.regular};
   line-height: ${({ theme: { lineHeight } }) => lineHeight.body.sm};

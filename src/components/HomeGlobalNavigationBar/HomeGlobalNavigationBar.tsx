@@ -63,6 +63,7 @@ const HomeGlobalNavigationBar: React.FC<{ bannerStatus?: boolean }> = ({ bannerS
               <Button onClick={() => setOpen(!open)}>
                 <ButtonIcon src={open ? icons.close : icons.menu} />
               </Button>
+              <MobileNavigationList {...{ links, open }} />
             </>
           ) : (
             <ButtonList>
@@ -85,7 +86,6 @@ const HomeGlobalNavigationBar: React.FC<{ bannerStatus?: boolean }> = ({ bannerS
           )}
         </ContentWrapper>
       </HomeGlobalNavigationBarWrapper>
-      <MobileNavigationList {...{ links, open }} />
     </>
   );
 };
