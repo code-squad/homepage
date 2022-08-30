@@ -4,8 +4,8 @@ import { graphql, useStaticQuery } from "gatsby";
 // Type
 import { CourseType } from "@type/Course";
 // Components
-import { MButton, TitleSet } from "components";
-import { CourseCard } from "./CourseCard";
+import { MButton, TitleSet, CourseCard } from "components";
+// import { CourseCard } from "./CourseCard";
 // Assets
 import thumbnail from "assets/img/illusts/thumbnail";
 import { SUBTITLE, TITLE } from "assets/static/phrases";
@@ -34,15 +34,11 @@ const Course: React.FC = () => {
       </TitleWrapper>
       <CourseListWrapper>
         <CourseList>
-          {courses
-            .slice(0, courseCount)
-            .map(({ master, title, dueDate, cost, tags, img, path }) => (
-              <li key={img}>
-                <CourseCard
-                  {...{ master, title, dueDate, cost, tags, path, img: thumbnail[img] }}
-                />
-              </li>
-            ))}
+          {courses.slice(0, courseCount).map(({ category, title, cost, tags, img, path }) => (
+            <li key={img}>
+              <CourseCard {...{ category, title, cost, tags, path, img: thumbnail[img] }} />
+            </li>
+          ))}
         </CourseList>
         {courses.length > 9 && (
           <MoreButtonWrapper>
@@ -86,8 +82,8 @@ const CourseList = styled.ul`
   background-color: ${({ theme: { color } }) => color.surface.offWhite1};
   display: flex;
   flex-flow: row wrap;
-  & > *:not(:nth-child(3n)) {
-    margin-right: 17.1rem;
+  & > *:not(:nth-child(2n)) {
+    margin-right: 2.4rem;
   }
   & > *:not(:nth-last-child(-n + 3)) {
     margin-bottom: 8rem;
@@ -107,9 +103,8 @@ const CodeTogetherCourseQuery = graphql`
     mdx(frontmatter: { templateKey: { eq: "codeTogether_courses" } }) {
       frontmatter {
         courses {
-          master
+          category
           title
-          dueDate
           cost
           img
           path
