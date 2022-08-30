@@ -22,9 +22,9 @@ const HomeGlobalNavigationBar: React.FC<{ bannerStatus?: boolean }> = ({ bannerS
 
   React.useEffect(() => {
     if (open) {
-      document.body.style.overflow = "hidden";
+      document.body.style.overflowY = "hidden";
     } else {
-      document.body.style.overflow = "scroll";
+      document.body.style.overflowY = "scroll";
     }
   }, [open]);
 
