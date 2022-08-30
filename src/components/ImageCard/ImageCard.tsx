@@ -1,41 +1,51 @@
 import React from "react";
 import styled from "styled-components";
 // Typography
-import { MBody, HLBold } from "typography/";
+import { Typography } from "typography/";
 
 interface IImageCard {
   description?: string;
   descriptions?: string[];
   title: string;
   img: string;
+  medium?: boolean;
 }
 
-const ImageCard: React.FC<IImageCard> = ({ img, title, description, descriptions }) => {
+const ImageCard: React.FC<IImageCard> = ({ img, title, description, descriptions, medium }) => {
+  const [open, setOpen] = React.useState(true);
+
   return (
-    <CardWrapper>
+    <CardWrapper
+      {...{ medium }}
+      onClick={() => {
+        setOpen(!open);
+      }}
+    >
       <CardImg alt={`card-img-${title}`} src={img} />
       <Title>
-        <HLBold>{title}</HLBold>
+        <Typography type="SHLBold">{title}</Typography>
       </Title>
       {descriptions ? (
-        <DescriptionList>
+        <DescriptionList {...{ open }}>
           {descriptions.map((description) => (
             <li key={description}>
-              <MBody style={{ display: "inline", verticalAlign: "middle" }}>{description}</MBody>
+              <Typography type="MBody" style={{ display: "inline", verticalAlign: "middle" }}>
+                {description}
+              </Typography>
             </li>
           ))}
         </DescriptionList>
       ) : (
         <Description>
-          <MBody>{description}</MBody>
+          <Typography type="MBody">{description}</Typography>
         </Description>
       )}
     </CardWrapper>
   );
 };
 
-const CardWrapper = styled.div`
-  max-width: 30.2rem;
+const CardWrapper = styled.div<{ medium?: boolean }>`
+  width: ${({ medium }) => (medium ? "41rem" : "30.2rem")};
   display: flex;
   flex-direction: column;
 `;
@@ -54,16 +64,17 @@ const Description = styled.div`
   color: ${({ theme: { color } }) => color.greyScale.grey2};
 `;
 
-const DescriptionList = styled.ul`
+const DescriptionList = styled.ul<{ open?: boolean }>`
   margin-top: 1.6rem;
   display: flex;
   flex-direction: column;
   color: ${({ theme: { color } }) => color.greyScale.grey2};
   list-style: disc;
-  list-style-position: outside;
-  margin-left: 2.3rem;
-  & > *:not(:last-child) {
-    margin-bottom: 0.8rem;
+  list-style-position: inside;
+  margin-left: 1.3rem;
+  & > li {
+    text-indent: -1.35rem;
+    padding-left: 1.35rem;
   }
 `;
 
