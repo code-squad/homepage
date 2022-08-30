@@ -4,6 +4,7 @@ export { HomeGlobalNavigationBar } from "./HomeGlobalNavigationBar";
 export { TabNavigationBar } from "./TabNavigationBar";
 export { TagNavigationBar } from "./TagNavigationBar";
 export { CircleNavigation } from "./CircleNavigation";
+export { CourseInfo } from "./CourseInfo";
 export { RectangleNavigation } from "./RectangleNavigation";
 export { Footer } from "./Footer";
 export { Avatar } from "./Avatar";
