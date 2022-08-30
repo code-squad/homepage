@@ -1,11 +1,10 @@
 import thumbnail from "assets/img/illusts/thumbnail";
 
 export interface CourseType {
-  master: string;
+  category: string;
   title: string;
-  dueDate: string;
   cost: string;
-  tags: string[];
-  path: string;
   img: keyof typeof thumbnail;
+  path: string;
+  tags: string[];
 }
