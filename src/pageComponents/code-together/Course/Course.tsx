@@ -35,7 +35,7 @@ const Course: React.FC = () => {
       <CourseListWrapper>
         <CourseList>
           {courses.slice(0, courseCount).map(({ category, title, cost, tags, img, path }) => (
-            <li key={img}>
+            <li key={`${title}-${img}`}>
               <CourseCard {...{ category, title, cost, tags, path, img: thumbnail[img] }} />
             </li>
           ))}
