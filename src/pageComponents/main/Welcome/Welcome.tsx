@@ -13,8 +13,7 @@ const Welcome: React.FC = () => {
 
   return (
     <WelcomeWrapper>
-      {isMobile && <SDisplay>{TITLE.WELCOME}</SDisplay>}
-      {!isMobile && <MDisplay>{TITLE.WELCOME}</MDisplay>}
+      {isMobile ? <SDisplay>{TITLE.WELCOME}</SDisplay> : <MDisplay>{TITLE.WELCOME}</MDisplay>}
     </WelcomeWrapper>
   );
 };

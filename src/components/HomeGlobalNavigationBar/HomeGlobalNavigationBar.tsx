@@ -89,6 +89,7 @@ const HomeGlobalNavigationBarWrapper = styled.header<{
   position: fixed;
   top: ${({ bannerStatus }) => (bannerStatus ? "8rem" : "0")};
   display: flex;
+  width: 100%;
   z-index: 10;
   background-color: ${({ scrollPosition, open, theme: { color } }) =>
     scrollPosition || open ? color.blackAndWhite.white : "transparent"};
@@ -99,13 +100,11 @@ const HomeGlobalNavigationBarWrapper = styled.header<{
   transition-duration: 0.15s;
   transition-timing-function: linear;
   @media ${({ theme }) => theme.device.mobile} {
-    width: 100%;
     min-width: 36rem;
     height: ${({ open }) => (open ? "100vh" : "6.2rem")};
     align-items: ${({ open }) => (open ? "flex-start" : "center")};
   }
   @media ${({ theme }) => theme.device.tablet} {
-    min-width: 100%;
     min-height: 8rem;
     justify-content: center;
     align-items: center;

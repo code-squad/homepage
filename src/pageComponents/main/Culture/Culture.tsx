@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper as SwiperClass } from "swiper";
+import "swiper/swiper.min.css";
 // Type
 import { CultureType } from "@type/Culture";
 // Typography
@@ -20,6 +23,7 @@ const Culture: React.FC = () => {
   const { cultures }: { cultures: CultureType[] } = strainMdxInfo(useStaticQuery(CultureQuery));
 
   const [currentIndex, setCurrentIndex] = React.useState(0);
+  const swiperRef = React.useRef<SwiperClass | null>(null);
 
   const handleIndexChanged = (index: number) => {
     setCurrentIndex(index);
@@ -30,24 +34,35 @@ const Culture: React.FC = () => {
       <TitleWrapper>
         <TitleSet subtitle={SUBTITLE.CULTURE} title={TITLE.CULTURE} />
       </TitleWrapper>
-      <ContentWrapper {...{ currentIndex }}>
+      <Swiper
+        onSwiper={(swiper) => {
+          swiperRef.current = swiper;
+        }}
+        slidesPerView={isMobile ? 1 : 3}
+        spaceBetween={isMobile ? 0 : 40}
+        allowTouchMove={isMobile ? true : false}
+        onActiveIndexChange={({ activeIndex }) => setCurrentIndex(activeIndex)}
+        style={{ width: "100%" }}
+      >
         {cultures.map(({ title, image, subtitle, description }) => (
-          <CultureContent key={title}>
-            <CultureImg src={features[image]} alt="culture-icon" />
-            <CultureTitleWrapper>
-              <MBold>{subtitle}</MBold>
-              {isMobile ? <SHLBold>{title}</SHLBold> : <HLBold>{title}</HLBold>}
-            </CultureTitleWrapper>
-            <DescriptionList>
-              {getSplittedPhrase(description).map((descriptionItem: string) => (
-                <DescriptionItem key={descriptionItem}>
-                  <MBody>{descriptionItem}</MBody>
-                </DescriptionItem>
-              ))}
-            </DescriptionList>
-          </CultureContent>
+          <SwiperSlide key={title}>
+            <CultureContent key={title}>
+              <CultureImg src={features[image]} alt="culture-icon" />
+              <CultureTitleWrapper>
+                <MBold>{subtitle}</MBold>
+                {isMobile ? <SHLBold>{title}</SHLBold> : <HLBold>{title}</HLBold>}
+              </CultureTitleWrapper>
+              <DescriptionList>
+                {getSplittedPhrase(description).map((descriptionItem: string) => (
+                  <DescriptionItem key={descriptionItem}>
+                    <MBody>{descriptionItem}</MBody>
+                  </DescriptionItem>
+                ))}
+              </DescriptionList>
+            </CultureContent>
+          </SwiperSlide>
         ))}
-      </ContentWrapper>
+      </Swiper>
       {isMobile && (
         <RectangleNavigationWrapper>
           <RectangleNavigation count={3} index={currentIndex} onIndexChanged={handleIndexChanged} />
