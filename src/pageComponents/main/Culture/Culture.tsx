@@ -25,10 +25,6 @@ const Culture: React.FC = () => {
   const [currentIndex, setCurrentIndex] = React.useState(0);
   const swiperRef = React.useRef<SwiperClass | null>(null);
 
-  const handleIndexChanged = (index: number) => {
-    setCurrentIndex(index);
-  };
-
   return (
     <CultureWrapper>
       <TitleWrapper>
@@ -65,7 +61,7 @@ const Culture: React.FC = () => {
       </Swiper>
       {isMobile && (
         <RectangleNavigationWrapper>
-          <RectangleNavigation count={3} index={currentIndex} onIndexChanged={handleIndexChanged} />
+          <RectangleNavigation count={3} index={currentIndex} />
         </RectangleNavigationWrapper>
       )}
     </CultureWrapper>

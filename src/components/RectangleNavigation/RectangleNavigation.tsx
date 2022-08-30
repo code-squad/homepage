@@ -4,18 +4,10 @@ import styled from "styled-components";
 interface IRectangleNavigation {
   count: number;
   index: number;
-  onIndexChanged: (index: number) => void;
 }
 
-const RectangleNavigation: React.FC<IRectangleNavigation> = ({ count, index, onIndexChanged }) => {
+const RectangleNavigation: React.FC<IRectangleNavigation> = ({ count, index }) => {
   const [currentIndex, setCurrentIndex] = React.useState(0);
-
-  const handleCircleClick = (index: number) => {
-    if (index !== currentIndex) {
-      onIndexChanged(index);
-      setCurrentIndex(index);
-    }
-  };
 
   const indexArray = [...Array(count).keys()];
 
@@ -27,10 +19,7 @@ const RectangleNavigation: React.FC<IRectangleNavigation> = ({ count, index, onI
     <RectangleNavigationWrapper>
       {indexArray.map((index) => (
         <li key={index}>
-          <RectangleButton
-            selected={index === currentIndex}
-            onClick={() => handleCircleClick(index)}
-          ></RectangleButton>
+          <RectangleButton selected={index === currentIndex}></RectangleButton>
         </li>
       ))}
     </RectangleNavigationWrapper>
@@ -49,17 +38,11 @@ const RectangleNavigationWrapper = styled.ul`
   }
 `;
 
-const RectangleButton = styled.button<{ selected?: boolean }>`
+const RectangleButton = styled.div<{ selected?: boolean }>`
   width: 3rem;
-  height: 0rem;
-  border-radius: 0;
+  height: 0.2rem;
   background-color: ${({ selected, theme: { color } }) =>
     selected ? color.black : color.greyScale.grey3};
-  border: 0.1rem solid
-    ${({ selected, theme: { color } }) => (selected ? color.black : color.greyScale.grey3)};
-  &:hover {
-    cursor: pointer;
-  }
 `;
 
 export default RectangleNavigation;

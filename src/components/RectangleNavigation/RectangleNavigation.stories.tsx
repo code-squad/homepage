@@ -18,5 +18,4 @@ export const Default = Template.bind({});
 Default.args = {
   count: 3,
   index: 0,
-  onIndexChanged: action("clicked"),
 };

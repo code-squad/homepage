@@ -34,10 +34,6 @@ const Place: React.FC = () => {
     if (swiperRef.current) swiperRef.current.slideNext();
   };
 
-  const handleIndexChanged = (index: number) => {
-    setCurrentIndex(index);
-  };
-
   return (
     <PlaceWrapper>
       {(isTablet || isDesktop) && (
@@ -75,7 +71,7 @@ const Place: React.FC = () => {
       </Swiper>
       {isMobile && (
         <RectangleNavigationWrapper>
-          <RectangleNavigation count={7} index={currentIndex} onIndexChanged={handleIndexChanged} />
+          <RectangleNavigation count={7} index={currentIndex} />
         </RectangleNavigationWrapper>
       )}
     </PlaceWrapper>

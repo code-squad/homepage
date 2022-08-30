@@ -41,10 +41,6 @@ const Interview: React.FC<IInterview> = ({ subtitle, title, interviews, style })
     }
   };
 
-  const handleIndexChanged = (index: number) => {
-    setCurrentIndex(index);
-  };
-
   return (
     <InterviewWrapper {...{ style }}>
       <TitleWrapper>
@@ -84,7 +80,7 @@ const Interview: React.FC<IInterview> = ({ subtitle, title, interviews, style })
       </InterviewList>
       {isMobile && (
         <RectangleNavigationWrapper>
-          <RectangleNavigation count={4} index={currentIndex} onIndexChanged={handleIndexChanged} />
+          <RectangleNavigation count={4} index={currentIndex} />
         </RectangleNavigationWrapper>
       )}
     </InterviewWrapper>
