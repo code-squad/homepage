@@ -40,8 +40,8 @@ const MobileNavigationList: React.FC<{
         >
           {MESSAGE.COMPANY_EMAIL_ADDRESS}
         </ExternalLink>
-        <Typography type="SBody">{MESSAGE.COMPANY_TEL_NUMBER}</Typography>
-        <Typography type="SBody">{MESSAGE.COMPANY_ADDRESS}</Typography>
+        <Typography type="SBody">{MESSAGE.TEL_NUMBER}</Typography>
+        <Typography type="SBody">{MESSAGE.ADDRESS}</Typography>
       </CompanyInfoWrapper>
     </NavigationListWrapper>
   );
