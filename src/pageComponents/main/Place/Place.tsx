@@ -167,36 +167,6 @@ const PlaceIntroduceWrapper = styled.div`
   }
 `;
 
-const PlaceListWrapper = styled.div`
-  @media ${({ theme }) => theme.device.tablet} {
-    margin: 0 auto;
-    overflow: hidden;
-  }
-  @media ${({ theme }) => theme.device.desktop} {
-    width: 106.2rem;
-    margin: 0 auto;
-    overflow: hidden;
-  }
-`;
-
-const PlaceList = styled.ul<{ currentIndex: number }>`
-  display: flex;
-  position: relative;
-  display: flex;
-  transition: left 0.5s;
-  @media ${({ theme }) => theme.device.mobile} {
-    width: 700vw;
-    left: -${({ currentIndex }) => currentIndex * 100}vw;
-  }
-  @media ${({ theme }) => theme.device.tablet} {
-    width: 700%;
-    left: -${({ currentIndex }) => currentIndex * 100}%;
-  }
-  @media ${({ theme }) => theme.device.desktop} {
-    left: -${({ currentIndex }) => currentIndex * 106.2}rem;
-  }
-`;
-
 const PlaceImage = styled.img`
   @media ${({ theme }) => theme.device.mobile} {
     width: 100vw;
