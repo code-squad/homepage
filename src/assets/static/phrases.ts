@@ -98,6 +98,7 @@ const LINK_DESCRIPTION = {
 };
 
 const MESSAGE = {
+  COPYRIGHT: "@2022 CodeSquad",
   COMPANY_ADDRESS: "주소: 강남구 역삼동 836-24 역삼빌딩 4층",
   COMPANY_CEO_NAME: "대표자: 김정",
   COMPANY_EMAIL: "대표 이메일: ",
