@@ -32,7 +32,7 @@ const CourseCard: React.FC<ICourseCard> = ({ category, title, cost, tags, img, p
       target={path.match(urlRegex) ? "_blank" : undefined}
       rel={path.match(urlRegex) ? "noopener noreferrer nofollow" : undefined}
     >
-      <CardImg src={img} />
+      <CardImg alt={`card-img-${title}`} src={img} />
       <CourseInfoWrapper>
         <Typography style={{ color: greyScale.grey1 }} type={isMobile ? "XSBody" : "SBold"}>
           {category}
