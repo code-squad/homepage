@@ -5,7 +5,6 @@ import { Typography } from "typography";
 // Components
 import { InfoItem } from "./InfoItem";
 // Assets
-import header from "assets/img/illusts/header";
 import icons from "assets/img/icons";
 import { TITLE } from "assets/static/phrases";
 import { useResponsive } from "lib/hooks";
@@ -84,7 +83,7 @@ const CourseInfoWrapper = styled.div<{ backgroundImage: string; backgroundColor:
   position: relative;
   display: flex;
   flex-direction: column;
-  color: ${({ theme: { color } }) => color.blackAndWhite.black};
+  color: ${({ theme: { color } }) => color.black};
   background-color: ${({ backgroundColor }) => backgroundColor};
   background-image: ${({ backgroundImage }) => `url(${backgroundImage})`};
   background-repeat: no-repeat;
