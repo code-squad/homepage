@@ -23,11 +23,12 @@ function useResponsive() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  let isMobile,
-    isTablet,
-    isDesktop = false;
+  let isMobile = false;
+  let isTablet = false;
+  let isDesktop = false;
   if (windowSize.width < breakPoint.tablet) isMobile = true;
-  if (windowSize.width < breakPoint.desktop) isTablet = true;
+  if (breakPoint.tablet <= windowSize.width && windowSize.width < breakPoint.desktop)
+    isTablet = true;
   if (windowSize.width >= breakPoint.desktop) isDesktop = true;
   return { isMobile, isTablet, isDesktop };
 }
