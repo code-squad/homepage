@@ -7,7 +7,7 @@ import "swiper/swiper.min.css";
 // Type
 import { CultureType } from "@type/Culture";
 // Typography
-import { HLBold, SHLBold, MBold, MBody } from "typography";
+import { Typography } from "typography";
 // Components
 import { RectangleNavigation, TitleSet } from "components/";
 // Assets
@@ -49,13 +49,13 @@ const Culture: React.FC = () => {
             <CultureContent key={title}>
               <CultureImg src={features[image]} alt="culture-icon" />
               <CultureTitleWrapper>
-                <MBold>{subtitle}</MBold>
-                {isMobile ? <SHLBold>{title}</SHLBold> : <HLBold>{title}</HLBold>}
+                <Typography type="MBold">{subtitle}</Typography>
+                <Typography type={isMobile ? "SHLBold" : "HLBold"}>{title}</Typography>
               </CultureTitleWrapper>
               <DescriptionList>
                 {getSplittedPhrase(description).map((descriptionItem: string) => (
                   <DescriptionItem key={descriptionItem}>
-                    <MBody>{descriptionItem}</MBody>
+                    <Typography type="MBody">{descriptionItem}</Typography>
                   </DescriptionItem>
                 ))}
               </DescriptionList>

@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Swiper as SwiperClass } from "swiper";
 import "swiper/swiper.min.css";
 // Typography
-import { MBody, SBody } from "typography";
+import { Typography } from "typography";
 // Components
 import { TitleSet, RectangleNavigation } from "components";
 // Assets
@@ -55,11 +55,9 @@ const Place: React.FC = () => {
       )}
       <PlaceIntroduceWrapper>
         <TitleSet subtitle={SUBTITLE.PLACE} title={TITLE.PLACE} />
-        {isMobile ? (
-          <SBody style={{ color: color.greyScale.grey2 }}>{DESCRIPTION.PLACE}</SBody>
-        ) : (
-          <MBody style={{ color: color.greyScale.grey2 }}>{DESCRIPTION.PLACE}</MBody>
-        )}
+        <Typography type={isMobile ? "SBody" : "MBody"} style={{ color: color.greyScale.grey2 }}>
+          {DESCRIPTION.PLACE}
+        </Typography>
       </PlaceIntroduceWrapper>
       <Swiper
         onSwiper={(swiper) => {

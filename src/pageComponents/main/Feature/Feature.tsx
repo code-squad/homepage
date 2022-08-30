@@ -5,7 +5,6 @@ import { graphql, useStaticQuery } from "gatsby";
 import { FeatureType } from "@type/Feature";
 // Typography
 import { Typography } from "typography";
-import { MBody, SBold } from "typography";
 // Components
 import { MButton, TitleSet } from "components/";
 // Assets
@@ -41,11 +40,15 @@ const Feature: React.FC = () => {
             >
               {title}
             </Typography>
-            <SBold>{subtitle}</SBold>
+            <Typography type="SBold">{subtitle}</Typography>
           </div>
           {splittedDescription.map((descriptionItem: string, index: number) => {
             if (isMobile && !detailView && index > 0) return null;
-            return <MBody key={descriptionItem}>{descriptionItem}</MBody>;
+            return (
+              <Typography type="MBody" key={descriptionItem}>
+                {descriptionItem}
+              </Typography>
+            );
           })}
         </Content>
       </ContentWrapper>

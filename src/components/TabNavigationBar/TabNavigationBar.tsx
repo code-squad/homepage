@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 // Typography
-import { MBold } from "typography/";
+import { Typography } from "typography/";
 
 interface ITabNavigationBarProps {
   onIndexChanged: (index: number) => void;
@@ -24,7 +24,7 @@ const TabNavigationBar: React.FC<ITabNavigationBarProps> = ({ onIndexChanged, ti
               onClick={() => handleTabNavigationButtonClick(index)}
               selected={index === currentIndex}
             >
-              <MBold>{title}</MBold>
+              <Typography type="MBold">{title}</Typography>
             </TabNavButton>
           </li>
         ))}

@@ -4,7 +4,7 @@ import { graphql, Link, useStaticQuery } from "gatsby";
 // Type
 import { MasterType } from "@type/Master";
 // Typography
-import { MBody, SBody, XSBody, HLBold, SHLBold, MBold, SBold } from "typography";
+import { Typography } from "typography";
 // Components
 import { TitleSet, TabNavigationBar } from "components";
 // Assets
@@ -34,7 +34,7 @@ const Master: React.FC = () => {
       <MasterCourseIntroduceWrapper>
         <TitleSet subtitle={SUBTITLE.MASTER} title={TITLE.MASTER} />
         <CourseIntroduceWrapper>
-          <MBody>{DESCRIPTION.MASTER}</MBody>
+          <Typography type="MBody">{DESCRIPTION.MASTER}</Typography>
         </CourseIntroduceWrapper>
       </MasterCourseIntroduceWrapper>
       <TabNavigationWrapper>
@@ -46,50 +46,33 @@ const Master: React.FC = () => {
           <IntroduceWrapper>
             <Introduce>
               <NicknameWrapper>
-                {isMobile ? (
-                  <SHLBold>{masterIntroduce.name}</SHLBold>
-                ) : (
-                  <HLBold>{masterIntroduce.name}</HLBold>
-                )}
+                <Typography type={isMobile ? "SHLBold" : "HLBold"}>
+                  {masterIntroduce.name}
+                </Typography>
                 <MasterIntroduceWrapper>
-                  {isMobile ? (
-                    <XSBody>{masterIntroduce.introduce}</XSBody>
-                  ) : (
-                    <SBody>{masterIntroduce.introduce}</SBody>
-                  )}
+                  <Typography type={isMobile ? "XSBody" : "SBody"}>
+                    {masterIntroduce.introduce}
+                  </Typography>
                 </MasterIntroduceWrapper>
               </NicknameWrapper>
               <MasterNutshellWrapper>
-                {isMobile ? (
-                  <SHLBold>{masterIntroduce.nutshell}</SHLBold>
-                ) : (
-                  <MBold>{masterIntroduce.nutshell}</MBold>
-                )}
+                <Typography type={isMobile ? "SHLBold" : "MBold"}>
+                  {masterIntroduce.nutshell}
+                </Typography>
               </MasterNutshellWrapper>
               <CareerWrapper>
                 {masterIntroduce.careers?.map((career) => (
                   <li key={career}>
-                    {isMobile ? (
-                      <XSBody
-                        style={{
-                          display: "inline",
-                          verticalAlign: "middle",
-                          color: color.greyScale.grey1,
-                        }}
-                      >
-                        {career}
-                      </XSBody>
-                    ) : (
-                      <SBody
-                        style={{
-                          display: "inline",
-                          verticalAlign: "middle",
-                          color: color.greyScale.grey1,
-                        }}
-                      >
-                        {career}
-                      </SBody>
-                    )}
+                    <Typography
+                      type={isMobile ? "XSBody" : "SBody"}
+                      style={{
+                        display: "inline",
+                        verticalAlign: "middle",
+                        color: color.greyScale.grey1,
+                      }}
+                    >
+                      {career}
+                    </Typography>
                   </li>
                 ))}
               </CareerWrapper>
@@ -97,7 +80,7 @@ const Master: React.FC = () => {
             {masterIntroduce.schedules && (
               <ScheduleWrapper>
                 <ScheduleTitleWrapper>
-                  <MBold>{TITLE.SCHEDULE}</MBold>
+                  <Typography type="MBold">{TITLE.SCHEDULE}</Typography>
                 </ScheduleTitleWrapper>
                 <ScheduleList>
                   {masterIntroduce.schedules.map(({ image, title, subtitle, path }) => (
@@ -106,10 +89,10 @@ const Master: React.FC = () => {
                         <CourseImage src={thumbnails[image]} alt="course" />
                         <CourseTitleWrapper>
                           <TitleWrapper>
-                            <XSBody>{title}</XSBody>
+                            <Typography type="XSBody">{title}</Typography>
                           </TitleWrapper>
                           <SubtitleWrapper>
-                            <SBold>{subtitle}</SBold>
+                            <Typography type="SBold">{subtitle}</Typography>
                           </SubtitleWrapper>
                         </CourseTitleWrapper>
                       </Schedule>

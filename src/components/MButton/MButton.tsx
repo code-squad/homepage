@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
 // Typography
-import { MBold } from "typography";
+import { Typography } from "typography";
 // Assets
 import icons from "assets/img/icons";
 
@@ -31,7 +31,7 @@ const MButton: React.FC<IMButtonProps> = ({ children, accent, disabled, to, onCl
       {type === "left" && (
         <ButtonIcon src={icons.plus} {...{ accent, disabled }} style={{ marginRight: "0.4rem" }} />
       )}
-      <MBold>{children}</MBold>
+      <Typography type="MBold">{children}</Typography>
       {type === "right" && (
         <ButtonIcon
           src={icons.chevronRight}

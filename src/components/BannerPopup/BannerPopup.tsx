@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 // Typography
-import { MBold, XSBold } from "typography";
+import { Typography } from "typography";
 // Assets
 import icons from "assets/img/icons";
 
@@ -16,8 +16,8 @@ const BannerPopup: React.FC<IBannerPopup> = ({ title, description, to, onCloseBu
   return (
     <BannerPopupWrapper>
       <ContentWrapper href={to} target="_blank" rel="noopener noreferrer nofollow">
-        <MBold>{title}</MBold>
-        {description && <XSBold>{description}</XSBold>}
+        <Typography type="MBold">{title}</Typography>
+        {description && <Typography type="XSBold">{description}</Typography>}
       </ContentWrapper>
       <CloseButton onClick={onCloseButtonClicked}>
         <ButtonIcon src={icons.close} />

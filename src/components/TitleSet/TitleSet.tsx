@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 // Typography
-import { HLBold, SHLBold, SDisplay } from "typography";
+import { Typography } from "typography";
 // Libs
 import { useResponsive } from "lib/hooks";
 
@@ -16,21 +16,18 @@ const TitleSet: React.FC<ITitleSet> = ({ title, subtitle, bigSubtitle }) => {
 
   return (
     <TitleWrapper>
-      {isMobile && (
-        <>
-          {bigSubtitle ? <HLBold>{subtitle}</HLBold> : <SHLBold>{subtitle}</SHLBold>}
-          <HeadTitle>{subtitle ? <HLBold>{title}</HLBold> : <SHLBold>{title}</SHLBold>}</HeadTitle>
-        </>
+      {bigSubtitle ? (
+        <Typography type={isMobile ? "HLBold" : "SDisplay"}>{subtitle}</Typography>
+      ) : (
+        <Typography type={isMobile ? "SHLBold" : "HLBold"}>{subtitle}</Typography>
       )}
-      {!isMobile && (
-        <>
-          {subtitle &&
-            (bigSubtitle ? <SDisplay>{subtitle}</SDisplay> : <HLBold>{subtitle}</HLBold>)}
-          <HeadTitle subtitle={Boolean(subtitle)}>
-            {subtitle ? <SDisplay>{title}</SDisplay> : <HLBold>{title}</HLBold>}
-          </HeadTitle>
-        </>
-      )}
+      <HeadTitle>
+        {subtitle ? (
+          <Typography type={isMobile ? "HLBold" : "SDisplay"}>{title}</Typography>
+        ) : (
+          <Typography type={isMobile ? "SHLBold" : "HLBold"}>{title}</Typography>
+        )}
+      </HeadTitle>
     </TitleWrapper>
   );
 };

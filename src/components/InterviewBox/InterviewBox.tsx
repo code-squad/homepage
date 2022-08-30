@@ -4,7 +4,7 @@ import styled from "styled-components";
 import icons from "assets/img/icons";
 // Components
 import { Avatar } from "components";
-import { LBody, MBody, SBody, SBold } from "typography";
+import { Typography } from "typography";
 
 interface IInterviewBox {
   writerPhoto: string;
@@ -25,17 +25,17 @@ const InterviewBox: React.FC<IInterviewBox> = ({
     <InterviewBoxWrapper>
       <Avatar src={writerPhoto} />
       <Nutshell>
-        <LBody>{nutshell}</LBody>
+        <Typography type="LBody">{nutshell}</Typography>
       </Nutshell>
       <Content>
-        <MBody>{content}</MBody>
+        <Typography type="MBody">{content}</Typography>
       </Content>
       <WriterWrapper>
         <WriterName>
-          <SBold>{writer}</SBold>
+          <Typography type="SBold">{writer}</Typography>
         </WriterName>
         <WriterInfo>
-          <SBody>{writerInfo}</SBody>
+          <Typography type="SBody">{writerInfo}</Typography>
         </WriterInfo>
       </WriterWrapper>
     </InterviewBoxWrapper>

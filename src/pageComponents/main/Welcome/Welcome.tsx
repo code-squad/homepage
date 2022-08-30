@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 // Typography
-import { MDisplay, SDisplay } from "typography";
+import { Typography } from "typography";
 // Assets
 import headers from "assets/img/illusts/header";
 import { TITLE } from "assets/static/phrases";
@@ -13,7 +13,7 @@ const Welcome: React.FC = () => {
 
   return (
     <WelcomeWrapper>
-      {isMobile ? <SDisplay>{TITLE.WELCOME}</SDisplay> : <MDisplay>{TITLE.WELCOME}</MDisplay>}
+      <Typography type={isMobile ? "SDisplay" : "MDisplay"}>{TITLE.WELCOME}</Typography>
     </WelcomeWrapper>
   );
 };
