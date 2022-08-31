@@ -42,7 +42,7 @@ const Culture: React.FC = () => {
       >
         {cultures.map(({ title, image, subtitle, description }) => (
           <SwiperSlide key={title}>
-            <CultureContent key={title}>
+            <CultureContent>
               <CultureImg src={features[image]} alt="culture-icon" />
               <CultureTitleWrapper>
                 <Typography type="MBold">{subtitle}</Typography>
