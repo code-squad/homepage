@@ -63,8 +63,8 @@ const Place: React.FC = () => {
         allowTouchMove={isMobile ? true : false}
         onActiveIndexChange={({ activeIndex }) => setCurrentIndex(activeIndex)}
       >
-        {imgList.map((image) => (
-          <SwiperSlide key={image}>
+        {imgList.map((image, index) => (
+          <SwiperSlide key={`${image}-${index}`}>
             <PlaceImage src={image} alt="codesquad-place" />
           </SwiperSlide>
         ))}
