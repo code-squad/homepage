@@ -45,9 +45,17 @@ const ImageCard: React.FC<IImageCard> = ({ img, title, description, descriptions
 };
 
 const CardWrapper = styled.div<{ medium?: boolean }>`
-  width: ${({ medium }) => (medium ? "41rem" : "30.2rem")};
   display: flex;
   flex-direction: column;
+  @media ${({ theme }) => theme.device.mobile} {
+    width: 100%;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    width: 100%;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    width: ${({ medium }) => (medium ? "41rem" : "30.2rem")};
+  }
 `;
 
 const CardImg = styled.img`
