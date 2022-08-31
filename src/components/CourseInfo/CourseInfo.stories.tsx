@@ -27,5 +27,8 @@ Default.args = {
     "6개월 이상 프로그래밍을 공부해보았고, 동료와 함께 성장하고 싶은 사람",
     "실무 프로그래머로 가는 길이 궁금한 사람",
   ],
-  courseInfos: [{ title: "6개월", content: "", img: "calendar" }],
+  courseInfos: [
+    { title: "6개월", content: "", img: "calendar" },
+    { title: "매달 55만원", content: "6개월 기준 총 396만원", img: "coin" },
+  ],
 };
