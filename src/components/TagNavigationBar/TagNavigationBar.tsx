@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 // Typography
-import { MBold, MBody } from "typography/";
+import { Typography } from "typography/";
+
 // Assets
 import icons from "assets/img/icons";
 
@@ -27,7 +28,7 @@ const TabNavigationBar: React.FC<{
             >
               <>
                 <img src={icons.hash} style={{ width: "1.6rem", height: "1.6rem" }} />
-                {index === currentIndex ? <MBold>{title}</MBold> : <MBody>{title}</MBody>}
+                <Typography type={index === currentIndex ? "MBold" : "MBody"}>{title}</Typography>
               </>
             </TagNavButton>
           </li>
@@ -38,15 +39,21 @@ const TabNavigationBar: React.FC<{
 };
 
 const TagNavigationBarWrapper = styled.div`
-  width: 100%;
-  min-width: 106.2rem;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  overflow-x: scroll;
+  white-space: nowrap;
+  float: left;
+  @media ${({ theme }) => theme.device.mobile} {
+    width: 32.7rem;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    width: 60.8rem;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    width: 106.2rem;
+  }
 `;
 
 const TagNavButtonList = styled.ul`
-  width: 84.5rem;
   display: flex;
   justify-content: flex-start;
   align-items: center;
