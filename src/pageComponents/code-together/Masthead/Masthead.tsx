@@ -43,18 +43,17 @@ const MastheadWrapper = styled.div`
   // 배경 이미지 asset 파일이 추가되면 추가작업 필요
   @media ${({ theme }) => theme.device.mobile} {
     min-width: 36rem;
-    padding: 14.2rem 2.4rem 4.4rem 2.4rem;
+    padding: 0 2.4rem;
     background-size: cover;
     height: 46.8rem;
   }
   @media ${({ theme }) => theme.device.tablet} {
     min-width: 76.8rem;
-    padding: 16rem 8rem 5.6rem 8rem;
+    padding: 0 8rem;
     height: 43.8rem;
     background-size: cover;
   }
   @media ${({ theme }) => theme.device.desktop} {
-    align-items: center;
     min-width: 144rem;
     height: 56rem;
   }
