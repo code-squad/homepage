@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from "gatsby";
 // Type
 import { FeatureType } from "@type/Feature";
 // Typography
-import { MBody, HLBold, SHLBold, SBold } from "typography";
+import { Typography } from "typography";
 // Components
 import { MButton, TitleSet } from "components/";
 // Assets
@@ -34,13 +34,21 @@ const Feature: React.FC = () => {
         </FeatureImgWrapper>
         <Content>
           <div>
-            {isMobile && <SHLBold style={{ color: color.greyScale.grey1 }}>{title}</SHLBold>}
-            {!isMobile && <HLBold style={{ color: color.greyScale.grey1 }}>{title}</HLBold>}
-            <SBold>{subtitle}</SBold>
+            <Typography
+              style={{ color: color.greyScale.grey1 }}
+              type={isMobile ? "SHLBold" : "HLBold"}
+            >
+              {title}
+            </Typography>
+            <Typography type="SBold">{subtitle}</Typography>
           </div>
           {splittedDescription.map((descriptionItem: string, index: number) => {
             if (isMobile && !detailView && index > 0) return null;
-            return <MBody key={descriptionItem}>{descriptionItem}</MBody>;
+            return (
+              <Typography type="MBody" key={descriptionItem}>
+                {descriptionItem}
+              </Typography>
+            );
           })}
         </Content>
       </ContentWrapper>

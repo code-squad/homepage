@@ -7,7 +7,7 @@ import "swiper/swiper.min.css";
 // Type
 import { CultureType } from "@type/Culture";
 // Typography
-import { HLBold, SHLBold, MBold, MBody } from "typography";
+import { Typography } from "typography";
 // Components
 import { RectangleNavigation, TitleSet } from "components/";
 // Assets
@@ -25,10 +25,6 @@ const Culture: React.FC = () => {
   const [currentIndex, setCurrentIndex] = React.useState(0);
   const swiperRef = React.useRef<SwiperClass | null>(null);
 
-  const handleIndexChanged = (index: number) => {
-    setCurrentIndex(index);
-  };
-
   return (
     <CultureWrapper>
       <TitleWrapper>
@@ -38,7 +34,7 @@ const Culture: React.FC = () => {
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
         }}
-        slidesPerView={isMobile ? 1 : 3}
+        slidesPerView={isMobile ? 1 : cultures.length}
         spaceBetween={isMobile ? 0 : 40}
         allowTouchMove={isMobile ? true : false}
         onActiveIndexChange={({ activeIndex }) => setCurrentIndex(activeIndex)}
@@ -46,16 +42,16 @@ const Culture: React.FC = () => {
       >
         {cultures.map(({ title, image, subtitle, description }) => (
           <SwiperSlide key={title}>
-            <CultureContent key={title}>
+            <CultureContent>
               <CultureImg src={features[image]} alt="culture-icon" />
               <CultureTitleWrapper>
-                <MBold>{subtitle}</MBold>
-                {isMobile ? <SHLBold>{title}</SHLBold> : <HLBold>{title}</HLBold>}
+                <Typography type="MBold">{subtitle}</Typography>
+                <Typography type={isMobile ? "SHLBold" : "HLBold"}>{title}</Typography>
               </CultureTitleWrapper>
               <DescriptionList>
                 {getSplittedPhrase(description).map((descriptionItem: string) => (
                   <DescriptionItem key={descriptionItem}>
-                    <MBody>{descriptionItem}</MBody>
+                    <Typography type="MBody">{descriptionItem}</Typography>
                   </DescriptionItem>
                 ))}
               </DescriptionList>
@@ -65,7 +61,7 @@ const Culture: React.FC = () => {
       </Swiper>
       {isMobile && (
         <RectangleNavigationWrapper>
-          <RectangleNavigation count={3} index={currentIndex} onIndexChanged={handleIndexChanged} />
+          <RectangleNavigation count={3} index={currentIndex} />
         </RectangleNavigationWrapper>
       )}
     </CultureWrapper>

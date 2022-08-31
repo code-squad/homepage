@@ -6,7 +6,7 @@ import Layout from "lib/context/Layout";
 // Assets
 import icons from "assets/img/icons";
 // Typography
-import { MBold, LBody, MBody, XSBody } from "typography";
+import { Typography, MBold, LBody, MBody, XSBody } from "typography";
 // Lib
 import { useResponsive } from "lib/hooks";
 
@@ -45,37 +45,25 @@ const DropdownItem: React.FC<IDropdownItem> = ({
   return (
     <DropdownWrapper aria-label="faq" {...{ short, open }}>
       <BoardWrapper {...{ open }} onClick={handleCardOpen}>
-        {!isDesktop && (
-          <>
-            <Category {...{ isLinkBoard }}>
-              <XSBody>{category}</XSBody>
-            </Category>
-            <Title {...{ short, open }}>
-              <MBody>{title}</MBody>
-            </Title>
-          </>
-        )}
+        <Category {...{ isLinkBoard }}>
+          <Typography type={isDesktop ? "MBold" : "XSBody"}>{category}</Typography>
+        </Category>
+        <Title {...{ short, open }}>
+          <Typography type={isDesktop ? "LBody" : "MBody"}>{title}</Typography>
+        </Title>
         {isDesktop && (
-          <>
-            <Category {...{ isLinkBoard }}>
-              <MBold>{category}</MBold>
-            </Category>
-            <Title {...{ short, open }}>
-              <LBody>{title}</LBody>
-            </Title>
-            <ArrowWrapper {...{ open }}>
-              {isLinkBoard ? (
-                <img aria-label="arrow-right" src={icons.chevronRight} width="24px" height="24px" />
-              ) : (
-                <img
-                  aria-label={open ? "arrow-up" : "arrow-down"}
-                  src={icons.chevronDown}
-                  width="24px"
-                  height="24px"
-                />
-              )}
-            </ArrowWrapper>
-          </>
+          <ArrowWrapper {...{ open }}>
+            {isLinkBoard ? (
+              <img aria-label="arrow-right" src={icons.chevronRight} width="24px" height="24px" />
+            ) : (
+              <img
+                aria-label={open ? "arrow-up" : "arrow-down"}
+                src={icons.chevronDown}
+                width="24px"
+                height="24px"
+              />
+            )}
+          </ArrowWrapper>
         )}
       </BoardWrapper>
       {isLinkBoard ? null : (

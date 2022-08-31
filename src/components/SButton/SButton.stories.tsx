@@ -11,16 +11,23 @@ export default {
 
 const Template: ComponentStory<typeof SButton> = (args) => <SButton {...args} />;
 
-export const Default = Template.bind({});
-Default.args = {
+export const Black = Template.bind({});
+Black.args = {
+  type: "Black",
   children: "Button",
   to: "/subscription",
-  disabled: false,
 };
 
-export const Disabled = Template.bind({});
-Disabled.args = {
+export const Green = Template.bind({});
+Green.args = {
+  type: "Green",
   children: "Button",
   to: "/subscription",
-  disabled: true,
+};
+
+export const Orange = Template.bind({});
+Orange.args = {
+  type: "Orange",
+  children: "Button",
+  to: "/subscription",
 };

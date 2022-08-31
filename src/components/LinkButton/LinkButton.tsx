@@ -4,7 +4,7 @@ import { Link } from "gatsby";
 // Assets
 import icons from "assets/img/icons";
 // Typography
-import { SHLBold, MBold, XSBold } from "typography/";
+import { Typography } from "typography/";
 // Libs
 import { useResponsive } from "lib/hooks";
 
@@ -19,64 +19,36 @@ interface ILinkButton {
 }
 
 const LinkButton: React.FC<ILinkButton> = ({ description, title, to, icon, caption, external }) => {
-  const { isMobile } = useResponsive();
+  const { isMobile, isTablet, isDesktop } = useResponsive();
 
   return (
-    <>
-      {isMobile && (
-        <LinkButtonWrapper
-          {...{ to, icon, caption }}
-          as={caption || external ? "a" : Link}
-          href={caption || external ? to : undefined}
-          target={caption || external ? "_blank" : undefined}
-          rel={caption || external ? "noopener noreferrer nofollow" : undefined}
-        >
-          <div>
-            {description ? (
-              <Description>
-                <XSBold>{description}</XSBold>
-              </Description>
-            ) : null}
-            <Title>
-              <MBold>{title}</MBold>
-              <img aria-label="arrow-right" src={icons.chevronRight} width="24px" height="24px" />
-            </Title>
-            {caption ? (
-              <Caption>
-                <XSBold>{caption}</XSBold>
-              </Caption>
-            ) : null}
-          </div>
-        </LinkButtonWrapper>
-      )}
-      {!isMobile && (
-        <LinkButtonWrapper
-          {...{ to, icon, caption }}
-          as={caption || external ? "a" : Link}
-          href={caption || external ? to : undefined}
-          target={caption || external ? "_blank" : undefined}
-          rel={caption || external ? "noopener noreferrer nofollow" : undefined}
-        >
-          <div>
-            {description ? (
-              <Description>
-                <MBold>{description}</MBold>
-              </Description>
-            ) : null}
-            <Title>
-              <SHLBold>{title}</SHLBold>
-              <img aria-label="arrow-right" src={icons.chevronRight} width="24px" height="24px" />
-            </Title>
-            {caption ? (
-              <Caption>
-                <XSBold>{caption}</XSBold>
-              </Caption>
-            ) : null}
-          </div>
-          {icon ? <img alt="link-icon" src={icon} width="54px" height="54px" /> : null}
-        </LinkButtonWrapper>
-      )}
-    </>
+    <LinkButtonWrapper
+      {...{ to, icon, caption }}
+      as={caption || external ? "a" : Link}
+      href={caption || external ? to : undefined}
+      target={caption || external ? "_blank" : undefined}
+      rel={caption || external ? "noopener noreferrer nofollow" : undefined}
+    >
+      <div>
+        {description ? (
+          <Description>
+            <Typography type={isMobile ? "XSBold" : "MBold"}>{description}</Typography>
+          </Description>
+        ) : null}
+        <Title>
+          <Typography type={isMobile ? "MBold" : "SHLBold"}>{title}</Typography>
+          <img aria-label="arrow-right" src={icons.chevronRight} width="24px" height="24px" />
+        </Title>
+        {caption ? (
+          <Caption>
+            <Typography type="XSBold">{caption}</Typography>
+          </Caption>
+        ) : null}
+      </div>
+      {(isTablet || isDesktop) && icon ? (
+        <img alt="link-icon" src={icon} width="54px" height="54px" />
+      ) : null}
+    </LinkButtonWrapper>
   );
 };
 

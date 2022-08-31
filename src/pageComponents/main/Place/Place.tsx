@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Swiper as SwiperClass } from "swiper";
 import "swiper/swiper.min.css";
 // Typography
-import { MBody, SBody } from "typography";
+import { Typography } from "typography";
 // Components
 import { TitleSet, RectangleNavigation } from "components";
 // Assets
@@ -34,10 +34,6 @@ const Place: React.FC = () => {
     if (swiperRef.current) swiperRef.current.slideNext();
   };
 
-  const handleIndexChanged = (index: number) => {
-    setCurrentIndex(index);
-  };
-
   return (
     <PlaceWrapper>
       {(isTablet || isDesktop) && (
@@ -55,11 +51,9 @@ const Place: React.FC = () => {
       )}
       <PlaceIntroduceWrapper>
         <TitleSet subtitle={SUBTITLE.PLACE} title={TITLE.PLACE} />
-        {isMobile ? (
-          <SBody style={{ color: color.greyScale.grey2 }}>{DESCRIPTION.PLACE}</SBody>
-        ) : (
-          <MBody style={{ color: color.greyScale.grey2 }}>{DESCRIPTION.PLACE}</MBody>
-        )}
+        <Typography type={isMobile ? "SBody" : "MBody"} style={{ color: color.greyScale.grey2 }}>
+          {DESCRIPTION.PLACE}
+        </Typography>
       </PlaceIntroduceWrapper>
       <Swiper
         onSwiper={(swiper) => {
@@ -77,7 +71,7 @@ const Place: React.FC = () => {
       </Swiper>
       {isMobile && (
         <RectangleNavigationWrapper>
-          <RectangleNavigation count={7} index={currentIndex} onIndexChanged={handleIndexChanged} />
+          <RectangleNavigation count={7} index={currentIndex} />
         </RectangleNavigationWrapper>
       )}
     </PlaceWrapper>
@@ -164,36 +158,6 @@ const PlaceIntroduceWrapper = styled.div`
   }
   @media ${({ theme }) => theme.device.mobile} {
     padding: 0 2.4rem;
-  }
-`;
-
-const PlaceListWrapper = styled.div`
-  @media ${({ theme }) => theme.device.tablet} {
-    margin: 0 auto;
-    overflow: hidden;
-  }
-  @media ${({ theme }) => theme.device.desktop} {
-    width: 106.2rem;
-    margin: 0 auto;
-    overflow: hidden;
-  }
-`;
-
-const PlaceList = styled.ul<{ currentIndex: number }>`
-  display: flex;
-  position: relative;
-  display: flex;
-  transition: left 0.5s;
-  @media ${({ theme }) => theme.device.mobile} {
-    width: 700vw;
-    left: -${({ currentIndex }) => currentIndex * 100}vw;
-  }
-  @media ${({ theme }) => theme.device.tablet} {
-    width: 700%;
-    left: -${({ currentIndex }) => currentIndex * 100}%;
-  }
-  @media ${({ theme }) => theme.device.desktop} {
-    left: -${({ currentIndex }) => currentIndex * 106.2}rem;
   }
 `;
 
