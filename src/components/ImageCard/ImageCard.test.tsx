@@ -7,7 +7,7 @@ import features from "assets/img/illusts/feature";
 // lib
 import { TestProvider } from "lib/testUtils";
 
-describe("<ImageCard>", () => {
+describe("<ImageCard description>", () => {
   const props = {
     title: "미션과 협력 중심의 학습",
     description:
@@ -41,7 +41,7 @@ describe("<ImageCard>", () => {
   });
 });
 
-describe("<ImageCard> with descriptions", () => {
+describe("<ImageCard descriptions>", () => {
   const props = {
     title: "미션과 협력 중심의 학습",
     descriptions: [
