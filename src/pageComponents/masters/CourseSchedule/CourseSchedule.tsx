@@ -18,7 +18,12 @@ const CourseSchedule: React.FC = ({}) => {
 
   return (
     <CourseScheduleWrapper>
-      <TitleSet subtitle={SUBTITLE.MASTERS_COURSE_SCHEDULE} title={TITLE.MASTERS_COURSE_SCHEDULE} />
+      <TitleSetWrapper>
+        <TitleSet
+          subtitle={SUBTITLE.MASTERS_COURSE_SCHEDULE}
+          title={TITLE.MASTERS_COURSE_SCHEDULE}
+        />
+      </TitleSetWrapper>
       <ScheduleWrapper>
         <ScheduleLeftRuler>
           <ScheduleNav {...{ progress, selectedScheduleIndex, setSelectedScheduleIndex }} />
@@ -30,27 +35,61 @@ const CourseSchedule: React.FC = ({}) => {
 };
 
 const CourseScheduleWrapper = styled.div`
-  margin-top: 18rem;
   display: flex;
-  align-items: center;
   width: 100%;
-  min-width: 144rem;
   flex-direction: column;
+  @media ${({ theme }) => theme.device.desktop} {
+    align-items: center;
+    min-width: 144rem;
+    margin-top: 18rem;
+  }
+`;
+
+const TitleSetWrapper = styled.div`
+  @media ${({ theme }) => theme.device.mobile} {
+    padding: 0 2.4rem;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    padding: 0 8rem;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    align-items: center;
+  }
 `;
 
 const ScheduleWrapper = styled.div`
   display: flex;
-  justify-content: center;
   width: 100%;
-  min-width: 144rem;
-  padding: 8rem 0 4rem 0;
-  margin-top: 4rem;
   background-color: ${({ theme: { color } }) => color.surface.offWhite1};
+  @media ${({ theme }) => theme.device.mobile} {
+    box-sizing: border-box;
+    justify-content: center;
+    margin-top: 4rem;
+    padding: 4rem 2.4rem 0rem 2.4rem;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    box-sizing: border-box;
+    justify-content: center;
+    margin-top: 4rem;
+    padding: 8rem 8rem 4rem 8rem;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    justify-content: center;
+    margin-top: 4rem;
+    padding: 8rem 0 4rem 0;
+    min-width: 144rem;
+  }
 `;
 const ScheduleLeftRuler = styled.div`
-  width: 107rem;
   display: flex;
-  justify-content: flex-start;
+  @media ${({ theme }) => theme.device.mobile} {
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    width: 107rem;
+    justify-content: flex-start;
+  }
 `;
 
 const ScheduleQuery = graphql`
