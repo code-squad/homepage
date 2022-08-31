@@ -12,14 +12,13 @@ import { strainMdxInfo } from "lib/utils";
 
 const CourseList: React.FC = () => {
   const data = useStaticQuery(CodeTogetherCourseListQuery);
-
   const { courses }: { courses: CourseListType[] } = strainMdxInfo(data);
 
   const urlRegex = /(http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-/]))?/;
 
   return (
     <CourseWrapper>
-      <TitleSet title={TITLE.SCHEDULED_COURSE}></TitleSet>
+      <TitleSet title={TITLE.SCHEDULED_COURSE} />
       <CourseListWrapper>
         {courses.map(({ title, path, description }) => (
           <LinkButton
