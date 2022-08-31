@@ -19,37 +19,36 @@ interface ILinkButton {
 }
 
 const LinkButton: React.FC<ILinkButton> = ({ description, title, to, icon, caption, external }) => {
-  const { isMobile } = useResponsive();
+  const { isMobile, isTablet, isDesktop } = useResponsive();
 
   return (
-    <>
-      {isMobile && (
-        <LinkButtonWrapper
-          {...{ to, icon, caption }}
-          as={caption || external ? "a" : Link}
-          href={caption || external ? to : undefined}
-          target={caption || external ? "_blank" : undefined}
-          rel={caption || external ? "noopener noreferrer nofollow" : undefined}
-        >
-          <div>
-            {description ? (
-              <Description>
-                <Typography type={isMobile ? "XSBold" : "MBold"}>{description}</Typography>
-              </Description>
-            ) : null}
-            <Title>
-              <Typography type={isMobile ? "MBold" : "SHLBold"}>{title}</Typography>
-              <img aria-label="arrow-right" src={icons.chevronRight} width="24px" height="24px" />
-            </Title>
-            {caption ? (
-              <Caption>
-                <Typography type="XSBold">{caption}</Typography>
-              </Caption>
-            ) : null}
-          </div>
-        </LinkButtonWrapper>
-      )}
-    </>
+    <LinkButtonWrapper
+      {...{ to, icon, caption }}
+      as={caption || external ? "a" : Link}
+      href={caption || external ? to : undefined}
+      target={caption || external ? "_blank" : undefined}
+      rel={caption || external ? "noopener noreferrer nofollow" : undefined}
+    >
+      <div>
+        {description ? (
+          <Description>
+            <Typography type={isMobile ? "XSBold" : "MBold"}>{description}</Typography>
+          </Description>
+        ) : null}
+        <Title>
+          <Typography type={isMobile ? "MBold" : "SHLBold"}>{title}</Typography>
+          <img aria-label="arrow-right" src={icons.chevronRight} width="24px" height="24px" />
+        </Title>
+        {caption ? (
+          <Caption>
+            <Typography type="XSBold">{caption}</Typography>
+          </Caption>
+        ) : null}
+      </div>
+      {(isTablet || isDesktop) && icon ? (
+        <img alt="link-icon" src={icon} width="54px" height="54px" />
+      ) : null}
+    </LinkButtonWrapper>
   );
 };
 
