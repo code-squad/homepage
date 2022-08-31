@@ -65,18 +65,18 @@ const ScheduleWrapper = styled.div`
     box-sizing: border-box;
     justify-content: center;
     margin-top: 4rem;
-    padding: 4rem 2.4rem 0rem 2.4rem;
+    padding: 4rem 2.4rem;
   }
   @media ${({ theme }) => theme.device.tablet} {
     box-sizing: border-box;
     justify-content: center;
     margin-top: 4rem;
-    padding: 8rem 8rem 4rem 8rem;
+    padding: 8rem 8rem;
   }
   @media ${({ theme }) => theme.device.desktop} {
     justify-content: center;
     margin-top: 4rem;
-    padding: 8rem 0 4rem 0;
+    padding: 8rem 0;
     min-width: 144rem;
   }
 `;
