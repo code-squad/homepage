@@ -19,7 +19,10 @@ const RectangleNavigation: React.FC<IRectangleNavigation> = ({ count, index }) =
     <RectangleNavigationWrapper>
       {indexArray.map((index) => (
         <li key={index}>
-          <RectangleButton selected={index === currentIndex}></RectangleButton>
+          <RectangleButton
+            aria-label="rectangle"
+            selected={index === currentIndex}
+          ></RectangleButton>
         </li>
       ))}
     </RectangleNavigationWrapper>
