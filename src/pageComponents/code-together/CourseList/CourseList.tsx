@@ -1,27 +1,35 @@
 import React from "react";
 import styled from "styled-components";
+import { graphql, useStaticQuery } from "gatsby";
+// Type
+import { CourseListType } from "@type/Course";
 // Components
 import { LinkButton, TitleSet } from "components";
 // Assets
-import { TITLE, LINK_DESCRIPTION, LINK } from "assets/static/phrases";
-import { INTERNAL, EXTERNAL } from "assets/static/urls";
+import { TITLE } from "assets/static/phrases";
+// Lib
+import { strainMdxInfo } from "lib/utils";
 
 const CourseList: React.FC = () => {
+  const data = useStaticQuery(CodeTogetherCourseListQuery);
+
+  const { courses }: { courses: CourseListType[] } = strainMdxInfo(data);
+
+  const urlRegex = /(http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-/]))?/;
+
   return (
     <CourseWrapper>
       <TitleSet title={TITLE.SCHEDULED_COURSE}></TitleSet>
       <CourseListWrapper>
-        <LinkButton
-          to={INTERNAL.JAVASCRIPT}
-          title={LINK.JAVASCRIPT}
-          description={LINK_DESCRIPTION.JAVASCRIPT}
-        />
-        <LinkButton
-          to={EXTERNAL.CLEAN_SWIFT}
-          title={LINK.CLEAN_SWIFT}
-          description={LINK_DESCRIPTION.CLEAN_SWIFT}
-          external
-        />
+        {courses.map(({ title, path, description }) => (
+          <LinkButton
+            key={title}
+            to={path}
+            title={title}
+            description={description}
+            external={urlRegex.test(path)}
+          />
+        ))}
       </CourseListWrapper>
     </CourseWrapper>
   );
@@ -45,6 +53,20 @@ const CourseListWrapper = styled.ul`
   justify-content: center;
   & > *:not(:last-child) {
     margin-right: 2.4rem;
+  }
+`;
+
+const CodeTogetherCourseListQuery = graphql`
+  query CodeTogetherCourseListQuery {
+    mdx(frontmatter: { templateKey: { eq: "codeTogether_courses_list" } }) {
+      frontmatter {
+        courses {
+          title
+          description
+          path
+        }
+      }
+    }
   }
 `;
 

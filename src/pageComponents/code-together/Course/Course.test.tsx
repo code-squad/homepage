@@ -32,14 +32,21 @@ describe("<Course>", () => {
   it("코드투게더의 교육과정들이 보여진다.", async () => {
     const { getAllByText, getByText } = renderCourse();
 
-    courses.forEach(({ master, title, dueDate, cost, tags }) => {
-      getAllByText(master);
+    courses.forEach(({ category, title, cost, tags }) => {
+      getAllByText(category);
       getByText(title);
-      getByText(dueDate);
       getAllByText(cost);
       tags.forEach((tag) => {
         getAllByText(tag);
       });
+    });
+  });
+  it("각 코스 카드를 클릭하면 path로 설정된곳으로 페이지가 이동된다.", () => {
+    const { getByLabelText } = renderCourse();
+
+    courses.forEach(({ title, path }) => {
+      const courseCard = getByLabelText(`course-card-${title}`);
+      expect(courseCard.getAttribute("href")).toBe(path);
     });
   });
   it("교육 과정의 갯수가 9개 이하이면 더보기 버튼은 보여지지 않는다.", async () => {
@@ -82,13 +89,5 @@ describe("<Course>", () => {
     fireEvent.click(moreBtn);
     courseCards = getAllByLabelText(/course-card/i);
     expect(courseCards.length).toEqual(20);
-  });
-  it("각 코스 카드를 클릭하면 path로 설정된곳으로 페이지가 이동된다.", () => {
-    const { getByLabelText } = renderCourse();
-
-    courses.forEach(({ title, path }) => {
-      const courseCard = getByLabelText(`course-card-${title}`);
-      expect(courseCard.getAttribute("href")).toBe(path);
-    });
   });
 });
