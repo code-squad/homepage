@@ -55,7 +55,7 @@ const CourseInfo: React.FC<ICourseInfo> = ({
           </InfoItemWrapper>
           <TargetWrapper>
             <TargetTitle>
-              <img src={icons.member} style={{ marginRight: ".8rem" }} />
+              <img alt={`member-img`} src={icons.member} style={{ marginRight: ".8rem" }} />
               <Typography type="MBold">{TITLE.EDUCATION_TARGET}</Typography>
             </TargetTitle>
             <TargetItemWrapper>
