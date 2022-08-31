@@ -7,6 +7,7 @@ import { InfoItem } from "./InfoItem";
 // Assets
 import icons from "assets/img/icons";
 import { TITLE } from "assets/static/phrases";
+// Libs
 import { useResponsive } from "lib/hooks";
 
 interface ICourseInfo {
