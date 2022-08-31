@@ -38,8 +38,6 @@ const SButtonWrapper = styled(Link)<{ backgroundColor?: string }>`
   border-width: 0;
   background-color: ${({ backgroundColor }) => backgroundColor};
   text-decoration: none;
-  cursor: pointer;
-  pointer-events: auto;
   &:active {
     background-color: ${({ theme: { color } }) => color.greyScale.grey1};
     border-color: ${({ theme: { color } }) => color.greyScale.grey1};
