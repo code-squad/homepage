@@ -59,9 +59,18 @@ const CardWrapper = styled.div<{ medium?: boolean }>`
 `;
 
 const CardImg = styled.img`
-  border-radius: 1.6rem;
-  width: 18rem;
-  height: 13rem;
+  @media ${({ theme }) => theme.device.mobile} {
+    width: 14rem;
+    height: 10.1rem;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    width: 18rem;
+    height: 13rem;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    width: 18rem;
+    height: 13rem;
+  }
 `;
 const Title = styled.h4`
   margin-top: 3.2rem;
