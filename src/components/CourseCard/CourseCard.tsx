@@ -2,7 +2,9 @@ import { Link } from "gatsby";
 import React from "react";
 import styled, { useTheme } from "styled-components";
 // Typography
-import { SBody, Typography } from "typography/";
+import { Typography } from "typography/";
+// Components
+import { Tag } from "components";
 // Lib
 import { useResponsive } from "lib/hooks";
 
@@ -40,11 +42,8 @@ const CourseCard: React.FC<ICourseCard> = ({ category, title, cost, tags, img, p
         <Typography type={isMobile ? "MBold" : "HLBold"}>{title}</Typography>
         <Typography type={isMobile ? "MBold" : "SHLBold"}>{cost}</Typography>
         <TagList>
-          {tags.map((tag) => (
-            // 나중에 태그 컴포넌트로 추가
-            <CourseTagItem key={tag}>
-              <SBody>{tag}</SBody>
-            </CourseTagItem>
+          {tags.map((tagText) => (
+            <Tag type="Black" key={tagText} text={tagText} />
           ))}
         </TagList>
       </CourseInfoWrapper>
