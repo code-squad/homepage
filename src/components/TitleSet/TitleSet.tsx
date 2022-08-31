@@ -33,10 +33,18 @@ const TitleSet: React.FC<ITitleSet> = ({ title, subtitle, bigSubtitle }) => {
 };
 
 const TitleWrapper = styled.div`
-  width: 107rem;
   display: flex;
   flex-direction: column;
   color: ${({ theme: { color } }) => color.black};
+  @media ${({ theme }) => theme.device.mobile} {
+    max-width: calc(100% - 4.8rem);
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    max-width: calc(100% - 16rem);
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    width: 107rem;
+  }
 `;
 const HeadTitle = styled.div<{ subtitle?: boolean }>`
   @media ${({ theme }) => theme.device.desktop} {
