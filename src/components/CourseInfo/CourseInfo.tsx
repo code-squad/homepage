@@ -10,19 +10,19 @@ import { TITLE } from "assets/static/phrases";
 // Libs
 import { useResponsive } from "lib/hooks";
 
+interface ICourseDetailInfo {
+  title: string;
+  content: string;
+  img: keyof typeof icons;
+}
+
 interface ICourseInfo {
   backgroundImage: string;
   backgroundColor: string;
   title: string;
   description: string;
   targets: string[];
-  courseInfos: [
-    {
-      title: string;
-      content: string;
-      img: keyof typeof icons;
-    }
-  ];
+  courseInfos: ICourseDetailInfo[];
 }
 
 const CourseInfo: React.FC<ICourseInfo> = ({
