@@ -10,10 +10,13 @@ import features from "assets/img/illusts/feature";
 import { SUBTITLE, TITLE } from "assets/static/phrases";
 // Utils
 import { strainMdxInfo } from "lib/utils";
+import { useResponsive } from "lib/hooks";
 
 const StudyFeature: React.FC = () => {
   const data = useStaticQuery(CodeTogetherStudyFeatureQuery);
   const { studyFeatures }: { studyFeatures: CodeTogetherFeatureType[] } = strainMdxInfo(data);
+
+  const { isDesktop } = useResponsive();
 
   return (
     <StudyWrapper>
@@ -21,7 +24,7 @@ const StudyFeature: React.FC = () => {
       <FeatureList>
         {studyFeatures.map(({ title, descriptions, img }) => (
           <FeatureItem key={title}>
-            <ImageCard {...{ title, descriptions }} img={features[img]} medium />
+            <ImageCard {...{ descriptions, title }} img={features[img]} medium={isDesktop} />
           </FeatureItem>
         ))}
       </FeatureList>
@@ -30,16 +33,22 @@ const StudyFeature: React.FC = () => {
 };
 
 const StudyWrapper = styled.div`
-  width: 106.2rem;
-  padding: 0 18.9rem;
   padding-top: 18rem;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: space-between;
-  overflow-x: hidden;
   & > *:not(:last-child) {
     margin-bottom: 4rem;
+  }
+  @media ${({ theme }) => theme.device.mobile} {
+    width: 31.2rem;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    width: 60.8rem;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    width: 106.2rem;
   }
 `;
 
