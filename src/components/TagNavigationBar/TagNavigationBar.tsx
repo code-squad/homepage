@@ -42,6 +42,16 @@ const TagNavigationBarWrapper = styled.div`
   overflow-x: scroll;
   white-space: nowrap;
   float: left;
+  &::-webkit-scrollbar {
+    width: 0.3rem;
+    height: 0.3rem;
+  }
+  &::-webkit-scrollbar-thumb {
+    width: 0.3rem;
+    height: 0.3rem;
+    border-radius: 3rem;
+    background: #bbb;
+  }
   @media ${({ theme }) => theme.device.mobile} {
     width: 32.7rem;
   }
