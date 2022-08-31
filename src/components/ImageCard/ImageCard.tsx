@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 // Typography
 import { Typography } from "typography/";
+// Components
+import { VerticalImageCard } from "./VerticalImageCard";
 
 interface IImageCard {
   description?: string;
@@ -9,11 +11,20 @@ interface IImageCard {
   title: string;
   img: string;
   medium?: boolean;
+  vertical?: boolean;
 }
 
-const ImageCard: React.FC<IImageCard> = ({ img, title, description, descriptions, medium }) => {
+const ImageCard: React.FC<IImageCard> = ({
+  img,
+  title,
+  description,
+  descriptions,
+  medium,
+  vertical,
+}) => {
   const [open, setOpen] = React.useState(true);
 
+  if (vertical) return <VerticalImageCard {...{ img, title, description, descriptions }} />;
   return (
     <CardWrapper
       {...{ medium }}
