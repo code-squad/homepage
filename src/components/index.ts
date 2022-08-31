@@ -13,6 +13,7 @@ export { InterviewBox } from "./InterviewBox";
 export { DropdownItem } from "./DropdownItem";
 export { LinkButton } from "./LinkButton";
 export { ImageCard } from "./ImageCard";
+export { VerticalImageCard } from "./VerticalImageCard";
 export { BannerPopup } from "./BannerPopup";
 export { BackgroundLink } from "./BackgroundLink";
 export { TitleSet } from "./TitleSet";
