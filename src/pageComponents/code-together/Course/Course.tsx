@@ -63,9 +63,15 @@ const CourseWrapper = styled.div`
 `;
 
 const TitleWrapper = styled.div`
-  width: 106.2rem;
-  padding: 0 18.9rem;
-  margin: 0 auto;
+  @media ${({ theme }) => theme.device.mobile} {
+    width: 31.2rem;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    width: 60.8rem;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    width: 106.2rem;
+  }
 `;
 
 const CourseListWrapper = styled.div`
@@ -76,8 +82,6 @@ const CourseListWrapper = styled.div`
 `;
 
 const CourseList = styled.ul`
-  width: 106.2rem;
-  padding: 0 18.9rem;
   margin: 0 auto;
   background-color: ${({ theme: { color } }) => color.surface.offWhite1};
   display: flex;
@@ -87,6 +91,24 @@ const CourseList = styled.ul`
   }
   & > *:not(:nth-last-child(-n + 3)) {
     margin-bottom: 8rem;
+  }
+  @media ${({ theme }) => theme.device.mobile} {
+    width: 31.2rem;
+    & > :nth-child(n) {
+      margin-bottom: 2.4rem;
+    }
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    width: 60.8rem;
+    & > :nth-child(n) {
+      margin-bottom: 3.2rem;
+    }
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    width: 106.2rem;
+    & > :nth-child(n) {
+      margin-bottom: 4rem;
+    }
   }
 `;
 
