@@ -53,13 +53,13 @@ const LabelWrapper = styled.div<{ clicked: boolean }>`
   display: flex;
   justify-content: center;
   color: ${({ clicked, theme: { color } }) =>
-    clicked ? color.primary.green2 : color.greyScale.grey3};
+    clicked ? color.primary.green2 : color.greyScale.grey2};
 `;
 const Dot = styled.div<{ clicked: boolean }>`
   width: 1.6rem;
   height: 1.6rem;
   background-color: ${({ clicked, theme: { color } }) =>
-    clicked ? color.primary.green2 : color.greyScale.grey3};
+    clicked ? color.primary.green2 : color.greyScale.grey2};
   border-radius: 50%;
   border: ${({ clicked, theme: { color } }) =>
     clicked ? `.4rem solid ${color.primary.green4}` : "unset"};
