@@ -29,9 +29,11 @@ const Course: React.FC = () => {
 
   return (
     <CourseWrapper id="course">
-      <TitleWrapper>
-        <TitleSet subtitle={SUBTITLE.CODE_TOGETHER_COURSE} title={TITLE.COURSE} bigSubtitle />
-      </TitleWrapper>
+      <div>
+        <TitleWrapper>
+          <TitleSet subtitle={SUBTITLE.CODE_TOGETHER_COURSE} title={TITLE.COURSE} bigSubtitle />
+        </TitleWrapper>
+      </div>
       <CourseListWrapper>
         <CourseList>
           {courses.slice(0, courseCount).map(({ category, title, cost, tags, img, path }) => (
@@ -57,20 +59,20 @@ const Course: React.FC = () => {
 
 const CourseWrapper = styled.div`
   display: flex;
-  align-items: center;
   flex-direction: column;
   margin-top: 18rem;
 `;
 
 const TitleWrapper = styled.div`
   @media ${({ theme }) => theme.device.mobile} {
-    width: 31.2rem;
+    padding: 0 2.4rem;
   }
   @media ${({ theme }) => theme.device.tablet} {
-    width: 60.8rem;
+    padding: 0 8rem;
   }
   @media ${({ theme }) => theme.device.desktop} {
     width: 106.2rem;
+    padding: 0 18.9rem;
   }
 `;
 
@@ -82,31 +84,33 @@ const CourseListWrapper = styled.div`
 `;
 
 const CourseList = styled.ul`
-  margin: 0 auto;
+  margin: 0 auto 6.4rem auto;
   background-color: ${({ theme: { color } }) => color.surface.offWhite1};
   display: flex;
   flex-flow: row wrap;
-  & > *:not(:nth-child(2n)) {
+  & > *:nth-child(2n - 1) {
     margin-right: 2.4rem;
   }
   & > *:not(:nth-last-child(-n + 3)) {
     margin-bottom: 8rem;
   }
   @media ${({ theme }) => theme.device.mobile} {
-    width: 31.2rem;
-    & > :nth-child(n) {
+    flex-direction: column;
+    margin-bottom: 3.2rem;
+    & > *:not(:last-child) {
       margin-bottom: 2.4rem;
     }
   }
   @media ${({ theme }) => theme.device.tablet} {
-    width: 60.8rem;
-    & > :nth-child(n) {
+    flex-direction: column;
+    padding: 8rem;
+    & > *:not(:last-child) {
       margin-bottom: 3.2rem;
     }
   }
   @media ${({ theme }) => theme.device.desktop} {
     width: 106.2rem;
-    & > :nth-child(n) {
+    & > *:not(:last-child) {
       margin-bottom: 4rem;
     }
   }
