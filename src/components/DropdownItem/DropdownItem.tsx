@@ -90,7 +90,6 @@ const DropdownWrapper = styled.div<{ short?: boolean }>`
   display: flex;
   flex-direction: column;
   @media ${({ theme }) => theme.device.mobile} {
-    min-width: 31.2rem;
     margin-top: 1.6rem;
     &:active ${MBody} {
       font-weight: ${({ theme: { fontWeight } }) => fontWeight.bold};
