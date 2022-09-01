@@ -15,7 +15,7 @@ const Masthead: React.FC = () => {
   return (
     <CourseInfo
       {...{ title, description, targets, courseInfos }}
-      backgroundImage={header.pattern3}
+      backgroundImage={header.desktopPattern3}
       backgroundColor={color.primary.green4}
     />
   );

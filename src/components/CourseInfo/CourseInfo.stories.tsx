@@ -17,7 +17,7 @@ const Template: ComponentStory<typeof CourseInfo> = (args) => <CourseInfo {...ar
 
 export const Default = Template.bind({});
 Default.args = {
-  backgroundImage: header.pattern3,
+  backgroundImage: header.desktopPattern3,
   backgroundColor: theme.color.primary.green4,
   title: "마스터즈 코스",
   description:

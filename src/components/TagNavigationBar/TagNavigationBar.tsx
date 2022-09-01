@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 // Typography
 import { Typography } from "typography/";
-
 // Assets
 import icons from "assets/img/icons";
 

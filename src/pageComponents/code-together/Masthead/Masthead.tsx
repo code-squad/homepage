@@ -37,7 +37,7 @@ const MastheadWrapper = styled.div`
   align-items: center;
   color: ${({ theme: { color } }) => color.black};
   background-color: ${({ theme: { color } }) => color.primary.green4};
-  background-image: ${`url(${header.pattern3})`};
+  background-image: ${`url(${header.desktopPattern3})`};
   background-position: top right;
   background-position: center;
   // 배경 이미지 asset 파일이 추가되면 추가작업 필요
