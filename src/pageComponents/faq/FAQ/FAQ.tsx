@@ -19,7 +19,7 @@ const FAQ: React.FC = () => {
   const categories = new Set<string>([]);
   lists.forEach(({ course }) => categories.add(course || "etc"));
 
-  const { isMobile } = useResponsive();
+  const { isDesktop, isMobile } = useResponsive();
 
   const categoryTitles = Array.from(categories).map((category) => CATEGORTY_TPL[category]);
 
@@ -40,10 +40,13 @@ const FAQ: React.FC = () => {
   return (
     <FAQWrapper>
       <FAQMastHead>
-        <FAQContentWrapper>
-          <Typography type={isMobile ? "SDisplay" : "MDisplay"}>{TITLE.FAQ}</Typography>
-          <TagNavigationBar titles={categoryTitles} onIndexChanged={setCurrentIndex} />
-        </FAQContentWrapper>
+        <Typography
+          style={{ width: isDesktop ? "106.8rem" : "unset" }}
+          type={isMobile ? "SDisplay" : "MDisplay"}
+        >
+          {TITLE.FAQ}
+        </Typography>
+        <TagNavigationBar titles={categoryTitles} onIndexChanged={setCurrentIndex} />
       </FAQMastHead>
       <DropdownListWrapper>
         <DropdownList>
@@ -65,7 +68,6 @@ const FAQ: React.FC = () => {
 const FAQWrapper = styled.div`
   padding-bottom: 16rem;
   @media ${({ theme }) => theme.device.mobile} {
-    min-width: 36rem;
   }
   @media ${({ theme }) => theme.device.tablet} {
     min-width: 76.8rem;
@@ -78,52 +80,51 @@ const FAQWrapper = styled.div`
 const FAQMastHead = styled.div`
   color: ${({ theme: { color } }) => color.black};
   background-color: ${({ theme: { color } }) => color.primary.orange4};
-  // 배경 리소스 추가시 추가;
+  background-position: top right;
+  background-position: center;
+  background-size: cover;
   display: flex;
-  justify-content: center;
-  @media ${({ theme }) => theme.device.mobile} {
-    min-width: 36rem;
-    padding: 14.2rem 0 4rem 0;
-  }
-  @media ${({ theme }) => theme.device.tablet} {
-    min-width: 76.8rem;
-    padding: 16rem 0 11.2rem 0;
-  }
-  @media ${({ theme }) => theme.device.desktop} {
-    min-width: 144rem;
-    padding: 17.9rem 0 18.5rem 0;
-  }
-`;
-
-const FAQContentWrapper = styled.div`
   white-space: pre-line;
   & > *:not(:last-child) {
     margin-bottom: 2.4rem;
   }
   @media ${({ theme }) => theme.device.mobile} {
-    min-width: 32.7rem;
+    background-image: ${`url(${headers.mobilePattern3})`};
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 14.2rem 2.4rem 4rem 2.4rem;
   }
   @media ${({ theme }) => theme.device.tablet} {
-    min-width: 60.8rem;
+    background-image: ${`url(${headers.tabletPattern3})`};
+    min-width: 76.8rem;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 16rem 8rem 11.2rem 8rem;
   }
   @media ${({ theme }) => theme.device.desktop} {
-    min-width: 106.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: ${`url(${headers.desktopPattern3})`};
+    min-width: 144rem;
+    padding: 17.9rem 0 18.5rem 0;
   }
 `;
 
 const DropdownListWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   position: relative;
   @media ${({ theme }) => theme.device.mobile} {
-    min-width: 36rem;
+    padding: 0 2.4rem;
   }
   @media ${({ theme }) => theme.device.tablet} {
-    min-width: 76.8rem;
+    min-width: 60.8rem;
     top: -8rem;
+    padding: 0 8rem;
   }
   @media ${({ theme }) => theme.device.desktop} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     top: -14.5rem;
     min-width: 144rem;
   }
@@ -132,18 +133,16 @@ const DropdownListWrapper = styled.div`
 const DropdownList = styled.ul`
   display: flex;
   flex-direction: column;
-  align-items: center;
   background-color: ${({ theme: { color } }) => color.white};
   padding-top: 0.8rem;
   @media ${({ theme }) => theme.device.mobile} {
-    width: 32.7rem;
     padding-top: 4rem;
   }
   @media ${({ theme }) => theme.device.tablet} {
-    width: 52.8rem;
     padding: 2.4rem 4rem 0 4rem;
   }
   @media ${({ theme }) => theme.device.desktop} {
+    align-items: center;
     width: 106.8rem;
   }
 `;
