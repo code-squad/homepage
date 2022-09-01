@@ -13,7 +13,7 @@ import { TestProvider } from "lib/testUtils";
 
 describe("<CourseInfo>", () => {
   const props = {
-    backgroundImage: header.pattern3,
+    backgroundImage: header.desktopPattern3,
     backgroundColor: theme.color.primary.green4,
     title: "마스터즈 코스",
     description:
