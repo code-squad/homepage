@@ -96,7 +96,6 @@ const JobPositionMasthead = styled.div`
     padding: 16rem 8rem 11.2rem 8rem;
   }
   @media ${({ theme }) => theme.device.desktop} {
-    display: flex;
     flex-direction: column;
     align-items: center;
     background-image: ${`url(${headers.desktopPattern2})`};
