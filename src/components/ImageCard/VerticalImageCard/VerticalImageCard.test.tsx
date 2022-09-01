@@ -1,39 +1,39 @@
 import React from "react";
 import { render } from "@testing-library/react";
 // Testing-Component
-import { ImageCard } from ".";
+import { VerticalImageCard } from ".";
 // assets
 import features from "assets/img/illusts/feature";
 // lib
 import { TestProvider } from "lib/testUtils";
 
-describe("<ImageCard description>", () => {
+describe("<VerticalImageCard> with description", () => {
   const props = {
     title: "미션과 협력 중심의 학습",
     description:
       "다양한 미션을 자기주도적으로 해결하면서 필요한 지식을 본인의 것으로 만들 수 있습니다.",
     img: features.edu1,
   };
-  const renderImageCard = () =>
+  const renderVerticalImageCard = () =>
     render(
       <TestProvider>
-        <ImageCard {...props} />
+        <VerticalImageCard {...props} />
       </TestProvider>
     );
   it("제목이 보여진다.", () => {
-    const { getByText } = renderImageCard();
+    const { getByText } = renderVerticalImageCard();
     const { title } = props;
 
     getByText(title);
   });
   it("설명이 보여진다.", () => {
-    const { getByText } = renderImageCard();
+    const { getByText } = renderVerticalImageCard();
     const { description } = props;
 
     getByText(description);
   });
   it("img를 통해 받아온 이미지가 보여진다.", () => {
-    const { getByAltText } = renderImageCard();
+    const { getByAltText } = renderVerticalImageCard();
     const { img, title } = props;
 
     const cardImg = getByAltText(`card-img-${title}`);
@@ -41,7 +41,7 @@ describe("<ImageCard description>", () => {
   });
 });
 
-describe("<ImageCard descriptions>", () => {
+describe("<VerticalImageCard> with descriptions", () => {
   const props = {
     title: "미션과 협력 중심의 학습",
     descriptions: [
@@ -50,14 +50,14 @@ describe("<ImageCard descriptions>", () => {
     ],
     img: features.edu1,
   };
-  const renderImageCard = () =>
+  const renderVerticalImageCard = () =>
     render(
       <TestProvider>
-        <ImageCard {...props} />
+        <VerticalImageCard {...props} />
       </TestProvider>
     );
   it("설명들이 보여진다.", () => {
-    const { getByText } = renderImageCard();
+    const { getByText } = renderVerticalImageCard();
     const { descriptions } = props;
 
     for (const description of descriptions) {

@@ -28,8 +28,9 @@ const SButtonWrapper = styled(Link)<{ backgroundColor?: string }>`
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 4.8rem;
+  width: fit-content;
   height: 2.4rem;
+  padding: 0 0.6rem;
   color: ${({ theme: { color } }) => color.white};
   font-size: ${({ theme: { fontSize } }) => fontSize.body.xs};
   font-weight: ${({ theme: { fontWeight } }) => fontWeight.medium};
@@ -37,8 +38,6 @@ const SButtonWrapper = styled(Link)<{ backgroundColor?: string }>`
   border-width: 0;
   background-color: ${({ backgroundColor }) => backgroundColor};
   text-decoration: none;
-  cursor: pointer;
-  pointer-events: auto;
   &:active {
     background-color: ${({ theme: { color } }) => color.greyScale.grey1};
     border-color: ${({ theme: { color } }) => color.greyScale.grey1};

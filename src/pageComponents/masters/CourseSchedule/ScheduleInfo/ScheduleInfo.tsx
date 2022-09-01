@@ -42,11 +42,19 @@ const ScheduleInfo: React.FC<IScheduleInfo> = ({ scheduleInfo, selectedScheduleI
 };
 
 const ScheduleInfoWrapper = styled.div`
-  width: 62.8rem;
-  margin-left: 8.5rem;
   display: flex;
   flex-direction: column;
   color: ${({ theme: { color } }) => color.black};
+  @media ${({ theme }) => theme.device.mobile} {
+    margin-left: 1.6rem;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    margin-left: 3.4rem;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    width: 62.8rem;
+    margin-left: 8.5rem;
+  }
 `;
 const DescriptionWrapper = styled.div`
   color: ${({ theme: { color } }) => color.greyScale.grey2};

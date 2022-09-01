@@ -2,40 +2,29 @@ import React from "react";
 import styled from "styled-components";
 // Typography
 import { Typography } from "typography/";
-// Components
-import { VerticalImageCard } from "./VerticalImageCard";
 
 interface IImageCard {
   description?: string;
   descriptions?: string[];
   title: string;
   img: string;
-  medium?: boolean;
-  vertical?: boolean;
 }
 
-const ImageCard: React.FC<IImageCard> = ({
-  img,
-  title,
-  description,
-  descriptions,
-  medium,
-  vertical,
-}) => {
-  const [open, setOpen] = React.useState(true);
+const VerticalImageCard: React.FC<IImageCard> = ({ img, title, description, descriptions }) => {
+  const [open, setOpen] = React.useState(false);
 
-  if (vertical) return <VerticalImageCard {...{ img, title, description, descriptions }} />;
   return (
     <CardWrapper
-      {...{ medium }}
       onClick={() => {
         setOpen(!open);
       }}
     >
-      <CardImg alt={`card-img-${title}`} src={img} />
-      <Title>
-        <Typography type="SHLBold">{title}</Typography>
-      </Title>
+      <div style={{ display: "flex", alignItems: "center" }}>
+        <CardImg alt={`card-img-${title}`} src={img} />
+        <Title>
+          <Typography type="SHLBold">{title}</Typography>
+        </Title>
+      </div>
       {descriptions ? (
         <DescriptionList {...{ open }}>
           {descriptions.map((description) => (
@@ -47,7 +36,7 @@ const ImageCard: React.FC<IImageCard> = ({
           ))}
         </DescriptionList>
       ) : (
-        <Description>
+        <Description {...{ open }}>
           <Typography type="MBody">{description}</Typography>
         </Description>
       )}
@@ -55,47 +44,37 @@ const ImageCard: React.FC<IImageCard> = ({
   );
 };
 
-const CardWrapper = styled.div<{ medium?: boolean }>`
+const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  @media ${({ theme }) => theme.device.mobile} {
-    width: 100%;
-  }
-  @media ${({ theme }) => theme.device.tablet} {
-    width: 100%;
-  }
-  @media ${({ theme }) => theme.device.desktop} {
-    width: ${({ medium }) => (medium ? "41rem" : "30.2rem")};
-  }
+  padding-bottom: 2rem;
+  width: 100%;
+  cursor: pointer;
+  border-bottom: ${({ theme: { color } }) => `0.1rem solid ${color.greyScale.grey4}`};
 `;
 
 const CardImg = styled.img`
-  @media ${({ theme }) => theme.device.mobile} {
-    width: 14rem;
-    height: 10.1rem;
-  }
-  @media ${({ theme }) => theme.device.tablet} {
-    width: 18rem;
-    height: 13rem;
-  }
-  @media ${({ theme }) => theme.device.desktop} {
-    width: 18rem;
-    height: 13rem;
-  }
+  width: 7rem;
+  height: 5.1rem;
 `;
 const Title = styled.h4`
-  margin-top: 3.2rem;
+  margin-left: 1.2rem;
+  vertical-align: middle;
   color: ${({ theme: { color } }) => color.black};
 `;
-const Description = styled.div`
-  margin-top: 1.6rem;
+const Description = styled.div<{ open?: boolean }>`
+  margin-top: ${({ open }) => (open ? "2rem" : "0")};
+  max-height: ${({ open }) => (open ? "fit-content" : "0")};
   color: ${({ theme: { color } }) => color.greyScale.grey2};
+  overflow: hidden;
 `;
 
 const DescriptionList = styled.ul<{ open?: boolean }>`
-  margin-top: 1.6rem;
   display: flex;
   flex-direction: column;
+  margin-top: ${({ open }) => (open ? "2rem" : "0")};
+  max-height: ${({ open }) => (open ? "fit-content" : "0")};
+  overflow: hidden;
   color: ${({ theme: { color } }) => color.greyScale.grey2};
   list-style: disc;
   list-style-position: inside;
@@ -106,4 +85,4 @@ const DescriptionList = styled.ul<{ open?: boolean }>`
   }
 `;
 
-export default ImageCard;
+export default VerticalImageCard;

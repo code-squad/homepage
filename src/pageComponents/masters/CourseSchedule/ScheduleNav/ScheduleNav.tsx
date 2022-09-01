@@ -17,7 +17,7 @@ const ScheduleNav: React.FC<IScheduleNav> = ({
   setSelectedScheduleIndex,
 }) => {
   return (
-    <ul>
+    <ScheduleNavItemWrapper>
       {progress.map(({ label }: ProgressType, index) => (
         <div key={label} style={{ position: "relative" }}>
           <ScheduleNavItem onClick={() => setSelectedScheduleIndex(index)}>
@@ -29,9 +29,15 @@ const ScheduleNav: React.FC<IScheduleNav> = ({
           {index + 2 > progress.length ? null : <VerticalLine />}
         </div>
       ))}
-    </ul>
+    </ScheduleNavItemWrapper>
   );
 };
+
+const ScheduleNavItemWrapper = styled.ul`
+  & > *:not(:last-child) {
+    margin-bottom: 4rem;
+  }
+`;
 
 const ScheduleNavItem = styled.li`
   width: 13.2rem;
@@ -39,7 +45,6 @@ const ScheduleNavItem = styled.li`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 4rem;
   cursor: pointer;
 `;
 

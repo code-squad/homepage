@@ -21,39 +21,37 @@ interface IInterview {
 }
 
 const Interview: React.FC<IInterview> = ({ subtitle, title, interviews, style }) => {
-  const { isMobile, isTablet, isDesktop, windowSize } = useResponsive();
+  const { isMobile, isTablet, isDesktop } = useResponsive();
 
   const [currentIndex, setCurrentIndex] = React.useState(0);
   const swiperRef = React.useRef<SwiperClass | null>(null);
 
-  let slidesPerView: number = 1;
-  if (isMobile) slidesPerView = 1;
-  if (isTablet && windowSize && windowSize.width < 1166) slidesPerView = 2;
-  if (isTablet && windowSize && windowSize.width >= 1166) slidesPerView = 3;
-  if (isDesktop) slidesPerView = 3;
-
-  let sliderWidth = "100%";
-  if (isMobile) sliderWidth = "100%";
-  if (isTablet || isDesktop) sliderWidth = `${51.9 * slidesPerView + 2.4 * (slidesPerView - 1)}rem`;
-
   const handleArrowLeftClick = () => {
-    swiperRef.current?.slidePrev();
-    if (currentIndex - 2 >= 0) {
-      setCurrentIndex(currentIndex - 2);
-      return;
+    if (isDesktop) {
+      if (currentIndex - 2 >= 0) {
+        setCurrentIndex(currentIndex - 2);
+        return;
+      }
+      if (currentIndex - 1 >= 0) setCurrentIndex(currentIndex - 1);
     }
-    if (currentIndex - 1 >= 0) setCurrentIndex(currentIndex - 1);
+    if (isTablet) {
+      if (currentIndex - 1 >= 0) setCurrentIndex(currentIndex - 1);
+    }
   };
 
   const handleArrowRightClick = () => {
-    swiperRef.current?.slideNext();
-    if (currentIndex + 3 === interviews.length) {
-      setCurrentIndex(currentIndex + 1);
-      return;
+    if (isDesktop) {
+      if (currentIndex + 3 === interviews.length) {
+        setCurrentIndex(currentIndex + 1);
+        return;
+      }
+      if (currentIndex + 2 <= interviews.length) {
+        setCurrentIndex(currentIndex + 2);
+        return;
+      }
     }
-    if (currentIndex + 2 <= interviews.length) {
-      setCurrentIndex(currentIndex + 2);
-      return;
+    if (isTablet) {
+      if (currentIndex + 1 < interviews.length) setCurrentIndex(currentIndex + 1);
     }
   };
 
@@ -70,7 +68,11 @@ const Interview: React.FC<IInterview> = ({ subtitle, title, interviews, style })
               <img src={icons.chevronLeft} alt="arrow-left" />
             </ArrowButton>
             <ArrowButton
-              disabled={currentIndex + 2 === interviews.length || interviews.length <= 2}
+              disabled={
+                isTablet
+                  ? currentIndex + 1 === interviews.length
+                  : currentIndex + 2 === interviews.length || interviews.length <= 2
+              }
               onClick={handleArrowRightClick}
             >
               <img src={icons.chevronRight} alt="arrow-right" />
@@ -78,38 +80,53 @@ const Interview: React.FC<IInterview> = ({ subtitle, title, interviews, style })
           </ArrowNavigationWrapper>
         )}
       </TitleWrapper>
-      <Swiper
-        onSwiper={(swiper) => {
-          swiperRef.current = swiper;
-        }}
-        {...{ slidesPerView }}
-        allowTouchMove={isMobile ? true : false}
-        onActiveIndexChange={({ activeIndex }) => setCurrentIndex(activeIndex)}
-        style={{
-          width: sliderWidth,
-          margin: "0",
-          paddingLeft: isMobile ? "0rem" : isTablet ? "8rem" : "18.9rem",
-        }}
-      >
-        {interviews.map((interview, index) => (
-          <SwiperSlide
-            key={interview.nutshell}
-            style={{ display: "flex", alignSelf: "stretch", height: "auto" }}
-            className="mySwiper"
-          >
-            <InterviewBox
-              {...{ ...interview }}
-              writerPhoto={
-                interview.writerPhoto
-                  ? avatars[interview.writerPhoto]
-                  : index % 2 === 0
-                  ? avatars.smallMember1
-                  : avatars.smallMember2
-              }
-            />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      {isMobile ? (
+        <Swiper
+          onSwiper={(swiper) => {
+            swiperRef.current = swiper;
+          }}
+          slidesPerView={1}
+          allowTouchMove={true}
+          onActiveIndexChange={({ activeIndex }) => setCurrentIndex(activeIndex)}
+          style={{ width: "100%" }}
+        >
+          {interviews.map((interview, index) => (
+            <SwiperSlide
+              key={interview.nutshell}
+              style={{ display: "flex", alignSelf: "stretch", height: "auto" }}
+              className="mySwiper"
+            >
+              <InterviewBox
+                {...{ ...interview }}
+                writerPhoto={
+                  interview.writerPhoto
+                    ? avatars[interview.writerPhoto]
+                    : index % 2 === 0
+                    ? avatars.smallMember1
+                    : avatars.smallMember2
+                }
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      ) : (
+        <InterviewList {...{ currentIndex }}>
+          {interviews.map((interview, index) => (
+            <li key={interview.nutshell} style={{ display: "flex", alignSelf: "stretch" }}>
+              <InterviewBox
+                {...{ ...interview }}
+                writerPhoto={
+                  interview.writerPhoto
+                    ? avatars[interview.writerPhoto]
+                    : index % 2 === 0
+                    ? avatars.smallMember1
+                    : avatars.smallMember2
+                }
+              />
+            </li>
+          ))}
+        </InterviewList>
+      )}
       {isMobile && (
         <RectangleNavigationWrapper>
           <RectangleNavigation count={4} index={currentIndex} />
@@ -179,6 +196,28 @@ const ArrowButton = styled.button`
   &:disabled {
     cursor: auto;
     filter: invert(78%) sepia(1%) saturate(1%) hue-rotate(1deg) brightness(103%) contrast(89%);
+  }
+`;
+
+const InterviewList = styled.ul<{ currentIndex: number }>`
+  position: relative;
+  display: flex;
+  transition: left 0.5s;
+  @media ${({ theme }) => theme.device.tablet} {
+    padding: 0 8rem;
+    left: -${({ currentIndex }) => currentIndex * 54.3}rem;
+    & > *:not(:last-child) {
+      margin-right: 2.4rem;
+    }
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    width: 106.2rem;
+    padding: 0 18.9rem;
+    margin: 0 auto;
+    left: -${({ currentIndex }) => currentIndex * 54.3}rem;
+    & > *:not(:last-child) {
+      margin-right: 2.4rem;
+    }
   }
 `;
 
