@@ -31,35 +31,45 @@ const Feature: React.FC = ({}) => {
 
 const FeatureWrapper = styled.div`
   margin: 0 auto;
-  flex-direction: column;
   margin-top: 8rem;
   @media ${({ theme }) => theme.device.mobile} {
-    width: 31.2rem;
+    padding: 0 2.4rem;
   }
   @media ${({ theme }) => theme.device.tablet} {
-    width: 60.8rem;
+    padding: 0 8rem;
   }
   @media ${({ theme }) => theme.device.desktop} {
     width: 106.2rem;
+    padding: 0 18.9rem;
   }
 `;
 
 const FeatureList = styled.ul`
   margin-top: 8rem;
-  display: flex;
-  flex-flow: row wrap;
-  align-content: flex-start;
-  & > *:not(:nth-child(3n)) {
-    margin-right: 7.8rem;
-  }
   @media ${({ theme }) => theme.device.mobile} {
-    width: 31.2rem;
+    margin-top: 4.8rem;
+    display: flex;
+    flex-direction: column;
+    & > *:not(:last-child) {
+      margin-bottom: 4.8rem;
+    }
   }
   @media ${({ theme }) => theme.device.tablet} {
-    width: 60.8rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0 7.9rem;
+    & > *:nth-child(2n) {
+      margin-bottom: 8rem;
+    }
   }
   @media ${({ theme }) => theme.device.desktop} {
-    width: 106.2rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    & > *:not(:nth-child(3n)) {
+      margin-right: 7.8rem;
+    }
   }
 `;
 
