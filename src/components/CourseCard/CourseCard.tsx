@@ -2,7 +2,9 @@ import { Link } from "gatsby";
 import React from "react";
 import styled, { useTheme } from "styled-components";
 // Typography
-import { SBody, Typography } from "typography/";
+import { Typography } from "typography/";
+// Components
+import { Tag } from "components";
 // Lib
 import { useResponsive } from "lib/hooks";
 
@@ -40,11 +42,8 @@ const CourseCard: React.FC<ICourseCard> = ({ category, title, cost, tags, img, p
         <Typography type={isMobile ? "MBold" : "HLBold"}>{title}</Typography>
         <Typography type={isMobile ? "MBold" : "SHLBold"}>{cost}</Typography>
         <TagList>
-          {tags.map((tag) => (
-            // 나중에 태그 컴포넌트로 추가
-            <CourseTagItem key={tag}>
-              <SBody>{tag}</SBody>
-            </CourseTagItem>
+          {tags.map((tagText) => (
+            <Tag type="Black" key={tagText} text={tagText} />
           ))}
         </TagList>
       </CourseInfoWrapper>
@@ -72,12 +71,6 @@ const CourseInfoWrapper = styled.div`
   flex-direction: column;
   @media ${({ theme }) => theme.device.mobile} {
     padding: 2rem 0 2rem 1.6rem;
-    & > *:nth-child(2) {
-      margin-bottom: 0.4rem;
-    }
-    & > *:nth-child(3) {
-      margin-bottom: 0.4rem;
-    }
   }
   @media ${({ theme }) => theme.device.tablet} {
     padding: 0.5rem 0 0.5rem 2.4rem;
@@ -90,10 +83,20 @@ const CourseInfoWrapper = styled.div`
   }
   @media ${({ theme }) => theme.device.desktop} {
     padding: 3.45rem 0 3.45rem 2.4rem;
+    & > *:nth-child(2) {
+      margin-bottom: 0.4rem;
+    }
+    & > *:nth-child(3) {
+      margin-bottom: 0.4rem;
+    }
   }
 `;
 
 const CardImg = styled.img`
+  @media ${({ theme }) => theme.device.mobile} {
+    width: 13.4rem;
+    height: 13.4rem;
+  }
   @media ${({ theme }) => theme.device.tablet} {
     width: 13.4rem;
     height: 13.4rem;
@@ -106,21 +109,6 @@ const CardImg = styled.img`
 
 const TagList = styled.ul`
   display: flex;
-  margin-top: 1.6rem;
-  & > *:not(:last-child) {
-    margin-right: 0.8rem;
-  }
-  color: ${({ theme: { color } }) => color.black};
-`;
-
-const CourseTagItem = styled.div`
-  width: 4.2rem;
-  height: 2.6rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: ${({ theme: { color } }) => color.secondary.blue3};
-  border-radius: 99.9rem;
 `;
 
 export default CourseCard;

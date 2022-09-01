@@ -1,4 +1,4 @@
-export { SButton } from "./SButton";
+export { Tag } from "./Tag";
 export { MButton } from "./MButton";
 export { HomeGlobalNavigationBar } from "./HomeGlobalNavigationBar";
 export { TabNavigationBar } from "./TabNavigationBar";

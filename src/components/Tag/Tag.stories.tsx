@@ -2,32 +2,29 @@ import React from "react";
 // Type
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 // Story-Component
-import { SButton } from ".";
+import { Tag } from ".";
 
 export default {
   title: "component/SButton",
-  component: SButton,
-} as ComponentMeta<typeof SButton>;
+  component: Tag,
+} as ComponentMeta<typeof Tag>;
 
-const Template: ComponentStory<typeof SButton> = (args) => <SButton {...args} />;
+const Template: ComponentStory<typeof Tag> = (args) => <Tag {...args} />;
 
 export const Black = Template.bind({});
 Black.args = {
   type: "Black",
-  children: "Button",
-  to: "/subscription",
+  text: "Button",
 };
 
 export const Green = Template.bind({});
 Green.args = {
   type: "Green",
-  children: "Button",
-  to: "/subscription",
+  text: "Button",
 };
 
 export const Orange = Template.bind({});
 Orange.args = {
   type: "Orange",
-  children: "Button",
-  to: "/subscription",
+  text: "Button",
 };

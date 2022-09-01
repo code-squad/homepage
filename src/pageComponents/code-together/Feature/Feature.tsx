@@ -21,7 +21,7 @@ const Feature: React.FC = ({}) => {
       <FeatureList>
         {features.map(({ title, descriptions, img }) => (
           <FeatureItem key={title}>
-            <ImageCard descriptions={descriptions} title={title} img={featureImgs[img]} />
+            <ImageCard {...{ descriptions, title }} img={featureImgs[img]} />
           </FeatureItem>
         ))}
       </FeatureList>
@@ -30,22 +30,36 @@ const Feature: React.FC = ({}) => {
 };
 
 const FeatureWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  width: 100%;
-  min-width: 144rem;
+  margin: 0 auto;
   flex-direction: column;
   margin-top: 8rem;
+  @media ${({ theme }) => theme.device.mobile} {
+    width: 31.2rem;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    width: 60.8rem;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    width: 106.2rem;
+  }
 `;
 
 const FeatureList = styled.ul`
-  width: 106.2rem;
   margin-top: 8rem;
   display: flex;
   flex-flow: row wrap;
   align-content: flex-start;
   & > *:not(:nth-child(3n)) {
     margin-right: 7.8rem;
+  }
+  @media ${({ theme }) => theme.device.mobile} {
+    width: 31.2rem;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    width: 60.8rem;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    width: 106.2rem;
   }
 `;
 

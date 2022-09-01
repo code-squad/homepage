@@ -1,14 +1,13 @@
 import React from "react";
 import styled, { useTheme } from "styled-components";
-import Link from "gatsby-link";
+import { Typography } from "typography";
 
-export interface ISButtonProps {
+export interface ITagProps {
   type: "Black" | "Green" | "Orange";
-  children?: string;
-  to: string;
+  text?: string;
 }
 
-const SButton: React.FC<ISButtonProps> = ({ type, children, to }) => {
+const Tag: React.FC<ITagProps> = ({ type, text }) => {
   const {
     color: {
       black,
@@ -21,10 +20,14 @@ const SButton: React.FC<ISButtonProps> = ({ type, children, to }) => {
   if (type === "Green") backgroundColor = green2;
   if (type === "Orange") backgroundColor = orange2;
 
-  return <SButtonWrapper {...{ to, backgroundColor }}>{children}</SButtonWrapper>;
+  return (
+    <TagWrapper {...{ backgroundColor }}>
+      <Typography type="XSBody">{text}</Typography>
+    </TagWrapper>
+  );
 };
 
-const SButtonWrapper = styled(Link)<{ backgroundColor?: string }>`
+const TagWrapper = styled.button<{ backgroundColor?: string }>`
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -44,4 +47,4 @@ const SButtonWrapper = styled(Link)<{ backgroundColor?: string }>`
   }
 `;
 
-export default SButton;
+export default Tag;

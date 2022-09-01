@@ -12,22 +12,20 @@ import { strainMdxInfo } from "lib/utils";
 
 const CourseList: React.FC = () => {
   const data = useStaticQuery(CodeTogetherCourseListQuery);
-
   const { courses }: { courses: CourseListType[] } = strainMdxInfo(data);
 
   const urlRegex = /(http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-/]))?/;
 
   return (
     <CourseWrapper>
-      <TitleSet title={TITLE.SCHEDULED_COURSE}></TitleSet>
+      <TitleSet title={TITLE.SCHEDULED_COURSE} />
       <CourseListWrapper>
         {courses.map(({ title, path, description }) => (
           <LinkButton
             key={title}
             to={path}
-            title={title}
-            description={description}
             external={urlRegex.test(path)}
+            {...{ title, description }}
           />
         ))}
       </CourseListWrapper>
@@ -36,8 +34,6 @@ const CourseList: React.FC = () => {
 };
 
 const CourseWrapper = styled.ul`
-  width: 106.2rem;
-  padding: 0 18.9rem;
   margin: 0 auto;
   margin-top: 8rem;
   margin-bottom: 18rem;
@@ -46,6 +42,15 @@ const CourseWrapper = styled.ul`
   & > *:not(:last-child) {
     margin-bottom: 3.2rem;
   }
+  @media ${({ theme }) => theme.device.mobile} {
+    width: 31.2rem;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    width: 60.8rem;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    width: 106.2rem;
+  }
 `;
 
 const CourseListWrapper = styled.ul`
@@ -53,6 +58,12 @@ const CourseListWrapper = styled.ul`
   justify-content: center;
   & > *:not(:last-child) {
     margin-right: 2.4rem;
+  }
+  @media ${({ theme }) => theme.device.mobile} {
+    width: 31.2rem;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    width: 60.8rem;
   }
 `;
 
