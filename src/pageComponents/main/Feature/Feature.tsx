@@ -42,14 +42,14 @@ const Feature: React.FC = () => {
             </Typography>
             <Typography type="SBold">{subtitle}</Typography>
           </div>
-          {splittedDescription.map((descriptionItem: string, index: number) => {
-            if (isMobile && !detailView && index > 0) return null;
-            return (
-              <Typography type="MBody" key={descriptionItem}>
-                {descriptionItem}
-              </Typography>
-            );
-          })}
+          {splittedDescription.map(
+            (descriptionItem: string, index: number) =>
+              !(isMobile && !detailView && index > 0) && (
+                <Typography type="MBody" key={descriptionItem}>
+                  {descriptionItem}
+                </Typography>
+              )
+          )}
         </Content>
       </ContentWrapper>
       {isMobile && (
