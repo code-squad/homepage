@@ -19,10 +19,7 @@ const RectangleNavigation: React.FC<IRectangleNavigation> = ({ count, index }) =
     <RectangleNavigationWrapper>
       {indexArray.map((index) => (
         <li key={index}>
-          <RectangleButton
-            aria-label="rectangle"
-            selected={index === currentIndex}
-          ></RectangleButton>
+          <Rectangle aria-label="rectangle" selected={index === currentIndex} />
         </li>
       ))}
     </RectangleNavigationWrapper>
@@ -41,7 +38,7 @@ const RectangleNavigationWrapper = styled.ul`
   }
 `;
 
-const RectangleButton = styled.div<{ selected?: boolean }>`
+const Rectangle = styled.div<{ selected?: boolean }>`
   width: 3rem;
   height: 0.2rem;
   background-color: ${({ selected, theme: { color } }) =>

@@ -7,7 +7,14 @@ import { InfoItem } from "./InfoItem";
 // Assets
 import icons from "assets/img/icons";
 import { TITLE } from "assets/static/phrases";
+// Libs
 import { useResponsive } from "lib/hooks";
+
+interface ICourseDetailInfo {
+  title: string;
+  content: string;
+  img: keyof typeof icons;
+}
 
 interface ICourseInfo {
   backgroundImage: string;
@@ -15,13 +22,7 @@ interface ICourseInfo {
   title: string;
   description: string;
   targets: string[];
-  courseInfos: [
-    {
-      title: string;
-      content: string;
-      img: keyof typeof icons;
-    }
-  ];
+  courseInfos: ICourseDetailInfo[];
 }
 
 const CourseInfo: React.FC<ICourseInfo> = ({
@@ -54,7 +55,7 @@ const CourseInfo: React.FC<ICourseInfo> = ({
           </InfoItemWrapper>
           <TargetWrapper>
             <TargetTitle>
-              <img src={icons.member} style={{ marginRight: ".8rem" }} />
+              <img alt={`member-img`} src={icons.member} style={{ marginRight: ".8rem" }} />
               <Typography type="MBold">{TITLE.EDUCATION_TARGET}</Typography>
             </TargetTitle>
             <TargetItemWrapper>
@@ -100,7 +101,7 @@ const CourseInfoWrapper = styled.div<{ backgroundImage: string; backgroundColor:
   }
   @media ${({ theme }) => theme.device.desktop} {
     align-items: center;
-    min-width: 144rem;
+    min-width: 106.2rem;
     height: 56rem;
   }
 `;

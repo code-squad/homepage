@@ -167,9 +167,11 @@ const ContentWrapper = styled.div<{ open?: boolean }>`
   overflow: hidden;
   transition: max-height 0.5s, border 0.5s;
   max-height: ${({ open }) => (open ? "200rem" : "0")};
-  padding-left: 16.9rem;
   border-bottom: ${({ open }) => (open ? "0.1rem" : "0")} solid
     ${({ theme: { color } }) => color.surface.black20};
+  @media ${({ theme }) => theme.device.desktop} {
+    padding-left: 16.9rem;
+  }
 `;
 const Content = styled.div`
   margin-top: 2rem;
