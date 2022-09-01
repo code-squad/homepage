@@ -41,14 +41,12 @@ const MastheadWrapper = styled.div`
   background-size: cover;
   @media ${({ theme }) => theme.device.mobile} {
     background-image: ${`url(${header.mobilePattern1})`};
-    background-size: cover;
     height: 46.8rem;
   }
   @media ${({ theme }) => theme.device.tablet} {
     background-image: ${`url(${header.tabletPattern1})`};
     min-width: 76.8rem;
     height: 43.8rem;
-    background-size: cover;
     align-items: flex-start;
   }
   @media ${({ theme }) => theme.device.desktop} {
