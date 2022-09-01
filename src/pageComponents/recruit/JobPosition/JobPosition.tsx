@@ -47,7 +47,7 @@ const JobPosition: React.FC = () => {
           style={{ width: isDesktop ? "106.8rem" : "unset" }}
           type={isMobile ? "SDisplay" : "MDisplay"}
         >
-          {TITLE.FAQ}
+          {TITLE.APPLY}
         </Typography>
         <TagNavigationBar titles={Array.from(categories)} onIndexChanged={setCurrentIndex} />
       </JobPositionMasthead>
