@@ -56,10 +56,10 @@ const CourseCardWrapper = styled(Link)<{ medium?: boolean }>`
   display: flex;
   color: ${({ theme: { color } }) => color.black};
   @media ${({ theme }) => theme.device.mobile} {
-    width: 31.2rem;
+    width: 100%;
   }
   @media ${({ theme }) => theme.device.tablet} {
-    width: 60.8rem;
+    width: 100%;
   }
   @media ${({ theme }) => theme.device.desktop} {
     width: 51.9rem;
