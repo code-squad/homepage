@@ -101,7 +101,7 @@ const CourseInfoWrapper = styled.div<{ backgroundImage: string; backgroundColor:
   }
   @media ${({ theme }) => theme.device.desktop} {
     align-items: center;
-    min-width: 144rem;
+    min-width: 106.2rem;
     height: 56rem;
   }
 `;
