@@ -14,6 +14,6 @@ const Template: ComponentStory<typeof TabNavigationBar> = (args) => <TabNavigati
 
 export const Default = Template.bind({});
 Default.args = {
-  titles: ["웹 프론트엔드", "웹 백엔드", "모바일 Android", "모바일 iOS"],
+  titles: ["웹 프론트엔드", "웹 백엔드", "모바일 안드로이드", "모바일 iOS"],
   onIndexChanged: action("clicked"),
 };
