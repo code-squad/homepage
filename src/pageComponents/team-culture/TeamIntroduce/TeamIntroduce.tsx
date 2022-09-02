@@ -22,7 +22,7 @@ const TeamIntroduce: React.FC = () => {
             </Typography>
           </>
         ) : (
-          <Typography type="SDisplay">{SUBTITLE.WE + " " + TITLE.TEAM_CULTURE}</Typography>
+          <Typography type="SDisplay">{`${SUBTITLE.WE} ${TITLE.TEAM_CULTURE}`}</Typography>
         )}
       </IntroduceText>
     </TeamIntroduceWrapper>
