@@ -168,6 +168,9 @@ const ContentWrapper = styled.div<{ open?: boolean }>`
   max-height: ${({ open }) => (open ? "200rem" : "0")};
   border-bottom: ${({ open }) => (open ? "0.1rem" : "0")} solid
     ${({ theme: { color } }) => color.surface.black20};
+  @media ${({ theme }) => theme.device.mobile} {
+    max-height: ${({ open }) => (open ? "300rem" : "0")};
+  }
   @media ${({ theme }) => theme.device.desktop} {
     padding-left: 16.9rem;
   }
