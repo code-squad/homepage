@@ -26,17 +26,15 @@ import { strainMdxInfo } from "lib/utils";
 const MainPage: React.FC = () => {
   const { title } = strainMdxInfo(useStaticQuery(BannerQuery));
 
-  const localStorage = typeof window !== "undefined" ? window.localStorage : null;
-  const maxAge = localStorage?.getItem("maxAge");
-
-  const [bannerStatus, setBannerStatus] = React.useState(
-    title && (maxAge === null || (maxAge !== null && Number(maxAge) < Date.now()))
-  );
+  const [bannerStatus, setBannerStatus] = React.useState(false);
 
   React.useEffect(() => {
-    if (maxAge !== null && Number(maxAge) < Date.now()) {
-      localStorage?.removeItem("maxAge");
+    const localStorage = window.localStorage;
+    const maxAge = localStorage?.getItem("maxAge");
+    const maxAgeExpired = maxAge !== null && Number(maxAge) < Date.now();
 
+    if (title && maxAgeExpired) {
+      localStorage?.removeItem("maxAge");
       setBannerStatus(true);
     }
   }, []);
