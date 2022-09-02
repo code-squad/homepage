@@ -1,18 +1,27 @@
 import React from "react";
 
 const useScrollPosition = () => {
-  const [scrollPosition, setScrollPosition] = React.useState(0);
+  const [scrollPosition, setScrollPosition] = React.useState(false);
+  const [throttle, setThrottle] = React.useState(false);
+
+  const updatePosition = () => {
+    if (throttle) return;
+
+    const edgeYOffset = 15;
+    if (window.pageYOffset > edgeYOffset) setScrollPosition(true);
+    else if (window.pageXOffset <= edgeYOffset) setScrollPosition(false);
+
+    setTimeout(async () => {
+      setThrottle(true);
+    }, 100);
+  };
 
   React.useEffect(() => {
-    const updatePosition = () => {
-      setScrollPosition(window.pageYOffset);
-    };
     window.addEventListener("scroll", updatePosition);
-    updatePosition();
     return () => window.removeEventListener("scroll", updatePosition);
   }, []);
 
-  return scrollPosition > 15 ? true : false;
+  return scrollPosition;
 };
 
 export default useScrollPosition;
