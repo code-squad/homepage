@@ -9,9 +9,9 @@ import { TITLE } from "assets/static/phrases";
 import { useResponsive } from "lib/hooks";
 
 const Welcome: React.FC = () => {
-  const { isMobile, isDesktop } = useResponsive();
+  const { isMobile } = useResponsive();
 
-  const welcomeStr = isDesktop ? TITLE.WELCOME : TITLE.WELCOME_MOBILE;
+  const welcomeStr = isMobile ? TITLE.WELCOME_MOBILE : TITLE.WELCOME;
 
   return (
     <WelcomeWrapper>
