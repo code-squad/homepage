@@ -9,11 +9,13 @@ import { TITLE } from "assets/static/phrases";
 import { useResponsive } from "lib/hooks";
 
 const Welcome: React.FC = () => {
-  const { isMobile } = useResponsive();
+  const { isMobile, isDesktop } = useResponsive();
+
+  const welcomeStr = isDesktop ? TITLE.WELCOME : TITLE.WELCOME_MOBILE;
 
   return (
     <WelcomeWrapper>
-      <Typography type={isMobile ? "SDisplay" : "MDisplay"}>{TITLE.WELCOME}</Typography>
+      <Typography type={isMobile ? "SDisplay" : "MDisplay"}>{welcomeStr}</Typography>
     </WelcomeWrapper>
   );
 };
