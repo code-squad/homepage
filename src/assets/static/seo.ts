@@ -11,7 +11,7 @@ const SEO_TITLE = {
 };
 
 const SEO_DESCRIPTION = {
-  MAIN: "스스로 찾은 방법으로 함께 묶은 매듭은 풀리지 않습니다",
+  MAIN: "자유롭게 탐험하며 함께 성장하는 동료를 만나는 곳",
   MASTERS:
     "마스터즈 코스는 현장처럼 학습하며 분야별 최고의 개발자로 도약하는 데 도움을 주는 풀타임 과정입니다.",
   CODE_TOGETHER:
