@@ -111,19 +111,4 @@ const Typography: React.FC<ITypography> = ({ type, style, children, as }) => {
   return <TargetTypography {...{ style, as }}>{children}</TargetTypography>;
 };
 
-export {
-  LDisplay,
-  MDisplay,
-  SDisplay,
-  HLBold,
-  SHLBold,
-  MBold,
-  SBold,
-  XSBold,
-  XLBody,
-  LBody,
-  MBody,
-  SBody,
-  XSBody,
-  Typography,
-};
+export { Typography };
