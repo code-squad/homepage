@@ -5,12 +5,16 @@ import { graphql, useStaticQuery } from "gatsby";
 import { TitleSet } from "components/";
 import { ScheduleNav } from "./ScheduleNav";
 import { ScheduleInfo } from "./ScheduleInfo";
+import { MobileCourseSchedule } from "./MobileCourseSchedule";
 // Assets
 import { SUBTITLE, TITLE } from "assets/static/phrases";
 // Utils
 import { strainMdxInfo } from "lib/utils";
+import { useResponsive } from "lib/hooks";
 
 const CourseSchedule: React.FC = ({}) => {
+  const { isMobile } = useResponsive();
+
   const scheduleInfo = strainMdxInfo(useStaticQuery(ScheduleQuery));
   const { progress } = scheduleInfo;
 
@@ -24,12 +28,16 @@ const CourseSchedule: React.FC = ({}) => {
           title={TITLE.MASTERS_COURSE_SCHEDULE}
         />
       </TitleSetWrapper>
-      <ScheduleWrapper>
-        <ScheduleLeftRuler>
-          <ScheduleNav {...{ progress, selectedScheduleIndex, setSelectedScheduleIndex }} />
-          <ScheduleInfo {...{ scheduleInfo, selectedScheduleIndex }} />
-        </ScheduleLeftRuler>
-      </ScheduleWrapper>
+      {isMobile ? (
+        <MobileCourseSchedule {...{ progress, scheduleInfo }} />
+      ) : (
+        <ScheduleWrapper>
+          <ScheduleLeftRuler>
+            <ScheduleNav {...{ progress, selectedScheduleIndex, setSelectedScheduleIndex }} />
+            <ScheduleInfo {...{ scheduleInfo, selectedScheduleIndex }} />
+          </ScheduleLeftRuler>
+        </ScheduleWrapper>
+      )}
     </CourseScheduleWrapper>
   );
 };
