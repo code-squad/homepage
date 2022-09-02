@@ -9,15 +9,21 @@ interface ITabNavigationBarProps {
 }
 const TabNavigationBar: React.FC<ITabNavigationBarProps> = ({ onIndexChanged, titles }) => {
   const [currentIndex, setCurrentIndex] = React.useState(0);
+  const navRef = React.useRef<HTMLUListElement>(null);
 
   const handleTabNavigationButtonClick = (index: number) => {
     setCurrentIndex(index);
     onIndexChanged(index);
+    scroll(index);
+  };
+
+  const scroll = (index: number) => {
+    navRef.current!.scrollLeft = (index - 1) * 200;
   };
 
   return (
     <TabNavigationBarWrapper>
-      <TabNavButtonList>
+      <TabNavButtonList ref={navRef}>
         {titles.map((title: string, index: number) => (
           <li key={title} style={{ minWidth: "fit-content" }}>
             <TabNavButton
@@ -48,6 +54,18 @@ const TabNavButtonList = styled.ul`
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  @media ${({ theme }) => theme.device.mobile} {
+    overflow-x: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    overflow-x: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
 `;
 
 const TabNavButton = styled.button<{ selected?: boolean }>`
