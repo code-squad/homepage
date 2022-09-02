@@ -5,6 +5,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import { CourseInfo } from "components";
 // Assets
 import headers from "assets/img/illusts/header";
+import { TITLE } from "assets/static/phrases";
 // Lib
 import { strainMdxInfo } from "lib/utils";
 import { useResponsive } from "lib/hooks";
@@ -24,6 +25,7 @@ const Masthead: React.FC = () => {
     <CourseInfo
       {...{ title, description, targets, courseInfos, backgroundImage }}
       backgroundColor={color.primary.green4}
+      process={TITLE.CODE_TOGETHER_COURSE}
     />
   );
 };
