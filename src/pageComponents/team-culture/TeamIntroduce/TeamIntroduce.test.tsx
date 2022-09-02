@@ -15,8 +15,9 @@ describe("<TeamIntroduce>", () => {
       </TestProvider>
     );
   it("제목과 부제목이 보여진다.", async () => {
-    const { getByText } = renderRefundPolicy();
+    const { container } = renderRefundPolicy();
 
-    getByText(removeLineFeed(`${SUBTITLE.WE} ${TITLE.TEAM_CULTURE}`));
+    const pTag = container.querySelector("p");
+    expect(pTag?.textContent).toBe(TITLE.TEAM_CULTURE);
   });
 });
