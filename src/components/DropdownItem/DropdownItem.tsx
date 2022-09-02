@@ -91,22 +91,13 @@ const DropdownWrapper = styled.div<{ short?: boolean }>`
   flex-direction: column;
   @media ${({ theme }) => theme.device.mobile} {
     margin-top: 1.6rem;
-    &:active p {
-      font-weight: ${({ theme: { fontWeight } }) => fontWeight.bold};
-    }
   }
   @media ${({ theme }) => theme.device.tablet} {
     min-width: 31.2rem;
     margin-top: 1.6rem;
-    &:active p {
-      font-weight: ${({ theme: { fontWeight } }) => fontWeight.bold};
-    }
   }
   @media ${({ theme }) => theme.device.desktop} {
     width: ${({ short }) => (short ? "96.6rem" : "106.2rem")};
-    &:hover p {
-      font-weight: ${({ theme: { fontWeight } }) => fontWeight.bold};
-    }
   }
 `;
 
@@ -117,23 +108,32 @@ const BoardWrapper = styled.div<{ open?: boolean }>`
     ${({ open, theme: { color } }) => (open ? color.greyScale.grey2 : color.greyScale.grey4)};
   @media ${({ theme }) => theme.device.mobile} {
     flex-direction: column;
+    padding-bottom: 1.2rem;
     & > *:not(:last-child) {
       margin-bottom: 0.4rem;
     }
-    padding-bottom: 1.2rem;
+    &:active p {
+      font-weight: ${({ theme: { fontWeight } }) => fontWeight.bold};
+    }
   }
   @media ${({ theme }) => theme.device.tablet} {
     flex-direction: column;
+    padding-bottom: 1.2rem;
     & > *:not(:last-child) {
       margin-bottom: 0.4rem;
     }
-    padding-bottom: 1.2rem;
+    &:active p {
+      font-weight: ${({ theme: { fontWeight } }) => fontWeight.bold};
+    }
   }
   @media ${({ theme }) => theme.device.desktop} {
     padding-top: 4rem;
     justify-content: space-between;
     height: 7.1rem;
     transition: border 0.5s;
+    &:hover p {
+      font-weight: ${({ theme: { fontWeight } }) => fontWeight.bold};
+    }
   }
 `;
 const Category = styled.div<{ isLinkBoard?: boolean }>`
@@ -174,6 +174,7 @@ const ContentWrapper = styled.div<{ open?: boolean }>`
 `;
 const Content = styled.div`
   margin-top: 2rem;
+  font-weight: ${({ theme: { fontWeight } }) => fontWeight.medium};
 `;
 const EditDate = styled.div`
   margin: 2.4rem 0;
