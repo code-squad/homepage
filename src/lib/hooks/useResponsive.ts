@@ -6,10 +6,12 @@ function useResponsive() {
 
   const [windowWidthSize, setWindowWidthSize] = React.useState(breakPoint.mobile);
 
+  const handleResize = () => {
+    setWindowWidthSize(window.innerWidth);
+  };
+
   React.useEffect(() => {
-    const handleResize = () => {
-      setWindowWidthSize(window.innerWidth);
-    };
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
