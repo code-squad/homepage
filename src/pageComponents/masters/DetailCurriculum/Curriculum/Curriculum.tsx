@@ -74,7 +74,7 @@ const SubjectItemList = styled.ul`
     }
   }
   @media ${({ theme }) => theme.device.tablet} {
-    margin-top: 8rem;
+    margin-top: 3rem;
     & > *:not(:last-child) {
       margin-bottom: 3rem;
     }
