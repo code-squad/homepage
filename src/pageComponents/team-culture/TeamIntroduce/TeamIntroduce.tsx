@@ -18,11 +18,11 @@ const TeamIntroduce: React.FC = () => {
           <>
             <Typography type="SDisplay">{SUBTITLE.WE}</Typography>
             <Typography type="MBody" style={{ marginTop: "1.6rem" }}>
-              {TITLE.TEAM_CULTURE}
+              {TITLE.MOBILE_TEAM_CULTURE}
             </Typography>
           </>
         ) : (
-          <Typography type="SDisplay">{`${SUBTITLE.WE} ${TITLE.TEAM_CULTURE}`}</Typography>
+          <Typography type="SDisplay">{TITLE.TEAM_CULTURE}</Typography>
         )}
       </IntroduceText>
     </TeamIntroduceWrapper>
@@ -39,10 +39,12 @@ const TeamIntroduceWrapper = styled.div`
   background-repeat: no-repeat;
   background-position: right;
   @media ${({ theme }) => theme.device.mobile} {
+    justify-content: flex-start;
     height: 35.2rem;
     background-image: ${`url(${header.mobilePattern2})`};
   }
   @media ${({ theme }) => theme.device.tablet} {
+    justify-content: flex-start;
     height: 44.8rem;
     background-image: ${`url(${header.tabletPattern2})`};
   }
@@ -54,6 +56,7 @@ const TeamIntroduceWrapper = styled.div`
 `;
 
 const IntroduceText = styled.div`
+  white-space: pre-line;
   @media ${({ theme }) => theme.device.mobile} {
     padding: 0 2.4rem;
     padding-bottom: 4rem;
