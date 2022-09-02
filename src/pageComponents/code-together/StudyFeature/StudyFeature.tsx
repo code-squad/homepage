@@ -60,7 +60,7 @@ const FeatureList = styled.ul`
     display: flex;
     flex-direction: column;
     & > *:not(:last-child) {
-      margin-bottom: 4.8rem;
+      margin-bottom: 2.4rem;
     }
   }
   @media ${({ theme }) => theme.device.tablet} {

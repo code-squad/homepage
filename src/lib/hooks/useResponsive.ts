@@ -1,15 +1,16 @@
 import React from "react";
-import { useTheme } from "styled-components";
+import theme from "styles/theme";
 
 function useResponsive() {
   if (typeof window === "undefined") return { isMobile: false, isTablet: false, isDesktop: true };
 
-  const { breakPoint } = useTheme();
+  const { breakPoint } = theme;
 
   const [windowSize, setWindowSize] = React.useState({
     width: window.innerWidth,
     height: window.innerHeight,
   });
+
   React.useEffect(() => {
     const handleResize = () => {
       setWindowSize({
@@ -28,7 +29,7 @@ function useResponsive() {
   if (breakPoint.tablet <= windowSize.width && windowSize.width < breakPoint.desktop)
     isTablet = true;
   if (windowSize.width >= breakPoint.desktop) isDesktop = true;
-  return { isMobile, isTablet, isDesktop, windowSize };
+  return { isMobile, isTablet, isDesktop };
 }
 
 export default useResponsive;
