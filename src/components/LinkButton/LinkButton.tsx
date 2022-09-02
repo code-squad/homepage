@@ -70,7 +70,7 @@ const LinkButtonWrapper = styled(Link)<{ icon?: string; caption?: string }>`
     padding: 1.6rem;
   }
   @media ${({ theme }) => theme.device.tablet} {
-    width: ${({ icon }) => (icon ? "43.5rem" : "98.2rem")};
+    width: 100%;
     padding: ${({ caption }) => (caption ? "3.9rem 4rem" : "3rem 4rem")};
   }
   @media ${({ theme }) => theme.device.desktop} {
