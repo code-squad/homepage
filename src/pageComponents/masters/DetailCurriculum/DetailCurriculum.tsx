@@ -92,10 +92,6 @@ const CurriculumWrapper = styled.div`
   display: flex;
   justify-content: center;
   background-color: ${({ theme: { color } }) => color.surface.offWhite1};
-  @media ${({ theme }) => theme.device.mobile} {
-  }
-  @media ${({ theme }) => theme.device.tablet} {
-  }
   @media ${({ theme }) => theme.device.desktop} {
     min-width: 144rem;
   }
