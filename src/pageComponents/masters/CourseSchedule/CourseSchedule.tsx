@@ -90,13 +90,11 @@ const ScheduleWrapper = styled.div`
 `;
 const ScheduleLeftRuler = styled.div`
   display: flex;
-  @media ${({ theme }) => theme.device.mobile} {
-  }
   @media ${({ theme }) => theme.device.tablet} {
+    width: 100%;
   }
   @media ${({ theme }) => theme.device.desktop} {
     width: 107rem;
-    justify-content: flex-start;
   }
 `;
 
