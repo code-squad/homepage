@@ -3,7 +3,7 @@ import styled from "styled-components";
 // Type
 import { ProgressType } from "@type/Schedule";
 // Typography
-import { MBody } from "typography";
+import { Typography } from "typography";
 
 interface IScheduleNav {
   progress: ProgressType[];
@@ -22,7 +22,7 @@ const ScheduleNav: React.FC<IScheduleNav> = ({
         <div key={label} style={{ position: "relative" }}>
           <ScheduleNavItem onClick={() => setSelectedScheduleIndex(index)}>
             <LabelWrapper clicked={selectedScheduleIndex === index}>
-              <MBody>{label}</MBody>
+              <Typography type="MBody">{label}</Typography>
             </LabelWrapper>
             <Dot clicked={selectedScheduleIndex === index} />
           </ScheduleNavItem>
