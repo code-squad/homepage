@@ -3,7 +3,7 @@ import styled from "styled-components";
 // Type
 import { CodeTogetherCurriculumType } from "@type/CodeTogetherCurriculum";
 // Typography
-import { SHLBold, MBody } from "typography";
+import { Typography } from "typography";
 // Components
 import { MasterInfo } from "./MasterInfo";
 
@@ -19,12 +19,14 @@ const Curriculum: React.FC<{ curriculumInfo: CodeTogetherCurriculumType }> = ({
           {subjectList.map(({ name, details }) => (
             <SubjectItem key={name}>
               <SubjectTitle>
-                <SHLBold>{name}</SHLBold>
+                <Typography type="SHLBold">{name}</Typography>
               </SubjectTitle>
               <SubjectDetailList>
                 {details.map((detail) => (
                   <li key={detail}>
-                    <MBody as="span">{detail}</MBody>
+                    <Typography type="MBody" as="span">
+                      {detail}
+                    </Typography>
                   </li>
                 ))}
               </SubjectDetailList>

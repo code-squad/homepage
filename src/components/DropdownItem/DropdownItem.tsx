@@ -6,7 +6,7 @@ import Layout from "lib/context/Layout";
 // Assets
 import icons from "assets/img/icons";
 // Typography
-import { Typography, MBold, LBody, MBody, XSBody } from "typography";
+import { Typography } from "typography";
 // Lib
 import { useResponsive } from "lib/hooks";
 
@@ -74,11 +74,11 @@ const DropdownItem: React.FC<IDropdownItem> = ({
                 <MDXRenderer>{body}</MDXRenderer>
               </Layout>
             ) : (
-              <MBody>{content}</MBody>
+              <Typography type="MBody">{content}</Typography>
             )}
           </Content>
           <EditDate>
-            <XSBody>{`최종 업데이트: ${editDate}`}</XSBody>
+            <Typography type="XSBody">{`최종 업데이트: ${editDate}`}</Typography>
           </EditDate>
         </ContentWrapper>
       )}
@@ -91,20 +91,20 @@ const DropdownWrapper = styled.div<{ short?: boolean }>`
   flex-direction: column;
   @media ${({ theme }) => theme.device.mobile} {
     margin-top: 1.6rem;
-    &:active ${MBody} {
+    &:active p {
       font-weight: ${({ theme: { fontWeight } }) => fontWeight.bold};
     }
   }
   @media ${({ theme }) => theme.device.tablet} {
     min-width: 31.2rem;
     margin-top: 1.6rem;
-    &:active ${MBody} {
+    &:active p {
       font-weight: ${({ theme: { fontWeight } }) => fontWeight.bold};
     }
   }
   @media ${({ theme }) => theme.device.desktop} {
     width: ${({ short }) => (short ? "96.6rem" : "106.2rem")};
-    &:hover ${LBody} {
+    &:hover p {
       font-weight: ${({ theme: { fontWeight } }) => fontWeight.bold};
     }
   }

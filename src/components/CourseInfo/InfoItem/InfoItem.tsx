@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 // Typography
-import { LBody, SBody } from "typography";
+import { Typography } from "typography";
 
 interface IInfoItemProps {
   title: string;
@@ -13,8 +13,8 @@ const InfoItem: React.FC<IInfoItemProps> = ({ icon, title, content }) => {
   return (
     <InfoItemWrapper>
       <img src={icon} alt={`course-info-img-${title}`} />
-      <LBody>{title + (content ? "/" : "")}</LBody>
-      <SBody>{content}</SBody>
+      <Typography type="LBody">{title + (content ? "/" : "")}</Typography>
+      <Typography type="SBody">{content}</Typography>
     </InfoItemWrapper>
   );
 };

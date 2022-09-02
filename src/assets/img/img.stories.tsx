@@ -3,7 +3,7 @@ import styled from "styled-components";
 // Type
 import { Meta } from "@storybook/react";
 // Typography
-import { XSBody } from "typography";
+import { Typography } from "typography";
 // Story-Image
 import avatars from "assets/img/avatars";
 import icons from "assets/img/icons";
@@ -35,7 +35,7 @@ const ImgList: React.FC<{ imgObj: any; imageKeys: string[] }> = ({ imgObj, image
           <div style={{ marginBottom: "1rem" }}>
             <img style={{ border: "1px solid #000" }} src={imgObj[img]} />
           </div>
-          <XSBody>{img}</XSBody>
+          <Typography type="XSBody">{img}</Typography>
         </div>
       ))}
     </ImgWrapper>
