@@ -34,22 +34,25 @@ const CourseList: React.FC = () => {
 };
 
 const CourseWrapper = styled.ul`
-  margin: 0 auto;
-  margin-top: 8rem;
-  margin-bottom: 18rem;
   display: flex;
   flex-direction: column;
+  margin: 8rem auto 18rem auto;
   & > *:not(:last-child) {
     margin-bottom: 3.2rem;
   }
   @media ${({ theme }) => theme.device.mobile} {
-    width: 31.2rem;
+    padding: 0 2.4rem;
+    margin: 8rem 0 12rem 0;
+    & > *:not(:last-child) {
+      margin-bottom: 2.4rem;
+    }
   }
   @media ${({ theme }) => theme.device.tablet} {
-    width: 60.8rem;
+    padding: 0 8rem;
   }
   @media ${({ theme }) => theme.device.desktop} {
     width: 106.2rem;
+    padding: 0 18.9rem;
   }
 `;
 
@@ -60,10 +63,9 @@ const CourseListWrapper = styled.ul`
     margin-right: 2.4rem;
   }
   @media ${({ theme }) => theme.device.mobile} {
-    width: 31.2rem;
-  }
-  @media ${({ theme }) => theme.device.tablet} {
-    width: 60.8rem;
+    & > *:not(:last-child) {
+      margin-right: 1.6rem;
+    }
   }
 `;
 

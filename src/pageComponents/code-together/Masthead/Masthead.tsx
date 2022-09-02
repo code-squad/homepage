@@ -31,29 +31,26 @@ const Masthead: React.FC = () => {
 
 const MastheadWrapper = styled.div`
   position: relative;
-  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   color: ${({ theme: { color } }) => color.black};
   background-color: ${({ theme: { color } }) => color.primary.green4};
-  background-image: ${`url(${header.desktopPattern3})`};
   background-position: top right;
   background-position: center;
-  // 배경 이미지 asset 파일이 추가되면 추가작업 필요
+  background-size: cover;
   @media ${({ theme }) => theme.device.mobile} {
-    min-width: 36rem;
-    padding: 0 2.4rem;
-    background-size: cover;
+    background-image: ${`url(${header.mobilePattern1})`};
     height: 46.8rem;
   }
   @media ${({ theme }) => theme.device.tablet} {
+    background-image: ${`url(${header.tabletPattern1})`};
     min-width: 76.8rem;
-    padding: 0 8rem;
     height: 43.8rem;
-    background-size: cover;
+    align-items: flex-start;
   }
   @media ${({ theme }) => theme.device.desktop} {
+    background-image: ${`url(${header.desktopPattern1})`};
     min-width: 144rem;
     height: 56rem;
   }
@@ -63,7 +60,6 @@ const ContentWrapper = styled.div`
   position: absolute;
   bottom: 8rem;
   @media ${({ theme }) => theme.device.mobile} {
-    min-width: 36rem;
     bottom: 4rem;
   }
   @media ${({ theme }) => theme.device.tablet} {
@@ -76,17 +72,20 @@ const ContentWrapper = styled.div`
 `;
 
 const TitleWrapper = styled.div`
-  width: 106.2rem;
   display: flex;
   flex-direction: column;
   & > *:not(:last-child) {
     margin-bottom: 2.4rem;
   }
   @media ${({ theme }) => theme.device.mobile} {
-    width: 31.2rem;
+    padding: 0 2.4rem;
   }
   @media ${({ theme }) => theme.device.tablet} {
-    width: 60.8rem;
+    padding: 0 8rem;
+    min-width: 60.8rem;
+    & > *:last-child {
+      width: 70%;
+    }
   }
   @media ${({ theme }) => theme.device.desktop} {
     & > *:last-child {
@@ -96,15 +95,15 @@ const TitleWrapper = styled.div`
 `;
 
 const MoveLinkWrapper = styled.div`
-  width: 106.2rem;
   margin-top: 5.8rem;
   display: flex;
   justify-content: space-between;
   @media ${({ theme }) => theme.device.mobile} {
-    width: 31.2rem;
+    padding: 0 2.4rem;
   }
   @media ${({ theme }) => theme.device.tablet} {
-    width: 60.8rem;
+    padding: 0 8rem;
+    min-width: 60.8rem;
   }
 `;
 

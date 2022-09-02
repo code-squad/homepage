@@ -37,10 +37,10 @@ const TitleWrapper = styled.div`
   flex-direction: column;
   color: ${({ theme: { color } }) => color.black};
   @media ${({ theme }) => theme.device.mobile} {
-    max-width: calc(100% - 4.8rem);
+    width: calc(100% - 4.8rem);
   }
   @media ${({ theme }) => theme.device.tablet} {
-    max-width: calc(100% - 16rem);
+    width: calc(100% - 16rem);
   }
   @media ${({ theme }) => theme.device.desktop} {
     width: 107rem;

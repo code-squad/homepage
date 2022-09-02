@@ -52,13 +52,12 @@ const TagNavigationBarWrapper = styled.div`
     background: #bbb;
   }
   @media ${({ theme }) => theme.device.mobile} {
-    width: 32.7rem;
   }
   @media ${({ theme }) => theme.device.tablet} {
-    width: 60.8rem;
+    min-width: 60.8rem;
   }
   @media ${({ theme }) => theme.device.desktop} {
-    width: 106.2rem;
+    min-width: 106.2rem;
   }
 `;
 
