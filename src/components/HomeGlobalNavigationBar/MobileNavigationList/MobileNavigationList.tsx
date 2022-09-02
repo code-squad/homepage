@@ -52,7 +52,7 @@ const MobileNavigationList: React.FC<{
         <Typography type="SBody">{MESSAGE.ADDRESS}</Typography>
         <LinkIconWrapper>
           {linkIconList.map(({ icon, to }) => (
-            <LinkIconItem {...{ to }} target="_blank" rel="noopener noreferrer nofollow">
+            <LinkIconItem key={to} {...{ to }} target="_blank" rel="noopener noreferrer nofollow">
               <LinkIcon alt={`link-icon-${icon}`} src={icon} />
             </LinkIconItem>
           ))}
@@ -118,7 +118,7 @@ const LinkIconWrapper = styled.ul`
     margin-right: 2.4rem;
   }
 `;
-const LinkIconItem = styled(Link)`
+const LinkIconItem = styled.a`
   width: 2.4rem;
   height: 2.4rem;
   text-decoration: none;
