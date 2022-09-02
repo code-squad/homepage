@@ -7,15 +7,20 @@ import { CourseInfo } from "components";
 import header from "assets/img/illusts/header";
 // Lib
 import { strainMdxInfo } from "lib/utils";
+import { useResponsive } from "lib/hooks";
 
 const Masthead: React.FC = () => {
+  const { isMobile, isTablet } = useResponsive();
   const { color } = useTheme();
   const { title, description, targets, courseInfos } = strainMdxInfo(useStaticQuery(MastheadQuery));
 
+  let backgroundImage = header.desktopPattern1;
+  if (isMobile) backgroundImage = header.mobilePattern1;
+  if (isTablet) backgroundImage = header.tabletPattern1;
+
   return (
     <CourseInfo
-      {...{ title, description, targets, courseInfos }}
-      backgroundImage={header.desktopPattern3}
+      {...{ title, description, targets, courseInfos, backgroundImage }}
       backgroundColor={color.primary.green4}
     />
   );

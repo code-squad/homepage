@@ -8,12 +8,14 @@ import { ImageCard, TitleSet } from "components";
 // Assets
 import features from "assets/img/illusts/feature";
 import { SUBTITLE, TITLE } from "assets/static/phrases";
-// Utils
+// Libs
 import { strainMdxInfo } from "lib/utils";
+import { useResponsive } from "lib/hooks";
 
 const Welfare: React.FC = ({}) => {
   const data = useStaticQuery(WelfareQuery);
   const { welfares }: { welfares: WelfareType[] } = strainMdxInfo(data);
+  const { isMobile } = useResponsive();
 
   return (
     <WelfareWraper>
@@ -22,7 +24,12 @@ const Welfare: React.FC = ({}) => {
         <WelfareList>
           {welfares.map(({ title, content, img }) => (
             <WelfareItem key={title}>
-              <ImageCard description={content} title={title} img={features[img]} />
+              <ImageCard
+                description={content}
+                title={title}
+                img={features[img]}
+                vertical={isMobile}
+              />
             </WelfareItem>
           ))}
         </WelfareList>
@@ -33,30 +40,76 @@ const Welfare: React.FC = ({}) => {
 
 const WelfareWraper = styled.div`
   display: flex;
-  align-items: center;
-  width: 100%;
-  min-width: 144rem;
   flex-direction: column;
-  margin-bottom: 16rem;
+  @media ${({ theme }) => theme.device.mobile} {
+    padding: 0 2.4rem;
+    margin-top: 8rem;
+    margin-bottom: 8rem;
+    & > *:not(:last-child) {
+      margin-bottom: 2.4rem;
+    }
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    padding: 0 8rem;
+    margin: 0 auto;
+    margin-top: 8rem;
+    margin-bottom: 16rem;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    width: 106.2rem;
+    padding: 0 18.9rem;
+    margin: 0 auto;
+    margin-top: 8rem;
+    margin-bottom: 16rem;
+    & > *:not(:last-child) {
+      margin-bottom: 3.2rem;
+    }
+  }
 `;
 
 const WelfareListWrapper = styled.ul`
-  width: 106.2rem;
   display: flex;
-  flex-direction: column;
+  @media ${({ theme }) => theme.device.mobile} {
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    width: 106.2rem;
+    flex-direction: column;
+  }
 `;
 
 const WelfareList = styled.ul`
-  flex-flow: row wrap;
-  align-content: flex-start;
-  & > *:not(:nth-child(3n)) {
-    margin-right: 7.8rem;
+  @media ${({ theme }) => theme.device.mobile} {
+    display: flex;
+    flex-direction: column;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0 7.9rem;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    & > *:not(:nth-child(3n)) {
+      margin-right: 7.8rem;
+    }
   }
 `;
 
 const WelfareItem = styled.li`
-  margin-top: 8rem;
   display: inline-flex;
+  @media ${({ theme }) => theme.device.mobile} {
+    margin-top: 2.4rem;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    margin-top: 8rem;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    margin-top: 8rem;
+  }
 `;
 
 const WelfareQuery = graphql`

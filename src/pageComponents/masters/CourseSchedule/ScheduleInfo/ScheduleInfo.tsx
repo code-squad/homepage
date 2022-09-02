@@ -3,7 +3,7 @@ import styled from "styled-components";
 // Type
 import { ScheduleType } from "@type/Schedule";
 // Typography
-import { SHLBold, LBody, MBody } from "typography";
+import { Typography } from "typography";
 // Components
 import { MButton } from "components";
 import { getSplittedPhrase } from "lib/utils";
@@ -20,23 +20,23 @@ const ScheduleInfo: React.FC<IScheduleInfo> = ({ scheduleInfo, selectedScheduleI
 
   return (
     <ScheduleInfoWrapper>
-      <SHLBold>{title}</SHLBold>
-      <LBody style={{ marginTop: "2.4rem" }}>{subtitle}</LBody>
+      <Typography type="SHLBold">{title}</Typography>
+      <Typography type="LBody" style={{ marginTop: "2.4rem" }}>
+        {subtitle}
+      </Typography>
       {getSplittedPhrase(description).map((descriptionItem: string) => (
         <DescriptionWrapper key={descriptionItem}>
-          <MBody>{descriptionItem}</MBody>
+          <Typography type="MBody">{descriptionItem}</Typography>
         </DescriptionWrapper>
       ))}
-      {selectedScheduleIndex === 0 ? (
+      {selectedScheduleIndex === 0 && (
         <ButtonWrapper>
-          {waiterApplyUrlBtnText ? (
+          {waiterApplyUrlBtnText && (
             <MButton to={waiterApplyUrl} children={waiterApplyUrlBtnText} type="right" />
-          ) : null}
-          {applyBtnText ? (
-            <MButton to={applyUrl} accent children={applyBtnText} type="right" />
-          ) : null}
+          )}
+          {applyBtnText && <MButton to={applyUrl} accent children={applyBtnText} type="right" />}
         </ButtonWrapper>
-      ) : null}
+      )}
     </ScheduleInfoWrapper>
   );
 };
