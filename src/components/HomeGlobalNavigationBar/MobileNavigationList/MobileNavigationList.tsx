@@ -4,6 +4,7 @@ import { Link } from "gatsby";
 // Typography
 import { Typography } from "typography";
 // Assets
+import icons from "assets/img/icons";
 import { MESSAGE } from "assets/static/phrases";
 import { EXTERNAL } from "assets/static/urls";
 // Libs
@@ -15,6 +16,13 @@ const MobileNavigationList: React.FC<{
 }> = ({ links, open }) => {
   const currentPath = getCurrentPath();
   const currentFirstPath = currentPath.split("/")[1];
+
+  const linkIconList = [
+    { icon: icons.medium, to: EXTERNAL.BLOG },
+    { icon: icons.youtube, to: EXTERNAL.YOUTUBE },
+    { icon: icons.facebook, to: EXTERNAL.FACEBOOK },
+    { icon: icons.kakaotalk, to: EXTERNAL.KAKAOTALK_CHANNEL },
+  ];
 
   return (
     <NavigationListWrapper {...{ open }}>
@@ -42,6 +50,13 @@ const MobileNavigationList: React.FC<{
         </ExternalLink>
         <Typography type="SBody">{MESSAGE.TEL_NUMBER}</Typography>
         <Typography type="SBody">{MESSAGE.ADDRESS}</Typography>
+        <LinkIconWrapper>
+          {linkIconList.map(({ icon, to }) => (
+            <LinkIconItem {...{ to }} target="_blank" rel="noopener noreferrer nofollow">
+              <LinkIcon alt={`link-icon-${icon}`} src={icon} />
+            </LinkIconItem>
+          ))}
+        </LinkIconWrapper>
       </CompanyInfoWrapper>
     </NavigationListWrapper>
   );
@@ -50,6 +65,7 @@ const MobileNavigationList: React.FC<{
 const NavigationListWrapper = styled.div<{ open: boolean }>`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   z-index: 10;
   width: 100vw;
   height: ${({ open }) => (open ? "calc(100vh - 6.2rem)" : "0")};
@@ -63,7 +79,7 @@ const NavigationListWrapper = styled.div<{ open: boolean }>`
 const ButtonList = styled.ul`
   display: flex;
   flex-direction: column;
-  margin: 8rem 0 18.9rem 0;
+  margin-top: 8rem;
   padding: 0 2.4rem;
   & > *:not(:last-child) {
     margin-bottom: 2.4rem;
@@ -92,6 +108,25 @@ const CompanyInfoWrapper = styled.ul`
   flex-direction: column;
   padding: 0 2.4rem;
   color: ${({ theme: { color } }) => color.greyScale.grey1};
+`;
+
+const LinkIconWrapper = styled.ul`
+  display: flex;
+  justify-content: flex-start;
+  padding: 3.2rem 0 8rem 0rem;
+  & > *:not(:last-child) {
+    margin-right: 2.4rem;
+  }
+`;
+const LinkIconItem = styled(Link)`
+  width: 2.4rem;
+  height: 2.4rem;
+  text-decoration: none;
+  color: ${({ theme: { color } }) => color.black};
+`;
+const LinkIcon = styled.img`
+  width: 2.4rem;
+  height: 2.4rem;
 `;
 
 export default MobileNavigationList;

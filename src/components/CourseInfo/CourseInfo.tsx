@@ -20,6 +20,7 @@ interface ICourseInfo {
   backgroundImage: string;
   backgroundColor: string;
   title: string;
+  process?: string;
   description: string;
   targets: string[];
   courseInfos: ICourseDetailInfo[];
@@ -29,6 +30,7 @@ const CourseInfo: React.FC<ICourseInfo> = ({
   backgroundImage,
   backgroundColor,
   title,
+  process,
   description,
   targets,
   courseInfos,
@@ -39,6 +41,7 @@ const CourseInfo: React.FC<ICourseInfo> = ({
     <CourseInfoWrapper {...{ backgroundImage, backgroundColor }}>
       <ContentWrapper>
         <TitleWrapper>
+          {process && <Typography type={isMobile ? "MBold" : "SHLBold"}>{process}</Typography>}
           <Typography type={isMobile ? "SDisplay" : "LDisplay"}>{title}</Typography>
         </TitleWrapper>
         <InfoWrapper>
@@ -118,18 +121,21 @@ const ContentWrapper = styled.div`
 
 const TitleWrapper = styled.div`
   display: flex;
+  flex-direction: column;
+  & > *:not(:last-child) {
+    margin-bottom: 0.8rem;
+  }
   @media ${({ theme }) => theme.device.mobile} {
     margin-bottom: 1.6rem;
+    & > *:not(:last-child) {
+      margin-bottom: 0;
+    }
   }
   @media ${({ theme }) => theme.device.tablet} {
     margin-bottom: 1.6rem;
   }
   @media ${({ theme }) => theme.device.desktop} {
     min-width: 106.2rem;
-    flex-direction: column;
-    & > *:not(:last-child) {
-      margin-bottom: 2.4rem;
-    }
     & > *:last-child {
       width: 50%;
     }

@@ -14,6 +14,10 @@ import plus from "./plus.svg";
 import quotation from "./quotation.svg";
 import roundFilled from "./round-filled.svg";
 import roundLine from "./round-line.svg";
+import facebook from "./facebook.svg";
+import kakaotalk from "./kakaotalk.svg";
+import medium from "./medium.svg";
+import youtube from "./youtube.svg";
 
 export default {
   book,
@@ -32,4 +36,8 @@ export default {
   roundFilled,
   roundLine,
   hash,
+  facebook,
+  kakaotalk,
+  medium,
+  youtube,
 };

@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from "gatsby";
 // Type
 import { JobPositionType } from "@type/JobPosition";
 // Typography
-import { MDisplay, Typography } from "typography";
+import { Typography } from "typography";
 // Components
 import { DropdownItem, TagNavigationBar } from "components";
 // Assets

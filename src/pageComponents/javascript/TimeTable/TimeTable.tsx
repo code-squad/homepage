@@ -6,7 +6,7 @@ import "./TimeTable.css";
 // Type
 import { PlanType, TagType } from "@type/TimeTable";
 // Typography
-import { Typography, XSBody, SBold } from "typography";
+import { Typography } from "typography";
 // Components
 import { TitleSet } from "components";
 // Assets

@@ -31,6 +31,7 @@ const BackgroundLinkWrapper = styled.div<{ backgroundColor?: string }>`
   justify-content: center;
   background-color: ${({ backgroundColor, theme: { color } }) =>
     backgroundColor || color.secondary.blue3};
+  white-space: pre-line;
   @media ${({ theme }) => theme.device.mobile} {
     padding-left: 2.304rem;
     height: 17.2rem;
