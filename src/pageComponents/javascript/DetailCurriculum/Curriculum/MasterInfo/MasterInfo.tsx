@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 // Typography
-import { HLBold, SHLBold, MBody, SBody } from "typography";
+import { Typography } from "typography";
 // Components
 import { Avatar } from "components";
 // Assets
@@ -36,16 +36,16 @@ const MasterInfo: React.FC<IMasterInfo> = ({ masterInfo }) => {
       </AvatarWrapper>
       <InfoWrapper>
         <NameWrapper>
-          <HLBold>{name}</HLBold>
+          <Typography type="HLBold">{name}</Typography>
           <PositionWrapper>
-            <SBody>{position}</SBody>
+            <Typography type="SBody">{position}</Typography>
           </PositionWrapper>
         </NameWrapper>
         <NutshellWrapper>
-          <SHLBold>{nutshell}</SHLBold>
+          <Typography type="SHLBold">{nutshell}</Typography>
         </NutshellWrapper>
         <IntroduceWrapper>
-          <MBody>{introduce}</MBody>
+          <Typography type="MBody">{introduce}</Typography>
         </IntroduceWrapper>
       </InfoWrapper>
     </MasterInfoWrapper>

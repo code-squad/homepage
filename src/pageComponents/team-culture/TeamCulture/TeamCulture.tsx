@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from "gatsby";
 // Type
 import { TeamCultureType } from "@type/TeamCulture";
 // Typography
-import { Typography, HLBold, MBold, MBody } from "typography";
+import { Typography } from "typography";
 // Components
 import { TitleSet } from "components/";
 // Assets
@@ -34,8 +34,12 @@ const TeamCulture: React.FC = () => {
             {cultureFeatures.map(({ subtitle, description }) => (
               <TeamCultureContentList key={subtitle}>
                 <TeamCultureContentListItem key={subtitle}>
-                  <MBold style={{ marginBottom: "0.8rem", color: color.black }}>{subtitle}</MBold>
-                  <MBody style={{ color: color.greyScale.grey1 }}>{description}</MBody>
+                  <Typography type="MBold" style={{ marginBottom: "0.8rem", color: color.black }}>
+                    {subtitle}
+                  </Typography>
+                  <Typography type="MBody" style={{ color: color.greyScale.grey1 }}>
+                    {description}
+                  </Typography>
                 </TeamCultureContentListItem>
               </TeamCultureContentList>
             ))}

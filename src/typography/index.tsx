@@ -103,26 +103,12 @@ interface ITypography {
   type: keyof typeof typographys;
   children: React.ReactNode;
   style?: CSSProperties;
+  as?: React.ElementType;
 }
 
-const Typography: React.FC<ITypography> = ({ type, style, children }) => {
+const Typography: React.FC<ITypography> = ({ type, style, children, as }) => {
   const TargetTypography = typographys[type];
-  return <TargetTypography {...{ style }}>{children}</TargetTypography>;
+  return <TargetTypography {...{ style, as }}>{children}</TargetTypography>;
 };
 
-export {
-  LDisplay,
-  MDisplay,
-  SDisplay,
-  HLBold,
-  SHLBold,
-  MBold,
-  SBold,
-  XSBold,
-  XLBody,
-  LBody,
-  MBody,
-  SBody,
-  XSBody,
-  Typography,
-};
+export { Typography };
