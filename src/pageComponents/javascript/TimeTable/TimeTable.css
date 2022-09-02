@@ -1,8 +1,23 @@
+@media screen and (max-width: calc(767px)) {
+  #table {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) and (max-width: calc(1439px)) {
+  #table {
+    width: 100%;
+  }
+}
+@media (min-width: 1440px) {
+  #table {
+    width: 68rem;
+  }
+}
+
 #table {
   border-collapse: collapse;
   font-size: 1.4rem;
   text-align: center;
-  width: 68rem;
 }
 
 #table td,
