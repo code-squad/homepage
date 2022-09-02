@@ -18,7 +18,7 @@ const TeamIntroduce: React.FC = () => {
           <>
             <Typography type="SDisplay">{SUBTITLE.WE}</Typography>
             <Typography type="MBody" style={{ marginTop: "1.6rem" }}>
-              {TITLE.TEAM_CULTURE}
+              {TITLE.MOBILE_TEAM_CULTURE}
             </Typography>
           </>
         ) : (
@@ -39,10 +39,12 @@ const TeamIntroduceWrapper = styled.div`
   background-repeat: no-repeat;
   background-position: right;
   @media ${({ theme }) => theme.device.mobile} {
+    justify-content: flex-start;
     height: 35.2rem;
     background-image: ${`url(${header.mobilePattern2})`};
   }
   @media ${({ theme }) => theme.device.tablet} {
+    justify-content: flex-start;
     height: 44.8rem;
     background-image: ${`url(${header.tabletPattern2})`};
   }

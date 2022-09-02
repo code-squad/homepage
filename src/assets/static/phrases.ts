@@ -44,6 +44,8 @@ const TITLE = {
   TEAM_INTERIVIEW: "우리가 일하는 방식",
   TEAM_CULTURE:
     "우리는 교육자와 학생\n 그리고 동료들과의 상호작용을 통해\n고품질 교육을 경험하는\n 배움터를 만듭니다",
+  MOBILE_TEAM_CULTURE:
+    "교육자와 학생 그리고 동료들과의 상호작용을 통해\n고품질 교육을 경험하는 배움터를 만듭니다",
   CODESQUAD_TEAM_CULTURE: "코드스쿼드 팀 문화",
   CODESQUAD_RECRUIT_NEWS: "코드스쿼드 채용 소식 확인하기",
   WELFARE: "우리는 어떤 지원을 받을까요?",
