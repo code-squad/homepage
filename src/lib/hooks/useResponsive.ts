@@ -6,17 +6,11 @@ function useResponsive() {
 
   const { breakPoint } = theme;
 
-  const [windowSize, setWindowSize] = React.useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
-  });
+  const [windowWidthSize, setWindowWidthSize] = React.useState(window.innerWidth);
 
   React.useEffect(() => {
     const handleResize = () => {
-      setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
+      setWindowWidthSize(window.innerWidth);
     };
     window.addEventListener("resize", handleResize);
     handleResize();
@@ -25,10 +19,9 @@ function useResponsive() {
   }, []);
 
   let [isMobile, isTablet, isDesktop] = [false, false, false];
-  if (windowSize.width < breakPoint.tablet) isMobile = true;
-  if (breakPoint.tablet <= windowSize.width && windowSize.width < breakPoint.desktop)
-    isTablet = true;
-  if (windowSize.width >= breakPoint.desktop) isDesktop = true;
+  if (windowWidthSize < breakPoint.tablet) isMobile = true;
+  if (breakPoint.tablet <= windowWidthSize && windowWidthSize < breakPoint.desktop) isTablet = true;
+  if (windowWidthSize >= breakPoint.desktop) isDesktop = true;
   return { isMobile, isTablet, isDesktop };
 }
 
