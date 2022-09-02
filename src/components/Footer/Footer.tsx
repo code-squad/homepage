@@ -2,7 +2,7 @@ import React from "react";
 import styled, { useTheme } from "styled-components";
 import { Link } from "gatsby";
 // Typography
-import { SBold, XSBold, SBody, XSBody } from "typography/";
+import { Typography } from "typography/";
 // Assets
 import { LINK, MESSAGE } from "assets/static/phrases";
 import { INTERNAL, EXTERNAL } from "assets/static/urls";
@@ -17,57 +17,48 @@ const Footer: React.FC = () => {
     <FooterWrapper>
       <ContentWrapper>
         <CompanyInfomationWrapper>
-          {!isDesktop ? (
-            <SBold style={{ color: color.white }}>{MESSAGE.COMPANY_NAME}</SBold>
-          ) : (
-            <XSBold style={{ color: color.white }}>{MESSAGE.COMPANY_NAME}</XSBold>
-          )}
+          <Typography type={isDesktop ? "XSBold" : "SBold"} style={{ color: color.white }}>
+            {MESSAGE.COMPANY_NAME}
+          </Typography>
           <div>
-            {!isDesktop ? (
-              <>
-                <SBody>{MESSAGE.COMPANY_CEO_NAME}</SBody>
-                <SBody>{MESSAGE.COMPANY_REGISTRATION_NUMBER}</SBody>
-                <SBody>{MESSAGE.COMPANY_MAIL_ORDER_SALES_REGISTRATION_NUMBER}</SBody>
-                <SBody>{MESSAGE.COMPANY_ADDRESS}</SBody>
-                <SBody>{MESSAGE.COMPANY_TEL_NUMBER}</SBody>
-                <div>
-                  <SBody as="span">{MESSAGE.COMPANY_EMAIL}</SBody>
-                  <ExternalLink
-                    href={`mailto:${EXTERNAL.EMAIL}`}
-                    target="_blank"
-                    rel="noopener noreferrer nofollow"
-                    underline
-                  >
-                    {MESSAGE.COMPANY_EMAIL_ADDRESS}
-                  </ExternalLink>
-                </div>
-              </>
-            ) : (
-              <>
-                <XSBody>{MESSAGE.COMPANY_CEO_NAME}</XSBody>
-                <div>
-                  <XSBody as="span">{MESSAGE.COMPANY_REGISTRATION_NUMBER}</XSBody>
-                  <XSBody as="span"> | </XSBody>
-                  <XSBody as="span">{MESSAGE.COMPANY_MAIL_ORDER_SALES_REGISTRATION_NUMBER}</XSBody>
-                </div>
-                <div>
-                  <XSBody as="span">{MESSAGE.COMPANY_ADDRESS}</XSBody>
-                  <XSBody as="span"> | </XSBody>
-                  <XSBody as="span">{MESSAGE.COMPANY_TEL_NUMBER}</XSBody>
-                </div>
-                <div>
-                  <XSBody as="span">{MESSAGE.COMPANY_EMAIL}</XSBody>
-                  <ExternalLink
-                    href={`mailto:${EXTERNAL.EMAIL}`}
-                    target="_blank"
-                    rel="noopener noreferrer nofollow"
-                    underline
-                  >
-                    {MESSAGE.COMPANY_EMAIL_ADDRESS}
-                  </ExternalLink>
-                </div>
-              </>
-            )}
+            <Typography type={isDesktop ? "XSBody" : "SBody"}>
+              {MESSAGE.COMPANY_CEO_NAME}
+            </Typography>
+            <div>
+              <Typography type={isDesktop ? "XSBody" : "SBody"} as={isDesktop ? "span" : "p"}>
+                {MESSAGE.COMPANY_REGISTRATION_NUMBER}
+              </Typography>
+              <Typography type={isDesktop ? "XSBody" : "SBody"} as={isDesktop ? "span" : "p"}>
+                {isDesktop && "|"}
+              </Typography>
+              <Typography type={isDesktop ? "XSBody" : "SBody"} as={isDesktop ? "span" : "p"}>
+                {MESSAGE.COMPANY_MAIL_ORDER_SALES_REGISTRATION_NUMBER}
+              </Typography>
+            </div>
+            <div>
+              <Typography type={isDesktop ? "XSBody" : "SBody"} as={isDesktop ? "span" : "p"}>
+                {MESSAGE.COMPANY_ADDRESS}
+              </Typography>
+              <Typography type={isDesktop ? "XSBody" : "SBody"} as={isDesktop ? "span" : "p"}>
+                {isDesktop && "|"}
+              </Typography>
+              <Typography type={isDesktop ? "XSBody" : "SBody"} as={isDesktop ? "span" : "p"}>
+                {MESSAGE.COMPANY_TEL_NUMBER}
+              </Typography>
+            </div>
+            <div>
+              <Typography type={isDesktop ? "XSBody" : "SBody"} as="span">
+                {MESSAGE.COMPANY_EMAIL}
+              </Typography>
+              <ExternalLink
+                href={`mailto:${EXTERNAL.EMAIL}`}
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+                underline
+              >
+                {MESSAGE.COMPANY_EMAIL_ADDRESS}
+              </ExternalLink>
+            </div>
           </div>
           <InternalLink $bold to={INTERNAL.REFUND_POLICY}>
             {LINK.REFUND_POLICY}
@@ -77,7 +68,7 @@ const Footer: React.FC = () => {
           <MenuListWrapper>
             <MenuList>
               <li>
-                <XSBold>{MESSAGE.COMPANY_NAME}</XSBold>
+                <Typography type="XSBold">{MESSAGE.COMPANY_NAME}</Typography>
               </li>
               <li>
                 <InternalLink to={INTERNAL.TEAM_CULTURE}>{LINK.TEAM_CULTURE}</InternalLink>
@@ -88,7 +79,7 @@ const Footer: React.FC = () => {
             </MenuList>
             <MenuList>
               <li>
-                <XSBold>{MESSAGE.CURRICULUM}</XSBold>
+                <Typography type="XSBold">{MESSAGE.CURRICULUM}</Typography>
               </li>
               <li>
                 <InternalLink to={INTERNAL.MASTERS}>{LINK.MASTERS}</InternalLink>
@@ -106,7 +97,7 @@ const Footer: React.FC = () => {
             </MenuList>
             <MenuList>
               <li>
-                <XSBold>{MESSAGE.SOCIAL_MEDIA}</XSBold>
+                <Typography type="XSBold">{MESSAGE.SOCIAL_MEDIA}</Typography>
               </li>
               <li>
                 <ExternalLink
@@ -195,6 +186,13 @@ const CompanyInfomationWrapper = styled.div`
   color: ${({ theme: { color } }) => color.greyScale.grey3};
   & > *:not(:last-child) {
     padding-bottom: 1.6rem;
+  }
+  @media ${({ theme }) => theme.device.mobile} {
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    color: ${({ theme: { color } }) => color.white};
   }
 `;
 
