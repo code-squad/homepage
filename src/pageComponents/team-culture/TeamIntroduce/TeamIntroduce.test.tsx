@@ -17,7 +17,6 @@ describe("<TeamIntroduce>", () => {
   it("제목과 부제목이 보여진다.", async () => {
     const { getByText } = renderRefundPolicy();
 
-    getByText(SUBTITLE.WE);
-    getByText(removeLineFeed(TITLE.TEAM_CULTURE));
+    getByText(removeLineFeed(`${SUBTITLE.WE} ${TITLE.TEAM_CULTURE}`));
   });
 });
