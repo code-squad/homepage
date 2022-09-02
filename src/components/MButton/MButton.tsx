@@ -62,13 +62,36 @@ const MButtonWrapper = styled(Link)<{ $accent?: boolean; $disabled?: boolean }>`
   text-align: center;
   cursor: ${({ $disabled }) => ($disabled ? "unset" : "pointer")};
   pointer-events: ${({ $disabled }) => ($disabled ? "none" : "auto")};
-  &:hover {
-    color: ${({ $disabled, theme: { color } }) =>
-      $disabled ? color.greyScale.grey4 : color.black};
-    background-color: ${({ $disabled, theme: { color } }) =>
-      $disabled ? color.white : color.primary.green4};
-    border-color: ${({ $disabled, theme: { color } }) =>
-      $disabled ? color.greyScale.grey4 : color.black};
+
+  @media ${({ theme }) => theme.device.mobile} {
+    &:active {
+      color: ${({ $disabled, theme: { color } }) =>
+        $disabled ? color.greyScale.grey4 : color.black};
+      background-color: ${({ $disabled, theme: { color } }) =>
+        $disabled ? color.white : color.primary.green4};
+      border-color: ${({ $disabled, theme: { color } }) =>
+        $disabled ? color.greyScale.grey4 : color.black};
+    }
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    &:active {
+      color: ${({ $disabled, theme: { color } }) =>
+        $disabled ? color.greyScale.grey4 : color.black};
+      background-color: ${({ $disabled, theme: { color } }) =>
+        $disabled ? color.white : color.primary.green4};
+      border-color: ${({ $disabled, theme: { color } }) =>
+        $disabled ? color.greyScale.grey4 : color.black};
+    }
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    &:hover {
+      color: ${({ $disabled, theme: { color } }) =>
+        $disabled ? color.greyScale.grey4 : color.black};
+      background-color: ${({ $disabled, theme: { color } }) =>
+        $disabled ? color.white : color.primary.green4};
+      border-color: ${({ $disabled, theme: { color } }) =>
+        $disabled ? color.greyScale.grey4 : color.black};
+    }
   }
   &:disabled {
     cursor: auto;
