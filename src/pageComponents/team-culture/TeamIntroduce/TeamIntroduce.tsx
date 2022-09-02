@@ -22,7 +22,7 @@ const TeamIntroduce: React.FC = () => {
             </Typography>
           </>
         ) : (
-          <Typography type="SDisplay">{`${SUBTITLE.WE} ${TITLE.TEAM_CULTURE}`}</Typography>
+          <Typography type="SDisplay">{TITLE.TEAM_CULTURE}</Typography>
         )}
       </IntroduceText>
     </TeamIntroduceWrapper>
@@ -54,6 +54,7 @@ const TeamIntroduceWrapper = styled.div`
 `;
 
 const IntroduceText = styled.div`
+  white-space: pre-line;
   @media ${({ theme }) => theme.device.mobile} {
     padding: 0 2.4rem;
     padding-bottom: 4rem;
