@@ -28,31 +28,16 @@ const Interview: React.FC<IInterview> = ({ subtitle, title, interviews, style })
 
   const handleArrowLeftClick = () => {
     if (isDesktop) {
-      if (currentIndex - 2 >= 0) {
-        setCurrentIndex(currentIndex - 2);
-        return;
-      }
-      if (currentIndex - 1 >= 0) setCurrentIndex(currentIndex - 1);
+      setCurrentIndex(currentIndex - 2);
+      return;
     }
-    if (isTablet) {
-      if (currentIndex - 1 >= 0) setCurrentIndex(currentIndex - 1);
-    }
+    if (currentIndex - 1 >= 0) setCurrentIndex(currentIndex - 1);
   };
 
   const handleArrowRightClick = () => {
-    if (isDesktop) {
-      if (currentIndex + 3 === interviews.length) {
-        setCurrentIndex(currentIndex + 1);
-        return;
-      }
-      if (currentIndex + 2 <= interviews.length) {
-        setCurrentIndex(currentIndex + 2);
-        return;
-      }
-    }
-    if (isTablet) {
-      if (currentIndex + 1 < interviews.length) setCurrentIndex(currentIndex + 1);
-    }
+    if (isDesktop && currentIndex + 3 === interviews.length) setCurrentIndex(currentIndex + 1);
+    if (isDesktop && currentIndex + 2 <= interviews.length) setCurrentIndex(currentIndex + 2);
+    if (isTablet && currentIndex + 1 < interviews.length) setCurrentIndex(currentIndex + 1);
   };
 
   return (

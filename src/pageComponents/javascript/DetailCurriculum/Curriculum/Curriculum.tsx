@@ -40,8 +40,20 @@ const Curriculum: React.FC<{ curriculumInfo: CodeTogetherCurriculumType }> = ({
 
 const CurriculumWrapper = styled.div`
   display: flex;
-  width: 107rem;
-  padding: 5rem 4rem 8rem 4rem;
+  @media ${({ theme }) => theme.device.mobile} {
+    width: 100%;
+    padding: 3.2rem 2.4rem;
+    box-sizing: border-box;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    width: 100%;
+    padding: 8rem 8rem;
+    box-sizing: border-box;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    width: 107rem;
+    padding: 8rem 4rem;
+  }
 `;
 
 const CurriculumList = styled.ul`
@@ -54,13 +66,29 @@ const SubjectList = styled.ul`
 `;
 const SubjectItem = styled.li`
   display: flex;
-  & > * {
-    margin-right: 2.4rem;
+  @media ${({ theme }) => theme.device.mobile} {
+    flex-direction: column;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    flex-direction: column;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    & > * {
+      margin-right: 2.4rem;
+    }
   }
 `;
 const SubjectTitle = styled.h6`
-  width: 19rem;
   color: ${({ theme: { color } }) => color.black};
+  @media ${({ theme }) => theme.device.mobile} {
+    width: 100%;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    width: 100%;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    width: 19rem;
+  }
 `;
 const SubjectDetailList = styled.ul`
   display: flex;
@@ -68,6 +96,13 @@ const SubjectDetailList = styled.ul`
   color: ${({ theme: { color } }) => color.greyScale.grey2};
   list-style: disc;
   list-style-position: inside;
+  @media ${({ theme }) => theme.device.mobile} {
+    margin-left: 1rem;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    margin-left: 1rem;
+    margin-top: 0.8rem;
+  }
 `;
 const DivideLine = styled.div`
   border-bottom: 0.1rem solid ${({ theme: { color } }) => color.greyScale.grey4};

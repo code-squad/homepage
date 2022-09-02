@@ -6,17 +6,20 @@ import { InterviewType } from "@type/Interview";
 import { Interview } from "components/Interview";
 // Assets
 import { SUBTITLE, TITLE } from "assets/static/phrases";
+// Libs
 import { strainMdxInfo } from "lib/utils";
+import { useResponsive } from "lib/hooks";
 
 const TeamInterview: React.FC = () => {
   const data = useStaticQuery(TeamInterviewQuery);
   const { interviews }: { interviews: InterviewType[] } = strainMdxInfo(data);
+  const { isMobile } = useResponsive();
 
   return (
     <Interview
       subtitle={SUBTITLE.TEAM_INTERIVIEW}
       title={TITLE.TEAM_INTERIVIEW}
-      style={{ marginBottom: "16rem" }}
+      style={{ marginBottom: isMobile ? "12rem" : "18rem" }}
       {...{ interviews }}
     />
   );
