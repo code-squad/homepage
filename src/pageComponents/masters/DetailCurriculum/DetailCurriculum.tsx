@@ -66,18 +66,10 @@ const TabNavigationBarWrapper = styled.div`
   @media ${({ theme }) => theme.device.mobile} {
     padding-top: 2.4rem;
     padding-left: 2.4rem;
-    overflow-x: auto;
-    &::-webkit-scrollbar {
-      display: none;
-    }
   }
   @media ${({ theme }) => theme.device.tablet} {
     margin-top: 5.2rem;
     padding-left: 8.2rem;
-    overflow-x: auto;
-    &::-webkit-scrollbar {
-      display: none;
-    }
   }
   @media ${({ theme }) => theme.device.desktop} {
     margin: 0 auto;
