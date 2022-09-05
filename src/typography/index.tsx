@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { CSSProperties } from "styled-components";
+import { useResponsive } from "lib/hooks";
 
 const LDisplay = styled.p`
   font-size: ${({ theme: { fontSize } }) => fontSize.display.lg};
@@ -107,6 +108,9 @@ interface ITypography {
 }
 
 const Typography: React.FC<ITypography> = ({ type, style, children, as }) => {
+  const { isMobile, isTablet, isDesktop } = useResponsive();
+  if (!isMobile && !isTablet && !isDesktop) return null;
+
   const TargetTypography = typographys[type];
   return <TargetTypography {...{ style, as }}>{children}</TargetTypography>;
 };
