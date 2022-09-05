@@ -34,6 +34,11 @@ const Place: React.FC = () => {
     if (swiperRef.current) swiperRef.current.slideNext();
   };
 
+  React.useEffect(() => {
+    if (swiperRef?.current && isMobile) swiperRef.current.allowTouchMove = true;
+    if (swiperRef?.current && (isTablet || isDesktop)) swiperRef.current.allowTouchMove = false;
+  }, [isMobile, isTablet, isDesktop]);
+
   return (
     <PlaceWrapper>
       {(isTablet || isDesktop) && (
@@ -60,7 +65,6 @@ const Place: React.FC = () => {
           swiperRef.current = swiper;
         }}
         style={{ width: "100%" }}
-        allowTouchMove={isMobile ? true : false}
         onActiveIndexChange={({ activeIndex }) => setCurrentIndex(activeIndex)}
       >
         {imgList.map((image, index) => (
