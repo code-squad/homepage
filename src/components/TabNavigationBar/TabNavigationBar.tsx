@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 // Typography
-import { LBody } from "typography/";
+import { Typography } from "typography/";
 
 interface ITabNavigationBarProps {
   onIndexChanged: (index: number) => void;
@@ -9,22 +9,28 @@ interface ITabNavigationBarProps {
 }
 const TabNavigationBar: React.FC<ITabNavigationBarProps> = ({ onIndexChanged, titles }) => {
   const [currentIndex, setCurrentIndex] = React.useState(0);
+  const navRef = React.useRef<HTMLUListElement>(null);
 
   const handleTabNavigationButtonClick = (index: number) => {
     setCurrentIndex(index);
     onIndexChanged(index);
+    scroll(index);
+  };
+
+  const scroll = (index: number) => {
+    navRef.current!.scrollLeft = (index - 1) * 200;
   };
 
   return (
     <TabNavigationBarWrapper>
-      <TabNavButtonList>
+      <TabNavButtonList ref={navRef}>
         {titles.map((title: string, index: number) => (
-          <li key={title}>
+          <li key={title} style={{ minWidth: "fit-content" }}>
             <TabNavButton
               onClick={() => handleTabNavigationButtonClick(index)}
               selected={index === currentIndex}
             >
-              <LBody>{title}</LBody>
+              <Typography type="MBold">{title}</Typography>
             </TabNavButton>
           </li>
         ))}
@@ -34,11 +40,13 @@ const TabNavigationBar: React.FC<ITabNavigationBarProps> = ({ onIndexChanged, ti
 };
 
 const TabNavigationBarWrapper = styled.div`
-  width: 100%;
-  min-width: 106.2rem;
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  @media ${({ theme }) => theme.device.desktop} {
+    width: 100%;
+    min-width: 106.2rem;
+  }
 `;
 
 const TabNavButtonList = styled.ul`
@@ -46,11 +54,21 @@ const TabNavButtonList = styled.ul`
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  @media ${({ theme }) => theme.device.mobile} {
+    overflow-x: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    overflow-x: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
 `;
 
 const TabNavButton = styled.button<{ selected?: boolean }>`
-  width: 19.3rem;
-  height: 5.8rem;
   color: ${({ selected, theme: { color } }) =>
     selected ? color.primary.green2 : color.greyScale.grey2};
   background-color: transparent;
@@ -59,10 +77,23 @@ const TabNavButton = styled.button<{ selected?: boolean }>`
     selected ? `0.2rem solid ${color.primary.green2}` : "0.2rem solid transparent"};
   transition-property: corlor, border-bottom;
   transition-duration: 0.3s;
+  font-family: inherit;
   &:hover {
     cursor: pointer;
   }
-  font-family: inherit;
+  @media ${({ theme }) => theme.device.mobile} {
+    width: fit-content;
+    height: 3.2rem;
+    margin-right: 2.4rem;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    width: 19.3rem;
+    height: 4rem;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    width: 19.3rem;
+    height: 4rem;
+  }
 `;
 
 export default TabNavigationBar;

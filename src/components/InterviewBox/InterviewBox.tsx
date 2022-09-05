@@ -4,7 +4,7 @@ import styled from "styled-components";
 import icons from "assets/img/icons";
 // Components
 import { Avatar } from "components";
-import { LBody, MBody, SBody } from "typography";
+import { Typography } from "typography";
 
 interface IInterviewBox {
   writerPhoto: string;
@@ -25,17 +25,17 @@ const InterviewBox: React.FC<IInterviewBox> = ({
     <InterviewBoxWrapper>
       <Avatar src={writerPhoto} />
       <Nutshell>
-        <LBody>{nutshell}</LBody>
+        <Typography type="LBody">{nutshell}</Typography>
       </Nutshell>
       <Content>
-        <MBody>{content}</MBody>
+        <Typography type="MBody">{content}</Typography>
       </Content>
       <WriterWrapper>
         <WriterName>
-          <SBody bold>{writer}</SBody>
+          <Typography type="SBold">{writer}</Typography>
         </WriterName>
         <WriterInfo>
-          <SBody>{writerInfo}</SBody>
+          <Typography type="SBody">{writerInfo}</Typography>
         </WriterInfo>
       </WriterWrapper>
     </InterviewBoxWrapper>
@@ -43,17 +43,30 @@ const InterviewBox: React.FC<IInterviewBox> = ({
 };
 
 const InterviewBoxWrapper = styled.div`
-  padding: 4.8rem 4.8rem 7rem 4.8rem;
-  background-color: ${({ theme: { color } }) => color.greyScale.offWhite};
-  min-width: 42.3rem;
-  width: 42.3rem;
-  border-radius: 1.6rem;
+  background-color: ${({ theme: { color } }) => color.surface.offWhite1};
+  @media ${({ theme }) => theme.device.mobile} {
+    width: 100vw;
+    padding: 3.2rem 4.8rem 3.2rem 4.8rem;
+    box-sizing: border-box;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    padding: 4.8rem 4.8rem 7rem 4.8rem;
+    min-width: 42.3rem;
+    width: 42.3rem;
+    border-radius: 1.6rem;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    padding: 4.8rem 4.8rem 7rem 4.8rem;
+    min-width: 42.3rem;
+    width: 42.3rem;
+    border-radius: 1.6rem;
+  }
 `;
 
 const Nutshell = styled.div`
   margin: 3.2rem 0 0 3.6rem;
   position: relative;
-  color: ${({ theme: { color } }) => color.greyScale.black};
+  color: ${({ theme: { color } }) => color.black};
   &:before {
     content: "";
     position: absolute;
@@ -65,6 +78,15 @@ const Nutshell = styled.div`
     background-repeat: no-repeat;
     left: -3.6rem;
     top: 0;
+  }
+  @media ${({ theme }) => theme.device.mobile} {
+    min-width: 23rem;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    min-width: 38.9rem;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    min-width: 38.9rem;
   }
 `;
 

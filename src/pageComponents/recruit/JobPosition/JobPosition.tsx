@@ -4,17 +4,21 @@ import { graphql, useStaticQuery } from "gatsby";
 // Type
 import { JobPositionType } from "@type/JobPosition";
 // Typography
-import { MDisplay } from "typography";
+import { Typography } from "typography";
 // Components
 import { DropdownItem, TagNavigationBar } from "components";
 // Assets
+import headers from "assets/img/illusts/header";
 import { TITLE } from "assets/static/phrases";
 // Utils
 import { strainAllMdxInfoBody } from "lib/utils";
+import { useResponsive } from "lib/hooks";
 
 const JobPosition: React.FC = () => {
   const jobPositionData = useStaticQuery(JobPositionQuery);
   const jobPositionInfoList: JobPositionType[] = strainAllMdxInfoBody(jobPositionData);
+
+  const { isDesktop, isMobile } = useResponsive();
 
   const categories = new Set<string>(["전체"]);
   jobPositionInfoList.forEach((jobPosition) => categories.add(jobPosition.category));
@@ -38,63 +42,102 @@ const JobPosition: React.FC = () => {
 
   return (
     <JobPositionWrapper>
-      <Background />
-      <JobPositionContentWrapper>
-        <MDisplay style={{ paddingTop: "16rem", paddingBottom: "3.2rem" }}>{TITLE.APPLY}</MDisplay>
+      <JobPositionMasthead>
+        <Typography
+          style={{ width: isDesktop ? "106.8rem" : "unset" }}
+          type={isMobile ? "SDisplay" : "MDisplay"}
+        >
+          {TITLE.APPLY}
+        </Typography>
         <TagNavigationBar titles={Array.from(categories)} onIndexChanged={setCurrentIndex} />
-        <DropdownItemWrapper>
+      </JobPositionMasthead>
+      <DropdownListWrapper>
+        <DropdownList>
           {jobPositionList.map(({ category, title, body, editDate }) => (
             <DropdownItem key={title} short {...{ category, title, body, editDate }} />
           ))}
-        </DropdownItemWrapper>
-      </JobPositionContentWrapper>
+        </DropdownList>
+      </DropdownListWrapper>
     </JobPositionWrapper>
   );
 };
 
-const Background = styled.div`
-  position: absolute;
-  z-index: -1;
-  background-color: ${({ theme: { color } }) => color.secondary.blue3};
-  height: 56rem;
-  width: 100%;
-  min-width: 144rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  &::after {
-    content: "";
-    display: block;
-    width: 28rem;
-    height: 28rem;
-    background-color: #b2dee6;
-    position: relative;
-    left: 32rem;
-    transform: rotate(45deg);
-  }
-`;
-
 const JobPositionWrapper = styled.div`
   width: 100%;
   padding-bottom: 16rem;
-  color: ${({ theme: { color } }) => color.greyScale.black};
+  color: ${({ theme: { color } }) => color.black};
   white-space: pre-line;
   text-align: start;
   position: relative;
 `;
 
-const JobPositionContentWrapper = styled.div`
-  width: 106.2rem;
-  padding: 0 18.9rem;
-  margin: 0 auto;
+const JobPositionMasthead = styled.div`
+  color: ${({ theme: { color } }) => color.black};
+  background-color: ${({ theme: { color } }) => color.secondary.blue3};
+  background-position: top right;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  white-space: pre-line;
+  & > *:not(:last-child) {
+    margin-bottom: 2.4rem;
+  }
+  @media ${({ theme }) => theme.device.mobile} {
+    background-image: ${`url(${headers.mobilePattern2})`};
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 14.2rem 2.4rem 4rem 2.4rem;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    background-image: ${`url(${headers.tabletPattern2})`};
+    min-width: 76.8rem;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 16rem 8rem 11.2rem 8rem;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    flex-direction: column;
+    align-items: center;
+    background-image: ${`url(${headers.desktopPattern2})`};
+    min-width: 144rem;
+    padding: 17.9rem 0 18.5rem 0;
+  }
 `;
 
-const DropdownItemWrapper = styled.ul`
-  margin-top: 4.7rem;
-  padding: 0.8rem 4.8rem 4.8rem 4.8rem;
+const DropdownListWrapper = styled.div`
+  position: relative;
+  @media ${({ theme }) => theme.device.mobile} {
+    padding: 0 2.4rem;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    min-width: 60.8rem;
+    top: -8rem;
+    padding: 0 8rem;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: -14.5rem;
+    min-width: 144rem;
+  }
+`;
+
+const DropdownList = styled.ul`
   display: flex;
   flex-direction: column;
-  background-color: ${({ theme: { color } }) => color.greyScale.white};
+  background-color: ${({ theme: { color } }) => color.white};
+  padding-top: 0.8rem;
+  @media ${({ theme }) => theme.device.mobile} {
+    padding-top: 4rem;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    padding: 2.4rem 4rem 0 4rem;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    align-items: center;
+    width: 106.8rem;
+  }
 `;
 
 const JobPositionQuery = graphql`

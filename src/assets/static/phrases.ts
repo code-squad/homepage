@@ -16,6 +16,7 @@ const SUBTITLE = {
   CODE_TOGETHER_COURSE: "코드투게더의",
   JAVASCRIPT: "자바스크립트 과정을 경험한",
   JAVASCRIPT_COURSE: "자바스크립트 과정의",
+  WE: "우리는",
 };
 
 const TITLE = {
@@ -37,29 +38,37 @@ const TITLE = {
   REFUND_STANDARD: "수강료 반환 기준",
   FAQ: "코드스쿼드에\n궁금한 점이 있나요?",
   APPLY: "지금 코드스쿼드에\n지원해 보세요!",
-  WELCOME: "스스로 찾은 방법으로\n함께 묶은 매듭은 풀리지 않습니다",
+  WE: "우리는",
+  WELCOME: "자유롭게 탐험하며\n함께 성장하는 동료를 만나세요",
+  WELCOME_MOBILE: "자유롭게 탐험하며\n함께 성장하는\n동료를 만나세요",
   TEAM_INTERIVIEW: "우리가 일하는 방식",
   TEAM_CULTURE:
-    "우리는 교육자와 학생 그리고\n동료들과의 상호작용을 통해\n고품질 교육을 경험하는 배움터를\n만듭니다",
+    "우리는 교육자와 학생\n 그리고 동료들과의 상호작용을 통해\n고품질 교육을 경험하는\n 배움터를 만듭니다",
+  MOBILE_TEAM_CULTURE:
+    "교육자와 학생 그리고 동료들과의 상호작용을 통해\n고품질 교육을 경험하는 배움터를 만듭니다",
   CODESQUAD_TEAM_CULTURE: "코드스쿼드 팀 문화",
   CODESQUAD_RECRUIT_NEWS: "코드스쿼드 채용 소식 확인하기",
+  MOBILE_CODESQUAD_RECRUIT_NEWS: "코드스쿼드\n 채용 소식 확인하기",
   WELFARE: "우리는 어떤 지원을 받을까요?",
   COURSE: "교육 과정",
   HOW_STUDY: "어떻게 학습하나요?",
   STUDENT_INTERVIEW: "수강생 후기",
   SCHEDULED_COURSE: "지금 모집 중인 과정",
-  VIEW_ENTIRE_COURSE: "전체 과정 보기 >",
+  VIEW_ENTIRE_COURSE: "전체 과정 보기",
   EDUCATION_PERIOD: "교육기간",
   COST: "수강료",
   CORETIME: "코어타임",
   MORE: "더보기",
   NOT_FOUND: "404",
+  VIEW_COURSES: "코드스쿼드 과정 바로 보기",
+  CODE_TOGETHER_COURSE: "코드투게더 과정",
+  VIEW_DETAIL: "자세히 보기",
+  FOLD: "접기",
 };
 
 const DESCRIPTION = {
   MASTER:
     "실무 경험이 풍부하고 소프트웨어 교육을 잘 이해하는 마스터들이 여러분의 성장을 위해 멘토링을 지원합니다.",
-  CODE_TOGETHER: `코드투게더는 여러 동료들과 ‘함께’ 소프트웨어를 학습하는 교육 모델입니다.\n각 과정을 통해 스스로 소프트웨어 학습 방법을 배우고, 동료와 함께 성장하기를 기대합니다.`,
   PLACE:
     "도로명주소: 서울특별시 강남구 강남대로62길 23 4층 | 지번: 서울특별시 강남구 역삼동 836-24 4층",
   REFUND: `보다 자세한 사항은 관리자 메일 yoda@codesquad.kr 주소로 문의바랍니다.​\n코스 진행 이후 환불시 카드결제 수수료나 계좌이체 수수료에 대한 환불 수수료를 제외하고 환불해드립니다`,
@@ -89,7 +98,9 @@ const LINK_DESCRIPTION = {
 };
 
 const MESSAGE = {
+  COPYRIGHT: "@2022 CodeSquad",
   COMPANY_ADDRESS: "주소: 강남구 역삼동 836-24 역삼빌딩 4층",
+  ADDRESS: "강남구 역삼동 836-24 역삼빌딩 4층",
   COMPANY_CEO_NAME: "대표자: 김정",
   COMPANY_EMAIL: "대표 이메일: ",
   COMPANY_EMAIL_ADDRESS: "yoda@codesquad.kr",
@@ -97,6 +108,7 @@ const MESSAGE = {
   COMPANY_REGISTRATION_NUMBER: "사업자등록번호: 676-88-00504",
   COMPANY_MAIL_ORDER_SALES_REGISTRATION_NUMBER: "통신판매신고: 제 2017-서울강남-04281호",
   COMPANY_TEL_NUMBER: "전화: 070-4117-1005",
+  TEL_NUMBER: "070-4117-1005",
   CURRICULUM: "교육 과정",
   SOCIAL_MEDIA: "미디어",
 };

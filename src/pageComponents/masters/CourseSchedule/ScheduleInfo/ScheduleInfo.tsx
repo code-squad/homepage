@@ -3,7 +3,7 @@ import styled from "styled-components";
 // Type
 import { ScheduleType } from "@type/Schedule";
 // Typography
-import { LBody, MBody } from "typography";
+import { Typography } from "typography";
 // Components
 import { MButton } from "components";
 import { getSplittedPhrase } from "lib/utils";
@@ -20,30 +20,41 @@ const ScheduleInfo: React.FC<IScheduleInfo> = ({ scheduleInfo, selectedScheduleI
 
   return (
     <ScheduleInfoWrapper>
-      <LBody bold>{title}</LBody>
-      <LBody style={{ marginTop: "2.4rem" }}>{subtitle}</LBody>
+      <Typography type="SHLBold">{title}</Typography>
+      <Typography type="LBody" style={{ marginTop: "2.4rem" }}>
+        {subtitle}
+      </Typography>
       {getSplittedPhrase(description).map((descriptionItem: string) => (
         <DescriptionWrapper key={descriptionItem}>
-          <MBody>{descriptionItem}</MBody>
+          <Typography type="MBody">{descriptionItem}</Typography>
         </DescriptionWrapper>
       ))}
-      {selectedScheduleIndex === 0 ? (
+      {selectedScheduleIndex === 0 && (
         <ButtonWrapper>
-          {waiterApplyUrlBtnText ? (
-            <MButton to={waiterApplyUrl} children={waiterApplyUrlBtnText} />
-          ) : null}
-          {applyBtnText ? <MButton to={applyUrl} accent children={applyBtnText} /> : null}
+          {waiterApplyUrlBtnText && (
+            <MButton to={waiterApplyUrl} children={waiterApplyUrlBtnText} type="right" />
+          )}
+          {applyBtnText && <MButton to={applyUrl} accent children={applyBtnText} type="right" />}
         </ButtonWrapper>
-      ) : null}
+      )}
     </ScheduleInfoWrapper>
   );
 };
 
 const ScheduleInfoWrapper = styled.div`
-  width: 62.8rem;
-  margin-left: 8.5rem;
   display: flex;
   flex-direction: column;
+  color: ${({ theme: { color } }) => color.black};
+  @media ${({ theme }) => theme.device.mobile} {
+    margin-left: 1.6rem;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    margin-left: 3.4rem;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    width: 62.8rem;
+    margin-left: 8.5rem;
+  }
 `;
 const DescriptionWrapper = styled.div`
   color: ${({ theme: { color } }) => color.greyScale.grey2};

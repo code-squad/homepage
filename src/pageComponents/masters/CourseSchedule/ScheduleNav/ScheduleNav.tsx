@@ -3,7 +3,7 @@ import styled from "styled-components";
 // Type
 import { ProgressType } from "@type/Schedule";
 // Typography
-import { MBody } from "typography";
+import { Typography } from "typography";
 
 interface IScheduleNav {
   progress: ProgressType[];
@@ -17,21 +17,27 @@ const ScheduleNav: React.FC<IScheduleNav> = ({
   setSelectedScheduleIndex,
 }) => {
   return (
-    <ul>
+    <ScheduleNavItemWrapper>
       {progress.map(({ label }: ProgressType, index) => (
         <div key={label} style={{ position: "relative" }}>
           <ScheduleNavItem onClick={() => setSelectedScheduleIndex(index)}>
             <LabelWrapper clicked={selectedScheduleIndex === index}>
-              <MBody>{label}</MBody>
+              <Typography type="MBody">{label}</Typography>
             </LabelWrapper>
             <Dot clicked={selectedScheduleIndex === index} />
           </ScheduleNavItem>
           {index + 2 > progress.length ? null : <VerticalLine />}
         </div>
       ))}
-    </ul>
+    </ScheduleNavItemWrapper>
   );
 };
+
+const ScheduleNavItemWrapper = styled.ul`
+  & > *:not(:last-child) {
+    margin-bottom: 4rem;
+  }
+`;
 
 const ScheduleNavItem = styled.li`
   width: 13.2rem;
@@ -39,7 +45,6 @@ const ScheduleNavItem = styled.li`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 4rem;
   cursor: pointer;
 `;
 
@@ -48,13 +53,13 @@ const LabelWrapper = styled.div<{ clicked: boolean }>`
   display: flex;
   justify-content: center;
   color: ${({ clicked, theme: { color } }) =>
-    clicked ? color.primary.green2 : color.greyScale.grey3};
+    clicked ? color.primary.green2 : color.greyScale.grey2};
 `;
 const Dot = styled.div<{ clicked: boolean }>`
   width: 1.6rem;
   height: 1.6rem;
   background-color: ${({ clicked, theme: { color } }) =>
-    clicked ? color.primary.green2 : color.greyScale.grey3};
+    clicked ? color.primary.green2 : color.greyScale.grey2};
   border-radius: 50%;
   border: ${({ clicked, theme: { color } }) =>
     clicked ? `.4rem solid ${color.primary.green4}` : "unset"};

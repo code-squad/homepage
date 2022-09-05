@@ -19,7 +19,9 @@ const DetailCurriculum: React.FC = () => {
 
   return (
     <DetailCurriculumWrapper>
-      <TitleSet subtitle={SUBTITLE.MASTERS_COURSE} title={TITLE.MASTERS_DETAIL_CURRICULUM} />
+      <TitleSetWrapper>
+        <TitleSet subtitle={SUBTITLE.MASTERS_COURSE} title={TITLE.MASTERS_DETAIL_CURRICULUM} />
+      </TitleSetWrapper>
       <TabNavigationBarWrapper>
         <TabNavigationBar {...{ titles }} onIndexChanged={setCurriculumIndex} />
       </TabNavigationBarWrapper>
@@ -31,24 +33,60 @@ const DetailCurriculum: React.FC = () => {
 };
 
 const DetailCurriculumWrapper = styled.div`
-  margin-top: 16rem;
-  display: flex;
-  align-items: center;
   width: 100%;
-  min-width: 144rem;
+  display: flex;
   flex-direction: column;
+  @media ${({ theme }) => theme.device.mobile} {
+    margin-top: 12rem;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    margin-top: 18rem;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    margin-top: 18rem;
+    align-items: center;
+    width: 100%;
+    min-width: 144rem;
+  }
 `;
+
+const TitleSetWrapper = styled.div`
+  @media ${({ theme }) => theme.device.mobile} {
+    padding: 0 2.4rem;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    padding: 0 8rem;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    align-items: center;
+  }
+`;
+
 const TabNavigationBarWrapper = styled.div`
-  width: 106.2rem;
-  margin-top: 5.2rem;
+  @media ${({ theme }) => theme.device.mobile} {
+    padding-top: 2.4rem;
+    padding-left: 2.4rem;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    margin-top: 5.2rem;
+    padding-left: 8.2rem;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    margin: 0 auto;
+    margin-top: 5.2rem;
+    padding: 0 18.9rem;
+    width: 106.2rem;
+  }
 `;
 
 const CurriculumWrapper = styled.div`
+  width: 100%;
   display: flex;
   justify-content: center;
-  width: 100%;
-  min-width: 144rem;
-  background-color: ${({ theme: { color } }) => color.greyScale.offWhite};
+  background-color: ${({ theme: { color } }) => color.surface.offWhite1};
+  @media ${({ theme }) => theme.device.desktop} {
+    min-width: 144rem;
+  }
 `;
 
 const CurriculumQuery = graphql`

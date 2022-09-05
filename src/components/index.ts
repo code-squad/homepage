@@ -1,10 +1,11 @@
-export { SButton } from "./SButton";
+export { Tag } from "./Tag";
 export { MButton } from "./MButton";
-export { EButton } from "./EButton";
 export { HomeGlobalNavigationBar } from "./HomeGlobalNavigationBar";
 export { TabNavigationBar } from "./TabNavigationBar";
 export { TagNavigationBar } from "./TagNavigationBar";
 export { CircleNavigation } from "./CircleNavigation";
+export { CourseInfo } from "./CourseInfo";
+export { RectangleNavigation } from "./RectangleNavigation";
 export { Footer } from "./Footer";
 export { Avatar } from "./Avatar";
 export { Interview } from "./Interview";
@@ -17,3 +18,4 @@ export { BackgroundLink } from "./BackgroundLink";
 export { TitleSet } from "./TitleSet";
 export { Registration } from "./Registration";
 export { FAQ } from "./FAQ";
+export { CourseCard } from "./CourseCard";

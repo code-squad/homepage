@@ -29,9 +29,7 @@ describe("<CircleNavigation>", () => {
   it("현재 인덱스에 해당되는 버튼은 검은색으로 보여진다.", () => {
     const { getAllByRole } = renderCircleNavigation();
     const {
-      color: {
-        greyScale: { black },
-      },
+      color: { black },
     } = theme;
 
     const circleBtns = getAllByRole("button");

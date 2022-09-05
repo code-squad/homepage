@@ -4,6 +4,7 @@ export const TeamCultureQueryResult = {
       cultures: [
         {
           title: "자율과 책임",
+          image: "value1",
           cultureFeatures: [
             {
               subtitle: "자율적인 업무 환경",
@@ -19,6 +20,7 @@ export const TeamCultureQueryResult = {
         },
         {
           title: "존중과 포용",
+          image: "value2",
           cultureFeatures: [
             {
               subtitle: "위계없이 수평적으로",
@@ -34,6 +36,7 @@ export const TeamCultureQueryResult = {
         },
         {
           title: "순환과 공헌",
+          image: "value3",
           cultureFeatures: [
             {
               subtitle: "타이틀2",

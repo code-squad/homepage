@@ -4,41 +4,50 @@ import { Link } from "gatsby";
 // Assets
 import icons from "assets/img/icons";
 // Typography
-import { LBody, MBody, XSBody } from "typography/";
+import { Typography } from "typography/";
+// Libs
+import { useResponsive } from "lib/hooks";
 
 interface ILinkButton {
-  description: string;
+  description?: string;
   title: string;
   to: string;
   caption?: string;
   short?: boolean;
   icon?: string;
+  external?: boolean;
 }
 
-const LinkButton: React.FC<ILinkButton> = ({ description, title, to, icon, caption }) => {
+const LinkButton: React.FC<ILinkButton> = ({ description, title, to, icon, caption, external }) => {
+  const { isMobile, isTablet, isDesktop } = useResponsive();
+
   return (
     <LinkButtonWrapper
       {...{ to, icon, caption }}
-      as={caption ? "a" : Link}
-      href={caption && to}
-      target={caption && "_blank"}
-      rel={caption ? "noopener noreferrer nofollow" : undefined}
+      as={caption || external ? "a" : Link}
+      href={caption || external ? to : undefined}
+      target={caption || external ? "_blank" : undefined}
+      rel={caption || external ? "noopener noreferrer nofollow" : undefined}
     >
-      <TextWrapper {...{ caption }}>
-        <Description>
-          <MBody bold>{description}</MBody>
-        </Description>
+      <div>
+        {description ? (
+          <Description>
+            <Typography type={isMobile ? "XSBold" : "MBold"}>{description}</Typography>
+          </Description>
+        ) : null}
         <Title>
-          <LBody bold>{title}</LBody>
+          <Typography type={isMobile ? "MBold" : "SHLBold"}>{title}</Typography>
           <img aria-label="arrow-right" src={icons.chevronRight} width="24px" height="24px" />
         </Title>
         {caption ? (
           <Caption>
-            <XSBody bold>{caption}</XSBody>
+            <Typography type="XSBold">{caption}</Typography>
           </Caption>
         ) : null}
-      </TextWrapper>
-      {icon ? <img alt="link-icon" src={icon} width="80px" height="80px" /> : null}
+      </div>
+      {(isTablet || isDesktop) && icon ? (
+        <img alt="link-icon" src={icon} width="54px" height="54px" />
+      ) : null}
     </LinkButtonWrapper>
   );
 };
@@ -47,30 +56,39 @@ const LinkButtonWrapper = styled(Link)<{ icon?: string; caption?: string }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: ${({ icon }) => (icon ? "43.5rem" : "98.2rem")};
   border-radius: 0.8rem;
   border: 0.2rem solid ${({ theme: { color } }) => color.greyScale.grey3};
-  background-color: ${({ theme: { color } }) => color.greyScale.offWhite};
-  padding: ${({ caption, icon }) => (caption ? "2.7rem 4rem" : icon ? "3.2rem 4rem" : "4rem")};
+  background-color: ${({ theme: { color } }) => color.surface.offWhite1};
   text-decoration: unset;
   &:hover {
     cursor: pointer;
-    border: 0.2rem solid ${({ theme: { color } }) => color.greyScale.black};
+    border: 0.2rem solid ${({ theme: { color } }) => color.black};
+    background-color: ${({ theme: { color } }) => color.primary.green4};
   }
-`;
-
-const TextWrapper = styled.div<{ caption?: string }>`
-  max-width: 50rem;
-  height: ${({ caption }) => (caption ? "8rem" : "5.4rem")};
+  @media ${({ theme }) => theme.device.mobile} {
+    flex: 1;
+    padding: 1.6rem;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    width: 100%;
+    padding: ${({ caption }) => (caption ? "3.9rem 4rem" : "3rem 4rem")};
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    width: ${({ icon }) => (icon ? "43.5rem" : "98.2rem")};
+    padding: ${({ caption }) => (caption ? "3.9rem 4rem" : "3rem 4rem")};
+  }
 `;
 
 const Description = styled.div`
   color: ${({ theme: { color } }) => color.greyScale.grey2};
+  @media ${({ theme }) => theme.device.mobile} {
+    margin-bottom: 0.8rem;
+  }
 `;
 const Title = styled.div`
   display: flex;
   align-items: center;
-  color: ${({ theme: { color } }) => color.greyScale.black};
+  color: ${({ theme: { color } }) => color.black};
 `;
 const Caption = styled.div`
   margin-top: 0.8rem;

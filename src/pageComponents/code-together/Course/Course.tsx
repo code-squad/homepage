@@ -4,8 +4,8 @@ import { graphql, useStaticQuery } from "gatsby";
 // Type
 import { CourseType } from "@type/Course";
 // Components
-import { EButton, TitleSet } from "components";
-import { CourseCard } from "./CourseCard";
+import { MButton, TitleSet, CourseCard } from "components";
+// import { CourseCard } from "./CourseCard";
 // Assets
 import thumbnail from "assets/img/illusts/thumbnail";
 import { SUBTITLE, TITLE } from "assets/static/phrases";
@@ -29,27 +29,26 @@ const Course: React.FC = () => {
 
   return (
     <CourseWrapper id="course">
-      <TitleWrapper>
-        <TitleSet subtitle={SUBTITLE.CODE_TOGETHER_COURSE} title={TITLE.COURSE} />
-      </TitleWrapper>
+      <div>
+        <TitleWrapper>
+          <TitleSet subtitle={SUBTITLE.CODE_TOGETHER_COURSE} title={TITLE.COURSE} bigSubtitle />
+        </TitleWrapper>
+      </div>
       <CourseListWrapper>
         <CourseList>
-          {courses
-            .slice(0, courseCount)
-            .map(({ master, title, dueDate, cost, tags, img, path }) => (
-              <li key={img}>
-                <CourseCard
-                  {...{ master, title, dueDate, cost, tags, path, img: thumbnail[img] }}
-                />
-              </li>
-            ))}
+          {courses.slice(0, courseCount).map(({ category, title, cost, tags, img, path }) => (
+            <li key={`${title}-${img}`}>
+              <CourseCard {...{ category, title, cost, tags, path, img: thumbnail[img] }} />
+            </li>
+          ))}
         </CourseList>
         {courses.length > 9 && (
           <MoreButtonWrapper>
-            <EButton
+            <MButton
               children={TITLE.MORE}
               disabled={courseCount === courses.length}
               onClick={handleMoreButtonClick}
+              type="left"
             />
           </MoreButtonWrapper>
         )}
@@ -60,42 +59,66 @@ const Course: React.FC = () => {
 
 const CourseWrapper = styled.div`
   display: flex;
-  align-items: center;
   flex-direction: column;
-  margin-top: 16rem;
+  margin-top: 18rem;
 `;
 
 const TitleWrapper = styled.div`
-  width: 106.2rem;
-  padding: 0 18.9rem;
-  margin: 0 auto;
+  @media ${({ theme }) => theme.device.mobile} {
+    padding: 0 2.4rem;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    padding: 0 8rem;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    width: 106.2rem;
+    padding: 0 18.9rem;
+  }
 `;
 
 const CourseListWrapper = styled.div`
   width: 100%;
   margin-top: 4rem;
-  padding: 8rem;
-  background-color: ${({ theme: { color } }) => color.greyScale.offWhite};
+  padding: 8rem 0 16rem 0;
+  background-color: ${({ theme: { color } }) => color.surface.offWhite1};
 `;
 
 const CourseList = styled.ul`
-  width: 106.2rem;
-  padding: 0 18.9rem;
-  margin: 0 auto;
-  background-color: ${({ theme: { color } }) => color.greyScale.offWhite};
+  margin: 0 auto 6.4rem auto;
+  background-color: ${({ theme: { color } }) => color.surface.offWhite1};
   display: flex;
   flex-flow: row wrap;
-  & > *:not(:nth-child(3n)) {
-    margin-right: 17.1rem;
+  & > *:nth-child(2n - 1) {
+    margin-right: 2.4rem;
   }
   & > *:not(:nth-last-child(-n + 3)) {
     margin-bottom: 8rem;
+  }
+  @media ${({ theme }) => theme.device.mobile} {
+    flex-direction: column;
+    margin-bottom: 3.2rem;
+    & > *:not(:last-child) {
+      margin-bottom: 2.4rem;
+    }
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    flex-direction: column;
+    padding: 8rem;
+    & > *:not(:last-child) {
+      margin-bottom: 3.2rem;
+    }
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    width: 106.2rem;
+    & > *:not(:last-child) {
+      margin-bottom: 4rem;
+    }
   }
 `;
 
 const MoreButtonWrapper = styled.div`
   width: 100%;
-  margin-top: 8rem;
+  margin-top: 6.4rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -106,9 +129,8 @@ const CodeTogetherCourseQuery = graphql`
     mdx(frontmatter: { templateKey: { eq: "codeTogether_courses" } }) {
       frontmatter {
         courses {
-          master
+          category
           title
-          dueDate
           cost
           img
           path

@@ -10,10 +10,10 @@ import { strainMdxInfo } from "lib/utils";
 
 const Banner: React.FC<IBannerProps> = ({ setBannerStatus }) => {
   const { title, description, to } = strainMdxInfo(useStaticQuery(BannerContentQuery));
-  const localStorage = typeof window !== "undefined" ? window.localStorage : null;
 
   const closeHandler = () => {
     const oneDaySec = 86400000;
+    const localStorage = typeof window !== "undefined" ? window.localStorage : null;
 
     localStorage?.setItem("maxAge", `${Date.now() + oneDaySec}`);
 

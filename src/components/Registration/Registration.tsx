@@ -16,14 +16,25 @@ const Registration: React.FC<{ registrations: RegistrationType[] }> = ({ registr
 };
 
 const RegistrationWrapper = styled.div`
-  width: 106.2rem;
-  padding: 0 18.9rem;
-  padding-top: 8rem;
-  margin: 0 auto;
   display: flex;
-  flex-direction: column;
-  & > *:not(:last-child) {
-    margin-bottom: 2.4rem;
+  @media ${({ theme }) => theme.device.mobile} {
+    padding: 0 2.4rem;
+    padding-top: 8rem;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    justify-content: center;
+    padding: 0 8rem;
+    padding-top: 8rem;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    width: 106.2rem;
+    padding: 0 18.9rem;
+    padding-top: 8rem;
+    margin: 0 auto;
+    flex-direction: column;
+    & > *:not(:last-child) {
+      margin-bottom: 2.4rem;
+    }
   }
 `;
 

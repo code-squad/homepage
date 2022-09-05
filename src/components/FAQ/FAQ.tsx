@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from "gatsby";
 // Type
 import { FAQType } from "@type/FAQ";
 // Components
-import { DropdownItem, EButton, TitleSet } from "components";
+import { DropdownItem, MButton, TitleSet } from "components";
 // Assets
 import { SUBTITLE, TITLE } from "assets/static/phrases";
 // Utils
@@ -41,28 +41,57 @@ const FAQ: React.FC<IFaq> = ({ course }) => {
         ))}
       </DropdownWrapper>
       {faqList.length > 5 && (
-        <EButton
-          children={TITLE.MORE}
-          disabled={faqCount === faqList.length}
-          onClick={handleMoreButtonClick}
-        />
+        <MoreButtonWrapper>
+          <MButton
+            children={TITLE.MORE}
+            disabled={faqCount === faqList.length}
+            onClick={handleMoreButtonClick}
+            type="left"
+          />
+        </MoreButtonWrapper>
       )}
     </FAQWrapper>
   );
 };
 
 const FAQWrapper = styled.div`
-  margin: 16rem 0;
   display: flex;
-  align-items: center;
-  width: 100%;
-  min-width: 144rem;
   flex-direction: column;
+  width: 100%;
   white-space: pre-line;
+  @media ${({ theme }) => theme.device.mobile} {
+    padding: 0 2.4rem;
+    padding-bottom: 8rem;
+    margin-top: 12rem;
+    box-sizing: border-box;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    padding: 0 8rem;
+    padding-bottom: 16rem;
+    margin-top: 18rem;
+    box-sizing: border-box;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    align-items: center;
+    margin: 18rem 0 16rem 0;
+    min-width: 144rem;
+  }
 `;
 const DropdownWrapper = styled.ul`
-  margin-top: 4rem;
   margin-bottom: 6.4rem;
+  @media ${({ theme }) => theme.device.tablet} {
+    margin-top: 0.8rem;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    margin-top: 6.4rem;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    margin-top: 4rem;
+  }
+`;
+const MoreButtonWrapper = styled.ul`
+  display: flex;
+  justify-content: center;
 `;
 
 const FAQListQuery = graphql`

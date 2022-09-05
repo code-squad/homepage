@@ -14,7 +14,7 @@ describe("<BannerPopup>", () => {
   const renderBannerPopup = () =>
     render(
       <TestProvider>
-        <BannerPopup {...props} />
+        <BannerPopup {...props} to="https://google.com" />
       </TestProvider>
     );
 

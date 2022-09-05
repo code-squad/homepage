@@ -1,160 +1,207 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import { Link } from "gatsby";
 // Typography
-import { XSBody } from "typography/";
+import { Typography } from "typography/";
 // Assets
 import { LINK, MESSAGE } from "assets/static/phrases";
 import { INTERNAL, EXTERNAL } from "assets/static/urls";
+// Lib
+import { useResponsive } from "lib/hooks";
 
 const Footer: React.FC = () => {
+  const { color } = useTheme();
+  const { isDesktop } = useResponsive();
+
   return (
     <FooterWrapper>
       <ContentWrapper>
-        <div>
-          <XSBody bold style={{ paddingBottom: "1.6rem" }}>
+        <CompanyInfomationWrapper>
+          <Typography type={isDesktop ? "XSBold" : "SBold"} style={{ color: color.white }}>
             {MESSAGE.COMPANY_NAME}
-          </XSBody>
-          <CompanyInfomationWrapper>
+          </Typography>
+          <div>
+            <Typography type={isDesktop ? "XSBody" : "SBody"}>
+              {MESSAGE.COMPANY_CEO_NAME}
+            </Typography>
             <div>
-              <div>
-                <XSBody as="span">{MESSAGE.COMPANY_CEO_NAME}</XSBody>
-              </div>
-              <div>
-                <XSBody as="span">{MESSAGE.COMPANY_REGISTRATION_NUMBER}</XSBody>
-                <XSBody as="span"> | </XSBody>
-                <XSBody as="span">{MESSAGE.COMPANY_MAIL_ORDER_SALES_REGISTRATION_NUMBER}</XSBody>
-              </div>
-              <div>
-                <XSBody as="span">{MESSAGE.COMPANY_ADDRESS}</XSBody>
-                <XSBody as="span"> | </XSBody>
-                <XSBody as="span">{MESSAGE.COMPANY_TEL_NUMBER}</XSBody>
-              </div>
-              <div>
-                <XSBody as="span">{MESSAGE.COMPANY_EMAIL}</XSBody>
+              <Typography type={isDesktop ? "XSBody" : "SBody"} as={isDesktop ? "span" : "p"}>
+                {MESSAGE.COMPANY_REGISTRATION_NUMBER}
+              </Typography>
+              <Typography type={isDesktop ? "XSBody" : "SBody"} as={isDesktop ? "span" : "p"}>
+                {isDesktop && "|"}
+              </Typography>
+              <Typography type={isDesktop ? "XSBody" : "SBody"} as={isDesktop ? "span" : "p"}>
+                {MESSAGE.COMPANY_MAIL_ORDER_SALES_REGISTRATION_NUMBER}
+              </Typography>
+            </div>
+            <div>
+              <Typography type={isDesktop ? "XSBody" : "SBody"} as={isDesktop ? "span" : "p"}>
+                {MESSAGE.COMPANY_ADDRESS}
+              </Typography>
+              <Typography type={isDesktop ? "XSBody" : "SBody"} as={isDesktop ? "span" : "p"}>
+                {isDesktop && "|"}
+              </Typography>
+              <Typography type={isDesktop ? "XSBody" : "SBody"} as={isDesktop ? "span" : "p"}>
+                {MESSAGE.COMPANY_TEL_NUMBER}
+              </Typography>
+            </div>
+            <div>
+              <Typography type={isDesktop ? "XSBody" : "SBody"} as="span">
+                {MESSAGE.COMPANY_EMAIL}
+              </Typography>
+              <ExternalLink
+                href={`mailto:${EXTERNAL.EMAIL}`}
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+                underline
+              >
+                {MESSAGE.COMPANY_EMAIL_ADDRESS}
+              </ExternalLink>
+            </div>
+          </div>
+          <InternalLink $bold to={INTERNAL.REFUND_POLICY}>
+            {LINK.REFUND_POLICY}
+          </InternalLink>
+        </CompanyInfomationWrapper>
+        {isDesktop && (
+          <MenuListWrapper>
+            <MenuList>
+              <li>
+                <Typography type="XSBold">{MESSAGE.COMPANY_NAME}</Typography>
+              </li>
+              <li>
+                <InternalLink to={INTERNAL.TEAM_CULTURE}>{LINK.TEAM_CULTURE}</InternalLink>
+              </li>
+              <li>
+                <InternalLink to={INTERNAL.RECRUIT}>{LINK.RECRUIT}</InternalLink>
+              </li>
+            </MenuList>
+            <MenuList>
+              <li>
+                <Typography type="XSBold">{MESSAGE.CURRICULUM}</Typography>
+              </li>
+              <li>
+                <InternalLink to={INTERNAL.MASTERS}>{LINK.MASTERS}</InternalLink>
+              </li>
+              <li>
+                <InternalLink to={INTERNAL.CODE_TOGETHER}>{LINK.CODE_TOGETHER}</InternalLink>
+              </li>
+            </MenuList>
+            <MenuList>
+              <li>
+                <InternalLink $bold to={INTERNAL.FAQ}>
+                  {LINK.FAQ}
+                </InternalLink>
+              </li>
+            </MenuList>
+            <MenuList>
+              <li>
+                <Typography type="XSBold">{MESSAGE.SOCIAL_MEDIA}</Typography>
+              </li>
+              <li>
                 <ExternalLink
-                  href={`mailto:${EXTERNAL.EMAIL}`}
+                  href={EXTERNAL.BLOG}
                   target="_blank"
                   rel="noopener noreferrer nofollow"
-                  underline
                 >
-                  {MESSAGE.COMPANY_EMAIL_ADDRESS}
+                  {LINK.BLOG}
                 </ExternalLink>
-              </div>
-            </div>
-          </CompanyInfomationWrapper>
-          <div>
-            <InternalLink $bold to={INTERNAL.REFUND_POLICY}>
-              {LINK.REFUND_POLICY}
-            </InternalLink>
-          </div>
-        </div>
-        <MenuListWrapper>
-          <MenuList>
-            <li>
-              <XSBody bold>{MESSAGE.COMPANY_NAME}</XSBody>
-            </li>
-            <li>
-              <InternalLink to={INTERNAL.TEAM_CULTURE}>{LINK.TEAM_CULTURE}</InternalLink>
-            </li>
-            <li>
-              <InternalLink to={INTERNAL.RECRUIT}>{LINK.RECRUIT}</InternalLink>
-            </li>
-          </MenuList>
-          <MenuList>
-            <li>
-              <XSBody bold>{MESSAGE.CURRICULUM}</XSBody>
-            </li>
-            <li>
-              <InternalLink to={INTERNAL.MASTERS}>{LINK.MASTERS}</InternalLink>
-            </li>
-            <li>
-              <InternalLink to={INTERNAL.CODE_TOGETHER}>{LINK.CODE_TOGETHER}</InternalLink>
-            </li>
-          </MenuList>
-          <MenuList>
-            <li>
-              <InternalLink $bold to={INTERNAL.FAQ}>
-                {LINK.FAQ}
-              </InternalLink>
-            </li>
-          </MenuList>
-          <MenuList>
-            <li>
-              <XSBody bold>{MESSAGE.SOCIAL_MEDIA}</XSBody>
-            </li>
-            <li>
-              <ExternalLink href={EXTERNAL.BLOG} target="_blank" rel="noopener noreferrer nofollow">
-                {LINK.BLOG}
-              </ExternalLink>
-            </li>
-            <li>
-              <ExternalLink
-                href={EXTERNAL.YOUTUBE}
-                target="_blank"
-                rel="noopener noreferrer nofollow"
-              >
-                {LINK.YOUTUBE}
-              </ExternalLink>
-            </li>
-            <li>
-              <ExternalLink
-                href={EXTERNAL.FACEBOOK}
-                target="_blank"
-                rel="noopener noreferrer nofollow"
-              >
-                {LINK.FACEBOOK}
-              </ExternalLink>
-            </li>
-            <li>
-              <ExternalLink
-                href={EXTERNAL.KAKAOTALK_CHANNEL}
-                target="_blank"
-                rel="noopener noreferrer nofollow"
-              >
-                {LINK.KAKAOTALK_CHANNEL}
-              </ExternalLink>
-            </li>
-          </MenuList>
-        </MenuListWrapper>
+              </li>
+              <li>
+                <ExternalLink
+                  href={EXTERNAL.YOUTUBE}
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                >
+                  {LINK.YOUTUBE}
+                </ExternalLink>
+              </li>
+              <li>
+                <ExternalLink
+                  href={EXTERNAL.FACEBOOK}
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                >
+                  {LINK.FACEBOOK}
+                </ExternalLink>
+              </li>
+              <li>
+                <ExternalLink
+                  href={EXTERNAL.KAKAOTALK_CHANNEL}
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                >
+                  {LINK.KAKAOTALK_CHANNEL}
+                </ExternalLink>
+              </li>
+            </MenuList>
+          </MenuListWrapper>
+        )}
       </ContentWrapper>
     </FooterWrapper>
   );
 };
 
 const FooterWrapper = styled.footer`
-  width: 100%;
-  min-width: 144rem;
-  height: 25rem;
   display: flex;
-  justify-content: center;
-  background-color: ${({ theme: { color } }) => color.greyScale.black};
+  background-color: ${({ theme: { color } }) => color.black};
+  @media ${({ theme }) => theme.device.mobile} {
+    align-items: center;
+    width: 100%;
+    height: 30.4rem;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    justify-content: center;
+    width: 100%;
+    min-width: 144rem;
+  }
 `;
 
 const ContentWrapper = styled.div`
-  min-width: 128rem;
-  padding: 5.6rem 8rem 8rem 8rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: ${({ theme: { color } }) => color.greyScale.white};
+  color: ${({ theme: { color } }) => color.white};
   font-size: ${({ theme: { fontSize } }) => fontSize.body.xs};
   font-weight: ${({ theme: { fontWeight } }) => fontWeight.regular};
   line-height: ${({ theme: { lineHeight } }) => lineHeight.body.xs};
   letter-spacing: ${({ theme: { letterSpacing } }) => letterSpacing};
+  @media ${({ theme }) => theme.device.mobile} {
+    padding: 4rem 2.4rem;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    padding: 4rem 8rem;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    min-width: 128rem;
+    padding: 5.6rem 8rem 8rem 8rem;
+  }
 `;
 
 const CompanyInfomationWrapper = styled.div`
-  padding-bottom: 0.8rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  color: ${({ theme: { color } }) => color.greyScale.grey3};
+  & > *:not(:last-child) {
+    padding-bottom: 1.6rem;
+  }
+  @media ${({ theme }) => theme.device.mobile} {
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    color: ${({ theme: { color } }) => color.white};
+  }
 `;
 
 const MenuListWrapper = styled.div`
-  width: 40.9rem;
   display: flex;
-  justify-content: space-between;
+  @media ${({ theme }) => theme.device.desktop} {
+    justify-content: space-between;
+    width: 40.9rem;
+  }
 `;
 
 const MenuList = styled.ul`
@@ -167,21 +214,39 @@ const MenuList = styled.ul`
 `;
 
 const InternalLink = styled(Link)<{ $bold?: boolean }>`
-  color: ${({ theme: { color } }) => color.greyScale.white};
   font-weight: ${({ $bold, theme: { fontWeight } }) =>
     $bold ? fontWeight.medium : fontWeight.regular};
   text-decoration: none;
   &:hover {
     text-decoration: underline;
   }
+  @media ${({ theme }) => theme.device.mobile} {
+    color: ${({ theme: { color } }) => color.greyScale.grey3};
+    font-size: ${({ theme: { fontSize } }) => fontSize.body.sm};
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    color: ${({ theme: { color } }) => color.greyScale.grey3};
+    font-size: ${({ theme: { fontSize } }) => fontSize.body.sm};
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    color: ${({ theme: { color } }) => color.white};
+    font-size: ${({ theme: { fontSize } }) => fontSize.body.xs};
+  }
 `;
 
 const ExternalLink = styled.a<{ underline?: boolean }>`
-  color: ${({ theme: { color } }) => color.greyScale.white};
+  color: ${({ theme: { color } }) => color.greyScale.grey3};
   text-decoration: none;
   text-decoration: ${({ underline }) => (underline ? "underline" : "none")};
   &:hover {
     text-decoration: underline;
+  }
+  @media ${({ theme }) => theme.device.mobile} {
+    font-size: ${({ theme: { fontSize } }) => fontSize.body.sm};
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    color: ${({ theme: { color } }) => color.white};
+    font-size: ${({ theme: { fontSize } }) => fontSize.body.xs};
   }
 `;
 

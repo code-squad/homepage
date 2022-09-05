@@ -5,12 +5,16 @@ import { graphql, useStaticQuery } from "gatsby";
 import { TitleSet } from "components/";
 import { ScheduleNav } from "./ScheduleNav";
 import { ScheduleInfo } from "./ScheduleInfo";
+import { MobileCourseSchedule } from "./MobileCourseSchedule";
 // Assets
 import { SUBTITLE, TITLE } from "assets/static/phrases";
 // Utils
 import { strainMdxInfo } from "lib/utils";
+import { useResponsive } from "lib/hooks";
 
 const CourseSchedule: React.FC = ({}) => {
+  const { isMobile } = useResponsive();
+
   const scheduleInfo = strainMdxInfo(useStaticQuery(ScheduleQuery));
   const { progress } = scheduleInfo;
 
@@ -18,39 +22,80 @@ const CourseSchedule: React.FC = ({}) => {
 
   return (
     <CourseScheduleWrapper>
-      <TitleSet subtitle={SUBTITLE.MASTERS_COURSE_SCHEDULE} title={TITLE.MASTERS_COURSE_SCHEDULE} />
-      <ScheduleWrapper>
-        <ScheduleLeftRuler>
-          <ScheduleNav {...{ progress, selectedScheduleIndex, setSelectedScheduleIndex }} />
-          <ScheduleInfo {...{ scheduleInfo, selectedScheduleIndex }} />
-        </ScheduleLeftRuler>
-      </ScheduleWrapper>
+      <TitleSetWrapper>
+        <TitleSet
+          subtitle={SUBTITLE.MASTERS_COURSE_SCHEDULE}
+          title={TITLE.MASTERS_COURSE_SCHEDULE}
+        />
+      </TitleSetWrapper>
+      {isMobile ? (
+        <MobileCourseSchedule {...{ progress, scheduleInfo }} />
+      ) : (
+        <ScheduleWrapper>
+          <ScheduleLeftRuler>
+            <ScheduleNav {...{ progress, selectedScheduleIndex, setSelectedScheduleIndex }} />
+            <ScheduleInfo {...{ scheduleInfo, selectedScheduleIndex }} />
+          </ScheduleLeftRuler>
+        </ScheduleWrapper>
+      )}
     </CourseScheduleWrapper>
   );
 };
 
 const CourseScheduleWrapper = styled.div`
-  margin-top: 16rem;
   display: flex;
-  align-items: center;
   width: 100%;
-  min-width: 144rem;
   flex-direction: column;
+  @media ${({ theme }) => theme.device.desktop} {
+    align-items: center;
+    min-width: 144rem;
+    margin-top: 18rem;
+  }
+`;
+
+const TitleSetWrapper = styled.div`
+  @media ${({ theme }) => theme.device.mobile} {
+    padding: 0 2.4rem;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    padding: 0 8rem;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    align-items: center;
+  }
 `;
 
 const ScheduleWrapper = styled.div`
   display: flex;
-  justify-content: center;
   width: 100%;
-  min-width: 144rem;
-  padding: 8rem 0 4rem 0;
-  margin-top: 4rem;
-  background-color: ${({ theme: { color } }) => color.greyScale.offWhite};
+  background-color: ${({ theme: { color } }) => color.surface.offWhite1};
+  @media ${({ theme }) => theme.device.mobile} {
+    box-sizing: border-box;
+    justify-content: center;
+    margin-top: 4rem;
+    padding: 4rem 2.4rem;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    box-sizing: border-box;
+    justify-content: center;
+    margin-top: 4rem;
+    padding: 8rem 8rem;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    justify-content: center;
+    margin-top: 4rem;
+    padding: 8rem 0;
+    min-width: 144rem;
+  }
 `;
 const ScheduleLeftRuler = styled.div`
-  width: 107rem;
   display: flex;
-  justify-content: flex-start;
+  @media ${({ theme }) => theme.device.tablet} {
+    width: 100%;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    width: 107rem;
+  }
 `;
 
 const ScheduleQuery = graphql`

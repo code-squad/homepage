@@ -27,7 +27,7 @@ export const MasterResult = {
           name: "호눅스",
           introduce: "Honux, 웹 백엔드 마스터",
           nutshell:
-            "“남들하고 비교하면 늘 초라해 보이지만 느리더라도 내 속도로 꾸준히 가면 잘 되겠죠.”",
+            "“남들하고 비교하면 초라해 보이지만 느리더라도 내 속도로 꾸준히 가면 잘 되겠죠.”",
           careers: [
             "현 코드스쿼드 웹 BE 교육 담당",
             "네카라쿠배 모두를 포함한 다수 기업을 대상으로 백엔드 및 클라우드 강의 경력",
@@ -40,17 +40,17 @@ export const MasterResult = {
         },
         {
           image: "ivy",
-          field: "모바일 Android",
+          field: "모바일 안드로이드",
           name: "아이비",
-          introduce: "Ivy, 모바일 Android 마스터",
+          introduce: "Ivy, 모바일 안드로이드 마스터",
           nutshell:
-            "“가치 있는 무언가를 직접 만드는 과정을 즐길 수 있다면, 직접 부딪혀서 확인해보세요!”",
+            "“가치 있는 무언가를 만드는 과정을 즐길 수 있다면, 직접 부딪혀서 확인해보세요!”",
           careers: [
-            "현 코드스쿼드, Udemy Android 앱 개발 강의",
-            "2021 네이버 커넥트재단 부스트캠프 Android 앱 개발 강의",
-            "전 ProtoPie Android 개발자, Product Manager",
-            "전 KakaoPage Android 개발자",
-            "전 NBT Android 개발자",
+            "현 코드스쿼드, Udemy 안드로이드 앱 개발 강의",
+            "2021 네이버 커넥트재단 부스트캠프 안드로이드 앱 개발 강의",
+            "전 ProtoPie 안드로이드 개발자, Product Manager",
+            "전 KakaoPage 안드로이드 개발자",
+            "전 NBT 안드로이드 개발자",
           ],
         },
         {

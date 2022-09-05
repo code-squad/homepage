@@ -8,7 +8,7 @@ import { TestProvider } from "lib/testUtils";
 describe("<TabNavigationBar>", () => {
   const props = {
     onIndexChanged: jest.fn((index) => index),
-    titles: ["웹 프론트엔드", "웹 백엔드", "모바일 Android", "모바일 iOS"],
+    titles: ["웹 프론트엔드", "웹 백엔드", "모바일 안드로이드", "모바일 iOS"],
   };
   const renderTabNavigationBar = () =>
     render(
