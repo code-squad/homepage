@@ -18,12 +18,17 @@ import { strainMdxInfo, getSplittedPhrase } from "lib/utils";
 import { useResponsive } from "lib/hooks";
 
 const Culture: React.FC = () => {
-  const { isMobile } = useResponsive();
+  const { isMobile, isTablet, isDesktop } = useResponsive();
 
   const { cultures }: { cultures: CultureType[] } = strainMdxInfo(useStaticQuery(CultureQuery));
 
   const [currentIndex, setCurrentIndex] = React.useState(0);
   const swiperRef = React.useRef<SwiperClass | null>(null);
+
+  React.useEffect(() => {
+    if (swiperRef?.current && isMobile) swiperRef.current.allowTouchMove = true;
+    if (swiperRef?.current && (isTablet || isDesktop)) swiperRef.current.allowTouchMove = false;
+  }, [isMobile, isTablet, isDesktop]);
 
   return (
     <CultureWrapper>
@@ -36,7 +41,6 @@ const Culture: React.FC = () => {
         }}
         slidesPerView={isMobile ? 1 : cultures.length}
         spaceBetween={isMobile ? 0 : 40}
-        allowTouchMove={isMobile ? true : false}
         onActiveIndexChange={({ activeIndex }) => setCurrentIndex(activeIndex)}
         style={{ width: "100%" }}
       >
