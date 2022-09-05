@@ -29,11 +29,9 @@ const Course: React.FC = () => {
 
   return (
     <CourseWrapper id="course">
-      <div>
-        <TitleWrapper>
-          <TitleSet subtitle={SUBTITLE.CODE_TOGETHER_COURSE} title={TITLE.COURSE} bigSubtitle />
-        </TitleWrapper>
-      </div>
+      <TitleWrapper>
+        <TitleSet subtitle={SUBTITLE.CODE_TOGETHER_COURSE} title={TITLE.COURSE} bigSubtitle />
+      </TitleWrapper>
       <CourseListWrapper>
         <CourseList>
           {courses.slice(0, courseCount).map(({ category, title, cost, tags, img, path }) => (
@@ -73,6 +71,7 @@ const TitleWrapper = styled.div`
   @media ${({ theme }) => theme.device.desktop} {
     width: 106.2rem;
     padding: 0 18.9rem;
+    margin: 0 auto;
   }
 `;
 
