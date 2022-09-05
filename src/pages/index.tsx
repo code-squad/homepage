@@ -37,6 +37,9 @@ const MainPage: React.FC = () => {
       localStorage?.removeItem("maxAge");
       setBannerStatus(true);
     }
+    if (title && !maxAge) {
+      setBannerStatus(true);
+    }
   }, []);
 
   return (
