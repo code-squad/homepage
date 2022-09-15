@@ -7,6 +7,7 @@ import { CodeTogetherCurriculumType } from "@type/CodeTogetherCurriculum";
 import { Typography } from "typography";
 // Components
 import { MasterInfo } from "./MasterInfo";
+// Assets
 import { DESCRIPTION } from "assets/static/phrases";
 
 const Curriculum: React.FC<{ curriculumInfo: CodeTogetherCurriculumType }> = ({
