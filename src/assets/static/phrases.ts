@@ -16,6 +16,8 @@ const SUBTITLE = {
   CODE_TOGETHER_COURSE: "코드투게더의",
   JAVASCRIPT: "자바스크립트 과정을 경험한",
   JAVASCRIPT_COURSE: "자바스크립트 과정의",
+  PRE_COURSE: "프리 코스의",
+  PRE_COURSE_TIME_TABLE: "우리는 과정중에",
   WE: "우리는",
 };
 
@@ -29,6 +31,8 @@ const TITLE = {
   EDUCATION_FEATURES: "교육 특징",
   MASTERS_DETAIL_CURRICULUM: "각 클래스 별 상세 커리큘럼",
   JAVASCRIPT_DETAIL_CURRICULUM: "각 파트 별 상세 커리큘럼",
+  PRE_COURSE_DETAIL_CURRICULUM: "각 클래스별 상세 커리큘럼",
+  PRE_COURSE_TIME_TABLE: "어떻게 학습할까요?",
   PLACE: "오프라인 교육장",
   SCHEDULE: "곧 시작하는 과정",
   MASTERS_COURSE_SCHEDULE: "마스터즈 코스 스케쥴",
@@ -72,6 +76,11 @@ const DESCRIPTION = {
   PLACE:
     "도로명주소: 서울특별시 강남구 강남대로62길 23 4층 | 지번: 서울특별시 강남구 역삼동 836-24 4층",
   REFUND: `보다 자세한 사항은 관리자 메일 yoda@codesquad.kr 주소로 문의바랍니다.​\n코스 진행 이후 환불시 카드결제 수수료나 계좌이체 수수료에 대한 환불 수수료를 제외하고 환불해드립니다`,
+  FRONT_CURRICULUM_LINK: "📣 마스터즈 코스 - 웹 프론트엔드",
+  BACK_CURRICULUM_LINK: "📣 마스터즈 코스 - 웹 백엔드",
+  MOBILE_CURRICULUM_LINK: "모바일 Android",
+  OR: " 또는 ",
+  SUITABLE_READY_CLASS: "를 준비하는 분들에게 적합한 클래스입니다.",
 };
 
 const LINK = {
