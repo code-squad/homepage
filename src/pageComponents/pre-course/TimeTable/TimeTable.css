@@ -1,0 +1,36 @@
+@media screen and (max-width: calc(767px)) {
+  #table {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) and (max-width: calc(1439px)) {
+  #table {
+    width: 100%;
+  }
+}
+@media (min-width: 1440px) {
+  #table {
+    width: 68rem;
+  }
+}
+
+#table {
+  border-collapse: collapse;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+#table td,
+#table th {
+  vertical-align: middle;
+  border: 1px solid #000;
+  padding: 1.5rem;
+}
+
+#table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #04aa6d;
+  color: white;
+}
