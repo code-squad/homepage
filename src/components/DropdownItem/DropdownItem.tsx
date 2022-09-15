@@ -127,9 +127,8 @@ const BoardWrapper = styled.div<{ open?: boolean }>`
     }
   }
   @media ${({ theme }) => theme.device.desktop} {
-    padding-top: 4rem;
+    padding: 4rem 0;
     justify-content: space-between;
-    height: 7.1rem;
     transition: border 0.5s;
     &:hover p {
       font-weight: ${({ theme: { fontWeight } }) => fontWeight.bold};
