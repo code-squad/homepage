@@ -12,45 +12,52 @@ import { TITLE } from "assets/static/phrases";
 import { TestProvider } from "lib/testUtils";
 
 describe("<CourseInfo>", () => {
-  const props = {
+  const courseInfos = [
+    { title: "6개월", content: "", img: "calendar" as keyof typeof icons },
+    { title: "매달 55만원", content: "6개월 기준 총 396만원", img: "coin" as keyof typeof icons },
+  ];
+  const subCourseInfos = [
+    { title: "마스터즈", content: "", img: "" as keyof typeof icons },
+    { title: "6개월", content: "", img: "calendar" as keyof typeof icons },
+    { title: "매달 55만원", content: "6개월 기준 총 396만원", img: "coin" as keyof typeof icons },
+  ];
+  const props = (subCourse: boolean) => ({
     backgroundImage: header.desktopPattern3,
     backgroundColor: theme.color.primary.green4,
     title: "마스터즈 코스",
     description:
-      "마스터즈 코스는 현장처럼 학습하며 분야별 최고의 개발자로 도약하는데 도움을 주는 풀타임 과정 입니다.",
+      "현장처럼 학습하며 분야별 최고의 개발자로 도약하는데 도움을 주는 풀타임 과정 입니다.",
     targets: [
       "프로그래밍 언어를 하나라도 학습해본 경험이 있는 사람",
       "6개월 이상 프로그래밍을 공부해보았고, 동료와 함께 성장하고 싶은 사람",
       "실무 프로그래머로 가는 길이 궁금한 사람",
     ],
-    courseInfos: [
-      { title: "6개월", content: "", img: "calendar" as keyof typeof icons },
-      { title: "매달 55만원", content: "6개월 기준 총 396만원", img: "coin" as keyof typeof icons },
-    ],
-  };
+    courseInfos: subCourse ? subCourseInfos : courseInfos,
+  });
   const renderCourseInfo = () =>
     render(
       <TestProvider>
-        <CourseInfo {...props} />
+        <CourseInfo {...props(false)} />
       </TestProvider>
     );
   it("코스 제목이 보여진다.", async () => {
     const { getByText } = renderCourseInfo();
-    const { title } = props;
+    const { title } = props(false);
 
     getByText(title);
   });
   it("코스 설명이 보여진다.", async () => {
     const { getByText } = renderCourseInfo();
-    const { description } = props;
+    const { description } = props(false);
 
     getByText(description);
   });
   it("코스 금액/기간 등의 정보들이 보여진다.", async () => {
-    const { getByText } = renderCourseInfo();
-    const { courseInfos } = props;
+    const { getByText, getByAltText } = renderCourseInfo();
+    const { courseInfos } = props(false);
 
     for (const { title, content } of courseInfos) {
+      getByAltText(`course-info-img-${title}`);
       getByText(title + (content ? "/" : ""));
       if (content) getByText(content);
     }
@@ -63,10 +70,24 @@ describe("<CourseInfo>", () => {
   });
   it("교육 과정 대상자 내용들이 보여진다.", async () => {
     const { getByText } = renderCourseInfo();
-    const { targets } = props;
+    const { targets } = props(false);
 
     for (const target of targets) {
       getByText(target);
     }
+  });
+
+  const renderSubCourseInfo = () =>
+    render(
+      <TestProvider>
+        <CourseInfo {...props(true)} subCourse />
+      </TestProvider>
+    );
+
+  it("subCourse가 true인 경우 문구만 보여지는 텍스트가 있다.", async () => {
+    const { getByText } = renderSubCourseInfo();
+    const { courseInfos } = props(true);
+
+    getByText(courseInfos[0].title)
   });
 });
