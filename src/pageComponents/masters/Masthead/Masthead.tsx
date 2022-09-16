@@ -22,6 +22,7 @@ const Masthead: React.FC = () => {
     <CourseInfo
       {...{ title, description, targets, courseInfos, backgroundImage }}
       backgroundColor={color.primary.green4}
+      subCourse
     />
   );
 };
