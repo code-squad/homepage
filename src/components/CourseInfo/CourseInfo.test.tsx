@@ -24,8 +24,8 @@ describe("<CourseInfo>", () => {
       "실무 프로그래머로 가는 길이 궁금한 사람",
     ],
     courseInfos: [
-      { title: "6개월", content: "", img: icons.calendar },
-      { title: "매달 55만원", content: "6개월 기준 총 396만원", img: icons.coin },
+      { title: "6개월", content: "", img: "calendar" as keyof typeof icons },
+      { title: "매달 55만원", content: "6개월 기준 총 396만원", img: "coin" as keyof typeof icons },
     ],
   };
   const renderCourseInfo = () =>
@@ -47,18 +47,16 @@ describe("<CourseInfo>", () => {
     getByText(description);
   });
   it("코스 금액/기간 등의 정보들이 보여진다.", async () => {
-    const { getByText, getByAltText } = renderCourseInfo();
+    const { getByText } = renderCourseInfo();
     const { courseInfos } = props;
 
     for (const { title, content } of courseInfos) {
-      getByAltText(`course-info-img-${title}`);
       getByText(title + (content ? "/" : ""));
       if (content) getByText(content);
     }
   });
   it("대상자에 대한 내용을 보여주는 영역임을 알려주는 아이콘 및 안내문구가 보여진다.", async () => {
     const { getByAltText, getByText } = renderCourseInfo();
-    const { targets } = props;
 
     getByAltText("member-img");
     getByText(TITLE.EDUCATION_TARGET);
