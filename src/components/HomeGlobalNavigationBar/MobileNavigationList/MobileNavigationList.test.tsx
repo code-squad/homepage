@@ -13,6 +13,16 @@ describe("<MobileNavigationList>", () => {
     {
       title: LINK.MASTERS,
       path: INTERNAL.MASTERS,
+      subLinks: [
+        {
+          title: LINK.PRE_COURSE,
+          path: INTERNAL.PRE_COURSE,
+        },
+        {
+          title: LINK.MASTERS_MAX,
+          path: INTERNAL.MASTERS,
+        },
+      ],
     },
     {
       title: LINK.CODE_TOGETHER,
@@ -44,6 +54,29 @@ describe("<MobileNavigationList>", () => {
     const { getByRole } = renderMobileNavigationList();
 
     const linkEle = getByRole("link", { name: LINK.MASTERS });
+    expect(linkEle?.getAttribute("href")).toBe(INTERNAL.MASTERS);
+  });
+  it("프리코스 코스 링크가 보여진다.", async () => {
+    const { getByText } = renderMobileNavigationList();
+
+    getByText(LINK.PRE_COURSE);
+  });
+  it("프리코스 링크를 클릭하면 프리코스 페이지로 이동된다.", async () => {
+    const { getByRole } = renderMobileNavigationList();
+
+    const linkEle = getByRole("link", { name: LINK.PRE_COURSE });
+    expect(linkEle?.getAttribute("href")).toBe(INTERNAL.PRE_COURSE);
+  });
+
+  it("마스터즈•max 코스 링크가 보여진다.", async () => {
+    const { getByText } = renderMobileNavigationList();
+
+    getByText(LINK.MASTERS_MAX);
+  });
+  it("마스터즈 코스 링크를 클릭하면 마스터즈코스 페이지로 이동된다.", async () => {
+    const { getByRole } = renderMobileNavigationList();
+
+    const linkEle = getByRole("link", { name: LINK.MASTERS_MAX });
     expect(linkEle?.getAttribute("href")).toBe(INTERNAL.MASTERS);
   });
   it("코드투게더 링크를 클릭하면 마스터즈코스 페이지로 이동된다.", async () => {
