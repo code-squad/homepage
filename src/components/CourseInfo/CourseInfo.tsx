@@ -24,6 +24,7 @@ interface ICourseInfo {
   description: string;
   targets: string[];
   courseInfos: ICourseDetailInfo[];
+  subCourse?: boolean;
 }
 
 const CourseInfo: React.FC<ICourseInfo> = ({
@@ -34,6 +35,7 @@ const CourseInfo: React.FC<ICourseInfo> = ({
   description,
   targets,
   courseInfos,
+  subCourse,
 }) => {
   const { isMobile } = useResponsive();
 
@@ -44,39 +46,78 @@ const CourseInfo: React.FC<ICourseInfo> = ({
           {process && <Typography type={isMobile ? "MBold" : "SHLBold"}>{process}</Typography>}
           <Typography type={isMobile ? "SDisplay" : "LDisplay"}>{title}</Typography>
         </TitleWrapper>
-        <InfoWrapper>
-          <InfoItemWrapper>
-            <Typography
-              type={isMobile ? "SBody" : "MBody"}
-              style={{ whiteSpace: "pre-line", marginBottom: "1.6rem" }}
-            >
-              {description}
-            </Typography>
-            {courseInfos.map(({ title, content, img }) => (
-              <InfoItem key={title} icon={icons[img]} {...{ title, content }} />
-            ))}
-          </InfoItemWrapper>
-          <TargetWrapper>
-            <TargetTitle>
-              <img alt={`member-img`} src={icons.member} style={{ marginRight: ".8rem" }} />
-              <Typography type="MBold">{TITLE.EDUCATION_TARGET}</Typography>
-            </TargetTitle>
-            <TargetItemWrapper>
-              {targets.map((target: string) => (
-                <li key={target}>
-                  <Typography
-                    type={isMobile ? "XSBody" : "MBody"}
-                    style={{
-                      display: "inline",
-                      verticalAlign: "middle",
-                    }}
-                  >
-                    {target}
-                  </Typography>
-                </li>
-              ))}
-            </TargetItemWrapper>
-          </TargetWrapper>
+        <InfoWrapper subCourse>
+          {subCourse ? (
+            <>
+              <TargetWrapper>
+                <Typography
+                  type={isMobile ? "SBody" : "MBody"}
+                  style={{ whiteSpace: "pre-line", marginBottom: "2.4rem" }}
+                >
+                  {description}
+                </Typography>
+                <TargetTitle>
+                  <img alt={`member-img`} src={icons.member} style={{ marginRight: ".8rem" }} />
+                  <Typography type="MBold">{TITLE.EDUCATION_TARGET}</Typography>
+                </TargetTitle>
+                <TargetItemWrapper>
+                  {targets.map((target: string) => (
+                    <li key={target}>
+                      <Typography
+                        type={isMobile ? "XSBody" : "MBody"}
+                        style={{
+                          display: "inline",
+                          verticalAlign: "middle",
+                        }}
+                      >
+                        {target}
+                      </Typography>
+                    </li>
+                  ))}
+                </TargetItemWrapper>
+              </TargetWrapper>
+              <InfoItemWrapper>
+                {courseInfos.map(({ title, content, img }) => (
+                  <InfoItem key={title} icon={icons[img]} {...{ title, content }} />
+                ))}
+              </InfoItemWrapper>
+            </>
+          ) : (
+            <>
+              <InfoItemWrapper>
+                <Typography
+                  type={isMobile ? "SBody" : "MBody"}
+                  style={{ whiteSpace: "pre-line", marginBottom: "1.6rem" }}
+                >
+                  {description}
+                </Typography>
+                {courseInfos.map(({ title, content, img }) => (
+                  <InfoItem key={title} icon={icons[img]} {...{ title, content }} />
+                ))}
+              </InfoItemWrapper>
+              <TargetWrapper>
+                <TargetTitle>
+                  <img alt={`member-img`} src={icons.member} style={{ marginRight: ".8rem" }} />
+                  <Typography type="MBold">{TITLE.EDUCATION_TARGET}</Typography>
+                </TargetTitle>
+                <TargetItemWrapper>
+                  {targets.map((target: string) => (
+                    <li key={target}>
+                      <Typography
+                        type={isMobile ? "XSBody" : "MBody"}
+                        style={{
+                          display: "inline",
+                          verticalAlign: "middle",
+                        }}
+                      >
+                        {target}
+                      </Typography>
+                    </li>
+                  ))}
+                </TargetItemWrapper>
+              </TargetWrapper>
+            </>
+          )}
         </InfoWrapper>
       </ContentWrapper>
     </CourseInfoWrapper>
@@ -142,7 +183,7 @@ const TitleWrapper = styled.div`
   }
 `;
 
-const InfoWrapper = styled.div`
+const InfoWrapper = styled.div<{ subCourse: boolean }>`
   display: flex;
   @media ${({ theme }) => theme.device.mobile} {
     flex-direction: column;
@@ -153,7 +194,7 @@ const InfoWrapper = styled.div`
   @media ${({ theme }) => theme.device.desktop} {
     justify-content: space-between;
     min-width: 106.2rem;
-    margin-top: 4rem;
+    margin-top: ${({ subCourse }) => (subCourse ? "2.4rem" : "4rem")};
   }
 `;
 
@@ -175,6 +216,7 @@ const TargetWrapper = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  width: calc(100% / 2);
 `;
 
 const TargetItemWrapper = styled.ul`
@@ -183,6 +225,7 @@ const TargetItemWrapper = styled.ul`
   list-style-type: disc;
   list-style-position: outside;
   margin-left: 2rem;
+  color: ${({ theme: { color } }) => color.greyScale.grey1};
   & > *:not(:last-child) {
     margin-bottom: 0.8rem;
   }
@@ -192,6 +235,7 @@ const InfoItemWrapper = styled.ul`
   display: flex;
   flex-direction: column;
   flex-wrap: "wrap";
+  width: calc(100% / 2);
   & > *:not(:last-child) {
     margin-bottom: 0.8rem;
   }
