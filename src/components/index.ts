@@ -19,3 +19,4 @@ export { TitleSet } from "./TitleSet";
 export { Registration } from "./Registration";
 export { FAQ } from "./FAQ";
 export { CourseCard } from "./CourseCard";
+export { SubCourseInfo } from "./SubCourseInfo";
