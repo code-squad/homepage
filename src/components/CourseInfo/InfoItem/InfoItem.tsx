@@ -2,8 +2,6 @@ import React from "react";
 import styled from "styled-components";
 // Typography
 import { Typography } from "typography";
-// Components
-import { Tag } from "components/Tag";
 
 interface IInfoItemProps {
   title: string;
@@ -12,7 +10,7 @@ interface IInfoItemProps {
 }
 
 const InfoItem: React.FC<IInfoItemProps> = ({ icon, title, content }) => {
-  return icon ? (
+  return (
     <InfoItemWrapper>
       <img src={icon} alt={`course-info-img-${title}`} />
       <Typography type="LBody" style={{ minWidth: "fit-content" }}>
@@ -20,10 +18,6 @@ const InfoItem: React.FC<IInfoItemProps> = ({ icon, title, content }) => {
       </Typography>
       <Typography type="SBody">{content}</Typography>
     </InfoItemWrapper>
-  ) : (
-    <TagWrapper>
-      <Tag type="Black" text={title} />
-    </TagWrapper>
   );
 };
 
@@ -32,11 +26,6 @@ const InfoItemWrapper = styled.li`
   align-items: center;
   & > *:not(:last-child) {
     margin-right: 0.4rem;
-  }
-`;
-const TagWrapper = styled.li`
-  &:not(:first-child) {
-    margin-top: 2.4rem;
   }
 `;
 
