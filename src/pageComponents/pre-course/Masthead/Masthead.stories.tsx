@@ -3,10 +3,16 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 // Story-Component
 import { Masthead } from ".";
+import MastheadDocs from "./Masthead.docs.mdx";
 
 export default {
   title: "pagecomponent/pre-course/Masthead",
   component: Masthead,
+  parameters: {
+    docs: {
+      page: MastheadDocs,
+    },
+  },
 } as ComponentMeta<typeof Masthead>;
 
 const Template: ComponentStory<typeof Masthead> = () => <Masthead />;
