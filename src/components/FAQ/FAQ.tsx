@@ -34,11 +34,13 @@ const FAQ: React.FC<IFaq> = ({ course }) => {
     <FAQWrapper>
       <TitleSet subtitle={SUBTITLE.FAQ} title={TITLE.FREQUENTLY_ASKED_QUESTIONS} />
       <DropdownWrapper>
-        {faqList.slice(0, faqCount).map(({ category, title, content, editDate }: FAQType) => (
-          <li key={title}>
-            <DropdownItem {...{ category, title, content, editDate }} />
-          </li>
-        ))}
+        {faqList
+          .slice(0, faqCount)
+          .map(({ category, title, content, editDate, btnText, btnUrl }: FAQType) => (
+            <li key={title}>
+              <DropdownItem {...{ category, title, content, editDate, btnText, btnUrl }} />
+            </li>
+          ))}
       </DropdownWrapper>
       {faqList.length > 5 && (
         <MoreButtonWrapper>
@@ -104,6 +106,8 @@ const FAQListQuery = graphql`
           title
           category
           course
+          btnText
+          btnUrl
         }
       }
     }

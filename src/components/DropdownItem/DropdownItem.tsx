@@ -1,13 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import { MDXRenderer } from "gatsby-plugin-mdx";
-// Gloabl
-import Layout from "lib/context/Layout";
-// Assets
-import icons from "assets/img/icons";
 // Typography
 import { Typography } from "typography";
-// Lib
+// Components
+import { MButton } from "components/MButton";
+// Assets
+import icons from "assets/img/icons";
+// Libs
+import Layout from "lib/context/Layout";
 import { useResponsive } from "lib/hooks";
 
 interface IDropdownItem {
@@ -18,6 +19,8 @@ interface IDropdownItem {
   link?: string;
   short?: boolean;
   body?: string;
+  btnText?: string;
+  btnUrl?: string;
 }
 
 const DropdownItem: React.FC<IDropdownItem> = ({
@@ -28,6 +31,8 @@ const DropdownItem: React.FC<IDropdownItem> = ({
   link,
   short,
   body,
+  btnText,
+  btnUrl,
 }) => {
   const { isDesktop } = useResponsive();
 
@@ -74,7 +79,12 @@ const DropdownItem: React.FC<IDropdownItem> = ({
                 <MDXRenderer>{body}</MDXRenderer>
               </Layout>
             ) : (
-              <Typography type="MBody">{content}</Typography>
+              <>
+                <Typography type="MBody">{content}</Typography>
+                <ButtonWrapper>
+                  {btnText && <MButton to={btnUrl} children={btnText} type="right" />}
+                </ButtonWrapper>
+              </>
             )}
           </Content>
           <EditDate>
@@ -183,6 +193,9 @@ const EditDate = styled.div`
   color: ${({ theme: { color } }) => color.greyScale.grey2};
   display: flex;
   justify-content: flex-end;
+`;
+const ButtonWrapper = styled.div`
+  margin-top: 2.4rem;
 `;
 
 export default DropdownItem;
