@@ -13,7 +13,8 @@ import { getCurrentPath } from "lib/utils";
 const MobileNavigationList: React.FC<{
   links: { title: string; path: string; subLinks?: { title: string; path: string }[] }[];
   open: boolean;
-}> = ({ links, open }) => {
+  setOpen: (setOpen: boolean) => void;
+}> = ({ links, open, setOpen }) => {
   const currentPath = getCurrentPath();
   const currentFirstPath = currentPath.split("/")[1];
 
@@ -40,14 +41,18 @@ const MobileNavigationList: React.FC<{
                   currentFirstPath === path.split("/")[1] ||
                   Boolean(subLinkSelected)
                 }
-                to={path}
+                to={subLinks ? "" : path}
               >
                 {title}
               </LinkButton>
               {subLinks && (
                 <SubButtonList>
                   {subLinks.map(({ title, path }) => (
-                    <SubLinkButton key={title} to={path}>
+                    <SubLinkButton
+                      key={title}
+                      to={path}
+                      onClick={() => path === currentPath && setOpen(false)}
+                    >
                       {title}
                     </SubLinkButton>
                   ))}
