@@ -32,6 +32,16 @@ const HomeGlobalNavigationBar: React.FC<{ bannerStatus?: boolean }> = ({ bannerS
     {
       title: LINK.MASTERS,
       path: INTERNAL.MASTERS,
+      subLinks: [
+        {
+          title: LINK.PRE_COURSE,
+          path: INTERNAL.PRE_COURSE,
+        },
+        {
+          title: LINK.MASTERS_MAX,
+          path: INTERNAL.MASTERS,
+        },
+      ],
     },
     {
       title: LINK.CODE_TOGETHER,
@@ -60,7 +70,7 @@ const HomeGlobalNavigationBar: React.FC<{ bannerStatus?: boolean }> = ({ bannerS
           </Link>
           {isMobile ? (
             <>
-              <Button onClick={() => setOpen(!open)}>
+              <Button onClick={() => setOpen(!open)} style={{ position: "relative", zIndex: 11 }}>
                 <ButtonIcon src={open ? icons.close : icons.menu} />
               </Button>
               <MobileNavigationList {...{ links, open }} />

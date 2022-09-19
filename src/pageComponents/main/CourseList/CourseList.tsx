@@ -13,8 +13,14 @@ const CourseList: React.FC = () => {
       <TitleSet title={TITLE.VIEW_COURSES}></TitleSet>
       <CourseListWrapper>
         <LinkButton
+          to={INTERNAL.PRE_COURSE}
+          title={LINK.PRE_COURSE}
+          description={LINK_DESCRIPTION.PRE_COURSE}
+          icon={thumbnails.mediumCodeTogether}
+        />
+        <LinkButton
           to={INTERNAL.MASTERS}
-          title={LINK.MASTERS}
+          title={LINK.MASTERS_MAX}
           description={LINK_DESCRIPTION.MASTERS}
           icon={thumbnails.mediumMastersCourse}
         />
@@ -62,19 +68,19 @@ const CourseWrapper = styled.ul`
 `;
 
 const CourseListWrapper = styled.ul`
-  display: flex;
-  justify-content: center;
   @media ${({ theme }) => theme.device.mobile} {
-    & > *:not(:last-child) {
-      margin-right: 1.6rem;
-    }
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1.6rem 1.6rem;
   }
   @media ${({ theme }) => theme.device.tablet} {
-    & > *:not(:last-child) {
-      margin-right: 2.4rem;
-    }
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1.1rem 2.4rem;
   }
   @media ${({ theme }) => theme.device.desktop} {
+    display: flex;
+    justify-content: center;
     & > *:not(:last-child) {
       margin-right: 2.4rem;
     }

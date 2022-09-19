@@ -32,7 +32,7 @@ const LinkButton: React.FC<ILinkButton> = ({ description, title, to, icon, capti
       <div>
         {description ? (
           <Description>
-            <Typography type={isMobile ? "XSBold" : "MBold"}>{description}</Typography>
+            <Typography type={isMobile ? "XSBold" : "SBold"}>{description}</Typography>
           </Description>
         ) : null}
         <Title>
@@ -46,7 +46,13 @@ const LinkButton: React.FC<ILinkButton> = ({ description, title, to, icon, capti
         ) : null}
       </div>
       {(isTablet || isDesktop) && icon ? (
-        <img alt="link-icon" src={icon} width="54px" height="54px" />
+        <img
+          alt="link-icon"
+          src={icon}
+          width="54px"
+          height="54px"
+          style={{ marginLeft: "1.947rem" }}
+        />
       ) : null}
     </LinkButtonWrapper>
   );
@@ -70,16 +76,20 @@ const LinkButtonWrapper = styled(Link)<{ icon?: string; caption?: string }>`
     padding: 1.6rem;
   }
   @media ${({ theme }) => theme.device.tablet} {
-    width: 100%;
-    padding: ${({ caption }) => (caption ? "3.9rem 4rem" : "3rem 4rem")};
+    flex: 1;
+    padding: ${({ caption }) => (caption ? "3.9rem 3.2rem" : "3rem 3.2rem")};
   }
   @media ${({ theme }) => theme.device.desktop} {
     width: ${({ icon }) => (icon ? "43.5rem" : "98.2rem")};
-    padding: ${({ caption }) => (caption ? "3.9rem 4rem" : "3rem 4rem")};
+    padding: ${({ caption }) => (caption ? "3.9rem 3.2rem" : "3rem 3.2rem")};
   }
 `;
 
 const Description = styled.div`
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   color: ${({ theme: { color } }) => color.greyScale.grey2};
   @media ${({ theme }) => theme.device.mobile} {
     margin-bottom: 0.8rem;
