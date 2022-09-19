@@ -89,7 +89,7 @@ const LINK = {
   CONFIRM_RECRUIT: "채용 소식 확인하기",
   FACEBOOK: "페이스북",
   FAQ: "자주 묻는 질문",
-  MASTERS: "마스터즈 코스",
+  MASTERS: "마스터즈",
   MASTERS_MAX: "마스터즈•max",
   PRE_COURSE: "프리코스",
   RECRUIT: "채용소식",
