@@ -17,6 +17,9 @@ const HomeGlobalNavigationBar: React.FC<{ bannerStatus?: boolean }> = ({ bannerS
   const scrollPosition = useScrollPosition();
 
   const [open, setOpen] = React.useState(false);
+  const [subLinkOpen, setSubLinkOpen] = React.useState(false);
+
+  const popOverRef = React.useRef<HTMLDivElement>(null);
 
   const currentPath = getCurrentPath();
 
@@ -27,6 +30,32 @@ const HomeGlobalNavigationBar: React.FC<{ bannerStatus?: boolean }> = ({ bannerS
       document.body.style.overflowY = "scroll";
     }
   }, [open]);
+
+  React.useEffect(() => {
+    const clickEvent = (e: any) => {
+      if (popOverRef?.current !== null && popOverRef.current.contains(e.target)) {
+        setSubLinkOpen(!subLinkOpen);
+      } else {
+        setSubLinkOpen(false);
+      }
+    };
+
+    const mouseOverEvent = (e: any) => {
+      if (popOverRef?.current !== null && popOverRef.current.contains(e.target)) {
+        setSubLinkOpen(true);
+      } else {
+        setSubLinkOpen(false);
+      }
+    };
+
+    window.addEventListener("click", clickEvent, true);
+    window.addEventListener("mouseover", mouseOverEvent, true);
+
+    return () => {
+      window.removeEventListener("click", clickEvent, true);
+      window.removeEventListener("mouseover", mouseOverEvent, true);
+    };
+  });
 
   const links = [
     {
@@ -73,15 +102,37 @@ const HomeGlobalNavigationBar: React.FC<{ bannerStatus?: boolean }> = ({ bannerS
               <Button onClick={() => setOpen(!open)} style={{ position: "relative", zIndex: 11 }}>
                 <ButtonIcon src={open ? icons.close : icons.menu} />
               </Button>
-              <MobileNavigationList {...{ links, open }} />
+              <MobileNavigationList {...{ links, open, setOpen }} />
             </>
           ) : (
             <ButtonList>
-              {links.map(({ title, path }: any) => {
+              {links.map(({ title, path, subLinks }: any) => {
                 const currentFirstPath = currentPath.split("/")[1];
                 const firstPath = path.split("/")[1];
 
-                return (
+                return subLinks ? (
+                  <div
+                    style={{ display: "flex", flexDirection: "column" }}
+                    key={title}
+                    ref={popOverRef}
+                  >
+                    <LinkPopoverButton
+                      key={title}
+                      selected={subLinks.find((subLink: any) => subLink.path === currentPath)}
+                    >
+                      {title}
+                    </LinkPopoverButton>
+                    <LinkButtonWrapper open={subLinkOpen}>
+                      {subLinks.map(({ title, path }: any) => (
+                        <li key={title}>
+                          <LinkButton selected={false} to={path}>
+                            {title}
+                          </LinkButton>
+                        </li>
+                      ))}
+                    </LinkButtonWrapper>
+                  </div>
+                ) : (
                   <li key={title}>
                     <LinkButton
                       selected={currentPath === path || currentFirstPath === firstPath}
@@ -176,6 +227,37 @@ const ButtonList = styled.ul`
   }
 `;
 
+const LinkButtonWrapper = styled.div<{ open?: boolean }>`
+  position: absolute;
+  display: ${({ open }) => (open ? "flex" : "none")};
+  flex-direction: column;
+  align-items: center;
+  background-color: ${({ theme: { color } }) => color.white};
+  margin-top: 2.4rem;
+  transform: translate(-25%, 0);
+  padding: 2.4rem 1.6rem;
+  transition: opacity 0.15s linear;
+  & > *:not(:last-child) {
+    margin-bottom: 1.6rem;
+  }
+`;
+
+const LinkPopoverButton = styled.button<{ selected?: boolean }>`
+  color: ${({ theme: { color } }) => color.black};
+  font-size: ${({ theme: { fontSize } }) => fontSize.body.sm};
+  font-weight: ${({ selected, theme: { fontWeight } }) =>
+    selected ? fontWeight.medium : fontWeight.regular};
+  line-height: ${({ theme: { lineHeight } }) => lineHeight.body.sm};
+  letter-spacing: ${({ theme: { letterSpacing } }) => letterSpacing};
+  text-decoration: ${({ selected }) => (selected ? "underline" : "none")};
+  &:hover {
+    text-decoration: underline;
+  }
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+`;
+
 const LinkButton = styled(Link)<{ selected?: boolean }>`
   color: ${({ theme: { color } }) => color.black};
   font-size: ${({ theme: { fontSize } }) => fontSize.body.sm};
@@ -205,8 +287,4 @@ const ButtonIcon = styled.img`
   filter: invert(0%) sepia(8%) saturate(4576%) hue-rotate(78deg) brightness(84%) contrast(79%);
 `;
 
-const OpacityWrapper = styled.div<{ open: boolean }>`
-  opacity: ${({ open }) => (open ? "1" : "0")};
-  transition: opacity 0.15s linear;
-`;
 export default HomeGlobalNavigationBar;
