@@ -99,6 +99,7 @@ const DropdownItem: React.FC<IDropdownItem> = ({
 const DropdownWrapper = styled.div<{ short?: boolean }>`
   display: flex;
   flex-direction: column;
+  white-space: pre-line;
   @media ${({ theme }) => theme.device.mobile} {
     margin-top: 1.6rem;
   }
