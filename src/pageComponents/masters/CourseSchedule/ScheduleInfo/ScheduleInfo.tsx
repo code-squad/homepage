@@ -24,7 +24,7 @@ const ScheduleInfo: React.FC<IScheduleInfo> = ({ scheduleInfo, selectedScheduleI
         <Typography type="SHLBold">{title}</Typography>
         {tags &&
           tags.map((tag: string) => (
-            <TagWrapper>
+            <TagWrapper key={tag}>
               <Tag type="Orange" text={tag} />
             </TagWrapper>
           ))}

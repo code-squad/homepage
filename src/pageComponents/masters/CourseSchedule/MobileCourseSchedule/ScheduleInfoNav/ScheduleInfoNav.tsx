@@ -46,7 +46,7 @@ const ScheduleInfoNav: React.FC<IScheduleInfoNav> = ({
                   <TagWrapper>
                     {tags &&
                       tags.map((tag: string) => (
-                        <div style={{ marginRight: ".8rem" }}>
+                        <div key={tag} style={{ marginRight: ".8rem" }}>
                           <Tag type="Orange" text={tag} />
                         </div>
                       ))}
