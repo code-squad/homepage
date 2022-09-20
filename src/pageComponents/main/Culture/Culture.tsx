@@ -65,7 +65,7 @@ const Culture: React.FC = () => {
       </Swiper>
       {isMobile && (
         <RectangleNavigationWrapper>
-          <RectangleNavigation count={3} index={currentIndex} />
+          <RectangleNavigation count={cultures.length} index={currentIndex} />
         </RectangleNavigationWrapper>
       )}
     </CultureWrapper>

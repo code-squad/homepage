@@ -36,9 +36,8 @@ const MastheadWrapper = styled.div`
   align-items: center;
   color: ${({ theme: { color } }) => color.black};
   background-color: ${({ theme: { color } }) => color.primary.green4};
+  background-repeat: no-repeat;
   background-position: top right;
-  background-position: center;
-  background-size: cover;
   @media ${({ theme }) => theme.device.mobile} {
     background-image: ${`url(${header.mobilePattern1})`};
     height: 46.8rem;
@@ -51,7 +50,8 @@ const MastheadWrapper = styled.div`
   }
   @media ${({ theme }) => theme.device.desktop} {
     background-image: ${`url(${header.desktopPattern1})`};
-    min-width: 144rem;
+    align-items: center;
+    min-width: 106.2rem;
     height: 56rem;
   }
 `;

@@ -75,7 +75,7 @@ const Place: React.FC = () => {
       </Swiper>
       {isMobile && (
         <RectangleNavigationWrapper>
-          <RectangleNavigation count={7} index={currentIndex} />
+          <RectangleNavigation count={imgList.length} index={currentIndex} />
         </RectangleNavigationWrapper>
       )}
     </PlaceWrapper>
