@@ -16,7 +16,6 @@ const MobileNavigationList: React.FC<{
   setOpen: (setOpen: boolean) => void;
 }> = ({ links, open, setOpen }) => {
   const currentPath = getCurrentPath();
-  const currentFirstPath = currentPath.split("/")[1];
 
   const linkIconList = [
     { icon: icons.medium, to: EXTERNAL.BLOG },
@@ -29,20 +28,9 @@ const MobileNavigationList: React.FC<{
     <NavigationListWrapper {...{ open }}>
       <ButtonList>
         {links.map(({ title, path, subLinks }) => {
-          let subLinkSelected = subLinks
-            ? subLinks.find((subLink) => subLink.path === currentPath)
-            : false;
-
           return (
             <li key={title}>
-              <LinkButton
-                selected={
-                  currentPath === path ||
-                  currentFirstPath === path.split("/")[1] ||
-                  Boolean(subLinkSelected)
-                }
-                to={subLinks ? "" : path}
-              >
+              <LinkButton selected={false} to={subLinks ? "" : path}>
                 {title}
               </LinkButton>
               {subLinks && (
@@ -52,6 +40,7 @@ const MobileNavigationList: React.FC<{
                       key={title}
                       to={path}
                       onClick={() => path === currentPath && setOpen(false)}
+                      selected={currentPath === path}
                     >
                       {title}
                     </SubLinkButton>
@@ -103,7 +92,7 @@ const NavigationListWrapper = styled.div<{ open: boolean }>`
 const ButtonList = styled.ul`
   display: flex;
   flex-direction: column;
-  margin-top: 8rem;
+  margin-top: 3.2rem;
   padding: 0 2.4rem;
   & > *:not(:last-child) {
     margin-bottom: 2.4rem;
