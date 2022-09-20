@@ -218,8 +218,8 @@ const HomeSigniture = styled.img<{ open: boolean }>`
 `;
 
 const ButtonList = styled.ul`
-  min-width: 36.2rem;
-  min-height: 3.2rem;
+  width: 32.2rem;
+  height: 3.2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -234,8 +234,8 @@ const LinkButtonWrapper = styled.div<{ open?: boolean }>`
   flex-direction: column;
   align-items: center;
   background-color: ${({ theme: { color } }) => color.white};
-  margin-top: 3.6rem;
-  transform: translate(-25%, 0);
+  margin-top: 3.25rem;
+  transform: translate(-3.3rem, 0);
   padding: 2.4rem 1.6rem;
   transition: opacity 0.15s linear;
   & > *:not(:last-child) {
