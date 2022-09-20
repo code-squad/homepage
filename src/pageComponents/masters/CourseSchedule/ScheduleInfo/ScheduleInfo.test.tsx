@@ -34,6 +34,15 @@ describe("<ScheduleInfo>", () => {
       getByText(descriptionItem.trim());
     });
   });
+  it("progress에 태그가 존재한다면 해당 태그의 내용이 보여진다.", async () => {
+    const index = 3;
+    const { getByText } = renderScheduleInfo(index);
+
+    const { tags } = progress[index];
+    tags?.forEach((tagText) => {
+      getByText(tagText);
+    });
+  });
   it("progress의 index가 0 이라면 버튼들이 보여진다.", async () => {
     const index = 0;
     const { getByText } = renderScheduleInfo(index);
