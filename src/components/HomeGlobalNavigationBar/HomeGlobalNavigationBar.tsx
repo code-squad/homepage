@@ -258,12 +258,14 @@ const LinkPopoverButton = styled.button<{ selected?: boolean }>`
   line-height: ${({ theme: { lineHeight } }) => lineHeight.body.sm};
   letter-spacing: ${({ theme: { letterSpacing } }) => letterSpacing};
   text-decoration: ${({ selected }) => (selected ? "underline" : "none")};
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+  font-family: inherit;
   &:hover {
     text-decoration: underline;
   }
-  border: 0;
-  background-color: transparent;
-  cursor: pointer;
 `;
 
 const LinkButton = styled(Link)<{ selected?: boolean }>`
