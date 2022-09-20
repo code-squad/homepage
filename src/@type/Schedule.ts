@@ -9,7 +9,7 @@ export interface ScheduleType {
 export interface ProgressType {
   label: string;
   title: string;
-  tags: string[];
+  tags?: string[];
   subtitle: string;
   description: string;
 }
