@@ -35,7 +35,7 @@ const TITLE = {
   PRE_COURSE_TIME_TABLE: "어떻게 학습할까요?",
   PLACE: "오프라인 교육장",
   SCHEDULE: "곧 시작하는 과정",
-  MASTERS_COURSE_SCHEDULE: "마스터즈 코스 스케쥴",
+  MASTERS_COURSE_SCHEDULE: "마스터즈 스케쥴",
   FREQUENTLY_ASKED_QUESTIONS: "자주 묻는 질문",
   REFUND_POLICY: `코드스쿼드\n환불규정`,
   REFUND_REASON: "수강료 반환 원인",
