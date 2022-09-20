@@ -123,6 +123,7 @@ const HomeGlobalNavigationBar: React.FC<{ bannerStatus?: boolean }> = ({ bannerS
                       {title}
                     </LinkPopoverButton>
                     <LinkButtonWrapper open={subLinkOpen}>
+                      <EmptySpace />
                       {subLinks.map(({ title, path }: any) => (
                         <li key={title}>
                           <LinkButton selected={false} to={path}>
@@ -233,13 +234,20 @@ const LinkButtonWrapper = styled.div<{ open?: boolean }>`
   flex-direction: column;
   align-items: center;
   background-color: ${({ theme: { color } }) => color.white};
-  margin-top: 2.4rem;
+  margin-top: 3.6rem;
   transform: translate(-25%, 0);
   padding: 2.4rem 1.6rem;
   transition: opacity 0.15s linear;
   & > *:not(:last-child) {
     margin-bottom: 1.6rem;
   }
+`;
+
+const EmptySpace = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 1.4rem;
+  top: -1rem;
 `;
 
 const LinkPopoverButton = styled.button<{ selected?: boolean }>`
