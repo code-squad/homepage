@@ -6,12 +6,15 @@ import { Interview } from "components";
 import { SUBTITLE, TITLE } from "assets/static/phrases";
 // Utils
 import { strainMdxInfo } from "lib/utils";
+import { useResponsive } from "lib/hooks";
 
 const InterviewSliderWrapper: React.FC = ({}) => {
   const { interviewList } = strainMdxInfo(useStaticQuery(InterviewListQuery));
 
+  const { isMobile } = useResponsive();
+
   return (
-    <div style={{ marginTop: "18rem" }}>
+    <div style={{ marginTop: isMobile ? "12rem" : "18rem" }}>
       <Interview
         {...{
           title: TITLE.GRADUATE_INTERVIEW,

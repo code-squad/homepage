@@ -2,7 +2,7 @@ import React from "react";
 import { useTheme } from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
 // Components
-import { CourseInfo } from "components";
+import { SubCourseInfo } from "components";
 // Assets
 import header from "assets/img/illusts/header";
 // Lib
@@ -19,7 +19,7 @@ const Masthead: React.FC = () => {
   if (isTablet) backgroundImage = header.tabletPattern1;
 
   return (
-    <CourseInfo
+    <SubCourseInfo
       {...{ title, description, targets, courseInfos, backgroundImage }}
       backgroundColor={color.primary.green4}
     />

@@ -9,6 +9,7 @@ import {
   MastersRegistration,
   EducationFeatures,
   DetailCurriculum,
+  PreCourseLinkButton,
   InterviewSliderWrapper,
   CourseSchedule,
 } from "pageComponents/masters";
@@ -30,6 +31,7 @@ const MatsersPage: React.FC = () => {
         <MastersRegistration />
         <EducationFeatures />
         <DetailCurriculum />
+        <PreCourseLinkButton />
         <InterviewSliderWrapper />
         <CourseSchedule />
         <FAQ course="masters" />

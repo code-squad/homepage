@@ -29,7 +29,7 @@ const CourseSchedule: React.FC = ({}) => {
         />
       </TitleSetWrapper>
       {isMobile ? (
-        <MobileCourseSchedule {...{ progress, scheduleInfo }} />
+        <MobileCourseSchedule {...{ scheduleInfo }} />
       ) : (
         <ScheduleWrapper>
           <ScheduleLeftRuler>
@@ -107,6 +107,7 @@ const ScheduleQuery = graphql`
           title
           subtitle
           description
+          tags
         }
         waiterApplyUrl
         applyUrl

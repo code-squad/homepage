@@ -26,8 +26,8 @@ describe("<TimeTable>", () => {
   it("해당 컴포넌트의 제목이 보여진다.", () => {
     const { getByText } = renderTimeTable();
 
-    getByText(SUBTITLE.CODE_TOGETHER);
-    getByText(TITLE.HOW_STUDY);
+    getByText(SUBTITLE.PRE_COURSE_TIME_TABLE);
+    getByText(TITLE.PRE_COURSE_TIME_TABLE);
   });
   it("각 태그의 제목이 보여진다.", () => {
     const { getByText } = renderTimeTable();
