@@ -6,12 +6,7 @@ import { ProgressType } from "@type/Schedule";
 // Components
 import { ScheduleInfoNav } from "./ScheduleInfoNav";
 
-interface IVerticalCourseSchedule {
-  scheduleInfo: ScheduleType;
-  progress: ProgressType[];
-}
-
-const VerticalCourseSchedule: React.FC<IVerticalCourseSchedule> = ({ scheduleInfo, progress }) => {
+const VerticalCourseSchedule: React.FC<{ scheduleInfo: ScheduleType }> = ({ scheduleInfo }) => {
   const [selectedScheduleIndex, setSelectedScheduleIndex] = React.useState(0);
 
   return (

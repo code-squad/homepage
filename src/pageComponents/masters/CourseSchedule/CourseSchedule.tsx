@@ -29,7 +29,7 @@ const CourseSchedule: React.FC = ({}) => {
         />
       </TitleSetWrapper>
       {isMobile ? (
-        <MobileCourseSchedule {...{ progress, scheduleInfo }} />
+        <MobileCourseSchedule {...{ scheduleInfo }} />
       ) : (
         <ScheduleWrapper>
           <ScheduleLeftRuler>

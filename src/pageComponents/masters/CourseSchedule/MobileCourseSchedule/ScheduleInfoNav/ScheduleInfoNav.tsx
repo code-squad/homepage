@@ -6,7 +6,7 @@ import { ScheduleType } from "@type/Schedule";
 // Typography
 import { Typography } from "typography";
 // Components
-import { MButton } from "components";
+import { MButton, Tag } from "components";
 
 interface IScheduleInfoNav {
   scheduleInfo: ScheduleType;
@@ -25,7 +25,7 @@ const ScheduleInfoNav: React.FC<IScheduleInfoNav> = ({
 
   return (
     <ScheduleInfoNavWrapper>
-      {progress.map(({ title, subtitle, description, label }: ProgressType, index) => (
+      {progress.map(({ title, subtitle, description, label, tags }: ProgressType, index) => (
         <div key={label} style={{ position: "relative" }}>
           <ScheduleNavItem key={label} onClick={() => setSelectedScheduleIndex(index)}>
             <div>
@@ -43,7 +43,15 @@ const ScheduleInfoNav: React.FC<IScheduleInfoNav> = ({
               </Typography>
               {index === selectedScheduleIndex && (
                 <>
-                  <Typography type="LBody" style={{ marginTop: "2.4rem" }}>
+                  <TagWrapper>
+                    {tags &&
+                      tags.map((tag: string) => (
+                        <div style={{ marginRight: ".8rem" }}>
+                          <Tag type="Orange" text={tag} />
+                        </div>
+                      ))}
+                  </TagWrapper>
+                  <Typography type="LBody" style={{ marginTop: "1.9rem" }}>
                     {subtitle}
                   </Typography>
                   <DescriptionWrapper>
@@ -111,6 +119,10 @@ const VerticalLine = styled.div`
   border-right: 0.1rem solid ${({ theme: { color } }) => color.greyScale.grey3};
 `;
 
+const TagWrapper = styled.div`
+  display: flex;
+  margin-top: 2.9rem;
+`;
 const ScheduleInfoWrapper = styled.div<{ clicked: boolean }>`
   display: flex;
   flex-direction: column;
