@@ -82,7 +82,10 @@ const Footer: React.FC = () => {
                 <Typography type="XSBold">{MESSAGE.CURRICULUM}</Typography>
               </li>
               <li>
-                <InternalLink to={INTERNAL.MASTERS}>{LINK.MASTERS}</InternalLink>
+                <InternalLink to={INTERNAL.PRE_COURSE}>{LINK.PRE_COURSE}</InternalLink>
+              </li>
+              <li>
+                <InternalLink to={INTERNAL.MASTERS}>{LINK.MASTERS_MAX}</InternalLink>
               </li>
               <li>
                 <InternalLink to={INTERNAL.CODE_TOGETHER}>{LINK.CODE_TOGETHER}</InternalLink>
