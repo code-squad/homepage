@@ -60,7 +60,6 @@ const FAQWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  white-space: pre-line;
   @media ${({ theme }) => theme.device.mobile} {
     padding: 0 2.4rem;
     padding-bottom: 8rem;
