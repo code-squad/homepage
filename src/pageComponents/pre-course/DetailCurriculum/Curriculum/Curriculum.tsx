@@ -32,6 +32,12 @@ const Curriculum: React.FC<{ curriculumInfo: CodeTogetherCurriculumType }> = ({
         {DESCRIPTION.SUITABLE_READY_CLASS}
       </Typography>
     ),
+    JK: (
+      <Typography type="MBold">
+        <LinkWrapper {...{ to: "/masters" }}>{DESCRIPTION.IOS_CURRICULUM_LINK}</LinkWrapper>
+        {DESCRIPTION.SUITABLE_READY_CLASS}
+      </Typography>
+    ),
   };
   return (
     <CurriculumWrapper>
