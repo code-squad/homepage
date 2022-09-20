@@ -5,7 +5,7 @@ import { ScheduleType } from "@type/Schedule";
 // Typography
 import { Typography } from "typography";
 // Components
-import { MButton } from "components";
+import { MButton, Tag } from "components";
 import { getSplittedPhrase } from "lib/utils";
 // Assets
 
@@ -16,11 +16,20 @@ interface IScheduleInfo {
 
 const ScheduleInfo: React.FC<IScheduleInfo> = ({ scheduleInfo, selectedScheduleIndex }) => {
   const { progress, waiterApplyUrl, waiterApplyUrlBtnText, applyBtnText, applyUrl } = scheduleInfo;
-  const { title, subtitle, description } = progress[selectedScheduleIndex];
+  const { title, subtitle, description, tags } = progress[selectedScheduleIndex];
 
   return (
     <ScheduleInfoWrapper>
-      <Typography type="SHLBold">{title}</Typography>
+      <TitleWrapper>
+        <Typography type="SHLBold">{title}</Typography>
+        {tags &&
+          tags.map((tag: string) => (
+            <TagWrapper>
+              <Tag type="Orange" text={tag} />
+            </TagWrapper>
+          ))}
+      </TitleWrapper>
+
       <Typography type="LBody" style={{ marginTop: "2.4rem" }}>
         {subtitle}
       </Typography>
@@ -40,6 +49,15 @@ const ScheduleInfo: React.FC<IScheduleInfo> = ({ scheduleInfo, selectedScheduleI
     </ScheduleInfoWrapper>
   );
 };
+
+const TitleWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const TagWrapper = styled.div`
+  padding: 0 0.4rem;
+`;
 
 const ScheduleInfoWrapper = styled.div`
   display: flex;

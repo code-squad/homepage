@@ -107,6 +107,7 @@ const ScheduleQuery = graphql`
           title
           subtitle
           description
+          tags
         }
         waiterApplyUrl
         applyUrl
