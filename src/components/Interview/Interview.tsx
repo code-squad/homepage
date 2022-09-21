@@ -114,7 +114,7 @@ const Interview: React.FC<IInterview> = ({ subtitle, title, interviews, style })
       )}
       {isMobile && (
         <RectangleNavigationWrapper>
-          <RectangleNavigation count={4} index={currentIndex} />
+          <RectangleNavigation count={interviews.length} index={currentIndex} />
         </RectangleNavigationWrapper>
       )}
     </InterviewWrapper>

@@ -4,11 +4,11 @@ const SUBTITLE = {
   FEATURE: "코드스쿼드는",
   MASTER: "코드스쿼드의 교육 가치를 실현하는",
   GRADUATE_INTERVIEW: "코드스쿼드의 교육을 경험한",
-  MASTERS_COURSE: "마스터즈 코스의",
+  MASTERS_COURSE: "마스터즈의",
   PLACE: "코드스쿼드의 교육 철학이 담긴",
   MASTERS_COURSE_SCHEDULE: "대기자 신청부터 수료까지 한 눈에 확인하는",
   FAQ: "교육 과정에 대해",
-  MASTERS_COURSE_2021: "마스터즈 코스를 경험한",
+  MASTERS_COURSE_2021: "마스터즈를 경험한",
   TEAM_INTERIVIEW: "코드스쿼드 팀원들이 이야기하는",
   CODESQUAD_TEAM_CULTURE: "핵심 가치가 묻어난",
   WELFARE: "코드스쿼드 복지",
@@ -16,6 +16,8 @@ const SUBTITLE = {
   CODE_TOGETHER_COURSE: "코드투게더의",
   JAVASCRIPT: "자바스크립트 과정을 경험한",
   JAVASCRIPT_COURSE: "자바스크립트 과정의",
+  PRE_COURSE: "프리 코스의",
+  PRE_COURSE_TIME_TABLE: "우리는 과정중에",
   WE: "우리는",
 };
 
@@ -29,9 +31,11 @@ const TITLE = {
   EDUCATION_FEATURES: "교육 특징",
   MASTERS_DETAIL_CURRICULUM: "각 클래스 별 상세 커리큘럼",
   JAVASCRIPT_DETAIL_CURRICULUM: "각 파트 별 상세 커리큘럼",
+  PRE_COURSE_DETAIL_CURRICULUM: "각 클래스별 상세 커리큘럼",
+  PRE_COURSE_TIME_TABLE: "어떻게 학습할까요?",
   PLACE: "오프라인 교육장",
   SCHEDULE: "곧 시작하는 과정",
-  MASTERS_COURSE_SCHEDULE: "마스터즈 코스 스케쥴",
+  MASTERS_COURSE_SCHEDULE: "마스터즈 스케쥴",
   FREQUENTLY_ASKED_QUESTIONS: "자주 묻는 질문",
   REFUND_POLICY: `코드스쿼드\n환불규정`,
   REFUND_REASON: "수강료 반환 원인",
@@ -72,6 +76,12 @@ const DESCRIPTION = {
   PLACE:
     "도로명주소: 서울특별시 강남구 강남대로62길 23 4층 | 지번: 서울특별시 강남구 역삼동 836-24 4층",
   REFUND: `보다 자세한 사항은 관리자 메일 yoda@codesquad.kr 주소로 문의바랍니다.​\n코스 진행 이후 환불시 카드결제 수수료나 계좌이체 수수료에 대한 환불 수수료를 제외하고 환불해드립니다`,
+  FRONT_CURRICULUM_LINK: "📣 마스터즈 - 웹 프론트엔드",
+  BACK_CURRICULUM_LINK: "📣 마스터즈 - 웹 백엔드",
+  IOS_CURRICULUM_LINK: "📣 마스터즈 - 모바일 iOS",
+  MOBILE_CURRICULUM_LINK: "모바일 Android",
+  OR: " 또는 ",
+  SUITABLE_READY_CLASS: "를 준비하는 분들에게 적합한 클래스입니다.",
 };
 
 const LINK = {
@@ -80,7 +90,9 @@ const LINK = {
   CONFIRM_RECRUIT: "채용 소식 확인하기",
   FACEBOOK: "페이스북",
   FAQ: "자주 묻는 질문",
-  MASTERS: "마스터즈 코스",
+  MASTERS: "마스터즈",
+  MASTERS_MAX: "마스터즈•max",
+  PRE_COURSE: "프리코스",
   RECRUIT: "채용소식",
   REFUND_POLICY: "환불규정",
   SUBSCRIPTION: "소식받아보기",
@@ -94,6 +106,7 @@ const LINK_DESCRIPTION = {
   CODE_TOGETHER: "온라인으로 함께 배우는 단기 과정",
   CONFIRM_RECRUIT: "코드스쿼드의 교육 가치에 공감한다면",
   MASTERS: "분야별 최고의 개발자가 되기 위한 풀타임 과정",
+  PRE_COURSE: "프로그래밍 기초를 다지며 마스터즈를 준비할 수 있는 과정",
   RECEIVE_SUBSCRIPTION: "원하는 코스의 오픈 소식을 가장 먼저 알고 싶다면?",
 };
 
@@ -114,8 +127,9 @@ const MESSAGE = {
 };
 
 const CATEGORTY_TPL: { [key: string]: string } = {
-  masters: "마스터즈 코스",
+  masters: "마스터즈",
   javascript: "코드투게더 JS 과정",
+  "pre-course": "프리코스",
   etc: "기타",
 };
 

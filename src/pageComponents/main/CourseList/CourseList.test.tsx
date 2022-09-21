@@ -15,12 +15,20 @@ describe("<CourseList>", () => {
         <CourseList />
       </TestProvider>
     );
-  it("마스터즈 코스 링크가 보여진다.", async () => {
+  it("프리코스 링크가 보여진다.", async () => {
     const { getByText, getAllByRole } = renderCourseList();
-    getByText(LINK.MASTERS);
+    getByText(LINK.PRE_COURSE);
+    getByText(LINK_DESCRIPTION.PRE_COURSE);
+
+    const [preCourseLink] = getAllByRole("link");
+    expect(preCourseLink?.getAttribute("href")).toBe(INTERNAL.PRE_COURSE);
+  });
+  it("마스터즈•max 링크가 보여진다.", async () => {
+    const { getByText, getAllByRole } = renderCourseList();
+    getByText(LINK.MASTERS_MAX);
     getByText(LINK_DESCRIPTION.MASTERS);
 
-    const [mastersLink] = getAllByRole("link");
+    const [_, mastersLink] = getAllByRole("link");
     expect(mastersLink?.getAttribute("href")).toBe(INTERNAL.MASTERS);
   });
   it("코드투게더 링크가 보여진다..", async () => {
@@ -28,7 +36,7 @@ describe("<CourseList>", () => {
     getByText(LINK.CODE_TOGETHER);
     getByText(LINK_DESCRIPTION.CODE_TOGETHER);
 
-    const [_, codeTogetherLink] = getAllByRole("link");
+    const [_, __, codeTogetherLink] = getAllByRole("link");
     expect(codeTogetherLink?.getAttribute("href")).toBe(INTERNAL.CODE_TOGETHER);
   });
 });

@@ -1,10 +1,11 @@
 import React from "react";
 import { render } from "@testing-library/react";
+// Type
+import { RegistrationType } from "@type/Registration";
 // Testing-Component
 import { Registration } from ".";
 // Libs
 import { TestProvider } from "lib/testUtils";
-import { RegistrationType } from "@type/Registration";
 
 describe("<Registration>", () => {
   const registrations: RegistrationType[] = [

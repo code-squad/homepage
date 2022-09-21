@@ -3,6 +3,7 @@ const INTERNAL = {
   CODE_TOGETHER: "/code-together",
   FAQ: "/faq",
   MASTERS: "/masters",
+  PRE_COURSE: "/pre-course",
   RECRUIT: "/recruit",
   REFUND_POLICY: "/refund",
   SUBSCRIPTION: "/subscription",

@@ -73,7 +73,11 @@ describe("<Footer>", () => {
         path: INTERNAL.RECRUIT,
       },
       {
-        name: LINK.MASTERS,
+        name: LINK.PRE_COURSE,
+        path: INTERNAL.PRE_COURSE,
+      },
+      {
+        name: LINK.MASTERS_MAX,
         path: INTERNAL.MASTERS,
       },
       {

@@ -1,0 +1,104 @@
+<!-- Custom-MDX-Documentation.mdx -->
+
+### 파일 디렉토리
+
+`/content/pre-course/plan.mdx`
+
+### 예시
+
+```
+---
+templateKey: preCourse_plan
+tags:
+  - name: 색상이름1
+    color: "#FFF4B3"
+
+  - name: 색상이름2
+    color: "#B4E791"
+
+  - name: 색상이름3
+    color: "#9AD5FF"
+
+planList:
+  - name: 스케쥴 이름1
+    description: 설명1
+    color: "#B4E791"
+
+  - name: 스케쥴 이름2
+    description: 설명2
+    color: "#B4E791"
+---
+
+<table id="table">
+  <thead>
+    <tr>
+      <td></td>
+      <td>월</td>
+      <td>화</td>
+      <td>수(선택)</td>
+      <td>목</td>
+      <td>금</td>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>14:00 ~ 14:30</td>
+      <td colspan="5" class="tag1">미션과 VOD#1 공개</td>
+    </tr>
+    <tr>
+      <td>14:30 ~ 15:30</td>
+      <td rowspan="4" class="tag1">
+        <div>모각코</div>
+        <div>(미션 #1)</div>
+      </td>
+      <td rowspan="2" class="tag1">
+        피어세션
+      </td>
+      <td rowspan="4" class="tag0">
+        <div>알고리즘</div>
+        <div>문제 풀이</div>
+      </td>
+      <td rowspan="4" class="tag1">
+        <div>모각코</div>
+        <div>(미션 #2)</div>
+      </td>
+      <td class="tag1">피어세션</td>
+    </tr>
+    <tr>
+      <td>15:30 ~ 16:30</td>
+      <td class="tag2">마스터 클래스</td>
+    </tr>
+    <tr>
+      <td>16:30 ~ 17:30</td>
+      <td rowspan="2" class="tag1">개선+마무리</td>
+      <td rowspan="2" class="tag1">개선+마무리</td>
+    </tr>
+    <tr>
+      <td>17:30 ~ 18:30</td>
+    </tr>
+    <tr>
+      <td>~ 19:00</td>
+      <td colspan="5" class="tag0">미션 결과 제출</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+```
+
+### 항목별 설명
+
+- tags: 상단의 아이콘에 쓰여질 태그들에 대한 문구와 색상을 입력할 수 있습니다.
+
+  - name: 각 태그에 달릴 이름을 입력할 수 있습니다.
+  - color: 태그의 앞에 붙을 라벨의 색상을 입력할 수 있습니다.
+
+- planList: 각 일정이 어떤 내용을 나타내는지 입력할 수 있습니다.
+  - name: 일정의 이름을 입력할 수 있습니다.
+  - description: 일정에 대한 설명을 입력할 수 있습니다.
+  - color: 각 일정의 이름에 적용될 색상을 입력할 수 있습니다.
+
+밑의 HTML tag를 이용하여 표를 그릴 수 있습니다. 각 태그에 사용된 색상에 맞게 class를 추가해주면 해당 표의 색상이 수정됩니다.
+table tag를 사용하는 간단한 방법은 [해당링크](https://blog.fearcat.in/a?ID=01600-106c5142-8314-4dd2-9830-6e0586e0d3bd) 에서 보실 수 있습니다.

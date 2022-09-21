@@ -11,11 +11,11 @@ import { EXTERNAL } from "assets/static/urls";
 import { getCurrentPath } from "lib/utils";
 
 const MobileNavigationList: React.FC<{
-  links: { title: string; path: string }[];
+  links: { title: string; path: string; subLinks?: { title: string; path: string }[] }[];
   open: boolean;
-}> = ({ links, open }) => {
+  setOpen: (setOpen: boolean) => void;
+}> = ({ links, open, setOpen }) => {
   const currentPath = getCurrentPath();
-  const currentFirstPath = currentPath.split("/")[1];
 
   const linkIconList = [
     { icon: icons.medium, to: EXTERNAL.BLOG },
@@ -27,16 +27,29 @@ const MobileNavigationList: React.FC<{
   return (
     <NavigationListWrapper {...{ open }}>
       <ButtonList>
-        {links.map(({ title, path }) => (
-          <li key={title}>
-            <LinkButton
-              selected={currentPath === path || currentFirstPath === path.split("/")[1]}
-              to={path}
-            >
-              {title}
-            </LinkButton>
-          </li>
-        ))}
+        {links.map(({ title, path, subLinks }) => {
+          return (
+            <li key={title}>
+              <LinkButton selected={false} to={subLinks ? "" : path}>
+                {title}
+              </LinkButton>
+              {subLinks && (
+                <SubButtonList>
+                  {subLinks.map(({ title, path }) => (
+                    <SubLinkButton
+                      key={title}
+                      to={path}
+                      onClick={() => path === currentPath && setOpen(false)}
+                      selected={currentPath === path}
+                    >
+                      {title}
+                    </SubLinkButton>
+                  ))}
+                </SubButtonList>
+              )}
+            </li>
+          );
+        })}
       </ButtonList>
       <CompanyInfoWrapper>
         <Typography type="SBody">{MESSAGE.COPYRIGHT}</Typography>
@@ -79,7 +92,7 @@ const NavigationListWrapper = styled.div<{ open: boolean }>`
 const ButtonList = styled.ul`
   display: flex;
   flex-direction: column;
-  margin-top: 8rem;
+  margin-top: 3.2rem;
   padding: 0 2.4rem;
   & > *:not(:last-child) {
     margin-bottom: 2.4rem;
@@ -101,6 +114,29 @@ const LinkButton = styled(Link)<{ selected?: boolean }>`
   line-height: ${({ theme: { lineHeight } }) => lineHeight.bold.xl};
   letter-spacing: ${({ theme: { letterSpacing } }) => letterSpacing};
   text-decoration: ${({ selected }) => (selected ? "underline" : "none")};
+`;
+
+const SubButtonList = styled.ul`
+  display: flex;
+  flex-direction: column;
+  margin-top: 2.4rem;
+  & > *:not(:last-child) {
+    margin-bottom: 1.6rem;
+  }
+`;
+
+const SubLinkButton = styled(Link)<{ selected?: boolean }>`
+  color: ${({ theme: { color } }) => color.greyScale.grey2};
+  font-size: ${({ theme: { fontSize } }) => fontSize.bold.lg};
+  font-weight: ${({ selected, theme: { fontWeight } }) =>
+    selected ? fontWeight.medium : fontWeight.regular};
+  line-height: ${({ theme: { lineHeight } }) => lineHeight.bold.xl};
+  letter-spacing: ${({ theme: { letterSpacing } }) => letterSpacing};
+  text-decoration: ${({ selected }) => (selected ? "underline" : "none")};
+  margin-left: 3rem;
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 const CompanyInfoWrapper = styled.ul`

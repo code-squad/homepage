@@ -4,4 +4,6 @@ export interface FAQType {
   content: string;
   editDate: string;
   course: string;
+  btnText?: string;
+  btnUrl?: string;
 }

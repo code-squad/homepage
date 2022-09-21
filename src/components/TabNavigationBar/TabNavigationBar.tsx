@@ -30,7 +30,9 @@ const TabNavigationBar: React.FC<ITabNavigationBarProps> = ({ onIndexChanged, ti
               onClick={() => handleTabNavigationButtonClick(index)}
               selected={index === currentIndex}
             >
-              <Typography type="MBold">{title}</Typography>
+              <FontBorderWrapper selected={index === currentIndex}>
+                <Typography type="MBold">{title}</Typography>
+              </FontBorderWrapper>
             </TabNavButton>
           </li>
         ))}
@@ -68,15 +70,18 @@ const TabNavButtonList = styled.ul`
   }
 `;
 
-const TabNavButton = styled.button<{ selected?: boolean }>`
+const FontBorderWrapper = styled.div<{ selected?: boolean }>`
   color: ${({ selected, theme: { color } }) =>
     selected ? color.primary.green2 : color.greyScale.grey2};
-  background-color: transparent;
-  border: 0;
   border-bottom: ${({ selected, theme: { color } }) =>
     selected ? `0.2rem solid ${color.primary.green2}` : "0.2rem solid transparent"};
   transition-property: corlor, border-bottom;
   transition-duration: 0.3s;
+  height: calc(100% - 0.2rem);
+`;
+const TabNavButton = styled.button<{ selected?: boolean }>`
+  background-color: transparent;
+  border: 0;
   font-family: inherit;
   &:hover {
     cursor: pointer;
@@ -84,7 +89,7 @@ const TabNavButton = styled.button<{ selected?: boolean }>`
   @media ${({ theme }) => theme.device.mobile} {
     width: fit-content;
     height: 3.2rem;
-    margin-right: 2.4rem;
+    padding: 0 2.4rem;
   }
   @media ${({ theme }) => theme.device.tablet} {
     width: 19.3rem;
