@@ -93,7 +93,6 @@ const CurriculumList = styled.ul`
 
 const TitleWrapper = styled.div`
   display: block;
-  /* margin-bottom: 5.6rem; */
 `;
 const LinkWrapper = styled(Link)<{ medium?: boolean }>`
   text-decoration: none;
