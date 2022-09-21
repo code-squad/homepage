@@ -93,7 +93,7 @@ const CurriculumList = styled.ul`
 
 const TitleWrapper = styled.div`
   display: block;
-  margin-bottom: 5.6rem;
+  /* margin-bottom: 5.6rem; */
 `;
 const LinkWrapper = styled(Link)<{ medium?: boolean }>`
   text-decoration: none;
@@ -150,8 +150,11 @@ const SubjectDetailList = styled.ul`
 `;
 const DivideLine = styled.div`
   border-bottom: 0.1rem solid ${({ theme: { color } }) => color.greyScale.grey4};
-  margin: 5.6rem 0;
   width: 100%;
+  margin: 5.6rem 0;
+  @media ${({ theme }) => theme.device.mobile} {
+    margin: 3.2rem 0;
+  }
 `;
 
 export default Curriculum;
