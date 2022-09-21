@@ -238,6 +238,7 @@ const LinkButtonWrapper = styled.div<{ open?: boolean }>`
   transform: translate(-3.3rem, 0);
   padding: 2.4rem 1.6rem;
   transition: opacity 0.15s linear;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   & > *:not(:last-child) {
     margin-bottom: 1.6rem;
   }
