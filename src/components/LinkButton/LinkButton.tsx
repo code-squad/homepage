@@ -29,14 +29,19 @@ const LinkButton: React.FC<ILinkButton> = ({ description, title, to, icon, capti
       target={caption || external ? "_blank" : undefined}
       rel={caption || external ? "noopener noreferrer nofollow" : undefined}
     >
-      <div>
+      <div style={{ width: isMobile ? "100%" : "auto" }}>
         {description ? (
           <Description>
             <Typography type={isMobile ? "XSBold" : "SBold"}>{description}</Typography>
           </Description>
         ) : null}
         <Title>
-          <Typography type={isMobile ? "MBold" : "SHLBold"}>{title}</Typography>
+          <Typography
+            type={isMobile ? "MBold" : "SHLBold"}
+            style={{ minWidth: isMobile ? "9.288rem" : "auto" }}
+          >
+            {title}
+          </Typography>
           <img aria-label="arrow-right" src={icons.chevronRight} width="24px" height="24px" />
         </Title>
         {caption ? (
@@ -99,6 +104,10 @@ const Title = styled.div`
   display: flex;
   align-items: center;
   color: ${({ theme: { color } }) => color.black};
+  @media ${({ theme }) => theme.device.mobile} {
+    justify-content: space-between;
+    width: 100%;
+  }
 `;
 const Caption = styled.div`
   margin-top: 0.8rem;
