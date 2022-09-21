@@ -77,6 +77,7 @@ const FontBorderWrapper = styled.div<{ selected?: boolean }>`
     selected ? `0.2rem solid ${color.primary.green2}` : "0.2rem solid transparent"};
   transition-property: corlor, border-bottom;
   transition-duration: 0.3s;
+  height: calc(100% - 0.2rem);
 `;
 const TabNavButton = styled.button<{ selected?: boolean }>`
   background-color: transparent;
