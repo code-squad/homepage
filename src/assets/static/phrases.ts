@@ -127,7 +127,7 @@ const MESSAGE = {
 };
 
 const CATEGORTY_TPL: { [key: string]: string } = {
-  masters: "마스터즈 코스",
+  masters: "마스터즈",
   javascript: "코드투게더 JS 과정",
   "pre-course": "프리코스",
   etc: "기타",
