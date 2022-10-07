@@ -12,13 +12,13 @@ const GlobalHeader: React.FC<{ title: string; description: string; url: string }
     <Helmet>
       <title>{title}</title>
       <meta name="viewport" content="width=device-width initial-scale=1" />
-      <meta property="og:type" content="website" />
-      <meta name="og:image" content={seo["codesquad"]} />
-      <meta name="og:url" content={`https://codesquad.kr${url}`} />
       <meta name="title" content={title} />
       <meta name="description" content={description} />
-      <meta name="og:title" content={title} />
-      <meta name="og:description" content={description} />
+      <meta property="og:type" content="website" />
+      <meta property="og:image" content={seo["codesquad"]} />
+      <meta property="og:url" content={`https://codesquad.kr${url}`} />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
     </Helmet>
   );
 };
