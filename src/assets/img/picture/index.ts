@@ -18,6 +18,8 @@ export default {
   crong,
   honux,
   ivy,
+  silver,
+  namse,
   place1,
   place2,
   place3,
