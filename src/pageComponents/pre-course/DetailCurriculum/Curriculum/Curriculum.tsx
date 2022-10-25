@@ -13,18 +13,16 @@ import { DESCRIPTION } from "assets/static/phrases";
 const Curriculum: React.FC<{ curriculumInfo: CodeTogetherCurriculumType }> = ({
   curriculumInfo,
 }) => {
-  const { subjectList, masterInfo } = curriculumInfo;
-
-  const { name } = masterInfo;
+  const { subjectList, masterInfoList, tabName } = curriculumInfo;
 
   const descriptionLinkObj: { [key: string]: JSX.Element } = {
-    크롱: (
+    JavaScript: (
       <Typography type="MBold">
         <LinkWrapper {...{ to: "/masters" }}>{DESCRIPTION.FRONT_CURRICULUM_LINK}</LinkWrapper>
         {DESCRIPTION.SUITABLE_READY_CLASS}
       </Typography>
     ),
-    호눅스: (
+    Java: (
       <Typography type="MBold">
         <LinkWrapper {...{ to: "/masters" }}>{DESCRIPTION.BACK_CURRICULUM_LINK}</LinkWrapper>
         {DESCRIPTION.OR}
@@ -32,7 +30,7 @@ const Curriculum: React.FC<{ curriculumInfo: CodeTogetherCurriculumType }> = ({
         {DESCRIPTION.SUITABLE_READY_CLASS}
       </Typography>
     ),
-    JK: (
+    Swift: (
       <Typography type="MBold">
         <LinkWrapper {...{ to: "/masters" }}>{DESCRIPTION.IOS_CURRICULUM_LINK}</LinkWrapper>
         {DESCRIPTION.SUITABLE_READY_CLASS}
@@ -42,7 +40,7 @@ const Curriculum: React.FC<{ curriculumInfo: CodeTogetherCurriculumType }> = ({
   return (
     <CurriculumWrapper>
       <CurriculumList>
-        <TitleWrapper>{descriptionLinkObj[name]}</TitleWrapper>
+        <TitleWrapper>{descriptionLinkObj[tabName]}</TitleWrapper>
         <DivideLine />
         <SubjectList>
           {subjectList.map(({ name, details }) => (
@@ -63,7 +61,9 @@ const Curriculum: React.FC<{ curriculumInfo: CodeTogetherCurriculumType }> = ({
           ))}
         </SubjectList>
         <DivideLine />
-        <MasterInfo {...{ masterInfo }} />
+        {masterInfoList.map((masterInfo) => (
+          <MasterInfo {...{ masterInfo }} />
+        ))}
       </CurriculumList>
     </CurriculumWrapper>
   );
@@ -150,7 +150,7 @@ const SubjectDetailList = styled.ul`
 const DivideLine = styled.div`
   border-bottom: 0.1rem solid ${({ theme: { color } }) => color.greyScale.grey4};
   width: 100%;
-  margin: 5.6rem 0;
+  margin: 4.6rem 0;
   @media ${({ theme }) => theme.device.mobile} {
     margin: 3.2rem 0;
   }

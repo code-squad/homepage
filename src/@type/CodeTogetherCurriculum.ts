@@ -1,4 +1,4 @@
-import { MasterInfoType } from "./Master";
+import { MasterPictureInfoType } from "./Master";
 
 export interface CodeTogetherSubjectInfoType {
   details: string[];
@@ -8,5 +8,5 @@ export interface CodeTogetherSubjectInfoType {
 export interface CodeTogetherCurriculumType {
   tabName: string;
   subjectList: CodeTogetherSubjectInfoType[];
-  masterInfo: MasterInfoType;
+  masterInfoList: MasterPictureInfoType[];
 }
