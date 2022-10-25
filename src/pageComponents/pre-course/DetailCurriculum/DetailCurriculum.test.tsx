@@ -27,7 +27,7 @@ describe("<DetailCurriculum>", () => {
     DetailCurriculumQueryResult
   );
   const titles = curriculumInfo.map(({ tabName }) => tabName);
-  const masters = curriculumInfo.map(({ masterInfo }) => masterInfo);
+  const masters = curriculumInfo.map(({ masterInfoList }) => masterInfoList);
   const subjectList = curriculumInfo.map(({ subjectList }) => subjectList);
   it("각 탭들이 보여진다.", async () => {
     const { getByText } = renderDetailCurriculum();
@@ -43,7 +43,7 @@ describe("<DetailCurriculum>", () => {
       const tabTitle = getByText(title);
       fireEvent.click(tabTitle);
 
-      subjectList[i].forEach(({ name, details }: CodeTogetherSubjectInfoType) => {
+      subjectList[i].forEach(({ name }: CodeTogetherSubjectInfoType) => {
         getByText(name);
       });
     });
@@ -55,12 +55,23 @@ describe("<DetailCurriculum>", () => {
       const tabTitle = getByText(title);
       fireEvent.click(tabTitle);
 
-      const { name, position, introduce, nutshell } = masters[i];
+      const { name } = masters[i][0];
 
       getByText(name);
-      getByText(position);
-      getByText(introduce);
-      getByText(nutshell);
+    });
+  });
+  it("여러명의 마스터가 있다면 여러명의 정보가 보여진다.", async () => {
+    const { getByText } = renderDetailCurriculum();
+
+    titles.forEach((title, i) => {
+      const tabTitle = getByText(title);
+      fireEvent.click(tabTitle);
+
+      const { name } = masters[i][0];
+      const { name: name2 } = masters[i][1];
+
+      getByText(name);
+      getByText(name2);
     });
   });
 });
