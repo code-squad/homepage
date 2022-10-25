@@ -13,6 +13,7 @@ import mediumHonux from "./120-honux.svg";
 import mediumIvy from "./120-ivy.svg";
 import mediumJk from "./120-jk.svg";
 import profileBlank from "./profile-blank.svg";
+import jk from "./jk.png";
 
 export default {
   smallChloe,
