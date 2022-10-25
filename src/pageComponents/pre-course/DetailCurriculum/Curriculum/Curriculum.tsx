@@ -61,7 +61,9 @@ const Curriculum: React.FC<{ curriculumInfo: CodeTogetherCurriculumType }> = ({
           ))}
         </SubjectList>
         <DivideLine />
-        <MasterInfo {...{ masterInfo }} />
+        {masterInfoList.map((masterInfo) => (
+          <MasterInfo {...{ masterInfo }} />
+        ))}
       </CurriculumList>
     </CurriculumWrapper>
   );
@@ -148,7 +150,7 @@ const SubjectDetailList = styled.ul`
 const DivideLine = styled.div`
   border-bottom: 0.1rem solid ${({ theme: { color } }) => color.greyScale.grey4};
   width: 100%;
-  margin: 5.6rem 0;
+  margin: 4.6rem 0;
   @media ${({ theme }) => theme.device.mobile} {
     margin: 3.2rem 0;
   }
