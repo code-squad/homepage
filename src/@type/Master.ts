@@ -26,3 +26,11 @@ export interface MasterInfoType {
   introduce: string;
   nutshell: string;
 }
+
+export interface MasterPictureInfoType {
+  picture: keyof typeof picture;
+  name: string;
+  position: string;
+  introduce: string;
+  nutshell: string;
+}

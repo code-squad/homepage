@@ -118,8 +118,8 @@ const PreCourseCurriculumQuery = graphql`
               details
               name
             }
-            masterInfo {
-              avatar
+            masterInfoList {
+              picture
               introduce
               name
               nutshell

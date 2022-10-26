@@ -5,12 +5,12 @@ import { Typography } from "typography";
 // Components
 import { Avatar } from "components";
 // Assets
-import avatars from "assets/img/avatars";
+import pictures from "assets/img/picture";
 // Libs
 import { useResponsive } from "lib/hooks";
 
 type mastersInfo = {
-  avatar: keyof typeof avatars;
+  picture: keyof typeof pictures;
   name: string;
   position: string;
   introduce: string;
@@ -22,16 +22,16 @@ interface IMasterInfo {
 
 const MasterInfo: React.FC<IMasterInfo> = ({ masterInfo }) => {
   const { isMobile } = useResponsive();
-  const { name, position, nutshell, avatar, introduce } = masterInfo;
+  const { name, position, nutshell, picture, introduce } = masterInfo;
 
   return (
     <MasterInfoWrapper>
       <AvatarWrapper>
         <Avatar
-          key={avatars[avatar]}
+          key={pictures[picture]}
           width={isMobile ? "8rem" : "12rem"}
           height={isMobile ? "8rem" : "12rem"}
-          src={avatars[avatar]}
+          src={pictures[picture]}
         />
       </AvatarWrapper>
       <InfoWrapper>
@@ -54,6 +54,7 @@ const MasterInfo: React.FC<IMasterInfo> = ({ masterInfo }) => {
 
 const MasterInfoWrapper = styled.li`
   display: flex;
+  margin-top: 1rem;
   @media ${({ theme }) => theme.device.mobile} {
     flex-direction: column;
   }
