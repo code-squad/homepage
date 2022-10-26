@@ -3,7 +3,7 @@ import crong from "./crong.png";
 import honux from "./honux.png";
 import ivy from "./ivy.png";
 import silver from "./silver.png";
-import namse from "./namse.png";
+import masterjs from "./masterjs.png";
 import place1 from "./place1.png";
 import place2 from "./place2.png";
 import place3 from "./place3.png";
@@ -19,7 +19,7 @@ export default {
   honux,
   ivy,
   silver,
-  namse,
+  masterjs,
   place1,
   place2,
   place3,
