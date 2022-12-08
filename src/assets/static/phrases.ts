@@ -112,8 +112,8 @@ const LINK_DESCRIPTION = {
 
 const MESSAGE = {
   COPYRIGHT: "@2022 CodeSquad",
-  COMPANY_ADDRESS: "주소: 강남구 역삼동 836-24 역삼빌딩 4층",
-  ADDRESS: "강남구 역삼동 836-24 역삼빌딩 4층",
+  COMPANY_ADDRESS: "주소: 서울특별시 강남구 강남대로62길 23 4층",
+  ADDRESS: "서울특별시 강남구 강남대로62길 23 4층",
   COMPANY_CEO_NAME: "대표자: 김정",
   COMPANY_EMAIL: "대표 이메일: ",
   COMPANY_EMAIL_ADDRESS: "yoda@codesquad.kr",
