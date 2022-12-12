@@ -35,7 +35,7 @@ const Curriculum: React.FC<{ curriculumInfo: CodeTogetherCurriculumType }> = ({
         </SubjectList>
         <DivideLine />
         {masterInfoList.map((masterInfo) => (
-          <MasterInfo {...{ masterInfo }} />
+          <MasterInfo key={masterInfo.name} {...{ masterInfo }} />
         ))}
       </CurriculumList>
     </CurriculumWrapper>

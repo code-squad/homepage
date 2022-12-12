@@ -37,7 +37,7 @@ const Curriculum: React.FC<{ curriculumInfo: CurriculumType }> = ({ curriculumIn
           </li>
         ))}
         {masterInfoList.map((masterInfo) => (
-          <MasterInfo {...{ masterInfo }} />
+          <MasterInfo key={masterInfo.name} {...{ masterInfo }} />
         ))}
       </CurriculumList>
     </CurriculumWrapper>
