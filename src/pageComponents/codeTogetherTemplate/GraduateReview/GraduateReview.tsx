@@ -9,12 +9,12 @@ import { SUBTITLE, TITLE } from "assets/static/phrases";
 // Libs
 import { useResponsive } from "lib/hooks";
 
-const GraduateReview: React.FC<{ data: any }> = ({ data }) => {
+const GraduateReview: React.FC<{ graduateReviewInfo: { interviews: InterviewType[] } }> = ({
+  graduateReviewInfo,
+}) => {
   const { isMobile } = useResponsive();
 
-  const { mdx } = data;
-  const { frontmatter } = mdx;
-  const { interviews }: { interviews: InterviewType[] } = frontmatter;
+  const { interviews } = graduateReviewInfo;
 
   return (
     <div style={{ marginTop: isMobile ? "12rem" : "18rem" }}>
@@ -26,21 +26,5 @@ const GraduateReview: React.FC<{ data: any }> = ({ data }) => {
     </div>
   );
 };
-
-// const JavascriptReviewQuery = graphql`
-//   query JavascriptReviewQuery {
-//     mdx(frontmatter: { templateKey: { eq: "codeTogether_javascript_reviews" } }) {
-//       frontmatter {
-//         interviews {
-//           writerPhoto
-//           nutshell
-//           content
-//           writer
-//           writerInfo
-//         }
-//       }
-//     }
-//   }
-// `;
 
 export default GraduateReview;

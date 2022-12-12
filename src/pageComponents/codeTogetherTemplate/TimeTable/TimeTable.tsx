@@ -15,14 +15,15 @@ import { SUBTITLE, TITLE } from "assets/static/phrases";
 import { strainMdxInfoBody } from "lib/utils";
 import { useResponsive } from "lib/hooks";
 
-const TimeTable: React.FC<{data:any}> = ({ data }) => {
+const TimeTable: React.FC<{
+  timeTableInfo: { planList: PlanType[]; tags: TagType[]; body: string };
+}> = ({ timeTableInfo }) => {
   const { isMobile } = useResponsive();
   const {
     color: { greyScale },
   } = useTheme();
 
-  const { planList, tags, body }: { planList: PlanType[]; tags: TagType[]; body: string } =
-    strainMdxInfoBody(data);
+  const { planList, tags, body } = timeTableInfo;
 
   React.useEffect(() => {
     tags.forEach((tag, i: number) => {

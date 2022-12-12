@@ -10,17 +10,17 @@ import GlobalTheme from "lib/context/GlobalTheme";
 import GlobalHeader from "lib/context/GlobalHeader";
 // Components
 import { HomeGlobalNavigationBar, Footer, FAQ } from "components/";
-import { Masthead } from "pageComponents/codeTogetherTemplate";
 import {
+  Masthead,
   Registration,
   DetailCurriculum,
   TimeTable,
   GraduateReview,
-} from "pageComponents/javascript";
+} from "pageComponents/codeTogetherTemplate";
 // Assets
 import { SEO_TITLE, SEO_DESCRIPTION } from "assets/static/seo";
 import { INTERNAL } from "assets/static/urls";
-import { strainAllMdxInfo, strainFrontmatterInfo } from "lib/utils";
+import { strainAllMdxInfo, strainFrontmatterInfo, strainFrontmatterInfoBody } from "lib/utils";
 
 interface ICodeTogetherTemplateProps {
   allMdx: {
@@ -31,7 +31,9 @@ interface ICodeTogetherTemplateProps {
     };
   };
   graduateReview: {
-    frontmatter: InterviewType[];
+    frontmatter: {
+      interviews: InterviewType[];
+    };
   };
   masthead: {
     frontmatter: MastheadType;
@@ -48,10 +50,10 @@ export default ({ data }: PageProps<ICodeTogetherTemplateProps>) => {
   const { allMdx, graduateReview, masthead, registration, timeTable } = data;
 
   const mastheadInfo = strainFrontmatterInfo(masthead);
-  const registrationInfo = strainFrontmatterInfo(registration);
+  const { registrations } = strainFrontmatterInfo(registration);
   const curriculumInfo = strainAllMdxInfo({ allMdx: allMdx });
+  const timeTableInfo = strainFrontmatterInfoBody(timeTable);
   const graduateReviewInfo = strainFrontmatterInfo(graduateReview);
-  const timeTableInfo = strainFrontmatterInfo(timeTable);
 
   return (
     <GlobalTheme>
@@ -63,10 +65,10 @@ export default ({ data }: PageProps<ICodeTogetherTemplateProps>) => {
       <main style={{ overflowX: "hidden" }}>
         <HomeGlobalNavigationBar />
         <Masthead {...{ mastheadInfo }} />
-        <Registration />
-        <DetailCurriculum />
-        <TimeTable />
-        <GraduateReview />
+        <Registration {...{ registrations }} />
+        <DetailCurriculum {...{ curriculumInfo }} />
+        <TimeTable {...{ timeTableInfo }} />
+        <GraduateReview {...{ graduateReviewInfo }} />
         <FAQ course="javascript" />
         <Footer />
       </main>
