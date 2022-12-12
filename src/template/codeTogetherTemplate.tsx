@@ -43,22 +43,16 @@ interface ICodeTogetherTemplateProps {
     frontmatter: { planList: PlanType[]; tags: TagType[]; body: string };
   };
 }
+
 export default ({ data }: PageProps<ICodeTogetherTemplateProps>) => {
-  console.log(data);
   const { allMdx, graduateReview, masthead, registration, timeTable } = data;
 
-  console.log(allMdx);
-  console.log(graduateReview);
-  console.log(masthead);
-  console.log(registration);
-  console.log(timeTable);
   const mastheadInfo = strainFrontmatterInfo(masthead);
+  const registrationInfo = strainFrontmatterInfo(registration);
   const curriculumInfo = strainAllMdxInfo({ allMdx: allMdx });
   const graduateReviewInfo = strainFrontmatterInfo(graduateReview);
-  const registrationInfo = strainFrontmatterInfo(registration);
   const timeTableInfo = strainFrontmatterInfo(timeTable);
 
-  console.log(mastheadInfo);
   return (
     <GlobalTheme>
       <GlobalHeader
