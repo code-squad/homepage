@@ -107,8 +107,8 @@ const CurriculumQuery = graphql`
                 name
               }
             }
-            masterInfo {
-              avatar
+            masterInfoList {
+              picture
               introduce
               name
               nutshell
