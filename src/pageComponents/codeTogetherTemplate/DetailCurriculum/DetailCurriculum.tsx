@@ -8,13 +8,10 @@ import { TitleSet, TabNavigationBar } from "components";
 import { Curriculum } from "./Curriculum";
 // Assets
 import { SUBTITLE, TITLE } from "assets/static/phrases";
-// Utils
-import { strainAllMdxInfo } from "lib/utils";
 
-const DetailCurriculum: React.FC = () => {
-  const curriculumInfo: CodeTogetherCurriculumType[] = strainAllMdxInfo(
-    useStaticQuery(JavascriptCurriculumQuery)
-  );
+const DetailCurriculum: React.FC<{ curriculumInfo: CodeTogetherCurriculumType[] }> = ({
+  curriculumInfo,
+}) => {
   const titles = curriculumInfo.map(({ tabName }) => tabName);
 
   const [curriculumIndex, setCurriculumIndex] = React.useState(0);
@@ -103,35 +100,6 @@ const CurriculumWrapper = styled.div`
   }
   @media ${({ theme }) => theme.device.desktop} {
     min-width: 144rem;
-  }
-`;
-
-const JavascriptCurriculumQuery = graphql`
-  query JavascriptCurriculumQuery {
-    allMdx(
-      sort: { order: ASC, fields: [frontmatter___index] }
-      filter: { frontmatter: { templateKey: { glob: "codeTogether_javascript_part*" } } }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            tabName
-            index
-            subjectList {
-              details
-              name
-            }
-            masterInfoList {
-              picture
-              introduce
-              name
-              nutshell
-              position
-            }
-          }
-        }
-      }
-    }
   }
 `;
 

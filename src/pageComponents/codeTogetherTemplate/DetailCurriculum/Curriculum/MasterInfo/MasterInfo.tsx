@@ -5,23 +5,33 @@ import { Typography } from "typography";
 // Components
 import { Avatar } from "components";
 // Assets
-import pictures from "assets/img/picture";
+import avatars from "assets/img/avatars";
 // Libs
 import { useResponsive } from "lib/hooks";
-import { MasterInfoType } from "@type/Master";
 
-const MasterInfo: React.FC<{ masterInfo: MasterInfoType }> = ({ masterInfo }) => {
+type mastersInfo = {
+  avatar: keyof typeof avatars;
+  name: string;
+  position: string;
+  introduce: string;
+  nutshell: string;
+};
+interface IMasterInfo {
+  masterInfo: mastersInfo;
+}
+
+const MasterInfo: React.FC<IMasterInfo> = ({ masterInfo }) => {
   const { isMobile } = useResponsive();
-  const { name, position, nutshell, picture, introduce } = masterInfo;
+  const { name, position, nutshell, avatar, introduce } = masterInfo;
 
   return (
     <MasterInfoWrapper>
       <AvatarWrapper>
         <Avatar
-          key={pictures[picture]}
+          key={avatars[avatar]}
           width={isMobile ? "8rem" : "12rem"}
           height={isMobile ? "8rem" : "12rem"}
-          src={pictures[picture]}
+          src={avatars[avatar]}
         />
       </AvatarWrapper>
       <InfoWrapper>
