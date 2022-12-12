@@ -1,12 +1,17 @@
 import React from "react";
 import { graphql, PageProps } from "gatsby";
+import { type InterviewType } from "@type/Interview";
+import { type MastheadType } from "@type/Masthead";
+import { type RegistrationType } from "@type/Registration";
+import type { PlanType, TagType } from "@type/TimeTable";
+import { type CodeTogetherCurriculumType } from "@type/CodeTogetherCurriculum";
 // Theme
 import GlobalTheme from "lib/context/GlobalTheme";
 import GlobalHeader from "lib/context/GlobalHeader";
 // Components
 import { HomeGlobalNavigationBar, Footer, FAQ } from "components/";
+import { Masthead } from "pageComponents/codeTogetherTemplate";
 import {
-  Masthead,
   Registration,
   DetailCurriculum,
   TimeTable,
@@ -15,10 +20,45 @@ import {
 // Assets
 import { SEO_TITLE, SEO_DESCRIPTION } from "assets/static/seo";
 import { INTERNAL } from "assets/static/urls";
+import { strainAllMdxInfo, strainFrontmatterInfo } from "lib/utils";
 
-export default ({ data }: PageProps) => {
+interface ICodeTogetherTemplateProps {
+  allMdx: {
+    edges: {
+      node: {
+        frontmatter: CodeTogetherCurriculumType[];
+      };
+    };
+  };
+  graduateReview: {
+    frontmatter: InterviewType[];
+  };
+  masthead: {
+    frontmatter: MastheadType;
+  };
+  registration: {
+    frontmatter: RegistrationType;
+  };
+  timeTable: {
+    frontmatter: { planList: PlanType[]; tags: TagType[]; body: string };
+  };
+}
+export default ({ data }: PageProps<ICodeTogetherTemplateProps>) => {
   console.log(data);
+  const { allMdx, graduateReview, masthead, registration, timeTable } = data;
 
+  console.log(allMdx);
+  console.log(graduateReview);
+  console.log(masthead);
+  console.log(registration);
+  console.log(timeTable);
+  const mastheadInfo = strainFrontmatterInfo(masthead);
+  const curriculumInfo = strainAllMdxInfo({ allMdx: allMdx });
+  const graduateReviewInfo = strainFrontmatterInfo(graduateReview);
+  const registrationInfo = strainFrontmatterInfo(registration);
+  const timeTableInfo = strainFrontmatterInfo(timeTable);
+
+  console.log(mastheadInfo);
   return (
     <GlobalTheme>
       <GlobalHeader
@@ -28,7 +68,7 @@ export default ({ data }: PageProps) => {
       />
       <main style={{ overflowX: "hidden" }}>
         <HomeGlobalNavigationBar />
-        <Masthead />
+        <Masthead {...{ mastheadInfo }} />
         <Registration />
         <DetailCurriculum />
         <TimeTable />
@@ -72,7 +112,7 @@ export const codeTogetherQuery = graphql`
         }
       }
     }
-    graduateReveiw: mdx(frontmatter: { templateKey: { eq: $graduateReview } }) {
+    graduateReview: mdx(frontmatter: { templateKey: { eq: $graduateReview } }) {
       frontmatter {
         interviews {
           writerPhoto
