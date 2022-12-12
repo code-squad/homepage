@@ -38,7 +38,7 @@ const createPages: GatsbyNode["createPages"] = async ({ graphql, actions }) => {
       component: codeTogetherTemplate,
       context: {
         masthead: `codeTogether_${courseName}_masthead`,
-        registration: `codeTogether_${courseName}_plan`,
+        registration: `codeTogether_${courseName}_registrations`,
         deatilCurriculum: `codeTogether_${courseName}_part*`,
         timetable: `codeTogether_${courseName}_plan`,
         graduateReview: `codeTogether_${courseName}_reviews`,
