@@ -4,28 +4,11 @@ import { graphql, useStaticQuery } from "gatsby";
 import { RegistrationType } from "@type/Registration";
 // Components
 import { Registration } from "components";
-// Libs
-import { strainMdxInfo } from "lib/utils";
 
-const JavascriptRegistration: React.FC<{ data: any }> = ({ data }) => {
-  const { registrations }: { registrations: RegistrationType[] } = strainMdxInfo(data);
-
+const CodeTogetherRegistration: React.FC<{ registrations: RegistrationType[] }> = ({
+  registrations,
+}) => {
   return <Registration {...{ registrations }} />;
 };
 
-// const JavascriptRegistrationQuery = graphql`
-//   query JavascriptRegistrationQuery {
-//     mdx(frontmatter: { templateKey: { eq: "codeTogether_javascript_registrations" } }) {
-//       frontmatter {
-//         registrations {
-//           title
-//           description
-//           caption
-//           path
-//         }
-//       }
-//     }
-//   }
-// `;
-
-export default JavascriptRegistration;
+export default CodeTogetherRegistration;
