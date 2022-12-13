@@ -15,11 +15,6 @@ export default {
   },
 } as ComponentMeta<typeof DetailCurriculum>;
 
-export interface CodeTogetherSubjectInfoType {
-  details: string[];
-  name: string;
-}
-
 const Template: ComponentStory<typeof DetailCurriculum> = (args) => <DetailCurriculum {...args} />;
 
 export const Default = Template.bind({});
