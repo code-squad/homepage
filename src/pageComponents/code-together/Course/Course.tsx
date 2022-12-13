@@ -5,7 +5,6 @@ import { graphql, useStaticQuery } from "gatsby";
 import { CourseType } from "@type/Course";
 // Components
 import { MButton, TitleSet, CourseCard } from "components";
-// import { CourseCard } from "./CourseCard";
 // Assets
 import thumbnail from "assets/img/illusts/thumbnail";
 import { SUBTITLE, TITLE } from "assets/static/phrases";
