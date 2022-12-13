@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
 // Type
-import { CodeTogetherCurriculumType } from "@type/CodeTogetherCurriculum";
+import { type CodeTogetherCurriculumType } from "@type/CodeTogetherCurriculum";
 // Components
 import { TitleSet, TabNavigationBar } from "components";
 import { Curriculum } from "./Curriculum";

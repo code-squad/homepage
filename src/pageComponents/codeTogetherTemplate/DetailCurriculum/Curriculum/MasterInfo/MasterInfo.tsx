@@ -26,7 +26,7 @@ const MasterInfo: React.FC<{ masterInfo: MasterInfoType }> = ({ masterInfo }) =>
       </AvatarWrapper>
       <InfoWrapper>
         <NameWrapper>
-          <Typography type={isMobile ? "SHLBold" : "HLBold"}>{name}</Typography>
+          <Typography type="HLBold">{name}</Typography>
           <PositionWrapper>
             <Typography type="SBody">{position}</Typography>
           </PositionWrapper>
@@ -82,11 +82,9 @@ const NameWrapper = styled.div`
     justify-content: center;
   }
   @media ${({ theme }) => theme.device.tablet} {
-    height: auto;
     align-items: flex-end;
   }
   @media ${({ theme }) => theme.device.desktop} {
-    height: auto;
     align-items: flex-end;
   }
 `;

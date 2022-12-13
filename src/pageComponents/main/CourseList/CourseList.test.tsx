@@ -23,20 +23,12 @@ describe("<CourseList>", () => {
     const [preCourseLink] = getAllByRole("link");
     expect(preCourseLink?.getAttribute("href")).toBe(INTERNAL.PRE_COURSE);
   });
-  it("마스터즈•max 링크가 보여진다.", async () => {
-    const { getByText, getAllByRole } = renderCourseList();
-    getByText(LINK.MASTERS_MAX);
-    getByText(LINK_DESCRIPTION.MASTERS);
-
-    const [_, mastersLink] = getAllByRole("link");
-    expect(mastersLink?.getAttribute("href")).toBe(INTERNAL.MASTERS);
-  });
-  it("코드투게더 링크가 보여진다..", async () => {
+  it("코드투게더 링크가 보여진다.", async () => {
     const { getByText, getAllByRole } = renderCourseList();
     getByText(LINK.CODE_TOGETHER);
     getByText(LINK_DESCRIPTION.CODE_TOGETHER);
 
-    const [_, __, codeTogetherLink] = getAllByRole("link");
+    const [_, codeTogetherLink] = getAllByRole("link");
     expect(codeTogetherLink?.getAttribute("href")).toBe(INTERNAL.CODE_TOGETHER);
   });
 });

@@ -11,7 +11,7 @@ import { useResponsive } from "lib/hooks";
 
 const Curriculum: React.FC<{ curriculumInfo: CurriculumType }> = ({ curriculumInfo }) => {
   const { isMobile } = useResponsive();
-  const { curriculum, masterInfo } = curriculumInfo;
+  const { curriculum, masterInfoList } = curriculumInfo;
 
   return (
     <CurriculumWrapper>
@@ -36,7 +36,9 @@ const Curriculum: React.FC<{ curriculumInfo: CurriculumType }> = ({ curriculumIn
             <DivideLine />
           </li>
         ))}
-        <MasterInfo {...{ masterInfo }} />
+        {masterInfoList.map((masterInfo) => (
+          <MasterInfo key={masterInfo.name} {...{ masterInfo }} />
+        ))}
       </CurriculumList>
     </CurriculumWrapper>
   );

@@ -1,18 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-import { graphql, useStaticQuery } from "gatsby";
 // Type
-import { CurriculumType } from "@type/Curriculum";
+import { CodeTogetherCurriculumType } from "@type/CodeTogetherCurriculum";
 // Components
 import { TitleSet, TabNavigationBar } from "components";
 import { Curriculum } from "./Curriculum";
 // Assets
 import { SUBTITLE, TITLE } from "assets/static/phrases";
-// Utils
-import { strainAllMdxInfo } from "lib/utils";
 
-const DetailCurriculum: React.FC = () => {
-  const curriculumInfo: CurriculumType[] = strainAllMdxInfo(useStaticQuery(CurriculumQuery));
+const DetailCurriculum: React.FC<{ curriculumInfo: CodeTogetherCurriculumType[] }> = ({
+  curriculumInfo,
+}) => {
   const titles = curriculumInfo.map(({ tabName }) => tabName);
 
   const [curriculumIndex, setCurriculumIndex] = React.useState(0);
@@ -20,7 +18,10 @@ const DetailCurriculum: React.FC = () => {
   return (
     <DetailCurriculumWrapper>
       <TitleSetWrapper>
-        <TitleSet subtitle={SUBTITLE.MASTERS_COURSE} title={TITLE.MASTERS_DETAIL_CURRICULUM} />
+        <TitleSet
+          subtitle={SUBTITLE.JAVASCRIPT_COURSE}
+          title={TITLE.JAVASCRIPT_DETAIL_CURRICULUM}
+        />
       </TitleSetWrapper>
       <TabNavigationBarWrapper>
         <TabNavigationBar {...{ titles }} onIndexChanged={setCurriculumIndex} />
@@ -37,7 +38,7 @@ const DetailCurriculumWrapper = styled.div`
   display: flex;
   flex-direction: column;
   @media ${({ theme }) => theme.device.mobile} {
-    margin-top: 12rem;
+    margin-top: 9.7rem;
   }
   @media ${({ theme }) => theme.device.tablet} {
     margin-top: 18rem;
@@ -66,10 +67,18 @@ const TabNavigationBarWrapper = styled.div`
   @media ${({ theme }) => theme.device.mobile} {
     padding-top: 2.4rem;
     padding-left: 2.4rem;
+    overflow-x: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
   @media ${({ theme }) => theme.device.tablet} {
     margin-top: 5.2rem;
     padding-left: 8.2rem;
+    overflow-x: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
   @media ${({ theme }) => theme.device.desktop} {
     margin: 0 auto;
@@ -84,40 +93,12 @@ const CurriculumWrapper = styled.div`
   display: flex;
   justify-content: center;
   background-color: ${({ theme: { color } }) => color.surface.offWhite1};
+  @media ${({ theme }) => theme.device.mobile} {
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+  }
   @media ${({ theme }) => theme.device.desktop} {
     min-width: 144rem;
-  }
-`;
-
-const CurriculumQuery = graphql`
-  query CurriculumQuery {
-    allMdx(
-      sort: { order: ASC, fields: [frontmatter___index] }
-      filter: { frontmatter: { templateKey: { glob: "masters_curriculum*" } } }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            tabName
-            index
-            curriculum {
-              subject
-              subjectList {
-                detail
-                name
-              }
-            }
-            masterInfoList {
-              picture
-              introduce
-              name
-              nutshell
-              position
-            }
-          }
-        }
-      }
-    }
   }
 `;
 

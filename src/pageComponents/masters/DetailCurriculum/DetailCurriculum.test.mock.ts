@@ -66,13 +66,15 @@ export const DetailCurriculumQueryResult = {
                 ],
               },
             ],
-            masterInfo: {
-              avatar: "crong",
-              introduce: "바닐라JS를 좋아하고, UX향상에 도움이 되는 개발 방법에 관심이 많아요",
-              name: "크롱",
-              nutshell: '"바닐라JS에서 프레임웍까지 프론트엔드 최고의 커리큘럼으로 배우세요"',
-              position: "Crong, 웹 프론트엔드 마스터",
-            },
+            masterInfoList: [
+              {
+                picture: "crong",
+                introduce: "바닐라JS를 좋아하고, UX향상에 도움이 되는 개발 방법에 관심이 많아요",
+                name: "크롱",
+                nutshell: '"바닐라JS에서 프레임웍까지 프론트엔드 최고의 커리큘럼으로 배우세요"',
+                position: "Crong, 웹 프론트엔드 마스터",
+              },
+            ],
           },
         },
       },
@@ -125,14 +127,16 @@ export const DetailCurriculumQueryResult = {
                 ],
               },
             ],
-            masterInfo: {
-              avatar: "honux",
-              introduce:
-                "자바, 스프링, 데이터베이스,HTTP, 클라우드도 배우지만 함께 배우고, 함께 자라는 법도 익힙니다.",
-              name: "호눅스",
-              nutshell: '"서버 인프라 뿐만 아니라 사람과도 협업을 하며 성장하는 방법을 배웁니다"',
-              position: "Honux, 웹 백엔드 마스터",
-            },
+            masterInfoList: [
+              {
+                picture: "honux",
+                introduce:
+                  "자바, 스프링, 데이터베이스,HTTP, 클라우드도 배우지만 함께 배우고, 함께 자라는 법도 익힙니다.",
+                name: "호눅스",
+                nutshell: '"서버 인프라 뿐만 아니라 사람과도 협업을 하며 성장하는 방법을 배웁니다"',
+                position: "Honux, 웹 백엔드 마스터",
+              },
+            ],
           },
         },
       },
@@ -189,13 +193,15 @@ export const DetailCurriculumQueryResult = {
                 ],
               },
             ],
-            masterInfo: {
-              avatar: "jk",
-              introduce: "매력적인 애플 플랫폼에서 함께 성장할 개발자를 기다립니다.",
-              name: "JK",
-              nutshell: "“나와 지인들에게 필요한 iOS 앱을 직접 만들고 출시까지 도전해보세요”",
-              position: "모바일 iOS 마스터",
-            },
+            masterInfoList: [
+              {
+                picture: "jk",
+                introduce: "매력적인 애플 플랫폼에서 함께 성장할 개발자를 기다립니다.",
+                name: "JK",
+                nutshell: "“나와 지인들에게 필요한 iOS 앱을 직접 만들고 출시까지 도전해보세요”",
+                position: "모바일 iOS 마스터",
+              },
+            ],
           },
         },
       },

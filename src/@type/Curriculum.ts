@@ -4,5 +4,5 @@ import { SubjectType } from "./Subject";
 export interface CurriculumType {
   tabName: string;
   curriculum: SubjectType[];
-  masterInfo: MasterInfoType;
+  masterInfoList: MasterInfoType[];
 }

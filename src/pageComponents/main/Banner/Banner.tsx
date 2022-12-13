@@ -20,6 +20,11 @@ const Banner: React.FC<IBannerProps> = ({ setBannerStatus }) => {
     setBannerStatus(false);
   };
 
+  React.useEffect(() => {
+    // 배너가 필요한 경우 제거
+    setBannerStatus(false);
+  }, []);
+
   return (
     <BannerWrapper>
       <BannerPopup {...{ title, description, to, onCloseButtonClicked: closeHandler }} />
