@@ -1,6 +1,5 @@
 import React from "react";
 import styled, { useTheme } from "styled-components";
-import { graphql, useStaticQuery } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import "./TimeTable.css";
 // Type
@@ -12,7 +11,6 @@ import { TitleSet } from "components";
 // Assets
 import { SUBTITLE, TITLE } from "assets/static/phrases";
 // Utils
-import { strainMdxInfoBody } from "lib/utils";
 import { useResponsive } from "lib/hooks";
 
 const TimeTable: React.FC<{

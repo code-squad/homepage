@@ -1,5 +1,4 @@
 import React from "react";
-import { graphql, useStaticQuery } from "gatsby";
 // Type
 import { InterviewType } from "@type/Interview";
 // Components
