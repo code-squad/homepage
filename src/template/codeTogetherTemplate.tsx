@@ -18,8 +18,6 @@ import {
   GraduateReview,
 } from "pageComponents/codeTogetherTemplate";
 // Assets
-import { SEO_TITLE, SEO_DESCRIPTION } from "assets/static/seo";
-import { INTERNAL } from "assets/static/urls";
 import { strainAllMdxInfo, strainFrontmatterInfo, strainFrontmatterInfoBody } from "lib/utils";
 
 interface ICodeTogetherTemplateProps {
@@ -46,7 +44,7 @@ interface ICodeTogetherTemplateProps {
   };
 }
 
-export default ({ data }: PageProps<ICodeTogetherTemplateProps>) => {
+export default ({ data, path }: PageProps<ICodeTogetherTemplateProps>) => {
   const { allMdx, graduateReview, masthead, registration, timeTable } = data;
 
   const mastheadInfo = strainFrontmatterInfo(masthead);
@@ -57,11 +55,7 @@ export default ({ data }: PageProps<ICodeTogetherTemplateProps>) => {
 
   return (
     <GlobalTheme>
-      <GlobalHeader
-        title={SEO_TITLE.JAVASCRIPT}
-        description={SEO_DESCRIPTION.JAVASCRIPT}
-        url={INTERNAL.JAVASCRIPT}
-      />
+      <GlobalHeader title={mastheadInfo.title} description={mastheadInfo.description} url={path} />
       <main style={{ overflowX: "hidden" }}>
         <HomeGlobalNavigationBar />
         <Masthead {...{ mastheadInfo }} />

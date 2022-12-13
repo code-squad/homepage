@@ -8,7 +8,6 @@ const INTERNAL = {
   REFUND_POLICY: "/refund",
   SUBSCRIPTION: "/subscription",
   TEAM_CULTURE: "/team-culture",
-  JAVASCRIPT: "/code-together/javascript",
   NOT_FOUND: "/404",
 };
 
