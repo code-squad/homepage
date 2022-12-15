@@ -8,9 +8,10 @@ import { Curriculum } from "./Curriculum";
 // Assets
 import { SUBTITLE, TITLE } from "assets/static/phrases";
 
-const DetailCurriculum: React.FC<{ curriculumInfo: CodeTogetherCurriculumType[] }> = ({
-  curriculumInfo,
-}) => {
+const DetailCurriculum: React.FC<{
+  curriculumInfo: CodeTogetherCurriculumType[];
+  courseTitle: string;
+}> = ({ curriculumInfo, courseTitle }) => {
   const titles = curriculumInfo.map(({ tabName }) => tabName);
 
   const [curriculumIndex, setCurriculumIndex] = React.useState(0);
@@ -19,8 +20,8 @@ const DetailCurriculum: React.FC<{ curriculumInfo: CodeTogetherCurriculumType[] 
     <DetailCurriculumWrapper>
       <TitleSetWrapper>
         <TitleSet
-          subtitle={SUBTITLE.JAVASCRIPT_COURSE}
-          title={TITLE.JAVASCRIPT_DETAIL_CURRICULUM}
+          subtitle={`${courseTitle}${SUBTITLE.CURRICULUMS}`}
+          title={TITLE.CODE_TOGETHER_DETAIL_CURRICULUM}
         />
       </TitleSetWrapper>
       <TabNavigationBarWrapper>

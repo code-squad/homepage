@@ -53,6 +53,8 @@ export default ({ data, path }: PageProps<ICodeTogetherTemplateProps>) => {
   const timeTableInfo = strainFrontmatterInfoBody(timeTable);
   const graduateReviewInfo = strainFrontmatterInfo(graduateReview);
 
+  const courseTitle = mastheadInfo.title;
+
   return (
     <GlobalTheme>
       <GlobalHeader title={mastheadInfo.title} description={mastheadInfo.description} url={path} />
@@ -60,9 +62,9 @@ export default ({ data, path }: PageProps<ICodeTogetherTemplateProps>) => {
         <HomeGlobalNavigationBar />
         <Masthead {...{ mastheadInfo }} />
         <Registration {...{ registrations }} />
-        <DetailCurriculum {...{ curriculumInfo }} />
+        <DetailCurriculum {...{ curriculumInfo, courseTitle }} />
         <TimeTable {...{ timeTableInfo }} />
-        <GraduateReview {...{ graduateReviewInfo }} />
+        <GraduateReview {...{ graduateReviewInfo, courseTitle }} />
         <FAQ course="javascript" />
         <Footer />
       </main>
