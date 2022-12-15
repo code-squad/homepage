@@ -54,6 +54,7 @@ export default ({ data, path }: PageProps<ICodeTogetherTemplateProps>) => {
   const graduateReviewInfo = strainFrontmatterInfo(graduateReview);
 
   const courseTitle = mastheadInfo.title;
+  const currentCourse = path.split("/").pop() as "clean-frontend" | "javascript";
 
   return (
     <GlobalTheme>
@@ -65,7 +66,7 @@ export default ({ data, path }: PageProps<ICodeTogetherTemplateProps>) => {
         <DetailCurriculum {...{ curriculumInfo, courseTitle }} />
         <TimeTable {...{ timeTableInfo }} />
         <GraduateReview {...{ graduateReviewInfo, courseTitle }} />
-        <FAQ course="javascript" />
+        <FAQ course={currentCourse} />
         <Footer />
       </main>
     </GlobalTheme>
