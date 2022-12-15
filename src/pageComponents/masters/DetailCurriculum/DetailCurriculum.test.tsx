@@ -50,13 +50,13 @@ describe("<DetailCurriculum>", () => {
     const { getByText } = renderDetailCurriculum();
     const curriculumInfo: CurriculumType[] = strainAllMdxInfo(DetailCurriculumQueryResult);
     const titles = curriculumInfo.map(({ tabName }) => tabName);
-    const masters = curriculumInfo.map(({ masterInfo }) => masterInfo);
+    const masters = curriculumInfo.map(({ masterInfoList }) => masterInfoList);
 
     titles.forEach((title, i) => {
       const tabTitle = getByText(title);
       fireEvent.click(tabTitle);
 
-      const { name, position, introduce, nutshell } = masters[i];
+      const { name, position, introduce, nutshell } = masters[i][0];
 
       getByText(name);
       getByText(position);

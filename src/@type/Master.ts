@@ -1,4 +1,3 @@
-import avatars from "assets/img/avatars";
 import thumbnails from "assets/img/illusts/thumbnail";
 import picture from "assets/img/picture";
 
@@ -20,14 +19,6 @@ export interface MasterType {
 }
 
 export interface MasterInfoType {
-  avatar: keyof typeof avatars;
-  name: string;
-  position: string;
-  introduce: string;
-  nutshell: string;
-}
-
-export interface MasterPictureInfoType {
   picture: keyof typeof picture;
   name: string;
   position: string;

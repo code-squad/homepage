@@ -11,7 +11,7 @@ import { SUBTITLE, TITLE } from "assets/static/phrases";
 import { strainMdxInfo } from "lib/utils";
 
 type IFaq = {
-  course?: "masters" | "javascript" | "pre-course";
+  course?: "masters" | "javascript" | "pre-course" | "clean-frontend";
 };
 
 const FAQ: React.FC<IFaq> = ({ course }) => {

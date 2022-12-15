@@ -20,7 +20,7 @@ const PreCoursePage: React.FC = () => {
       <main style={{ overflowX: "hidden" }}>
         <HomeGlobalNavigationBar />
         <Masthead />
-        <Registration />
+        {/* <Registration /> */}
         <DetailCurriculum />
         <TimeTable />
         <FAQ course="pre-course" />
