@@ -84,6 +84,7 @@ const SubjectItem = styled.li`
 `;
 const SubjectTitle = styled.h6`
   color: ${({ theme: { color } }) => color.black};
+  white-space: pre-line;
   @media ${({ theme }) => theme.device.mobile} {
     width: 100%;
   }

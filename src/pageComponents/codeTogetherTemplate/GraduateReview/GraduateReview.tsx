@@ -8,9 +8,10 @@ import { SUBTITLE, TITLE } from "assets/static/phrases";
 // Libs
 import { useResponsive } from "lib/hooks";
 
-const GraduateReview: React.FC<{ graduateReviewInfo: { interviews: InterviewType[] } }> = ({
-  graduateReviewInfo,
-}) => {
+const GraduateReview: React.FC<{
+  graduateReviewInfo: { interviews: InterviewType[] };
+  courseTitle: string;
+}> = ({ graduateReviewInfo, courseTitle }) => {
   const { isMobile } = useResponsive();
 
   const { interviews } = graduateReviewInfo;
@@ -18,7 +19,7 @@ const GraduateReview: React.FC<{ graduateReviewInfo: { interviews: InterviewType
   return (
     <div style={{ marginTop: isMobile ? "12rem" : "18rem" }}>
       <Interview
-        subtitle={SUBTITLE.JAVASCRIPT}
+        subtitle={`${courseTitle}${SUBTITLE.CODE_TOGETHER_INTERVIEW}`}
         title={TITLE.STUDENT_INTERVIEW}
         {...{ interviews }}
       />
