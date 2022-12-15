@@ -1,4 +1,5 @@
 const SUBTITLE = {
+  CURRICULUMS: " 과정의",
   CODESQUAD_IN_MEDIA: "언론 보도 및 매체",
   CULTURE: "코드스쿼드의 가치가 녹아있는",
   FEATURE: "코드스쿼드는",
@@ -14,8 +15,7 @@ const SUBTITLE = {
   WELFARE: "코드스쿼드 복지",
   CODE_TOGETHER: "코드투게더는",
   CODE_TOGETHER_COURSE: "코드투게더의",
-  JAVASCRIPT: "자바스크립트 과정을 경험한",
-  JAVASCRIPT_COURSE: "자바스크립트 과정의",
+  CODE_TOGETHER_INTERVIEW: " 과정을 경험한",
   PRE_COURSE: "프리 코스의",
   PRE_COURSE_TIME_TABLE: "우리는 과정중에",
   WE: "우리는",
@@ -29,6 +29,7 @@ const TITLE = {
   MASTER: "분야별 전문 마스터",
   GRADUATE_INTERVIEW: "졸업생 후기",
   EDUCATION_FEATURES: "교육 특징",
+  CODE_TOGETHER_DETAIL_CURRICULUM: "상세 커리큘럼",
   MASTERS_DETAIL_CURRICULUM: "각 클래스 별 상세 커리큘럼",
   JAVASCRIPT_DETAIL_CURRICULUM: "각 파트 별 상세 커리큘럼",
   PRE_COURSE_DETAIL_CURRICULUM: "각 클래스별 상세 커리큘럼",
