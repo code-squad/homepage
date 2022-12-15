@@ -99,6 +99,7 @@ const PositionWrapper = styled.div`
 `;
 const NutshellWrapper = styled.div`
   color: ${({ theme: { color } }) => color.black};
+  white-space: pre-line;
   @media ${({ theme }) => theme.device.mobile} {
     margin-top: 2.4rem;
   }
