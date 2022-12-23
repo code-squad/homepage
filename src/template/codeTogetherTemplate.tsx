@@ -44,7 +44,8 @@ interface ICodeTogetherTemplateProps {
   };
 }
 
-export default ({ data, path }: PageProps<ICodeTogetherTemplateProps>) => {
+export default ({ data, location }: PageProps<ICodeTogetherTemplateProps>) => {
+  const { pathname: path } = location;
   const { allMdx, graduateReview, masthead, registration, timeTable } = data;
 
   const mastheadInfo = strainFrontmatterInfo(masthead);
