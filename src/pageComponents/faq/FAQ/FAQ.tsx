@@ -17,7 +17,10 @@ import { useResponsive } from "lib/hooks";
 const FAQ: React.FC = () => {
   const { lists }: { lists: FAQType[] } = strainMdxInfo(useStaticQuery(FAQQuery));
   const categories = new Set<string>([]);
-  lists.forEach(({ course }) => categories.add(course || "etc"));
+  lists.forEach(({ course }) => {
+    if (course) categories.add(course || "etc");
+  });
+  categories.add("etc");
 
   const { isDesktop, isMobile } = useResponsive();
 
