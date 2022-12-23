@@ -133,6 +133,7 @@ const CATEGORTY_TPL: { [key: string]: string } = {
   "pre-course": "프리코스",
   etc: "기타",
   "clean-frontend": "클린 프론트엔드",
+  "clean-swift": "클린 스위프트",
 };
 
 export { DESCRIPTION, LINK_DESCRIPTION, LINK, MESSAGE, SUBTITLE, TITLE, CATEGORTY_TPL };
