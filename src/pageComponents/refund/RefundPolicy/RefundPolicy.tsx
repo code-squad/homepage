@@ -51,6 +51,12 @@ const RefundPolicy: React.FC = () => {
             </tbody>
           </RefundPolicyTable>
         </RefundPolicyTableWrapper>
+        <Typography
+          type="MBody"
+          style={{ width: "fit-content", paddingTop: "3rem", paddingBottom: "3rem" }}
+        >
+          {DESCRIPTION.REFUND_POLICY_INFO}
+        </Typography>
         <Typography type="MBody" style={{ width: "fit-content", paddingBottom: "0.4rem" }}>
           {DESCRIPTION.REFUND}
         </Typography>
