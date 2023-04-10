@@ -67,6 +67,11 @@ const Footer: React.FC = () => {
                 {MESSAGE.COMPANY_EMAIL_ADDRESS}
               </ExternalLink>
             </div>
+            <div>
+              <Typography type={isDesktop ? "XSBody" : "SBody"} as="span">
+                {MESSAGE.FOOTER_COPYRIGHT}
+              </Typography>
+            </div>
           </div>
           <InternalLink $bold to={INTERNAL.REFUND_POLICY}>
             {LINK.REFUND_POLICY}
