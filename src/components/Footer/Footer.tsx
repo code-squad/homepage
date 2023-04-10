@@ -28,7 +28,11 @@ const Footer: React.FC = () => {
               <Typography type={isDesktop ? "XSBody" : "SBody"} as={isDesktop ? "span" : "p"}>
                 {MESSAGE.COMPANY_REGISTRATION_NUMBER}
               </Typography>
-              <Typography type={isDesktop ? "XSBody" : "SBody"} as={isDesktop ? "span" : "p"}>
+              <Typography
+                type={isDesktop ? "XSBody" : "SBody"}
+                as={isDesktop ? "span" : "p"}
+                style={{ paddingRight: ".5rem", paddingLeft: ".5rem" }}
+              >
                 {isDesktop && "|"}
               </Typography>
               <Typography type={isDesktop ? "XSBody" : "SBody"} as={isDesktop ? "span" : "p"}>
@@ -39,7 +43,11 @@ const Footer: React.FC = () => {
               <Typography type={isDesktop ? "XSBody" : "SBody"} as={isDesktop ? "span" : "p"}>
                 {MESSAGE.COMPANY_ADDRESS}
               </Typography>
-              <Typography type={isDesktop ? "XSBody" : "SBody"} as={isDesktop ? "span" : "p"}>
+              <Typography
+                type={isDesktop ? "XSBody" : "SBody"}
+                as={isDesktop ? "span" : "p"}
+                style={{ paddingRight: ".5rem", paddingLeft: ".5rem" }}
+              >
                 {isDesktop && "|"}
               </Typography>
               <Typography type={isDesktop ? "XSBody" : "SBody"} as={isDesktop ? "span" : "p"}>
@@ -58,6 +66,11 @@ const Footer: React.FC = () => {
               >
                 {MESSAGE.COMPANY_EMAIL_ADDRESS}
               </ExternalLink>
+            </div>
+            <div>
+              <Typography type={isDesktop ? "XSBody" : "SBody"} as="span">
+                {MESSAGE.FOOTER_COPYRIGHT}
+              </Typography>
             </div>
           </div>
           <InternalLink $bold to={INTERNAL.REFUND_POLICY}>
