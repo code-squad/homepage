@@ -28,7 +28,7 @@ const MatsersPage: React.FC = () => {
       <main style={{ overflowX: "hidden" }}>
         <HomeGlobalNavigationBar />
         <Masthead />
-        {/* <MastersRegistration /> */}
+        <MastersRegistration />
         <EducationFeatures />
         <DetailCurriculum />
         <PreCourseLinkButton />
