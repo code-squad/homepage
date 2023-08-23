@@ -134,11 +134,11 @@ const MESSAGE = {
 
 const CATEGORTY_TPL: { [key: string]: string } = {
   masters: "마스터즈",
-  javascript: "코드투게더 JS 과정",
+  javascript: "코드투게더 JS",
   "pre-course": "프리코스",
   etc: "기타",
   "clean-frontend": "클린 프론트엔드",
-  "clean-swift": "클린 스위프트",
+  "ios-architecture": "만들면서 배우는 iOS 아키텍처",
 };
 
 export { DESCRIPTION, LINK_DESCRIPTION, LINK, MESSAGE, SUBTITLE, TITLE, CATEGORTY_TPL };
