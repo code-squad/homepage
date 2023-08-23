@@ -42,7 +42,7 @@ const CourseInfo: React.FC<ICourseInfo> = ({
       <ContentWrapper>
         <TitleWrapper>
           {process && <Typography type={isMobile ? "MBold" : "SHLBold"}>{process}</Typography>}
-          <Typography type={isMobile ? "SDisplay" : "LDisplay"}>{title}</Typography>
+          <Typography style={{ whiteSpace: "pre-line" }} type={isMobile ? "SDisplay" : "LDisplay"}>{title}</Typography>
         </TitleWrapper>
         <InfoWrapper>
           <InfoItemWrapper>
