@@ -10,6 +10,7 @@ import mediumReact from "./medium-rct.svg";
 import mediumReactPart1 from "./medium-rct-part1.svg";
 import mediumReactPart2 from "./medium-rct-part2.svg";
 import mediumCleanFE from "./medium-cf.svg";
+import mediumCleanReact from "./medium-cr.svg";
 import smallCodeTogether from "./small-ct.svg";
 import smallMastersCourse from "./small-mc.svg";
 import smallJavascript from "./small-js.svg";
@@ -31,6 +32,7 @@ export default {
   mediumReactPart1,
   mediumReactPart2,
   mediumCleanFE,
+  mediumCleanReact,
   smallCodeTogether,
   smallMastersCourse,
   smallJavascript,

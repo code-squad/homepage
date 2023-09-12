@@ -18,6 +18,7 @@ import facebook from "./facebook.svg";
 import kakaotalk from "./kakaotalk.svg";
 import medium from "./medium.svg";
 import youtube from "./youtube.svg";
+import tool from "./tool.svg";
 
 export default {
   book,
@@ -40,4 +41,5 @@ export default {
   kakaotalk,
   medium,
   youtube,
+  tool,
 };

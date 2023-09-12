@@ -139,6 +139,7 @@ const CATEGORTY_TPL: { [key: string]: string } = {
   etc: "기타",
   "clean-frontend": "클린 프론트엔드",
   "ios-architecture": "만들면서 배우는 iOS 아키텍처",
+  "clean-react": "클린 리액트 프로그래밍",
 };
 
 export { DESCRIPTION, LINK_DESCRIPTION, LINK, MESSAGE, SUBTITLE, TITLE, CATEGORTY_TPL };
