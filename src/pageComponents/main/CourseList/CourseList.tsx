@@ -12,18 +12,18 @@ const CourseList: React.FC = () => {
     <CourseWrapper>
       <TitleSet title={TITLE.VIEW_COURSES}></TitleSet>
       <CourseListWrapper>
-        <LinkButton
+        {/* <LinkButton
           to={INTERNAL.PRE_COURSE}
           title={LINK.PRE_COURSE}
           description={LINK_DESCRIPTION.PRE_COURSE}
           icon={thumbnails.mediumCodeTogether}
-        />
-        {/* <LinkButton
+        /> */}
+        <LinkButton
           to={INTERNAL.MASTERS}
-          title={LINK.MASTERS_MAX}
+          title={LINK.MASTERS}
           description={LINK_DESCRIPTION.MASTERS}
           icon={thumbnails.mediumMastersCourse}
-        /> */}
+        />
         <LinkButton
           to={INTERNAL.CODE_TOGETHER}
           title={LINK.CODE_TOGETHER}

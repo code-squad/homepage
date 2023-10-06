@@ -2,7 +2,7 @@ import React from "react";
 import { useTheme } from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
 // Components
-import { SubCourseInfo } from "components";
+import { CourseInfo } from "components";
 // Assets
 import header from "assets/img/illusts/header";
 // Lib
@@ -19,7 +19,11 @@ const Masthead: React.FC = () => {
   if (isTablet) backgroundImage = header.tabletPattern1;
 
   return (
-    <SubCourseInfo
+    // <SubCourseInfo
+    //   {...{ title, description, targets, courseInfos, backgroundImage }}
+    //   backgroundColor={color.primary.green4}
+    // /> - 일시적(?)으로 마스터즈 페이지에도 동일한 디자인을 적용하기 위한 주석처리
+    <CourseInfo
       {...{ title, description, targets, courseInfos, backgroundImage }}
       backgroundColor={color.primary.green4}
     />

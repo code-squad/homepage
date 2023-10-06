@@ -61,16 +61,6 @@ const HomeGlobalNavigationBar: React.FC<{ bannerStatus?: boolean }> = ({ bannerS
     {
       title: LINK.MASTERS,
       path: INTERNAL.MASTERS,
-      subLinks: [
-        {
-          title: LINK.PRE_COURSE,
-          path: INTERNAL.PRE_COURSE,
-        },
-        {
-          title: LINK.MASTERS_MAX,
-          path: INTERNAL.MASTERS,
-        },
-      ],
     },
     {
       title: LINK.CODE_TOGETHER,

@@ -105,8 +105,8 @@ const FAQListQuery = graphql`
           title
           category
           course
-          btnText
-          btnUrl
+          # btnText 더미 데이터로 사용되던 btn관련 정보 우선 주석처리
+          # btnUrl
         }
       }
     }
