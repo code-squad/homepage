@@ -25,39 +25,45 @@ describe("<HomeGlobalNavigationBar>", () => {
 
     getByText(LINK.MASTERS);
   });
-  it("마스터즈 버튼을 클릭하면 프리코스, 마스터즈•max 링크가 보여진다.", async () => {
-    const { getByText } = renderHomeGlobalNavigationBar();
+  it("마스터즈 링크를 클릭하면 마스터즈 페이지로 이동된다.", async () => {
+    const { getByRole } = renderHomeGlobalNavigationBar();
 
-    const mastersBtn = getByText(LINK.MASTERS);
-    fireEvent.click(mastersBtn);
-
-    getByText(LINK.PRE_COURSE);
-    getByText(LINK.MASTERS_MAX);
-  });
-  const whenMastersPopoverOpened = () => {
-    const utils = renderHomeGlobalNavigationBar();
-    const { getByText } = utils;
-
-    const mastersBtn = getByText(LINK.MASTERS);
-    fireEvent.click(mastersBtn);
-
-    getByText(LINK.PRE_COURSE);
-    getByText(LINK.MASTERS_MAX);
-
-    return utils;
-  };
-  it("프리코스 코스 링크를 클릭하면 마스터즈코스 페이지로 이동된다.", async () => {
-    const { getByRole } = whenMastersPopoverOpened();
-
-    const linkEle = getByRole("link", { name: LINK.PRE_COURSE });
-    expect(linkEle?.getAttribute("href")).toBe(INTERNAL.PRE_COURSE);
-  });
-  it("마스터즈•max 링크를 클릭하면 마스터즈코스 페이지로 이동된다.", async () => {
-    const { getByRole } = whenMastersPopoverOpened();
-
-    const linkEle = getByRole("link", { name: LINK.MASTERS_MAX });
+    const linkEle = getByRole("link", { name: LINK.MASTERS });
     expect(linkEle?.getAttribute("href")).toBe(INTERNAL.MASTERS);
   });
+  // it("마스터즈 버튼을 클릭하면 프리코스, 마스터즈•max 링크가 보여진다.", async () => {
+  //   const { getByText } = renderHomeGlobalNavigationBar();
+
+  //   const mastersBtn = getByText(LINK.MASTERS);
+  //   fireEvent.click(mastersBtn);
+
+  //   getByText(LINK.PRE_COURSE);
+  //   getByText(LINK.MASTERS_MAX);
+  // });
+  // const whenMastersPopoverOpened = () => {
+  //   const utils = renderHomeGlobalNavigationBar();
+  //   const { getByText } = utils;
+
+  //   const mastersBtn = getByText(LINK.MASTERS);
+  //   fireEvent.click(mastersBtn);
+
+  //   getByText(LINK.PRE_COURSE);
+  //   getByText(LINK.MASTERS_MAX);
+
+  //   return utils;
+  // };
+  // it("프리코스 코스 링크를 클릭하면 마스터즈코스 페이지로 이동된다.", async () => {
+  //   const { getByRole } = whenMastersPopoverOpened();
+
+  //   const linkEle = getByRole("link", { name: LINK.PRE_COURSE });
+  //   expect(linkEle?.getAttribute("href")).toBe(INTERNAL.PRE_COURSE);
+  // });
+  // it("마스터즈•max 링크를 클릭하면 마스터즈코스 페이지로 이동된다.", async () => {
+  //   const { getByRole } = whenMastersPopoverOpened();
+
+  //   const linkEle = getByRole("link", { name: LINK.MASTERS_MAX });
+  //   expect(linkEle?.getAttribute("href")).toBe(INTERNAL.MASTERS);
+  // });
   it("코드투게더 링크를 클릭하면 코드투게더 페이지로 이동된다.", async () => {
     const { getByRole } = renderHomeGlobalNavigationBar();
 

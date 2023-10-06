@@ -31,7 +31,6 @@ const MatsersPage: React.FC = () => {
         <MastersRegistration />
         <EducationFeatures />
         <DetailCurriculum />
-        <PreCourseLinkButton />
         <InterviewSliderWrapper />
         <CourseSchedule />
         <FAQ course="masters" />

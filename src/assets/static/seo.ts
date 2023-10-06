@@ -1,6 +1,6 @@
 const SEO_TITLE = {
   MAIN: "코드스쿼드",
-  MASTERS: "마스터즈 코스",
+  MASTERS: "마스터즈",
   PRE_COURSE: "프리코스",
   CODE_TOGETHER: "코드투게더",
   FAQ: "자주 묻는 질문",
