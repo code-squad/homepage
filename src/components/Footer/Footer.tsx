@@ -198,7 +198,7 @@ const ContentWrapper = styled.div`
   @media ${({ theme }) => theme.device.desktop} {
     min-width: 128rem;
     height: 15.4rem;
-    padding: 5.6rem 8rem 5.6rem 8rem;
+    padding: 5.6rem 8rem;
   }
 `;
 
