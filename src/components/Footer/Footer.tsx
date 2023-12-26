@@ -162,20 +162,24 @@ const Footer: React.FC = () => {
 const FooterWrapper = styled.footer`
   display: flex;
   background-color: ${({ theme: { color } }) => color.black};
+  align-items: center;
+  width: 100%;
   @media ${({ theme }) => theme.device.mobile} {
-    align-items: center;
-    width: 100%;
-    height: 30.4rem;
+    height: 32.8rem;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    height: 32.8rem;
   }
   @media ${({ theme }) => theme.device.desktop} {
     justify-content: center;
-    width: 100%;
     min-width: 144rem;
+    height: 26.6rem;
   }
 `;
 
 const ContentWrapper = styled.div`
   display: flex;
+
   justify-content: space-between;
   align-items: center;
   color: ${({ theme: { color } }) => color.white};
@@ -184,14 +188,17 @@ const ContentWrapper = styled.div`
   line-height: ${({ theme: { lineHeight } }) => lineHeight.body.xs};
   letter-spacing: ${({ theme: { letterSpacing } }) => letterSpacing};
   @media ${({ theme }) => theme.device.mobile} {
+    height: 24.8rem;
     padding: 4rem 2.4rem;
   }
   @media ${({ theme }) => theme.device.tablet} {
+    height: 24.8rem;
     padding: 4rem 8rem;
   }
   @media ${({ theme }) => theme.device.desktop} {
     min-width: 128rem;
-    padding: 5.6rem 8rem 8rem 8rem;
+    height: 15.4rem;
+    padding: 5.6rem 8rem 5.6rem 8rem;
   }
 `;
 
