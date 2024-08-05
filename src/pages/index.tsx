@@ -45,7 +45,7 @@ const MainPage: React.FC = () => {
   return (
     <GlobalTheme>
       <GlobalHeader title={SEO_TITLE.MAIN} description={SEO_DESCRIPTION.MAIN} url={INTERNAL.MAIN} />
-      <main style={{ overflowX: "hidden" }}>
+      <main>
         <HomeGlobalNavigationBar {...{ bannerStatus }} />
         {bannerStatus && <Banner {...{ bannerStatus, setBannerStatus }} />}
         <Welcome />
