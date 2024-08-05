@@ -124,6 +124,7 @@ const Interview: React.FC<IInterview> = ({ subtitle, title, interviews, style })
 const InterviewWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
   @media ${({ theme }) => theme.device.mobile} {
     margin-bottom: 12rem;
     align-items: space-between;
