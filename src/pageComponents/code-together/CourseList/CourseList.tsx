@@ -58,15 +58,9 @@ const CourseWrapper = styled.ul`
 
 const CourseListWrapper = styled.ul`
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  & > *:not(:last-child) {
-    margin-right: 2.4rem;
-  }
-  @media ${({ theme }) => theme.device.mobile} {
-    & > *:not(:last-child) {
-      margin-right: 1.6rem;
-    }
-  }
+  gap: 1.2rem;
 `;
 
 const CodeTogetherCourseListQuery = graphql`

@@ -31,7 +31,7 @@ const Feature: React.FC = ({}) => {
 
 const FeatureWrapper = styled.div`
   margin: 0 auto;
-  margin-top: 8rem;
+  margin-bottom: 18rem;
   @media ${({ theme }) => theme.device.mobile} {
     padding: 0 2.4rem;
   }
