@@ -1,5 +1,6 @@
 import jk from "./jk.png";
 import crong from "./crong.png";
+import dangle from "./dangle.png";
 import honux from "./honux.png";
 import ivy from "./ivy.png";
 import silver from "./silver.png";
@@ -16,6 +17,7 @@ import howToStudy from "./howtostudy.png";
 export default {
   jk,
   crong,
+  dangle,
   honux,
   ivy,
   silver,

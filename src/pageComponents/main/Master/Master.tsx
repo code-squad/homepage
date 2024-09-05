@@ -2,7 +2,7 @@ import React from "react";
 import styled, { useTheme } from "styled-components";
 import { graphql, Link, useStaticQuery } from "gatsby";
 // Type
-import { MasterType } from "@type/Master";
+import type { MasterType } from "@type/Master";
 // Typography
 import { Typography } from "typography";
 // Components
@@ -28,6 +28,12 @@ const Master: React.FC = () => {
   const handleTabClick = (index: number) => {
     setMasterIntroduce(masters[index]);
   };
+
+  const dangleCareers: MasterType["careers"] = [
+    "전 Amazon Web Services Technical Trainer",
+    "전 카카오 Backend engineer",
+    "전 NHN NEXT UI/Web programming 전공 졸업",
+  ];
 
   return (
     <MasterWrapper>
@@ -103,6 +109,47 @@ const Master: React.FC = () => {
             )}
           </IntroduceWrapper>
         </MasterInformationWrapper>
+
+        {/* 하드코딩 */}
+        {masterIntroduce.name === "호눅스" && (
+          <MasterInformationWrapper>
+            <MasterImg alt="dangle-profile" src={picture["dangle"]} />
+            <IntroduceWrapper>
+              <Introduce>
+                <NicknameWrapper>
+                  <Typography type={isMobile ? "SHLBold" : "HLBold"}>Dangle</Typography>
+                  <MasterIntroduceWrapper>
+                    <Typography type={isMobile ? "XSBody" : "SBody"}>
+                      당글, 웹 백엔드 마스터
+                    </Typography>
+                  </MasterIntroduceWrapper>
+                </NicknameWrapper>
+                <MasterNutshellWrapper>
+                  <Typography type={isMobile ? "SHLBold" : "MBold"}>
+                    “개발에 정답은 없다고 생각합니다. 현재 상황에서 최선의 답을 찾을 뿐."
+                  </Typography>
+                </MasterNutshellWrapper>
+                <CareerWrapper>
+                  {dangleCareers?.map((career) => (
+                    <li key={career}>
+                      <Typography
+                        type={isMobile ? "XSBody" : "SBody"}
+                        style={{
+                          display: "inline",
+                          verticalAlign: "middle",
+                          color: color.greyScale.grey1,
+                        }}
+                      >
+                        {career}
+                      </Typography>
+                    </li>
+                  ))}
+                </CareerWrapper>
+              </Introduce>
+            </IntroduceWrapper>
+          </MasterInformationWrapper>
+          /* 하드코딩 */
+        )}
       </div>
     </MasterWrapper>
   );

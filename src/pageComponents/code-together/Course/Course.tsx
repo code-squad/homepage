@@ -76,14 +76,19 @@ const TitleWrapper = styled.div`
 
 const CourseListWrapper = styled.div`
   width: 100%;
-  margin-top: 4rem;
-  padding: 8rem 0 16rem 0;
-  background-color: ${({ theme: { color } }) => color.surface.offWhite1};
+  @media ${({ theme }) => theme.device.mobile} {
+    padding: 4.8rem 0 5.6rem 0;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    padding: 4.8rem 0 13.6rem 0;
+  }
+  @media ${({ theme }) => theme.device.desktop} {
+    padding: 8rem 0 16rem 0;
+  }
 `;
 
 const CourseList = styled.ul`
   margin: 0 auto 6.4rem auto;
-  background-color: ${({ theme: { color } }) => color.surface.offWhite1};
   display: flex;
   flex-flow: row wrap;
   & > *:nth-child(2n - 1) {
@@ -95,13 +100,14 @@ const CourseList = styled.ul`
   @media ${({ theme }) => theme.device.mobile} {
     flex-direction: column;
     margin-bottom: 3.2rem;
+    padding: 0 2.4rem;
     & > *:not(:last-child) {
       margin-bottom: 2.4rem;
     }
   }
   @media ${({ theme }) => theme.device.tablet} {
     flex-direction: column;
-    padding: 8rem;
+    padding: 0 8rem;
     & > *:not(:last-child) {
       margin-bottom: 3.2rem;
     }

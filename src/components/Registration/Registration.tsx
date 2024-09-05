@@ -17,6 +17,8 @@ const Registration: React.FC<{ registrations: RegistrationType[] }> = ({ registr
 
 const RegistrationWrapper = styled.div`
   display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
   @media ${({ theme }) => theme.device.mobile} {
     padding: 0 2.4rem;
     padding-top: 8rem;
