@@ -113,7 +113,7 @@ const Master: React.FC = () => {
         {/* 하드코딩 */}
         {masterIntroduce.name === "호눅스" && (
           <MasterInformationWrapper>
-            <MasterImg alt="profile" src={picture["dangle"]} />
+            <MasterImg alt="dangle-profile" src={picture["dangle"]} />
             <IntroduceWrapper>
               <Introduce>
                 <NicknameWrapper>
