@@ -19,37 +19,45 @@ const StudyFeature: React.FC = () => {
   const { isDesktop, isMobile } = useResponsive();
 
   return (
-    <StudyWrapper>
-      <TitleSet subtitle={SUBTITLE.CODE_TOGETHER} title={TITLE.HOW_STUDY} />
-      <FeatureList>
-        {studyFeatures.map(({ title, descriptions, img }) => (
-          <FeatureItem key={title}>
-            <ImageCard
-              {...{ descriptions, title }}
-              img={features[img]}
-              medium={isDesktop}
-              vertical={isMobile}
-            />
-          </FeatureItem>
-        ))}
-      </FeatureList>
-    </StudyWrapper>
+    <StudyBackgroundWrapper>
+      <StudyWrapper>
+        <TitleSet subtitle={SUBTITLE.CODE_TOGETHER} title={TITLE.HOW_STUDY} />
+        <FeatureList>
+          {studyFeatures.map(({ title, descriptions, img }) => (
+            <FeatureItem key={title}>
+              <ImageCard
+                {...{ descriptions, title }}
+                img={features[img]}
+                medium={isDesktop}
+                vertical={isMobile}
+              />
+            </FeatureItem>
+          ))}
+        </FeatureList>
+      </StudyWrapper>
+    </StudyBackgroundWrapper>
   );
 };
 
-const StudyWrapper = styled.div`
-  padding-top: 18rem;
+const StudyBackgroundWrapper = styled.div`
+  width: 100%;
+  background-color: ${({ theme: { color } }) => color.surface.offWhite1};
+  @media ${({ theme }) => theme.device.mobile} {
+    background-color: ${({ theme: { color } }) => color.surface.white20};
+  }
+`;
+
+const StudyWrapper = styled.div<{ backgroundColor?: string }>`
   margin: 0 auto;
-  margin-top: 8rem;
   @media ${({ theme }) => theme.device.mobile} {
     padding: 0 2.4rem;
   }
   @media ${({ theme }) => theme.device.tablet} {
-    padding: 0 8rem;
+    padding: 8rem 8rem;
   }
   @media ${({ theme }) => theme.device.desktop} {
     width: 106.2rem;
-    padding: 0 18.9rem;
+    padding: 8rem 18.9rem;
   }
 `;
 
