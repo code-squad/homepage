@@ -96,6 +96,8 @@ const SubjectItem = styled.li`
 `;
 const SubjectTitle = styled.h6`
   width: 19rem;
+  word-wrap: break-word;
+  white-space: pre-wrap;
   color: ${({ theme: { color } }) => color.black};
 `;
 const SubjectDetail = styled.div`
