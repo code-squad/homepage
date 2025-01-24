@@ -122,7 +122,7 @@ const MESSAGE = {
   COMPANY_CEO_NAME: "대표자: 김정",
   COMPANY_EMAIL: "대표 이메일: ",
   COMPANY_EMAIL_ADDRESS: "yoda@codesquad.kr",
-  COMPANY_NAME: "코드스쿼드 (v1.0.0)",
+  COMPANY_NAME: "코드스쿼드 (v1.4.7)",
   COMPANY_REGISTRATION_NUMBER: "사업자등록번호: 676-88-00504",
   COMPANY_MAIL_ORDER_SALES_REGISTRATION_NUMBER: "통신판매신고: 제 2017-서울강남-04281호",
   COMPANY_TEL_NUMBER: "전화: 070-4117-1005",
