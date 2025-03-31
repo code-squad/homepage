@@ -55,7 +55,7 @@ export default ({ data, location }: PageProps<ICodeTogetherTemplateProps>) => {
   const graduateReviewInfo = strainFrontmatterInfo(graduateReview);
 
   const courseTitle = mastheadInfo.title;
-  const currentCourse = path.split("/").pop() as "clean-frontend" | "javascript";
+  const currentCourse = path.split("/").pop() as "javascript" | "ios-architecture";
 
   return (
     <GlobalTheme>
