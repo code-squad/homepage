@@ -44,6 +44,7 @@ const MasterInfo: React.FC<{ masterInfo: MasterInfoType }> = ({ masterInfo }) =>
 
 const MasterInfoWrapper = styled.li`
   display: flex;
+  margin-top: 4rem;
   @media ${({ theme }) => theme.device.mobile} {
     flex-direction: column;
   }

@@ -110,7 +110,7 @@ const LINK = {
 const LINK_DESCRIPTION = {
   CODE_TOGETHER: "온라인으로 함께 배우는 단기 과정",
   CONFIRM_RECRUIT: "코드스쿼드의 교육 가치에 공감한다면",
-  MASTERS: "분야별 최고의 개발자가 되기 위한 풀타임 과정",
+  MASTERS: "최고의 개발자가 되기 위한 풀타임 과정",
   PRE_COURSE: "프로그래밍 기초를 다지며 마스터즈를 준비할 수 있는 과정",
   RECEIVE_SUBSCRIPTION: "원하는 코스의 오픈 소식을 가장 먼저 알고 싶다면?",
 };
