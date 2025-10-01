@@ -110,7 +110,7 @@ const LINK = {
 const LINK_DESCRIPTION = {
   CODE_TOGETHER: "온라인으로 함께 배우는 단기 과정",
   CONFIRM_RECRUIT: "코드스쿼드의 교육 가치에 공감한다면",
-  MASTERS: "분야별 최고의 개발자가 되기 위한 풀타임 과정",
+  MASTERS: "최고의 개발자가 되기 위한 풀타임 과정",
   PRE_COURSE: "프로그래밍 기초를 다지며 마스터즈를 준비할 수 있는 과정",
   RECEIVE_SUBSCRIPTION: "원하는 코스의 오픈 소식을 가장 먼저 알고 싶다면?",
 };
@@ -122,7 +122,7 @@ const MESSAGE = {
   COMPANY_CEO_NAME: "대표자: 김정",
   COMPANY_EMAIL: "대표 이메일: ",
   COMPANY_EMAIL_ADDRESS: "yoda@codesquad.kr",
-  COMPANY_NAME: "코드스쿼드 (v1.4.9)",
+  COMPANY_NAME: "코드스쿼드 (v1.4.10)",
   COMPANY_REGISTRATION_NUMBER: "사업자등록번호: 676-88-00504",
   COMPANY_MAIL_ORDER_SALES_REGISTRATION_NUMBER: "통신판매신고: 제 2017-서울강남-04281호",
   COMPANY_TEL_NUMBER: "전화: 070-4117-1005",

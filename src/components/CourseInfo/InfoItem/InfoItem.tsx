@@ -22,8 +22,9 @@ const InfoItem: React.FC<IInfoItemProps> = ({ icon, title, content }) => {
 };
 
 const InfoItemWrapper = styled.li`
-  display: flex;
+  display: inline-flex;
   align-items: center;
+  white-space: nowrap;
   & > *:not(:last-child) {
     margin-right: 0.4rem;
   }
