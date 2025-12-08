@@ -122,7 +122,7 @@ const MESSAGE = {
   COMPANY_CEO_NAME: "대표자: 김정",
   COMPANY_EMAIL: "대표 이메일: ",
   COMPANY_EMAIL_ADDRESS: "yoda@codesquad.kr",
-  COMPANY_NAME: "코드스쿼드 (v1.4.10)",
+  COMPANY_NAME: "코드스쿼드 (v1.4.11)",
   COMPANY_REGISTRATION_NUMBER: "사업자등록번호: 676-88-00504",
   COMPANY_MAIL_ORDER_SALES_REGISTRATION_NUMBER: "통신판매신고: 제 2017-서울강남-04281호",
   COMPANY_TEL_NUMBER: "전화: 070-4117-1005",
@@ -134,7 +134,7 @@ const MESSAGE = {
 
 const CATEGORTY_TPL: { [key: string]: string } = {
   masters: "마스터즈",
-  javascript: "코드투게더 JS",
+  // javascript: "코드투게더 JS",
   "pre-course": "프리코스",
   etc: "기타",
   "clean-frontend": "클린 프론트엔드",

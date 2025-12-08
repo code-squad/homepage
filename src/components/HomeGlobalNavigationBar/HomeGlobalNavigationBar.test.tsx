@@ -64,12 +64,12 @@ describe("<HomeGlobalNavigationBar>", () => {
   //   const linkEle = getByRole("link", { name: LINK.MASTERS_MAX });
   //   expect(linkEle?.getAttribute("href")).toBe(INTERNAL.MASTERS);
   // });
-  it("코드투게더 링크를 클릭하면 코드투게더 페이지로 이동된다.", async () => {
-    const { getByRole } = renderHomeGlobalNavigationBar();
+  // it("코드투게더 링크를 클릭하면 코드투게더 페이지로 이동된다.", async () => {
+  //   const { getByRole } = renderHomeGlobalNavigationBar();
 
-    const linkEle = getByRole("link", { name: LINK.CODE_TOGETHER });
-    expect(linkEle?.getAttribute("href")).toBe(INTERNAL.CODE_TOGETHER);
-  });
+  //   const linkEle = getByRole("link", { name: LINK.CODE_TOGETHER });
+  //   expect(linkEle?.getAttribute("href")).toBe(INTERNAL.CODE_TOGETHER);
+  // });
   it("자주 묻는 질문 링크를 클릭하면 자주 묻는 질문 페이지로 이동된다.", async () => {
     const { getByRole } = renderHomeGlobalNavigationBar();
 
