@@ -134,7 +134,7 @@ const MESSAGE = {
 
 const CATEGORTY_TPL: { [key: string]: string } = {
   masters: "마스터즈",
-  javascript: "코드투게더 JS",
+  // javascript: "코드투게더 JS",
   "pre-course": "프리코스",
   etc: "기타",
   "clean-frontend": "클린 프론트엔드",
