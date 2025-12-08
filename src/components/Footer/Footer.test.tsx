@@ -72,18 +72,18 @@ describe("<Footer>", () => {
         name: LINK.RECRUIT,
         path: INTERNAL.RECRUIT,
       },
+      // {
+      //   name: LINK.PRE_COURSE,
+      //   path: INTERNAL.PRE_COURSE,
+      // },
       {
-        name: LINK.PRE_COURSE,
-        path: INTERNAL.PRE_COURSE,
-      },
-      {
-        name: LINK.MASTERS_MAX,
+        name: LINK.MASTERS,
         path: INTERNAL.MASTERS,
       },
-      {
-        name: LINK.CODE_TOGETHER,
-        path: INTERNAL.CODE_TOGETHER,
-      },
+      // {
+      //   name: LINK.CODE_TOGETHER,
+      //   path: INTERNAL.CODE_TOGETHER,
+      // },
       {
         name: LINK.FAQ,
         path: INTERNAL.FAQ,
