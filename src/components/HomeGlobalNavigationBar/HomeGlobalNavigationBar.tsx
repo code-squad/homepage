@@ -62,10 +62,10 @@ const HomeGlobalNavigationBar: React.FC<{ bannerStatus?: boolean }> = ({ bannerS
       title: LINK.MASTERS,
       path: INTERNAL.MASTERS,
     },
-    {
-      title: LINK.CODE_TOGETHER,
-      path: INTERNAL.CODE_TOGETHER,
-    },
+    // {
+    //   title: LINK.CODE_TOGETHER,
+    //   path: INTERNAL.CODE_TOGETHER,
+    // },
     {
       title: LINK.FAQ,
       path: INTERNAL.FAQ,
@@ -208,7 +208,7 @@ const HomeSigniture = styled.img<{ open: boolean }>`
 `;
 
 const ButtonList = styled.ul`
-  width: 32.2rem;
+  width: 24.2rem;
   height: 3.2rem;
   display: flex;
   justify-content: space-between;
