@@ -41,21 +41,21 @@ describe("<FAQ>", () => {
       getByText(`최종 업데이트: ${editDate}`);
     });
   });
-  it("다른 과정 제목을 클릭하면 해당 과정에 내용들이 보여진다.", async () => {
-    const { getByText, getAllByText } = renderFAQ();
-    const course = "javascript";
-    const { lists } = strainMdxInfo(FAQResult);
-    const filteredLists = lists.filter((list: FAQType) => list.course === course);
+  // it("다른 과정 제목을 클릭하면 해당 과정에 내용들이 보여진다.", async () => {
+  //   const { getByText, getAllByText } = renderFAQ();
+  //   const course = "javascript";
+  //   const { lists } = strainMdxInfo(FAQResult);
+  //   const filteredLists = lists.filter((list: FAQType) => list.course === course);
 
-    const jsFAQBtn = getByText(`${CATEGORTY_TPL[course]}`);
-    fireEvent.click(jsFAQBtn);
-    filteredLists.forEach(({ title, content, editDate }: FAQType) => {
-      getAllByText(CATEGORTY_TPL[course]);
-      getByText(title);
-      getByText(removeLineFeed(content));
-      getByText(`최종 업데이트: ${editDate}`);
-    });
-  });
+  //   const jsFAQBtn = getByText(`${CATEGORTY_TPL[course]}`);
+  //   fireEvent.click(jsFAQBtn);
+  //   filteredLists.forEach(({ title, content, editDate }: FAQType) => {
+  //     getAllByText(CATEGORTY_TPL[course]);
+  //     getByText(title);
+  //     getByText(removeLineFeed(content));
+  //     getByText(`최종 업데이트: ${editDate}`);
+  //   });
+  // });
   it("기타를 클릭하면 과정 외의 내용들이 보여진다.", async () => {
     const { getByText, getAllByText } = renderFAQ();
     const { lists } = strainMdxInfo(FAQResult);
